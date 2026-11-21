@@ -1,0 +1,164 @@
+
+    /* ==============================================================
+       1. EduHub design tokens and shared component adjustments
+       ============================================================== */
+    :root {
+      --ed-primary:#2563eb; --ed-primary-hover:#1d4ed8;
+      --ed-ink:#0f172a; --ed-muted:#64748b; --ed-border:#e2e8f0;
+      --ed-background:#f8fafc; --ed-blue-soft:#eff6ff; --ed-avatar:#dbeafe;
+      --ed-amber-bg:#fffbeb; --ed-amber-border:#fcd34d; --ed-amber-text:#92400e;
+      --ed-danger:#dc2626; --ed-card-radius:12px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ed-background);color:var(--ed-ink);font:14px/1.5 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    a{color:var(--ed-primary);text-decoration:none}
+    a:hover{color:var(--ed-primary-hover)}
+    :focus-visible{outline:3px solid #2563eb70!important;outline-offset:3px}
+    [hidden]{display:none!important}
+    .ed-muted{color:var(--ed-muted)!important}
+    .ed-surface{background:#fff;border:1px solid var(--ed-border);border-radius:var(--ed-card-radius)}
+    .ed-primary-button{border:1px solid var(--ed-primary);background:var(--ed-primary);color:white;border-radius:8px;height:48px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;transition:background .15s,box-shadow .15s,transform .12s}
+    .ed-primary-button:hover,.ed-primary-button:focus-visible{color:#fff;background:var(--ed-primary-hover);border-color:var(--ed-primary-hover);box-shadow:0 4px 14px #2563eb1a}
+    .ed-primary-button:active{transform:translateY(1px)}
+    .ed-primary-button:disabled{background:#93b4fc;border-color:#93b4fc;cursor:not-allowed}
+    /* ==============================================================
+       2. Responsive shared student header (76px / 196px)
+       ============================================================== */
+    .student-header{background:#fff;box-shadow:inset 0 -1px 0 var(--ed-border)}
+    .desktop-header{height:76px;max-width:1440px;padding:0 48px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .ed-brand{display:inline-flex;align-items:center;gap:8px;font-size:28px;font-weight:700;letter-spacing:-1px;line-height:34px;color:var(--ed-ink);white-space:nowrap}
+    .ed-brand:hover{color:var(--ed-ink)}
+    .ed-brand .fa-graduation-cap{color:var(--ed-primary);font-size:27px;display:inline-block;width:32px;text-align:center}
+    .ed-brand .brand-blue{color:var(--ed-primary)}
+    .desktop-nav{display:flex;gap:24px;margin-left:32px}
+    .nav-target{font-size:14px;color:var(--ed-muted)}
+    .nav-target:hover,.nav-target.active{color:var(--ed-primary)}
+    .nav-target.active{font-weight:600}
+    .top-search{position:relative;display:block;width:230px}
+    .top-search input{display:block;width:100%;height:44px;border:1px solid var(--ed-border);border-radius:8px;background:var(--ed-background);padding:0 12px 0 38px;font-size:13px;color:var(--ed-ink)}
+    .top-search input:focus{border-color:var(--ed-primary);outline:0;box-shadow:0 0 0 3px #2563eb16}
+    .top-search .fa-magnifying-glass{position:absolute;top:14px;left:12px;color:var(--ed-muted);font-size:16px;pointer-events:none}
+    .ed-icon-button{width:40px;height:44px;flex:none;background:transparent;border:0;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;color:var(--ed-muted);font-size:18px;position:relative}
+    .ed-icon-button:hover,.ed-icon-button:focus-visible{background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .notification-dot{position:absolute;top:7px;right:8px;background:var(--ed-primary);width:6px;height:6px;border-radius:100%}
+    .student-avatar{background:var(--ed-avatar);color:var(--ed-primary);font-size:13px;font-weight:600;width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:none}
+    .account-details{font-size:13px;font-weight:600;line-height:16px;color:var(--ed-ink)}
+    .account-role{color:var(--ed-muted);font-size:11px;font-weight:400;line-height:13px;margin-top:2px}
+    .account-summary{list-style:none;display:flex;align-items:center;gap:16px;cursor:pointer;outline-offset:4px}
+    .account-summary::-webkit-details-marker{display:none}
+    .account-dropdown{position:relative}
+    .account-popup{position:absolute;right:0;top:calc(100% + 12px);z-index:20;width:190px;background:#fff;border:1px solid var(--ed-border);box-shadow:0 12px 32px #0f172a16;border-radius:10px;padding:8px}
+    .account-popup a{display:block;padding:10px 12px;border-radius:6px;font-size:13px;color:var(--ed-ink)}
+    .account-popup a:hover{background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .responsive-header{display:none}
+    .responsive-header-inner{max-width:1440px;margin:auto;padding:16px 24px;display:flex;flex-direction:column;gap:16px}
+    .responsive-navigation{height:44px;display:flex;align-items:stretch;justify-content:space-between;gap:8px}
+    .responsive-navigation a{display:flex;align-items:center;white-space:nowrap;font-size:13px;color:var(--ed-muted)}
+    .responsive-navigation .active{color:var(--ed-primary);border-bottom:2px solid var(--ed-primary);font-weight:600}
+    .responsive-header .top-search{width:100%;height:44px}
+    /* ==============================================================
+       3. Checkout page layout: Figma desktop / tablet / mobile
+       ============================================================== */
+    .checkout-main{max-width:1440px;margin:0 auto;padding:64px}
+    .breadcrumbs{font-size:13px;color:var(--ed-muted);line-height:21px;margin-bottom:32px}
+    .breadcrumbs a{color:var(--ed-muted)}
+    .breadcrumbs a:hover{color:var(--ed-primary)}
+    .checkout-heading{margin-bottom:32px}
+    .checkout-heading h1{font-size:36px;font-weight:700;line-height:47px;letter-spacing:-.8px;margin:0 0 8px}
+    .checkout-heading p{font-size:14px;line-height:22px;color:var(--ed-muted);margin:0}
+    .demo-notice{display:flex;align-items:flex-start;gap:12px;padding:15px 16px;margin-bottom:32px;border:1px solid var(--ed-amber-border);background:var(--ed-amber-bg);border-radius:8px;color:var(--ed-amber-text);font-weight:600;font-size:14px;line-height:22px}
+    .demo-notice i{width:20px;height:20px;flex:none;font-size:17px;line-height:20px;text-align:center}
+    .checkout-layout{display:grid;grid-template-columns:minmax(0,880fr) minmax(0,400fr);gap:32px;margin:0;align-items:start}
+    .checkout-layout > [class*='col-']{width:auto!important;max-width:none!important;padding:0!important;min-width:0}
+    .payment-card,.summary-card{padding:23px}
+    .section-heading{font-weight:700;font-size:24px;line-height:31px;margin:0}
+    /* ==============================================================
+       4. Payment method selector, fields, and trust indicator
+       ============================================================== */
+    .payment-subtitle{font-size:14px;line-height:22px;color:var(--ed-muted);margin:16px 0}
+    .method-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}
+    .method-option{height:50px;display:flex;align-items:center;gap:8px;border:1px solid var(--ed-border);border-radius:8px;padding:0 16px;cursor:pointer;color:var(--ed-ink);font-size:13px;font-weight:600;transition:background .15s,border-color .15s}
+    .method-option:hover{border-color:#93c5fd;background:#f8fbff}
+    .method-option.selected{border-color:var(--ed-primary);background:var(--ed-blue-soft)}
+    .method-option input{width:18px;height:18px;flex:none;accent-color:var(--ed-primary);margin:0;cursor:pointer}
+    .accepted-cards{display:flex;align-items:center;gap:12px;margin-bottom:16px;min-height:36px}
+    .card-logo{width:64px;height:36px;border:1px solid var(--ed-border);border-radius:6px;background:white;display:flex;align-items:center;justify-content:center}
+    .visa{font:italic 900 19px/1 Arial,sans-serif;color:#172554;letter-spacing:-1px}
+    .mastercard{position:relative;width:42px;height:22px}
+    .mastercard::before,.mastercard::after{content:"";position:absolute;top:0;width:22px;height:22px;border-radius:50%}
+    .mastercard::before{left:4px;background:#eb001b}
+    .mastercard::after{right:4px;background:#f79e1b;opacity:.9}
+    .card-help{font-size:12px;color:var(--ed-muted)}
+    .payment-fields{display:flex;flex-direction:column;gap:16px}
+    .payment-field{min-width:0;position:relative}
+    .payment-field label{display:block;font-size:13px;line-height:16px;margin-bottom:8px;color:var(--ed-ink)}
+    .payment-field input{display:block;border:1px solid var(--ed-border);border-radius:8px;background:#fff;width:100%;height:48px;font-size:13px;outline:0;padding:0 15px;color:var(--ed-ink)}
+    .payment-field input::placeholder{color:#94a3b8}
+    .payment-field input:hover{border-color:#bfdbfe}
+    .payment-field input:focus{border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb16}
+    .payment-field input.is-invalid{border-color:var(--ed-danger)}
+    .field-error{display:none;color:var(--ed-danger);font-size:12px;line-height:18px;padding-top:4px}
+    .payment-field.has-error .field-error{display:block}
+    .validity-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .security-note{margin-top:16px;display:flex;gap:12px;align-items:flex-start;background:var(--ed-background);border-radius:8px;padding:16px;min-height:76px}
+    .security-note .security-icon{font-size:18px;line-height:20px;color:var(--ed-primary);width:20px;text-align:center;flex:none}
+    .security-heading{font-size:13px;font-weight:600;line-height:21px;margin:0}
+    .security-copy{font-size:12px;color:var(--ed-muted);line-height:19px;margin:4px 0 0}
+    /* ==============================================================
+       5. Order summary, actions, footer and dialogs
+       ============================================================== */
+    .summary-image{margin-top:16px;width:100%;height:210px;object-fit:cover;border-radius:12px;background:#222d48;display:block}
+    .summary-course{font-size:20px;font-weight:700;line-height:26px;margin:16px 0 0}
+    .summary-instructor{color:var(--ed-muted);font-size:14px;line-height:22px;margin:16px 0 0}
+    .summary-meta{color:var(--ed-muted);font-size:13px;line-height:21px;margin:16px 0 0}
+    .order-totals{border-top:1px solid var(--ed-border);padding-top:15px;margin-top:16px;display:flex;flex-direction:column;gap:16px}
+    .price-line{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:14px;line-height:17px;color:var(--ed-muted)}
+    .price-line strong{color:var(--ed-ink);font-weight:600}
+    .price-line.total{font-size:18px;line-height:29px;color:var(--ed-ink);font-weight:700;align-items:start}
+    .price-line.total strong{font-size:24px;line-height:29px;font-weight:700}
+    .summary-submit{margin-top:16px}
+    .summary-note{font-size:12px;color:var(--ed-muted);line-height:19px;text-align:center;margin:16px 0 0}
+    .site-footer{background:var(--ed-background);border-top:1px solid var(--ed-border);color:var(--ed-muted);font-size:12px;line-height:15px;text-align:center;min-height:63px;display:flex;align-items:center;justify-content:center}
+    .ed-dialog{border:1px solid var(--ed-border);padding:24px;border-radius:14px;max-width:min(420px,calc(100vw - 32px));width:100%;box-shadow:0 24px 65px #0f172a30;color:var(--ed-ink)}
+    .ed-dialog::backdrop{background:#0f172a8a}
+    .ed-dialog h2{font-size:20px;font-weight:700}
+    .ed-dialog p{font-size:14px;color:var(--ed-muted);line-height:1.6}
+    .drawer-menu{display:grid;gap:4px}
+    .drawer-menu a{padding:12px;border-radius:8px;color:var(--ed-ink);font-weight:500}
+    .drawer-menu a:hover{background:var(--ed-blue-soft);color:var(--ed-primary)}
+    #toastMessage{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;width:max-content;max-width:calc(100vw - 30px);padding:12px 16px;background:var(--ed-ink);color:white;border-radius:8px;box-shadow:0 6px 24px #0f172a33;font-size:13px;text-align:center}
+    /* ==============================================================
+       6. Breakpoints: Figma tablet 834px and mobile 390px
+       ============================================================== */
+    @media(max-width:1199.98px){
+      .desktop-header{display:none}
+      .responsive-header{display:block}
+      .checkout-main{padding:32px}
+      .checkout-layout{grid-template-columns:minmax(0,1fr)}
+    }
+    @media(max-width:575.98px){
+      .responsive-header-inner{padding:16px}
+      .responsive-header .account-details{display:none}
+      .responsive-header .account-summary{gap:8px}
+      .responsive-header .account-summary .fa-chevron-down{font-size:11px}
+      .checkout-main{padding:16px}
+      .checkout-heading h1{font-size:30px;line-height:39px}
+      .security-note{min-height:114px}
+    }
+    @media(max-width:360px){
+      .ed-brand{font-size:25px;letter-spacing:-1px}
+      .responsive-navigation a{font-size:12px}
+      .payment-card,.summary-card{padding:20px 16px}
+      .method-option{padding:0 10px;gap:6px}
+      .method-option input{width:16px;height:16px}
+      .card-help{font-size:11px}
+    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  
+/* Moved from static HTML style attributes during restoration. */
+.edu-restored-inline-1 { font-size:11px; }
+.edu-restored-inline-2 { font-size:20px; }
+.edu-restored-inline-3 { color:var(--ed-primary); }

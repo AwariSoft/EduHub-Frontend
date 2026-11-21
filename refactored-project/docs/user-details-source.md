@@ -1,0 +1,3 @@
+# User Details — source reconciliation
+
+Sources: `edu-hub-admin-user-details-desktop.html/.css`, `edu-hub-admin-user-details-tablet.html/.css`, `edu-hub-admin-user-details-mobile.html/.css` in ZIP #11. All three identify user `USR-1204`, Warda Mahmoud, `warda.mahmoud@example.com`, Student, Active, registered Oct 28, 2026 at 08:15 AM UTC. Account deactivation prevents sign-in but retains the user record and assigned role. The original source is a visual demonstration. The implementation uses a Bootstrap confirmation modal, emits `eduhub:user-access-requested`, and deliberately leaves displayed status unchanged without backend confirmation.

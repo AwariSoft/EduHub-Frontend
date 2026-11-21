@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub Course Learning Resources view: illustrative downloadable lesson materials, C# lessons and learning-progress demo.">
+  <title>Course Learning — Resources | EduHub</title>
+  <!-- Bootstrap 5, Font Awesome 6 Free, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" onerror="this.onerror=null;this.removeAttribute('integrity');this.href='../../assets/vendor/bootstrap/bootstrap.min.css'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="this.onerror=null;this.removeAttribute('integrity');this.href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"">
+  <link rel="stylesheet" href="../../assets/css/course-learning-resources.css">
+</head>
+<body>
+  <!-- ======== Navigation ======== -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="d-flex align-items-center justify-content-between header-top">
+        <div class="d-flex align-items-center">
+          <button id="openMobileMenu" class="icon-control d-lg-none me-2" type="button" aria-label="Open navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+          <a href="../public/home.html" class="brand" aria-label="EduHub Homepage"><i class="fa-solid fa-graduation-cap brand-cap" aria-hidden="true"></i><span>Edu<span class="highlight">Hub</span></span></a>
+          <nav aria-label="Primary navigation" class="header-links d-none d-lg-flex">
+            <a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="../student/dashboard.html" aria-current="page">My Learning</a>
+          </nav>
+        </div>
+        <div class="user-tools">
+          <form class="course-search desktop-search d-none d-lg-block" role="search" action="../public/explore-courses.html" method="get">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><label for="desktopSearch" class="visually-hidden">Search courses</label><input id="desktopSearch" name="search" placeholder="Search courses..." autocomplete="off">
+          </form>
+          <button id="notificationsButton" class="icon-control" type="button" aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button>
+          <a href="../student/student-profile.html" class="user-avatar" aria-label="View Warda Mahmoud's profile">WM</a>
+          <div class="user-meta d-none d-lg-flex flex-column"><strong>Warda Mahmoud</strong><small>Student</small></div>
+          <button type="button" id="accountButton" aria-label="Account menu" class="user-menu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <div class="mobile-header-rows d-lg-none">
+        <nav class="mobile-nav" aria-label="Responsive navigation"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="../student/dashboard.html" aria-current="page">My Learning</a></nav>
+        <form class="course-search mobile-search" role="search" action="../public/explore-courses.html" method="get"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><label class="visually-hidden" for="mobileSearch">Search courses</label><input id="mobileSearch" name="search" placeholder="Search for courses..." autocomplete="off"></form>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== Course workspace ======== -->
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../student/dashboard.html">My Learning</a> / <span>Complete C# Programming</span></nav>
+    <h1 class="ed-heading course-title">Complete C# Programming</h1>
+    <div class="learning-grid">
+      <section class="lesson-workspace" aria-label="Current lesson">
+        <!-- Illustrative lesson slide: no copyrighted video or actual media is embedded -->
+        <section class="demo-player" aria-label="Illustrative lesson player (no video media connected)">
+          <div class="lesson-slide" id="lessonSlide">
+            <span class="slide-eyebrow" id="slideEyebrow">C# FUNDAMENTALS</span>
+            <h2 class="slide-title" id="slideTitle">Variables &amp; Data Types</h2>
+            <pre class="slide-code" id="slideCode">int age = 25;
+string name = "Warda";
+bool isLearning = true;</pre>
+            <button type="button" class="big-play" id="slidePlay" aria-label="Play illustrative timeline"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+          </div>
+          <div class="video-toolbar">
+            <label class="visually-hidden" for="videoSeek">Lesson timeline preview</label>
+            <input id="videoSeek" class="video-seek" type="range" min="0" max="1110" value="555" step="1" aria-label="Illustrative lesson timeline">
+            <div class="video-toolbar-row">
+              <button type="button" class="toolbar-button" id="toolbarPlay" aria-label="Play illustrative timeline"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <button type="button" class="toolbar-button" id="volumeButton" aria-label="Toggle illustrative audio icon"><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button>
+              <span class="toolbar-time" id="timeLabel">09:15 / 18:30</span>
+              <button type="button" class="toolbar-button toolbar-speed" id="speedButton" aria-label="Change demo playback speed">1×</button>
+              <button type="button" class="toolbar-button" id="fullscreenButton" aria-label="Expand lesson slide"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </section>
+        <div class="preview-notice" id="previewNotice" role="status" hidden>Illustrative timeline only — no lesson video or audio is connected.</div>
+        <div class="lesson-info" aria-live="polite">
+          <div id="sectionEyebrow" class="lesson-meta-eyebrow">SECTION 2 · C# FUNDAMENTALS</div>
+          <h2 id="lessonHeading" class="lesson-title">Variables and Data Types</h2>
+          <p id="lessonDescription" class="lesson-description">Declare values with confidence and choose the right type for your data.</p>
+        </div>
+        <div class="lesson-actions">
+          <button id="previousLesson" type="button" class="ed-btn">Previous Lesson</button>
+          <button id="markComplete" type="button" class="ed-btn ed-btn-primary complete-btn">Mark as Completed</button>
+          <button id="nextLesson" type="button" class="ed-btn">Next Lesson</button>
+        </div>
+        <div class="lesson-tabs" role="tablist" aria-label="Lesson details">
+          <button id="tabOverview" class="lesson-tab" type="button" role="tab" aria-controls="panelOverview" aria-selected="true" tabindex="0">Overview</button>
+          <button id="tabResources" class="lesson-tab" type="button" role="tab" aria-controls="panelResources" aria-selected="false" tabindex="-1">Resources</button>
+          <button id="tabNotes" class="lesson-tab" type="button" role="tab" aria-controls="panelNotes" aria-selected="false" tabindex="-1">Notes</button>
+        </div>
+        <section class="ed-surface tab-panel" id="panelOverview" role="tabpanel" aria-labelledby="tabOverview">
+          <h3 class="tab-title">About this lesson</h3>
+          <p class="tab-description" id="overviewText">Learn how C# stores information using variables and data types. Follow along as Ahmed declares values, names variables clearly and explains when to use int, string, double and bool.</p>
+          <h4 class="tab-subheading">What to practice</h4>
+          <p class="tab-description" id="practiceText">Declare three variables for a learner profile. Try changing their values, then print a short introduction to the console.</p>
+          <div class="instructor-byline"><span class="instructor-avatar">AM</span><div><strong>Ahmed Mohamed</strong><small>C# &amp; .NET Instructor | Web Developer</small></div></div>
+        </section>
+        <!-- Exact Resources tab content from Figma node 22:41572. The files are not supplied. -->
+        <section class="ed-surface tab-panel" id="panelResources" role="tabpanel" aria-labelledby="tabResources">
+          <h3 class="resource-heading">Lesson resources</h3>
+          <p class="resource-description">Put this lesson into practice with the files below.</p>
+          <ul class="resource-list" aria-label="Lesson resources">
+            <li class="resource-item">
+              <i class="fa-regular fa-file-lines resource-icon" aria-hidden="true"></i>
+              <div class="resource-info"><span class="resource-name">Variables &amp; Data Types — Reference Guide</span><span class="resource-detail">PDF · 420 KB</span></div>
+              <button type="button" class="resource-download" data-resource="Variables &amp; Data Types — Reference Guide" data-resource-kind="PDF · 420 KB" aria-label="Download Variables and Data Types Reference Guide PDF" title="Download reference guide"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+            </li>
+            <li class="resource-item">
+              <i class="fa-regular fa-file-lines resource-icon" aria-hidden="true"></i>
+              <div class="resource-info"><span class="resource-name">C# Fundamentals — Practice Exercises</span><span class="resource-detail">PDF · 680 KB</span></div>
+              <button type="button" class="resource-download" data-resource="C# Fundamentals — Practice Exercises" data-resource-kind="PDF · 680 KB" aria-label="Download C sharp Fundamentals Practice Exercises PDF" title="Download practice exercises"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+            </li>
+            <li class="resource-item">
+              <i class="fa-regular fa-file-lines resource-icon" aria-hidden="true"></i>
+              <div class="resource-info"><span class="resource-name">Starter Project — Variables</span><span class="resource-detail">ZIP · 24 KB</span></div>
+              <button type="button" class="resource-download" data-resource="Starter Project — Variables" data-resource-kind="ZIP · 24 KB" aria-label="Download Starter Project Variables ZIP" title="Download starter project"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+            </li>
+          </ul>
+        </section>
+        <section class="ed-surface tab-panel" id="panelNotes" role="tabpanel" aria-labelledby="tabNotes" hidden>
+          <h3 class="tab-title">My Notes</h3>
+          <a href="course-learning-notes.html" class="ed-btn mt-1 mb-3 w-100">Open Full Notes Editor</a>
+          <p class="tab-description">Draft private notes for this lesson in this browser session. Notes are not synced to your account.</p>
+          <label for="lessonNotes" class="fw-semibold d-block mb-2">Notes for <span id="notesLessonName">Variables and Data Types</span></label>
+          <textarea id="lessonNotes" class="notes-input" maxlength="2000" placeholder="Write what you want to remember..."></textarea>
+          <div class="d-flex justify-content-between align-items-center mt-3 gap-3"><span id="notesCounter" class="text-ed-muted small">0 / 2000</span><button id="saveNotes" class="ed-btn ed-btn-primary" type="button">Save Notes</button></div>
+        </section>
+      </section>
+
+      <!-- ======== Course progress and curriculum ======== -->
+      <aside class="curriculum-rail" aria-label="Course progress and curriculum">
+        <section class="ed-surface progress-card">
+          <h2 class="rail-title">Your learning journey</h2>
+          <div class="progress-label" id="progressLabel">Course Progress: 35%</div>
+          <div class="progress-bar-bg" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-label="Course progress" id="courseProgressBar"><div class="progress-bar-current" id="courseProgressFill"></div></div>
+          <p class="progress-help" id="progressNote">Watch-time-based progress · saved viewing across lessons</p>
+          <p class="progress-explainer" id="progressDescription">Resume at your own pace. Earlier lessons are complete; the current lesson is in progress.</p>
+        </section>
+        <div class="rail-heading"><h2 class="rail-title mb-0">Course Content</h2></div>
+        <p class="rail-subtitle">3 sections · 9 lessons · 2h 12m 50s</p>
+        <div id="curriculumList" class="curriculum-list"></div>
+        <section class="ed-surface quiz-card">
+          <h3><i class="fa-solid fa-lock" aria-hidden="true" id="quizIcon"></i>Final Quiz</h3>
+          <p>10 questions · 70% to pass. Complete all lessons before taking the final quiz.</p>
+          <button id="finalQuiz" type="button" class="ed-btn" disabled>Take Final Quiz</button>
+          <a id="viewCompletedState" href="course-learning-all-lessons-complete.html" class="ed-btn mt-2 text-center" hidden>View All Lessons Complete State</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  <!-- ======== Small-screen menu and notifications ======== -->
+  <dialog id="mobileMenu" class="mobile-menu" aria-label="Navigation menu">
+    <div class="d-flex align-items-center justify-content-between mb-4"><strong>EduHub Menu</strong><button id="closeMobileMenu" class="icon-control" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <nav aria-label="Mobile menu links"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="../student/dashboard.html">My Learning</a><a href="../student/student-profile.html">My Profile</a></nav>
+  </dialog>
+  <dialog class="resource-dialog" id="resourceDialog" aria-labelledby="resourceDialogTitle" aria-describedby="resourceDialogDescription">
+    <div class="d-flex align-items-center justify-content-between gap-3"><i class="fa-regular fa-file-lines text-primary fs-3" aria-hidden="true"></i><button type="button" id="resourceDialogCloseX" class="icon-control" aria-label="Close resource information"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <h2 id="resourceDialogTitle">Lesson resource</h2>
+    <p id="resourceDialogKind" class="small text-ed-muted"></p>
+    <p id="resourceDialogDescription">This resource is listed in the Figma prototype, but the actual file has not been provided. Connect the course-content service to enable a real download.</p>
+    <button type="button" id="resourceDialogClose" class="ed-btn ed-btn-primary w-100">Back to Resources</button>
+  </dialog>
+  <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+  <script src="../../assets/js/course-learning-resources.js"></script>
+
+<script src="../../assets/js/route-data.js"></script>
+</body>
+</html>

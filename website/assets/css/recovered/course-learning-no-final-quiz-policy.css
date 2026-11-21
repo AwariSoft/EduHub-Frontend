@@ -1,0 +1,227 @@
+
+    /* ==========================================================
+       01 — Figma tokens / reusable design-system rules
+       ========================================================== */
+    :root {
+      --ed-primary:#2563eb; --ed-primary-hover:#1d4ed8; --ed-text:#0f172a;
+      --ed-muted:#64748b; --ed-border:#e2e8f0; --ed-bg:#f8fafc;
+      --ed-blue-wash:#eff6ff; --ed-blue-pale:#dbeafe;
+      --ed-video:#101d36; --ed-video-toolbar:#0b1427;
+      --ed-green:#16a34a; --ed-radius:12px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-width:0;background:var(--ed-bg);color:var(--ed-text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}
+    a{color:var(--ed-primary);text-decoration:none}
+    a:hover{color:var(--ed-primary-hover)}
+    button,input,textarea{font:inherit}
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #2563eb7a;outline-offset:3px}
+    button{cursor:pointer}
+    button:disabled{cursor:not-allowed}
+    [hidden]{display:none!important}
+    .text-ed-muted{color:var(--ed-muted)!important}
+    .ed-surface{background:#fff;border:1px solid var(--ed-border);border-radius:var(--ed-radius)}
+    .ed-btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:48px;padding:10px 16px;border:1px solid var(--ed-border);border-radius:8px;background:#fff;color:var(--ed-text);font-size:14px;font-weight:600;transition:background .16s,border-color .16s,transform .12s}
+    .ed-btn:hover:not(:disabled){background:var(--ed-blue-wash);border-color:#bfdbfe;color:var(--ed-primary)}
+    .ed-btn:active:not(:disabled){transform:translateY(1px)}
+    .ed-btn-primary{color:#fff;background:var(--ed-primary);border-color:var(--ed-primary)}
+    .ed-btn-primary:hover:not(:disabled){color:#fff;background:var(--ed-primary-hover);border-color:var(--ed-primary-hover)}
+    .ed-btn:disabled{background:#e2e8f0;border-color:#e2e8f0;color:var(--ed-muted)}
+    .ed-heading{font-weight:700;color:var(--ed-text);line-height:1.3}
+    /* ==========================================================
+       02 — Shared account header and responsive navigation
+       ========================================================== */
+    .site-header{background:#fff;border-bottom:1px solid var(--ed-border)}
+    .site-header-inner{max-width:1440px;margin:auto;min-height:75px;padding:15.5px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .header-top{width:100%}
+    .brand{display:inline-flex;align-items:center;gap:8px;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;color:var(--ed-text);white-space:nowrap}
+    .brand:hover{color:var(--ed-text)}
+    .brand .brand-cap{font-size:28px;color:var(--ed-primary);width:32px;text-align:center}
+    .brand .highlight{color:var(--ed-primary)}
+    .header-links{display:flex;gap:24px;margin-left:32px}
+    .header-links a,.mobile-nav a{color:var(--ed-muted);white-space:nowrap}
+    .header-links a{font-size:14px}
+    .header-links a[aria-current="page"],.mobile-nav a[aria-current="page"]{color:var(--ed-primary);font-weight:600}
+    .header-links a:hover,.mobile-nav a:hover{color:var(--ed-primary)}
+    .user-tools{display:flex;align-items:center;gap:16px}
+    .course-search{position:relative;width:230px}
+    .course-search i{position:absolute;left:13px;top:14px;color:var(--ed-muted);pointer-events:none}
+    .course-search input{border:1px solid var(--ed-border);border-radius:8px;background:var(--ed-bg);height:44px;width:100%;padding:0 12px 0 38px;font-size:13px;outline:none}
+    .course-search input:focus{border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb16}
+    .icon-control{border:0;background:transparent;display:inline-flex;align-items:center;justify-content:center;color:var(--ed-muted);width:40px;height:44px;border-radius:8px;position:relative;flex-shrink:0;font-size:18px}
+    .icon-control:hover{background:var(--ed-blue-wash);color:var(--ed-primary)}
+    .notification-dot{width:6px;height:6px;background:var(--ed-primary);position:absolute;top:7px;right:8px;border-radius:50%}
+    .user-avatar,.instructor-avatar{display:inline-flex;align-items:center;justify-content:center;flex:none;width:40px;height:40px;border-radius:50%;background:var(--ed-blue-pale);color:var(--ed-primary);font-size:13px;font-weight:600}
+    .user-meta{white-space:nowrap;line-height:1.35}
+    .user-meta strong{font-size:13px;font-weight:600}
+    .user-meta small{font-size:11px;color:var(--ed-muted)}
+    .user-menu{border:0;background:transparent;color:var(--ed-muted);padding:8px;border-radius:8px}
+    .user-menu:hover{background:var(--ed-blue-wash)}
+    .mobile-header-rows{display:none}
+    .mobile-nav{height:44px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .mobile-nav a{font-size:13px;height:44px;display:flex;align-items:center}
+    .mobile-nav a[aria-current="page"]{border-bottom:2px solid var(--ed-primary)}
+    .mobile-search{width:100%;margin-top:16px}
+    /* ==========================================================
+       03 — Lesson workspace, video slide and controls
+       ========================================================== */
+    .page-shell{max-width:1440px;padding:64px;margin:auto}
+    .breadcrumbs{color:var(--ed-muted);font-size:13px;line-height:21px;margin-bottom:32px}
+    .breadcrumbs a{color:var(--ed-muted)}
+    .breadcrumbs a:hover{color:var(--ed-primary)}
+    .course-title{font-size:32px;line-height:42px;margin:0 0 32px;letter-spacing:-.45px}
+    .learning-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:32px;align-items:start}
+    .lesson-workspace{min-width:0;display:flex;flex-direction:column;gap:24px}
+    .demo-player{color:#fff;background:var(--ed-video);border-radius:12px;overflow:hidden}
+    .lesson-slide{height:414px;padding:40px;display:flex;flex-direction:column;gap:24px;justify-content:center}
+    .slide-eyebrow{font-size:12px;line-height:15px;font-weight:600;color:#93c5fd;text-transform:uppercase}
+    .slide-title{font-size:38px;line-height:1.3;font-weight:600;color:#fff;margin:0}
+    .slide-code{border-radius:8px;background:#182b48;padding:20px;color:#bfdbfe;font-size:19px;line-height:1.8;min-height:142px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;font-family:Inter,system-ui,sans-serif}
+    .big-play{width:56px;height:56px;flex:none;border-radius:50%;border:0;color:#fff;background:var(--ed-primary);display:grid;place-items:center;font-size:22px;transition:background .15s,transform .15s}
+    .big-play:hover{background:var(--ed-primary-hover);transform:scale(1.05)}
+    .video-toolbar{height:68px;background:var(--ed-video-toolbar);padding:16px;display:flex;flex-direction:column;gap:14px;color:#fff}
+    .video-seek{height:4px;width:100%;margin:0;display:block;appearance:none;-webkit-appearance:none;background:linear-gradient(90deg,var(--ed-primary) 50%,#334155 50%);cursor:pointer;outline-offset:5px;border-radius:99px}
+    .video-seek::-webkit-slider-thumb{appearance:none;width:10px;height:10px;background:var(--ed-primary);border:2px solid #fff;border-radius:50%;opacity:0}
+    .video-seek:hover::-webkit-slider-thumb,.video-seek:focus-visible::-webkit-slider-thumb{opacity:1}
+    .video-seek::-moz-range-thumb{width:8px;height:8px;background:var(--ed-primary);border:1px solid #fff;border-radius:50%;opacity:0}
+    .video-toolbar-row{height:18px;display:flex;gap:16px;align-items:center}
+    .toolbar-button{background:transparent;color:#fff;border:0;line-height:1;width:18px;height:20px;display:grid;place-items:center;padding:0;font-size:14px}
+    .toolbar-button:hover{color:#93c5fd}
+    .toolbar-time{font-size:12px;color:#e2e8f0;white-space:nowrap;flex:1}
+    .toolbar-speed{font-size:12px;color:#e2e8f0;min-width:22px}
+    .preview-notice{display:none;padding:6px 10px;border-radius:6px;background:#1e3a5f;color:#bfdbfe;font-size:11px}
+    .preview-notice:not([hidden]){display:block}
+    .lesson-meta-eyebrow{color:var(--ed-muted);font-size:12px;line-height:19px}
+    .lesson-title{font-size:30px;line-height:39px;margin:8px 0;color:var(--ed-text);font-weight:700}
+    .lesson-description{color:var(--ed-muted);font-size:14px;line-height:22px;margin:0}
+    .lesson-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .lesson-tabs{display:flex;align-items:center;gap:32px;min-height:48px;border-bottom:1px solid var(--ed-border)}
+    .lesson-tab{height:48px;border:0;border-bottom:2px solid transparent;padding:0;display:flex;align-items:center;color:var(--ed-muted);background:transparent;font-size:14px}
+    .lesson-tab:hover{color:var(--ed-primary)}
+    .lesson-tab[aria-selected="true"]{color:var(--ed-primary);border-bottom-color:var(--ed-primary);font-weight:600}
+    .tab-panel{padding:24px;min-width:0}
+    .tab-title{font-size:22px;line-height:29px;font-weight:700;margin:0 0 16px}
+    .tab-subheading{font-size:18px;line-height:23px;font-weight:700;margin:0 0 16px}
+    .tab-description{color:var(--ed-muted);font-size:14px;line-height:22px;margin:0 0 16px}
+    .instructor-byline{display:flex;gap:12px;align-items:center;margin-top:16px}
+    .instructor-byline strong{display:block;font-size:14px;font-weight:600}
+    .instructor-byline small{display:block;color:var(--ed-muted);font-size:12px;margin-top:2px}
+    .resources-list{padding:0;margin:0;list-style:none;display:grid;gap:10px}
+    .resources-list li{border:1px solid var(--ed-border);border-radius:8px;padding:12px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+    .resources-list span{font-size:13px}
+    .resources-list button{border:0;color:var(--ed-primary);background:transparent;font-size:13px;font-weight:600}
+    .notes-input{width:100%;min-height:112px;resize:vertical;border:1px solid var(--ed-border);border-radius:8px;padding:12px;color:var(--ed-text)}
+    /* ==========================================================
+       04 — Progress, accordion curriculum and certificate eligibility rail
+       ========================================================== */
+    .curriculum-rail{min-width:0}
+    .progress-card{padding:24px;min-height:226px}
+    .rail-title{font-size:20px;line-height:26px;font-weight:700;margin:0 0 16px}
+    .progress-label{font-size:14px;line-height:22px;margin:0 0 8px}
+    .progress-bar-bg{height:6px;width:100%;border-radius:50px;background:#e2e8f0;overflow:hidden;margin-bottom:8px}
+    .progress-bar-current{width:100%;height:100%;background:var(--ed-primary);border-radius:50px;transition:width .3s}
+    .progress-help{font-size:12px;color:var(--ed-muted);line-height:19px;margin:0 0 16px}
+    .progress-explainer{font-size:12px;color:var(--ed-muted);line-height:19px;margin:0}
+    .rail-heading{margin:20px 0 16px}
+    .rail-subtitle{font-size:12px;line-height:19px;margin:0 0 20px;color:var(--ed-muted)}
+    .curriculum-list{display:grid;gap:12px}
+    .curriculum-section{border-radius:8px;border:1px solid var(--ed-border);background:#fff;overflow:hidden}
+    .curriculum-section summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;min-height:77px}
+    .curriculum-section summary::-webkit-details-marker{display:none}
+    .curriculum-section summary:hover{background:var(--ed-bg)}
+    .section-label{font-size:14px;font-weight:600;color:var(--ed-text)}
+    .section-meta{font-size:12px;color:var(--ed-muted);line-height:19px;display:block;margin-top:4px}
+    .section-chevron{color:var(--ed-muted);font-size:12px;flex-shrink:0}
+    .curriculum-section[open] .section-chevron{transform:rotate(180deg)}
+    .lesson-item{width:100%;border:0;border-top:1px solid var(--ed-border);background:#fff;min-height:52px;padding:12px 16px;display:flex;align-items:center;gap:12px;text-align:left;color:var(--ed-text);font-size:13px}
+    .lesson-item:hover{background:var(--ed-bg)}
+    .lesson-item[aria-current="true"]{background:#eff6ff;color:var(--ed-primary);font-weight:600}
+    .lesson-item .lesson-state-icon{color:var(--ed-primary);width:18px;flex:none;text-align:center}
+    .lesson-item:not([aria-current="true"]) .lesson-state-icon.is-pending{color:var(--ed-muted)}
+    .lesson-item .lesson-item-name{flex:1;min-width:0;overflow-wrap:anywhere}
+    .lesson-item .lesson-duration{flex-shrink:0;color:var(--ed-muted);font-size:12px;font-weight:400}
+    .eligibility-card{padding:24px;margin-top:20px}
+    .eligibility-card h3{font-size:18px;font-weight:700;margin:0 0 16px;display:flex;gap:8px;align-items:center}
+    .eligibility-card h3 i{color:var(--ed-primary)}
+    .eligibility-card p{font-size:13px;color:var(--ed-muted);line-height:21px;margin:0 0 16px}
+    .eligibility-card .ed-btn{width:100%}
+    /* ==========================================================
+       05 — Mobile menu, live feedback, footer
+       ========================================================== */
+    .site-footer{margin:0;text-align:center;padding:22px 16px;border-top:1px solid var(--ed-border);font-size:12px;color:var(--ed-muted);min-height:63px}
+    .mobile-menu{padding:20px;border:0;margin:0 auto 0 0;height:100dvh;max-height:100dvh;width:min(320px,85vw);border-radius:0}
+    .mobile-menu::backdrop{background:#0f172a90}
+    .mobile-menu a{display:block;padding:12px;border-radius:8px;color:var(--ed-text);font-weight:600}
+    .mobile-menu a:hover{color:var(--ed-primary);background:var(--ed-blue-wash)}
+    .feedback{position:fixed;right:16px;bottom:16px;z-index:1000;padding:14px 16px;max-width:min(390px,calc(100vw - 32px));background:#fff;border:1px solid var(--ed-border);border-left:4px solid var(--ed-primary);box-shadow:0 12px 34px #0f172a25;border-radius:10px;font-size:13px;color:var(--ed-text)}
+    /* ==========================================================
+       06 — Layout breakpoints from the three Figma frames
+       ========================================================== */
+    @media (min-width:992px){.page-shell{min-height:1510px}}
+    @media (max-width:1199.98px){.site-header-inner{padding:16px 24px}.page-shell{padding:32px}}
+    @media (max-width:991.98px){
+      .site-header-inner{display:block;min-height:195px;padding:16px 24px 15px}
+      .header-top{min-height:44px}
+      .header-links,.desktop-search,.user-meta{display:none!important}
+      .mobile-header-rows{display:block}
+      .mobile-nav{margin-top:16px}
+      .mobile-search{display:block}
+      .learning-grid{display:flex;flex-direction:column;gap:32px}
+      .lesson-workspace,.curriculum-rail{width:100%}
+      .page-shell{padding:32px}
+      .user-tools{gap:16px}
+    }
+    @media (max-width:575.98px){
+      .site-header-inner{padding:16px 16px 15px;min-height:195px}
+      .user-tools{gap:8px}
+      .user-menu{padding:0 2px}
+      .page-shell{padding:16px}
+      .course-title{font-size:28px;line-height:36px;margin-bottom:32px;max-width:250px}
+      .lesson-slide{height:340px;padding:24px;gap:24px}
+      .slide-title{font-size:26px;line-height:1.3}
+      .slide-code{font-size:14px;line-height:1.8;min-height:104px;padding:16px}
+      .lesson-title{font-size:26px;line-height:34px}
+      .lesson-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .lesson-actions .complete-btn{grid-column:1/-1;grid-row:1}
+      .tab-panel{padding:24px}
+      .breadcrumbs{margin-bottom:32px}
+      .lesson-item{gap:10px;padding-inline:14px}
+      .lesson-item .lesson-duration{font-size:11px}
+    }
+    @media (max-width:350px){
+      .brand{font-size:24px}.brand .brand-cap{font-size:24px;width:26px}
+      .user-tools{gap:2px}
+      .lesson-slide{padding:16px}
+      .tab-panel,.progress-card,.eligibility-card{padding:16px}
+      .lesson-item{padding-inline:10px}
+    }
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* ==========================================================
+       07 — Figma: No Final Quiz Policy (state-specific styling)
+       ========================================================== */
+    .lesson-slide{height:380px}
+    .slide-code{min-height:108px}
+    .completion-card{min-height:222px;display:flex;flex-direction:column;align-items:stretch;gap:16px;padding:24px}
+    .completion-badge{height:25px;width:140px;flex-shrink:0;align-items:center;align-self:flex-start;display:inline-flex;align-items:center;border-radius:99px;padding:5px 10px;background:#f0fdf4;color:#15803d;font-size:12px;font-weight:600;line-height:15px}
+    .completion-heading{font-size:24px;line-height:31px;font-weight:700;margin:0}
+    .completion-description{font-size:14px;line-height:22px;color:var(--ed-muted);margin:0}
+    .completion-note{font-size:12px;line-height:19px;color:var(--ed-muted);margin:0}
+    .completion-card .ed-btn{width:100%}
+    @media (min-width:992px){.completion-card{height:222px}.lesson-tabs{height:48px;overflow:hidden}}
+    .progress-card{min-height:207px}
+    @media (min-width:992px){.progress-card{height:207px}.eligibility-card{height:129px}}
+    .eligibility-card p{margin-bottom:0}
+    .ed-btn.done-btn:disabled{color:var(--ed-text);background:#fff;border-color:var(--ed-border)}
+    .eligibility-dialog{border:1px solid var(--ed-border);border-radius:16px;max-width:min(480px,calc(100vw - 32px));width:100%;padding:24px;background:#fff;color:var(--ed-text);box-shadow:0 20px 65px #0f172a30}
+    .eligibility-dialog::backdrop{background:#0f172a80}
+    .eligibility-dialog h2{font-size:23px;font-weight:700;line-height:1.3}
+    .eligibility-dialog p{color:var(--ed-muted);line-height:1.6}
+    .eligibility-dialog .dialog-icon{width:48px;height:48px;background:#eff6ff;color:#2563eb;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;font-size:20px}
+    @media (max-width:575.98px){
+      .lesson-slide{height:340px}
+      .slide-code{min-height:104px}
+      .completion-heading{font-size:21px;line-height:28px}
+      .completion-card{min-height:unset}
+    }
+  

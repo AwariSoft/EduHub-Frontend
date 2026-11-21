@@ -1,0 +1,82 @@
+[
+  {
+    "viewport": 1440,
+    "h": 1800,
+    "horizontalOverflow": false,
+    "jsErrors": [],
+    "geometry": {
+      "doc": 1440,
+      "client": 1440,
+      "body": 1440,
+      "heading": 104,
+      "details": 219,
+      "media": 831,
+      "curriculum": 1212,
+      "sidebar": 232
+    }
+  },
+  {
+    "viewport": 834,
+    "h": 1200,
+    "horizontalOverflow": false,
+    "jsErrors": [],
+    "geometry": {
+      "doc": 834,
+      "client": 834,
+      "body": 834,
+      "heading": 97,
+      "details": 275,
+      "media": 863,
+      "curriculum": 1240,
+      "sidebar": 76
+    }
+  },
+  {
+    "viewport": 390,
+    "h": 900,
+    "horizontalOverflow": false,
+    "jsErrors": [],
+    "geometry": {
+      "doc": 390,
+      "client": 390,
+      "body": 390,
+      "heading": 84,
+      "details": 266,
+      "media": 1021,
+      "curriculum": 1416,
+      "sidebar": 0
+    }
+  },
+  {
+    "viewport": 320,
+    "h": 900,
+    "horizontalOverflow": false,
+    "jsErrors": [],
+    "geometry": {
+      "doc": 320,
+      "client": 320,
+      "body": 320,
+      "heading": 84,
+      "details": 266,
+      "media": 1036,
+      "curriculum": 1449,
+      "sidebar": 0
+    }
+  },
+  {
+    "interactionTests": {
+      "initial-section": true,
+      "add-section": true,
+      "add-lesson": true,
+      "edit-section": true,
+      "draft-save": true,
+      "draft-data": true,
+      "submission-incomplete-guard": true,
+      "account-menu": true,
+      "notifications": true,
+      "collapsed-sidebar": true,
+      "no-js-errors": true
+    },
+    "errors": []
+  }
+]

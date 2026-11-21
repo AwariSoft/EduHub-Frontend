@@ -1,0 +1,125 @@
+[
+  {
+    "viewport": 1440,
+    "overflow": false,
+    "jsErrors": [],
+    "metrics": {
+      "viewport": 1440,
+      "bodyWidth": 1440,
+      "documentWidth": 1440,
+      "boardWidth": 1440,
+      "sections": [
+        {
+          "y": 201,
+          "height": 432
+        },
+        {
+          "y": 665,
+          "height": 359
+        },
+        {
+          "y": 1056,
+          "height": 381
+        },
+        {
+          "y": 1469,
+          "height": 329
+        },
+        {
+          "y": 1830,
+          "height": 472
+        },
+        {
+          "y": 2334,
+          "height": 219
+        }
+      ],
+      "cards": 12,
+      "imagesOk": [
+        true
+      ]
+    }
+  },
+  {
+    "viewport": 834,
+    "overflow": false,
+    "jsErrors": [],
+    "metrics": {
+      "viewport": 834,
+      "bodyWidth": 834,
+      "documentWidth": 834,
+      "boardWidth": 834,
+      "sections": [
+        {
+          "y": 193,
+          "height": 452
+        },
+        {
+          "y": 677,
+          "height": 395
+        },
+        {
+          "y": 1104,
+          "height": 712
+        },
+        {
+          "y": 1848,
+          "height": 355
+        },
+        {
+          "y": 2234,
+          "height": 485
+        },
+        {
+          "y": 2751,
+          "height": 251
+        }
+      ],
+      "cards": 12,
+      "imagesOk": [
+        true
+      ]
+    }
+  },
+  {
+    "viewport": 390,
+    "overflow": false,
+    "jsErrors": [],
+    "metrics": {
+      "viewport": 390,
+      "bodyWidth": 390,
+      "documentWidth": 390,
+      "boardWidth": 390,
+      "sections": [
+        {
+          "y": 193,
+          "height": 805
+        },
+        {
+          "y": 1018,
+          "height": 678
+        },
+        {
+          "y": 1716,
+          "height": 1273
+        },
+        {
+          "y": 3013,
+          "height": 696
+        },
+        {
+          "y": 3729,
+          "height": 899
+        },
+        {
+          "y": 4647,
+          "height": 480
+        }
+      ],
+      "cards": 12,
+      "imagesOk": [
+        true
+      ]
+    }
+  }
+]

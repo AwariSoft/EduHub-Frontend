@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub instructor supporting UI states: menus, filters, uploads, thumbnail and form validation.">
+  <title>Menus, Uploads and Form States — EduHub Instructor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+<a href="#mainContent" class="skip-link">Skip to interface states</a>
+<!-- COMPONENT REFERENCE, NOT A STANDALONE WORKSPACE ROUTE.
+     Parent instructor pages retain the existing shared partial markers below. -->
+<!-- INCLUDE: partials/instructor-sidebar.html -->
+<!-- INCLUDE: partials/instructor-topbar.html -->
+<!-- INCLUDE: partials/footer.html -->
+<main class="ed-stateboard" id="mainContent">
+  <a class="ed-logo" href="eduhub-instructor-dashboard.html" aria-label="EduHub Instructor Dashboard"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span>Hub</span></span></a>
+  <header class="board-intro">
+    <h1>Menus, uploads and form states</h1>
+    <p>Static open menus and control states · All menus retain instructor-only scope.</p>
+  </header>
+
+  <!-- 01. Account menu and course actions: integrate into instructor topbar and My Courses -->
+  <section class="ed-section ed-two-col menu-row" aria-label="Account and course menus">
+    <article class="ed-card account-card">
+      <h2>Profile dropdown · Open</h2>
+      <button class="ed-account-trigger" id="accountMenuToggle" type="button" aria-controls="accountMenuBody" aria-expanded="true">
+        <span class="ed-avatar" aria-hidden="true">AM</span><span>Ahmed Mohamed</span><i id="accountMenuCaret" class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+      </button>
+      <div id="accountMenuBody">
+        <p class="ed-helper account-meta">ahmed.mohamed@eduhub.example · Instructor</p>
+        <label class="ed-menu-label" id="accountMenuLabel">Account menu</label>
+        <nav class="ed-menu account-menu" aria-labelledby="accountMenuLabel">
+          <a href="eduhub-instructor-my-profile.html" class="ed-menu-option">My Profile</a>
+          <a href="eduhub-instructor-settings.html" class="ed-menu-option">Settings</a>
+          <a href="eduhub-sign-in.html" class="ed-menu-option">Log Out</a>
+        </nav>
+      </div>
+    </article>
+
+    <article class="ed-card course-card">
+      <h2>Course action menu · Open</h2>
+      <p class="ed-copy course-description"><strong>JavaScript for Beginners</strong> · Draft ready for review</p>
+      <label class="ed-menu-label" id="courseMenuLabel">Course actions</label>
+      <nav class="ed-menu course-menu" aria-labelledby="courseMenuLabel">
+        <a href="eduhub-instructor-course-details-overview.html?course=javascript-for-beginners" class="ed-menu-option">View Course</a>
+        <a href="eduhub-instructor-edit-course.html?course=javascript-for-beginners" class="ed-menu-option">Edit Course</a>
+        <a href="eduhub-instructor-course-curriculum.html?course=javascript-for-beginners" class="ed-menu-option">Manage Curriculum</a>
+        <button type="button" class="ed-menu-option" id="submitCourseAction">Submit for Review</button>
+        <button type="button" class="ed-menu-option is-danger" id="deleteCourseAction">Delete Course</button>
+      </nav>
+      <p class="ed-helper course-hint">Submit for Review is available only when required information, thumbnail and lessons are complete. View Course opens the private instructor detail page, not a public draft.</p>
+    </article>
+  </section>
+
+  <!-- 02. Status-dependent disabled submissions + notification popover -->
+  <section class="ed-section ed-two-col status-row" aria-label="Submission and notification states">
+    <article class="ed-card status-card">
+      <h2>Status-dependent submission</h2>
+      <div class="status-block"><span class="ed-badge ed-badge--amber">● Pending Approval</span>
+        <div><button class="ed-btn" type="button" disabled title="Course already submitted">Submit for Review</button></div>
+        <p class="ed-description">Already under review. A submitted course cannot be submitted again.</p>
+      </div>
+      <div class="status-block"><span class="ed-badge ed-badge--green">● Published</span>
+        <div><button class="ed-btn" type="button" disabled title="No unpublished changes">Submit Revision for Review</button></div>
+        <p class="ed-description">No unpublished changes. Edit the course first; revisions require admin review. There is no direct Publish control.</p>
+      </div>
+    </article>
+    <article class="ed-card notify-card" id="notificationsCard">
+      <h2>Notifications popover · Open</h2>
+      <div id="notificationPanel" role="region" aria-label="Notifications preview">
+        <div class="notify-heading"><span>Notifications</span><button class="ed-notice-close" type="button" aria-label="Close notifications" id="closeNotifications"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+        <div class="ed-empty-icon" aria-hidden="true"><i class="fa-solid fa-xmark"></i></div>
+        <h3 class="notify-title">You’re all caught up</h3>
+        <p class="notify-copy">No new notifications. Enrollment activity and course review decisions will appear here.</p>
+        <p class="ed-helper">0 unread · Notification preferences in <a href="eduhub-instructor-settings.html">Settings</a></p>
+      </div>
+      <button type="button" class="ed-btn notify-reopen" id="openNotifications" hidden><i class="fa-regular fa-bell" aria-hidden="true"></i> Open notifications</button>
+    </article>
+  </section>
+
+  <!-- 03. Open filters: integrate with Dashboard / My Courses / Students / Analytics -->
+  <section class="ed-section" aria-label="Filter dropdown states">
+    <article class="ed-card filter-card">
+      <h2>Filter dropdowns · Open</h2>
+      <div class="filter-grid">
+        <div class="filter-cell ed-dropdown" data-filter="course-status">
+          <label class="ed-menu-label" id="statusFilterLabel">Course status</label>
+          <button type="button" class="ed-filter-trigger" aria-label="Toggle course status menu" aria-expanded="true" aria-controls="statusOptions"><span class="filter-current">All statuses</span><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
+          <div class="ed-menu-wrap" id="statusOptions"><div class="ed-menu" role="group" aria-labelledby="statusFilterLabel">
+            <button type="button" class="ed-menu-option is-selected" data-value="All statuses" aria-pressed="true">All statuses <i class="fa-solid fa-check" aria-hidden="true"></i></button>
+            <button type="button" class="ed-menu-option" data-value="Draft" aria-pressed="false">Draft</button>
+            <button type="button" class="ed-menu-option" data-value="Pending Approval" aria-pressed="false">Pending Approval</button>
+            <button type="button" class="ed-menu-option" data-value="Published" aria-pressed="false">Published</button>
+            <button type="button" class="ed-menu-option" data-value="Rejected" aria-pressed="false">Rejected</button>
+          </div></div>
+        </div>
+        <div class="filter-cell ed-dropdown" data-filter="category">
+          <label class="ed-menu-label" id="categoryFilterLabel">Category</label>
+          <button type="button" class="ed-filter-trigger" aria-label="Toggle category menu" aria-expanded="true" aria-controls="categoryOptions"><span class="filter-current">All categories</span><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
+          <div class="ed-menu-wrap" id="categoryOptions"><div class="ed-menu" role="group" aria-labelledby="categoryFilterLabel">
+            <button type="button" class="ed-menu-option is-selected" data-value="All categories" aria-pressed="true">All categories <i class="fa-solid fa-check" aria-hidden="true"></i></button>
+            <button type="button" class="ed-menu-option" data-value="Programming" aria-pressed="false">Programming</button>
+            <button type="button" class="ed-menu-option" data-value="Web Development" aria-pressed="false">Web Development</button>
+            <button type="button" class="ed-menu-option" data-value="Database" aria-pressed="false">Database</button>
+          </div></div>
+        </div>
+        <div class="filter-cell ed-dropdown" data-filter="period">
+          <label class="ed-menu-label" id="periodFilterLabel">Period</label>
+          <button type="button" class="ed-filter-trigger" aria-label="Toggle period menu" aria-expanded="true" aria-controls="periodOptions"><span class="filter-current">All Time</span><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
+          <div class="ed-menu-wrap" id="periodOptions"><div class="ed-menu" role="group" aria-labelledby="periodFilterLabel">
+            <button type="button" class="ed-menu-option" data-value="Last 7 Days" aria-pressed="false">Last 7 Days</button>
+            <button type="button" class="ed-menu-option" data-value="Last 30 Days" aria-pressed="false">Last 30 Days</button>
+            <button type="button" class="ed-menu-option" data-value="Last 3 Months" aria-pressed="false">Last 3 Months</button>
+            <button type="button" class="ed-menu-option is-selected" data-value="All Time" aria-pressed="true">All Time <i class="fa-solid fa-check" aria-hidden="true"></i></button>
+          </div></div>
+        </div>
+        <div class="filter-cell ed-dropdown" data-filter="enrollment-date">
+          <label class="ed-menu-label" id="dateFilterLabel">Enrollment date</label>
+          <button type="button" class="ed-filter-trigger" aria-label="Toggle enrollment date menu" aria-expanded="true" aria-controls="dateOptions"><span class="filter-current">All dates</span><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
+          <div class="ed-menu-wrap" id="dateOptions"><div class="ed-menu" role="group" aria-labelledby="dateFilterLabel">
+            <button type="button" class="ed-menu-option is-selected" data-value="All dates" aria-pressed="true">All dates <i class="fa-solid fa-check" aria-hidden="true"></i></button>
+            <button type="button" class="ed-menu-option" data-value="Last 7 Days" aria-pressed="false">Last 7 Days</button>
+            <button type="button" class="ed-menu-option" data-value="Last 30 Days" aria-pressed="false">Last 30 Days</button>
+            <button type="button" class="ed-menu-option" data-value="Custom range..." aria-pressed="false">Custom range...</button>
+          </div></div>
+        </div>
+      </div>
+      <p class="ed-helper">Dashboard period options: Last 7 Days / Last 30 Days / Last 3 Months. Analytics additionally offers All Time.</p>
+    </article>
+  </section>
+
+  <!-- 04. Video upload: examples of a transfer in progress and rejected file -->
+  <section class="ed-section ed-two-col upload-row" aria-label="Video upload states">
+    <article class="ed-card upload-progress-card" id="progressCard">
+      <h2>Video upload · In progress</h2>
+      <p class="upload-file" id="progressFilename">variables-data-types.mp4</p>
+      <p class="upload-status" id="progressStatus">Uploading · 94.7 MB of 148 MB · 64%</p>
+      <p class="upload-percentage" id="progressPercent">64%</p>
+      <div class="upload-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64" aria-label="Video upload progress" id="uploadProgress"><div class="upload-fill" id="uploadFill"></div></div>
+      <div class="ed-guidance ed-guidance--blue" id="uploadTip"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Keep this page open until the upload finishes. Preview is unavailable during upload.</span></div>
+      <button type="button" class="ed-btn" id="cancelUpload">Cancel Upload</button>
+      <button type="button" class="ed-btn ed-btn--primary" id="restartUpload" hidden>Choose Video</button>
+    </article>
+    <article class="ed-card upload-error-card" id="errorUploadCard">
+      <h2>Video upload · Error</h2>
+      <span class="ed-badge ed-badge--red" id="videoErrorBadge">● Upload failed</span>
+      <p class="upload-file" id="errorFilename">lesson-recording.mov · 628 MB</p>
+      <div class="ed-guidance ed-guidance--error" id="videoErrorAlert" role="alert"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i><span id="videoErrorText">This file exceeds the 500 MB limit. Compress the video or choose a smaller file, then try again.</span></div>
+      <div class="upload-actions">
+        <button type="button" class="ed-btn ed-btn--primary" id="chooseVideo">Choose Another Video</button>
+        <button type="button" class="ed-btn" id="removeVideo">Remove File</button>
+        <input type="file" class="file-hidden" id="videoFileInput" accept="video/mp4,video/quicktime,video/webm,.mp4,.mov,.webm" aria-label="Choose replacement video">
+      </div>
+      <p class="ed-helper">MP4, MOV or WebM · Max 500 MB</p>
+    </article>
+  </section>
+
+  <!-- 05. Thumbnail, pricing state, and course-title error -->
+  <section class="ed-section thumb-row" aria-label="Thumbnail and pricing form states">
+    <article class="ed-card thumb-card">
+      <h2>Thumbnail · Preview and replace</h2>
+      <div class="thumb-preview" id="thumbnailPreview">
+        <img src="assets/images/javascript-beginners-placeholder.jpeg" id="thumbnailImg" alt="JavaScript course thumbnail, coding displayed on a monitor">
+        <div class="thumb-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i><div>No image selected</div></div>
+      </div>
+      <p class="thumb-file-meta" id="thumbnailMeta">javascript-beginners.jpg · 684 KB · 1280 × 720</p>
+      <div class="thumb-actions">
+        <button type="button" class="ed-btn ed-btn--primary" id="chooseThumbnail">Upload Image</button>
+        <button type="button" class="ed-btn" id="removeThumbnail">Remove Image</button>
+        <input type="file" class="file-hidden" id="thumbnailInput" accept="image/png,image/jpeg,.png,.jpg,.jpeg" aria-label="Upload or replace course thumbnail">
+      </div>
+      <div class="ed-dropzone" id="thumbnailDropzone" role="button" tabindex="0" aria-label="Drop image to replace thumbnail or press Enter to choose image"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i><span id="dropzoneText">Drop your image to replace the thumbnail</span></div>
+      <p class="ed-validation-message" id="thumbnailError" aria-live="polite" hidden></p>
+    </article>
+    <div class="right-form-stack">
+      <article class="ed-card pricing-card" id="pricingCard">
+        <h2>Pricing · Free selected</h2>
+        <fieldset style="margin:0;padding:0;border:0"><legend class="visually-hidden">Course pricing type</legend>
+          <div class="pricing-options"><label class="ed-radio"><input type="radio" name="priceType" value="free" checked> Free</label><label class="ed-radio"><input type="radio" name="priceType" value="paid"> Paid</label></div>
+        </fieldset>
+        <p class="ed-copy" id="pricingDescription" style="color:var(--eh-muted)">Students can enroll at no cost after admin approval. Course Price and currency fields are hidden for a free course.</p>
+        <div class="pricing-fields" id="pricingFields" hidden>
+          <div><label class="ed-form-label" for="coursePrice">Course Price *</label><input id="coursePrice" class="ed-input" type="number" min="1" step="0.01" placeholder="49.00" aria-describedby="priceHelp"></div>
+          <div><label class="ed-form-label" for="currency">Currency *</label><select id="currency" class="ed-input"><option value="USD">USD</option><option value="EGP">EGP</option><option value="EUR">EUR</option></select></div>
+          <p class="ed-validation-message" id="priceHelp" aria-live="polite" style="grid-column:1/-1" hidden>Enter a price greater than zero.</p>
+        </div>
+      </article>
+      <article class="ed-card error-card">
+        <h2>Form validation · Representative error</h2>
+        <label for="courseTitle" class="ed-form-label">Course Title *</label>
+        <input id="courseTitle" class="ed-input is-invalid" value="C#" type="text" minlength="5" aria-invalid="true" aria-describedby="courseTitleError">
+        <p class="ed-validation-message" id="courseTitleError" aria-live="polite">Use at least 5 characters so students understand your course topic.</p>
+        <p class="ed-helper">Other fields retain their values. Focus the first field that needs attention.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 06. Saved-state feedback and lesson-duration validation -->
+  <section class="ed-section ed-two-col feedback-row" aria-label="Save confirmation and lesson form validation">
+    <article class="ed-card saved-card">
+      <h2>Saved confirmation</h2>
+      <div class="ed-guidance ed-guidance--success" role="status"><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Your changes have been saved. Existing curriculum and lesson resources are preserved.</span></div>
+      <p class="ed-description">Published-course changes are saved as a revision and still require review.</p>
+    </article>
+    <article class="ed-card lesson-card">
+      <h2>Lesson helper and validation</h2>
+      <label for="lessonDuration" class="ed-form-label">Duration (mm:ss) *</label>
+      <input class="ed-input is-invalid" id="lessonDuration" type="text" value="00:00" inputmode="numeric" aria-invalid="true" aria-describedby="lessonDurationError" placeholder="00:00">
+      <p class="ed-validation-message" id="lessonDurationError" aria-live="polite">Upload a video and confirm a duration greater than 00:00 before saving.</p>
+      <p class="ed-helper">Lesson Title, Section, Order and a valid video are required. Resource attachments are optional.</p>
+    </article>
+  </section>
+</main>
+
+<!-- Demo only: confirmation dialogs do not call server endpoints. -->
+<div class="ed-modal-backdrop" id="confirmationModal" hidden>
+  <div class="ed-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+    <div class="ed-modal-header"><h2 id="modalTitle">Confirm action</h2><button class="ed-modal-close" id="closeModal" type="button" aria-label="Close dialog">&times;</button></div>
+    <p class="ed-modal-body" id="modalDescription"></p>
+    <div id="customRangeFields" hidden><div class="d-flex gap-2 mb-3"><div class="flex-fill"><label class="ed-form-label" for="dateFrom">From</label><input class="ed-input" id="dateFrom" type="date"></div><div class="flex-fill"><label class="ed-form-label" for="dateTo">To</label><input class="ed-input" id="dateTo" type="date"></div></div><p class="ed-validation-message" id="dateRangeError" hidden>Please choose a valid date range.</p></div>
+    <div class="ed-modal-footer"><button type="button" id="modalCancel" class="ed-btn">Cancel</button><button type="button" id="modalConfirm" class="ed-btn ed-btn--primary">Confirm</button></div>
+  </div>
+</div>
+<div class="ed-toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="assets/js/main.js"></script>
+</body></html>

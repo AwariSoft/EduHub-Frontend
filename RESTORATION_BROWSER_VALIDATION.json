@@ -1,0 +1,410 @@
+{
+  "source_count": 32,
+  "css_loaded_count": 32,
+  "pages_with_original_mobile_overflow": 0,
+  "pages_with_tablet_overflow": 0,
+  "pages_with_desktop_overflow": 0,
+  "runtime_errors": [],
+  "visual_comparisons": [
+    {
+      "source": "eduhub-homepage.html",
+      "original_size": [
+        393,
+        9797
+      ],
+      "restored_size": [
+        393,
+        9799
+      ],
+      "mean_rgb_delta": null
+    },
+    {
+      "source": "eduhub-sign-in.html",
+      "original_size": [
+        390,
+        820
+      ],
+      "restored_size": [
+        390,
+        820
+      ],
+      "mean_rgb_delta": 0.0
+    },
+    {
+      "source": "eduhub-student-dashboard.html",
+      "original_size": [
+        390,
+        2900
+      ],
+      "restored_size": [
+        390,
+        2900
+      ],
+      "mean_rgb_delta": 0.1327
+    },
+    {
+      "source": "eduhub-checkout.html",
+      "original_size": [
+        390,
+        1862
+      ],
+      "restored_size": [
+        390,
+        1862
+      ],
+      "mean_rgb_delta": 0.0
+    },
+    {
+      "source": "eduhub-course-learning-notes.html",
+      "original_size": [
+        390,
+        3026
+      ],
+      "restored_size": [
+        390,
+        3026
+      ],
+      "mean_rgb_delta": 0.0
+    },
+    {
+      "source": "eduhub-final-quiz.html",
+      "original_size": [
+        390,
+        1703
+      ],
+      "restored_size": [
+        390,
+        1703
+      ],
+      "mean_rgb_delta": 0.0
+    }
+  ],
+  "screens": [
+    {
+      "source": "eduhub-homepage.html",
+      "title": "EduHub | Learn Today. Build Tomorrow.",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 3873,
+      "overflow_834": false,
+      "overflow_1440": false,
+      "screenshot": "validation-previews/eduhub-homepage-390.png"
+    },
+    {
+      "source": "eduhub-new-student-dashboard.html",
+      "title": "New Student Dashboard | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 806,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-notification-states-and-roles.html",
+      "title": "Notification States and Roles | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 2750,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-page-not-found.html",
+      "title": "404 — Page Not Found | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 186,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-password-recovery-states.html",
+      "title": "Password Recovery States | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1438,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-password-reset-states.html",
+      "title": "Password Reset States | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 2451,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-payment-failed.html",
+      "title": "Payment Failed | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 527,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-payment-failed-additional-state.html",
+      "title": "Payment Failed — Additional State | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 427,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-payment-processing.html",
+      "title": "Payment Processing — Complete C# Programming | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 423,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-payment-success.html",
+      "title": "Payment Successful | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 481,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-payment-successful.html",
+      "title": "Payment Successful — Complete C# Programming | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 373,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-quiz-result-pass.html",
+      "title": "Quiz Result — Pass | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 507,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-reset-password.html",
+      "title": "Reset Password | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 325,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-sign-in.html",
+      "title": "Sign In | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 287,
+      "overflow_834": false,
+      "overflow_1440": false,
+      "screenshot": "validation-previews/eduhub-sign-in-390.png"
+    },
+    {
+      "source": "eduhub-student-dashboard.html",
+      "title": "Student Dashboard | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1181,
+      "overflow_834": false,
+      "overflow_1440": false,
+      "screenshot": "validation-previews/eduhub-student-dashboard-390.png"
+    },
+    {
+      "source": "eduhub-student-profile.html",
+      "title": "My Profile | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 796,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-access-denied.html",
+      "title": "Access Denied | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 273,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-checkout.html",
+      "title": "Checkout — Complete C# Programming | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 695,
+      "overflow_834": false,
+      "overflow_1440": false,
+      "screenshot": "validation-previews/eduhub-checkout-390.png"
+    },
+    {
+      "source": "eduhub-course-details-already-enrolled.html",
+      "title": "Complete C# Programming — Already Enrolled | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 2969,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-course-details-free.html",
+      "title": "Database Design Fundamentals — Free Course | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 2604,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-course-learning.html",
+      "title": "Course Learning — Complete C# Programming | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1588,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-course-learning-all-lessons-complete.html",
+      "title": "Course Learning — All Lessons Complete | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1728,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-course-learning-no-final-quiz-policy.html",
+      "title": "Course Learning — No Final Quiz Policy | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1705,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-course-learning-notes.html",
+      "title": "Course Learning — Notes | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1583,
+      "overflow_834": false,
+      "overflow_1440": false,
+      "screenshot": "validation-previews/eduhub-course-learning-notes-390.png"
+    },
+    {
+      "source": "eduhub-course-learning-resources.html",
+      "title": "Course Learning — Resources | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1406,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-create-account.html",
+      "title": "Create Your Account | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 426,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-edit-student-profile.html",
+      "title": "Edit Profile | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 629,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-explore-courses.html",
+      "title": "Explore Courses | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1115,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-explore-courses-mobile-filters-open.html",
+      "title": "Filters & Sort | Explore Courses | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 396,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-final-quiz.html",
+      "title": "Final Quiz — Complete C# Programming | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 732,
+      "overflow_834": false,
+      "overflow_1440": false,
+      "screenshot": "validation-previews/eduhub-final-quiz-390.png"
+    },
+    {
+      "source": "eduhub-forgot-password.html",
+      "title": "Forgot Password | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 263,
+      "overflow_834": false,
+      "overflow_1440": false
+    },
+    {
+      "source": "eduhub-free-course-learning-database-design-fundamentals.html",
+      "title": "Free Course Learning — Database Design Fundamentals | EduHub",
+      "css_loaded": true,
+      "overflow_390": false,
+      "js_errors": [],
+      "visible_text": 1251,
+      "overflow_834": false,
+      "overflow_1440": false
+    }
+  ]
+}

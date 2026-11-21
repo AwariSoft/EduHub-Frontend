@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Add a lesson to Complete C# Programming in EduHub.">
+<title>Add Lesson | EduHub Instructor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="{{BASE}}assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="{{BASE}}assets/css/main.css" rel="stylesheet"></head>
+<body data-eduhub-layout="workspace" data-eduhub-role="instructor">
+<a href="#main-content" class="visually-hidden-focusable">Skip to lesson form</a>
+<div class="edu-workspace d-lg-flex">
+<!-- INCLUDE: partials/sidebar.html -->
+<div class="edu-workspace__main d-flex flex-column">
+<!-- INCLUDE: partials/workspace-topbar.html -->
+<main id="main-content" class="container-fluid px-3 px-md-4 py-4 flex-grow-1">
+<div class="edu-lesson-shell">
+<nav aria-label="Breadcrumb"><ol class="breadcrumb small"><li class="breadcrumb-item"><a href="{{BASE}}pages/instructor/my-courses.html">My Courses</a></li><li class="breadcrumb-item"><a href="{{BASE}}pages/instructor/course-curriculum.html">Course Curriculum</a></li><li class="breadcrumb-item active" aria-current="page">Add Lesson</li></ol></nav>
+<header class="mb-4"><h1 class="h3 fw-bold">Add Lesson</h1><p class="text-secondary mb-0">Create a focused lesson for Complete C# Programming.</p></header>
+<div class="alert edu-lesson-notice d-flex gap-2" role="note"><i class="fa-solid fa-circle-info mt-1" aria-hidden="true"></i><div><strong>Complete C# Programming</strong> · Published-course changes require review. Existing approved lessons stay available until a revision is approved.</div></div>
+<form id="eduAddLessonForm" class="needs-validation" novalidate>
+<section class="card edu-lesson-panel mb-4 edu-ui-card" aria-labelledby="lessonInfoHeading"><div class="card-body p-3 p-md-4">
+<h2 id="lessonInfoHeading" class="h5 fw-bold mb-4">Lesson Information</h2>
+<div class="mb-4"><label for="eduLessonTitle" class="form-label fw-semibold">Lesson Title <span class="text-danger" aria-label="required">*</span></label>
+<input id="eduLessonTitle" name="title" class="form-control" type="text" maxlength="120" required placeholder="Enter a descriptive lesson title" aria-describedby="eduLessonTitleHelp">
+<div id="eduLessonTitleHelp" class="form-text">Use a concise title describing one learning outcome.</div><div class="invalid-feedback">Enter a lesson title.</div></div>
+<div class="mb-4"><label for="eduLessonDescription" class="form-label fw-semibold">Description</label><textarea id="eduLessonDescription" name="description" class="form-control" rows="5" placeholder="Explain what students will learn and what they should prepare for this lesson."></textarea></div>
+<div class="row g-3"><div class="col-md-8"><label for="eduLessonSection" class="form-label fw-semibold">Section <span class="text-danger" aria-label="required">*</span></label>
+<select id="eduLessonSection" name="section" class="form-select" required><option value="csharp-fundamentals" selected>C# Fundamentals</option></select><div class="invalid-feedback">Select a section.</div></div>
+<div class="col-md-4"><label for="eduLessonOrder" class="form-label fw-semibold">Order <span class="text-danger" aria-label="required">*</span></label><input id="eduLessonOrder" name="order" type="number" class="form-control" min="1" max="999" step="1" value="4" required><div class="form-text">Position within this section.</div><div class="invalid-feedback">Enter an order from 1 to 999.</div></div></div>
+</div></section>
+<section class="card edu-lesson-panel mb-4 edu-ui-card" aria-labelledby="videoHeading"><div class="card-body p-3 p-md-4">
+<div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-3"><h2 id="videoHeading" class="h5 fw-bold mb-0">Video Upload</h2><span class="small text-secondary">Use clear audio and readable code. MP4, MOV or WebM · Max 500 MB.</span></div>
+<div class="edu-lesson-dropzone text-center p-4" id="eduVideoDropzone" tabindex="0" role="button" aria-label="Select or drop a lesson video">
+<i class="fa-solid fa-cloud-arrow-up fa-2x text-primary mb-3" aria-hidden="true"></i><p class="fw-semibold mb-1">Drag and drop your video here</p><p class="small text-secondary">MP4, MOV or WebM · Max 500 MB</p>
+<button class="btn btn-outline-primary" type="button" id="eduChooseVideo">Upload Video</button>
+<input id="eduVideoFile" name="video" class="visually-hidden" type="file" accept=".mp4,.mov,.webm,video/mp4,video/quicktime,video/webm" aria-describedby="eduVideoStatus">
+</div><div id="eduVideoStatus" class="small text-secondary mt-3" role="status" aria-live="polite">Preview will be available after a video has been uploaded. No video is attached yet.</div>
+<video id="eduVideoPreview" class="edu-lesson-video mt-3 d-none d-block w-100" controls preload="metadata" aria-label="Selected lesson video preview"></video>
+<div class="mt-4"><label for="eduLessonDuration" class="form-label fw-semibold">Duration (mm:ss) <span class="text-danger" aria-label="required">*</span></label><input id="eduLessonDuration" name="duration" type="text" class="form-control edu-lesson-duration" inputmode="numeric" pattern="^[0-9]+:[0-5][0-9]$" value="00:00" required aria-describedby="eduDurationHelp"><div id="eduDurationHelp" class="form-text">Detected after upload; confirm before saving.</div><div class="invalid-feedback">Use mm:ss (for example 08:30).</div></div>
+</div></section>
+<section class="card edu-lesson-panel mb-4 edu-ui-card" aria-labelledby="resourcesHeading"><div class="card-body p-3 p-md-4">
+<h2 id="resourcesHeading" class="h5 fw-bold mb-2">Resources</h2><p class="text-secondary small">Optional · PDFs, documents and downloadable practice material.</p>
+<div class="edu-lesson-resource-box p-3 mb-3"><p id="eduResourceEmpty" class="text-secondary mb-0">No resources attached. Add a reference sheet or exercise to support this lesson.</p><ul id="eduResourceList" class="list-group list-group-flush d-none" aria-live="polite"></ul></div>
+<button type="button" class="btn btn-outline-primary" id="eduChooseResources"><i class="fa-solid fa-paperclip me-2" aria-hidden="true"></i>Attach Resources</button>
+<input id="eduResourceFiles" type="file" class="visually-hidden" multiple accept=".pdf,.docx,.pptx,.zip" aria-label="Select resource files">
+<p class="form-text mt-2">PDF, DOCX, PPTX or ZIP · Max 25 MB per file</p><div id="eduResourceStatus" class="small" role="status" aria-live="polite"></div>
+</div></section>
+<div class="d-flex flex-column flex-sm-row justify-content-end gap-2 pb-4">
+<a href="{{BASE}}pages/instructor/course-curriculum.html" class="btn btn-outline-secondary order-2 order-sm-1">Cancel</a>
+<button id="eduSaveLesson" type="submit" class="btn btn-primary order-1 order-sm-2"><i class="fa-solid fa-floppy-disk me-2" aria-hidden="true"></i>Save Lesson</button>
+</div><div id="eduLessonSubmitStatus" role="status" aria-live="polite" class="small mb-4"></div>
+</form></div></main>
+<!-- INCLUDE: partials/footer.html -->
+</div></div>
+<script src="{{BASE}}assets/vendor/bootstrap/bootstrap.bundle.min.js"></script><script src="{{BASE}}assets/js/main.js"></script>
+</body></html>

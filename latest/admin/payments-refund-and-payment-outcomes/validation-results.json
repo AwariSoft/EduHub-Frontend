@@ -1,0 +1,659 @@
+{
+  "summary": {
+    "passed": 49,
+    "total": 49,
+    "failures": []
+  },
+  "checks": [
+    {
+      "name": "1120px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1120px four panels visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px payment identifiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px three local images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original 1120x4435 Figma sheet",
+      "passed": true,
+      "detail": {
+        "width": 1120,
+        "height": 4435,
+        "brand": {
+          "x": 40,
+          "y": 40,
+          "width": 1040,
+          "height": 34
+        },
+        "intro": {
+          "x": 40,
+          "y": 106,
+          "width": 1040,
+          "height": 111
+        },
+        "confirm": {
+          "x": 40,
+          "y": 249,
+          "width": 1040,
+          "height": 695
+        },
+        "dialog": {
+          "x": 40,
+          "y": 288,
+          "width": 512,
+          "height": 656
+        },
+        "request": {
+          "x": 576,
+          "y": 288,
+          "width": 504,
+          "height": 425
+        },
+        "success": {
+          "x": 40,
+          "y": 976,
+          "width": 1040,
+          "height": 1254
+        },
+        "successRecord": {
+          "x": 40,
+          "y": 1023,
+          "width": 508,
+          "height": 403
+        },
+        "successCourse": {
+          "x": 40,
+          "y": 1450,
+          "width": 1040,
+          "height": 264
+        },
+        "successOutcome": {
+          "x": 40,
+          "y": 1738,
+          "width": 1040,
+          "height": 492
+        },
+        "failed": {
+          "x": 40,
+          "y": 2262,
+          "width": 1040,
+          "height": 1080
+        },
+        "failedOutcome": {
+          "x": 40,
+          "y": 3024,
+          "width": 1040,
+          "height": 318
+        },
+        "pending": {
+          "x": 40,
+          "y": 3374,
+          "width": 1040,
+          "height": 1021
+        },
+        "pendingOutcome": {
+          "x": 40,
+          "y": 4136,
+          "width": 1040,
+          "height": 259
+        }
+      }
+    },
+    {
+      "name": "Original panel positions and dimensions",
+      "passed": true,
+      "detail": {
+        "width": 1120,
+        "height": 4435,
+        "brand": {
+          "x": 40,
+          "y": 40,
+          "width": 1040,
+          "height": 34
+        },
+        "intro": {
+          "x": 40,
+          "y": 106,
+          "width": 1040,
+          "height": 111
+        },
+        "confirm": {
+          "x": 40,
+          "y": 249,
+          "width": 1040,
+          "height": 695
+        },
+        "dialog": {
+          "x": 40,
+          "y": 288,
+          "width": 512,
+          "height": 656
+        },
+        "request": {
+          "x": 576,
+          "y": 288,
+          "width": 504,
+          "height": 425
+        },
+        "success": {
+          "x": 40,
+          "y": 976,
+          "width": 1040,
+          "height": 1254
+        },
+        "successRecord": {
+          "x": 40,
+          "y": 1023,
+          "width": 508,
+          "height": 403
+        },
+        "successCourse": {
+          "x": 40,
+          "y": 1450,
+          "width": 1040,
+          "height": 264
+        },
+        "successOutcome": {
+          "x": 40,
+          "y": 1738,
+          "width": 1040,
+          "height": 492
+        },
+        "failed": {
+          "x": 40,
+          "y": 2262,
+          "width": 1040,
+          "height": 1080
+        },
+        "failedOutcome": {
+          "x": 40,
+          "y": 3024,
+          "width": 1040,
+          "height": 318
+        },
+        "pending": {
+          "x": 40,
+          "y": 3374,
+          "width": 1040,
+          "height": 1021
+        },
+        "pendingOutcome": {
+          "x": 40,
+          "y": 4136,
+          "width": 1040,
+          "height": 259
+        }
+      }
+    },
+    {
+      "name": "Dialog and request heights",
+      "passed": true,
+      "detail": {
+        "width": 1120,
+        "height": 4435,
+        "brand": {
+          "x": 40,
+          "y": 40,
+          "width": 1040,
+          "height": 34
+        },
+        "intro": {
+          "x": 40,
+          "y": 106,
+          "width": 1040,
+          "height": 111
+        },
+        "confirm": {
+          "x": 40,
+          "y": 249,
+          "width": 1040,
+          "height": 695
+        },
+        "dialog": {
+          "x": 40,
+          "y": 288,
+          "width": 512,
+          "height": 656
+        },
+        "request": {
+          "x": 576,
+          "y": 288,
+          "width": 504,
+          "height": 425
+        },
+        "success": {
+          "x": 40,
+          "y": 976,
+          "width": 1040,
+          "height": 1254
+        },
+        "successRecord": {
+          "x": 40,
+          "y": 1023,
+          "width": 508,
+          "height": 403
+        },
+        "successCourse": {
+          "x": 40,
+          "y": 1450,
+          "width": 1040,
+          "height": 264
+        },
+        "successOutcome": {
+          "x": 40,
+          "y": 1738,
+          "width": 1040,
+          "height": 492
+        },
+        "failed": {
+          "x": 40,
+          "y": 2262,
+          "width": 1040,
+          "height": 1080
+        },
+        "failedOutcome": {
+          "x": 40,
+          "y": 3024,
+          "width": 1040,
+          "height": 318
+        },
+        "pending": {
+          "x": 40,
+          "y": 3374,
+          "width": 1040,
+          "height": 1021
+        },
+        "pendingOutcome": {
+          "x": 40,
+          "y": 4136,
+          "width": 1040,
+          "height": 259
+        }
+      }
+    },
+    {
+      "name": "Original payment and course heights",
+      "passed": true,
+      "detail": {
+        "width": 1120,
+        "height": 4435,
+        "brand": {
+          "x": 40,
+          "y": 40,
+          "width": 1040,
+          "height": 34
+        },
+        "intro": {
+          "x": 40,
+          "y": 106,
+          "width": 1040,
+          "height": 111
+        },
+        "confirm": {
+          "x": 40,
+          "y": 249,
+          "width": 1040,
+          "height": 695
+        },
+        "dialog": {
+          "x": 40,
+          "y": 288,
+          "width": 512,
+          "height": 656
+        },
+        "request": {
+          "x": 576,
+          "y": 288,
+          "width": 504,
+          "height": 425
+        },
+        "success": {
+          "x": 40,
+          "y": 976,
+          "width": 1040,
+          "height": 1254
+        },
+        "successRecord": {
+          "x": 40,
+          "y": 1023,
+          "width": 508,
+          "height": 403
+        },
+        "successCourse": {
+          "x": 40,
+          "y": 1450,
+          "width": 1040,
+          "height": 264
+        },
+        "successOutcome": {
+          "x": 40,
+          "y": 1738,
+          "width": 1040,
+          "height": 492
+        },
+        "failed": {
+          "x": 40,
+          "y": 2262,
+          "width": 1040,
+          "height": 1080
+        },
+        "failedOutcome": {
+          "x": 40,
+          "y": 3024,
+          "width": 1040,
+          "height": 318
+        },
+        "pending": {
+          "x": 40,
+          "y": 3374,
+          "width": 1040,
+          "height": 1021
+        },
+        "pendingOutcome": {
+          "x": 40,
+          "y": 4136,
+          "width": 1040,
+          "height": 259
+        }
+      }
+    },
+    {
+      "name": "Outcome card heights",
+      "passed": true,
+      "detail": {
+        "width": 1120,
+        "height": 4435,
+        "brand": {
+          "x": 40,
+          "y": 40,
+          "width": 1040,
+          "height": 34
+        },
+        "intro": {
+          "x": 40,
+          "y": 106,
+          "width": 1040,
+          "height": 111
+        },
+        "confirm": {
+          "x": 40,
+          "y": 249,
+          "width": 1040,
+          "height": 695
+        },
+        "dialog": {
+          "x": 40,
+          "y": 288,
+          "width": 512,
+          "height": 656
+        },
+        "request": {
+          "x": 576,
+          "y": 288,
+          "width": 504,
+          "height": 425
+        },
+        "success": {
+          "x": 40,
+          "y": 976,
+          "width": 1040,
+          "height": 1254
+        },
+        "successRecord": {
+          "x": 40,
+          "y": 1023,
+          "width": 508,
+          "height": 403
+        },
+        "successCourse": {
+          "x": 40,
+          "y": 1450,
+          "width": 1040,
+          "height": 264
+        },
+        "successOutcome": {
+          "x": 40,
+          "y": 1738,
+          "width": 1040,
+          "height": 492
+        },
+        "failed": {
+          "x": 40,
+          "y": 2262,
+          "width": 1040,
+          "height": 1080
+        },
+        "failedOutcome": {
+          "x": 40,
+          "y": 3024,
+          "width": 1040,
+          "height": 318
+        },
+        "pending": {
+          "x": 40,
+          "y": 3374,
+          "width": 1040,
+          "height": 1021
+        },
+        "pendingOutcome": {
+          "x": 40,
+          "y": 4136,
+          "width": 1040,
+          "height": 259
+        }
+      }
+    },
+    {
+      "name": "Initial state Completed and Active",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Cancel preserves payment status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Cancel preserves enrollment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Cancel announces outcome",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dismiss toast hides feedback",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refund changes status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refund cancels enrollment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refund button disables duplicate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refund highlights retained payment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original payment ID retained after refund",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refund notice includes no money moved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Failed payment unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pending payment unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset restores Completed and Active",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset re-enables button",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset clears highlight",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset hides toast",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Close confirmation preserves state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Escape closes toast",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1440px four panels visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px payment identifiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px three local images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "834px four panels visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px payment identifiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px three local images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px four panels visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px payment identifiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px three local images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px four panels visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px payment identifiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px three local images",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

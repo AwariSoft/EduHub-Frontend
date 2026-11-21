@@ -1,0 +1,191 @@
+{
+  "1440": {
+    "height": 1140,
+    "overflow": false,
+    "intro": {
+      "x": 40,
+      "y": 106,
+      "w": 1360,
+      "h": 63
+    },
+    "courses": {
+      "x": 40,
+      "y": 201,
+      "w": 668,
+      "h": 423
+    },
+    "students": {
+      "x": 732,
+      "y": 201,
+      "w": 668,
+      "h": 423
+    },
+    "analytics": {
+      "x": 40,
+      "y": 656,
+      "w": 668,
+      "h": 438
+    },
+    "notifications": {
+      "x": 732,
+      "y": 656,
+      "w": 668,
+      "h": 444
+    },
+    "logo": {
+      "x": 40,
+      "y": 40,
+      "w": 142.703125,
+      "h": 34
+    },
+    "jsErrors": [],
+    "iconsVisible": "\"\"",
+    "modalOpens": true,
+    "modalClosesWithEscape": true,
+    "modalClosesByButton": true,
+    "actions": [
+      {
+        "text": "Create Your First Course",
+        "href": "eduhub-instructor-create-course.html"
+      },
+      {
+        "text": "Create New Course",
+        "href": "eduhub-instructor-create-course.html"
+      },
+      {
+        "text": "Back to Dashboard",
+        "href": "eduhub-instructor-dashboard.html"
+      },
+      {
+        "text": "View Instructor Course Details",
+        "href": "eduhub-instructor-course-details-overview.html"
+      }
+    ]
+  },
+  "834": {
+    "height": 1196,
+    "overflow": false,
+    "intro": {
+      "x": 30,
+      "y": 90,
+      "w": 774,
+      "h": 63
+    },
+    "courses": {
+      "x": 30,
+      "y": 179,
+      "w": 377,
+      "h": 448
+    },
+    "students": {
+      "x": 427,
+      "y": 179,
+      "w": 377,
+      "h": 481
+    },
+    "analytics": {
+      "x": 30,
+      "y": 686,
+      "w": 377,
+      "h": 480
+    },
+    "notifications": {
+      "x": 427,
+      "y": 686,
+      "w": 377,
+      "h": 430
+    },
+    "logo": {
+      "x": 30,
+      "y": 30,
+      "w": 142.703125,
+      "h": 34
+    },
+    "jsErrors": [],
+    "iconsVisible": "\"\""
+  },
+  "390": {
+    "height": 2056,
+    "overflow": false,
+    "intro": {
+      "x": 16,
+      "y": 80,
+      "w": 358,
+      "h": 79
+    },
+    "courses": {
+      "x": 16,
+      "y": 183,
+      "w": 358,
+      "h": 436
+    },
+    "students": {
+      "x": 16,
+      "y": 637,
+      "w": 358,
+      "h": 465
+    },
+    "analytics": {
+      "x": 16,
+      "y": 1126,
+      "w": 358,
+      "h": 462
+    },
+    "notifications": {
+      "x": 16,
+      "y": 1606,
+      "w": 358,
+      "h": 418
+    },
+    "logo": {
+      "x": 16,
+      "y": 22,
+      "w": 131.125,
+      "h": 34
+    },
+    "jsErrors": [],
+    "iconsVisible": "\"\""
+  },
+  "320": {
+    "height": 2212,
+    "overflow": false,
+    "intro": {
+      "x": 12,
+      "y": 76,
+      "w": 296,
+      "h": 79
+    },
+    "courses": {
+      "x": 12,
+      "y": 179,
+      "w": 296,
+      "h": 461
+    },
+    "students": {
+      "x": 12,
+      "y": 658,
+      "w": 296,
+      "h": 524
+    },
+    "analytics": {
+      "x": 12,
+      "y": 1206,
+      "w": 296,
+      "h": 501
+    },
+    "notifications": {
+      "x": 12,
+      "y": 1725,
+      "w": 296,
+      "h": 457
+    },
+    "logo": {
+      "x": 12,
+      "y": 18,
+      "w": 131.125,
+      "h": 34
+    },
+    "jsErrors": [],
+    "iconsVisible": "\"\""
+  }
+}

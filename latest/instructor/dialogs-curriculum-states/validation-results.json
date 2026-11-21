@@ -1,0 +1,83 @@
+[
+  {
+    "width": 1440,
+    "overflow": false,
+    "js_errors": [],
+    "metrics": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "cardCount": 7,
+      "regions": [
+        {
+          "top": 201,
+          "height": 438
+        },
+        {
+          "top": 671,
+          "height": 392
+        },
+        {
+          "top": 1095,
+          "height": 456
+        }
+      ],
+      "h1": "Dialogs and curriculum states",
+      "loadedFont": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    }
+  },
+  {
+    "width": 834,
+    "overflow": false,
+    "js_errors": [],
+    "metrics": {
+      "viewport": 834,
+      "scrollWidth": 834,
+      "bodyWidth": 834,
+      "cardCount": 7,
+      "regions": [
+        {
+          "top": 185,
+          "height": 789
+        },
+        {
+          "top": 998,
+          "height": 796
+        },
+        {
+          "top": 1818,
+          "height": 910
+        }
+      ],
+      "h1": "Dialogs and curriculum states",
+      "loadedFont": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    }
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "js_errors": [],
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "cardCount": 7,
+      "regions": [
+        {
+          "top": 184,
+          "height": 938
+        },
+        {
+          "top": 1146,
+          "height": 860
+        },
+        {
+          "top": 2030,
+          "height": 967
+        }
+      ],
+      "h1": "Dialogs and curriculum states",
+      "loadedFont": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    }
+  }
+]

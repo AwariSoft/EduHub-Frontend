@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "complete_original_course_allows_confirmation": true,
+    "confirmation_cancel_keeps_draft": true,
+    "confirmation_is_frontend_only": true,
+    "local_image_replacement": true,
+    "remove_thumbnail_updates_checklist": true,
+    "restore_thumbnail_checklist": true,
+    "sidebar_course_fact_updates": true,
+    "local_save_persists_title": true,
+    "no_errors": true
+  },
+  "errors": []
+}

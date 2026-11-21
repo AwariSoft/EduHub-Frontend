@@ -1,0 +1,549 @@
+{
+  "summary": {
+    "passed": 44,
+    "total": 44,
+    "failures": []
+  },
+  "checks": [
+    {
+      "name": "1120px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scroll": 1120,
+        "width": 1120,
+        "height": 1506,
+        "row1": {
+          "y": 228,
+          "h": 613,
+          "w": 1040,
+          "x": 40
+        },
+        "row2": {
+          "y": 873,
+          "h": 593,
+          "w": 1040,
+          "x": 40
+        },
+        "l1": {
+          "y": 267,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r1": {
+          "y": 267,
+          "h": 574,
+          "w": 508,
+          "x": 572
+        },
+        "l2": {
+          "y": 912,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r2": {
+          "y": 912,
+          "h": 554,
+          "w": 508,
+          "x": 572
+        }
+      }
+    },
+    {
+      "name": "1120px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1120px all four panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px status roles present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px both confirmations actionable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original page dimensions 1120x1506",
+      "passed": true,
+      "detail": {
+        "scroll": 1120,
+        "width": 1120,
+        "height": 1506,
+        "row1": {
+          "y": 228,
+          "h": 613,
+          "w": 1040,
+          "x": 40
+        },
+        "row2": {
+          "y": 873,
+          "h": 593,
+          "w": 1040,
+          "x": 40
+        },
+        "l1": {
+          "y": 267,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r1": {
+          "y": 267,
+          "h": 574,
+          "w": 508,
+          "x": 572
+        },
+        "l2": {
+          "y": 912,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r2": {
+          "y": 912,
+          "h": 554,
+          "w": 508,
+          "x": 572
+        }
+      }
+    },
+    {
+      "name": "Original row geometry",
+      "passed": true,
+      "detail": {
+        "scroll": 1120,
+        "width": 1120,
+        "height": 1506,
+        "row1": {
+          "y": 228,
+          "h": 613,
+          "w": 1040,
+          "x": 40
+        },
+        "row2": {
+          "y": 873,
+          "h": 593,
+          "w": 1040,
+          "x": 40
+        },
+        "l1": {
+          "y": 267,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r1": {
+          "y": 267,
+          "h": 574,
+          "w": 508,
+          "x": 572
+        },
+        "l2": {
+          "y": 912,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r2": {
+          "y": 912,
+          "h": 554,
+          "w": 508,
+          "x": 572
+        }
+      }
+    },
+    {
+      "name": "Original card heights",
+      "passed": true,
+      "detail": {
+        "scroll": 1120,
+        "width": 1120,
+        "height": 1506,
+        "row1": {
+          "y": 228,
+          "h": 613,
+          "w": 1040,
+          "x": 40
+        },
+        "row2": {
+          "y": 873,
+          "h": 593,
+          "w": 1040,
+          "x": 40
+        },
+        "l1": {
+          "y": 267,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r1": {
+          "y": 267,
+          "h": 574,
+          "w": 508,
+          "x": 572
+        },
+        "l2": {
+          "y": 912,
+          "h": 436,
+          "w": 508,
+          "x": 40
+        },
+        "r2": {
+          "y": 912,
+          "h": 554,
+          "w": 508,
+          "x": 572
+        }
+      }
+    },
+    {
+      "name": "Default account Active",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Cancel deactivate keeps Active",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Dismiss feedback hides toast",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Deactivate makes status Inactive",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Deactivation result highlighted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Duplicate deactivation idempotent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Result reactivation button targets confirmation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Activate restores status Active",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Activation result highlighted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Duplicate activation idempotent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Escape dismisses feedback",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset returns to Active",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset removes result highlight",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset hides feedback",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Original identity appears four times",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No remote SVG image required",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scroll": 1440,
+        "width": 1440,
+        "height": 1506,
+        "row1": {
+          "y": 228,
+          "h": 613,
+          "w": 1040,
+          "x": 200
+        },
+        "row2": {
+          "y": 873,
+          "h": 593,
+          "w": 1040,
+          "x": 200
+        },
+        "l1": {
+          "y": 267,
+          "h": 436,
+          "w": 508,
+          "x": 200
+        },
+        "r1": {
+          "y": 267,
+          "h": 574,
+          "w": 508,
+          "x": 732
+        },
+        "l2": {
+          "y": 912,
+          "h": 436,
+          "w": 508,
+          "x": 200
+        },
+        "r2": {
+          "y": 912,
+          "h": 554,
+          "w": 508,
+          "x": 732
+        }
+      }
+    },
+    {
+      "name": "1440px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1440px all four panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px status roles present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px both confirmations actionable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scroll": 834,
+        "width": 834,
+        "height": 1499,
+        "row1": {
+          "y": 233,
+          "h": 613,
+          "w": 770,
+          "x": 32
+        },
+        "row2": {
+          "y": 874,
+          "h": 593,
+          "w": 770,
+          "x": 32
+        },
+        "l1": {
+          "y": 272,
+          "h": 449,
+          "w": 373,
+          "x": 32
+        },
+        "r1": {
+          "y": 272,
+          "h": 574,
+          "w": 373,
+          "x": 429
+        },
+        "l2": {
+          "y": 913,
+          "h": 449,
+          "w": 373,
+          "x": 32
+        },
+        "r2": {
+          "y": 913,
+          "h": 554,
+          "w": 373,
+          "x": 429
+        }
+      }
+    },
+    {
+      "name": "834px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "834px all four panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px status roles present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px both confirmations actionable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scroll": 390,
+        "width": 390,
+        "height": 2379,
+        "row1": {
+          "y": 247,
+          "h": 1065,
+          "w": 362,
+          "x": 14
+        },
+        "row2": {
+          "y": 1334,
+          "h": 1025,
+          "w": 362,
+          "x": 14
+        },
+        "l1": {
+          "y": 282,
+          "h": 415,
+          "w": 362,
+          "x": 14
+        },
+        "r1": {
+          "y": 756,
+          "h": 556,
+          "w": 362,
+          "x": 14
+        },
+        "l2": {
+          "y": 1369,
+          "h": 395,
+          "w": 362,
+          "x": 14
+        },
+        "r2": {
+          "y": 1823,
+          "h": 536,
+          "w": 362,
+          "x": 14
+        }
+      }
+    },
+    {
+      "name": "390px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px all four panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px status roles present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px both confirmations actionable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scroll": 320,
+        "width": 320,
+        "height": 2408,
+        "row1": {
+          "y": 243,
+          "h": 1098,
+          "w": 300,
+          "x": 10
+        },
+        "row2": {
+          "y": 1363,
+          "h": 1029,
+          "w": 300,
+          "x": 10
+        },
+        "l1": {
+          "y": 278,
+          "h": 433,
+          "w": 300,
+          "x": 10
+        },
+        "r1": {
+          "y": 793,
+          "h": 548,
+          "w": 300,
+          "x": 10
+        },
+        "l2": {
+          "y": 1398,
+          "h": 407,
+          "w": 300,
+          "x": 10
+        },
+        "r2": {
+          "y": 1864,
+          "h": 528,
+          "w": 300,
+          "x": 10
+        }
+      }
+    },
+    {
+      "name": "320px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px all four panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px status roles present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px both confirmations actionable",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

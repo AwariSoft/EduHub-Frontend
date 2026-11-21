@@ -1,0 +1,112 @@
+[
+  {
+    "kind": "viewport",
+    "width": 1440,
+    "pass": true,
+    "details": {
+      "scroll": 1440,
+      "width": 1440,
+      "fullHeight": 2808,
+      "main": 1208,
+      "image": 320,
+      "cards": 4,
+      "rows": 12
+    },
+    "jsErrors": []
+  },
+  {
+    "kind": "viewport",
+    "width": 834,
+    "pass": true,
+    "details": {
+      "scroll": 834,
+      "width": 834,
+      "fullHeight": 3964,
+      "main": 758,
+      "image": 320,
+      "cards": 4,
+      "rows": 12
+    },
+    "jsErrors": []
+  },
+  {
+    "kind": "viewport",
+    "width": 390,
+    "pass": true,
+    "details": {
+      "scroll": 390,
+      "width": 390,
+      "fullHeight": 4198,
+      "main": 390,
+      "image": 320,
+      "cards": 4,
+      "rows": 12
+    },
+    "jsErrors": []
+  },
+  {
+    "kind": "viewport",
+    "width": 320,
+    "pass": true,
+    "details": {
+      "scroll": 320,
+      "width": 320,
+      "fullHeight": 4215,
+      "main": 320,
+      "image": 320,
+      "cards": 4,
+      "rows": 12
+    },
+    "jsErrors": []
+  },
+  {
+    "kind": "interaction",
+    "test": "curriculum collapse and expand",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "lesson preview dialog",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "approve cancel safe",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "reject reason required",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "reject saves local decision and reason",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "reset local decision",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "approve saved local result and public disclaimer",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "instructor detail and Escape",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "account and notification menus",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "mobile sidebar and search",
+    "pass": true
+  }
+]

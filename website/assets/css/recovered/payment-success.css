@@ -1,0 +1,137 @@
+
+    /* ---------------------------------------------------------------
+       Design tokens: Figma EduHub public/student workspace
+       --------------------------------------------------------------- */
+    :root {
+      --eh-blue: #2563eb;
+      --eh-blue-hover: #1d4ed8;
+      --eh-ink: #0f172a;
+      --eh-muted: #64748b;
+      --eh-border: #e2e8f0;
+      --eh-surface: #f8fafc;
+      --eh-soft-blue: #dbeafe;
+      --eh-success: #15803d;
+      --eh-success-soft: #f0fdf4;
+      --eh-card-radius: 12px;
+      --eh-control-radius: 8px;
+      --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      --bs-body-color: var(--eh-ink);
+      --bs-body-bg: var(--eh-surface);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--eh-surface); color: var(--eh-ink); font-family: var(--bs-body-font-family); -webkit-font-smoothing: antialiased; }
+    a { color: var(--eh-blue); text-decoration: none; }
+    a:hover { color: var(--eh-blue-hover); }
+    button, a, input { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid #93c5fd !important; outline-offset: 3px; }
+    .text-muted-edu { color: var(--eh-muted) !important; }
+
+    /* ---------------------------------------------------------------
+       Account header / responsive navigation
+       --------------------------------------------------------------- */
+    .site-header { height: 72px; background: #fff; border-bottom: 1px solid var(--eh-border); }
+    .site-header__top { height: 72px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--eh-ink); white-space: nowrap; }
+    .brand:hover { color: var(--eh-ink); }
+    .brand__icon { color: var(--eh-blue); font-size: 30px; width: 32px; text-align: center; line-height: 34px; }
+    .brand__name { font-size: 28px; font-weight: 700; letter-spacing: -1.15px; line-height: 34px; }
+    .brand__name span { color: var(--eh-blue); }
+    .primary-nav { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 28px; padding: 0; margin: 0; list-style: none; }
+    .primary-nav a { color: var(--eh-muted); font-size: 14px; line-height: 17px; }
+    .primary-nav a.is-current { color: var(--eh-muted); font-weight: 600; }
+    .primary-nav a:hover { color: var(--eh-blue); }
+    .header-account { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+    .header-icon { width: 20px; height: 40px; border: 0; padding: 0; background: transparent; color: var(--eh-muted); font-size: 19px; display: grid; place-items: center; cursor: pointer; }
+    .header-icon:hover { color: var(--eh-blue); }
+    .avatar-sm { display: grid; place-items: center; flex: 0 0 40px; height: 40px; width: 40px; background: var(--eh-soft-blue); color: var(--eh-blue); border-radius: 50%; font-size: 13px; font-weight: 600; }
+    .account-name { font-size: 13px; line-height: 16px; font-weight: 600; margin: 0; white-space: nowrap; }
+    .account-role { font-size: 11px; line-height: 13px; margin: 2px 0 0; color: var(--eh-muted); }
+    .site-header__bottom { display: none; }
+    .responsive-nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .responsive-nav a { font-size: 12px; color: var(--eh-blue); font-weight: 500; line-height: 15px; }
+    .responsive-nav a:hover { color: var(--eh-blue-hover); }
+    .header-menu { display: none; }
+
+    /* ---------------------------------------------------------------
+       Payment confirmation layout
+       --------------------------------------------------------------- */
+    .payment-main { padding: 40px 72px; }
+    .payment-breadcrumb { font-size: 12px; line-height: 19px; color: var(--eh-muted); margin: 0 0 32px; }
+    .payment-breadcrumb a { color: inherit; }
+    .payment-breadcrumb a:hover { color: var(--eh-blue); }
+    .confirmation-card { max-width: 680px; width: 100%; margin: 0 auto; background: #fff; border: 1px solid var(--eh-border); border-radius: var(--eh-card-radius); padding: 39px; }
+    .confirmation-heading { text-align: center; }
+    .outcome-icon { width: 80px; height: 80px; background: var(--eh-success-soft); border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px; color: var(--eh-success); }
+    .outcome-icon i { font-size: 36px; line-height: 1; }
+    .confirmation-heading h1 { font-size: 32px; font-weight: 700; letter-spacing: -.8px; line-height: 40px; margin: 0 0 16px; }
+    .confirmation-heading p { color: var(--eh-muted); font-size: 15px; line-height: 24px; margin: 0; }
+    .course-strip { background: var(--eh-surface); border-radius: var(--eh-card-radius); height: 104px; padding: 16px; display: flex; align-items: center; gap: 16px; margin-top: 24px; }
+    .course-thumb { display: block; flex: 0 0 96px; width: 96px; height: 72px; object-fit: cover; border-radius: 8px; }
+    .course-strip h2 { font-size: 14px; font-weight: 600; line-height: 22px; margin: 0 0 4px; }
+    .course-strip p { font-size: 13px; line-height: 21px; color: var(--eh-muted); margin: 0; }
+    .receipt-details { margin-top: 24px; }
+    .receipt-item { min-height: 40px; margin-bottom: 16px; }
+    .receipt-item dt { color: var(--eh-muted); font-size: 12px; font-weight: 400; line-height: 15px; margin-bottom: 4px; }
+    .receipt-item dd { color: var(--eh-ink); font-size: 14px; line-height: 21px; font-weight: 500; margin: 0; }
+    .receipt-item dd.total { font-weight: 700; }
+    .receipt-status { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 10px; background: var(--eh-success-soft); color: var(--eh-success); border-radius: 999px; font-size: 12px; font-weight: 600; line-height: 17px; }
+    .payment-actions { display: grid; gap: 12px; margin-top: 24px; }
+    .btn-edu { height: 48px; border-radius: var(--eh-control-radius); font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; transition: background-color .18s, border-color .18s, box-shadow .18s, transform .18s; }
+    .btn-edu:active { transform: translateY(1px); }
+    .btn-edu-primary { color: #fff; background: var(--eh-blue); border: 1px solid var(--eh-blue); }
+    .btn-edu-primary:hover, .btn-edu-primary:focus { color: #fff; background: var(--eh-blue-hover); border-color: var(--eh-blue-hover); }
+    .btn-edu-secondary { color: var(--eh-ink); background: #fff; border: 1px solid var(--eh-border); }
+    .btn-edu-secondary:hover, .btn-edu-secondary:focus { color: var(--eh-blue); background: var(--eh-surface); border-color: #93c5fd; }
+    .sample-note { margin: 24px 0 0; font-size: 11px; line-height: 18px; text-align: center; color: var(--eh-muted); }
+    .site-footer { height: 63px; border-top: 1px solid var(--eh-border); color: var(--eh-muted); font-size: 12px; display: flex; align-items: center; justify-content: center; }
+    .site-footer p { margin: 0; }
+
+    /* ---------------------------------------------------------------
+       Small interaction surfaces (not additional pages)
+       --------------------------------------------------------------- */
+    .overlay-backdrop { position: fixed; inset: 0; z-index: 1030; background: rgba(15,23,42,.46); }
+    .mini-panel { position: fixed; z-index: 1031; right: 0; top: 0; width: min(320px, 90vw); height: 100dvh; padding: 24px; background: #fff; box-shadow: -10px 0 30px rgba(15,23,42,.13); overflow-y: auto; }
+    .mini-panel a { display: flex; gap: 12px; padding: 12px 8px; color: var(--eh-ink); border-radius: 8px; font-size: 14px; }
+    .mini-panel a:hover { color: var(--eh-blue); background: var(--eh-surface); }
+    .mini-panel h2 { font-size: 18px; font-weight: 700; }
+    .notice-dialog { z-index: 1040; max-width: 420px; width: calc(100vw - 40px); position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 12px 32px rgba(15,23,42,.17); }
+    .notice-dialog h2 { font-size: 20px; font-weight: 700; }
+    .notice-dialog p { font-size: 14px; line-height: 1.6; color: var(--eh-muted); }
+    [hidden] { display: none !important; }
+
+    /* ---------------------------------------------------------------
+       Responsive adaptations follow the Figma 1440 / 834 / 390 frames.
+       --------------------------------------------------------------- */
+    @media (max-width: 1199.98px) {
+      .site-header { height: 103px; }
+      .site-header__top { height: 72px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+      .primary-nav { display: none; }
+      .site-header__bottom { height: 31px; padding: 0 32px 16px; display: flex; align-items: flex-start; }
+      .payment-main { padding: 40px 32px; }
+    }
+    @media (max-width: 575.98px) {
+      .site-header__top { padding: 0 20px; }
+      .site-header__bottom { padding: 0 20px 16px; }
+      .account-identity { display: none; }
+      .header-account { gap: 12px; }
+      .header-menu { display: grid; }
+      .payment-main { padding: 40px 20px; }
+      .confirmation-card { padding: 23px; }
+      .confirmation-heading h1 { font-size: 28px; line-height: 35px; letter-spacing: -.55px; }
+      .course-strip { height: 79px; }
+      .course-thumb { display: none; }
+      .receipt-details { margin-top: 24px; }
+    }
+    @media (max-width: 359px) {
+      .brand__icon { width: 25px; font-size: 25px; }
+      .brand__name { font-size: 23px; }
+      .header-account { gap: 9px; }
+      .site-header__top, .site-header__bottom { padding-left: 12px; padding-right: 12px; }
+      .payment-main { padding-left: 12px; padding-right: 12px; }
+      .confirmation-card { padding: 19px; }
+      .confirmation-heading h1 { font-size: 25px; }
+      .responsive-nav a { font-size: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  

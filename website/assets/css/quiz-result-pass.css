@@ -1,0 +1,118 @@
+/* 01 — EduHub brand tokens. Bootstrap handles layout and utility spacing. */
+    :root {--ed-primary:#2563eb;--ed-primary-hover:#1d4ed8;--ed-text:#0f172a;--ed-muted:#64748b;--ed-border:#e2e8f0;--ed-surface:#f8fafc;--ed-blue-soft:#eff6ff;--ed-avatar:#dbeafe;--ed-success:#15803d;--ed-success-soft:#f0fdf4}
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0;min-width:0;background:var(--ed-surface);color:var(--ed-text);font:400 14px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a {color:var(--ed-primary);text-decoration:none}
+    a:hover {color:var(--ed-primary-hover)}
+    :is(a,button,input):focus-visible {outline:3px solid #2563eb80;outline-offset:3px}
+    button,input {font:inherit}
+    [hidden] {display:none!important}
+    /* 02 — Shared navigation: desktop 76px, tablet/mobile 196px. */
+    .site-header {background:#fff;border-bottom:1px solid var(--ed-border)}
+    .header-inner {max-width:1440px;margin:auto;padding:15.5px 48px}
+    .header-top {display:flex;align-items:center;justify-content:space-between;min-height:44px;gap:12px}
+    .header-brand-group {display:flex;align-items:center;gap:32px;min-width:0}
+    .brand {display:inline-flex;gap:8px;align-items:center;white-space:nowrap;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;color:var(--ed-text)}
+    .brand:hover {color:var(--ed-text)}
+    .brand i {width:32px;font-size:28px;text-align:center;color:var(--ed-primary)}
+    .brand .brand-blue {color:var(--ed-primary)}
+    .desktop-nav {display:flex;gap:24px;align-items:center;white-space:nowrap}
+    .desktop-nav a,.responsive-nav a {font-size:14px;color:var(--ed-muted)}
+    .desktop-nav a:hover,.responsive-nav a:hover {color:var(--ed-primary)}
+    .desktop-nav a[aria-current=page],.responsive-nav a[aria-current=page] {color:var(--ed-primary);font-weight:600}
+    .header-controls {display:flex;gap:16px;align-items:center;flex:none}
+    .search-form {position:relative;width:230px}
+    .search-form i {position:absolute;top:15px;left:12px;color:var(--ed-muted);font-size:16px;pointer-events:none}
+    .search-form input {width:100%;height:44px;background:var(--ed-surface);border:1px solid var(--ed-border);border-radius:8px;padding:0 12px 0 38px;color:var(--ed-text);font-size:13px;outline:0}
+    .search-form input:focus {border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb25}
+    .icon-button {position:relative;width:40px;height:44px;border:0;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--ed-muted);font-size:18px;flex:none}
+    .icon-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .notification-dot {position:absolute;top:7px;right:8px;width:6px;height:6px;background:var(--ed-primary);border-radius:50%}
+    .avatar {display:inline-flex;justify-content:center;align-items:center;width:40px;height:40px;border-radius:50%;flex:none;background:var(--ed-avatar);color:var(--ed-primary);font-weight:600;font-size:13px}
+    .student-label {line-height:1.35;white-space:nowrap}
+    .student-label strong {font-size:13px;font-weight:600;display:block}
+    .student-label small {font-size:11px;color:var(--ed-muted);display:block}
+    .account-button {border:0;border-radius:8px;background:transparent;color:var(--ed-muted);padding:8px;line-height:1}
+    .account-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .responsive-header {display:none}
+    .responsive-nav {display:flex;justify-content:space-between;align-items:center;height:44px;gap:8px}
+    .responsive-nav a {font-size:13px;height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+    .responsive-nav a[aria-current=page] {border-bottom:2px solid var(--ed-primary)}
+    #menuToggle {display:none}
+    .account-area {position:relative}
+    .account-popover {z-index:10;position:absolute;top:100%;right:0;min-width:190px;background:white;border:1px solid var(--ed-border);border-radius:10px;box-shadow:0 12px 30px #0f172a1c;padding:6px}
+    .account-popover a {display:block;padding:8px 12px;border-radius:7px;color:var(--ed-text);font-size:13px}
+    .account-popover a:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    /* 03 — Page geometry follows 1440x1184 Figma result frame. */
+    .page-main {max-width:1440px;margin:auto;min-height:1045px;padding:64px}
+    .breadcrumb-path {margin:0 0 32px;font-size:13px;line-height:21px;color:var(--ed-muted)}
+    .breadcrumb-path a {color:var(--ed-muted)}
+    .breadcrumb-path a:hover {color:var(--ed-primary)}
+    .page-intro {margin-bottom:32px}
+    .page-intro h1 {margin:0 0 8px;font-size:36px;font-weight:700;line-height:47px;letter-spacing:-.5px}
+    .page-intro p {margin:0;color:var(--ed-muted);font-size:16px;line-height:26px}
+    .result-region {position:relative;padding:32px 0;display:flex;align-items:center;flex-direction:column}
+    .result-card {width:min(100%,760px);height:687px;padding:47px;border:1px solid var(--ed-border);background:#fff;border-radius:16px;display:flex;flex-direction:column;gap:24px;align-items:center}
+    .award-emblem {width:80px;height:80px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--ed-success-soft);color:var(--ed-success)}
+    .award-emblem i {font-size:39px;line-height:40px}
+    .pass-badge {height:25px;border-radius:99px;padding:5px 10px;background:var(--ed-success-soft);color:var(--ed-success);font-weight:600;font-size:12px;line-height:15px;white-space:nowrap}
+    .result-score {height:77px;font-size:64px;line-height:77px;color:var(--ed-primary);font-weight:700;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+    .result-headline {width:100%;height:39px;text-align:center;line-height:39px;font-size:28px;font-weight:700;margin:0;letter-spacing:-.25px;white-space:nowrap}
+    .metric-grid {width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;min-height:84px}
+    .metric {min-width:0;min-height:84px;border-radius:8px;background:var(--ed-surface);padding:16px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+    .metric strong {font-size:24px;line-height:29px;font-weight:700;font-variant-numeric:tabular-nums}
+    .metric span {color:var(--ed-muted);font-size:12px;line-height:19px}
+    .result-message {width:100%;height:22px;margin:0;color:var(--ed-muted);line-height:22px;text-align:center;font-size:14px;white-space:nowrap}
+    .ed-button {display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:48px;border-radius:8px;border:1px solid var(--ed-border);background:white;color:var(--ed-text);padding:8px 16px;font-weight:600;font-size:14px;line-height:20px;transition:background .15s,border-color .15s,transform .1s}
+    .ed-button:hover {background:var(--ed-blue-soft);border-color:#bfdbfe;color:var(--ed-primary)}
+    .ed-button:active {transform:translateY(1px)}
+    .ed-button-primary {border-color:var(--ed-primary);background:var(--ed-primary);color:white}
+    .ed-button-primary:hover {border-color:var(--ed-primary-hover);background:var(--ed-primary-hover);color:#fff}
+    .demo-disclaimer {position:absolute;top:calc(32px + 687px + 12px);max-width:760px;padding:0 12px;text-align:center;color:var(--ed-muted);font-size:11px;line-height:18px}
+    .page-footer {min-height:63px;border-top:1px solid var(--ed-border);display:flex;align-items:center;justify-content:center;color:var(--ed-muted);font-size:12px;line-height:15px}
+    /* 04 — Certificate integration placeholder and responsive navigation. */
+    .ed-dialog {border:1px solid var(--ed-border);border-radius:14px;max-width:min(440px,calc(100% - 32px));width:440px;background:#fff;padding:24px;color:var(--ed-text);box-shadow:0 20px 70px #0f172a2b}
+    .ed-dialog::backdrop {background:#0f172a80}
+    .ed-dialog h2 {font-size:23px;font-weight:700;line-height:1.3;margin:0 0 12px}
+    .ed-dialog p {font-size:14px;color:var(--ed-muted);line-height:1.7;margin:0 0 14px}
+    .sr-announcement {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    @media(max-width:1199.98px) {
+      .header-inner {padding:16px 24px 15px}
+      #menuToggle {display:inline-flex}
+      .desktop-nav,.desktop-search {display:none}
+      .responsive-header {display:block;margin-top:16px}
+      .header-controls {gap:16px}
+      .page-main {padding:32px;min-height:0}
+      .result-card {height:auto;min-height:687px}
+      .result-region {padding:32px 0 48px}
+      .demo-disclaimer {position:static;margin-top:12px}
+      .result-headline,.result-message {height:auto;white-space:normal}
+    }
+    @media(max-width:575.98px) {
+      .header-inner {padding:16px 16px 15px}
+      .header-brand-group {gap:8px}
+      .header-controls {gap:8px}
+      .student-label {display:none}
+      .page-main {padding:16px}
+      .page-intro h1 {font-size:30px;line-height:39px}
+      .result-region {padding:24px 0 28px}
+      .result-card {padding:24px 16px;gap:20px;min-height:0}
+      .award-emblem {height:72px;width:72px}
+      .award-emblem i {font-size:34px}
+      .result-score {font-size:58px;line-height:68px;height:68px}
+      .result-headline {font-size:23px;line-height:1.4}
+      .metric-grid {gap:8px}
+      .metric {padding:14px 4px}
+      .metric strong {font-size:22px}
+      .metric span {font-size:11px}
+      .result-message {line-height:1.6}
+      .demo-disclaimer {margin-top:12px}
+    }
+    @media(max-width:359.98px){
+      .brand {font-size:23px}.brand i {font-size:24px;width:28px}
+      .avatar {height:36px;width:36px}
+      .account-button {padding:5px}
+      .result-headline {font-size:21px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}

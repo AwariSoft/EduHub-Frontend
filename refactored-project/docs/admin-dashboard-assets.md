@@ -1,0 +1,3 @@
+# Admin Dashboard assets
+
+Retained: `assets/images/admin/Course-thumbnail@2x.png`, `Course-thumbnail1@2x.png`, and `Course-thumbnail2@2x.png` for the three pending course cards. Additional `Course-thumbnail3@2x.png` through `Course-thumbnail14@2x.png` retained as shared admin asset inventory. `Admin-sidebar@2x.png`, `Admin-sidebar1@2x.png`, `Admin-sidebar2@2x.png` are reference screenshots, not production UI images. Generic source SVGs (`Admin-access.svg`, `bell.svg`, `book-open-check.svg`, `credit-card.svg`, `layout-dashboard.svg`, `log-out.svg`, `menu.svg`, `Metric-icon*.svg`, `Notifications*.svg`, `search.svg`, `users.svg`) are replaced with Font Awesome 6 Free.

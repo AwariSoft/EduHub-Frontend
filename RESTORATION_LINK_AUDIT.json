@@ -1,0 +1,18 @@
+{
+  "checked": 32,
+  "unavailable_destination_links": {
+    "eduhub-student-settings.html": [
+      "eduhub-edit-student-profile.html",
+      "eduhub-student-profile.html"
+    ],
+    "privacy-policy.html": [
+      "eduhub-create-account.html",
+      "eduhub-homepage.html"
+    ],
+    "terms-of-service.html": [
+      "eduhub-create-account.html",
+      "eduhub-homepage.html"
+    ]
+  },
+  "note": "Links to Privacy Policy, Terms of Service, and Student Settings existed in the uploaded HTML, but no corresponding page was present in the consolidated project; these original links are preserved rather than inventing a page."
+}

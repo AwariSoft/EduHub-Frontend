@@ -1,0 +1,274 @@
+{
+  "passed": 51,
+  "total": 51,
+  "checks": [
+    {
+      "check": "1440px no horizontal overflow",
+      "passed": true,
+      "details": {
+        "sw": 1440,
+        "vw": 1440
+      }
+    },
+    {
+      "check": "1440px no JavaScript errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "1440px images loaded",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "1440px six course records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "1440px three approval totals",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "1440px starting total 47",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "course search SQL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "search matches two instructors",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "empty search state appears",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "clear filters restores six",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "approved status filter",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "rejected status filter",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "7-day date filter",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "custom date range opens",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "custom date range filters",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "next page shows honest unavailable state",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "back to known sample records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "notifications open",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Escape closes notifications",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "account menu opens",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Review opens modal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "review shows exact course",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "rejection requires reason",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "rejection error shown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "approval confirmation appears",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "approval updates only local badge",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "approval updates totals",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "rejection updates local totals",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "filtered statuses recompute after decisions",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "834px no horizontal overflow",
+      "passed": true,
+      "details": {
+        "sw": 834,
+        "vw": 834
+      }
+    },
+    {
+      "check": "834px no JavaScript errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "834px images loaded",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "834px six course records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "834px three approval totals",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "834px starting total 47",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "390px no horizontal overflow",
+      "passed": true,
+      "details": {
+        "sw": 390,
+        "vw": 390
+      }
+    },
+    {
+      "check": "390px no JavaScript errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "390px images loaded",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "390px six course records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "390px three approval totals",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "390px starting total 47",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "mobile drawer opens",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "mobile drawer closes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "mobile workspace search opens",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "mobile header search filters queue",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "320px no horizontal overflow",
+      "passed": true,
+      "details": {
+        "sw": 320,
+        "vw": 320
+      }
+    },
+    {
+      "check": "320px no JavaScript errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "320px images loaded",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "320px six course records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "320px three approval totals",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "320px starting total 47",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "failed": []
+}

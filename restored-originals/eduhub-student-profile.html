@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub student profile — learning progress, interests and course destinations.">
+  <title>My Profile | EduHub</title>
+
+  <!-- Fonts, Bootstrap 5, and Font Awesome 6 (CDN dependencies) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    /* =========================================================
+       ED U H U B  —  Design tokens from Figma
+       Custom rules are reserved for exact measurements, colors,
+       component styling, and details outside Bootstrap utilities.
+       ========================================================= */
+    :root {
+      --ed-primary: #2563eb;
+      --ed-primary-hover: #1d4ed8;
+      --ed-ink: #0f172a;
+      --ed-body: #334155;
+      --ed-muted: #64748b;
+      --ed-border: #e2e8f0;
+      --ed-surface: #ffffff;
+      --ed-background: #f8fafc;
+      --ed-soft: #eff6ff;
+      --ed-avatar: #dbeafe;
+      --ed-radius: 12px;
+      --ed-sidebar-width: 232px;
+      --ed-shadow: 0 4px 14px rgba(15, 23, 42, 0.025);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: var(--ed-background); color: var(--ed-ink); font-size: 14px; -webkit-font-smoothing: antialiased; }
+    a { color: var(--ed-primary); text-decoration: none; }
+    a:hover { color: var(--ed-primary-hover); }
+    button, input { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(37, 99, 235, .48); outline-offset: 3px; }
+    .muted { color: var(--ed-muted); }
+    .text-primary-ed { color: var(--ed-primary) !important; }
+    .ed-card { border: 1px solid var(--ed-border); background: var(--ed-surface); border-radius: var(--ed-radius); box-shadow: var(--ed-shadow); }
+    .ed-btn-primary { background: var(--ed-primary); border: 1px solid var(--ed-primary); border-radius: 8px; color: white; min-height: 48px; padding: 0 20px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: background .15s, transform .15s, box-shadow .15s; }
+    .ed-btn-primary:hover { background: var(--ed-primary-hover); border-color: var(--ed-primary-hover); color: #fff; box-shadow: 0 4px 14px rgba(37, 99, 235, .2); }
+    .ed-btn-primary:active { transform: translateY(1px); }
+    .ed-avatar { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; border-radius: 50%; background: var(--ed-avatar); color: var(--ed-primary); font-weight: 600; }
+    .ed-avatar--small { width: 40px; height: 40px; font-size: 13px; }
+    .ed-avatar--large { width: 96px; height: 96px; font-size: 30px; }
+    .ed-pill { display: inline-flex; align-items: center; justify-content: center; padding: 5px 10px; min-height: 25px; border-radius: 999px; background: var(--ed-soft); color: var(--ed-primary); font-size: 12px; line-height: 15px; font-weight: 600; white-space: nowrap; }
+    .brand-logo { display: inline-flex; align-items: center; gap: 8px; font-size: 28px; line-height: 34px; letter-spacing: -1px; font-weight: 700; color: var(--ed-ink); white-space: nowrap; }
+    .brand-logo:hover { color: var(--ed-ink); }
+    .brand-logo .brand-symbol { font-size: 28px; line-height: 1; color: var(--ed-primary); width: 32px; display: inline-flex; justify-content: center; }
+    .brand-logo .brand-blue { color: var(--ed-primary); }
+
+    /* =========================================================
+       Desktop sidebar (>= 992px): Figma 232px
+       ========================================================= */
+    .desktop-sidebar { width: var(--ed-sidebar-width); min-height: 100vh; position: fixed; z-index: 1030; inset: 0 auto 0 0; background: var(--ed-surface); border-right: 1px solid var(--ed-border); padding: 24px 20px; overflow-y: auto; scrollbar-width: thin; }
+    .workspace-label { display: block; margin: 32px 0 8px; color: var(--ed-muted); font-size: 10px; letter-spacing: 1.3px; font-weight: 600; }
+    .side-nav { display: flex; flex-direction: column; gap: 8px; }
+    .side-nav .nav-entry { display: flex; align-items: center; width: 100%; height: 44px; padding: 0 12px; border-radius: 8px; font-size: 13px; color: var(--ed-muted); gap: 12px; transition: background .15s, color .15s; }
+    .side-nav .nav-entry i { width: 20px; text-align: center; font-size: 17px; }
+    .side-nav .nav-entry:hover { color: var(--ed-primary); background: #f1f5f9; }
+    .side-nav .nav-entry.active { color: var(--ed-primary); background: var(--ed-soft); font-weight: 600; }
+    .side-nav .nav-entry:active { background: var(--ed-avatar); }
+    .learning-reminder { margin-top: 32px; padding: 16px; border-radius: 12px; background: var(--ed-soft); min-height: 147px; }
+    .learning-reminder .reminder-icon { color: var(--ed-primary); font-size: 18px; }
+    .learning-reminder h3 { font-size: 14px; line-height: 22px; font-weight: 600; margin: 8px 0; }
+    .learning-reminder p { color: var(--ed-muted); font-size: 12px; line-height: 19px; margin: 0; }
+
+    /* =========================================================
+       Header: 72px desktop / 103px tablet + mobile
+       ========================================================= */
+    .app-workspace { min-height: 100vh; margin-left: var(--ed-sidebar-width); display: flex; flex-direction: column; }
+    .app-header { min-height: 72px; background: white; border-bottom: 1px solid var(--ed-border); padding: 16px 32px; }
+    .header-top { height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .header-search { position: relative; width: 340px; height: 40px; }
+    .header-search i { position: absolute; left: 13px; top: 12px; font-size: 17px; color: var(--ed-muted); pointer-events: none; }
+    .header-search input { height: 40px; border: 1px solid var(--ed-border); border-radius: 8px; background: var(--ed-background); padding: 0 12px 0 42px; width: 100%; color: var(--ed-ink); font-size: 13px; outline: none; }
+    .header-search input::placeholder { color: var(--ed-muted); opacity: 1; }
+    .header-search input:focus { border-color: var(--ed-primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, .12); }
+    .header-action { border: 0; background: transparent; color: var(--ed-muted); font-size: 18px; border-radius: 8px; padding: 7px; cursor: pointer; }
+    .header-action:hover { background: var(--ed-soft); color: var(--ed-primary); }
+    .account-name { font-size: 13px; font-weight: 600; white-space: nowrap; line-height: 16px; }
+    .account-role { font-size: 11px; color: var(--ed-muted); line-height: 13px; margin-top: 3px; }
+    .mobile-top-nav { display: none; margin-top: 16px; justify-content: space-between; align-items: center; font-size: 12px; line-height: 15px; font-weight: 500; }
+    .mobile-top-nav a { color: var(--ed-primary); }
+    .mobile-top-nav a:hover { text-decoration: underline; }
+
+    /* =========================================================
+       Main profile: exact desktop inset 72px / tablet 32 / mobile 20
+       ========================================================= */
+    .profile-main { flex: 1; width: 100%; padding: 40px 72px; }
+    .profile-intro { margin-bottom: 32px; }
+    .breadcrumb-text { color: var(--ed-muted); font-size: 12px; line-height: 19px; margin: 0 0 8px; }
+    .page-heading { font-size: 28px; line-height: 35px; letter-spacing: -0.7px; font-weight: 700; margin: 0 0 8px; }
+    .intro-subtitle { font-size: 14px; color: var(--ed-muted); line-height: 22px; margin: 0; }
+
+    /* Identity card */
+    .identity-card { min-height: 165px; padding: 32px; display: flex; align-items: center; gap: 24px; }
+    .student-identity { min-width: 0; flex: 1; }
+    .student-identity h2 { font-size: 30px; line-height: 38px; letter-spacing: -0.65px; margin: 8px 0; font-weight: 700; }
+    .student-identity p { margin: 0; color: var(--ed-muted); font-size: 14px; line-height: 22px; overflow-wrap: anywhere; }
+    .identity-card .ed-btn-primary { min-width: 144px; }
+
+    /* Learning summary: 4 columns desktop, 2 columns tablet/mobile */
+    .learning-summary { margin-top: 32px; }
+    .section-title { font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: -0.5px; margin: 0; }
+    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+    .metric-card { height: 141px; padding: 20px; }
+    .metric-icon { color: var(--ed-primary); font-size: 18px; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; }
+    .metric-number { font-size: 30px; line-height: 36px; font-weight: 700; margin: 12px 0 12px; }
+    .metric-label { color: var(--ed-muted); font-size: 13px; line-height: 21px; margin: 0; }
+    .summary-note { font-size: 13px; line-height: 21px; color: var(--ed-muted); margin: 20px 0 0; }
+
+    /* About and onward navigation */
+    .profile-info-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: start; margin-top: 32px; }
+    .about-card, .destination-card { padding: 24px; }
+    .about-card h2 { font-size: 22px; line-height: 28px; margin: 0 0 24px; font-weight: 700; letter-spacing: -0.5px; }
+    .about-card p { font-size: 14px; line-height: 22px; color: var(--ed-body); margin: 0 0 24px; }
+    .about-card h3 { font-size: 16px; line-height: 20px; font-weight: 700; margin: 0 0 24px; }
+    .interest-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .destination-card { min-height: 333px; }
+    .destination-card .cap-icon { color: var(--ed-primary); font-size: 24px; width: 28px; height: 28px; }
+    .destination-card h2 { font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: -0.5px; margin: 24px 0; }
+    .destination-card p { font-size: 13px; line-height: 21px; color: var(--ed-muted); margin: 0 0 24px; }
+    .destination-links { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+    .destination-links a { font-size: 13px; line-height: 24px; font-weight: 600; }
+    .destination-links a:hover { text-decoration: underline; }
+    .app-footer { height: 63px; border-top: 1px solid var(--ed-border); color: var(--ed-muted); display: flex; flex: 0 0 auto; align-items: center; justify-content: center; text-align: center; font-size: 12px; padding: 0 16px; }
+
+    /* =========================================================
+       Tablet (Figma: 834px) — sidebar collapses, 2 metric columns
+       ========================================================= */
+    @media (max-width: 991.98px) {
+      .desktop-sidebar { display: none; }
+      .app-workspace { margin-left: 0; }
+      .app-header { min-height: 103px; padding: 16px 32px; }
+      .header-search { display: none; }
+      .mobile-top-nav { display: flex; }
+      .profile-main { padding: 40px 32px; }
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    /* =========================================================
+       Mobile (Figma: 390px) — identity & information stack
+       ========================================================= */
+    @media (max-width: 575.98px) {
+      .app-header { padding: 16px 20px; }
+      .account-label { display: none; }
+      .header-action { padding: 4px; }
+      .profile-main { padding: 40px 20px; }
+      .identity-card { min-height: 335px; padding: 24px; align-items: stretch; flex-direction: column; gap: 0; }
+      .identity-card .ed-avatar--large { margin-bottom: 24px; }
+      .student-identity { flex: none; }
+      .student-identity h2 { font-size: 26px; line-height: 33px; margin: 8px 0; }
+      .student-identity p { font-size: 13px; line-height: 21px; }
+      .identity-card .ed-btn-primary { margin-top: 24px; width: 100%; }
+      .profile-info-grid { grid-template-columns: 1fr; }
+      .destination-card { min-height: 287px; }
+    }
+    @media (max-width: 359.98px) {
+      .brand-logo { font-size: 23px; gap: 5px; }
+      .brand-logo .brand-symbol { font-size: 24px; width: 27px; }
+      .profile-main { padding-inline: 16px; }
+      .app-header { padding-inline: 16px; }
+      .identity-card { padding: 20px; }
+      .metric-card { padding: 16px; }
+      .metric-label { font-size: 12px; }
+      .mobile-top-nav { font-size: 11px; }
+    }
+
+    /* Supplementary interactive surfaces */
+    .dropdown-menu, .offcanvas { font-family: 'Inter', system-ui, sans-serif; }
+    .dropdown-item:hover, .dropdown-item:focus { color: var(--ed-primary); background: var(--ed-soft); }
+    .route-toast { font-size: 13px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+  <!-- =========================================================
+       SIDEBAR — desktop only
+       ========================================================= -->
+  <aside class="desktop-sidebar" aria-label="Student workspace navigation">
+    <a class="brand-logo" href="eduhub-homepage.html" aria-label="EduHub home">
+      <i class="fa-solid fa-graduation-cap brand-symbol" aria-hidden="true"></i>
+      <span>Edu<span class="brand-blue">Hub</span></span>
+    </a>
+
+    <span class="workspace-label">STUDENT WORKSPACE</span>
+    <nav class="side-nav" aria-label="Student pages">
+      <a class="nav-entry" href="eduhub-student-dashboard.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Dashboard</span></a>
+      <a class="nav-entry" href="eduhub-explore-courses.html" ><i class="fa-regular fa-compass" aria-hidden="true"></i><span>Explore Courses</span></a>
+      <a class="nav-entry" href="eduhub-my-learning.html" data-pending="My Learning"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>My Learning</span></a>
+      <a class="nav-entry" href="eduhub-my-certificates.html" data-pending="My Certificates"><i class="fa-solid fa-award" aria-hidden="true"></i><span>My Certificates</span></a>
+      <a class="nav-entry active" href="eduhub-student-profile.html" aria-current="page"><i class="fa-regular fa-user" aria-hidden="true"></i><span>My Profile</span></a>
+      <a class="nav-entry" href="eduhub-notifications.html" data-pending="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span>Notifications</span></a>
+      <a class="nav-entry" href="eduhub-student-settings.html" data-pending="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>Settings</span></a>
+      <a class="nav-entry" href="#" data-demo-action="logout"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Log Out</span></a>
+    </nav>
+
+    <div class="learning-reminder">
+      <i class="fa-solid fa-wand-magic-sparkles reminder-icon" aria-hidden="true"></i>
+      <h3>A little every day.</h3>
+      <p>Big goals start with small steps. Make time to learn today.</p>
+    </div>
+  </aside>
+
+  <div class="app-workspace">
+    <!-- =========================================================
+         HEADER — search on desktop, contextual navigation on tablet/mobile
+         ========================================================= -->
+    <header class="app-header">
+      <div class="header-top">
+        <a class="brand-logo d-lg-none" href="eduhub-homepage.html" aria-label="EduHub home">
+          <i class="fa-solid fa-graduation-cap brand-symbol" aria-hidden="true"></i>
+          <span>Edu<span class="brand-blue">Hub</span></span>
+        </a>
+        <form class="header-search" id="courseSearchForm" role="search">
+          <label class="visually-hidden" for="courseSearch">Search courses</label>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="courseSearch" type="search" name="q" placeholder="Search for courses..." autocomplete="off">
+        </form>
+        <div class="d-flex align-items-center gap-2 gap-sm-3 ms-auto">
+          <a class="header-action" href="eduhub-notifications.html" data-pending="Notifications" aria-label="Notifications" title="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i></a>
+          <div class="dropdown">
+            <button type="button" class="border-0 bg-transparent p-0 d-flex align-items-center gap-3" id="accountMenuButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account menu">
+              <span class="ed-avatar ed-avatar--small">WM</span>
+              <span class="account-label text-start"><span class="account-name d-block">Warda Mahmoud</span><span class="account-role d-block">Student</span></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm border" aria-labelledby="accountMenuButton">
+              <li><a class="dropdown-item active" href="eduhub-student-profile.html" aria-current="page"><i class="fa-regular fa-user me-2"></i>My Profile</a></li>
+              <li><a class="dropdown-item" href="eduhub-edit-student-profile.html"><i class="fa-regular fa-pen-to-square me-2"></i>Edit Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" data-demo-action="logout"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Log Out</a></li>
+            </ul>
+          </div>
+          <button type="button" class="header-action d-sm-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <nav class="mobile-top-nav d-lg-none" aria-label="Quick navigation">
+        <a href="eduhub-student-dashboard.html">Dashboard</a>
+        <a href="eduhub-my-learning.html" data-pending="My Learning">My Learning</a>
+        <a href="eduhub-student-profile.html" aria-current="page">My Profile</a>
+      </nav>
+    </header>
+
+    <!-- =========================================================
+         MAIN — Student Profile content
+         ========================================================= -->
+    <main id="mainContent" class="profile-main">
+      <!-- Breadcrumb + title -->
+      <div class="profile-intro">
+        <p class="breadcrumb-text">Student workspace / My Profile</p>
+        <h1 class="page-heading">My Profile</h1>
+        <p class="intro-subtitle">Your learning identity and a snapshot of your progress.</p>
+      </div>
+
+      <!-- Identity / Edit Profile -->
+      <section class="identity-card ed-card" aria-labelledby="studentName">
+        <div class="ed-avatar ed-avatar--large" aria-label="Initials WM">WM</div>
+        <div class="student-identity">
+          <span class="ed-pill">Student</span>
+          <h2 id="studentName">Warda Mahmoud</h2>
+          <p>warda.mahmoud@example.com</p>
+        </div>
+        <a class="ed-btn-primary" href="eduhub-edit-student-profile.html">Edit Profile</a>
+      </section>
+
+      <!-- Learning summary -->
+      <section class="learning-summary" aria-labelledby="learningHeading">
+        <h2 class="section-title" id="learningHeading">Learning summary</h2>
+        <div class="metric-grid">
+          <article class="metric-card ed-card" aria-label="6 Enrolled Courses">
+            <i class="fa-solid fa-book-open metric-icon" aria-hidden="true"></i>
+            <div class="metric-number">6</div>
+            <p class="metric-label">Enrolled Courses</p>
+          </article>
+          <article class="metric-card ed-card" aria-label="3 In Progress">
+            <i class="fa-regular fa-clock metric-icon" aria-hidden="true"></i>
+            <div class="metric-number">3</div>
+            <p class="metric-label">In Progress</p>
+          </article>
+          <article class="metric-card ed-card" aria-label="2 Completed Courses">
+            <i class="fa-regular fa-circle-check metric-icon" aria-hidden="true"></i>
+            <div class="metric-number">2</div>
+            <p class="metric-label">Completed Courses</p>
+          </article>
+          <article class="metric-card ed-card" aria-label="2 Certificates Earned">
+            <i class="fa-solid fa-award metric-icon" aria-hidden="true"></i>
+            <div class="metric-number">2</div>
+            <p class="metric-label">Certificates Earned</p>
+          </article>
+        </div>
+        <p class="summary-note">Of your 6 enrolled courses, 3 are in progress, 2 are completed and 1 is not started.</p>
+      </section>
+
+      <!-- About and learning destinations -->
+      <section class="profile-info-grid" aria-label="Profile information and next steps">
+        <article class="about-card ed-card" aria-labelledby="aboutHeading">
+          <h2 id="aboutHeading">About me</h2>
+          <p>I’m building my programming and database skills, one course at a time. I enjoy practical lessons that help me turn an idea into something useful.</p>
+          <h3>Learning interests</h3>
+          <div class="interest-pills" aria-label="Learning interests">
+            <span class="ed-pill">C#</span>
+            <span class="ed-pill">Web Development</span>
+            <span class="ed-pill">Databases</span>
+          </div>
+        </article>
+        <aside class="destination-card ed-card" aria-labelledby="nextStepsHeading">
+          <i class="fa-solid fa-graduation-cap cap-icon" aria-hidden="true"></i>
+          <h2 id="nextStepsHeading">Keep your next step in sight</h2>
+          <p>This is your profile. Visit My Learning to continue lessons and manage your courses.</p>
+          <nav class="destination-links" aria-label="Learning destinations">
+            <a href="eduhub-my-learning.html" data-pending="My Learning">Go to My Learning <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="eduhub-my-certificates.html" data-pending="My Certificates">View My Certificates <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </nav>
+        </aside>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  </div>
+
+  <!-- =========================================================
+       OFFCANVAS — mobile full workspace navigation
+       ========================================================= -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom">
+      <h2 class="offcanvas-title fs-5 fw-bold" id="mobileMenuLabel">Student workspace</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="side-nav" aria-label="Mobile student pages">
+        <a class="nav-entry" href="eduhub-student-dashboard.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>Dashboard</a>
+        <a class="nav-entry" href="eduhub-explore-courses.html" ><i class="fa-regular fa-compass" aria-hidden="true"></i>Explore Courses</a>
+        <a class="nav-entry" href="eduhub-my-learning.html" data-pending="My Learning"><i class="fa-solid fa-book-open" aria-hidden="true"></i>My Learning</a>
+        <a class="nav-entry" href="eduhub-my-certificates.html" data-pending="My Certificates"><i class="fa-solid fa-award" aria-hidden="true"></i>My Certificates</a>
+        <a class="nav-entry active" href="eduhub-student-profile.html" aria-current="page"><i class="fa-regular fa-user" aria-hidden="true"></i>My Profile</a>
+        <a class="nav-entry" href="eduhub-notifications.html" data-pending="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i>Notifications</a>
+        <a class="nav-entry" href="eduhub-student-settings.html" data-pending="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i>Settings</a>
+        <a class="nav-entry" href="#" data-demo-action="logout"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>Log Out</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Feedback for destinations not yet implemented in this frontend bundle -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1090;">
+    <div id="feedbackToast" class="toast route-toast" role="status" aria-live="polite" aria-atomic="true" data-bs-delay="4000">
+      <div class="toast-header"><i class="fa-solid fa-circle-info text-primary-ed me-2" aria-hidden="true"></i><strong class="me-auto">EduHub frontend</strong><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button></div>
+      <div id="feedbackMessage" class="toast-body"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    'use strict';
+    // =========================================================
+    // Client-only demo navigation. Existing auth/home pages work.
+    // Future pages are clearly marked instead of opening a 404.
+    // Remove data-pending from links after creating their HTML files.
+    // =========================================================
+    const toastNode = document.getElementById('feedbackToast');
+    const messageNode = document.getElementById('feedbackMessage');
+    function notify(message) {
+      messageNode.textContent = message;
+      if (window.bootstrap && bootstrap.Toast) {
+        bootstrap.Toast.getOrCreateInstance(toastNode).show();
+      } else {
+        window.alert(message); // works even if the CDN is temporarily unavailable
+      }
+    }
+    document.addEventListener('click', (event) => {
+      const pendingLink = event.target.closest('a[data-pending]');
+      if (pendingLink) {
+        event.preventDefault();
+        notify(pendingLink.dataset.pending + ' will open here when its EduHub screen is implemented.');
+        return;
+      }
+      const demoLink = event.target.closest('[data-demo-action="logout"]');
+      if (demoLink) {
+        event.preventDefault();
+        notify('This is a static profile preview. Connect authentication before enabling Log Out.');
+      }
+    });
+    document.getElementById('courseSearchForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const query = document.getElementById('courseSearch').value.trim();
+      if (!query) {
+        document.getElementById('courseSearch').focus();
+        return;
+      }
+      window.location.href = 'eduhub-explore-courses.html?q=' + encodeURIComponent(query);
+    });
+  </script>
+</body>
+</html>

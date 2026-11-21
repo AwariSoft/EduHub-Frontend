@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8fafc"><title>Notification States and Roles | EduHub</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/recovered/notification-states-and-roles.css" data-eduhub-restored="page-css"></head>
+<body><main class="states-board" aria-labelledby="page-title"><header><h1 class="board-title" id="page-title">Notification states and roles</h1><p class="board-description">The baseline All list contains 6 items, including 3 unread. Each role has its own scoped notifications and related destinations.</p></header>
+<div class="states-list"><section class="state-section" id="student-unread" aria-labelledby="student-unread-title"><h2 class="state-label" id="student-unread-title">Student · Unread notifications · 3 unread, matching All</h2>
+<div class="notification-panel" data-panel="student" data-dataset="student" data-default-filter="unread">
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab" data-filter="all" role="tab" aria-selected="false" >All <span class="count-all">(6)</span></button>
+     <button type="button" class="notification-tab active" data-filter="unread" role="tab" aria-selected="true" >Unread <span class="count-unread">(3)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">3 unread notifications</span><button type="button" class="text-action mark-all">Mark all as read</button></div>
+ </div>
+<div class="notices-list" role="list"><article class="notice-row is-unread" data-note-id="s1">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-book-open"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.2C9 4.5 5.8 4.3 2 5.2v13.4c4.2-.9 7.5-.6 10 1.3m0-13.7c3-1.7 6.2-1.9 10-1v13.4c-4.2-.9-7.5-.6-10 1.3m0-13.7V20"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Nov 1, 2026 · 9:30 AM</span></div>
+      <h3 class="notice-title">New practice resources available</h3>
+      <p class="notice-text">Complete C# Programming has updated practice files for Classes and Objects.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="course">View Course Details <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="s1">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="s2">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-regular fa-clipboard"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 31, 2026 · 3:15 PM</span></div>
+      <h3 class="notice-title">Your assessment is ready</h3>
+      <p class="notice-text">SQL Server Essentials: review the final quiz requirements in My Learning.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="learning">Go to My Learning <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="s2">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="s3">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-award"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="m9 12-1 9 4-2 4 2-1-9"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 30, 2026 · 11:00 AM</span></div>
+      <h3 class="notice-title">Your certificate is available</h3>
+      <p class="notice-text">Your Python Programming Basics certificate is ready to view. Well done on completing your course.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="certificate">View My Certificate <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="s3">Mark as read</button></div>
+    </div>
+  </article></div></div></section>
+<section class="state-section" id="student-empty" aria-labelledby="student-empty-title"><h2 class="state-label" id="student-empty-title">Student · Empty notifications</h2>
+<div class="notification-panel" data-panel="empty" >
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" disabled>All <span class="count-all">(0)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" disabled>Unread <span class="count-unread">(0)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">No notifications</span></div>
+ </div>
+<div class="outcome-state empty-state"><div class="big-outcome"><span class="eh-icon edu-restored-inline-2" aria-hidden="true"><i class="fa-regular fa-bell-slash"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4a6 6 0 0 1 10 5v4l2 3H6l1-2M9 20h6M3 3l18 18"/></svg></span></div><h3>You’re all caught up</h3><p>You have no notifications right now. Course updates and learning milestones will appear here.</p><button type="button" class="eh-button dest-action" data-dest="dashboard">Return to Dashboard</button></div></div></section>
+<section class="state-section" id="student-loading" aria-labelledby="student-loading-title"><h2 class="state-label" id="student-loading-title">Student · Loading notifications</h2>
+<div class="notification-panel" data-panel="loading" >
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" disabled>All <span class="count-all">(6)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" disabled>Unread <span class="count-unread">(3)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span></div>
+ </div>
+<div class="loading-state" aria-busy="true"><div class="loading-label"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-spinner fa-spin"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-8-8"/></svg></span><span>Loading your notifications…</span></div><div class="skeleton-notice"><span class="skeleton skeleton-icon"></span><div class="flex-grow-1 skeleton-copy"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-time"></span></div></div><div class="skeleton-notice"><span class="skeleton skeleton-icon"></span><div class="flex-grow-1 skeleton-copy"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-time"></span></div></div><div class="skeleton-notice"><span class="skeleton skeleton-icon"></span><div class="flex-grow-1 skeleton-copy"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-time"></span></div></div></div></div></section>
+<section class="state-section" id="student-error" aria-labelledby="student-error-title"><h2 class="state-label" id="student-error-title">Student · Retriable loading error</h2>
+<div class="notification-panel" data-panel="error" >
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" disabled>All <span class="count-all">(6)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" disabled>Unread <span class="count-unread">(3)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span></div>
+ </div>
+<div class="outcome-state error-state"><div class="big-outcome"><span class="eh-icon edu-restored-inline-2" aria-hidden="true"><i class="fa-solid fa-cloud-slash"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a6 6 0 0 1 10 4 5 5 0 0 1 1 9H6a5 5 0 0 1-1-10M3 3l18 18"/></svg></span></div><h3>We couldn’t load your notifications</h3><p>Please try again. Your notifications haven’t been changed.</p><button type="button" class="eh-button retry-btn">Try Again</button></div></div></section>
+<section class="state-section" id="instructor" aria-labelledby="instructor-title"><h2 class="state-label" id="instructor-title">Ahmed Mohamed · Instructor notifications · Alternate role sample</h2>
+<div class="role-banner"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-circle-info"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.4h.01"/></svg></span><div class="flex-grow-1"><p class="role-banner-title">Instructor workspace</p><p class="role-banner-detail">Related actions open the instructor’s own course review status or course students. This is a separate sample from the student list.</p></div></div>
+<div class="notification-panel" data-panel="instructor" data-dataset="instructor" data-default-filter="all">
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" >All <span class="count-all">(3)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" >Unread <span class="count-unread">(2)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span><button type="button" class="text-action mark-all">Mark all as read</button></div>
+ </div>
+<div class="notices-list"><article class="notice-row is-unread" data-note-id="i1">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-regular fa-circle-check"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Nov 1, 2026 · 9:00 AM</span></div>
+      <h3 class="notice-title">Your course was approved</h3>
+      <p class="notice-text">Complete C# Programming · Review the approval status in your course workspace.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="review">View Course Review Status <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="i1">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="i2">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-regular fa-clipboard"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 31, 2026 · 2:30 PM</span></div>
+      <h3 class="notice-title">Your course needs changes</h3>
+      <p class="notice-text">ASP.NET Core Web Development was not approved. Review the feedback before resubmitting.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="review">View Course Review Status <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="i2">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-read" data-note-id="i3">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-user-plus"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.3"/><path d="M3.5 20v-2.5C3.5 14 6 13 10 13s6.5 1 6.5 4.5V20M19 10v6m-3-3h6"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span>Read · Oct 30, 2026 · 10:00 AM</span></div>
+      <h3 class="notice-title">A new student enrolled</h3>
+      <p class="notice-text">Complete C# Programming has a new enrollment. View your course’s student list.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="students">View Course Students <span aria-hidden="true">→</span></button></div>
+    </div>
+  </article></div></div></section>
+<section class="state-section" id="admin" aria-labelledby="admin-title"><h2 class="state-label" id="admin-title">Nour Hassan · Admin notifications · Alternate role sample</h2>
+<div class="role-banner"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-circle-info"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.4h.01"/></svg></span><div class="flex-grow-1"><p class="role-banner-title">Admin workspace</p><p class="role-banner-detail">Related actions lead to course review or the relevant payment record. Admin notices are never shown in the student list.</p></div></div>
+<div class="notification-panel" data-panel="admin" data-dataset="admin" data-default-filter="all">
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" >All <span class="count-all">(2)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" >Unread <span class="count-unread">(2)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span><button type="button" class="text-action mark-all">Mark all as read</button></div>
+ </div>
+<div class="notices-list"><article class="notice-row is-unread" data-note-id="a1">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-book-open-reader"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.2C9 4.5 5.8 4.3 2 5.2v13.4c4.2-.9 7.5-.6 10 1.3m0-13.7c3-1.7 6.2-1.9 10-1v13.4c-4.2-.9-7.5-.6-10 1.3m0-13.7V20m4-10 2 2 4-4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Nov 1, 2026 · 9:10 AM</span></div>
+      <h3 class="notice-title">A course was submitted for review</h3>
+      <p class="notice-text">SQL Server Essentials by Mohamed Hassan is awaiting a course review.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="review">Review Course <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="a1">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="a2">
+    <div class="notice-symbol"><span class="eh-icon edu-restored-inline-1" aria-hidden="true"><i class="fa-solid fa-receipt"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 31, 2026 · 4:00 PM</span></div>
+      <h3 class="notice-title">A refund request needs review</h3>
+      <p class="notice-text">A request for HTML &amp; CSS Fundamentals is available in its payment record.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="payment-record">View Payment Record <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="a2">Mark as read</button></div>
+    </div>
+  </article></div></div></section></div><footer class="board-note">Static UI states · Sample data · No backend actions are performed</footer></main>
+<div class="toast-box" id="feedback-toast" hidden role="status" aria-live="polite"><button class="toast-close" type="button" id="feedback-close" aria-label="Dismiss notification">×</button><span id="feedback-message"></span></div>
+<div id="status-live" class="status-live" role="status" aria-live="polite"></div>
+<script src="../../assets/js/recovered/notification-states-and-roles.js" data-eduhub-restored="page-js"></script>
+</body></html>

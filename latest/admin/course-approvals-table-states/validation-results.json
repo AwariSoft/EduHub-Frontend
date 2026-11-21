@@ -1,0 +1,224 @@
+{
+  "results": [
+    {
+      "name": "1120px no horizontal overflow",
+      "passed": true,
+      "details": "content 1120px"
+    },
+    {
+      "name": "1120px no JS errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "1120px all three states present",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "1120px SVG icons rendered",
+      "passed": true,
+      "details": "4"
+    },
+    {
+      "name": "Figma 1120px support-sheet height",
+      "passed": true,
+      "details": "1881"
+    },
+    {
+      "name": "Figma loading panel position",
+      "passed": true,
+      "details": [
+        228,
+        228
+      ]
+    },
+    {
+      "name": "Figma loading panel height",
+      "passed": true,
+      "details": [
+        605,
+        605
+      ]
+    },
+    {
+      "name": "Figma empty panel position",
+      "passed": true,
+      "details": [
+        865,
+        865
+      ]
+    },
+    {
+      "name": "Figma empty panel height",
+      "passed": true,
+      "details": [
+        453,
+        453
+      ]
+    },
+    {
+      "name": "Figma noresults panel position",
+      "passed": true,
+      "details": [
+        1350,
+        1350
+      ]
+    },
+    {
+      "name": "Figma noresults panel height",
+      "passed": true,
+      "details": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "1440px no horizontal overflow",
+      "passed": true,
+      "details": "content 1440px"
+    },
+    {
+      "name": "1440px no JS errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "1440px all three states present",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "1440px SVG icons rendered",
+      "passed": true,
+      "details": "4"
+    },
+    {
+      "name": "834px no horizontal overflow",
+      "passed": true,
+      "details": "content 834px"
+    },
+    {
+      "name": "834px no JS errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "834px all three states present",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "834px SVG icons rendered",
+      "passed": true,
+      "details": "4"
+    },
+    {
+      "name": "390px no horizontal overflow",
+      "passed": true,
+      "details": "content 390px"
+    },
+    {
+      "name": "390px no JS errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "390px all three states present",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "390px SVG icons rendered",
+      "passed": true,
+      "details": "4"
+    },
+    {
+      "name": "320px no horizontal overflow",
+      "passed": true,
+      "details": "content 320px"
+    },
+    {
+      "name": "320px no JS errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "320px all three states present",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "320px SVG icons rendered",
+      "passed": true,
+      "details": "4"
+    },
+    {
+      "name": "Initial filtered query matches none",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four loading skeleton rows",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Loading filters disabled",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Clear Search keeps status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Clear Search shows 3 grounded pending records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Different unmatched query restores no-results",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Reset Filters clears search/status/date",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Reset Filters shows six original sample records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Review navigation points to bundled related HTML",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Status filter shows one rejected course",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Date range with no records returns no-results",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Empty dataset stays empty when searched",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "No browser interaction JS errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "passed": 40,
+  "total": 40
+}

@@ -1,0 +1,373 @@
+{
+  "responsive": [
+    {
+      "width": 1440,
+      "height": 1441,
+      "horizontalOverflow": false,
+      "javascriptErrors": []
+    },
+    {
+      "width": 834,
+      "height": 1884,
+      "horizontalOverflow": false,
+      "javascriptErrors": []
+    },
+    {
+      "width": 390,
+      "height": 3118,
+      "horizontalOverflow": false,
+      "javascriptErrors": []
+    },
+    {
+      "width": 320,
+      "height": 3123,
+      "horizontalOverflow": false,
+      "javascriptErrors": []
+    }
+  ],
+  "interactions": [
+    {
+      "name": "six exact Figma rows and totals",
+      "pass": true
+    },
+    {
+      "name": "search by student",
+      "pass": true
+    },
+    {
+      "name": "search by payment ID",
+      "pass": true
+    },
+    {
+      "name": "search by course",
+      "pass": true
+    },
+    {
+      "name": "no results state",
+      "pass": true
+    },
+    {
+      "name": "clear filters",
+      "pass": true
+    },
+    {
+      "name": "status pending filter",
+      "pass": true
+    },
+    {
+      "name": "status refunded filter",
+      "pass": true
+    },
+    {
+      "name": "status completed filter",
+      "pass": true
+    },
+    {
+      "name": "date exact filter",
+      "pass": true
+    },
+    {
+      "name": "custom date dialog",
+      "pass": true
+    },
+    {
+      "name": "invalid custom date error",
+      "pass": true
+    },
+    {
+      "name": "custom date range applies",
+      "pass": true
+    },
+    {
+      "name": "reset custom date",
+      "pass": true
+    },
+    {
+      "name": "workspace header search",
+      "pass": true
+    },
+    {
+      "name": "pagination never fabricates records",
+      "pass": true
+    },
+    {
+      "name": "pending transaction is view-only",
+      "pass": true
+    },
+    {
+      "name": "escape closes payment details",
+      "pass": true
+    },
+    {
+      "name": "eligible Warda refund confirmation",
+      "pass": true
+    },
+    {
+      "name": "cancel refund does not update",
+      "pass": true
+    },
+    {
+      "name": "refund updates existing record only",
+      "pass": true
+    },
+    {
+      "name": "refunded record no longer eligible",
+      "pass": true
+    },
+    {
+      "name": "notification dropdown works",
+      "pass": true
+    },
+    {
+      "name": "account dropdown closes notification",
+      "pass": true
+    },
+    {
+      "name": "mobile admin drawer",
+      "pass": true
+    },
+    {
+      "name": "mobile Escape closes drawer",
+      "pass": true
+    },
+    {
+      "name": "mobile workspace search expands",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "geometry": {
+    "1440": {
+      "docWidth": 1440,
+      "pageHeight": 1441,
+      "topbar": {
+        "x": 232,
+        "y": 0,
+        "w": 1208,
+        "h": 76
+      },
+      "intro": {
+        "x": 264,
+        "y": 108,
+        "w": 1144,
+        "h": 65
+      },
+      "metrics": {
+        "x": 264,
+        "y": 197,
+        "w": 1144,
+        "h": 123
+      },
+      "note": {
+        "x": 264,
+        "y": 344,
+        "w": 1144,
+        "h": 76
+      },
+      "panel": {
+        "x": 264,
+        "y": 444,
+        "w": 1144,
+        "h": 843
+      },
+      "filters": {
+        "x": 289,
+        "y": 542,
+        "w": 1094,
+        "h": 65
+      },
+      "list": {
+        "x": 289,
+        "y": 664,
+        "w": 1094,
+        "h": 540
+      },
+      "item": {
+        "x": 289,
+        "y": 664,
+        "w": 1094,
+        "h": 88
+      },
+      "footer": {
+        "x": 264,
+        "y": 1353,
+        "w": 1144,
+        "h": 56
+      }
+    },
+    "834": {
+      "docWidth": 834,
+      "pageHeight": 1884,
+      "topbar": {
+        "x": 76,
+        "y": 0,
+        "w": 758,
+        "h": 76
+      },
+      "intro": {
+        "x": 108,
+        "y": 108,
+        "w": 694,
+        "h": 65
+      },
+      "metrics": {
+        "x": 108,
+        "y": 197,
+        "w": 694,
+        "h": 123
+      },
+      "note": {
+        "x": 108,
+        "y": 344,
+        "w": 694,
+        "h": 96
+      },
+      "panel": {
+        "x": 108,
+        "y": 464,
+        "w": 694,
+        "h": 1248
+      },
+      "filters": {
+        "x": 133,
+        "y": 562,
+        "w": 644,
+        "h": 65
+      },
+      "list": {
+        "x": 133,
+        "y": 643,
+        "w": 644,
+        "h": 986
+      },
+      "item": {
+        "x": 133,
+        "y": 643,
+        "w": 314,
+        "h": 336
+      },
+      "footer": {
+        "x": 108,
+        "y": 1796,
+        "w": 694,
+        "h": 56
+      }
+    },
+    "390": {
+      "docWidth": 390,
+      "pageHeight": 3118,
+      "topbar": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 105
+      },
+      "intro": {
+        "x": 16,
+        "y": 121,
+        "w": 358,
+        "h": 86
+      },
+      "metrics": {
+        "x": 16,
+        "y": 231,
+        "w": 358,
+        "h": 258
+      },
+      "note": {
+        "x": 16,
+        "y": 513,
+        "w": 358,
+        "h": 136
+      },
+      "panel": {
+        "x": 16,
+        "y": 673,
+        "w": 358,
+        "h": 2271
+      },
+      "filters": {
+        "x": 33,
+        "y": 762,
+        "w": 324,
+        "h": 142
+      },
+      "list": {
+        "x": 33,
+        "y": 920,
+        "w": 324,
+        "h": 1929
+      },
+      "item": {
+        "x": 33,
+        "y": 920,
+        "w": 324,
+        "h": 344
+      },
+      "footer": {
+        "x": 16,
+        "y": 3046,
+        "w": 358,
+        "h": 56
+      }
+    },
+    "320": {
+      "docWidth": 320,
+      "pageHeight": 3123,
+      "topbar": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 105
+      },
+      "intro": {
+        "x": 12,
+        "y": 117,
+        "w": 296,
+        "h": 86
+      },
+      "metrics": {
+        "x": 12,
+        "y": 227,
+        "w": 296,
+        "h": 258
+      },
+      "note": {
+        "x": 12,
+        "y": 509,
+        "w": 296,
+        "h": 136
+      },
+      "panel": {
+        "x": 12,
+        "y": 669,
+        "w": 296,
+        "h": 2284
+      },
+      "filters": {
+        "x": 29,
+        "y": 774,
+        "w": 262,
+        "h": 142
+      },
+      "list": {
+        "x": 29,
+        "y": 932,
+        "w": 262,
+        "h": 1929
+      },
+      "item": {
+        "x": 29,
+        "y": 932,
+        "w": 262,
+        "h": 344
+      },
+      "footer": {
+        "x": 12,
+        "y": 3055,
+        "w": 296,
+        "h": 56
+      }
+    }
+  }
+}

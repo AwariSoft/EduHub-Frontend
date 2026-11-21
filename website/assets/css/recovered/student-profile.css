@@ -1,0 +1,168 @@
+
+    /* =========================================================
+       ED U H U B  —  Design tokens from Figma
+       Custom rules are reserved for exact measurements, colors,
+       component styling, and details outside Bootstrap utilities.
+       ========================================================= */
+    :root {
+      --ed-primary: #2563eb;
+      --ed-primary-hover: #1d4ed8;
+      --ed-ink: #0f172a;
+      --ed-body: #334155;
+      --ed-muted: #64748b;
+      --ed-border: #e2e8f0;
+      --ed-surface: #ffffff;
+      --ed-background: #f8fafc;
+      --ed-soft: #eff6ff;
+      --ed-avatar: #dbeafe;
+      --ed-radius: 12px;
+      --ed-sidebar-width: 232px;
+      --ed-shadow: 0 4px 14px rgba(15, 23, 42, 0.025);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: var(--ed-background); color: var(--ed-ink); font-size: 14px; -webkit-font-smoothing: antialiased; }
+    a { color: var(--ed-primary); text-decoration: none; }
+    a:hover { color: var(--ed-primary-hover); }
+    button, input { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(37, 99, 235, .48); outline-offset: 3px; }
+    .muted { color: var(--ed-muted); }
+    .text-primary-ed { color: var(--ed-primary) !important; }
+    .ed-card { border: 1px solid var(--ed-border); background: var(--ed-surface); border-radius: var(--ed-radius); box-shadow: var(--ed-shadow); }
+    .ed-btn-primary { background: var(--ed-primary); border: 1px solid var(--ed-primary); border-radius: 8px; color: white; min-height: 48px; padding: 0 20px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: background .15s, transform .15s, box-shadow .15s; }
+    .ed-btn-primary:hover { background: var(--ed-primary-hover); border-color: var(--ed-primary-hover); color: #fff; box-shadow: 0 4px 14px rgba(37, 99, 235, .2); }
+    .ed-btn-primary:active { transform: translateY(1px); }
+    .ed-avatar { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; border-radius: 50%; background: var(--ed-avatar); color: var(--ed-primary); font-weight: 600; }
+    .ed-avatar--small { width: 40px; height: 40px; font-size: 13px; }
+    .ed-avatar--large { width: 96px; height: 96px; font-size: 30px; }
+    .ed-pill { display: inline-flex; align-items: center; justify-content: center; padding: 5px 10px; min-height: 25px; border-radius: 999px; background: var(--ed-soft); color: var(--ed-primary); font-size: 12px; line-height: 15px; font-weight: 600; white-space: nowrap; }
+    .brand-logo { display: inline-flex; align-items: center; gap: 8px; font-size: 28px; line-height: 34px; letter-spacing: -1px; font-weight: 700; color: var(--ed-ink); white-space: nowrap; }
+    .brand-logo:hover { color: var(--ed-ink); }
+    .brand-logo .brand-symbol { font-size: 28px; line-height: 1; color: var(--ed-primary); width: 32px; display: inline-flex; justify-content: center; }
+    .brand-logo .brand-blue { color: var(--ed-primary); }
+
+    /* =========================================================
+       Desktop sidebar (>= 992px): Figma 232px
+       ========================================================= */
+    .desktop-sidebar { width: var(--ed-sidebar-width); min-height: 100vh; position: fixed; z-index: 1030; inset: 0 auto 0 0; background: var(--ed-surface); border-right: 1px solid var(--ed-border); padding: 24px 20px; overflow-y: auto; scrollbar-width: thin; }
+    .workspace-label { display: block; margin: 32px 0 8px; color: var(--ed-muted); font-size: 10px; letter-spacing: 1.3px; font-weight: 600; }
+    .side-nav { display: flex; flex-direction: column; gap: 8px; }
+    .side-nav .nav-entry { display: flex; align-items: center; width: 100%; height: 44px; padding: 0 12px; border-radius: 8px; font-size: 13px; color: var(--ed-muted); gap: 12px; transition: background .15s, color .15s; }
+    .side-nav .nav-entry i { width: 20px; text-align: center; font-size: 17px; }
+    .side-nav .nav-entry:hover { color: var(--ed-primary); background: #f1f5f9; }
+    .side-nav .nav-entry.active { color: var(--ed-primary); background: var(--ed-soft); font-weight: 600; }
+    .side-nav .nav-entry:active { background: var(--ed-avatar); }
+    .learning-reminder { margin-top: 32px; padding: 16px; border-radius: 12px; background: var(--ed-soft); min-height: 147px; }
+    .learning-reminder .reminder-icon { color: var(--ed-primary); font-size: 18px; }
+    .learning-reminder h3 { font-size: 14px; line-height: 22px; font-weight: 600; margin: 8px 0; }
+    .learning-reminder p { color: var(--ed-muted); font-size: 12px; line-height: 19px; margin: 0; }
+
+    /* =========================================================
+       Header: 72px desktop / 103px tablet + mobile
+       ========================================================= */
+    .app-workspace { min-height: 100vh; margin-left: var(--ed-sidebar-width); display: flex; flex-direction: column; }
+    .app-header { min-height: 72px; background: white; border-bottom: 1px solid var(--ed-border); padding: 16px 32px; }
+    .header-top { height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .header-search { position: relative; width: 340px; height: 40px; }
+    .header-search i { position: absolute; left: 13px; top: 12px; font-size: 17px; color: var(--ed-muted); pointer-events: none; }
+    .header-search input { height: 40px; border: 1px solid var(--ed-border); border-radius: 8px; background: var(--ed-background); padding: 0 12px 0 42px; width: 100%; color: var(--ed-ink); font-size: 13px; outline: none; }
+    .header-search input::placeholder { color: var(--ed-muted); opacity: 1; }
+    .header-search input:focus { border-color: var(--ed-primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, .12); }
+    .header-action { border: 0; background: transparent; color: var(--ed-muted); font-size: 18px; border-radius: 8px; padding: 7px; cursor: pointer; }
+    .header-action:hover { background: var(--ed-soft); color: var(--ed-primary); }
+    .account-name { font-size: 13px; font-weight: 600; white-space: nowrap; line-height: 16px; }
+    .account-role { font-size: 11px; color: var(--ed-muted); line-height: 13px; margin-top: 3px; }
+    .mobile-top-nav { display: none; margin-top: 16px; justify-content: space-between; align-items: center; font-size: 12px; line-height: 15px; font-weight: 500; }
+    .mobile-top-nav a { color: var(--ed-primary); }
+    .mobile-top-nav a:hover { text-decoration: underline; }
+
+    /* =========================================================
+       Main profile: exact desktop inset 72px / tablet 32 / mobile 20
+       ========================================================= */
+    .profile-main { flex: 1; width: 100%; padding: 40px 72px; }
+    .profile-intro { margin-bottom: 32px; }
+    .breadcrumb-text { color: var(--ed-muted); font-size: 12px; line-height: 19px; margin: 0 0 8px; }
+    .page-heading { font-size: 28px; line-height: 35px; letter-spacing: -0.7px; font-weight: 700; margin: 0 0 8px; }
+    .intro-subtitle { font-size: 14px; color: var(--ed-muted); line-height: 22px; margin: 0; }
+
+    /* Identity card */
+    .identity-card { min-height: 165px; padding: 32px; display: flex; align-items: center; gap: 24px; }
+    .student-identity { min-width: 0; flex: 1; }
+    .student-identity h2 { font-size: 30px; line-height: 38px; letter-spacing: -0.65px; margin: 8px 0; font-weight: 700; }
+    .student-identity p { margin: 0; color: var(--ed-muted); font-size: 14px; line-height: 22px; overflow-wrap: anywhere; }
+    .identity-card .ed-btn-primary { min-width: 144px; }
+
+    /* Learning summary: 4 columns desktop, 2 columns tablet/mobile */
+    .learning-summary { margin-top: 32px; }
+    .section-title { font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: -0.5px; margin: 0; }
+    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+    .metric-card { height: 141px; padding: 20px; }
+    .metric-icon { color: var(--ed-primary); font-size: 18px; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; }
+    .metric-number { font-size: 30px; line-height: 36px; font-weight: 700; margin: 12px 0 12px; }
+    .metric-label { color: var(--ed-muted); font-size: 13px; line-height: 21px; margin: 0; }
+    .summary-note { font-size: 13px; line-height: 21px; color: var(--ed-muted); margin: 20px 0 0; }
+
+    /* About and onward navigation */
+    .profile-info-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: start; margin-top: 32px; }
+    .about-card, .destination-card { padding: 24px; }
+    .about-card h2 { font-size: 22px; line-height: 28px; margin: 0 0 24px; font-weight: 700; letter-spacing: -0.5px; }
+    .about-card p { font-size: 14px; line-height: 22px; color: var(--ed-body); margin: 0 0 24px; }
+    .about-card h3 { font-size: 16px; line-height: 20px; font-weight: 700; margin: 0 0 24px; }
+    .interest-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .destination-card { min-height: 333px; }
+    .destination-card .cap-icon { color: var(--ed-primary); font-size: 24px; width: 28px; height: 28px; }
+    .destination-card h2 { font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: -0.5px; margin: 24px 0; }
+    .destination-card p { font-size: 13px; line-height: 21px; color: var(--ed-muted); margin: 0 0 24px; }
+    .destination-links { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+    .destination-links a { font-size: 13px; line-height: 24px; font-weight: 600; }
+    .destination-links a:hover { text-decoration: underline; }
+    .app-footer { height: 63px; border-top: 1px solid var(--ed-border); color: var(--ed-muted); display: flex; flex: 0 0 auto; align-items: center; justify-content: center; text-align: center; font-size: 12px; padding: 0 16px; }
+
+    /* =========================================================
+       Tablet (Figma: 834px) — sidebar collapses, 2 metric columns
+       ========================================================= */
+    @media (max-width: 991.98px) {
+      .desktop-sidebar { display: none; }
+      .app-workspace { margin-left: 0; }
+      .app-header { min-height: 103px; padding: 16px 32px; }
+      .header-search { display: none; }
+      .mobile-top-nav { display: flex; }
+      .profile-main { padding: 40px 32px; }
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    /* =========================================================
+       Mobile (Figma: 390px) — identity & information stack
+       ========================================================= */
+    @media (max-width: 575.98px) {
+      .app-header { padding: 16px 20px; }
+      .account-label { display: none; }
+      .header-action { padding: 4px; }
+      .profile-main { padding: 40px 20px; }
+      .identity-card { min-height: 335px; padding: 24px; align-items: stretch; flex-direction: column; gap: 0; }
+      .identity-card .ed-avatar--large { margin-bottom: 24px; }
+      .student-identity { flex: none; }
+      .student-identity h2 { font-size: 26px; line-height: 33px; margin: 8px 0; }
+      .student-identity p { font-size: 13px; line-height: 21px; }
+      .identity-card .ed-btn-primary { margin-top: 24px; width: 100%; }
+      .profile-info-grid { grid-template-columns: 1fr; }
+      .destination-card { min-height: 287px; }
+    }
+    @media (max-width: 359.98px) {
+      .brand-logo { font-size: 23px; gap: 5px; }
+      .brand-logo .brand-symbol { font-size: 24px; width: 27px; }
+      .profile-main { padding-inline: 16px; }
+      .app-header { padding-inline: 16px; }
+      .identity-card { padding: 20px; }
+      .metric-card { padding: 16px; }
+      .metric-label { font-size: 12px; }
+      .mobile-top-nav { font-size: 11px; }
+    }
+
+    /* Supplementary interactive surfaces */
+    .dropdown-menu, .offcanvas { font-family: 'Inter', system-ui, sans-serif; }
+    .dropdown-item:hover, .dropdown-item:focus { color: var(--ed-primary); background: var(--ed-soft); }
+    .route-toast { font-size: 13px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+  
+/* Moved from static HTML style attributes during restoration. */
+.edu-restored-inline-1 { z-index: 1090; }

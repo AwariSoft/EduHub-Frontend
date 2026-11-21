@@ -1,0 +1,2134 @@
+{
+  "project": "EduHub",
+  "figma_file": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub",
+  "created_utc": "2026-11-21T04:00:00Z",
+  "inventory_counts": {
+    "figma_frames": 153,
+    "unique_baseline_destinations": 76,
+    "baseline_website_html": 77,
+    "updated_student_pages": 6,
+    "updated_instructor_bundles": 23,
+    "updated_admin_bundles": 15,
+    "total_browsable_pages": 120
+  },
+  "screen_map_original": [
+    {
+      "frame": "EduHub · Payment status and role-safe access",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44515",
+      "width": 1120.0,
+      "page": "pages/states/payment-status-role-safe-access.html"
+    },
+    {
+      "frame": "EduHub · Notification states and roles",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44292",
+      "width": 1120.0,
+      "page": "pages/states/notification-states-roles.html"
+    },
+    {
+      "frame": "EduHub · Profile saving states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44146",
+      "width": 1120.0,
+      "page": "pages/states/profile-saving-states.html"
+    },
+    {
+      "frame": "EduHub · Password reset states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43943",
+      "width": 1120.0,
+      "page": "pages/states/password-reset-states.html"
+    },
+    {
+      "frame": "EduHub · Password recovery states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43850",
+      "width": 1120.0,
+      "page": "pages/states/password-recovery-states.html"
+    },
+    {
+      "frame": "EduHub · Access Denied · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43815",
+      "width": 390.0,
+      "page": "pages/system/access-denied.html"
+    },
+    {
+      "frame": "EduHub · Access Denied · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43778",
+      "width": 834.0,
+      "page": "pages/system/access-denied.html"
+    },
+    {
+      "frame": "EduHub · Access Denied · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43741",
+      "width": 1440.0,
+      "page": "pages/system/access-denied.html"
+    },
+    {
+      "frame": "EduHub · Page Not Found · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43719",
+      "width": 390.0,
+      "page": "pages/system/page-not-found.html"
+    },
+    {
+      "frame": "EduHub · Page Not Found · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43697",
+      "width": 834.0,
+      "page": "pages/system/page-not-found.html"
+    },
+    {
+      "frame": "EduHub · Page Not Found · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43675",
+      "width": 1440.0,
+      "page": "pages/system/page-not-found.html"
+    },
+    {
+      "frame": "EduHub · Payment Failed · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43620",
+      "width": 390.0,
+      "page": "pages/student/payment-failed.html"
+    },
+    {
+      "frame": "EduHub · Payment Failed · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43562",
+      "width": 834.0,
+      "page": "pages/student/payment-failed.html"
+    },
+    {
+      "frame": "EduHub · Payment Failed · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43504",
+      "width": 1440.0,
+      "page": "pages/student/payment-failed.html"
+    },
+    {
+      "frame": "EduHub · Payment Success · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43449",
+      "width": 390.0,
+      "page": "pages/student/payment-success.html"
+    },
+    {
+      "frame": "EduHub · Payment Success · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43391",
+      "width": 834.0,
+      "page": "pages/student/payment-success.html"
+    },
+    {
+      "frame": "EduHub · Payment Success · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43333",
+      "width": 1440.0,
+      "page": "pages/student/payment-success.html"
+    },
+    {
+      "frame": "EduHub · Notifications · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43237",
+      "width": 390.0,
+      "page": "pages/student/notifications.html"
+    },
+    {
+      "frame": "EduHub · Notifications · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43126",
+      "width": 834.0,
+      "page": "pages/student/notifications.html"
+    },
+    {
+      "frame": "EduHub · Notifications · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42985",
+      "width": 1440.0,
+      "page": "pages/student/notifications.html"
+    },
+    {
+      "frame": "EduHub · Edit Student Profile · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42919",
+      "width": 390.0,
+      "page": "pages/student/edit-student-profile.html"
+    },
+    {
+      "frame": "EduHub · Edit Student Profile · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42851",
+      "width": 834.0,
+      "page": "pages/student/edit-student-profile.html"
+    },
+    {
+      "frame": "EduHub · Edit Student Profile · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42753",
+      "width": 1440.0,
+      "page": "pages/student/edit-student-profile.html"
+    },
+    {
+      "frame": "EduHub · Student Profile · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42676",
+      "width": 390.0,
+      "page": "pages/student/student-profile.html"
+    },
+    {
+      "frame": "EduHub · Student Profile · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42597",
+      "width": 834.0,
+      "page": "pages/student/student-profile.html"
+    },
+    {
+      "frame": "EduHub · Student Profile · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42488",
+      "width": 1440.0,
+      "page": "pages/student/student-profile.html"
+    },
+    {
+      "frame": "EduHub · Reset Password · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42448",
+      "width": 390.0,
+      "page": "pages/auth/reset-password.html"
+    },
+    {
+      "frame": "EduHub · Reset Password · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42408",
+      "width": 834.0,
+      "page": "pages/auth/reset-password.html"
+    },
+    {
+      "frame": "EduHub · Reset Password · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42363",
+      "width": 1440.0,
+      "page": "pages/auth/reset-password.html"
+    },
+    {
+      "frame": "EduHub · Forgot Password · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42334",
+      "width": 390.0,
+      "page": "pages/auth/forgot-password.html"
+    },
+    {
+      "frame": "EduHub · Forgot Password · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42305",
+      "width": 834.0,
+      "page": "pages/auth/forgot-password.html"
+    },
+    {
+      "frame": "EduHub · Forgot Password · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42271",
+      "width": 1440.0,
+      "page": "pages/auth/forgot-password.html"
+    },
+    {
+      "frame": "EduHub · Homepage · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42003",
+      "width": 390.0,
+      "page": "pages/public/home.html"
+    },
+    {
+      "frame": "EduHub · Homepage · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-41735",
+      "width": 834.0,
+      "page": "pages/public/home.html"
+    },
+    {
+      "frame": "EduHub · Homepage · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-41468",
+      "width": 1440.0,
+      "page": "pages/public/home.html"
+    },
+    {
+      "frame": "EduHub · Admin · Mobile · Menus, filters and dialogs",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88972",
+      "width": 482.0,
+      "page": "pages/states/admin-mobile-menus-filters-dialogs.html"
+    },
+    {
+      "frame": "EduHub · Admin · Filters, profile and notifications",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88791",
+      "width": 1120.0,
+      "page": "pages/states/admin-filters-profile-notifications.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payments · Refund and payment outcomes",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88522",
+      "width": 1120.0,
+      "page": "pages/states/admin-payments-refund-outcomes.html"
+    },
+    {
+      "frame": "EduHub · Admin · Account access · Confirmations and results",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88399",
+      "width": 1120.0,
+      "page": "pages/states/admin-account-access-confirmations.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course review · Decisions and results",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88267",
+      "width": 1120.0,
+      "page": "pages/states/admin-course-review-decisions.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payments · Table states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88081",
+      "width": 1120.0,
+      "page": "pages/states/admin-payments-table-states.html"
+    },
+    {
+      "frame": "EduHub · Admin · User Management · Table states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87917",
+      "width": 1120.0,
+      "page": "pages/states/admin-user-management-table-states.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course Approvals · Table states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87742",
+      "width": 1120.0,
+      "page": "pages/states/admin-course-approvals-table-states.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payment Details · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87649",
+      "width": 390.0,
+      "page": "pages/admin/payment-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payment Details · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87541",
+      "width": 834.0,
+      "page": "pages/admin/payment-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payment Details · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87420",
+      "width": 1440.0,
+      "page": "pages/admin/payment-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payments · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87268",
+      "width": 390.0,
+      "page": "pages/admin/payments.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payments · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87100",
+      "width": 834.0,
+      "page": "pages/admin/payments.html"
+    },
+    {
+      "frame": "EduHub · Admin · Payments · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86895",
+      "width": 1440.0,
+      "page": "pages/admin/payments.html"
+    },
+    {
+      "frame": "EduHub · Admin · User Details · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86823",
+      "width": 390.0,
+      "page": "pages/admin/user-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · User Details · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86737",
+      "width": 834.0,
+      "page": "pages/admin/user-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · User Details · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86636",
+      "width": 1440.0,
+      "page": "pages/admin/user-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · User Management · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86477",
+      "width": 390.0,
+      "page": "pages/admin/user-management.html"
+    },
+    {
+      "frame": "EduHub · Admin · User Management · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86301",
+      "width": 834.0,
+      "page": "pages/admin/user-management.html"
+    },
+    {
+      "frame": "EduHub · Admin · User Management · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86096",
+      "width": 1440.0,
+      "page": "pages/admin/user-management.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course Review Details · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85908",
+      "width": 390.0,
+      "page": "pages/admin/course-review-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course Review Details · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85682",
+      "width": 834.0,
+      "page": "pages/admin/course-review-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course Review Details · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85441",
+      "width": 1440.0,
+      "page": "pages/admin/course-review-details.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course Approvals · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85286",
+      "width": 390.0,
+      "page": "pages/admin/course-approvals.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course Approvals · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85114",
+      "width": 834.0,
+      "page": "pages/admin/course-approvals.html"
+    },
+    {
+      "frame": "EduHub · Admin · Course Approvals · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-84906",
+      "width": 1440.0,
+      "page": "pages/admin/course-approvals.html"
+    },
+    {
+      "frame": "EduHub · Admin · Admin Dashboard · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-84716",
+      "width": 390.0,
+      "page": "pages/admin/admin-dashboard.html"
+    },
+    {
+      "frame": "EduHub · Admin · Admin Dashboard · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-84503",
+      "width": 834.0,
+      "page": "pages/admin/admin-dashboard.html"
+    },
+    {
+      "frame": "EduHub · Admin · Admin Dashboard · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-84277",
+      "width": 1440.0,
+      "page": "pages/admin/admin-dashboard.html"
+    },
+    {
+      "frame": "EduHub · Free course learning · Database Design Fundamentals",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-42174",
+      "width": 1440.0,
+      "page": "pages/states/free-course-learning-database.html"
+    },
+    {
+      "frame": "EduHub · Explore Courses · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-38019",
+      "width": 1440.0,
+      "page": "pages/public/explore-courses.html"
+    },
+    {
+      "frame": "EduHub · Explore Courses · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-38200",
+      "width": 834.0,
+      "page": "pages/public/explore-courses.html"
+    },
+    {
+      "frame": "EduHub · Explore Courses · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-38386",
+      "width": 390.0,
+      "page": "pages/public/explore-courses.html"
+    },
+    {
+      "frame": "EduHub · Checkout · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39207",
+      "width": 1440.0,
+      "page": "pages/student/checkout.html"
+    },
+    {
+      "frame": "EduHub · Checkout · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39318",
+      "width": 834.0,
+      "page": "pages/student/checkout.html"
+    },
+    {
+      "frame": "EduHub · Checkout · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39430",
+      "width": 390.0,
+      "page": "pages/student/checkout.html"
+    },
+    {
+      "frame": "EduHub · Course Learning · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39539",
+      "width": 1440.0,
+      "page": "pages/student/course-learning.html"
+    },
+    {
+      "frame": "EduHub · Course Learning · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39693",
+      "width": 834.0,
+      "page": "pages/student/course-learning.html"
+    },
+    {
+      "frame": "EduHub · Course Learning · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39849",
+      "width": 390.0,
+      "page": "pages/student/course-learning.html"
+    },
+    {
+      "frame": "EduHub · Final Quiz · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40003",
+      "width": 1440.0,
+      "page": "pages/student/final-quiz.html"
+    },
+    {
+      "frame": "EduHub · Final Quiz · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40004",
+      "width": 1440.0,
+      "page": "pages/student/final-quiz.html"
+    },
+    {
+      "frame": "EduHub · Final Quiz · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40105",
+      "width": 834.0,
+      "page": "pages/student/final-quiz.html"
+    },
+    {
+      "frame": "EduHub · Final Quiz · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40208",
+      "width": 390.0,
+      "page": "pages/student/final-quiz.html"
+    },
+    {
+      "frame": "EduHub · Certificate · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40308",
+      "width": 1440.0,
+      "page": "pages/student/certificate.html"
+    },
+    {
+      "frame": "EduHub · Certificate · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40384",
+      "width": 834.0,
+      "page": "pages/student/certificate.html"
+    },
+    {
+      "frame": "EduHub · Certificate · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40464",
+      "width": 390.0,
+      "page": "pages/student/certificate.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Free",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40543",
+      "width": 1440.0,
+      "page": "pages/states/course-details-free.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Already enrolled",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40710",
+      "width": 1440.0,
+      "page": "pages/states/course-details-already-enrolled.html"
+    },
+    {
+      "frame": "EduHub · Curriculum expanded and collapsed states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40931",
+      "width": 1000.0,
+      "page": "pages/states/curriculum-expanded-collapsed.html"
+    },
+    {
+      "frame": "EduHub · Payment Processing",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41044",
+      "width": 1440.0,
+      "page": "pages/states/payment-processing.html"
+    },
+    {
+      "frame": "EduHub · Payment Successful",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41091",
+      "width": 1440.0,
+      "page": "pages/states/payment-successful-early.html"
+    },
+    {
+      "frame": "EduHub · Payment Failed",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41138",
+      "width": 1440.0,
+      "page": "pages/student/payment-failed.html"
+    },
+    {
+      "frame": "EduHub · Course Learning · All lessons complete",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41187",
+      "width": 1440.0,
+      "page": "pages/states/course-learning-all-lessons-complete.html"
+    },
+    {
+      "frame": "EduHub · Course Learning · No final quiz policy",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41347",
+      "width": 1440.0,
+      "page": "pages/states/course-learning-no-final-quiz-policy.html"
+    },
+    {
+      "frame": "EduHub · Course Learning · Resources",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41506",
+      "width": 1440.0,
+      "page": "pages/states/course-learning-resources.html"
+    },
+    {
+      "frame": "EduHub · Course Learning · Notes",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41670",
+      "width": 1440.0,
+      "page": "pages/states/course-learning-notes.html"
+    },
+    {
+      "frame": "EduHub · Quiz Result · Pass",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41829",
+      "width": 1440.0,
+      "page": "pages/states/quiz-result-pass.html"
+    },
+    {
+      "frame": "EduHub · Quiz Result · Fail",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41885",
+      "width": 1440.0,
+      "page": "pages/states/quiz-result-fail.html"
+    },
+    {
+      "frame": "EduHub · Certificate · Not yet available",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41941",
+      "width": 1440.0,
+      "page": "pages/states/certificate-not-yet-available.html"
+    },
+    {
+      "frame": "EduHub · Share and quiz confirmation dialogs",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41995",
+      "width": 1000.0,
+      "page": "pages/states/share-quiz-confirmation-dialogs.html"
+    },
+    {
+      "frame": "EduHub · Explore Courses · Mobile filters open",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-42070",
+      "width": 390.0,
+      "page": "pages/states/explore-courses-mobile-filters-open.html"
+    },
+    {
+      "frame": "EduHub · Dialogs and curriculum states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61912",
+      "width": 1440.0,
+      "page": "pages/states/dialogs-curriculum-states.html"
+    },
+    {
+      "frame": "EduHub · Menus, uploads and form states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61713",
+      "width": 1440.0,
+      "page": "pages/states/menus-uploads-form-states.html"
+    },
+    {
+      "frame": "EduHub · Empty workspace states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61646",
+      "width": 1440.0,
+      "page": "pages/states/empty-workspace-states.html"
+    },
+    {
+      "frame": "EduHub · Course approval states",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61572",
+      "width": 1440.0,
+      "page": "pages/states/course-approval-states.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Analytics · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61397",
+      "width": 1440.0,
+      "page": "pages/instructor/course-details-analytics.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Students · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61263",
+      "width": 1440.0,
+      "page": "pages/instructor/course-details-students.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Curriculum · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61119",
+      "width": 1440.0,
+      "page": "pages/instructor/course-details-curriculum.html"
+    },
+    {
+      "frame": "EduHub · Settings · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61026",
+      "width": 390.0,
+      "page": "pages/instructor/settings.html"
+    },
+    {
+      "frame": "EduHub · Settings · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60928",
+      "width": 834.0,
+      "page": "pages/instructor/settings.html"
+    },
+    {
+      "frame": "EduHub · Settings · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60826",
+      "width": 1440.0,
+      "page": "pages/instructor/settings.html"
+    },
+    {
+      "frame": "EduHub · My Profile · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60697",
+      "width": 390.0,
+      "page": "pages/instructor/my-profile.html"
+    },
+    {
+      "frame": "EduHub · My Profile · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60563",
+      "width": 834.0,
+      "page": "pages/instructor/my-profile.html"
+    },
+    {
+      "frame": "EduHub · My Profile · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60424",
+      "width": 1440.0,
+      "page": "pages/instructor/my-profile.html"
+    },
+    {
+      "frame": "EduHub · Course Analytics · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60266",
+      "width": 390.0,
+      "page": "pages/instructor/course-analytics.html"
+    },
+    {
+      "frame": "EduHub · Course Analytics · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60103",
+      "width": 834.0,
+      "page": "pages/instructor/course-analytics.html"
+    },
+    {
+      "frame": "EduHub · Course Analytics · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59937",
+      "width": 1440.0,
+      "page": "pages/instructor/course-analytics.html"
+    },
+    {
+      "frame": "EduHub · My Students · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59785",
+      "width": 390.0,
+      "page": "pages/instructor/my-students.html"
+    },
+    {
+      "frame": "EduHub · My Students · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59628",
+      "width": 834.0,
+      "page": "pages/instructor/my-students.html"
+    },
+    {
+      "frame": "EduHub · My Students · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59456",
+      "width": 1440.0,
+      "page": "pages/instructor/my-students.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Overview · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59350",
+      "width": 390.0,
+      "page": "pages/instructor/course-details.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Overview · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59239",
+      "width": 834.0,
+      "page": "pages/instructor/course-details.html"
+    },
+    {
+      "frame": "EduHub · Course Details · Overview · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59125",
+      "width": 1440.0,
+      "page": "pages/instructor/course-details.html"
+    },
+    {
+      "frame": "EduHub · Edit Lesson · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59012",
+      "width": 390.0,
+      "page": "pages/instructor/edit-lesson.html"
+    },
+    {
+      "frame": "EduHub · Edit Lesson · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58894",
+      "width": 834.0,
+      "page": "pages/instructor/edit-lesson.html"
+    },
+    {
+      "frame": "EduHub · Edit Lesson · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58772",
+      "width": 1440.0,
+      "page": "pages/instructor/edit-lesson.html"
+    },
+    {
+      "frame": "EduHub · Add Lesson · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58673",
+      "width": 390.0,
+      "page": "pages/instructor/add-lesson.html"
+    },
+    {
+      "frame": "EduHub · Add Lesson · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58569",
+      "width": 834.0,
+      "page": "pages/instructor/add-lesson.html"
+    },
+    {
+      "frame": "EduHub · Add Lesson · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58461",
+      "width": 1440.0,
+      "page": "pages/instructor/add-lesson.html"
+    },
+    {
+      "frame": "EduHub · Course Curriculum · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58269",
+      "width": 390.0,
+      "page": "pages/instructor/course-curriculum.html"
+    },
+    {
+      "frame": "EduHub · Course Curriculum · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58054",
+      "width": 834.0,
+      "page": "pages/instructor/course-curriculum.html"
+    },
+    {
+      "frame": "EduHub · Course Curriculum · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57835",
+      "width": 1440.0,
+      "page": "pages/instructor/course-curriculum.html"
+    },
+    {
+      "frame": "EduHub · Edit Course · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57689",
+      "width": 390.0,
+      "page": "pages/instructor/edit-course.html"
+    },
+    {
+      "frame": "EduHub · Edit Course · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57538",
+      "width": 834.0,
+      "page": "pages/instructor/edit-course.html"
+    },
+    {
+      "frame": "EduHub · Edit Course · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57366",
+      "width": 1440.0,
+      "page": "pages/instructor/edit-course.html"
+    },
+    {
+      "frame": "EduHub · Create Course · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57234",
+      "width": 390.0,
+      "page": "pages/instructor/create-course.html"
+    },
+    {
+      "frame": "EduHub · Create Course · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57097",
+      "width": 834.0,
+      "page": "pages/instructor/create-course.html"
+    },
+    {
+      "frame": "EduHub · Create Course · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56939",
+      "width": 1440.0,
+      "page": "pages/instructor/create-course.html"
+    },
+    {
+      "frame": "EduHub · My Courses · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56818",
+      "width": 390.0,
+      "page": "pages/instructor/my-courses.html"
+    },
+    {
+      "frame": "EduHub · My Courses · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56692",
+      "width": 834.0,
+      "page": "pages/instructor/my-courses.html"
+    },
+    {
+      "frame": "EduHub · My Courses · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56531",
+      "width": 1440.0,
+      "page": "pages/instructor/my-courses.html"
+    },
+    {
+      "frame": "EduHub · Dashboard · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56357",
+      "width": 390.0,
+      "page": "pages/instructor/dashboard.html"
+    },
+    {
+      "frame": "EduHub · Dashboard · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56172",
+      "width": 834.0,
+      "page": "pages/instructor/dashboard.html"
+    },
+    {
+      "frame": "EduHub · Dashboard · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-55985",
+      "width": 1440.0,
+      "page": "pages/instructor/dashboard.html"
+    },
+    {
+      "frame": "EduHub instructor workspace · Edit Course",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-17891",
+      "width": 1440.0,
+      "page": "pages/instructor/edit-course.html"
+    },
+    {
+      "frame": "EduHub instructor workspace · Create Course",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-17667",
+      "width": 1440.0,
+      "page": "pages/instructor/create-course.html"
+    },
+    {
+      "frame": "EduHub instructor dashboard · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-17387",
+      "width": 390.0,
+      "page": "pages/instructor/dashboard.html"
+    },
+    {
+      "frame": "EduHub instructor dashboard · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-17076",
+      "width": 834.0,
+      "page": "pages/instructor/dashboard.html"
+    },
+    {
+      "frame": "EduHub instructor dashboard · New instructor",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-16936",
+      "width": 1440.0,
+      "page": "pages/instructor/new-instructor-dashboard.html"
+    },
+    {
+      "frame": "EduHub instructor dashboard · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-16621",
+      "width": 1440.0,
+      "page": "pages/instructor/dashboard.html"
+    },
+    {
+      "frame": "EduHub student dashboard · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-8074",
+      "width": 390.0,
+      "page": "pages/student/dashboard.html"
+    },
+    {
+      "frame": "EduHub student dashboard · Tablet",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-7792",
+      "width": 834.0,
+      "page": "pages/student/dashboard.html"
+    },
+    {
+      "frame": "EduHub new student dashboard · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-7624",
+      "width": 1440.0,
+      "page": "pages/student/new-student-dashboard.html"
+    },
+    {
+      "frame": "EduHub student dashboard · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-7335",
+      "width": 1440.0,
+      "page": "pages/student/dashboard.html"
+    },
+    {
+      "frame": "EduHub sign in · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=7-619",
+      "width": 390.0,
+      "page": "pages/auth/sign-in.html"
+    },
+    {
+      "frame": "EduHub sign in · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=7-566",
+      "width": 1440.0,
+      "page": "pages/auth/sign-in.html"
+    },
+    {
+      "frame": "EduHub create account · Mobile",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=4-590",
+      "width": 390.0,
+      "page": "pages/auth/create-account.html"
+    },
+    {
+      "frame": "EduHub create account · Desktop",
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=4-517",
+      "width": 1440.0,
+      "page": "pages/auth/create-account.html"
+    }
+  ],
+  "screen_entries": [
+    {
+      "title": "Certificate",
+      "group": "Student / Learning",
+      "kind": "student-update",
+      "path": "latest/student/eduhub-certificate/eduhub-certificate.html",
+      "package": "eduhub-certificate.html"
+    },
+    {
+      "title": "Certificate Not Yet Available",
+      "group": "Student / Learning",
+      "kind": "student-update",
+      "path": "latest/student/eduhub-certificate-not-yet-available/eduhub-certificate-not-yet-available.html",
+      "package": "eduhub-certificate-not-yet-available.html"
+    },
+    {
+      "title": "Curriculum Expanded Collapsed States",
+      "group": "Student / Learning",
+      "kind": "student-update",
+      "path": "latest/student/eduhub-curriculum-expanded-collapsed-states/eduhub-curriculum-expanded-collapsed-states.html",
+      "package": "eduhub-curriculum-expanded-collapsed-states.html"
+    },
+    {
+      "title": "Quiz Result Fail",
+      "group": "Student / Learning",
+      "kind": "student-update",
+      "path": "latest/student/eduhub-quiz-result-fail/eduhub-quiz-result-fail.html",
+      "package": "eduhub-quiz-result-fail.html"
+    },
+    {
+      "title": "Quiz Result Pass",
+      "group": "Student / Learning",
+      "kind": "student-update",
+      "path": "latest/student/eduhub-quiz-result-pass/eduhub-quiz-result-pass.html",
+      "package": "eduhub-quiz-result-pass(1).html"
+    },
+    {
+      "title": "Share And Quiz Confirmation Dialogs",
+      "group": "Student / Learning",
+      "kind": "student-update",
+      "path": "latest/student/eduhub-share-and-quiz-confirmation-dialogs/eduhub-share-and-quiz-confirmation-dialogs.html",
+      "package": "eduhub-share-and-quiz-confirmation-dialogs.html"
+    },
+    {
+      "title": "Add Lesson",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/add-lesson/eduhub-instructor-add-lesson.html",
+      "package": "eduhub-instructor-add-lesson-bundle.zip"
+    },
+    {
+      "title": "Course Analytics",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/course-analytics/eduhub-instructor-course-analytics.html",
+      "package": "eduhub-instructor-course-analytics-bundle.zip"
+    },
+    {
+      "title": "Course Approval States",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/course-approval-states/eduhub-instructor-course-approval-states.html",
+      "package": "eduhub-instructor-course-approval-states-bundle.zip"
+    },
+    {
+      "title": "Course Curriculum",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/course-curriculum/eduhub-instructor-course-curriculum.html",
+      "package": "eduhub-instructor-course-curriculum-bundle.zip"
+    },
+    {
+      "title": "Course Details Analytics",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/course-details-analytics/eduhub-instructor-course-details-analytics.html",
+      "package": "eduhub-instructor-course-details-analytics-bundle.zip"
+    },
+    {
+      "title": "Course Details Curriculum",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/course-details-curriculum/eduhub-instructor-course-details-curriculum.html",
+      "package": "eduhub-instructor-course-details-curriculum-bundle.zip"
+    },
+    {
+      "title": "Course Details Overview",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/course-details-overview/eduhub-instructor-course-details-overview.html",
+      "package": "eduhub-instructor-course-details-overview-bundle.zip"
+    },
+    {
+      "title": "Course Details Students",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/course-details-students/standalone/eduhub-instructor-course-details-students.html",
+      "package": "eduhub-instructor-course-details-students-bundle.zip"
+    },
+    {
+      "title": "Create Course",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/create-course/eduhub-instructor-create-course.html",
+      "package": "eduhub-instructor-create-course-bundle.zip"
+    },
+    {
+      "title": "Dashboard",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/dashboard/eduhub-instructor-dashboard.html",
+      "package": "eduhub-instructor-dashboard-bundle.zip"
+    },
+    {
+      "title": "Dashboard New Instructor",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/dashboard-new-instructor/eduhub-instructor-dashboard-new-instructor-standalone.html",
+      "package": "eduhub-instructor-dashboard-new-instructor-bundle.zip"
+    },
+    {
+      "title": "Dashboard Original Design",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/dashboard-original-design/eduhub-instructor-dashboard-original-design-standalone.html",
+      "package": "eduhub-instructor-dashboard-original-design-bundle.zip"
+    },
+    {
+      "title": "Dialogs Curriculum States",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/dialogs-curriculum-states/eduhub-instructor-dialogs-curriculum-states-standalone.html",
+      "package": "eduhub-instructor-dialogs-curriculum-states-bundle.zip"
+    },
+    {
+      "title": "Edit Course",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/edit-course/eduhub-instructor-edit-course.html",
+      "package": "eduhub-instructor-edit-course-bundle.zip"
+    },
+    {
+      "title": "Edit Lesson",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/edit-lesson/eduhub-instructor-edit-lesson.html",
+      "package": "eduhub-instructor-edit-lesson-bundle.zip"
+    },
+    {
+      "title": "Empty Workspace States",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/empty-workspace-states/eduhub-instructor-empty-workspace-states.html",
+      "package": "eduhub-instructor-empty-workspace-states-bundle.zip"
+    },
+    {
+      "title": "Menus Uploads Form States",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/menus-uploads-form-states/eduhub-instructor-menus-uploads-form-states-standalone.html",
+      "package": "eduhub-instructor-menus-uploads-form-states-bundle.zip"
+    },
+    {
+      "title": "My Courses",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/my-courses/eduhub-instructor-my-courses.html",
+      "package": "eduhub-instructor-my-courses-bundle.zip"
+    },
+    {
+      "title": "My Profile",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/my-profile/eduhub-instructor-my-profile.html",
+      "package": "eduhub-instructor-my-profile-bundle.zip"
+    },
+    {
+      "title": "My Students",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/my-students/eduhub-instructor-my-students.html",
+      "package": "eduhub-instructor-my-students-bundle.zip"
+    },
+    {
+      "title": "Original Create Course",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/original-create-course/eduhub-instructor-original-create-course-standalone.html",
+      "package": "eduhub-instructor-original-create-course-bundle.zip"
+    },
+    {
+      "title": "Original Edit Course",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/original-edit-course/eduhub-instructor-original-edit-course-standalone.html",
+      "package": "eduhub-instructor-original-edit-course-bundle.zip"
+    },
+    {
+      "title": "Settings",
+      "group": "Instructor Workspace",
+      "kind": "updated",
+      "path": "latest/instructor/settings/eduhub-instructor-settings.html",
+      "package": "eduhub-instructor-settings-bundle.zip"
+    },
+    {
+      "title": "Account Access Confirmations Results",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/account-access-confirmations-results/eduhub-admin-account-access-confirmations-results-standalone.html",
+      "package": "eduhub-admin-account-access-confirmations-results-bundle.zip"
+    },
+    {
+      "title": "Course Approvals",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/course-approvals/eduhub-admin-course-approvals-standalone.html",
+      "package": "eduhub-admin-course-approvals-bundle.zip"
+    },
+    {
+      "title": "Course Approvals Table States",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/course-approvals-table-states/eduhub-admin-course-approvals-table-states-standalone.html",
+      "package": "eduhub-admin-course-approvals-table-states-bundle.zip"
+    },
+    {
+      "title": "Course Review Decisions Results",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/course-review-decisions-results/eduhub-admin-course-review-decisions-results-standalone.html",
+      "package": "eduhub-admin-course-review-decisions-results-bundle.zip"
+    },
+    {
+      "title": "Course Review Details",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/course-review-details/eduhub-admin-course-review-details-standalone.html",
+      "package": "eduhub-admin-course-review-details-bundle.zip"
+    },
+    {
+      "title": "Dashboard",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/dashboard/eduhub-admin-dashboard-standalone.html",
+      "package": "eduhub-admin-dashboard-bundle.zip"
+    },
+    {
+      "title": "Filters Profile Notifications",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/filters-profile-notifications/eduhub-admin-filters-profile-notifications-standalone.html",
+      "package": "eduhub-admin-filters-profile-notifications-bundle.zip"
+    },
+    {
+      "title": "Mobile Menus Filters Dialogs",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/mobile-menus-filters-dialogs/eduhub-admin-mobile-menus-filters-dialogs-standalone.html",
+      "package": "eduhub-admin-mobile-menus-filters-dialogs-bundle.zip"
+    },
+    {
+      "title": "Payment Details",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/payment-details/eduhub-admin-payment-details-standalone.html",
+      "package": "eduhub-admin-payment-details-bundle.zip"
+    },
+    {
+      "title": "Payments",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/payments/eduhub-admin-payments-standalone.html",
+      "package": "eduhub-admin-payments-bundle.zip"
+    },
+    {
+      "title": "Payments Refund And Payment Outcomes",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/payments-refund-and-payment-outcomes/eduhub-admin-payments-refund-and-payment-outcomes-standalone.html",
+      "package": "eduhub-admin-payments-refund-and-payment-outcomes-bundle.zip"
+    },
+    {
+      "title": "Payments Table States",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/payments-table-states/eduhub-admin-payments-table-states-standalone.html",
+      "package": "eduhub-admin-payments-table-states-bundle.zip"
+    },
+    {
+      "title": "User Details",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/user-details/eduhub-admin-user-details-standalone.html",
+      "package": "eduhub-admin-user-details-bundle.zip"
+    },
+    {
+      "title": "User Management",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/user-management/eduhub-admin-user-management-standalone.html",
+      "package": "eduhub-admin-user-management-bundle.zip"
+    },
+    {
+      "title": "User Management Table States",
+      "group": "Admin Workspace",
+      "kind": "updated",
+      "path": "latest/admin/user-management-table-states/eduhub-admin-user-management-table-states-standalone.html",
+      "package": "eduhub-admin-user-management-table-states-bundle.zip"
+    },
+    {
+      "title": "Admin Dashboard",
+      "group": "Admin Workspace",
+      "kind": "base",
+      "path": "website/pages/admin/admin-dashboard.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-84716"
+    },
+    {
+      "title": "Course Approvals",
+      "group": "Admin Workspace",
+      "kind": "base",
+      "path": "website/pages/admin/course-approvals.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85286"
+    },
+    {
+      "title": "Course Review Details",
+      "group": "Admin Workspace",
+      "kind": "base",
+      "path": "website/pages/admin/course-review-details.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85908"
+    },
+    {
+      "title": "Payment Details",
+      "group": "Admin Workspace",
+      "kind": "base",
+      "path": "website/pages/admin/payment-details.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87649"
+    },
+    {
+      "title": "Payments",
+      "group": "Admin Workspace",
+      "kind": "base",
+      "path": "website/pages/admin/payments.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87268"
+    },
+    {
+      "title": "User Details",
+      "group": "Admin Workspace",
+      "kind": "base",
+      "path": "website/pages/admin/user-details.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86823"
+    },
+    {
+      "title": "User Management",
+      "group": "Admin Workspace",
+      "kind": "base",
+      "path": "website/pages/admin/user-management.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86477"
+    },
+    {
+      "title": "Create Account",
+      "group": "Public / Authentication",
+      "kind": "base",
+      "path": "website/pages/auth/create-account.html",
+      "frames": 2,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=4-590"
+    },
+    {
+      "title": "Forgot Password",
+      "group": "Public / Authentication",
+      "kind": "base",
+      "path": "website/pages/auth/forgot-password.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42334"
+    },
+    {
+      "title": "Reset Password",
+      "group": "Public / Authentication",
+      "kind": "base",
+      "path": "website/pages/auth/reset-password.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42448"
+    },
+    {
+      "title": "Sign In",
+      "group": "Public / Authentication",
+      "kind": "base",
+      "path": "website/pages/auth/sign-in.html",
+      "frames": 2,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=7-619"
+    },
+    {
+      "title": "Add Lesson",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/add-lesson.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58673"
+    },
+    {
+      "title": "Course Analytics",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/course-analytics.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60266"
+    },
+    {
+      "title": "Course Curriculum",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/course-curriculum.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58269"
+    },
+    {
+      "title": "Course Details Analytics",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/course-details-analytics.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61397"
+    },
+    {
+      "title": "Course Details Curriculum",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/course-details-curriculum.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61119"
+    },
+    {
+      "title": "Course Details Students",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/course-details-students.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61263"
+    },
+    {
+      "title": "Course Details",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/course-details.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59350"
+    },
+    {
+      "title": "Create Course",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/create-course.html",
+      "frames": 4,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57234"
+    },
+    {
+      "title": "Dashboard",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/dashboard.html",
+      "frames": 6,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56357"
+    },
+    {
+      "title": "Edit Course",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/edit-course.html",
+      "frames": 4,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57689"
+    },
+    {
+      "title": "Edit Lesson",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/edit-lesson.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59012"
+    },
+    {
+      "title": "My Courses",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/my-courses.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56818"
+    },
+    {
+      "title": "My Profile",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/my-profile.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60697"
+    },
+    {
+      "title": "My Students",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/my-students.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59785"
+    },
+    {
+      "title": "New Instructor Dashboard",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/new-instructor-dashboard.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-16936"
+    },
+    {
+      "title": "Settings",
+      "group": "Instructor Workspace",
+      "kind": "base",
+      "path": "website/pages/instructor/settings.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61026"
+    },
+    {
+      "title": "Course Details",
+      "group": "Public / Authentication",
+      "kind": "base",
+      "path": "website/pages/public/course-details.html",
+      "frames": 0,
+      "figma": null
+    },
+    {
+      "title": "Explore Courses",
+      "group": "Public / Authentication",
+      "kind": "base",
+      "path": "website/pages/public/explore-courses.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-38019"
+    },
+    {
+      "title": "Home",
+      "group": "Public / Authentication",
+      "kind": "base",
+      "path": "website/pages/public/home.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42003"
+    },
+    {
+      "title": "Admin Account Access Confirmations",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-account-access-confirmations.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88399"
+    },
+    {
+      "title": "Admin Course Approvals Table States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-course-approvals-table-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87742"
+    },
+    {
+      "title": "Admin Course Review Decisions",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-course-review-decisions.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88267"
+    },
+    {
+      "title": "Admin Filters Profile Notifications",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-filters-profile-notifications.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88791"
+    },
+    {
+      "title": "Admin Mobile Menus Filters Dialogs",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-mobile-menus-filters-dialogs.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88972"
+    },
+    {
+      "title": "Admin Payments Refund Outcomes",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-payments-refund-outcomes.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88522"
+    },
+    {
+      "title": "Admin Payments Table States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-payments-table-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88081"
+    },
+    {
+      "title": "Admin User Management Table States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/admin-user-management-table-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87917"
+    },
+    {
+      "title": "Certificate Not Yet Available",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/certificate-not-yet-available.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41941"
+    },
+    {
+      "title": "Course Approval States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/course-approval-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61572"
+    },
+    {
+      "title": "Course Details Already Enrolled",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/course-details-already-enrolled.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40710"
+    },
+    {
+      "title": "Course Details Free",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/course-details-free.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40543"
+    },
+    {
+      "title": "Course Learning All Lessons Complete",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/course-learning-all-lessons-complete.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41187"
+    },
+    {
+      "title": "Course Learning No Final Quiz Policy",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/course-learning-no-final-quiz-policy.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41347"
+    },
+    {
+      "title": "Course Learning Notes",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/course-learning-notes.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41670"
+    },
+    {
+      "title": "Course Learning Resources",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/course-learning-resources.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41506"
+    },
+    {
+      "title": "Curriculum Expanded Collapsed",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/curriculum-expanded-collapsed.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40931"
+    },
+    {
+      "title": "Dialogs Curriculum States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/dialogs-curriculum-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61912"
+    },
+    {
+      "title": "Empty Workspace States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/empty-workspace-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61646"
+    },
+    {
+      "title": "Explore Courses Mobile Filters Open",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/explore-courses-mobile-filters-open.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-42070"
+    },
+    {
+      "title": "Free Course Learning Database",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/free-course-learning-database.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-42174"
+    },
+    {
+      "title": "Menus Uploads Form States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/menus-uploads-form-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61713"
+    },
+    {
+      "title": "Notification States Roles",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/notification-states-roles.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44292"
+    },
+    {
+      "title": "Password Recovery States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/password-recovery-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43850"
+    },
+    {
+      "title": "Password Reset States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/password-reset-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43943"
+    },
+    {
+      "title": "Payment Processing",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/payment-processing.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41044"
+    },
+    {
+      "title": "Payment Status Role Safe Access",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/payment-status-role-safe-access.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44515"
+    },
+    {
+      "title": "Payment Successful Early",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/payment-successful-early.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41091"
+    },
+    {
+      "title": "Profile Saving States",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/profile-saving-states.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44146"
+    },
+    {
+      "title": "Quiz Result Fail",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/quiz-result-fail.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41885"
+    },
+    {
+      "title": "Quiz Result Pass",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/quiz-result-pass.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41829"
+    },
+    {
+      "title": "Share Quiz Confirmation Dialogs",
+      "group": "Supporting States",
+      "kind": "base",
+      "path": "website/pages/states/share-quiz-confirmation-dialogs.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41995"
+    },
+    {
+      "title": "Certificate",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/certificate.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40308"
+    },
+    {
+      "title": "Checkout",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/checkout.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39207"
+    },
+    {
+      "title": "Course Learning",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/course-learning.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39539"
+    },
+    {
+      "title": "Dashboard",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/dashboard.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-8074"
+    },
+    {
+      "title": "Edit Student Profile",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/edit-student-profile.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42919"
+    },
+    {
+      "title": "Final Quiz",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/final-quiz.html",
+      "frames": 4,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40003"
+    },
+    {
+      "title": "New Student Dashboard",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/new-student-dashboard.html",
+      "frames": 1,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-7624"
+    },
+    {
+      "title": "Notifications",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/notifications.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43237"
+    },
+    {
+      "title": "Payment Failed",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/payment-failed.html",
+      "frames": 4,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43620"
+    },
+    {
+      "title": "Payment Success",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/payment-success.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43449"
+    },
+    {
+      "title": "Student Profile",
+      "group": "Student / Learning",
+      "kind": "base",
+      "path": "website/pages/student/student-profile.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42676"
+    },
+    {
+      "title": "Access Denied",
+      "group": "System Pages",
+      "kind": "base",
+      "path": "website/pages/system/access-denied.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43815"
+    },
+    {
+      "title": "Page Not Found",
+      "group": "System Pages",
+      "kind": "base",
+      "path": "website/pages/system/page-not-found.html",
+      "frames": 3,
+      "figma": "https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43719"
+    },
+    {
+      "title": "Payment Failed Additional State",
+      "group": "Supporting States",
+      "kind": "restored",
+      "path": "website/pages/states/payment-failed-additional-state.html",
+      "frames": 0,
+      "figma": null
+    }
+  ],
+  "latest_screen_packages": [
+    {
+      "source": "eduhub-admin-account-access-confirmations-results-bundle.zip",
+      "folder": "latest/admin/account-access-confirmations-results",
+      "files": 24,
+      "html": 4,
+      "launch": "latest/admin/account-access-confirmations-results/eduhub-admin-account-access-confirmations-results-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-course-approvals-bundle.zip",
+      "folder": "latest/admin/course-approvals",
+      "files": 19,
+      "html": 2,
+      "launch": "latest/admin/course-approvals/eduhub-admin-course-approvals-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-course-approvals-table-states-bundle.zip",
+      "folder": "latest/admin/course-approvals-table-states",
+      "files": 26,
+      "html": 3,
+      "launch": "latest/admin/course-approvals-table-states/eduhub-admin-course-approvals-table-states-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-course-review-decisions-results-bundle.zip",
+      "folder": "latest/admin/course-review-decisions-results",
+      "files": 21,
+      "html": 3,
+      "launch": "latest/admin/course-review-decisions-results/eduhub-admin-course-review-decisions-results-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-course-review-details-bundle.zip",
+      "folder": "latest/admin/course-review-details",
+      "files": 17,
+      "html": 2,
+      "launch": "latest/admin/course-review-details/eduhub-admin-course-review-details-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-dashboard-bundle.zip",
+      "folder": "latest/admin/dashboard",
+      "files": 17,
+      "html": 2,
+      "launch": "latest/admin/dashboard/eduhub-admin-dashboard-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-filters-profile-notifications-bundle.zip",
+      "folder": "latest/admin/filters-profile-notifications",
+      "files": 40,
+      "html": 8,
+      "launch": "latest/admin/filters-profile-notifications/eduhub-admin-filters-profile-notifications-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-mobile-menus-filters-dialogs-bundle.zip",
+      "folder": "latest/admin/mobile-menus-filters-dialogs",
+      "files": 44,
+      "html": 9,
+      "launch": "latest/admin/mobile-menus-filters-dialogs/eduhub-admin-mobile-menus-filters-dialogs-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-payment-details-bundle.zip",
+      "folder": "latest/admin/payment-details",
+      "files": 24,
+      "html": 7,
+      "launch": "latest/admin/payment-details/eduhub-admin-payment-details-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-payments-bundle.zip",
+      "folder": "latest/admin/payments",
+      "files": 20,
+      "html": 2,
+      "launch": "latest/admin/payments/eduhub-admin-payments-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-payments-refund-and-payment-outcomes-bundle.zip",
+      "folder": "latest/admin/payments-refund-and-payment-outcomes",
+      "files": 31,
+      "html": 6,
+      "launch": "latest/admin/payments-refund-and-payment-outcomes/eduhub-admin-payments-refund-and-payment-outcomes-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-payments-table-states-bundle.zip",
+      "folder": "latest/admin/payments-table-states",
+      "files": 21,
+      "html": 3,
+      "launch": "latest/admin/payments-table-states/eduhub-admin-payments-table-states-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-user-details-bundle.zip",
+      "folder": "latest/admin/user-details",
+      "files": 18,
+      "html": 3,
+      "launch": "latest/admin/user-details/eduhub-admin-user-details-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-user-management-bundle.zip",
+      "folder": "latest/admin/user-management",
+      "files": 21,
+      "html": 2,
+      "launch": "latest/admin/user-management/eduhub-admin-user-management-standalone.html"
+    },
+    {
+      "source": "eduhub-admin-user-management-table-states-bundle.zip",
+      "folder": "latest/admin/user-management-table-states",
+      "files": 20,
+      "html": 3,
+      "launch": "latest/admin/user-management-table-states/eduhub-admin-user-management-table-states-standalone.html"
+    },
+    {
+      "source": "eduhub-instructor-dashboard-new-instructor-bundle.zip",
+      "folder": "latest/instructor/dashboard-new-instructor",
+      "files": 13,
+      "html": 2,
+      "launch": "latest/instructor/dashboard-new-instructor/eduhub-instructor-dashboard-new-instructor-standalone.html"
+    },
+    {
+      "source": "eduhub-instructor-dashboard-original-design-bundle.zip",
+      "folder": "latest/instructor/dashboard-original-design",
+      "files": 15,
+      "html": 2,
+      "launch": "latest/instructor/dashboard-original-design/eduhub-instructor-dashboard-original-design-standalone.html"
+    },
+    {
+      "source": "eduhub-instructor-dialogs-curriculum-states-bundle.zip",
+      "folder": "latest/instructor/dialogs-curriculum-states",
+      "files": 14,
+      "html": 2,
+      "launch": "latest/instructor/dialogs-curriculum-states/eduhub-instructor-dialogs-curriculum-states-standalone.html"
+    },
+    {
+      "source": "eduhub-instructor-menus-uploads-form-states-bundle.zip",
+      "folder": "latest/instructor/menus-uploads-form-states",
+      "files": 11,
+      "html": 2,
+      "launch": "latest/instructor/menus-uploads-form-states/eduhub-instructor-menus-uploads-form-states-standalone.html"
+    },
+    {
+      "source": "eduhub-instructor-original-create-course-bundle.zip",
+      "folder": "latest/instructor/original-create-course",
+      "files": 12,
+      "html": 2,
+      "launch": "latest/instructor/original-create-course/eduhub-instructor-original-create-course-standalone.html"
+    },
+    {
+      "source": "eduhub-instructor-original-edit-course-bundle.zip",
+      "folder": "latest/instructor/original-edit-course",
+      "files": 17,
+      "html": 2,
+      "launch": "latest/instructor/original-edit-course/eduhub-instructor-original-edit-course-standalone.html"
+    },
+    {
+      "source": "eduhub-instructor-add-lesson-bundle.zip",
+      "folder": "latest/instructor/add-lesson",
+      "files": 8,
+      "html": 1,
+      "launch": "latest/instructor/add-lesson/eduhub-instructor-add-lesson.html"
+    },
+    {
+      "source": "eduhub-instructor-course-analytics-bundle.zip",
+      "folder": "latest/instructor/course-analytics",
+      "files": 8,
+      "html": 1,
+      "launch": "latest/instructor/course-analytics/eduhub-instructor-course-analytics.html"
+    },
+    {
+      "source": "eduhub-instructor-course-approval-states-bundle.zip",
+      "folder": "latest/instructor/course-approval-states",
+      "files": 11,
+      "html": 2,
+      "launch": "latest/instructor/course-approval-states/eduhub-instructor-course-approval-states.html"
+    },
+    {
+      "source": "eduhub-instructor-course-curriculum-bundle.zip",
+      "folder": "latest/instructor/course-curriculum",
+      "files": 8,
+      "html": 1,
+      "launch": "latest/instructor/course-curriculum/eduhub-instructor-course-curriculum.html"
+    },
+    {
+      "source": "eduhub-instructor-course-details-analytics-bundle.zip",
+      "folder": "latest/instructor/course-details-analytics",
+      "files": 11,
+      "html": 2,
+      "launch": "latest/instructor/course-details-analytics/eduhub-instructor-course-details-analytics.html"
+    },
+    {
+      "source": "eduhub-instructor-course-details-curriculum-bundle.zip",
+      "folder": "latest/instructor/course-details-curriculum",
+      "files": 11,
+      "html": 2,
+      "launch": "latest/instructor/course-details-curriculum/eduhub-instructor-course-details-curriculum.html"
+    },
+    {
+      "source": "eduhub-instructor-course-details-overview-bundle.zip",
+      "folder": "latest/instructor/course-details-overview",
+      "files": 9,
+      "html": 1,
+      "launch": "latest/instructor/course-details-overview/eduhub-instructor-course-details-overview.html"
+    },
+    {
+      "source": "eduhub-instructor-course-details-students-bundle.zip",
+      "folder": "latest/instructor/course-details-students",
+      "files": 11,
+      "html": 2,
+      "launch": "latest/instructor/course-details-students/standalone/eduhub-instructor-course-details-students.html"
+    },
+    {
+      "source": "eduhub-instructor-create-course-bundle.zip",
+      "folder": "latest/instructor/create-course",
+      "files": 8,
+      "html": 1,
+      "launch": "latest/instructor/create-course/eduhub-instructor-create-course.html"
+    },
+    {
+      "source": "eduhub-instructor-dashboard-bundle.zip",
+      "folder": "latest/instructor/dashboard",
+      "files": 5,
+      "html": 1,
+      "launch": "latest/instructor/dashboard/eduhub-instructor-dashboard.html"
+    },
+    {
+      "source": "eduhub-instructor-edit-course-bundle.zip",
+      "folder": "latest/instructor/edit-course",
+      "files": 9,
+      "html": 1,
+      "launch": "latest/instructor/edit-course/eduhub-instructor-edit-course.html"
+    },
+    {
+      "source": "eduhub-instructor-edit-lesson-bundle.zip",
+      "folder": "latest/instructor/edit-lesson",
+      "files": 9,
+      "html": 1,
+      "launch": "latest/instructor/edit-lesson/eduhub-instructor-edit-lesson.html"
+    },
+    {
+      "source": "eduhub-instructor-empty-workspace-states-bundle.zip",
+      "folder": "latest/instructor/empty-workspace-states",
+      "files": 11,
+      "html": 2,
+      "launch": "latest/instructor/empty-workspace-states/eduhub-instructor-empty-workspace-states.html"
+    },
+    {
+      "source": "eduhub-instructor-my-courses-bundle.zip",
+      "folder": "latest/instructor/my-courses",
+      "files": 14,
+      "html": 1,
+      "launch": "latest/instructor/my-courses/eduhub-instructor-my-courses.html"
+    },
+    {
+      "source": "eduhub-instructor-my-profile-bundle.zip",
+      "folder": "latest/instructor/my-profile",
+      "files": 9,
+      "html": 1,
+      "launch": "latest/instructor/my-profile/eduhub-instructor-my-profile.html"
+    },
+    {
+      "source": "eduhub-instructor-my-students-bundle.zip",
+      "folder": "latest/instructor/my-students",
+      "files": 8,
+      "html": 1,
+      "launch": "latest/instructor/my-students/eduhub-instructor-my-students.html"
+    },
+    {
+      "source": "eduhub-instructor-settings-bundle.zip",
+      "folder": "latest/instructor/settings",
+      "files": 8,
+      "html": 1,
+      "launch": "latest/instructor/settings/eduhub-instructor-settings.html"
+    }
+  ],
+  "note": "Source-derived baselines plus most recently recovered screen-specific implementations. Some source exports and viewport states are grouped into single responsive pages. Administrative actions are demo only. Fonts are not redistributed.",
+  "restoration": {
+    "source": "eduhub-draft.zip",
+    "owner_supplied_screens": 32,
+    "replaced": 31,
+    "added": 1,
+    "original_files": "restored-originals/",
+    "previous_versions": "backups/website-before-restoration/",
+    "new_page_css": "website/assets/css/recovered/",
+    "new_page_js": "website/assets/js/recovered/",
+    "details": "RESTORATION_MANIFEST.json",
+    "browser_validation": "RESTORATION_BROWSER_VALIDATION.json",
+    "link_audit": "RESTORATION_LINK_AUDIT.json"
+  }
+}

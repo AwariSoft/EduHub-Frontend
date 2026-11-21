@@ -1,0 +1,2 @@
+# Source reconciliation
+Desktop, tablet and mobile: `edu-hub-admin-course-review-details-{desktop,tablet,mobile}.html/.css` in ZIP #10. All contain SQL Server Essentials (CRS-028), Mohamed Hassan, 4 sections, 12 lessons, review decisions and the same submission data. Desktop is two-column; tablet and mobile stack panels. The course review confirmation and lesson preview modals are implementation enhancements, not separate source exports. No real backend actions or lesson media are included.

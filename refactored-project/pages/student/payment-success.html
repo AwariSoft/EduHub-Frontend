@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="EduHub sample payment success and course enrollment confirmation.">
+<title>Payment Successful | EduHub</title>
+<link href="{{BASE}}assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="{{BASE}}assets/css/main.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="edu-payment-success">
+<a class="visually-hidden-focusable" href="#main-content">Skip to payment confirmation</a>
+<!-- INCLUDE: partials/navbar.html -->
+<main id="main-content" class="edu-payment-success__main container py-4 py-md-5">
+<nav aria-label="Breadcrumb" class="mb-4"><ol class="breadcrumb small mb-0"><li class="breadcrumb-item"><a href="{{BASE}}pages/public/explore-courses.html">Explore Courses</a></li><li class="breadcrumb-item"><a href="{{BASE}}pages/public/explore-courses.html">Complete C# Programming</a></li><li class="breadcrumb-item active" aria-current="page">Payment</li></ol></nav>
+<section class="edu-payment-success__panel mx-auto" aria-labelledby="payment-success-title">
+<div class="edu-payment-success__hero text-center">
+<img class="edu-payment-success__motif" src="{{BASE}}assets/images/payment-success/Outcome-motif@2x.png" alt="" width="120" height="120">
+<h1 id="payment-success-title" class="h2 fw-bold mt-3 mb-2">Payment Successful</h1>
+<p class="edu-payment-success__subtitle mb-0 mx-auto">You’re enrolled in Complete C# Programming. Your next chapter is ready in My Learning.</p>
+</div>
+<div class="edu-payment-success__details mt-4" aria-label="Payment confirmation details">
+<div class="d-flex align-items-center gap-3 mb-4">
+<img class="edu-payment-success__thumbnail" src="{{BASE}}assets/images/payment-success/Course-thumbnail@2x.png" width="96" height="72" alt="Complete C# Programming course thumbnail">
+<div class="min-w-0"><h2 class="h6 fw-bold mb-1">Complete C# Programming</h2><p class="text-secondary small mb-0">Ahmed Mohamed</p></div>
+</div>
+<dl class="edu-payment-success__facts mb-0 d-grid">
+<div class="edu-payment-success__fact"><dt>Student</dt><dd>Warda Mahmoud</dd></div>
+<div class="edu-payment-success__fact"><dt>Payment ID</dt><dd>PAY-2026-1048</dd></div>
+<div class="edu-payment-success__fact"><dt>Amount paid</dt><dd>$49.00</dd></div>
+<div class="edu-payment-success__fact"><dt>Payment date</dt><dd>Oct 29, 2026</dd></div>
+<div class="edu-payment-success__fact"><dt>Payment status</dt><dd><span class="edu-payment-success__status align-items-center"><i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>Completed</span></dd></div>
+</dl>
+</div>
+<div class="edu-payment-success__actions d-grid gap-2 mt-4">
+<a class="btn btn-primary edu-payment-success__action" href="{{BASE}}pages/student/dashboard.html#my-learning" data-edu-payment-success-action="my-learning"><i class="fa-solid fa-book-open me-2" aria-hidden="true"></i>Go to My Learning</a>
+<a class="btn btn-outline-primary edu-payment-success__action" href="{{BASE}}pages/student/course-learning.html" data-edu-payment-success-action="view-course">View Course <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a>
+</div>
+<p class="edu-payment-success__disclaimer text-center mt-4 mb-0">Sample payment record · Static demonstration only</p>
+</section>
+<section class="mt-5" aria-labelledby="edu-states-heading"><div class="d-flex justify-content-between align-items-center gap-2"><h2 class="h5 fw-bold" id="edu-states-heading">Supporting UI states</h2><span class="badge text-bg-secondary">QA / preview</span></div><p class="text-secondary small">These are source-derived loading, error, confirmation, empty, and outcome references attached to this parent page.</p><div class="accordion" id="eduIntegratedStateAccordions"><div class="accordion-item"><h3 class="accordion-header" id="edu-preview-heading-payment-successful-early"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edu-preview-payment-successful-early" aria-expanded="false" aria-controls="edu-preview-payment-successful-early">Payment Successful — Early Export</button></h3><div id="edu-preview-payment-successful-early" class="accordion-collapse collapse" data-bs-parent="#eduIntegratedStateAccordions"><div class="accordion-body"><p class="small text-secondary">Source-backed preview; original data and conditional states are illustrative, not persisted.</p><ul class="list-group list-group-flush mb-3"><li class="list-group-item">WM</li><li class="list-group-item">Warda Mahmoud</li><li class="list-group-item">Explore Courses / Complete C# Programming / Checkout</li><li class="list-group-item">Payment Successful</li><li class="list-group-item">Complete C# Programming · Ahmed Mohamed</li><li class="list-group-item">Payment Successful!</li><li class="list-group-item">You are now enrolled in Complete C# Programming.</li><li class="list-group-item">Complete C# Programming</li><li class="list-group-item">Ahmed Mohamed</li><li class="list-group-item">$49.00</li><li class="list-group-item">Start Learning</li><li class="list-group-item">Demo payment state · Visual prototype only</li><li class="list-group-item">EduHub · Learn Today. Build Tomorrow.</li></ul><a class="btn btn-sm btn-outline-primary" href="{{BASE}}pages/states/payment-successful-early.html">View complete state sheet</a></div></div></div><div class="accordion-item"><h3 class="accordion-header" id="edu-preview-heading-payment-status-role-safe-access"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edu-preview-payment-status-role-safe-access" aria-expanded="false" aria-controls="edu-preview-payment-status-role-safe-access">Payment Status and Role-Safe Access</button></h3><div id="edu-preview-payment-status-role-safe-access" class="accordion-collapse collapse" data-bs-parent="#eduIntegratedStateAccordions"><div class="accordion-body"><p class="small text-secondary">Source-backed preview; original data and conditional states are illustrative, not persisted.</p><ul class="list-group list-group-flush mb-3"><li class="list-group-item">Payment status and role-safe access</li><li class="list-group-item">Readable payment-status loading and Access Denied variants. Return destinations remain within the current role’s workspace.</li><li class="list-group-item">Student · Payment-status loading · No completed enrollment shown</li><li class="list-group-item">WM</li><li class="list-group-item">Warda Mahmoud</li><li class="list-group-item">My Profile</li><li class="list-group-item">Checking Payment Status</li><li class="list-group-item">Please wait while we check the status of your payment. Enrollment is not yet confirmed.</li><li class="list-group-item">Complete C# Programming</li><li class="list-group-item">Ahmed Mohamed</li><li class="list-group-item">Payment ID</li><li class="list-group-item">PAY-2026-1048</li><li class="list-group-item">Course amount</li><li class="list-group-item">$49.00</li><li class="list-group-item">Attempt date</li><li class="list-group-item">Oct 29, 2026</li></ul><a class="btn btn-sm btn-outline-primary" href="{{BASE}}pages/states/payment-status-role-safe-access.html">View complete state sheet</a></div></div></div></div></section>
+</main>
+<!-- INCLUDE: partials/footer.html -->
+<script src="{{BASE}}assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="{{BASE}}assets/js/main.js"></script>
+</body></html>

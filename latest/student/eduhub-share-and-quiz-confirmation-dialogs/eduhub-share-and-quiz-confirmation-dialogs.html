@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub share certificate and quiz submission confirmation dialog state board, interactive responsive frontend sample.">
+  <title>Share and Quiz Confirmation Dialogs | EduHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <style>
+
+
+  /* 01 — Shared EduHub theme and responsive student navigation */
+
+/* 01: Core theme and Bootstrap-compatible tokens */
+:root{--ed-primary:#2563eb;--ed-primary-hover:#1d4ed8;--ed-text:#0f172a;--ed-muted:#64748b;--ed-border:#e2e8f0;--ed-surface:#f8fafc;--ed-blue-soft:#eff6ff;--ed-avatar:#dbeafe;--ed-success:#15803d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:0;background:var(--ed-surface);color:var(--ed-text);font:400 14px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--ed-primary);text-decoration:none}a:hover{color:var(--ed-primary-hover)}
+button,input{font:inherit}
+:is(a,button,input):focus-visible{outline:3px solid #2563eb80;outline-offset:3px}
+[hidden]{display:none!important}
+/* 02: Shared student header — identical to previous quiz-result screen */
+
+    .site-header {background:#fff;border-bottom:1px solid var(--ed-border)}
+    .header-inner {max-width:1440px;margin:auto;padding:15.5px 48px}
+    .header-top {display:flex;align-items:center;justify-content:space-between;min-height:44px;gap:12px}
+    .header-brand-group {display:flex;align-items:center;gap:32px;min-width:0}
+    .brand {display:inline-flex;gap:8px;align-items:center;white-space:nowrap;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;color:var(--ed-text)}
+    .brand:hover {color:var(--ed-text)}
+    .brand .brand-svg {width:32px;height:32px}
+    .brand .brand-blue {color:var(--ed-primary)}
+    .desktop-nav {display:flex;gap:24px;align-items:center;white-space:nowrap}
+    .desktop-nav a,.responsive-nav a {font-size:14px;color:var(--ed-muted)}
+    .desktop-nav a:hover,.responsive-nav a:hover {color:var(--ed-primary)}
+    .desktop-nav a[aria-current=page],.responsive-nav a[aria-current=page] {color:var(--ed-primary);font-weight:600}
+    .header-controls {display:flex;gap:16px;align-items:center;flex:none}
+    .search-form {position:relative;width:230px}
+    .search-form i {position:absolute;top:15px;left:12px;color:var(--ed-muted);font-size:16px;pointer-events:none}
+    .search-form input {width:100%;height:44px;background:var(--ed-surface);border:1px solid var(--ed-border);border-radius:8px;padding:0 12px 0 38px;color:var(--ed-text);font-size:13px;outline:0}
+    .search-form input:focus {border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb25}
+    .icon-button {position:relative;width:40px;height:44px;border:0;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--ed-muted);font-size:18px;flex:none}
+    .icon-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .notification-dot {position:absolute;top:7px;right:8px;width:6px;height:6px;background:var(--ed-primary);border-radius:50%}
+    .avatar {display:inline-flex;justify-content:center;align-items:center;width:40px;height:40px;border-radius:50%;flex:none;background:var(--ed-avatar);color:var(--ed-primary);font-weight:600;font-size:13px}
+    .student-label {line-height:1.35;white-space:nowrap}
+    .student-label strong {font-size:13px;font-weight:600;display:block}
+    .student-label small {font-size:11px;color:var(--ed-muted);display:block}
+    .account-button {border:0;border-radius:8px;background:transparent;color:var(--ed-muted);padding:8px;line-height:1}
+    .account-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .responsive-header {display:none}
+    .responsive-header .search-form {width:100%}
+    .responsive-nav {display:flex;justify-content:space-between;align-items:center;height:44px;gap:8px}
+    .responsive-nav a {font-size:13px;height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+    .responsive-nav a[aria-current=page] {border-bottom:2px solid var(--ed-primary)}
+    #menuToggle {display:none}
+    .account-area {position:relative}
+    .account-popover {z-index:10;position:absolute;top:100%;right:0;min-width:190px;background:white;border:1px solid var(--ed-border);border-radius:10px;box-shadow:0 12px 30px #0f172a1c;padding:6px}
+    .account-popover a {display:block;padding:8px 12px;border-radius:7px;color:var(--ed-text);font-size:13px}
+    .account-popover a:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    
+.icon-svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.brand-svg{display:block;width:32px;height:32px;fill:var(--ed-primary);flex:none}
+.search-icon{position:absolute;top:12px;left:12px;color:var(--ed-muted)}
+
+  /* Accessible skip link works even if Bootstrap CDN is unavailable. */
+  .visually-hidden-focusable:not(:focus){position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .visually-hidden-focusable:focus{position:fixed;top:8px;left:8px;z-index:1000;padding:8px 14px;background:white;border-radius:8px}
+  .responsive-header .search-form{margin-top:16px}
+  
+
+  
+/* 03 — Figma 22:41995: 1000 × 1810 dialog states board */
+:root{--ed-backdrop:#e5e7eb;--ed-amber:#92400e;--ed-amber-soft:#fffbeb}
+.page-main{max-width:1000px;margin-inline:auto;padding:32px;min-height:1551px}
+.page-title{font-size:32px;line-height:42px;letter-spacing:-.45px;font-weight:700;margin:0 0 32px}
+.page-subtitle{font-size:14px;line-height:22px;color:var(--ed-muted);margin:0 0 32px}
+.dialog-preview{background:var(--ed-backdrop);border-radius:12px;display:flex;justify-content:center;align-items:flex-start;padding:48px 16px;position:relative;min-width:0}
+.dialog-preview + .dialog-preview{margin-top:32px}
+.share-preview{min-height:730px}
+.quiz-preview{min-height:597px}
+.dialog-card{background:#fff;max-width:640px;width:100%;border-radius:16px;padding:32px;color:var(--ed-text);box-shadow:none;min-width:0}
+.share-card{display:grid;grid-template-rows:31px 22px 88px 21px 53px 48px 48px 19px 48px;gap:24px;min-height:634px}
+.quiz-card{display:grid;grid-template-rows:31px 25px 44px 76px 21px 48px 48px;gap:24px;min-height:501px}
+.dialog-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-width:0}
+.dialog-heading{font-size:24px;font-weight:700;line-height:31px;letter-spacing:-.32px;margin:0}
+.dialog-close{min-width:24px;min-height:24px;border:0;border-radius:6px;background:transparent;color:var(--ed-muted);display:grid;place-items:center;font-size:18px;margin:-1px -2px 0 0}
+.dialog-close:hover{background:var(--ed-blue-soft);color:var(--ed-primary)}
+.dialog-close:active{background:#dbeafe}
+.dialog-desc{font-size:14px;line-height:22px;color:var(--ed-muted);margin:0}
+.credential-box{background:var(--ed-blue-soft);border-radius:8px;display:flex;align-items:center;gap:16px;padding:20px;min-width:0}
+.credential-mark{width:32px;height:32px;flex:none;color:var(--ed-primary)}
+.credential-title{font-size:14px;line-height:22px;font-weight:600;margin:0}
+.credential-subtitle{font-size:14px;line-height:22px;color:var(--ed-muted);margin:4px 0 0}
+.verify-label{font-size:13px;font-weight:600;line-height:21px;margin:0;color:var(--ed-text)}
+.verify-link{background:#fff;border:1px solid var(--ed-border);border-radius:8px;display:flex;align-items:center;padding:0 16px;min-width:0;font-size:13px;line-height:21px;color:var(--ed-muted);overflow-wrap:anywhere;word-break:break-word}
+.ed-action{display:inline-flex;align-items:center;justify-content:center;text-align:center;border:1px solid var(--ed-border);background:#fff;border-radius:8px;padding:8px 14px;font-size:14px;line-height:20px;font-weight:600;min-width:0;min-height:48px;color:var(--ed-text);transition:background .15s,color .15s,border-color .15s,transform .1s;cursor:pointer;text-decoration:none}
+.ed-action:hover{color:var(--ed-primary);background:var(--ed-blue-soft);border-color:#bfdbfe}
+.ed-action:active{transform:translateY(1px);background:#dbeafe}
+.ed-action:focus-visible{outline:3px solid #2563eb80;outline-offset:2px}
+.ed-primary{color:#fff;border-color:var(--ed-primary);background:var(--ed-primary)}
+.ed-primary:hover{color:#fff;border-color:var(--ed-primary-hover);background:var(--ed-primary-hover)}
+.ed-primary:active{background:#1e40af}
+.ed-action[disabled]{opacity:.55;cursor:not-allowed}
+.share-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.safety-note{font-size:12px;line-height:19px;color:var(--ed-muted);margin:0}
+.quiz-status{display:flex;align-items:center;align-self:start;justify-self:start;height:25px;background:var(--ed-blue-soft);color:var(--ed-primary);border-radius:100px;padding:5px 10px;font-size:12px;line-height:15px;font-weight:600;white-space:nowrap}
+.quiz-message{font-size:14px;line-height:22px;color:var(--ed-muted);margin:0}
+.quiz-warning{background:var(--ed-amber-soft);color:var(--ed-amber);border-radius:8px;padding:16px;display:flex;gap:12px;align-items:flex-start;min-width:0;font-size:14px;line-height:22px}
+.quiz-warning i{font-size:20px;line-height:20px;margin-top:1px;flex:none}.quiz-warning .warning-mark{width:20px;height:20px;margin-top:1px;flex:none}
+.quiz-warning p{margin:0}
+.quiz-footnote{margin:0;font-size:13px;line-height:21px;color:var(--ed-muted)}
+.board-footer{min-height:63px;border-top:1px solid var(--ed-border);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;color:var(--ed-muted);line-height:15px}
+.empty-preview{display:none;min-height:200px;align-items:center;justify-content:center;flex-direction:column;gap:14px;text-align:center;color:var(--ed-muted)}
+.empty-preview .ed-action{padding-inline:32px}
+.dialog-preview.dismissed{align-items:center;min-height:230px}
+.dialog-preview.dismissed .empty-preview{display:flex}
+.dialog-preview.dismissed .dialog-card{display:none}
+.action-message{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;color:white;border-radius:10px;padding:12px 18px;z-index:1300;font-size:13px;line-height:1.45;box-shadow:0 12px 40px #0f172a30;max-width:calc(100vw - 28px);text-align:center}
+.demo-modal{border:1px solid var(--ed-border);border-radius:16px;width:min(460px,calc(100% - 32px));max-width:calc(100% - 32px);padding:24px;color:var(--ed-text);background:#fff;box-shadow:0 22px 70px #0f172a40;max-height:calc(100dvh - 32px);overflow:auto}
+.demo-modal::backdrop{background:#0f172a88}
+.demo-modal h2{font-size:21px;line-height:1.3;font-weight:700;margin:0 0 16px}
+.demo-modal p{color:var(--ed-muted);font-size:14px;line-height:1.6}
+.demo-modal .dialog-top{margin-bottom:12px}
+.menu-dialog{border:1px solid var(--ed-border);border-radius:14px;width:min(480px,calc(100% - 24px));max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:24px;box-shadow:0 22px 70px #0f172a40;overflow:auto}
+.menu-dialog::backdrop{background:#0f172a88}
+/* 04 — Shared navigation responsive to Figma desktop/tablet/mobile */
+#menuToggle{display:none}
+.responsive-header .search-form{width:100%;margin-top:16px}
+@media(max-width:1199.98px){
+  .header-inner{padding:16px 24px 15px}
+  #menuToggle{display:inline-flex;width:20px;height:34px;padding:0;flex:none}
+  .desktop-nav,.desktop-search{display:none}
+  .responsive-header{display:block;margin-top:16px}
+  .header-controls{gap:16px}
+  .account-button{padding:0;width:14px;height:44px}
+}
+@media(max-width:575.98px){
+  .header-inner{padding:16px 16px 15px}
+  .header-brand-group{gap:8px}
+  .header-controls{gap:8px}
+  .student-label{display:none}
+  .page-main{min-height:0;padding:24px 16px 36px}
+  .page-title{font-size:28px;line-height:1.3;margin-bottom:20px}
+  .page-subtitle{margin-bottom:24px}
+  .dialog-preview{padding:16px 12px;min-height:0}
+  .dialog-preview + .dialog-preview{margin-top:24px}
+  .dialog-card{padding:20px 16px;border-radius:12px}
+  .share-card,.quiz-card{display:flex;flex-direction:column;gap:20px;min-height:0}
+  .dialog-heading{font-size:22px;line-height:1.4}
+  .credential-box{padding:16px;gap:12px}
+  .verify-link{min-height:54px;padding:12px}
+  .share-options{grid-template-columns:1fr;gap:10px}
+  .quiz-warning{padding:14px;gap:10px}
+  .quiz-warning p,.quiz-message{line-height:1.6}
+  .board-footer{padding:16px}
+}
+@media(max-width:359.98px){
+  .brand{font-size:23px}.brand .brand-svg{width:28px;height:28px}
+  .avatar{width:36px;height:36px}
+  .quiz-status{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+  <a class="visually-hidden-focusable" href="#mainContent">Skip to dialog states</a>
+  <!-- INCLUDE: partials/student-navbar.html -->
+  <!-- Standalone navbar fallback; replace this header with shared partial during project integration. -->
+  <header class="site-header">
+<div class="header-inner">
+<div class="header-top">
+<div class="header-brand-group">
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="icon-button" id="menuToggle" type="button"><svg aria-hidden="true" class="icon-svg" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+<a aria-label="EduHub home" class="brand" href="eduhub-homepage.html"><svg aria-hidden="true" class="brand-svg" viewbox="0 0 32 32"><path d="M16 2 0.8 10.4 16 18.8l15.2-8.4L16 2Z"></path><path d="M7 17.6v7.2c4.7 4.8 13.4 4.8 18 0v-7.2L16 22.8 7 17.6Z"></path><path d="M29.5 12.5v11.8" stroke="#2563eb" stroke-linecap="round" stroke-width="2"></path></svg><span>Edu<span class="brand-blue">Hub</span></span></a>
+<nav aria-label="Main navigation" class="desktop-nav"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a aria-current="page" href="eduhub-student-dashboard.html">My Learning</a></nav>
+</div>
+<div class="header-controls">
+<form class="search-form desktop-search" id="desktopSearch" role="search"><svg aria-hidden="true" class="icon-svg search-icon" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input aria-label="Search courses" name="search" placeholder="Search courses..." type="search"/></form>
+<button aria-label="View notifications" class="icon-button" id="notificationButton" type="button"><svg aria-hidden="true" class="icon-svg" viewbox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9Z"></path><path d="M10 21h4"></path></svg><span class="notification-dot"></span></button>
+<span aria-label="Student initials WM" class="avatar">WM</span>
+<span class="student-label"><strong>Warda Mahmoud</strong><small>Student</small></span>
+<div class="account-area">
+<button aria-controls="accountMenu" aria-expanded="false" aria-haspopup="true" aria-label="Account menu" class="account-button" id="accountToggle" type="button"><svg aria-hidden="true" class="icon-svg" style="width:14px;height:14px" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+<nav aria-label="Account options" class="account-popover" hidden="" id="accountMenu"><a href="eduhub-student-dashboard.html">Dashboard</a><a href="eduhub-student-profile.html">My Profile</a><a href="eduhub-explore-courses.html">Explore Courses</a></nav>
+</div>
+</div>
+</div>
+<div class="responsive-header">
+<nav aria-label="Compact navigation" class="responsive-nav"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a aria-current="page" href="eduhub-student-dashboard.html">My Learning</a></nav>
+<form class="search-form w-100 mt-3" id="mobileSearch" role="search"><svg aria-hidden="true" class="icon-svg search-icon" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input aria-label="Search for courses" name="search" placeholder="Search for courses..." type="search"/></form>
+</div>
+</div>
+</header>
+  <main class="page-main" id="mainContent">
+    <h1 class="page-title">Share a milestone. Submit with confidence.</h1>
+    <p class="page-subtitle">Full-size supporting dialogs · Static visual states</p>
+    <section class="dialog-preview share-preview" id="sharePreview" aria-label="Share certificate dialog state">
+      <article class="dialog-card share-card" id="shareCard" role="dialog" aria-modal="false" aria-labelledby="shareTitle" aria-describedby="shareDescription">
+        <div class="dialog-top">
+          <h2 class="dialog-heading" id="shareTitle">Share Certificate</h2>
+          <button type="button" class="dialog-close" id="shareX" aria-label="Close Share Certificate dialog"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <p class="dialog-desc" id="shareDescription">Celebrate your achievement with your network.</p>
+        <div class="credential-box" role="group" aria-label="Certificate preview details">
+          <svg class="credential-mark" aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="11" r="8"/><path d="M10.3 17.1 9 30l7-4.5 7 4.5-1.3-12.9"/></svg>
+          <div class="flex-grow-1 min-w-0"><p class="credential-title">Warda Mahmoud</p><p class="credential-subtitle">Complete C# Programming</p></div>
+        </div>
+        <p class="verify-label">Illustrative verification link — not a live endpoint</p>
+        <div class="verify-link" id="sampleVerificationLink" aria-label="Illustrative sample URL">https://eduhub.example/verify/EDU-CSP-2026-01024</div>
+        <button type="button" class="ed-action ed-primary w-100" id="copySampleLink">Copy Illustrative Link</button>
+        <div class="share-options">
+          <button type="button" class="ed-action" id="linkedinDemo">LinkedIn</button>
+          <button type="button" class="ed-action" id="emailDemo">Email</button>
+        </div>
+        <p class="safety-note">Sharing controls are visual only. No message will be sent.</p>
+        <button type="button" class="ed-action w-100" id="closeShare">Close</button>
+      </article>
+      <div class="empty-preview"><span>Share Certificate dialog closed.</span><button class="ed-action" type="button" id="reopenShare">Open Share Certificate</button></div>
+    </section>
+    <section class="dialog-preview quiz-preview" id="quizPreview" aria-label="Quiz submission confirmation dialog state">
+      <article class="dialog-card quiz-card" id="quizCard" role="dialog" aria-modal="false" aria-labelledby="quizTitle" aria-describedby="quizDescription">
+        <div class="dialog-top">
+          <h2 class="dialog-heading" id="quizTitle">Submit your quiz?</h2>
+          <button class="dialog-close" type="button" id="quizX" aria-label="Close quiz submission confirmation"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <span class="quiz-status" id="quizCounter">1 answered · 9 unanswered</span>
+        <p class="quiz-message" id="quizDescription">You've answered 1 of 10 questions. Unanswered questions will count as incorrect. You need 70% to pass.</p>
+        <div class="quiz-warning" role="note">
+          <svg class="warning-mark" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m10.3 3.9-8.4 15a1.9 1.9 0 0 0 1.7 2.9h16.8a1.9 1.9 0 0 0 1.7-2.9l-8.4-15a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4m0 4h.01"/></svg>
+          <p>9 questions are still unanswered. Return to the quiz to give yourself the best chance.</p>
+        </div>
+        <p class="quiz-footnote">Question 1: class selected. Your answer has not been marked yet.</p>
+        <a href="eduhub-final-quiz.html" class="ed-action ed-primary w-100" id="returnToQuiz">Return to Quiz</a>
+        <button type="button" class="ed-action w-100" id="submitAnyway">Submit Quiz Anyway</button>
+      </article>
+      <div class="empty-preview"><span>Quiz confirmation dialog closed.</span><button class="ed-action" type="button" id="reopenQuiz">Open Quiz Confirmation</button></div>
+    </section>
+  </main>
+  <!-- INCLUDE: partials/student-footer.html -->
+  <footer class="board-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  <dialog class="menu-dialog" id="mobileMenu" aria-labelledby="mobileMenuTitle">
+    <div class="dialog-top mb-3"><h2 class="dialog-heading" id="mobileMenuTitle">EduHub</h2><button class="dialog-close" type="button" data-close-menu aria-label="Close navigation menu"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <nav class="d-grid gap-3" aria-label="Mobile menu links"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html">My Learning</a><a href="eduhub-student-profile.html">My Profile</a></nav>
+  </dialog>
+  <dialog class="demo-modal" id="shareFeedback" aria-labelledby="shareFeedbackTitle">
+    <div class="dialog-top"><h2 id="shareFeedbackTitle">Sharing preview</h2><button class="dialog-close" type="button" id="closeShareFeedback" aria-label="Close sharing preview"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <p id="shareFeedbackBody"></p><p class="small">The verification address is fictional and does not establish a valid credential.</p>
+    <button class="ed-action w-100" type="button" id="dismissShareFeedback">Close Preview</button>
+  </dialog>
+  <dialog class="demo-modal" id="submissionFeedback" aria-labelledby="submissionFeedbackTitle">
+    <div class="dialog-top"><h2 id="submissionFeedbackTitle">Sample quiz submission</h2><button class="dialog-close" type="button" id="closeSubmissionFeedback" aria-label="Close sample result"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <p>With only 1 of 10 questions answered, the highest possible score is 10% — below the 70% passing threshold.</p>
+    <p>This is a demonstration state, not a graded attempt. To submit actual answers, use the Final Quiz page.</p>
+    <div class="d-grid gap-2"><a href="eduhub-final-quiz.html" class="ed-action ed-primary">Open Final Quiz</a><a href="eduhub-quiz-result-fail.html" class="ed-action">View Sample Fail Result</a><button class="ed-action" type="button" id="dismissSubmissionFeedback">Stay on This Page</button></div>
+  </dialog>
+  <div class="action-message" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="visually-hidden" id="announcement" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  (()=>{
+    'use strict';
+    const el=id=>document.getElementById(id);
+    const say=message=>{el('announcement').textContent=message;};
+    const toast=message=>{const node=el('toast');node.textContent=message;node.hidden=false;say(message);};
+    const openPreview=(section,opener)=>{el(section).classList.remove('dismissed');if(opener)el(opener).focus();};
+    const closePreview=(section,opener)=>{el(section).classList.add('dismissed');el(opener).focus();say(section==='sharePreview'?'Share dialog closed':'Quiz confirmation closed');};
+    el('shareX').addEventListener('click',()=>closePreview('sharePreview','reopenShare'));
+    el('closeShare').addEventListener('click',()=>closePreview('sharePreview','reopenShare'));
+    el('quizX').addEventListener('click',()=>closePreview('quizPreview','reopenQuiz'));
+    el('reopenShare').addEventListener('click',()=>openPreview('sharePreview','shareX'));
+    el('reopenQuiz').addEventListener('click',()=>openPreview('quizPreview','quizX'));
+    const link=el('sampleVerificationLink').textContent.trim();
+    el('copySampleLink').addEventListener('click',async()=>{
+      try{
+        if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(link);
+        else{const temporary=document.createElement('textarea');temporary.value=link;temporary.style.position='fixed';temporary.style.opacity='0';document.body.appendChild(temporary);temporary.select();if(!document.execCommand('copy'))throw Error('Copy failed');temporary.remove();}
+        toast('Illustrative link copied. It is not a live verification URL.');
+      }catch{toast('Could not access the clipboard. Select and copy the illustrative URL above.');}
+    });
+    const showDemo=(channel)=>{
+      el('shareFeedbackTitle').textContent=channel==='LinkedIn'?'LinkedIn sharing preview':'Email sharing preview';
+      el('shareFeedbackBody').textContent=channel==='LinkedIn'?'This preview would share Warda Mahmoud’s Complete C# Programming certificate on LinkedIn after a real verification URL is connected. No post has been created.':'This preview would compose an email about Warda Mahmoud’s Complete C# Programming certificate after a real verification URL is connected. No email has been sent.';
+      el('shareFeedback').showModal();
+    };
+    el('linkedinDemo').addEventListener('click',()=>showDemo('LinkedIn'));
+    el('emailDemo').addEventListener('click',()=>showDemo('Email'));
+    el('closeShareFeedback').addEventListener('click',()=>el('shareFeedback').close());
+    el('dismissShareFeedback').addEventListener('click',()=>el('shareFeedback').close());
+    el('submitAnyway').addEventListener('click',()=>el('submissionFeedback').showModal());
+    el('closeSubmissionFeedback').addEventListener('click',()=>el('submissionFeedback').close());
+    el('dismissSubmissionFeedback').addEventListener('click',()=>el('submissionFeedback').close());
+    [el('shareFeedback'),el('submissionFeedback'),el('mobileMenu')].forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close();}));
+    // Escape dismisses static demo panels when focus is inside them, in addition to real modal dialogs.
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape'){
+        if(!el('accountMenu').hidden)hideAccount();
+        else if(!el('shareFeedback').open && !el('submissionFeedback').open && !el('mobileMenu').open){
+          if(el('shareCard').contains(document.activeElement))closePreview('sharePreview','reopenShare');
+          else if(el('quizCard').contains(document.activeElement))closePreview('quizPreview','reopenQuiz');
+        }
+      }
+    });
+    el('menuToggle').addEventListener('click',()=>{el('mobileMenu').showModal();el('menuToggle').setAttribute('aria-expanded','true');});
+    el('mobileMenu').addEventListener('close',()=>{el('menuToggle').setAttribute('aria-expanded','false');el('menuToggle').focus();});
+    el('mobileMenu').querySelector('[data-close-menu]').addEventListener('click',()=>el('mobileMenu').close());
+    const hideAccount=()=>{el('accountMenu').hidden=true;el('accountToggle').setAttribute('aria-expanded','false');};
+    el('accountToggle').addEventListener('click',()=>{const m=el('accountMenu');m.hidden=!m.hidden;el('accountToggle').setAttribute('aria-expanded',String(!m.hidden));});
+    document.addEventListener('click',e=>{if(!e.target.closest('.account-area'))hideAccount();});
+    ['desktopSearch','mobileSearch'].forEach(id=>el(id).addEventListener('submit',e=>{e.preventDefault();const q=String(new FormData(e.currentTarget).get('search')||'').trim();if(q)location.href='eduhub-explore-courses.html?search='+encodeURIComponent(q);else toast('Enter a course name to search.');}));
+    el('notificationButton').addEventListener('click',()=>location.href='eduhub-notifications.html');
+  })();
+  </script>
+</body>
+</html>

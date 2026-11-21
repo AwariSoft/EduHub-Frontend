@@ -1,0 +1,58 @@
+
+/* 09 — Instructor Edit Lesson (Figma 18:58772, 18:58894, 18:59012) */
+.edit-lesson-page{min-height:1784px}
+.edit-lesson-page .lesson-heading{height:87px}
+.edit-lesson-page .lesson-video-card{height:608px}
+.edit-lesson-page .lesson-resources-card{height:333px}
+.edit-lesson-page .lesson-info{height:439px}
+.edit-lesson-page .lesson-video-card .lesson-card-subtitle{margin-bottom:16px}
+.saved-state{background:#f0fdf4;border-radius:100px;padding:4px 8px;color:#15803d;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;line-height:14px}
+.saved-state .fa-circle{font-size:7px}
+.saved-file-name{margin:16px 0;font-size:13px;font-weight:600;line-height:20px;color:#0f172a}
+.saved-player{position:relative;border-radius:8px;height:240px;overflow:hidden;background:#0f172a;color:white}
+.saved-player .saved-poster{display:block;width:100%;height:100%;object-fit:cover;object-position:center;background:#15192f;filter:contrast(.95)}
+.poster-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:0;background:white;color:#2563eb;border-radius:50%;width:56px;height:56px;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px #0003;transition:transform .15s,background .15s}
+.poster-play:hover{background:#eff6ff;transform:translate(-50%,-50%) scale(1.08)}
+.poster-play:focus-visible,.mock-controls button:focus-visible{outline:3px solid #60a5fa;outline-offset:2px}
+.mock-controls{position:absolute;bottom:0;left:0;right:0;height:40px;background:#0f172a;color:white;display:flex;align-items:center;gap:12px;padding:0 12px;font-size:11px}
+.mock-controls button{color:white;border:0;background:none;padding:3px 4px;font-size:13px;cursor:pointer}
+.mock-track{height:3px;flex:1;background:#64748b;min-width:30px}
+.video-action-row{display:flex;align-items:center;gap:12px;margin:16px 0}
+.video-action-row .lesson-primary,.video-action-row .lesson-secondary{min-width:116px}
+#videoDrop[hidden],#savedVideoDetails[hidden],#newVideoPreview[hidden]{display:none!important}
+#videoDrop{height:191px;min-height:191px}
+#newVideoPreview{height:273px;margin:0 0 7px;min-width:0}
+#newVideoPreview video{width:100%;height:240px;background:#111827;border-radius:8px}
+#newVideoPreview .new-file-name{margin:0 0 7px;font-size:12px;color:#475569;line-height:17px}
+.edit-lesson-page .lesson-duration-field{height:96px}
+.saved-resource-list{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin:16px 0 16px}
+.saved-resource{border:1px solid transparent;border-radius:6px;background:transparent;padding:2px 3px;color:#0f172a;line-height:20px;font-size:13px;text-align:left;max-width:100%;overflow-wrap:anywhere}
+.saved-resource:first-child{font-weight:600}
+.saved-resource:hover,.saved-resource:focus-visible,.saved-resource[aria-pressed="true"]{background:#eff6ff;border-color:#bfdbfe;outline:none}
+.resource-action-stack{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.resource-action-stack button{min-width:120px}
+.edit-lesson-page .lesson-resources-card .resources-help{margin-top:16px}
+.edit-lesson-page .lesson-resources-card:has(.lesson-error:not(:empty)),.edit-lesson-page .lesson-video-card:has(.lesson-error:not(:empty)),.edit-lesson-page .lesson-info:has(.lesson-error:not(:empty)){height:auto;min-height:inherit}
+#savedPlayer:not([hidden])+.lesson-error{display:none}
+@media (min-width:601px) and (max-width:1199.98px){
+ .edit-lesson-page{min-height:1788px}.edit-lesson-page .lesson-video-card{height:608px}.edit-lesson-page .lesson-resources-card{height:333px}
+ .edit-lesson-page .lesson-info{height:439px}
+}
+@media(max-width:600px){
+ .edit-lesson-page{min-height:2084px}
+ .edit-lesson-page .lesson-heading{height:83px}
+ .edit-lesson-page .lesson-info{height:531px}
+ .edit-lesson-page .lesson-video-card{height:700px}
+ .edit-lesson-page .lesson-resources-card{height:373px}
+ .edit-lesson-page .saved-player{height:240px}
+ .edit-lesson-page .video-action-row{display:flex;flex-direction:column;gap:8px;align-items:stretch}
+ .edit-lesson-page .video-action-row button{width:100%;height:44px}
+ .edit-lesson-page .saved-resource-list{gap:12px}
+ .edit-lesson-page .saved-file-name{max-width:100%;overflow-wrap:anywhere}
+ .edit-lesson-page #newVideoPreview{height:273px}
+ .edit-lesson-page .resource-action-stack{gap:16px}
+ .edit-lesson-page .lesson-footer{margin:20px 0 15px}
+ .bottom-nav{position:fixed;bottom:0;z-index:60}
+ .edit-lesson-page{min-height:2084px;padding-bottom:0}
+}
+@media(max-width:360px){.saved-player{height:200px!important}.saved-file-name{font-size:12px}.mock-controls{gap:7px}}

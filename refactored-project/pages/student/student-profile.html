@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Profile | EduHub Student</title>
+<link href="{{BASE}}assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"><link href="{{BASE}}assets/css/main.css" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="edu-student edu-student-profile" data-eduhub-layout="student">
+<a class="visually-hidden-focusable" href="#main-content">Skip to profile</a>
+<div class="edu-student__shell d-lg-flex">
+<!-- INCLUDE: partials/student-sidebar.html -->
+<div class="edu-student__content flex-grow-1 d-flex flex-column min-vh-100">
+<!-- INCLUDE: partials/student-topbar.html -->
+<main id="main-content" class="container-fluid px-3 px-md-4 py-4 flex-grow-1">
+<nav aria-label="Breadcrumb"><ol class="breadcrumb small"><li class="breadcrumb-item"><a href="{{BASE}}pages/student/dashboard.html">Student workspace</a></li><li class="breadcrumb-item active" aria-current="page">My Profile</li></ol></nav>
+<header class="mb-4"><h1 class="h3 fw-bold mb-2">My Profile</h1><p class="text-secondary mb-0">Your learning identity and a snapshot of your progress.</p></header>
+<div class="row g-4 align-items-start">
+<div class="col-12 col-xl-5"><section class="edu-student-profile__card edu-student-profile__identity" aria-labelledby="profile-identity-title">
+<div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start text-center text-sm-start gap-3">
+<div class="edu-student-profile__avatar rounded-circle d-grid" role="img" aria-label="Warda Mahmoud initials">WM</div>
+<div class="flex-grow-1"><span class="edu-student-profile__role align-items-center"><i class="fa-solid fa-graduation-cap me-1" aria-hidden="true"></i>Student</span><h2 id="profile-identity-title" class="h4 fw-bold mt-2 mb-1">Warda Mahmoud</h2><p class="edu-student-profile__email mb-0">warda.mahmoud@example.com</p></div></div>
+<a class="btn btn-primary edu-student-profile__edit mt-4" href="{{BASE}}pages/student/edit-student-profile.html"><i class="fa-solid fa-pen-to-square me-2" aria-hidden="true"></i>Edit Profile</a>
+</section></div>
+<div class="col-12 col-xl-7"><section class="edu-student-profile__card" aria-labelledby="learning-summary-title"><h2 id="learning-summary-title" class="h5 fw-bold mb-3">Learning summary</h2>
+<div class="row row-cols-2 row-cols-md-4 g-3">
+<div class="col"><div class="edu-student-profile__metric h-100"><i class="fa-solid fa-book-open" aria-hidden="true"></i><strong>6</strong><span>Enrolled Courses</span></div></div>
+<div class="col"><div class="edu-student-profile__metric h-100"><i class="fa-solid fa-clock" aria-hidden="true"></i><strong>3</strong><span>In Progress</span></div></div>
+<div class="col"><div class="edu-student-profile__metric h-100"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><strong>2</strong><span>Completed Courses</span></div></div>
+<div class="col"><div class="edu-student-profile__metric h-100"><i class="fa-solid fa-award" aria-hidden="true"></i><strong>2</strong><span>Certificates Earned</span></div></div></div>
+<p class="text-secondary small mt-3 mb-0">Of your 6 enrolled courses, 3 are in progress, 2 are completed and 1 is not started.</p>
+</section></div>
+<div class="col-12 col-xl-5"><section class="edu-student-profile__card h-100" aria-labelledby="profile-about-title"><h2 id="profile-about-title" class="h5 fw-bold mb-3">About me</h2><p class="mb-0 edu-student-profile__bio">I’m building my programming and database skills, one course at a time. I enjoy practical lessons that help me turn an idea into something useful.</p></section></div>
+<div class="col-12 col-xl-7"><section class="edu-student-profile__card h-100" aria-labelledby="profile-interests-title"><h2 id="profile-interests-title" class="h5 fw-bold mb-3">Learning interests</h2><div class="d-flex flex-wrap gap-2"><span class="edu-student-profile__interest">C#</span><span class="edu-student-profile__interest">Web Development</span><span class="edu-student-profile__interest">Databases</span></div></section></div>
+<div class="col-12"><section class="edu-student-profile__card edu-student-profile__next" aria-labelledby="profile-next-title"><div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3"><div><h2 id="profile-next-title" class="h5 fw-bold mb-2">Keep your next step in sight</h2><p class="mb-0 text-secondary">This is your profile. Visit My Learning to continue lessons and manage your courses.</p></div><div class="d-flex flex-wrap gap-2"><a class="btn btn-primary" href="{{BASE}}pages/student/dashboard.html#my-learning">Go to My Learning <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a><a class="btn btn-outline-primary" href="{{BASE}}pages/student/certificate.html">View My Certificates <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a></div></div></section></div>
+</div></main>
+<!-- INCLUDE: partials/footer.html -->
+</div></div>
+<!-- INCLUDE: partials/student-mobile-nav.html -->
+<div class="modal fade" id="eduStudentLogoutModal" tabindex="-1" aria-labelledby="eduStudentLogoutTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5" id="eduStudentLogoutTitle">Log out of EduHub?</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">Logout requires authentication integration.</div><div class="modal-footer"><button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary" type="button" id="eduStudentLogoutConfirm" data-bs-dismiss="modal">Request logout</button></div></div></div></div>
+<script src="{{BASE}}assets/vendor/bootstrap/bootstrap.bundle.min.js"></script><script src="{{BASE}}assets/js/main.js"></script></body></html>

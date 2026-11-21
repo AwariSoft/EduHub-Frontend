@@ -1,0 +1,15 @@
+/* ZIP #11 — Payments: additive, screen-scoped styles only. */
+.edu-payments__panel,.edu-payments__metric,.edu-payments__card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
+.edu-payments__metric:hover,.edu-payments__card:hover{border-color:#bfdbfe;box-shadow:0 6px 20px rgba(15,23,42,.08);transform:translateY(-2px)}
+.edu-payments__notice{background:#eff6ff;border:1px solid #dbeafe;border-radius:12px;color:#0f172a}
+.edu-payments__table th{white-space:nowrap;font-size:.82rem;color:#64748b}
+.edu-payments__table tbody tr{transition:background-color .18s ease}
+.edu-payments__table tbody tr:hover{background:#eff6ff}
+.edu-payments__card dt{color:#64748b;font-weight:500}
+.edu-payments__card dd{margin-bottom:0;overflow-wrap:anywhere}
+.edu-payments .btn,.edu-payments .page-link,.edu-payments a,.edu-payments .form-control,.edu-payments .form-select{transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease,color .2s ease}
+.edu-payments .btn:hover,.edu-payments a.btn:hover{transform:translateY(-1px)}
+.edu-payments .btn:active,.edu-payments a.btn:active{transform:translateY(1px)}
+.edu-payments :is(a,button,input,select):focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+.edu-payments__empty[hidden],.edu-payments [hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.edu-payments__panel,.edu-payments__metric,.edu-payments__card,.edu-payments__table tbody tr,.edu-payments .btn,.edu-payments .page-link,.edu-payments a,.edu-payments .form-control,.edu-payments .form-select{transition:none!important;transform:none!important}}

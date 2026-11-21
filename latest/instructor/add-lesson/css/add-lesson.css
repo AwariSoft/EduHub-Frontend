@@ -1,0 +1,88 @@
+
+/* 08 — Add Lesson form. Figma Desktop 18:58461 / Tablet 18:58569 / Mobile 18:58673 */
+.lesson-page{padding:32px 32px 4px;min-height:1542px}
+.lesson-heading{height:87px;margin:0 0 24px}
+.lesson-crumb{font-size:12px;color:#64748b;margin:0 0 6px;line-height:18px}
+.lesson-crumb a{color:inherit}.lesson-crumb a:hover{color:var(--ed-blue)}
+.lesson-heading h1{font-size:28px;line-height:36px;font-weight:700;color:#0f172a;margin:0 0 6px}
+.lesson-heading p:last-child{font-size:14px;line-height:21px;color:#64748b;margin:0}
+.lesson-form{display:flex;flex-direction:column;gap:24px}
+.lesson-note{background:#eff6ff;color:#2563eb;border-radius:8px;min-height:52px;display:flex;align-items:center;gap:12px;padding:16px;font-size:13px;line-height:20px}
+.lesson-note i{font-size:20px;flex:0 0 20px}
+.lesson-card{padding:24px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 2px 4px rgba(15,23,42,.02);min-width:0}
+.lesson-card h2{font-weight:700;font-size:18px;line-height:23px;margin:0;color:#0f172a}
+.lesson-card .field-label{display:block;font-size:13px;color:#334155;line-height:20px;margin:0 0 8px;font-weight:500}
+.lesson-control{width:100%;height:48px;border:1px solid #d9e2ee;border-radius:8px;padding:0 15px;color:#0f172a;background:#fff;outline:none;font-size:13px;transition:border-color .12s,box-shadow .12s}
+.lesson-control:focus-visible,.lesson-control:focus{border-color:#2563eb;box-shadow:0 0 0 3px #2563eb18}
+.lesson-control.is-invalid,.lesson-control[aria-invalid="true"]{border-color:#dc2626}
+.lesson-control::placeholder{color:#0f172a;opacity:1}
+.lesson-control[type=number]{appearance:textfield}
+.lesson-control[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+textarea.lesson-control{resize:vertical;padding:12px;min-height:100px;height:100px;line-height:20px}
+.lesson-help{font-size:12px;color:#64748b;line-height:18px;margin:6px 0 0}
+.lesson-error{font-size:12px;color:#b91c1c;display:none;margin:5px 0 0;line-height:17px}
+.lesson-error:not(:empty){display:block}
+.lesson-info{height:439px}
+.lesson-info h2{margin-bottom:16px}
+.lesson-field-title{height:96px;margin-bottom:16px}
+.lesson-desc-field{height:128px;margin-bottom:16px}
+.lesson-desc-field .field-label{font-weight:600}
+.lesson-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;height:96px}
+.lesson-pair>*{min-width:0}
+.lesson-pair select{appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="%2364758b" stroke-width="2"%3E%3Cpath d="m6 9 6 6 6-6"/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
+.lesson-video-card{height:462px}
+.lesson-card-subtitle{font-size:13px;color:#64748b;line-height:20px;margin:16px 0 16px}
+.video-zone{min-height:191px;height:191px;background:#f8fafc;border:1px dashed #dbe5f0;border-radius:8px;display:flex;align-items:center;flex-direction:column;padding:24px;transition:background .15s,border-color .15s;position:relative}
+.video-zone.dragging,.video-zone:hover{background:#eff6ff;border-color:#2563eb}
+.video-zone .fa-video{color:#2563eb;font-size:26px;height:28px;margin-bottom:12px}
+.video-zone strong{font-size:13px;line-height:17px;margin-bottom:8px;font-weight:600}
+.video-zone .upload-hint{font-size:12px;color:#64748b;line-height:18px;margin:0 0 12px;text-align:center;width:100%}
+.video-zone .file-picker-button{min-width:117px;height:44px}
+.lesson-secondary{border:1px solid #e2e8f0;background:#fff;color:#0f172a;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:0 16px;height:44px;font-size:13px;font-weight:600;text-decoration:none;transition:background .12s,border-color .12s}
+.lesson-secondary:hover{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}.lesson-secondary:active{background:#dbeafe}
+.lesson-primary{background:#2563eb;color:#fff;border:1px solid #2563eb;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:0 16px;height:44px;font-size:13px;font-weight:600;transition:background .12s}
+.lesson-primary:hover{background:#1d4ed8;color:#fff}.lesson-primary:active{background:#1e40af}
+.video-preview-text{font-size:13px;color:#64748b;line-height:20px;margin:16px 0}
+#videoPreviewArea:not([hidden]){margin:12px 0;padding:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px}
+#videoPreviewArea video{display:block;width:100%;max-height:230px;border-radius:6px;background:#0f172a}
+#videoPreviewArea .file-info{font-size:12px;color:#64748b;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+.lesson-duration-field{height:96px}
+.lesson-resources-card{height:237px}
+.lesson-video-card:has(#videoPreviewArea:not([hidden])),.lesson-video-card:has(.lesson-error:not(:empty)){height:auto;min-height:462px}
+.lesson-info:has(.lesson-error:not(:empty)),.lesson-resources-card:has(.resource-item),.lesson-resources-card:has(.lesson-error:not(:empty)){height:auto;min-height:237px}
+.lesson-resources-card .resources-empty{font-size:13px;color:#64748b;line-height:20px;margin:16px 0}
+.lesson-resources-card .resources-help{font-size:12px;color:#64748b;line-height:18px;margin:16px 0 0}
+.resource-list{display:flex;gap:8px;flex-wrap:wrap;max-height:110px;overflow:auto}
+.resource-item{display:inline-flex;align-items:center;gap:8px;border:1px solid #dbe5f0;background:#f8fafc;padding:5px 9px;border-radius:7px;font-size:12px;max-width:100%}
+.resource-item span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:290px}
+.resource-item button{background:transparent;border:0;color:#64748b;padding:2px 4px}
+.lesson-buttons{display:flex;gap:12px;align-items:center;min-height:44px}
+.lesson-buttons .lesson-primary{min-width:110px}.lesson-buttons .lesson-secondary{min-width:108px}
+.lesson-footer{margin-top:28px;font-size:12px;color:#64748b;line-height:18px;margin:28px 0 8px}
+.lesson-footer a{color:#64748b}.lesson-footer a:hover{color:#2563eb}
+.lesson-footer span{margin:0 14px}
+.lesson-dlg{border:1px solid #dbe5f0;border-radius:12px;box-shadow:0 28px 70px #0f172a33;padding:24px;width:min(480px,calc(100vw - 32px));color:#0f172a;max-height:calc(100vh - 30px);overflow:auto}
+.lesson-dlg::backdrop{background:#0f172a88}
+.lesson-dlg h2{font-size:21px;line-height:1.4;font-weight:700;margin:0 0 12px}
+.lesson-dlg p{font-size:13px;line-height:1.6;color:#64748b;margin:0 0 22px}
+.lesson-dlg-actions{display:flex;align-items:center;justify-content:end;gap:10px;flex-wrap:wrap}
+.lesson-toast{position:fixed;z-index:1150;bottom:24px;right:24px;border-radius:8px;background:#0f172a;color:#fff;font-size:13px;box-shadow:0 12px 24px #0f172a25;padding:12px 16px;max-width:min(360px,90vw)}
+.lesson-toast[hidden]{display:none}
+@media(min-width:601px) and (max-width:1199.98px){.lesson-page{padding:24px 24px 4px;min-height:1546px}.lesson-note{min-height:72px;align-items:flex-start}.lesson-info{height:439px}.lesson-video-card{height:462px}.lesson-resources-card{height:237px}
+.lesson-video-card:has(#videoPreviewArea:not([hidden])),.lesson-video-card:has(.lesson-error:not(:empty)){height:auto;min-height:462px}
+.lesson-info:has(.lesson-error:not(:empty)),.lesson-resources-card:has(.resource-item),.lesson-resources-card:has(.lesson-error:not(:empty)){height:auto;min-height:237px}}
+@media(max-width:600px){
+ .lesson-page{padding:16px 16px 20px;min-height:1807px}
+ .lesson-heading{height:104px;margin-bottom:24px}.lesson-heading h1{font-size:24px;line-height:32px}.lesson-heading p:last-child{line-height:21px;max-width:340px}
+ .lesson-note{min-height:112px;align-items:flex-start;line-height:20px}
+ .lesson-info{height:527px}.lesson-pair{grid-template-columns:minmax(0,1fr);height:184px;gap:16px}
+ .lesson-video-card{height:502px}.lesson-card-subtitle{line-height:20px}
+ .lesson-resources-card{height:277px}.lesson-resources-card:has(.resource-item),.lesson-resources-card:has(.lesson-error:not(:empty)){min-height:277px}
+ .lesson-resources-card .resources-empty{line-height:20px}
+ .lesson-buttons{flex-direction:column;align-items:stretch;gap:8px;min-height:96px}
+ .lesson-buttons .lesson-primary,.lesson-buttons .lesson-secondary{width:100%}
+ .lesson-footer{margin:20px 0 30px}.lesson-footer .help-link,.lesson-footer span{display:none}
+ .lesson-toast{bottom:60px;right:12px}
+}
+@media(max-width:360px){.lesson-card{padding:18px}.lesson-note{font-size:12px}.lesson-desc-field textarea{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.lesson-primary,.lesson-secondary,.video-zone{transition:none}}

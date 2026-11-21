@@ -1,0 +1,23 @@
+/* ZIP #13 — Student Profile: additive, screen-scoped CSS only */
+.edu-student-profile__card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:clamp(1rem,2vw,1.5rem);box-shadow:0 2px 12px rgba(15,23,42,.02);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.edu-student-profile__card:hover{border-color:#d6dee6;box-shadow:0 5px 18px rgba(15,23,42,.06)}
+.edu-student-profile__card:focus-within{border-color:#2563eb}
+.edu-student-profile__avatar{width:76px;height:76px;flex:0 0 76px;border-radius:50%;background:#dbeafe;color:#2563eb;display:grid;place-items:center;font-size:1.5rem;font-weight:700}
+.edu-student-profile__role{display:inline-flex;align-items:center;border-radius:999px;background:#eff6ff;color:#2563eb;padding:.3rem .7rem;font-size:.8rem;font-weight:600}
+.edu-student-profile__email{color:#64748b;overflow-wrap:anywhere}
+.edu-student-profile__edit{min-width:150px}
+.edu-student-profile__metric{border:1px solid #e2e8f0;background:#f8fafc;border-radius:12px;padding:1rem .6rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.4rem;transition:background-color .2s ease,transform .2s ease,border-color .2s ease}
+.edu-student-profile__metric:hover{background:#eff6ff;border-color:#dbeafe;transform:translateY(-2px)}
+.edu-student-profile__metric i{color:#2563eb;font-size:1.1rem}
+.edu-student-profile__metric strong{font-size:1.7rem;color:#0f172a;line-height:1.2}
+.edu-student-profile__metric span{font-size:.78rem;color:#64748b}
+.edu-student-profile__bio{color:#64748b;line-height:1.8}
+.edu-student-profile__interest{display:inline-block;border-radius:999px;border:1px solid #dbeafe;background:#eff6ff;color:#2563eb;font-weight:600;padding:.45rem .8rem;transition:background-color .2s ease,transform .2s ease}
+.edu-student-profile__interest:hover{background:#dbeafe;transform:translateY(-1px)}
+.edu-student-profile__next{background:#f8fafc}
+.edu-student-profile a.btn{transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.edu-student-profile a.btn:hover{transform:translateY(-2px)}
+.edu-student-profile a.btn:active{transform:translateY(1px)}
+.edu-student-profile a:focus-visible,.edu-student-profile button:focus-visible{outline:3px solid #2563eb;outline-offset:3px;box-shadow:none}
+@media(max-width:575.98px){.edu-student-profile__card{padding:1rem}.edu-student-profile__edit{width:100%}.edu-student-profile__metric{padding:.8rem .35rem}.edu-student-profile__metric strong{font-size:1.45rem}}
+@media(prefers-reduced-motion:reduce){.edu-student-profile__card,.edu-student-profile__metric,.edu-student-profile__interest,.edu-student-profile a.btn{transition:none!important;transform:none!important}}

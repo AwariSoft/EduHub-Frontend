@@ -1,0 +1,239 @@
+[
+  {
+    "width": 1440,
+    "rects": {
+      "eduhub-logo_0": {
+        "x": 40,
+        "y": 40,
+        "w": 141,
+        "h": 34
+      },
+      "intro_1": {
+        "x": 40,
+        "y": 106,
+        "w": 1360,
+        "h": 63
+      },
+      "board-row_2": {
+        "x": 40,
+        "y": 201,
+        "w": 1360,
+        "h": 438
+      },
+      "approval-card_3": {
+        "x": 40,
+        "y": 201,
+        "w": 668,
+        "h": 413
+      },
+      "approval-card_4": {
+        "x": 732,
+        "y": 201,
+        "w": 668,
+        "h": 438
+      },
+      "board-row_5": {
+        "x": 40,
+        "y": 671,
+        "w": 1360,
+        "h": 433
+      },
+      "approval-card_6": {
+        "x": 40,
+        "y": 671,
+        "w": 668,
+        "h": 409
+      },
+      "approval-card_7": {
+        "x": 732,
+        "y": 671,
+        "w": 668,
+        "h": 433
+      }
+    },
+    "metrics": {
+      "horizontalOverflow": false,
+      "documentHeight": 1144,
+      "failedFonts": "loaded"
+    },
+    "errors": [],
+    "interactionTests": "disabled submission actions, modal open/close via Escape passed"
+  },
+  {
+    "width": 834,
+    "rects": {
+      "eduhub-logo_0": {
+        "x": 28,
+        "y": 28,
+        "w": 141,
+        "h": 34
+      },
+      "intro_1": {
+        "x": 28,
+        "y": 88,
+        "w": 778,
+        "h": 63
+      },
+      "board-row_2": {
+        "x": 28,
+        "y": 177,
+        "w": 778,
+        "h": 508
+      },
+      "approval-card_3": {
+        "x": 28,
+        "y": 177,
+        "w": 379,
+        "h": 442
+      },
+      "approval-card_4": {
+        "x": 427,
+        "y": 177,
+        "w": 379,
+        "h": 508
+      },
+      "board-row_5": {
+        "x": 28,
+        "y": 711,
+        "w": 778,
+        "h": 538
+      },
+      "approval-card_6": {
+        "x": 28,
+        "y": 711,
+        "w": 379,
+        "h": 527
+      },
+      "approval-card_7": {
+        "x": 427,
+        "y": 711,
+        "w": 379,
+        "h": 538
+      }
+    },
+    "metrics": {
+      "horizontalOverflow": false,
+      "documentHeight": 1277,
+      "failedFonts": "loaded"
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "rects": {
+      "eduhub-logo_0": {
+        "x": 16,
+        "y": 20,
+        "w": 130,
+        "h": 34
+      },
+      "intro_1": {
+        "x": 16,
+        "y": 78,
+        "w": 358,
+        "h": 80
+      },
+      "board-row_2": {
+        "x": 16,
+        "y": 182,
+        "w": 358,
+        "h": 958
+      },
+      "approval-card_3": {
+        "x": 16,
+        "y": 182,
+        "w": 358,
+        "h": 421
+      },
+      "approval-card_4": {
+        "x": 16,
+        "y": 621,
+        "w": 358,
+        "h": 519
+      },
+      "board-row_5": {
+        "x": 16,
+        "y": 1164,
+        "w": 358,
+        "h": 1076
+      },
+      "approval-card_6": {
+        "x": 16,
+        "y": 1164,
+        "w": 358,
+        "h": 525
+      },
+      "approval-card_7": {
+        "x": 16,
+        "y": 1707,
+        "w": 358,
+        "h": 533
+      }
+    },
+    "metrics": {
+      "horizontalOverflow": false,
+      "documentHeight": 2270,
+      "failedFonts": "loaded"
+    },
+    "errors": []
+  },
+  {
+    "width": 320,
+    "rects": {
+      "eduhub-logo_0": {
+        "x": 12,
+        "y": 16,
+        "w": 130,
+        "h": 34
+      },
+      "intro_1": {
+        "x": 12,
+        "y": 74,
+        "w": 296,
+        "h": 100
+      },
+      "board-row_2": {
+        "x": 12,
+        "y": 198,
+        "w": 296,
+        "h": 994
+      },
+      "approval-card_3": {
+        "x": 12,
+        "y": 198,
+        "w": 296,
+        "h": 453
+      },
+      "approval-card_4": {
+        "x": 12,
+        "y": 669,
+        "w": 296,
+        "h": 523
+      },
+      "board-row_5": {
+        "x": 12,
+        "y": 1216,
+        "w": 296,
+        "h": 1224
+      },
+      "approval-card_6": {
+        "x": 12,
+        "y": 1216,
+        "w": 296,
+        "h": 589
+      },
+      "approval-card_7": {
+        "x": 12,
+        "y": 1823,
+        "w": 296,
+        "h": 617
+      }
+    },
+    "metrics": {
+      "horizontalOverflow": false,
+      "documentHeight": 2468,
+      "failedFonts": "loaded"
+    },
+    "errors": []
+  }
+]

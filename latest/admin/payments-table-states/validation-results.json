@@ -1,0 +1,453 @@
+{
+  "summary": {
+    "passed": 58,
+    "total": 58,
+    "failures": []
+  },
+  "checks": [
+    {
+      "name": "1120px no overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1120,
+        "bodyWidth": 1120,
+        "viewportWidth": 1120,
+        "height": 1881,
+        "panels": [
+          {
+            "y": 228,
+            "height": 605,
+            "width": 1040
+          },
+          {
+            "y": 865,
+            "height": 453,
+            "width": 1040
+          },
+          {
+            "y": 1350,
+            "height": 491,
+            "width": 1040
+          }
+        ]
+      }
+    },
+    {
+      "name": "1120px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1120px three state panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px eight table headings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px loading controls disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px empty and no-results different",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px original example query",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Figma full height 1881",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1120,
+        "bodyWidth": 1120,
+        "viewportWidth": 1120,
+        "height": 1881,
+        "panels": [
+          {
+            "y": 228,
+            "height": 605,
+            "width": 1040
+          },
+          {
+            "y": 865,
+            "height": 453,
+            "width": 1040
+          },
+          {
+            "y": 1350,
+            "height": 491,
+            "width": 1040
+          }
+        ]
+      }
+    },
+    {
+      "name": "Figma exact three panel geometry",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1120,
+        "bodyWidth": 1120,
+        "viewportWidth": 1120,
+        "height": 1881,
+        "panels": [
+          {
+            "y": 228,
+            "height": 605,
+            "width": 1040
+          },
+          {
+            "y": 865,
+            "height": 453,
+            "width": 1040
+          },
+          {
+            "y": 1350,
+            "height": 491,
+            "width": 1040
+          }
+        ]
+      }
+    },
+    {
+      "name": "Clear Search only clears text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Clear Search reveals three Completed payments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Cleared payments include Warda",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset Filters clears all filters",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset Filters reveals all six Figma samples",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset includes refunded record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Status Pending yields one record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pending on Oct 29 yields no results",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Pending Oct 28 recovers record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Search preserves status selection",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Search recovers exact payment ID",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Course search case insensitive",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Empty dataset cannot show fake records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Empty dataset note restored",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Local SVG brand icon present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Accessible filtered table",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px no overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "viewportWidth": 1440,
+        "height": 1881,
+        "panels": [
+          {
+            "y": 228,
+            "height": 605,
+            "width": 1040
+          },
+          {
+            "y": 865,
+            "height": 453,
+            "width": 1040
+          },
+          {
+            "y": 1350,
+            "height": 491,
+            "width": 1040
+          }
+        ]
+      }
+    },
+    {
+      "name": "1440px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1440px three state panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px eight table headings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px loading controls disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px empty and no-results different",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px original example query",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px no overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 834,
+        "bodyWidth": 834,
+        "viewportWidth": 834,
+        "height": 1845,
+        "panels": [
+          {
+            "y": 225,
+            "height": 595,
+            "width": 778
+          },
+          {
+            "y": 846,
+            "height": 443,
+            "width": 778
+          },
+          {
+            "y": 1315,
+            "height": 502,
+            "width": 778
+          }
+        ]
+      }
+    },
+    {
+      "name": "834px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "834px three state panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px eight table headings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px loading controls disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px empty and no-results different",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px original example query",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px no overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "height": 1922,
+        "panels": [
+          {
+            "y": 219,
+            "height": 623,
+            "width": 362
+          },
+          {
+            "y": 862,
+            "height": 491,
+            "width": 362
+          },
+          {
+            "y": 1373,
+            "height": 529,
+            "width": 362
+          }
+        ]
+      }
+    },
+    {
+      "name": "390px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px three state panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px eight table headings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px loading controls disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px empty and no-results different",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px original example query",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px no overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 320,
+        "bodyWidth": 320,
+        "viewportWidth": 320,
+        "height": 1947,
+        "panels": [
+          {
+            "y": 214,
+            "height": 617,
+            "width": 300
+          },
+          {
+            "y": 851,
+            "height": 485,
+            "width": 300
+          },
+          {
+            "y": 1356,
+            "height": 576,
+            "width": 300
+          }
+        ]
+      }
+    },
+    {
+      "name": "320px no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px three state panels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px eight table headings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px loading controls disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px empty and no-results different",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px original example query",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

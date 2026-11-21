@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="EduHub payment failed outcome for Complete C# Programming.">
+<title>Payment Failed | EduHub</title>
+<link href="{{BASE}}assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="{{BASE}}assets/css/main.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="edu-payment-failed">
+<a class="visually-hidden-focusable" href="#main-content">Skip to payment details</a>
+<!-- INCLUDE: partials/navbar.html -->
+<main id="main-content" class="edu-payment-failed__main container py-4 py-md-5">
+<nav aria-label="Breadcrumb" class="mb-4"><ol class="breadcrumb small mb-0"><li class="breadcrumb-item"><a href="{{BASE}}pages/public/explore-courses.html">Explore Courses</a></li><li class="breadcrumb-item"><a href="{{BASE}}pages/public/explore-courses.html">Complete C# Programming</a></li><li class="breadcrumb-item active" aria-current="page">Payment</li></ol></nav>
+<section class="edu-payment-failed__panel mx-auto" aria-labelledby="payment-failed-title">
+<div class="edu-payment-failed__hero text-center">
+<img class="edu-payment-failed__motif d-block mx-auto" src="{{BASE}}assets/images/payment-failed/Outcome-motif1@2x.png" alt="" width="120" height="120">
+<h1 id="payment-failed-title" class="h2 fw-bold mt-3 mb-2">Payment Failed</h1>
+<p class="edu-payment-failed__subtitle mb-0">Your payment could not be completed.</p>
+</div>
+<div class="edu-payment-failed__details mt-4" aria-label="Failed payment summary">
+<div class="d-flex align-items-center gap-3 mb-4">
+<img class="edu-payment-failed__thumbnail" src="{{BASE}}assets/images/payment-failed/Course-thumbnail@2x.png" width="96" height="72" alt="Complete C# Programming course thumbnail">
+<div class="min-w-0"><h2 class="h6 fw-bold mb-1">Complete C# Programming</h2><p class="text-secondary small mb-0">Ahmed Mohamed</p></div>
+</div>
+<dl class="edu-payment-failed__facts mb-0">
+<div class="edu-payment-failed__fact"><dt>Student</dt><dd>Warda Mahmoud</dd></div>
+<div class="edu-payment-failed__fact"><dt>Course amount</dt><dd>$49.00</dd></div>
+<div class="edu-payment-failed__fact"><dt>Payment status</dt><dd><span class="edu-payment-failed__status align-items-center"><i class="fa-solid fa-circle-exclamation me-1" aria-hidden="true"></i>Failed</span></dd></div>
+</dl>
+</div>
+<div class="edu-payment-failed__notice mt-4 d-flex" role="status"><i class="fa-solid fa-circle-info mt-1" aria-hidden="true"></i><div><h2 class="h6 fw-semibold mb-1">You can try again</h2><p class="mb-0">This failed payment did not complete an enrollment. Review the course details or try again when you’re ready.</p></div></div>
+<div class="edu-payment-failed__actions d-grid gap-2 mt-4">
+<a class="btn btn-primary edu-payment-failed__action align-items-center justify-content-center" href="{{BASE}}pages/student/checkout.html" data-edu-payment-retry><i class="fa-solid fa-rotate-right me-2" aria-hidden="true"></i>Try Again</a>
+<a class="btn btn-outline-primary edu-payment-failed__action align-items-center justify-content-center" href="{{BASE}}pages/public/explore-courses.html">Return to Course Details</a>
+<a class="edu-payment-failed__text-link text-center" href="{{BASE}}pages/student/dashboard.html#my-learning">Go to My Learning <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a>
+</div>
+<p class="edu-payment-failed__disclaimer text-center mt-4 mb-0">Sample payment state · Static demonstration only</p>
+</section>
+</main>
+<!-- INCLUDE: partials/footer.html -->
+<script src="{{BASE}}assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="{{BASE}}assets/js/main.js"></script>
+</body></html>

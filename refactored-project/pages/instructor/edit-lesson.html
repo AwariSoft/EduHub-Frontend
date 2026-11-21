@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edit Lesson | EduHub</title>
+<meta name="description" content="Responsive EduHub Edit Lesson interface built from the supplied source exports.">
+<link href="{{BASE}}assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="{{BASE}}assets/css/main.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="edu-role-instructor edu-screen edu-screen--lesson-editor" data-eduhub-role="instructor"><a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
+<div class="d-lg-flex edu-workspace">
+<!-- INCLUDE: partials/sidebar.html -->
+<div class="edu-workspace__main flex-grow-1 min-w-0">
+<!-- INCLUDE: partials/workspace-topbar.html -->
+<main id="main-content" class="container-fluid py-4 px-3 px-lg-4 edu-ui-content">
+<header class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-start gap-3 mb-4">
+<div><p class="text-uppercase small fw-semibold text-primary mb-1">EduHub / Instructor</p><h1 class="h2 fw-bold mb-1">Edit Lesson</h1></div>
+<span class="badge text-bg-light border align-self-start" title="Unified responsive source screen">Responsive · Bootstrap 5</span></header>
+
+<p class="lead text-secondary mb-4">Complete C# Programming · Published-course changes require review. Existing approved lessons stay available until a revision is approved.</p><form class="needs-validation" data-edu-demo-form="edit-lesson" novalidate><div class="row g-4"><div class="col-12 col-lg-8"><div class="card edu-ui-card"><div class="card-body"><h2 class="h5 fw-bold">Lesson details</h2><div class="mb-3"><label class="form-label" for="edu-lesson-title">Lesson title *</label><input id="edu-lesson-title" class="form-control" name="lessonTitle" required></div><div class="mb-3"><label class="form-label" for="edu-lesson-type">Lesson type</label><select id="edu-lesson-type" class="form-select" name="lessonType"><option>Video</option><option>Article</option><option>Quiz</option></select></div><div class="mb-3"><label class="form-label" for="edu-lesson-summary">Description</label><textarea id="edu-lesson-summary" class="form-control" rows="5" name="summary"></textarea></div><div class="mb-3"><label class="form-label" for="edu-lesson-media">Lesson video</label><input id="edu-lesson-media" class="form-control" type="file" accept="video/*"></div></div></div></div><div class="col-12 col-lg-4"><div class="card edu-ui-card"><div class="card-body"><h2 class="h5">Publish controls</h2><label class="form-check form-switch"><input type="checkbox" class="form-check-input" name="preview"><span class="form-check-label">Free preview</span></label><div class="d-grid gap-2 mt-4"><button class="btn btn-primary" type="submit">Save Lesson</button><a class="btn btn-outline-secondary" href="{{BASE}}pages/instructor/course-curriculum.html">Cancel</a></div></div></div></div></div></form>
+
+</main>
+<!-- INCLUDE: partials/footer.html -->
+</div></div>
+<div class="modal fade" id="eduConfirmAction" tabindex="-1" aria-labelledby="eduConfirmActionLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="eduConfirmActionLabel">Confirm action</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">This is a demonstration. Confirming will emit an integration event; it will not change external records or payment status.</div><div class="modal-footer"><button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Cancel</button><button class="btn btn-danger" data-edu-confirm data-bs-dismiss="modal" type="button">Confirm</button></div></div></div></div>
+<div id="eduLiveRegion" class="visually-hidden" aria-live="polite"></div>
+<script src="{{BASE}}assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="{{BASE}}assets/js/main.js"></script></body></html>

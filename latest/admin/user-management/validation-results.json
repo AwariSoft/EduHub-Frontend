@@ -1,0 +1,135 @@
+{
+  "viewport_checks": [
+    {
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "height": 1275,
+      "panel": 866,
+      "header": 76,
+      "rows": 6,
+      "active": 1,
+      "width": 1440,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "scrollWidth": 834,
+      "viewport": 834,
+      "height": 1675,
+      "panel": 1248,
+      "header": 76,
+      "rows": 6,
+      "active": 1,
+      "width": 834,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "scrollWidth": 390,
+      "viewport": 390,
+      "height": 2712,
+      "panel": 2238,
+      "header": 105,
+      "rows": 6,
+      "active": 1,
+      "width": 390,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "scrollWidth": 320,
+      "viewport": 320,
+      "height": 2738,
+      "panel": 2264,
+      "header": 105,
+      "rows": 6,
+      "active": 1,
+      "width": 320,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "interaction_checks": [
+    {
+      "name": "search user name",
+      "passed": true
+    },
+    {
+      "name": "restore unfiltered list",
+      "passed": true
+    },
+    {
+      "name": "role filter",
+      "passed": true
+    },
+    {
+      "name": "combined filters and no results",
+      "passed": true
+    },
+    {
+      "name": "clear filters",
+      "passed": true
+    },
+    {
+      "name": "active status filter",
+      "passed": true
+    },
+    {
+      "name": "user details preview",
+      "passed": true
+    },
+    {
+      "name": "modal Escape closes",
+      "passed": true
+    },
+    {
+      "name": "deactivation cancellation",
+      "passed": true
+    },
+    {
+      "name": "deactivate account preview",
+      "passed": true
+    },
+    {
+      "name": "reactivate account preview",
+      "passed": true
+    },
+    {
+      "name": "current admin protected",
+      "passed": true
+    },
+    {
+      "name": "page 2 unavailable guard",
+      "passed": true
+    },
+    {
+      "name": "return to sample page",
+      "passed": true
+    },
+    {
+      "name": "notification menu",
+      "passed": true
+    },
+    {
+      "name": "notification inactive filter",
+      "passed": true
+    },
+    {
+      "name": "account menu",
+      "passed": true
+    },
+    {
+      "name": "mobile menu opens",
+      "passed": true
+    },
+    {
+      "name": "mobile menu backdrop closes",
+      "passed": true
+    },
+    {
+      "name": "mobile topbar search opens",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,377 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1491,
+      "noHorizontalOverflow": true,
+      "javascriptErrors": []
+    },
+    {
+      "width": 834,
+      "height": 1530,
+      "noHorizontalOverflow": true,
+      "javascriptErrors": []
+    },
+    {
+      "width": 390,
+      "height": 1777,
+      "noHorizontalOverflow": true,
+      "javascriptErrors": []
+    },
+    {
+      "width": 320,
+      "height": 1832,
+      "noHorizontalOverflow": true,
+      "javascriptErrors": []
+    }
+  ],
+  "geometry": {
+    "1440": {
+      "docWidth": 1440,
+      "pageHeight": 1491,
+      "topbar": {
+        "x": 232,
+        "y": 0,
+        "w": 1208,
+        "h": 76
+      },
+      "back": {
+        "x": 264,
+        "y": 108,
+        "w": 118,
+        "h": 18
+      },
+      "intro": {
+        "x": 264,
+        "y": 150,
+        "w": 1144,
+        "h": 65
+      },
+      "note": {
+        "x": 264,
+        "y": 239,
+        "w": 1144,
+        "h": 76
+      },
+      "workspace": {
+        "x": 264,
+        "y": 339,
+        "w": 1144,
+        "h": 1040
+      },
+      "original": {
+        "x": 264,
+        "y": 339,
+        "w": 560,
+        "h": 403
+      },
+      "student": {
+        "x": 848,
+        "y": 339,
+        "w": 560,
+        "h": 220
+      },
+      "course": {
+        "x": 264,
+        "y": 766,
+        "w": 1144,
+        "h": 264
+      },
+      "refund": {
+        "x": 264,
+        "y": 1054,
+        "w": 1144,
+        "h": 325
+      },
+      "footer": {
+        "x": 264,
+        "y": 1403,
+        "w": 1144,
+        "h": 56
+      }
+    },
+    "834": {
+      "docWidth": 834,
+      "pageHeight": 1530,
+      "topbar": {
+        "x": 76,
+        "y": 0,
+        "w": 758,
+        "h": 76
+      },
+      "back": {
+        "x": 108,
+        "y": 108,
+        "w": 118,
+        "h": 18
+      },
+      "intro": {
+        "x": 108,
+        "y": 150,
+        "w": 694,
+        "h": 65
+      },
+      "note": {
+        "x": 108,
+        "y": 239,
+        "w": 694,
+        "h": 76
+      },
+      "workspace": {
+        "x": 108,
+        "y": 339,
+        "w": 694,
+        "h": 1079
+      },
+      "original": {
+        "x": 108,
+        "y": 339,
+        "w": 335,
+        "h": 421
+      },
+      "student": {
+        "x": 467,
+        "y": 339,
+        "w": 335,
+        "h": 220
+      },
+      "course": {
+        "x": 108,
+        "y": 784,
+        "w": 694,
+        "h": 264
+      },
+      "refund": {
+        "x": 108,
+        "y": 1072,
+        "w": 694,
+        "h": 346
+      },
+      "footer": {
+        "x": 108,
+        "y": 1442,
+        "w": 694,
+        "h": 56
+      }
+    },
+    "390": {
+      "docWidth": 390,
+      "pageHeight": 1777,
+      "topbar": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 105
+      },
+      "back": {
+        "x": 16,
+        "y": 121,
+        "w": 118,
+        "h": 18
+      },
+      "intro": {
+        "x": 16,
+        "y": 163,
+        "w": 358,
+        "h": 86
+      },
+      "note": {
+        "x": 16,
+        "y": 273,
+        "w": 358,
+        "h": 96
+      },
+      "workspace": {
+        "x": 16,
+        "y": 393,
+        "w": 358,
+        "h": 1288
+      },
+      "original": {
+        "x": 16,
+        "y": 393,
+        "w": 358,
+        "h": 387
+      },
+      "student": {
+        "x": 16,
+        "y": 804,
+        "w": 358,
+        "h": 204
+      },
+      "course": {
+        "x": 16,
+        "y": 1032,
+        "w": 358,
+        "h": 253
+      },
+      "refund": {
+        "x": 16,
+        "y": 1309,
+        "w": 358,
+        "h": 372
+      },
+      "footer": {
+        "x": 16,
+        "y": 1705,
+        "w": 358,
+        "h": 56
+      }
+    },
+    "320": {
+      "docWidth": 320,
+      "pageHeight": 1832,
+      "topbar": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 105
+      },
+      "back": {
+        "x": 12,
+        "y": 121,
+        "w": 118,
+        "h": 18
+      },
+      "intro": {
+        "x": 12,
+        "y": 163,
+        "w": 296,
+        "h": 86
+      },
+      "note": {
+        "x": 12,
+        "y": 273,
+        "w": 296,
+        "h": 108
+      },
+      "workspace": {
+        "x": 12,
+        "y": 405,
+        "w": 296,
+        "h": 1331
+      },
+      "original": {
+        "x": 12,
+        "y": 405,
+        "w": 296,
+        "h": 407
+      },
+      "student": {
+        "x": 12,
+        "y": 836,
+        "w": 296,
+        "h": 216
+      },
+      "course": {
+        "x": 12,
+        "y": 1076,
+        "w": 296,
+        "h": 270
+      },
+      "refund": {
+        "x": 12,
+        "y": 1370,
+        "w": 296,
+        "h": 366
+      },
+      "footer": {
+        "x": 12,
+        "y": 1760,
+        "w": 296,
+        "h": 56
+      }
+    }
+  },
+  "interactions": [
+    {
+      "name": "original transaction retained",
+      "pass": true
+    },
+    {
+      "name": "student identity matches Figma",
+      "pass": true
+    },
+    {
+      "name": "related enrollment initially Active",
+      "pass": true
+    },
+    {
+      "name": "refund amount and request",
+      "pass": true
+    },
+    {
+      "name": "links route to prior pages",
+      "pass": true
+    },
+    {
+      "name": "refund opens exact transaction dialog",
+      "pass": true
+    },
+    {
+      "name": "cancel refund closes dialog",
+      "pass": true
+    },
+    {
+      "name": "Escape closes confirmation",
+      "pass": true
+    },
+    {
+      "name": "backdrop click closes confirmation",
+      "pass": true
+    },
+    {
+      "name": "notification dropdown works",
+      "pass": true
+    },
+    {
+      "name": "account menu closes notification",
+      "pass": true
+    },
+    {
+      "name": "notification refund link scrolls to request",
+      "pass": true
+    },
+    {
+      "name": "sample header search shows fallback message",
+      "pass": true
+    },
+    {
+      "name": "confirm refund updates existing record and cancels enrollment",
+      "pass": true
+    },
+    {
+      "name": "refund reference stored in local state",
+      "pass": true
+    },
+    {
+      "name": "no second refund action",
+      "pass": true
+    },
+    {
+      "name": "payment ID not changed",
+      "pass": true
+    },
+    {
+      "name": "mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "Escape closes mobile drawer",
+      "pass": true
+    },
+    {
+      "name": "mobile search toggles",
+      "pass": true
+    },
+    {
+      "name": "mobile refund dialog opens",
+      "pass": true
+    },
+    {
+      "name": "mobile refund dialog confirmation",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

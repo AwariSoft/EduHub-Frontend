@@ -1,0 +1,13 @@
+/* ZIP #11 User Management — additive styles only */
+.edu-users__panel,.edu-users__card{background:var(--edu-surface,#fff);border:1px solid var(--edu-border,#e2e8f0);border-radius:var(--edu-radius-xl,1rem);box-shadow:var(--edu-shadow-sm,0 2px 8px rgba(15,23,42,.02))}
+.edu-users__card{margin-bottom:1rem;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.edu-users__card:hover{border-color:#bfdbfe;box-shadow:0 8px 20px rgba(15,23,42,.07);transform:translateY(-1px)}
+.edu-users__avatar{display:inline-flex;align-items:center;justify-content:center;width:2.6rem;height:2.6rem;flex:none;border-radius:50%;background:#eff6ff;color:#1d4ed8;font-weight:700}
+.edu-users__table tbody tr{transition:background-color .2s ease}.edu-users__table tbody tr:hover{background:#f8fafc}
+.edu-users__action{transition:background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease,transform .15s ease}
+.edu-users__action:hover{transform:translateY(-1px)}.edu-users__action:active{transform:translateY(0) scale(.985)}
+.edu-users__action:focus-visible,.edu-users input:focus-visible,.edu-users select:focus-visible,.edu-users a:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.edu-users__notice{background:#eff6ff;border:1px solid #bfdbfe;border-radius:var(--edu-radius-lg,.75rem)}
+.edu-users__badge{min-width:4.5rem;padding:.45rem .6rem}
+.edu-users__cards .btn{white-space:normal}
+@media(prefers-reduced-motion:reduce){.edu-users__card,.edu-users__table tbody tr,.edu-users__action{transition:none!important}.edu-users__card:hover,.edu-users__action:hover{transform:none}}

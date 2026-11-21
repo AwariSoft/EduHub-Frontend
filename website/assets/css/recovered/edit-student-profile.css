@@ -1,0 +1,156 @@
+
+    /* ==========================================================
+       01. DESIGN TOKENS — extracted from EduHub Figma
+       ========================================================== */
+    :root {
+      --ed-primary: #2563eb;
+      --ed-primary-hover: #1d4ed8;
+      --ed-ink: #0f172a;
+      --ed-body: #334155;
+      --ed-muted: #64748b;
+      --ed-border: #e2e8f0;
+      --ed-bg: #f8fafc;
+      --ed-soft: #eff6ff;
+      --ed-avatar: #dbeafe;
+      --ed-white: #ffffff;
+      --ed-radius: 12px;
+      --ed-sidebar-width: 232px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; min-width: 0; background: var(--ed-bg); color: var(--ed-ink); font: 14px/1.5 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: var(--ed-primary); text-decoration: none; }
+    a:hover { color: var(--ed-primary-hover); }
+    :focus-visible { outline: 3px solid rgba(37,99,235,.40); outline-offset: 2px; }
+    .ed-muted { color: var(--ed-muted); }
+    .ed-card { border: 1px solid var(--ed-border); border-radius: var(--ed-radius); background: var(--ed-white); box-shadow: 0 4px 14px rgba(15,23,42,.02); }
+    .ed-avatar { display: inline-flex; flex: none; align-items: center; justify-content: center; overflow: hidden; border-radius: 50%; background: var(--ed-avatar); color: var(--ed-primary); font-weight: 600; }
+    .ed-avatar--small { width: 40px; height: 40px; font-size: 13px; }
+    .ed-avatar--photo { width: 80px; height: 80px; font-size: 30px; }
+    .ed-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .ed-brand { display: inline-flex; align-items: center; gap: 8px; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -1px; white-space: nowrap; color: var(--ed-ink); }
+    .ed-brand:hover { color: var(--ed-ink); }
+    .ed-brand i { width: 32px; font-size: 28px; color: var(--ed-primary); }
+    .ed-brand .brand-blue { color: var(--ed-primary); }
+
+    /* ==========================================================
+       02. STUDENT SIDEBAR — fixed 232px desktop workspace
+       ========================================================== */
+    .ed-sidebar { position: fixed; inset: 0 auto 0 0; z-index: 1025; width: var(--ed-sidebar-width); padding: 24px 20px; overflow-y: auto; background: var(--ed-white); border-right: 1px solid var(--ed-border); }
+    .workspace-label { display: block; margin: 32px 0 8px; font-size: 10px; font-weight: 600; line-height: 12px; letter-spacing: 1.25px; color: var(--ed-muted); }
+    .ed-nav { display: flex; flex-direction: column; gap: 8px; }
+    .ed-nav .nav-item-link { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 8px; font-size: 13px; color: var(--ed-muted); transition: background .15s, color .15s; }
+    .ed-nav .nav-item-link i { width: 20px; font-size: 17px; text-align: center; }
+    .ed-nav .nav-item-link:hover, .ed-nav .nav-item-link:focus-visible { background: #f1f5f9; color: var(--ed-primary); }
+    .ed-nav .nav-item-link:active { background: var(--ed-avatar); }
+    .ed-nav .nav-item-link.active { background: var(--ed-soft); color: var(--ed-primary); font-weight: 600; }
+    .learning-reminder { min-height: 147px; margin-top: 32px; padding: 16px; background: var(--ed-soft); border-radius: var(--ed-radius); }
+    .learning-reminder > i { font-size: 19px; color: var(--ed-primary); }
+    .learning-reminder h2 { margin: 8px 0; font-size: 14px; line-height: 22px; font-weight: 600; }
+    .learning-reminder p { margin: 0; font-size: 12px; line-height: 19px; color: var(--ed-muted); }
+
+    /* ==========================================================
+       03. ACCOUNT HEADER — 72px desktop / 103px compact screens
+       ========================================================== */
+    .ed-workspace { margin-left: var(--ed-sidebar-width); min-height: 100vh; display: flex; flex-direction: column; }
+    .ed-header { flex: none; min-height: 72px; padding: 16px 32px; background: var(--ed-white); border-bottom: 1px solid var(--ed-border); }
+    .ed-header-top { display: flex; align-items: center; justify-content: space-between; height: 40px; gap: 16px; }
+    .ed-search { position: relative; width: 340px; max-width: 100%; }
+    .ed-search i { position: absolute; top: 11px; left: 13px; pointer-events: none; color: var(--ed-muted); font-size: 18px; }
+    .ed-search input { width: 100%; height: 40px; padding: 0 12px 0 42px; border: 1px solid var(--ed-border); border-radius: 8px; background: var(--ed-bg); font-size: 13px; color: var(--ed-ink); }
+    .ed-search input:focus { outline: 0; border-color: var(--ed-primary); box-shadow: 0 0 0 3px rgba(37,99,235,.13); }
+    .ed-search input::placeholder { color: var(--ed-muted); }
+    .ed-header-action { display: inline-flex; justify-content: center; align-items: center; width: 28px; height: 36px; border: none; border-radius: 8px; background: transparent; color: var(--ed-muted); font-size: 18px; }
+    .ed-header-action:hover { background: var(--ed-soft); color: var(--ed-primary); }
+    .ed-header-action:active { background: var(--ed-avatar); }
+    .ed-account-name { display: block; font-size: 13px; line-height: 16px; color: var(--ed-ink); font-weight: 600; white-space: nowrap; }
+    .ed-account-role { display: block; margin-top: 3px; font-size: 11px; line-height: 13px; color: var(--ed-muted); }
+    .ed-quick-nav { display: none; justify-content: space-between; margin-top: 16px; line-height: 15px; font-size: 12px; }
+    .ed-quick-nav a:hover { text-decoration: underline; }
+
+    /* ==========================================================
+       04. EDIT PROFILE CONTENT — desktop 72px / tablet 32px
+       ========================================================== */
+    .ed-main { flex: 1; padding: 40px 72px; }
+    .ed-page-intro { margin-bottom: 32px; }
+    .ed-breadcrumb { margin: 0 0 8px; color: var(--ed-muted); font-size: 12px; line-height: 19px; }
+    .ed-page-title { margin: 0 0 8px; font-size: 28px; line-height: 35px; letter-spacing: -.5px; font-weight: 700; }
+    .ed-page-desc { margin: 0; color: var(--ed-muted); font-size: 14px; line-height: 22px; }
+    .ed-form-card { width: min(800px, 100%); padding: 32px; }
+    .ed-form-card h2 { margin: 0 0 8px; font-size: 22px; line-height: 28px; letter-spacing: -.35px; font-weight: 700; }
+    .ed-form-intro { margin: 0; color: var(--ed-muted); font-size: 13px; line-height: 21px; }
+    .ed-photo-row { display: flex; align-items: center; gap: 16px; min-height: 83px; margin: 24px 0; }
+    .ed-photo-actions { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .ed-action-link { border: 0; padding: 0; background: transparent; color: var(--ed-primary); font-size: 13px; line-height: 24px; font-weight: 600; text-align: left; cursor: pointer; }
+    .ed-action-link:hover { color: var(--ed-primary-hover); text-decoration: underline; }
+    .ed-action-link:active { color: #1e40af; }
+    .ed-photo-hint { color: var(--ed-muted); font-size: 12px; line-height: 19px; }
+
+    /* Exactly 48px Figma text inputs with icons */
+    .ed-field { position: relative; }
+    .ed-field-label { display: block; margin: 0 0 8px; color: var(--ed-body); font-size: 13px; line-height: 16px; font-weight: 500; }
+    .ed-control-icon { position: absolute; top: 16px; left: 16px; color: var(--ed-muted); font-size: 17px; line-height: 18px; pointer-events: none; }
+    .ed-input, .ed-textarea { display: block; width: 100%; min-width: 0; border: 1px solid var(--ed-border); border-radius: 8px; background: #fff; color: var(--ed-ink); font-size: 13px; transition: border-color .15s, box-shadow .15s; }
+    .ed-input { height: 48px; padding: 0 14px 0 42px; }
+    .ed-textarea { height: 120px; padding: 12px 13px; line-height: 21px; resize: vertical; min-height: 120px; max-height: 260px; }
+    .ed-input--plain { padding-left: 13px; }
+    .ed-input::placeholder, .ed-textarea::placeholder { color: #94a3b8; }
+    .ed-input:hover, .ed-textarea:hover { border-color: #cbd5e1; }
+    .ed-input:focus, .ed-textarea:focus { outline: none; border-color: var(--ed-primary); box-shadow: 0 0 0 3px rgba(37,99,235,.13); }
+    .ed-input.is-invalid, .ed-textarea.is-invalid { border-color: #dc3545; padding-right: 14px; background-image: none; }
+    .ed-input.is-invalid:focus, .ed-textarea.is-invalid:focus { box-shadow: 0 0 0 3px rgba(220,53,69,.13); }
+    .ed-help { color: var(--ed-muted); font-size: 12px; line-height: 19px; margin: 8px 0 0; }
+    .ed-required--last .ed-help { margin-top: 20px; }
+    .ed-error { display: block; margin-top: 6px; font-size: 12px; color: #b91c1c; line-height: 18px; }
+    .ed-required { margin: 0 0 20px; }
+    .ed-required--last { margin-bottom: 24px; }
+    .ed-bio-block { margin-bottom: 24px; }
+    .ed-interests-block { margin-bottom: 24px; }
+    .ed-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 8px; border: 1px solid var(--ed-border); text-decoration: none; font-size: 14px; line-height: 20px; font-weight: 600; cursor: pointer; transition: background .15s, border-color .15s, color .15s, transform .15s; }
+    .ed-btn-primary { min-width: 200px; background: var(--ed-primary); border-color: var(--ed-primary); color: white; }
+    .ed-btn-primary:hover { color: white; background: var(--ed-primary-hover); border-color: var(--ed-primary-hover); }
+    .ed-btn-outline { min-width: 120px; color: var(--ed-ink); background: #fff; }
+    .ed-btn-outline:hover { background: var(--ed-soft); border-color: #bfdbfe; }
+    .ed-btn:active { transform: translateY(1px); }
+    .ed-btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+    .ed-feedback { margin: 16px 0 0; font-size: 13px; line-height: 20px; }
+    .ed-footer { display: flex; flex: none; align-items: center; justify-content: center; height: 63px; padding: 0 16px; border-top: 1px solid var(--ed-border); text-align: center; color: var(--ed-muted); font-size: 12px; }
+    .dropdown-menu, .offcanvas { font-family: 'Inter', system-ui, sans-serif; }
+    .dropdown-item:hover, .dropdown-item:focus { color: var(--ed-primary); background: var(--ed-soft); }
+
+    /* ==========================================================
+       05. RESPONSIVE BREAKPOINTS — matching Figma 834px/390px
+       ========================================================== */
+    @media (max-width: 991.98px) {
+      .ed-sidebar { display: none; }
+      .ed-workspace { margin-left: 0; }
+      .ed-header { min-height: 103px; padding: 16px 32px; }
+      .ed-search { display: none; }
+      .ed-quick-nav { display: flex; }
+      .ed-main { padding: 40px 32px; }
+      .ed-form-card { width: 100%; }
+    }
+    @media (max-width: 575.98px) {
+      .ed-header { padding: 16px 20px; }
+      .ed-account-label { display: none; }
+      .ed-main { padding: 40px 20px; }
+      .ed-form-card { padding: 24px; }
+      .ed-form-intro { max-width: 100%; }
+      .ed-page-intro { margin-bottom: 32px; }
+      .ed-photo-row { margin: 24px 0; }
+      .ed-required { margin-bottom: 20px; }
+      .ed-btn-primary, .ed-btn-outline { min-width: 0; width: 100%; }
+    }
+    @media (max-width: 359.98px) {
+      .ed-main, .ed-header { padding-left: 16px; padding-right: 16px; }
+      .ed-form-card { padding: 20px; }
+      .ed-brand { font-size: 24px; gap: 5px; }
+      .ed-brand i { font-size: 24px; width: 26px; }
+      .ed-quick-nav { font-size: 11px; }
+      .ed-header-action { width: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+  
+/* Moved from static HTML style attributes during restoration. */
+.edu-restored-inline-1 { z-index:1090; }
+.edu-restored-inline-2 { color:var(--ed-primary); }

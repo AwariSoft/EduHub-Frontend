@@ -1,0 +1,577 @@
+{
+  "checks": [
+    {
+      "name": "viewport-482",
+      "ok": true,
+      "detail": {
+        "width": 482,
+        "scrollWidth": 482,
+        "height": 5707,
+        "icons": [
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "viewport-1440",
+      "ok": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 5707,
+        "icons": [
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "viewport-834",
+      "ok": true,
+      "detail": {
+        "width": 834,
+        "scrollWidth": 834,
+        "height": 5707,
+        "icons": [
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "viewport-390",
+      "ok": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "height": 5794,
+        "icons": [
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "viewport-320",
+      "ok": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 5847,
+        "icons": [
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "9-panel-sheet",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "nav-five-items",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "nav-course-active",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "all-buttons-at-least44px",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "starting-payment-status-completed",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "starting-student-role",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "starting-account-active",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "rejection-disabled-when-empty",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "course-filter-selection-applies",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "course-reset-all",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "user-filter-applies",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "user-reset-role",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "invalid-dates-stopped",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "invalid-dates-not-applied",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "valid-payment-dates-applied",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "reset-payment-all",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "close-dialog",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "reopen-dialog",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cancel-keeps-pending",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "approve-status",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "duplicate-approval-prevented",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "reset-course-state",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "reason-enables-reject",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "rejection-status",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cancel-deact-keeps-active",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "deactivation-status-inactive",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "activation-restores-active",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cancel-refund-keeps-completed",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "refund-status",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "refund-cancels-enrollment",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "duplicate-refund-no-new-payment",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "logout-dialog-opens",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "logout-canceled",
+      "ok": true,
+      "detail": null
+    }
+  ],
+  "errors": [],
+  "positions": {
+    "482": {
+      "brand": {
+        "x": 16,
+        "y": 16,
+        "width": 450,
+        "height": 34
+      },
+      "intro": {
+        "x": 16,
+        "y": 82,
+        "width": 450,
+        "height": 147
+      },
+      "nav": {
+        "x": 16,
+        "y": 261,
+        "width": 450,
+        "height": 483
+      },
+      "course": {
+        "x": 16,
+        "y": 776,
+        "width": 450,
+        "height": 490
+      },
+      "user": {
+        "x": 16,
+        "y": 1298,
+        "width": 450,
+        "height": 597
+      },
+      "payment": {
+        "x": 16,
+        "y": 1927,
+        "width": 450,
+        "height": 699
+      },
+      "approval": {
+        "x": 16,
+        "y": 2658,
+        "width": 450,
+        "height": 438
+      },
+      "rejection": {
+        "x": 16,
+        "y": 3128,
+        "width": 450,
+        "height": 693
+      },
+      "deactivation": {
+        "x": 16,
+        "y": 3853,
+        "width": 450,
+        "height": 532
+      },
+      "activation": {
+        "x": 16,
+        "y": 4417,
+        "width": 450,
+        "height": 511
+      },
+      "refund": {
+        "x": 16,
+        "y": 4960,
+        "width": 450,
+        "height": 731
+      }
+    },
+    "1440": {
+      "brand": {
+        "x": 495,
+        "y": 16,
+        "width": 450,
+        "height": 34
+      },
+      "intro": {
+        "x": 495,
+        "y": 82,
+        "width": 450,
+        "height": 147
+      },
+      "nav": {
+        "x": 495,
+        "y": 261,
+        "width": 450,
+        "height": 483
+      },
+      "course": {
+        "x": 495,
+        "y": 776,
+        "width": 450,
+        "height": 490
+      },
+      "user": {
+        "x": 495,
+        "y": 1298,
+        "width": 450,
+        "height": 597
+      },
+      "payment": {
+        "x": 495,
+        "y": 1927,
+        "width": 450,
+        "height": 699
+      },
+      "approval": {
+        "x": 495,
+        "y": 2658,
+        "width": 450,
+        "height": 438
+      },
+      "rejection": {
+        "x": 495,
+        "y": 3128,
+        "width": 450,
+        "height": 693
+      },
+      "deactivation": {
+        "x": 495,
+        "y": 3853,
+        "width": 450,
+        "height": 532
+      },
+      "activation": {
+        "x": 495,
+        "y": 4417,
+        "width": 450,
+        "height": 511
+      },
+      "refund": {
+        "x": 495,
+        "y": 4960,
+        "width": 450,
+        "height": 731
+      }
+    },
+    "834": {
+      "brand": {
+        "x": 192,
+        "y": 16,
+        "width": 450,
+        "height": 34
+      },
+      "intro": {
+        "x": 192,
+        "y": 82,
+        "width": 450,
+        "height": 147
+      },
+      "nav": {
+        "x": 192,
+        "y": 261,
+        "width": 450,
+        "height": 483
+      },
+      "course": {
+        "x": 192,
+        "y": 776,
+        "width": 450,
+        "height": 490
+      },
+      "user": {
+        "x": 192,
+        "y": 1298,
+        "width": 450,
+        "height": 597
+      },
+      "payment": {
+        "x": 192,
+        "y": 1927,
+        "width": 450,
+        "height": 699
+      },
+      "approval": {
+        "x": 192,
+        "y": 2658,
+        "width": 450,
+        "height": 438
+      },
+      "rejection": {
+        "x": 192,
+        "y": 3128,
+        "width": 450,
+        "height": 693
+      },
+      "deactivation": {
+        "x": 192,
+        "y": 3853,
+        "width": 450,
+        "height": 532
+      },
+      "activation": {
+        "x": 192,
+        "y": 4417,
+        "width": 450,
+        "height": 511
+      },
+      "refund": {
+        "x": 192,
+        "y": 4960,
+        "width": 450,
+        "height": 731
+      }
+    },
+    "390": {
+      "brand": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 34
+      },
+      "intro": {
+        "x": 16,
+        "y": 76,
+        "width": 358,
+        "height": 162
+      },
+      "nav": {
+        "x": 16,
+        "y": 264,
+        "width": 358,
+        "height": 485
+      },
+      "course": {
+        "x": 16,
+        "y": 775,
+        "width": 358,
+        "height": 494
+      },
+      "user": {
+        "x": 16,
+        "y": 1295,
+        "width": 358,
+        "height": 603
+      },
+      "payment": {
+        "x": 16,
+        "y": 1924,
+        "width": 358,
+        "height": 703
+      },
+      "approval": {
+        "x": 16,
+        "y": 2653,
+        "width": 358,
+        "height": 488
+      },
+      "rejection": {
+        "x": 16,
+        "y": 3167,
+        "width": 358,
+        "height": 715
+      },
+      "deactivation": {
+        "x": 16,
+        "y": 3908,
+        "width": 358,
+        "height": 533
+      },
+      "activation": {
+        "x": 16,
+        "y": 4467,
+        "width": 358,
+        "height": 533
+      },
+      "refund": {
+        "x": 16,
+        "y": 5026,
+        "width": 358,
+        "height": 752
+      }
+    },
+    "320": {
+      "brand": {
+        "x": 12,
+        "y": 12,
+        "width": 296,
+        "height": 34
+      },
+      "intro": {
+        "x": 12,
+        "y": 68,
+        "width": 296,
+        "height": 156
+      },
+      "nav": {
+        "x": 12,
+        "y": 246,
+        "width": 296,
+        "height": 481
+      },
+      "course": {
+        "x": 12,
+        "y": 749,
+        "width": 296,
+        "height": 490
+      },
+      "user": {
+        "x": 12,
+        "y": 1261,
+        "width": 296,
+        "height": 599
+      },
+      "payment": {
+        "x": 12,
+        "y": 1882,
+        "width": 296,
+        "height": 699
+      },
+      "approval": {
+        "x": 12,
+        "y": 2603,
+        "width": 296,
+        "height": 480
+      },
+      "rejection": {
+        "x": 12,
+        "y": 3105,
+        "width": 296,
+        "height": 752
+      },
+      "deactivation": {
+        "x": 12,
+        "y": 3879,
+        "width": 296,
+        "height": 597
+      },
+      "activation": {
+        "x": 12,
+        "y": 4498,
+        "width": 296,
+        "height": 553
+      },
+      "refund": {
+        "x": 12,
+        "y": 5073,
+        "width": 296,
+        "height": 762
+      }
+    }
+  }
+}

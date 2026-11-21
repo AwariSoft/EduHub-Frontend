@@ -1,0 +1,1005 @@
+.eduhub-homepage-mobile,
+.public-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.eduhub-homepage-mobile {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+}
+.public-header {
+  align-self: stretch;
+  background-color: var(--color-white);
+  border-bottom: var(--border-1);
+  padding: var(--padding-16) var(--padding-20) 14px;
+  gap: var(--gap-16);
+  top: 0;
+  z-index: 99;
+  position: sticky;
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.eduhub-brand3,
+.main-navigation {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.main-navigation {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: var(--gap-20);
+}
+.eduhub-brand3 {
+  gap: var(--gap-4);
+}
+.graduation-cap-icon3 {
+  height: var(--height-32);
+  width: var(--width-32);
+  position: relative;
+}
+.hub3 {
+  color: var(--color-royalblue);
+}
+.account-controls,
+.sign-up2 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.account-controls {
+  gap: var(--gap-12);
+}
+.sign-up2 {
+  cursor: pointer;
+  border: var(--border-2);
+  padding: var(--padding-01);
+  background-color: var(--color-royalblue);
+  height: var(--height-48);
+  width: 90px;
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.label11 {
+  position: relative;
+  font-size: var(--fs-14);
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.menu-icon {
+  height: var(--height-20);
+  width: var(--width-20);
+  position: relative;
+}
+.responsive-navigation {
+  margin: 0;
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-20);
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-royalblue);
+  font-family: var(--font-inter);
+}
+.navigation-item {
+  position: relative;
+  font-weight: 500;
+}
+.hero-composition,
+.learning-promise {
+  align-self: stretch;
+  flex-direction: column;
+}
+.learning-promise {
+  background-color: var(--color-aliceblue-100);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-48) var(--padding-20) 56px;
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.hero-composition {
+  justify-content: center;
+  gap: var(--gap-40);
+}
+.hero-composition,
+.hero-copy,
+.status-badge {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.hero-copy {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-24);
+}
+.status-badge {
+  border-radius: var(--br-100);
+  background-color: var(--color-aliceblue-100);
+  padding: var(--padding-5) var(--padding-10);
+  color: var(--color-royalblue);
+}
+.status {
+  position: relative;
+  font-weight: 600;
+}
+.learning-proposition {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-40);
+  letter-spacing: -1.8px;
+  line-height: 112%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.learn-today {
+  line-height: 112%;
+}
+.build-your-tomorrow {
+  color: var(--color-royalblue);
+  line-height: 112%;
+}
+.description {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  line-height: 160%;
+}
+.hero-actions {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-12);
+}
+.explore-courses,
+.join-eduhub {
+  cursor: pointer;
+  border: var(--border-2);
+  padding: var(--padding-01);
+  background-color: var(--color-royalblue);
+  height: var(--height-48);
+  flex: 1;
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.join-eduhub {
+  border: var(--border-1);
+  background-color: var(--color-white);
+}
+.label13 {
+  position: relative;
+  font-size: var(--fs-14);
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: left;
+}
+.learning-reassurance {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+}
+.description2 {
+  flex: 1;
+  position: relative;
+  line-height: 160%;
+  display: inline-block;
+  min-width: 207px;
+}
+.learning-visual {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  font-size: 17px;
+  color: var(--color-gray);
+}
+.learning-workspace-icon {
+  align-self: stretch;
+  height: 240px;
+  position: relative;
+  border-radius: var(--br-16);
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.education-motif,
+.learning-invitation {
+  border-radius: var(--br-12);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.learning-invitation {
+  align-self: stretch;
+  background-color: var(--color-white);
+  flex-wrap: wrap;
+  align-content: center;
+  padding: var(--padding-20);
+  gap: var(--gap-16);
+}
+.education-motif {
+  height: var(--height-48);
+  width: var(--width-48);
+  background-color: var(--color-lavender);
+  flex-shrink: 0;
+  justify-content: center;
+}
+.invitation-copy {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+  min-width: 160px;
+}
+.description3,
+.heading {
+  align-self: stretch;
+  position: relative;
+}
+.heading {
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+}
+.description3 {
+  font-size: var(--fs-13);
+  line-height: 160%;
+  color: var(--color-slategray);
+}
+.course-discovery,
+.course-search {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.course-discovery {
+  padding: var(--padding-64) var(--padding-20);
+  gap: var(--gap-64);
+  text-align: left;
+  font-size: var(--fs-26);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.course-search {
+  gap: var(--gap-20);
+}
+.heading2 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.course-title-input,
+.search-courses {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.search-courses {
+  align-self: stretch;
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  padding: 6px 7px;
+}
+.course-title-input {
+  flex: 1;
+  padding: var(--padding-12);
+  gap: var(--gap-12);
+}
+.description4 {
+  width: calc(100% - 44px);
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--fs-14);
+  background-color: transparent;
+  height: 22px;
+  flex: 1;
+  position: relative;
+  line-height: 160%;
+  color: var(--color-slategray);
+  text-align: left;
+  display: inline-block;
+  min-width: 167px;
+  padding: var(--padding-01);
+}
+.browse-categories,
+.category-introduction {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.browse-categories {
+  gap: var(--gap-24);
+  text-align: left;
+  font-size: var(--fs-26);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.category-introduction {
+  gap: var(--gap-8);
+}
+.description5 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: 160%;
+  color: var(--color-slategray);
+}
+.subject-categories,
+.subject-category {
+  overflow: hidden;
+  display: flex;
+  gap: var(--gap-16);
+}
+.subject-categories {
+  align-self: stretch;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  font-size: var(--fs-18);
+}
+.subject-category {
+  width: var(--width-350);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  align-items: center;
+  padding: var(--padding-22) var(--padding-23);
+}
+.code-2-icon {
+  height: var(--height-28);
+  width: var(--width-28);
+  position: relative;
+}
+.category-copy {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+}
+.arrow-right-icon {
+  height: var(--height-18);
+  width: var(--width-18);
+  position: relative;
+}
+.featured-courses,
+.status-badge2 {
+  display: flex;
+  align-items: flex-start;
+}
+.featured-courses {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-24);
+  font-size: var(--fs-12);
+  color: var(--color-royalblue);
+}
+.status-badge2 {
+  border-radius: var(--br-100);
+  background-color: var(--color-aliceblue-100);
+  overflow: hidden;
+  padding: var(--padding-5) var(--padding-10);
+}
+.heading7,
+.related-action {
+  align-self: stretch;
+  position: relative;
+}
+.heading7 {
+  margin: 0;
+  font-size: var(--fs-28);
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.related-action {
+  font-size: var(--fs-13);
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-height: var(--min-h-24);
+}
+.course-collection {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-24);
+}
+.course-thumbnail-icon,
+.featured-course {
+  align-self: stretch;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.featured-course {
+  width: var(--width-350);
+  box-shadow: var(--shadow-drop-1);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.course-thumbnail-icon {
+  height: 184px;
+  position: relative;
+  max-width: 100%;
+  object-fit: cover;
+}
+.course-information {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-20);
+  gap: var(--gap-12);
+}
+.course-title,
+.description11 {
+  align-self: stretch;
+  position: relative;
+}
+.course-title {
+  font-size: var(--fs-18);
+  line-height: 145%;
+  display: inline-block;
+  min-height: 52px;
+}
+.description11 {
+  line-height: 160%;
+  color: var(--color-slategray);
+}
+.course-price {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-4) var(--padding-0);
+  gap: var(--gap-20);
+  font-size: var(--fs-22);
+}
+.price {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.payment-type {
+  position: relative;
+  font-size: var(--fs-11);
+  color: var(--color-slategray);
+}
+.learning-benefits-and-journey,
+.view-course {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+}
+.view-course {
+  cursor: pointer;
+  border: var(--border-1);
+  padding: var(--padding-01);
+  background-color: var(--color-white);
+  height: var(--height-48);
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.learning-benefits-and-journey {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.why-eduhub {
+  align-self: stretch;
+  background-color: var(--color-white);
+  flex-direction: column;
+  padding: var(--padding-64) var(--padding-20);
+  gap: var(--gap-32);
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-royalblue);
+  font-family: var(--font-inter);
+}
+.benefits-introduction,
+.status-badge7,
+.why-eduhub {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.benefits-introduction {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-12);
+}
+.status-badge7 {
+  border-radius: var(--br-100);
+  background-color: var(--color-aliceblue-100);
+  padding: var(--padding-5) 9px;
+}
+.description18 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  line-height: 160%;
+  color: var(--color-slategray);
+}
+.benefits {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-24);
+  font-size: var(--fs-19);
+  color: var(--color-gray);
+}
+.benefit-motif,
+.learning-benefit {
+  border-radius: var(--br-12);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+}
+.learning-benefit {
+  width: var(--width-350);
+  background-color: var(--color-whitesmoke);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-24) var(--padding-20) var(--padding-24)
+    var(--padding-24);
+  box-sizing: border-box;
+  gap: var(--gap-16);
+}
+.benefit-motif {
+  width: var(--width-48);
+  height: var(--height-48);
+  background-color: var(--color-aliceblue-100);
+  align-items: center;
+  justify-content: center;
+}
+.book-open-icon {
+  height: var(--height-24);
+  width: var(--width-24);
+  position: relative;
+}
+.learning-journey {
+  align-self: stretch;
+  flex-direction: column;
+  padding: var(--padding-64) var(--padding-20);
+  gap: var(--gap-32);
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.journey-step,
+.journey-steps,
+.learning-journey {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.journey-steps {
+  align-self: stretch;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-24);
+  font-size: var(--fs-40);
+  color: var(--color-royalblue);
+}
+.journey-step {
+  width: var(--width-350);
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: var(--gap-12);
+}
+.heading13,
+.step-marker {
+  margin: 0;
+  position: relative;
+  font-weight: 700;
+  font-family: inherit;
+}
+.step-marker {
+  font-size: inherit;
+  letter-spacing: var(--ls--1);
+}
+.heading13 {
+  align-self: stretch;
+  font-size: var(--fs-20);
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  color: var(--color-gray);
+}
+.platform-and-people,
+.platform-introduction {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.platform-and-people {
+  background-color: var(--color-white);
+  padding: var(--padding-64) var(--padding-20);
+  gap: var(--gap-64);
+}
+.platform-introduction {
+  justify-content: center;
+  gap: 48px;
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.description27 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: 160%;
+}
+.find-your-course {
+  cursor: pointer;
+  border: var(--border-2);
+  padding: var(--padding-01);
+  background-color: var(--color-royalblue);
+  align-self: stretch;
+  height: var(--height-48);
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instructor-introduction {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-24);
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.instructor-collection,
+.instructor-introduction,
+.instructor-introduction2 {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.instructor-collection {
+  align-self: stretch;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-24);
+  font-size: var(--fs-13);
+  color: var(--color-royalblue);
+}
+.instructor-introduction2 {
+  width: var(--width-350);
+  border-radius: var(--br-12);
+  border: var(--border-1);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+  padding: var(--padding-22) var(--padding-23);
+  gap: var(--gap-16);
+}
+.initials-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--br-100);
+  background-color: var(--color-lavender);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instructor-identity {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+  font-size: var(--fs-18);
+  color: var(--color-gray);
+}
+.description30 {
+  align-self: stretch;
+  position: relative;
+  line-height: 160%;
+}
+.progress-and-certification {
+  align-self: stretch;
+  border-radius: var(--br-16);
+  background-color: var(--color-aliceblue-100);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-24);
+  gap: var(--gap-40);
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.description36,
+.heading21 {
+  align-self: stretch;
+  position: relative;
+}
+.heading21 {
+  margin: 0;
+  font-size: inherit;
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.description36 {
+  font-size: var(--fs-13);
+  line-height: 160%;
+}
+.learning-progress-example {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  flex-direction: column;
+  padding: var(--padding-24);
+  gap: var(--gap-20);
+  font-size: var(--fs-13);
+}
+.learning-progress-example,
+.progress-summary,
+.status-badge9 {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.status-badge9 {
+  border-radius: var(--br-100);
+  background-color: var(--color-aliceblue-100);
+  padding: var(--padding-5) 9px;
+  font-size: var(--fs-12);
+  color: var(--color-royalblue);
+}
+.progress-summary {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: var(--gap-20);
+}
+.progress-label,
+.progress-value2 {
+  position: relative;
+}
+.progress-value2 {
+  font-size: var(--fs-14);
+  font-weight: 600;
+  color: var(--color-royalblue);
+}
+.progress-completed,
+.progress-track {
+  height: var(--height-8);
+  border-radius: var(--br-8);
+}
+.progress-track {
+  align-self: stretch;
+  background-color: var(--color-aliceblue-200);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  isolation: isolate;
+}
+.progress-completed {
+  width: 65%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 35%;
+  left: 0;
+  background-color: var(--color-royalblue);
+  z-index: 0;
+}
+.next-lesson {
+  align-self: stretch;
+  border-radius: var(--br-8);
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-16);
+  gap: var(--gap-12);
+}
+.description38,
+.description39 {
+  position: relative;
+  line-height: 160%;
+}
+.description38 {
+  flex: 1;
+}
+.description39 {
+  align-self: stretch;
+  font-size: var(--fs-12);
+  text-align: center;
+}
+.before-you-begin {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-64) var(--padding-20);
+  gap: var(--gap-24);
+  text-align: left;
+  font-size: var(--fs-18);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.heading23 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-28);
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.final-invitation,
+.learning-question {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.learning-question {
+  border-bottom: var(--border-1);
+  align-items: flex-start;
+  padding: var(--padding-20) var(--padding-0) var(--padding-18);
+  gap: var(--gap-8);
+}
+.final-invitation {
+  background-color: var(--color-royalblue);
+  align-items: center;
+  padding: var(--padding-64) var(--padding-20);
+  gap: var(--gap-24);
+  text-align: center;
+  font-size: var(--fs-32);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.invitation-heading {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.8px;
+  line-height: 120%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.public-footer {
+  background-color: var(--color-white);
+  padding: var(--padding-40) var(--padding-20);
+  text-align: left;
+  font-size: var(--fs-13);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.footer-navigation,
+.public-footer {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-32);
+}
+.brand-promise2,
+.description45 {
+  align-self: stretch;
+  color: var(--color-gray);
+}
+.brand-promise2 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  font-size: var(--fs-28);
+}
+.description45 {
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: 160%;
+  font-weight: 600;
+}
+.footer-legal {
+  align-self: stretch;
+  border-top: var(--border-1);
+  overflow-x: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: var(--padding-22) var(--padding-0) var(--padding-0);
+  gap: var(--gap-24) 23px;
+  font-size: var(--fs-12);
+}

@@ -1,0 +1,849 @@
+.eduhub-admin-payments-re {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-40);
+  box-sizing: border-box;
+  gap: var(--gap-32);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.eduhub-brand8 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+.graduation-cap-icon8 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0);
+  background-color: transparent;
+  height: var(--height-32);
+  width: var(--width-32);
+  position: relative;
+}
+.wordmark7 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.hub7,
+.page-introduction8 {
+  color: var(--color-royalblue);
+}
+.page-introduction8 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+  text-align: left;
+  font-size: var(--fs-11);
+  font-family: var(--font-inter);
+}
+.description127 {
+  line-height: 150%;
+  font-weight: 600;
+}
+.description127,
+.description128,
+.heading49 {
+  align-self: stretch;
+  position: relative;
+}
+.heading49 {
+  margin: 0;
+  font-size: var(--fs-28);
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.description128 {
+  font-size: var(--fs-14);
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.refund-confirmation {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  text-align: left;
+  font-size: var(--fs-18);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.heading50 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.refund-confirmation-context {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-24);
+}
+.confirm-refund-confirmation,
+.dialog-header {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-20);
+}
+.confirm-refund-confirmation {
+  flex: 1;
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 26px 27px;
+  min-width: 333px;
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.dialog-header {
+  align-self: stretch;
+  justify-content: space-between;
+}
+.decision-icon {
+  height: var(--height-44);
+  width: var(--width-44);
+  border-radius: var(--br-12);
+  background-color: var(--color-aliceblue-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rotate-ccw-icon,
+.x-icon {
+  height: var(--height-24);
+  width: var(--width-24);
+  position: relative;
+}
+.x-icon {
+  height: var(--height-20);
+  width: var(--width-20);
+}
+.heading51 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-22);
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.detail-field34 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+}
+.label54,
+.value32 {
+  align-self: stretch;
+  position: relative;
+  line-height: 150%;
+}
+.value32 {
+  font-size: var(--fs-14);
+  font-weight: 500;
+  color: var(--color-gray);
+}
+.refund-amounts {
+  align-self: stretch;
+  gap: var(--gap-20);
+}
+.detail-field37,
+.refund-amounts,
+.status-notice7 {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.detail-field37 {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-4);
+  min-width: 142px;
+}
+.status-notice7 {
+  align-self: stretch;
+  border-radius: var(--br-8);
+  background-color: var(--color-ivory);
+  padding: var(--padding-16);
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+  color: var(--color-saddlebrown);
+}
+.notice-copy7 {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: var(--min-w-255);
+}
+.cancel6,
+.dialog-actions6,
+.notice-copy7 {
+  overflow: hidden;
+  display: flex;
+}
+.dialog-actions6 {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+  color: var(--color-white);
+}
+.cancel6 {
+  cursor: pointer;
+  border: var(--border-1);
+  padding: var(--padding-0);
+  background-color: var(--color-white);
+  height: var(--height-44);
+  width: var(--width-112);
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.label60 {
+  position: relative;
+  font-size: var(--fs-13);
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: left;
+}
+.primary-action6 {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 216px;
+}
+.confirm-refund {
+  align-self: stretch;
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  background-color: var(--color-royalblue);
+  border: var(--border-2);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label61 {
+  position: relative;
+  font-weight: 600;
+}
+.student-refund-request {
+  flex: 1.0175;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-22) var(--padding-23);
+  gap: var(--gap-16);
+  min-width: 328px;
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.heading52 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-18);
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.user-identity7 {
+  align-self: stretch;
+  align-items: center;
+  gap: var(--gap-12);
+  color: var(--color-royalblue);
+}
+.identity7,
+.user-avatar9,
+.user-identity7 {
+  overflow: hidden;
+  display: flex;
+}
+.user-avatar9 {
+  height: var(--height-36);
+  width: var(--width-36);
+  border-radius: var(--br-100);
+  background-color: var(--color-lavender);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.identity7 {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  min-width: 265px;
+  font-size: var(--fs-13);
+  color: var(--color-gray);
+}
+.description132 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-12);
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.status-badge11 {
+  border-radius: var(--br-100);
+  background-color: var(--color-mintcream);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-4) var(--padding-9);
+  color: var(--color-seagreen);
+}
+.status11 {
+  position: relative;
+  font-weight: 500;
+}
+.description133 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: 150%;
+}
+.refunded-payment-details {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  text-align: left;
+  font-size: var(--fs-24);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.heading53 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.payment-overview2,
+.payment-record-details3 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-24);
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+}
+.payment-record-details3 {
+  flex-direction: column;
+}
+.payment-overview2 {
+  flex-wrap: wrap;
+  align-content: flex-start;
+  text-align: left;
+  font-family: var(--font-inter);
+}
+.original-payment-record3 {
+  flex: 1;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: var(--padding-22) var(--padding-23);
+  gap: var(--gap-16);
+  min-width: var(--min-w-330);
+}
+.original-payment-record3,
+.payment-identifier3,
+.payment-status3 {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.payment-status3 {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: var(--gap-0);
+  row-gap: var(--gap-20);
+}
+.payment-identifier3 {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-4);
+  min-width: 251px;
+}
+.description135 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  line-height: 150%;
+  color: var(--color-gray);
+}
+.status-badge13,
+.student-information3 {
+  border-radius: var(--br-100);
+  background-color: var(--color-aliceblue-100);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-4) var(--padding-9);
+  color: var(--color-royalblue);
+}
+.student-information3 {
+  flex: 1;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: var(--padding-22) var(--padding-23);
+  gap: var(--gap-16);
+  min-width: var(--min-w-330);
+}
+.user-identity8 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-12);
+}
+.detail-field48,
+.identity8 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.identity8 {
+  flex: 1;
+  gap: var(--gap-2);
+  min-width: 268px;
+  font-size: var(--fs-13);
+  color: var(--color-gray);
+}
+.detail-field48 {
+  align-self: stretch;
+  gap: var(--gap-4);
+  color: var(--color-slategray);
+}
+.row-action7 {
+  align-self: stretch;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-height: var(--min-h-18);
+}
+.course-identity6 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: var(--gap-16);
+}
+.course-thumbnail-icon8 {
+  height: var(--height-80);
+  width: var(--width-112);
+  position: relative;
+  border-radius: var(--br-8);
+  object-fit: cover;
+}
+.course-information6 {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+  min-width: 562px;
+}
+.description139 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: 150%;
+  font-weight: 600;
+  color: var(--color-gray);
+}
+.status-badge14 {
+  border-radius: var(--br-100);
+  background-color: var(--color-lavenderblush);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-4) var(--padding-9);
+  color: var(--color-firebrick);
+}
+.description142 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-13);
+  line-height: 150%;
+}
+.refund-information,
+.status-notice8 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.refund-information {
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  flex-direction: column;
+  padding: var(--padding-22) var(--padding-23);
+  gap: var(--gap-16);
+}
+.status-notice8 {
+  border-radius: var(--br-8);
+  background-color: var(--color-mintcream);
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: var(--padding-16);
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+  color: var(--color-seagreen);
+}
+.circle-check {
+  cursor: pointer;
+  margin: 0;
+  height: var(--height-20);
+  width: var(--width-20);
+  position: relative;
+}
+.notice-copy8 {
+  flex: 1;
+  overflow: hidden;
+  gap: var(--gap-4);
+  min-width: 603px;
+}
+.notice-copy8,
+.payment-identifier4,
+.payment-record-details4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.payment-record-details4 {
+  align-self: stretch;
+  gap: var(--gap-24);
+}
+.payment-identifier4 {
+  flex: 1;
+  overflow: hidden;
+  gap: var(--gap-4);
+  min-width: 265px;
+}
+.payment-outcome {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  flex-direction: column;
+  padding: var(--padding-22) var(--padding-23);
+  gap: var(--gap-16);
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.payment-identifier5,
+.payment-outcome,
+.status-notice9 {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.status-notice9 {
+  align-self: stretch;
+  border-radius: var(--br-8);
+  background-color: var(--color-lavenderblush);
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: var(--padding-16);
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+  color: var(--color-firebrick);
+}
+.payment-identifier5 {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-4);
+  min-width: 257px;
+}
+.payment-outcome2,
+.status-badge17 {
+  border-radius: var(--br-100);
+  background-color: var(--color-ivory);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-4) var(--padding-9);
+  color: var(--color-saddlebrown);
+}
+.payment-outcome2 {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  flex-direction: column;
+  padding: var(--padding-22) var(--padding-23);
+  gap: var(--gap-16);
+  text-align: left;
+  font-size: var(--fs-18);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.heading67 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.detail-field69,
+.status-notice10 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.status-notice10 {
+  border-radius: var(--br-8);
+  background-color: var(--color-ivory);
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: var(--padding-16);
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+  color: var(--color-saddlebrown);
+}
+.detail-field69 {
+  flex-direction: column;
+  gap: var(--gap-4);
+  font-size: var(--fs-12);
+}
+@media screen and (max-width: 975px) {
+  .eduhub-admin-payments-re {
+    gap: var(--gap-16);
+  }
+  .confirm-refund-confirmation {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .dialog-actions6,
+  .refund-amounts,
+  .status-notice7,
+  .user-identity7,
+  .user-identity8 {
+    flex-wrap: wrap;
+  }
+  .refund-information {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 900px) {
+  .refund-confirmation-context {
+    flex-wrap: wrap;
+  }
+  .confirm-refund-confirmation,
+  .student-refund-request {
+    flex: 1;
+  }
+  .course-information6,
+  .notice-copy8 {
+    min-width: 100%;
+  }
+  .eduhub-admin-payments-re {
+    gap: var(--gap-16);
+  }
+  .confirm-refund-confirmation {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .dialog-actions6,
+  .refund-amounts,
+  .status-notice7,
+  .user-identity7,
+  .user-identity8 {
+    flex-wrap: wrap;
+  }
+  .refund-information {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 800px) {
+  .refund-confirmation-context {
+    flex-wrap: wrap;
+  }
+  .confirm-refund-confirmation,
+  .student-refund-request {
+    flex: 1;
+  }
+  .course-information6,
+  .notice-copy8 {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 725px) {
+  .refund-confirmation-context {
+    flex-wrap: wrap;
+  }
+  .confirm-refund-confirmation,
+  .student-refund-request {
+    flex: 1;
+  }
+  .course-information6,
+  .notice-copy8 {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .eduhub-admin-payments-re {
+    gap: var(--gap-16);
+  }
+  .confirm-refund-confirmation {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .dialog-actions6,
+  .refund-amounts,
+  .status-notice7,
+  .user-identity7,
+  .user-identity8 {
+    flex-wrap: wrap;
+  }
+  .refund-information {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 675px) {
+  .eduhub-admin-payments-re {
+    gap: var(--gap-16);
+  }
+  .confirm-refund-confirmation {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .dialog-actions6,
+  .refund-amounts,
+  .status-notice7,
+  .user-identity7,
+  .user-identity8 {
+    flex-wrap: wrap;
+  }
+  .refund-information {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .heading49,
+  .wordmark7 {
+    font-size: var(--fs-22);
+  }
+  .heading49 {
+    line-height: var(--lh-29);
+  }
+  .heading51 {
+    font-size: var(--fs-18);
+    line-height: var(--lh-23);
+  }
+  .student-refund-request {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .heading53 {
+    font-size: var(--fs-19);
+    line-height: 25px;
+  }
+  .original-payment-record3 {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .payment-status3,
+  .refund-confirmation-context {
+    flex-wrap: wrap;
+  }
+  .confirm-refund-confirmation,
+  .student-refund-request {
+    flex: 1;
+  }
+  .course-information6,
+  .notice-copy8 {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub checkout frontend demo for Complete C# Programming. Test-only form; no charge or payment processing occurs.">
+  <title>Checkout — Complete C# Programming | EduHub</title>
+  <!-- CDN dependencies: Bootstrap 5, Font Awesome 6 Free and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/recovered/checkout.css" data-eduhub-restored="page-css">
+</head>
+<body>
+  <!-- ============================================================
+       A. Shared student navigation
+       ============================================================ -->
+  <header class="student-header" aria-label="Site header">
+    <div class="desktop-header">
+      <div class="d-flex align-items-center">
+        <a class="ed-brand" href="../public/home.html" aria-label="EduHub homepage"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a class="nav-target" href="../public/home.html">Home</a>
+          <a class="nav-target active" href="../public/explore-courses.html">Explore Courses</a>
+          <a class="nav-target" href="dashboard.html#my-learning">My Learning</a>
+        </nav>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <form class="top-search" data-search-form role="search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input name="q" type="search" placeholder="Search courses..." aria-label="Search courses" maxlength="150">
+        </form>
+        <button class="ed-icon-button" type="button" data-notifications aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button>
+        <details class="account-dropdown">
+          <summary class="account-summary" aria-label="Open student account menu">
+            <span class="student-avatar" aria-hidden="true">WM</span>
+            <span class="account-details">Warda Mahmoud<span class="account-role d-block">Student</span></span>
+            <i class="fa-solid fa-chevron-down ed-muted edu-restored-inline-1" aria-hidden="true"></i>
+          </summary>
+          <nav class="account-popup" aria-label="Account menu"><a href="student-profile.html">My Profile</a><a href="dashboard.html">Dashboard</a><a href="../auth/sign-in.html">Sign In</a></nav>
+        </details>
+      </div>
+    </div>
+    <div class="responsive-header">
+      <div class="responsive-header-inner">
+        <div class="d-flex align-items-center justify-content-between gap-2">
+          <div class="d-flex align-items-center gap-2 gap-md-4">
+            <button class="ed-icon-button" id="mobileMenuButton" type="button" aria-label="Open navigation menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+            <a class="ed-brand" href="../public/home.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+          </div>
+          <div class="d-flex align-items-center gap-2 gap-md-3">
+            <button class="ed-icon-button" type="button" data-notifications aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button>
+            <details class="account-dropdown">
+              <summary class="account-summary" aria-label="Open student account menu"><span class="student-avatar" aria-hidden="true">WM</span><span class="account-details">Warda Mahmoud<span class="account-role d-block">Student</span></span><i class="fa-solid fa-chevron-down ed-muted" aria-hidden="true"></i></summary>
+              <nav class="account-popup" aria-label="Account menu"><a href="student-profile.html">My Profile</a><a href="dashboard.html">Dashboard</a><a href="../auth/sign-in.html">Sign In</a></nav>
+            </details>
+          </div>
+        </div>
+        <nav class="responsive-navigation" aria-label="Primary navigation"><a href="../public/home.html">Home</a><a class="active" href="../public/explore-courses.html">Explore Courses</a><a href="dashboard.html#my-learning">My Learning</a></nav>
+        <form class="top-search" data-search-form role="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" name="q" placeholder="Search for courses..." aria-label="Search courses" maxlength="150"></form>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       B. Checkout heading / demo warning
+       ============================================================ -->
+  <main class="checkout-main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../public/explore-courses.html">Explore Courses</a> / <a href="../states/course-details-already-enrolled.html">Complete C# Programming</a> / Checkout</nav>
+    <section class="checkout-heading" aria-labelledby="checkoutTitle"><h1 id="checkoutTitle">Checkout</h1><p>One more step toward your next skill.</p></section>
+    <div class="demo-notice" role="note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Demo checkout — do not enter real payment information.</span></div>
+
+    <div class="row checkout-layout">
+      <!-- ==========================================================
+           C. Payment method / demo-only form
+           ========================================================== -->
+      <section class="col-12 col-xl-8" aria-labelledby="paymentTitle">
+        <div class="ed-surface payment-card">
+          <h2 class="section-heading" id="paymentTitle">Payment Information</h2>
+          <p class="payment-subtitle">Choose your payment method</p>
+          <form id="paymentDemoForm" autocomplete="off" novalidate>
+            <fieldset class="border-0 p-0 m-0" aria-label="Payment method">
+              <div class="method-row">
+                <label class="method-option selected"><input type="radio" name="method" value="credit" checked><span>Credit Card</span></label>
+                <label class="method-option"><input type="radio" name="method" value="debit"><span>Debit Card</span></label>
+              </div>
+            </fieldset>
+            <div class="accepted-cards" aria-label="Accepted card types: Visa and Mastercard">
+              <span class="card-logo visa" aria-hidden="true">VISA</span>
+              <span class="card-logo" aria-hidden="true"><span class="mastercard"></span></span>
+              <span class="card-help">Accepted cards</span>
+            </div>
+            <div class="payment-fields">
+              <div class="payment-field" id="holderGroup">
+                <label for="cardholder">Cardholder Name</label>
+                <input id="cardholder" name="cardholder" type="text" placeholder="Name on card" maxlength="70" autocomplete="off" spellcheck="false" aria-describedby="holderError">
+                <span class="field-error" id="holderError" role="alert"></span>
+              </div>
+              <div class="payment-field" id="numberGroup">
+                <label for="cardNumber">Card Number</label>
+                <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" placeholder="Card number — demo only" maxlength="19" autocomplete="off" spellcheck="false" aria-describedby="numberError">
+                <span class="field-error" id="numberError" role="alert"></span>
+              </div>
+              <div class="validity-row">
+                <div class="payment-field" id="expiryGroup">
+                  <label for="expiration">Expiration Date</label>
+                  <input id="expiration" name="expiration" type="text" inputmode="numeric" placeholder="MM / YY" maxlength="7" autocomplete="off" aria-describedby="expiryError">
+                  <span class="field-error" id="expiryError" role="alert"></span>
+                </div>
+                <div class="payment-field" id="cvvGroup">
+                  <label for="cvv">CVV</label>
+                  <input id="cvv" name="cvv" type="text" inputmode="numeric" placeholder="CVV" maxlength="4" autocomplete="off" aria-describedby="cvvError">
+                  <span class="field-error" id="cvvError" role="alert"></span>
+                </div>
+              </div>
+            </div>
+            <div class="security-note"><i class="fa-solid fa-shield-halved security-icon" aria-hidden="true"></i><div><p class="security-heading">Secure payment</p><p class="security-copy">Security indicator is illustrative. This static demo does not collect or process payment details.</p></div></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==========================================================
+           D. Order summary
+           ========================================================== -->
+      <aside class="col-12 col-xl-4" aria-labelledby="orderTitle">
+        <div class="ed-surface summary-card">
+          <h2 class="section-heading" id="orderTitle">Order Summary</h2>
+          <img class="summary-image" src="https://placehold.co/704x420/17203c/ffffff?text=Complete+C%23+Programming" alt="Placeholder preview for Complete C# Programming course" width="704" height="420">
+          <h3 class="summary-course">Complete C# Programming</h3>
+          <p class="summary-instructor">Ahmed Mohamed</p>
+          <p class="summary-meta">9 lessons · Lifetime course access</p>
+          <div class="order-totals" aria-label="Order totals">
+            <div class="price-line"><span>Original price</span><strong>$49.00</strong></div>
+            <div class="price-line"><span>Discount</span><strong>$0.00</strong></div>
+            <div class="price-line total"><span>Total</span><strong>$49.00</strong></div>
+          </div>
+          <button id="completePurchase" class="ed-primary-button summary-submit w-100" type="submit" form="paymentDemoForm">Complete Purchase</button>
+          <p class="summary-note">Visual demo only. No charge will be made.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       E. Footer, interactive notices and mobile navigation
+       ============================================================ -->
+  <footer class="site-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  <dialog id="checkoutDialog" class="ed-dialog" aria-labelledby="checkoutDialogTitle">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-3"><h2 id="checkoutDialogTitle" class="m-0">Demo checkout only</h2><button class="btn btn-sm btn-light" type="button" data-close="checkoutDialog" aria-label="Close dialog"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <p id="checkoutDialogBody" class="mb-3"></p>
+    <!-- Optional design-state preview only: this does not initiate a transaction. -->
+    <a href="../states/payment-processing.html" class="btn btn-outline-primary w-100 mb-2">Preview Payment Processing UI</a>
+    <a href="../states/payment-failed-additional-state.html" class="btn btn-outline-secondary w-100 mb-2">Preview Payment Failed UI</a>
+    <button type="button" class="ed-primary-button w-100" data-close="checkoutDialog">Close</button>
+  </dialog>
+  <dialog id="menuDialog" class="ed-dialog" aria-label="Mobile navigation">
+    <div class="d-flex align-items-center justify-content-between mb-3"><strong class="edu-restored-inline-2">Edu<span class="edu-restored-inline-3">Hub</span></strong><button class="btn btn-sm btn-light" data-close="menuDialog" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <nav class="drawer-menu" aria-label="Navigation menu"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="dashboard.html#my-learning">My Learning</a><a href="student-profile.html">My Profile</a><a href="../auth/sign-in.html">Sign In</a></nav>
+  </dialog>
+  <div id="toastMessage" role="status" aria-live="polite" hidden></div>
+  <script src="../../assets/js/recovered/checkout.js" data-eduhub-restored="page-js"></script>
+</body>
+</html>

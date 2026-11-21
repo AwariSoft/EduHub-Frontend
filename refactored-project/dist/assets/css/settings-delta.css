@@ -1,0 +1,20 @@
+
+/* ZIP #6 Settings: append-only, screen-scoped rules */
+.edu-settings__shell{max-width:64rem;margin-inline:auto}
+.edu-settings__card{border:1px solid var(--edu-border,#e2e8f0);border-radius:12px;box-shadow:0 2px 8px rgba(15,23,42,.02)}
+.edu-settings__preference{padding:1rem 0;border-bottom:1px solid var(--edu-border,#e2e8f0)}
+.edu-settings__preference:last-of-type{border-bottom:0}
+.edu-settings__preference label{cursor:pointer}
+.edu-settings__switch{width:2.5rem;height:1.35rem;cursor:pointer}
+.edu-settings__danger{background:#fef2f2;border:1px solid #fecaca;border-radius:10px}
+.edu-settings__error[hidden]{display:none!important}
+.edu-settings :is(.btn,.form-control,.form-check-input,.input-group-text,.edu-settings__card){transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.edu-settings .btn:hover{transform:translateY(-1px)}
+.edu-settings .btn:active{transform:translateY(1px)}
+.edu-settings :is(.btn,.form-control,.form-check-input):focus-visible{outline:3px solid var(--edu-primary,#2563eb);outline-offset:2px}
+.edu-settings .form-check-input:hover:not(:disabled){box-shadow:0 0 0 .2rem rgba(37,99,235,.12)}
+.edu-settings__card:hover{box-shadow:0 5px 18px rgba(15,23,42,.06)}
+.edu-settings .btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.edu-settings__reveal{min-width:2.75rem}
+@media(max-width:575.98px){.edu-settings__card .card-body{padding:1rem}.edu-settings__preference{gap:.75rem!important}}
+@media(prefers-reduced-motion:reduce){.edu-settings :is(.btn,.form-control,.form-check-input,.input-group-text,.edu-settings__card){transition:none}}

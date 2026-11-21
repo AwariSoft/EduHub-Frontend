@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Payment Details | EduHub</title>
+<meta name="description" content="Responsive EduHub Admin Payment Details interface built from the supplied source exports.">
+<link href="{{BASE}}assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="{{BASE}}assets/css/main.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="edu-role-admin edu-screen edu-screen--payment-details" data-eduhub-role="admin"><a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
+<div class="d-lg-flex edu-admin__shell">
+<!-- INCLUDE: partials/admin-sidebar.html -->
+<div class="edu-workspace__main flex-grow-1 min-w-0">
+<!-- INCLUDE: partials/admin-topbar.html -->
+<!-- INCLUDE: partials/admin-mobile-nav.html -->
+<main id="main-content" class="container-fluid py-4 px-3 px-lg-4 edu-ui-content">
+<header class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-start gap-3 mb-4">
+<div><p class="text-uppercase small fw-semibold text-primary mb-1">EduHub / Admin</p><h1 class="h2 fw-bold mb-1">Admin Payment Details</h1></div>
+<span class="badge text-bg-light border align-self-start" title="Unified responsive source screen">Responsive · Bootstrap 5</span></header>
+<div class="d-flex flex-wrap gap-2 align-items-center justify-content-between mb-4"><a class="btn btn-link px-0" href="{{BASE}}pages/admin/payments.html"><i class="fa-solid fa-arrow-left me-2"></i>Back to Payments</a><span class="badge text-bg-light border">Sample data · visual demonstration</span></div><p class="lead text-secondary">A complete record of Warda’s course payment and refund eligibility.</p><div class="alert alert-warning small">Payment and refund states are illustrative. No real financial action is performed.</div><div class="row g-4"><div class="col-12 col-lg-7"><section class="card edu-ui-card mb-4"><div class="card-body"><h2 class="h5">Original payment record</h2><dl class="edu-ui-fact-list mb-0"><div><dt>Payment ID</dt><dd>PAY-2026-1048 <span class="badge text-bg-success ms-1">Completed</span></dd></div><div><dt>Original amount · USD</dt><dd>$49.00</dd></div><div><dt>Original payment date</dt><dd>Oct 29, 2026 · 10:42 AM UTC</dd></div><div><dt>Payment method</dt><dd>Credit Card</dd></div><div><dt>Payment status</dt><dd><span class="badge text-bg-success">Completed</span></dd></div></dl><p class="small text-secondary mt-3">This original record is retained when its status changes.</p></div></section><section class="card edu-ui-card"><div class="card-body"><h2 class="h5">Refund request</h2><span class="badge text-bg-success">Completed</span><p class="mt-3 small text-secondary">Student request · Oct 30, 2026</p><blockquote class="border-start border-3 ps-3">I enrolled in the wrong course and would like a refund.</blockquote><div class="d-flex justify-content-between gap-3"><span>Eligible refund amount</span><strong>$49.00 USD · Full original amount</strong></div><p class="small text-secondary mt-3">The related enrollment will be canceled automatically. The original payment record will remain visible.</p><button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eduConfirmAction" data-edu-modal-action="Refund Payment">Refund Payment</button></div></section></div><div class="col-12 col-lg-5"><section class="card edu-ui-card mb-4"><div class="card-body"><h2 class="h5">Student information</h2><p class="fw-bold mb-1">Warda Mahmoud</p><p>warda.mahmoud@example.com</p><p>Student account · USR-1204</p><a href="{{BASE}}pages/admin/user-details.html" class="btn btn-outline-primary">View User Details</a></div></section><section class="card edu-ui-card"><div class="card-body"><h2 class="h5">Course information</h2><h3 class="h6 fw-bold">Complete C# Programming</h3><p class="text-secondary">Ahmed Mohamed</p><p>$49.00 · USD</p><h4 class="h6">Related enrollment</h4><span class="badge text-bg-success mb-2">Active</span><p class="small text-secondary">Enrollment is active for this completed payment. A refund will cancel this enrollment automatically.</p></div></section></div></div>
+
+</main>
+<!-- INCLUDE: partials/footer.html -->
+</div></div>
+<div class="modal fade" id="eduConfirmAction" tabindex="-1" aria-labelledby="eduConfirmActionLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="eduConfirmActionLabel">Confirm action</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">This is a demonstration. Confirming will emit an integration event; it will not change external records or payment status.</div><div class="modal-footer"><button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Cancel</button><button class="btn btn-danger" data-edu-confirm data-bs-dismiss="modal" type="button">Confirm</button></div></div></div></div>
+<div id="eduLiveRegion" class="visually-hidden" aria-live="polite"></div>
+<script src="{{BASE}}assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="{{BASE}}assets/js/main.js"></script></body></html>

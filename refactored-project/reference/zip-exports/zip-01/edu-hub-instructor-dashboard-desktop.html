@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./edu-hub-instructor-dashboard-desktop.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="eduhub-instructor-dashboard">
+      <section class="instructor-sidebar">
+        <div class="eduhub-brand">
+          <img
+            class="graduation-cap-icon"
+            alt=""
+            src="./public/Graduation-cap.svg"
+          />
+
+          <h1 class="wordmark">
+            <span>Edu</span>
+            <span class="hub">Hub</span>
+          </h1>
+        </div>
+        <div class="instructor-navigation">
+          <div class="workspace-label">INSTRUCTOR WORKSPACE</div>
+          <button class="dashboard">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/layout-dashboard.svg"
+            />
+
+            <div class="navigation-label">Dashboard</div>
+          </button>
+          <button class="my-courses">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/book-open.svg"
+            />
+
+            <div class="navigation-label2">My Courses</div>
+          </button>
+          <button class="my-courses">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/circle-plus.svg"
+            />
+
+            <div class="navigation-label2">Create Course</div>
+          </button>
+          <button class="my-courses">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/users.svg"
+            />
+
+            <div class="navigation-label2">Students</div>
+          </button>
+          <button class="my-courses">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/chart-no-axes-combined.svg"
+            />
+
+            <div class="navigation-label2">Course Analytics</div>
+          </button>
+          <button class="my-courses">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/user-round.svg"
+            />
+
+            <div class="navigation-label2">My Profile</div>
+          </button>
+          <button class="my-courses">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/settings.svg"
+            />
+
+            <div class="navigation-label2">Settings</div>
+          </button>
+          <button class="my-courses">
+            <img
+              class="layout-dashboard-icon"
+              loading="lazy"
+              alt=""
+              src="./public/log-out.svg"
+            />
+
+            <div class="navigation-label2">Log Out</div>
+          </button>
+        </div>
+        <div class="sidebar-footer">
+          <div class="teaching-reminder">
+            <img
+              class="graduation-cap-icon2"
+              alt=""
+              src="./public/graduation-cap1.svg"
+            />
+
+            <div class="reminder-heading">Your knowledge. Their future.</div>
+            <div class="reminder-copy">
+              Make every lesson a step toward something great.
+            </div>
+          </div>
+          <button class="collapse-sidebar">
+            <img
+              class="panel-left-close-icon"
+              loading="lazy"
+              alt=""
+              src="./public/panel-left-close.svg"
+            />
+
+            <div class="collapse-label">Collapse sidebar</div>
+          </button>
+        </div>
+      </section>
+      <main class="instructor-workspace">
+        <header class="workspace-topbar">
+          <div class="course-search">
+            <img class="search-icon" alt="" src="./public/search.svg" />
+
+            <input
+              class="search-placeholder"
+              placeholder="Search your courses..."
+              type="text"
+            />
+          </div>
+          <div class="instructor-account-controls">
+            <img
+              class="notifications-icon"
+              alt=""
+              src="./public/Notifications.svg"
+            />
+
+            <div class="divider"></div>
+            <div class="instructor-identity">
+              <div class="instructor-avatar">
+                <div class="workspace-label">AM</div>
+              </div>
+              <div class="identity">
+                <div class="workspace-label">Ahmed Mohamed</div>
+                <div class="role">Instructor</div>
+              </div>
+              <img
+                class="chevron-down-icon"
+                alt=""
+                src="./public/chevron-down.svg"
+              />
+            </div>
+          </div>
+        </header>
+        <section class="dashboard-content">
+          <div class="welcome">
+            <div class="welcome-copy">
+              <h2 class="greeting">Welcome back, Ahmed! 👋</h2>
+              <div class="welcome-subtitle">
+                Manage your courses, inspire your students, and track your
+                teaching performance.
+              </div>
+            </div>
+            <button class="action">
+              <div class="label">Create New Course +</div>
+            </button>
+          </div>
+          <div class="teaching-statistics">
+            <div class="teaching-statistic">
+              <img
+                class="statistic-icon"
+                alt=""
+                src="./public/Statistic-icon2.svg"
+              />
+
+              <div class="statistic-details">
+                <div class="value-and-icon">
+                  <h2 class="value">8</h2>
+                </div>
+                <div class="statistic-label">Total Courses</div>
+              </div>
+            </div>
+            <div class="teaching-statistic">
+              <img
+                class="statistic-icon"
+                alt=""
+                src="./public/Statistic-icon5.svg"
+              />
+
+              <div class="statistic-details">
+                <div class="value-and-icon">
+                  <h2 class="value">1,245</h2>
+                </div>
+                <div class="statistic-label">Total Students</div>
+              </div>
+            </div>
+            <div class="teaching-statistic">
+              <img
+                class="statistic-icon"
+                alt=""
+                src="./public/Statistic-icon1.svg"
+              />
+
+              <div class="statistic-details">
+                <div class="value-and-icon">
+                  <h2 class="value">5</h2>
+                </div>
+                <div class="statistic-label">Published Courses</div>
+              </div>
+            </div>
+            <div class="teaching-statistic">
+              <img
+                class="statistic-icon"
+                alt=""
+                src="./public/Statistic-icon4.svg"
+              />
+
+              <div class="statistic-details">
+                <div class="value-and-icon">
+                  <h2 class="value">$4,850</h2>
+                </div>
+                <div class="statistic-label">Total Revenue</div>
+              </div>
+            </div>
+          </div>
+          <section class="my-courses2">
+            <div class="section-heading">
+              <div class="course-library-heading">
+                <h3 class="title">My Courses</h3>
+                <div class="role">4 of 8</div>
+              </div>
+              <div class="view-courses-action">View All Courses →</div>
+            </div>
+            <div class="course-cards">
+              <div class="course-management-card">
+                <div class="course-media">
+                  <div class="course-visibility">
+                    <div class="status-badge">
+                      <div class="status-dot"></div>
+                      <div class="status">Published</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="course-identity">
+                    <div class="course-title">Complete C# Programming</div>
+                    <div class="category">Programming</div>
+                  </div>
+                  <div class="course-metadata">
+                    <div class="students2">
+                      <img
+                        class="chevron-down-icon"
+                        alt=""
+                        src="./public/users.svg"
+                      />
+
+                      <div class="student-count">320 students</div>
+                    </div>
+                    <div class="price">$49</div>
+                  </div>
+                  <div class="course-actions">
+                    <button class="action2">
+                      <div class="label">Edit Course</div>
+                    </button>
+                    <button class="action3">
+                      <div class="label3">View Course</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="course-management-card">
+                <div class="course-media2">
+                  <div class="course-visibility">
+                    <div class="status-badge">
+                      <div class="status-dot"></div>
+                      <div class="status">Published</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="course-identity">
+                    <div class="course-title">HTML & CSS Fundamentals</div>
+                    <div class="category">Web Development</div>
+                  </div>
+                  <div class="course-metadata">
+                    <div class="students2">
+                      <img
+                        class="chevron-down-icon"
+                        alt=""
+                        src="./public/users.svg"
+                      />
+
+                      <div class="student-count">215 students</div>
+                    </div>
+                    <div class="price">$29</div>
+                  </div>
+                  <div class="course-actions">
+                    <button class="action2">
+                      <div class="label">Edit Course</div>
+                    </button>
+                    <button class="action3">
+                      <div class="label3">View Course</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="course-management-card3">
+                <div class="course-media3">
+                  <div class="course-visibility">
+                    <div class="status-badge3">
+                      <div class="status-dot3"></div>
+                      <div class="status">Pending Approval</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="course-identity">
+                    <div class="course-title">SQL Server Essentials</div>
+                    <div class="category">Database</div>
+                  </div>
+                  <div class="course-metadata">
+                    <div class="students2">
+                      <img
+                        class="chevron-down-icon"
+                        alt=""
+                        src="./public/users.svg"
+                      />
+
+                      <div class="student-count">180 students</div>
+                    </div>
+                    <div class="price">$39</div>
+                  </div>
+                  <div class="course-actions">
+                    <button class="action2">
+                      <div class="label">Edit Course</div>
+                    </button>
+                    <button class="action3">
+                      <div class="label3">View Course</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="course-management-card4">
+                <div class="course-media4">
+                  <div class="course-visibility">
+                    <div class="status-badge4">
+                      <div class="status-dot4"></div>
+                      <div class="status">Draft</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="course-identity">
+                    <div class="course-title">JavaScript for Beginners</div>
+                    <div class="category">Programming</div>
+                  </div>
+                  <div class="course-metadata">
+                    <div class="students2">
+                      <img
+                        class="chevron-down-icon"
+                        alt=""
+                        src="./public/users.svg"
+                      />
+
+                      <div class="student-count">0 students</div>
+                    </div>
+                    <div class="price">$35</div>
+                  </div>
+                  <div class="course-actions">
+                    <button class="action2">
+                      <div class="label">Edit Course</div>
+                    </button>
+                    <button class="action3">
+                      <div class="label3">View Course</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="teaching-insights">
+            <div class="course-performance">
+              <div class="performance-heading">
+                <h3 class="title">Course Performance</h3>
+                <div class="period-selector">
+                  <div class="period-dropdown">
+                    <div class="student-count">Last 3 Months</div>
+                    <img
+                      class="chevron-down-icon2"
+                      alt=""
+                      src="./public/chevron-down.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="enrollment-summary">
+                <div class="enrollment-total">
+                  <div class="total-and-scope">
+                    <h3 class="total-enrollments">612</h3>
+                    <div class="role">enrollments · your courses</div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart">
+                <div class="enrollment-axis">
+                  <div class="student-count">80</div>
+                  <div class="student-count">40</div>
+                  <div class="student-count">0</div>
+                </div>
+                <img
+                  class="trend-plot-icon"
+                  loading="lazy"
+                  alt=""
+                  src="./public/Trend-plot@2x.png"
+                />
+              </div>
+              <div class="time-axis">
+                <div class="axis-spacer"></div>
+                <div class="weekly-time-points">
+                  <div class="time-point">Aug 13</div>
+                  <div class="time-point2">Sep 3</div>
+                  <div class="time-point3">Sep 24</div>
+                  <div class="time-point4">Oct 15</div>
+                  <div class="time-point5">Oct 29</div>
+                </div>
+              </div>
+            </div>
+            <div class="course-approval-status">
+              <div class="value-and-icon">
+                <h3 class="title">Course Approval Status</h3>
+                <img
+                  class="search-icon"
+                  alt=""
+                  src="./public/shield-check.svg"
+                />
+              </div>
+              <div class="submitted-course">
+                <div class="course-title5">SQL Server Essentials</div>
+              </div>
+              <div class="status-badge5">
+                <div class="status-dot3"></div>
+                <div class="status">Pending Approval</div>
+              </div>
+              <div class="review-message">
+                Your course is currently being reviewed by the EduHub
+                administration team.
+              </div>
+              <div class="review-timeline">
+                <div class="review-stage">
+                  <div class="stage-indicator"></div>
+                  <div class="student-count">Draft</div>
+                  <div class="stage-connector">→</div>
+                </div>
+                <div class="review-stage2">
+                  <div class="stage-indicator2"></div>
+                  <b class="student-count">Submitted</b>
+                  <div class="stage-connector">→</div>
+                </div>
+                <div class="review-stage">
+                  <div class="stage-indicator3"></div>
+                  <div class="student-count">Approved</div>
+                  <div class="stage-connector">→</div>
+                </div>
+                <div class="review-stage">
+                  <div class="stage-indicator3"></div>
+                  <div class="student-count">Published</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="recent-enrollments">
+            <div class="enrollment-heading">
+              <h3 class="title">Recent Enrollments</h3>
+              <div class="role">Your students</div>
+            </div>
+            <div class="enrollment-table">
+              <div class="table-headings">
+                <div class="student-heading">STUDENT</div>
+                <div class="course-heading">COURSE</div>
+                <div class="date-heading">ENROLLMENT DATE</div>
+                <div class="status-heading">STATUS</div>
+              </div>
+              <div class="enrollment-row">
+                <div class="student-identity">
+                  <div class="student-avatar">
+                    <div class="workspace-label">SA</div>
+                  </div>
+                  <div class="student">Sarah Ali</div>
+                </div>
+                <div class="course">Complete C# Programming</div>
+                <div class="enrollment-date">Oct 28, 2026</div>
+                <div class="status-column">
+                  <div class="status-badge6">
+                    <div class="status-dot"></div>
+                    <div class="status">Active</div>
+                  </div>
+                </div>
+              </div>
+              <div class="enrollment-row">
+                <div class="student-identity">
+                  <div class="student-avatar">
+                    <div class="workspace-label">OH</div>
+                  </div>
+                  <div class="student">Omar Hassan</div>
+                </div>
+                <div class="course">HTML & CSS Fundamentals</div>
+                <div class="enrollment-date">Oct 27, 2026</div>
+                <div class="status-column">
+                  <div class="status-badge6">
+                    <div class="status-dot"></div>
+                    <div class="status">Active</div>
+                  </div>
+                </div>
+              </div>
+              <div class="enrollment-row">
+                <div class="student-identity">
+                  <div class="student-avatar">
+                    <div class="workspace-label">MA</div>
+                  </div>
+                  <div class="student">Mariam Ahmed</div>
+                </div>
+                <div class="course">SQL Server Essentials</div>
+                <div class="enrollment-date">Oct 26, 2026</div>
+                <div class="status-column">
+                  <div class="status-badge6">
+                    <div class="status-dot"></div>
+                    <div class="status">Active</div>
+                  </div>
+                </div>
+              </div>
+              <div class="enrollment-row">
+                <div class="student-identity">
+                  <div class="student-avatar">
+                    <div class="workspace-label">YM</div>
+                  </div>
+                  <div class="student">Youssef Mohamed</div>
+                </div>
+                <div class="course">JavaScript for Beginners</div>
+                <div class="enrollment-date">Oct 25, 2026</div>
+                <div class="status-column">
+                  <div class="status-badge6">
+                    <div class="status-dot"></div>
+                    <div class="status">Active</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="activity-context">
+              <div class="record-context">
+                Activity records are separate from current course visibility and
+                student counts.
+              </div>
+            </div>
+          </section>
+          <div class="dashboard-context">
+            <div class="sample-scope">
+              Sample data · Instructor-owned courses · Weekly enrollments,
+              Aug–Oct 2026
+            </div>
+            <div class="student-count">
+              Draft & pending courses are not public.
+            </div>
+          </div>
+          <div class="workspace-footer">
+            <div class="student-count">Learn Today. Build Tomorrow.</div>
+            <div class="student-count">Need help? Visit the Help Center ↗</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

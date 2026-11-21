@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="Learn Complete C# Programming with a responsive lesson workspace and curriculum — EduHub frontend demo.">
+  <title>Course Learning — Complete C# Programming | EduHub</title>
+  <!-- Bootstrap 5, Font Awesome 6 Free, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* ==========================================================
+       01 — Figma tokens / reusable design-system rules
+       ========================================================== */
+    :root {
+      --ed-primary:#2563eb; --ed-primary-hover:#1d4ed8; --ed-text:#0f172a;
+      --ed-muted:#64748b; --ed-border:#e2e8f0; --ed-bg:#f8fafc;
+      --ed-blue-wash:#eff6ff; --ed-blue-pale:#dbeafe;
+      --ed-video:#101d36; --ed-video-toolbar:#0b1427;
+      --ed-green:#16a34a; --ed-radius:12px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-width:0;background:var(--ed-bg);color:var(--ed-text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}
+    a{color:var(--ed-primary);text-decoration:none}
+    a:hover{color:var(--ed-primary-hover)}
+    button,input,textarea{font:inherit}
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #2563eb7a;outline-offset:3px}
+    button{cursor:pointer}
+    button:disabled{cursor:not-allowed}
+    [hidden]{display:none!important}
+    .text-ed-muted{color:var(--ed-muted)!important}
+    .ed-surface{background:#fff;border:1px solid var(--ed-border);border-radius:var(--ed-radius)}
+    .ed-btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:48px;padding:10px 16px;border:1px solid var(--ed-border);border-radius:8px;background:#fff;color:var(--ed-text);font-size:14px;font-weight:600;transition:background .16s,border-color .16s,transform .12s}
+    .ed-btn:hover:not(:disabled){background:var(--ed-blue-wash);border-color:#bfdbfe;color:var(--ed-primary)}
+    .ed-btn:active:not(:disabled){transform:translateY(1px)}
+    .ed-btn-primary{color:#fff;background:var(--ed-primary);border-color:var(--ed-primary)}
+    .ed-btn-primary:hover:not(:disabled){color:#fff;background:var(--ed-primary-hover);border-color:var(--ed-primary-hover)}
+    .ed-btn:disabled{background:#e2e8f0;border-color:#e2e8f0;color:var(--ed-muted)}
+    .ed-heading{font-weight:700;color:var(--ed-text);line-height:1.3}
+    /* ==========================================================
+       02 — Shared account header and responsive navigation
+       ========================================================== */
+    .site-header{background:#fff;border-bottom:1px solid var(--ed-border)}
+    .site-header-inner{max-width:1440px;margin:auto;min-height:75px;padding:15.5px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .header-top{width:100%}
+    .brand{display:inline-flex;align-items:center;gap:8px;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;color:var(--ed-text);white-space:nowrap}
+    .brand:hover{color:var(--ed-text)}
+    .brand .brand-cap{font-size:28px;color:var(--ed-primary);width:32px;text-align:center}
+    .brand .highlight{color:var(--ed-primary)}
+    .header-links{display:flex;gap:24px;margin-left:32px}
+    .header-links a,.mobile-nav a{color:var(--ed-muted);white-space:nowrap}
+    .header-links a{font-size:14px}
+    .header-links a[aria-current="page"],.mobile-nav a[aria-current="page"]{color:var(--ed-primary);font-weight:600}
+    .header-links a:hover,.mobile-nav a:hover{color:var(--ed-primary)}
+    .user-tools{display:flex;align-items:center;gap:16px}
+    .course-search{position:relative;width:230px}
+    .course-search i{position:absolute;left:13px;top:14px;color:var(--ed-muted);pointer-events:none}
+    .course-search input{border:1px solid var(--ed-border);border-radius:8px;background:var(--ed-bg);height:44px;width:100%;padding:0 12px 0 38px;font-size:13px;outline:none}
+    .course-search input:focus{border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb16}
+    .icon-control{border:0;background:transparent;display:inline-flex;align-items:center;justify-content:center;color:var(--ed-muted);width:40px;height:44px;border-radius:8px;position:relative;flex-shrink:0;font-size:18px}
+    .icon-control:hover{background:var(--ed-blue-wash);color:var(--ed-primary)}
+    .notification-dot{width:6px;height:6px;background:var(--ed-primary);position:absolute;top:7px;right:8px;border-radius:50%}
+    .user-avatar,.instructor-avatar{display:inline-flex;align-items:center;justify-content:center;flex:none;width:40px;height:40px;border-radius:50%;background:var(--ed-blue-pale);color:var(--ed-primary);font-size:13px;font-weight:600}
+    .user-meta{white-space:nowrap;line-height:1.35}
+    .user-meta strong{font-size:13px;font-weight:600}
+    .user-meta small{font-size:11px;color:var(--ed-muted)}
+    .user-menu{border:0;background:transparent;color:var(--ed-muted);padding:8px;border-radius:8px}
+    .user-menu:hover{background:var(--ed-blue-wash)}
+    .mobile-header-rows{display:none}
+    .mobile-nav{height:44px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .mobile-nav a{font-size:13px;height:44px;display:flex;align-items:center}
+    .mobile-nav a[aria-current="page"]{border-bottom:2px solid var(--ed-primary)}
+    .mobile-search{width:100%;margin-top:16px}
+    /* ==========================================================
+       03 — Lesson workspace, video slide and controls
+       ========================================================== */
+    .page-shell{max-width:1440px;padding:64px;margin:auto}
+    .breadcrumbs{color:var(--ed-muted);font-size:13px;line-height:21px;margin-bottom:32px}
+    .breadcrumbs a{color:var(--ed-muted)}
+    .breadcrumbs a:hover{color:var(--ed-primary)}
+    .course-title{font-size:32px;line-height:42px;margin:0 0 32px;letter-spacing:-.45px}
+    .learning-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:32px;align-items:start}
+    .lesson-workspace{min-width:0;display:flex;flex-direction:column;gap:24px}
+    .demo-player{color:#fff;background:var(--ed-video);border-radius:12px;overflow:hidden}
+    .lesson-slide{height:414px;padding:40px;display:flex;flex-direction:column;gap:24px;justify-content:center}
+    .slide-eyebrow{font-size:12px;line-height:15px;font-weight:600;color:#93c5fd;text-transform:uppercase}
+    .slide-title{font-size:38px;line-height:1.3;font-weight:600;color:#fff;margin:0}
+    .slide-code{border-radius:8px;background:#182b48;padding:20px;color:#bfdbfe;font-size:19px;line-height:1.8;min-height:142px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;font-family:Inter,system-ui,sans-serif}
+    .big-play{width:56px;height:56px;flex:none;border-radius:50%;border:0;color:#fff;background:var(--ed-primary);display:grid;place-items:center;font-size:22px;transition:background .15s,transform .15s}
+    .big-play:hover{background:var(--ed-primary-hover);transform:scale(1.05)}
+    .video-toolbar{height:68px;background:var(--ed-video-toolbar);padding:16px;display:flex;flex-direction:column;gap:14px;color:#fff}
+    .video-seek{height:4px;width:100%;margin:0;display:block;appearance:none;-webkit-appearance:none;background:linear-gradient(90deg,var(--ed-primary) 50%,#334155 50%);cursor:pointer;outline-offset:5px;border-radius:99px}
+    .video-seek::-webkit-slider-thumb{appearance:none;width:10px;height:10px;background:var(--ed-primary);border:2px solid #fff;border-radius:50%;opacity:0}
+    .video-seek:hover::-webkit-slider-thumb,.video-seek:focus-visible::-webkit-slider-thumb{opacity:1}
+    .video-seek::-moz-range-thumb{width:8px;height:8px;background:var(--ed-primary);border:1px solid #fff;border-radius:50%;opacity:0}
+    .video-toolbar-row{height:18px;display:flex;gap:16px;align-items:center}
+    .toolbar-button{background:transparent;color:#fff;border:0;line-height:1;width:18px;height:20px;display:grid;place-items:center;padding:0;font-size:14px}
+    .toolbar-button:hover{color:#93c5fd}
+    .toolbar-time{font-size:12px;color:#e2e8f0;white-space:nowrap;flex:1}
+    .toolbar-speed{font-size:12px;color:#e2e8f0;min-width:22px}
+    .preview-notice{display:none;padding:6px 10px;border-radius:6px;background:#1e3a5f;color:#bfdbfe;font-size:11px}
+    .preview-notice:not([hidden]){display:block}
+    .lesson-meta-eyebrow{color:var(--ed-muted);font-size:12px;line-height:19px}
+    .lesson-title{font-size:30px;line-height:39px;margin:8px 0;color:var(--ed-text);font-weight:700}
+    .lesson-description{color:var(--ed-muted);font-size:14px;line-height:22px;margin:0}
+    .lesson-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .lesson-tabs{display:flex;align-items:center;gap:32px;min-height:48px;border-bottom:1px solid var(--ed-border)}
+    .lesson-tab{height:48px;border:0;border-bottom:2px solid transparent;padding:0;display:flex;align-items:center;color:var(--ed-muted);background:transparent;font-size:14px}
+    .lesson-tab:hover{color:var(--ed-primary)}
+    .lesson-tab[aria-selected="true"]{color:var(--ed-primary);border-bottom-color:var(--ed-primary);font-weight:600}
+    .tab-panel{padding:24px;min-width:0}
+    .tab-title{font-size:22px;line-height:29px;font-weight:700;margin:0 0 16px}
+    .tab-subheading{font-size:18px;line-height:23px;font-weight:700;margin:0 0 16px}
+    .tab-description{color:var(--ed-muted);font-size:14px;line-height:22px;margin:0 0 16px}
+    .instructor-byline{display:flex;gap:12px;align-items:center;margin-top:16px}
+    .instructor-byline strong{display:block;font-size:14px;font-weight:600}
+    .instructor-byline small{display:block;color:var(--ed-muted);font-size:12px;margin-top:2px}
+    .resources-list{padding:0;margin:0;list-style:none;display:grid;gap:10px}
+    .resources-list li{border:1px solid var(--ed-border);border-radius:8px;padding:12px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+    .resources-list span{font-size:13px}
+    .resources-list button{border:0;color:var(--ed-primary);background:transparent;font-size:13px;font-weight:600}
+    .notes-input{width:100%;min-height:112px;resize:vertical;border:1px solid var(--ed-border);border-radius:8px;padding:12px;color:var(--ed-text)}
+    /* ==========================================================
+       04 — Progress, accordion curriculum and final quiz rail
+       ========================================================== */
+    .curriculum-rail{min-width:0}
+    .progress-card{padding:24px;min-height:226px}
+    .rail-title{font-size:20px;line-height:26px;font-weight:700;margin:0 0 16px}
+    .progress-label{font-size:14px;line-height:22px;margin:0 0 8px}
+    .progress-bar-bg{height:6px;width:100%;border-radius:50px;background:#e2e8f0;overflow:hidden;margin-bottom:8px}
+    .progress-bar-current{width:35%;height:100%;background:var(--ed-primary);border-radius:50px;transition:width .3s}
+    .progress-help{font-size:12px;color:var(--ed-muted);line-height:19px;margin:0 0 16px}
+    .progress-explainer{font-size:12px;color:var(--ed-muted);line-height:19px;margin:0}
+    .rail-heading{margin:20px 0 16px}
+    .rail-subtitle{font-size:12px;line-height:19px;margin:0 0 20px;color:var(--ed-muted)}
+    .curriculum-list{display:grid;gap:12px}
+    .curriculum-section{border-radius:8px;border:1px solid var(--ed-border);background:#fff;overflow:hidden}
+    .curriculum-section summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;min-height:77px}
+    .curriculum-section summary::-webkit-details-marker{display:none}
+    .curriculum-section summary:hover{background:var(--ed-bg)}
+    .section-label{font-size:14px;font-weight:600;color:var(--ed-text)}
+    .section-meta{font-size:12px;color:var(--ed-muted);line-height:19px;display:block;margin-top:4px}
+    .section-chevron{color:var(--ed-muted);font-size:12px;flex-shrink:0}
+    .curriculum-section[open] .section-chevron{transform:rotate(180deg)}
+    .lesson-item{width:100%;border:0;border-top:1px solid var(--ed-border);background:#fff;min-height:52px;padding:12px 16px;display:flex;align-items:center;gap:12px;text-align:left;color:var(--ed-text);font-size:13px}
+    .lesson-item:hover{background:var(--ed-bg)}
+    .lesson-item[aria-current="true"]{background:#eff6ff;color:var(--ed-primary);font-weight:600}
+    .lesson-item .lesson-state-icon{color:var(--ed-primary);width:18px;flex:none;text-align:center}
+    .lesson-item:not([aria-current="true"]) .lesson-state-icon.is-pending{color:var(--ed-muted)}
+    .lesson-item .lesson-item-name{flex:1;min-width:0;overflow-wrap:anywhere}
+    .lesson-item .lesson-duration{flex-shrink:0;color:var(--ed-muted);font-size:12px;font-weight:400}
+    .quiz-card{padding:24px;margin-top:20px}
+    .quiz-card h3{font-size:18px;font-weight:700;margin:0 0 16px;display:flex;gap:8px;align-items:center}
+    .quiz-card h3 i{color:var(--ed-primary)}
+    .quiz-card p{font-size:13px;color:var(--ed-muted);line-height:21px;margin:0 0 16px}
+    .quiz-card .ed-btn{width:100%}
+    /* ==========================================================
+       05 — Mobile menu, live feedback, footer
+       ========================================================== */
+    .site-footer{margin:0;text-align:center;padding:22px 16px;border-top:1px solid var(--ed-border);font-size:12px;color:var(--ed-muted);min-height:63px}
+    .mobile-menu{padding:20px;border:0;margin:0 auto 0 0;height:100dvh;max-height:100dvh;width:min(320px,85vw);border-radius:0}
+    .mobile-menu::backdrop{background:#0f172a90}
+    .mobile-menu a{display:block;padding:12px;border-radius:8px;color:var(--ed-text);font-weight:600}
+    .mobile-menu a:hover{color:var(--ed-primary);background:var(--ed-blue-wash)}
+    .feedback{position:fixed;right:16px;bottom:16px;z-index:1000;padding:14px 16px;max-width:min(390px,calc(100vw - 32px));background:#fff;border:1px solid var(--ed-border);border-left:4px solid var(--ed-primary);box-shadow:0 12px 34px #0f172a25;border-radius:10px;font-size:13px;color:var(--ed-text)}
+    /* ==========================================================
+       06 — Layout breakpoints from the three Figma frames
+       ========================================================== */
+    @media (min-width:992px){.page-shell{min-height:1522px}}
+    @media (max-width:1199.98px){.site-header-inner{padding:16px 24px}.page-shell{padding:32px}}
+    @media (max-width:991.98px){
+      .site-header-inner{display:block;min-height:195px;padding:16px 24px 15px}
+      .header-top{min-height:44px}
+      .header-links,.desktop-search,.user-meta{display:none!important}
+      .mobile-header-rows{display:block}
+      .mobile-nav{margin-top:16px}
+      .mobile-search{display:block}
+      .learning-grid{display:flex;flex-direction:column;gap:32px}
+      .lesson-workspace,.curriculum-rail{width:100%}
+      .page-shell{padding:32px}
+      .user-tools{gap:16px}
+    }
+    @media (max-width:575.98px){
+      .site-header-inner{padding:16px 16px 15px;min-height:195px}
+      .user-tools{gap:8px}
+      .user-menu{padding:0 2px}
+      .page-shell{padding:16px}
+      .course-title{font-size:28px;line-height:36px;margin-bottom:32px;max-width:250px}
+      .lesson-slide{height:340px;padding:24px;gap:24px}
+      .slide-title{font-size:26px;line-height:1.3}
+      .slide-code{font-size:14px;line-height:1.8;min-height:104px;padding:16px}
+      .lesson-title{font-size:26px;line-height:34px}
+      .lesson-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .lesson-actions .complete-btn{grid-column:1/-1;grid-row:1}
+      .tab-panel{padding:24px}
+      .breadcrumbs{margin-bottom:32px}
+      .lesson-item{gap:10px;padding-inline:14px}
+      .lesson-item .lesson-duration{font-size:11px}
+    }
+    @media (max-width:350px){
+      .brand{font-size:24px}.brand .brand-cap{font-size:24px;width:26px}
+      .user-tools{gap:2px}
+      .lesson-slide{padding:16px}
+      .tab-panel,.progress-card,.quiz-card{padding:16px}
+      .lesson-item{padding-inline:10px}
+    }
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <!-- ======== Navigation ======== -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="d-flex align-items-center justify-content-between header-top">
+        <div class="d-flex align-items-center">
+          <button id="openMobileMenu" class="icon-control d-lg-none me-2" type="button" aria-label="Open navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+          <a href="eduhub-homepage.html" class="brand" aria-label="EduHub Homepage"><i class="fa-solid fa-graduation-cap brand-cap" aria-hidden="true"></i><span>Edu<span class="highlight">Hub</span></span></a>
+          <nav aria-label="Primary navigation" class="header-links d-none d-lg-flex">
+            <a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html" aria-current="page">My Learning</a>
+          </nav>
+        </div>
+        <div class="user-tools">
+          <form class="course-search desktop-search d-none d-lg-block" role="search" action="eduhub-explore-courses.html" method="get">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><label for="desktopSearch" class="visually-hidden">Search courses</label><input id="desktopSearch" name="search" placeholder="Search courses..." autocomplete="off">
+          </form>
+          <button id="notificationsButton" class="icon-control" type="button" aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button>
+          <a href="eduhub-student-profile.html" class="user-avatar" aria-label="View Warda Mahmoud's profile">WM</a>
+          <div class="user-meta d-none d-lg-flex flex-column"><strong>Warda Mahmoud</strong><small>Student</small></div>
+          <button type="button" id="accountButton" aria-label="Account menu" class="user-menu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <div class="mobile-header-rows d-lg-none">
+        <nav class="mobile-nav" aria-label="Responsive navigation"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html" aria-current="page">My Learning</a></nav>
+        <form class="course-search mobile-search" role="search" action="eduhub-explore-courses.html" method="get"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><label class="visually-hidden" for="mobileSearch">Search courses</label><input id="mobileSearch" name="search" placeholder="Search for courses..." autocomplete="off"></form>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== Course workspace ======== -->
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="eduhub-student-dashboard.html">My Learning</a> / <span>Complete C# Programming</span></nav>
+    <h1 class="ed-heading course-title">Complete C# Programming</h1>
+    <div class="learning-grid">
+      <section class="lesson-workspace" aria-label="Current lesson">
+        <!-- Illustrative lesson slide: no copyrighted video or actual media is embedded -->
+        <section class="demo-player" aria-label="Illustrative lesson player (no video media connected)">
+          <div class="lesson-slide" id="lessonSlide">
+            <span class="slide-eyebrow" id="slideEyebrow">C# FUNDAMENTALS</span>
+            <h2 class="slide-title" id="slideTitle">Variables &amp; Data Types</h2>
+            <pre class="slide-code" id="slideCode">int age = 25;
+string name = "Warda";
+bool isLearning = true;</pre>
+            <button type="button" class="big-play" id="slidePlay" aria-label="Play illustrative timeline"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+          </div>
+          <div class="video-toolbar">
+            <label class="visually-hidden" for="videoSeek">Lesson timeline preview</label>
+            <input id="videoSeek" class="video-seek" type="range" min="0" max="1110" value="555" step="1" aria-label="Illustrative lesson timeline">
+            <div class="video-toolbar-row">
+              <button type="button" class="toolbar-button" id="toolbarPlay" aria-label="Play illustrative timeline"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <button type="button" class="toolbar-button" id="volumeButton" aria-label="Toggle illustrative audio icon"><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button>
+              <span class="toolbar-time" id="timeLabel">09:15 / 18:30</span>
+              <button type="button" class="toolbar-button toolbar-speed" id="speedButton" aria-label="Change demo playback speed">1×</button>
+              <button type="button" class="toolbar-button" id="fullscreenButton" aria-label="Expand lesson slide"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </section>
+        <div class="preview-notice" id="previewNotice" role="status" hidden>Illustrative timeline only — no lesson video or audio is connected.</div>
+        <div class="lesson-info" aria-live="polite">
+          <div id="sectionEyebrow" class="lesson-meta-eyebrow">SECTION 2 · C# FUNDAMENTALS</div>
+          <h2 id="lessonHeading" class="lesson-title">Variables and Data Types</h2>
+          <p id="lessonDescription" class="lesson-description">Declare values with confidence and choose the right type for your data.</p>
+        </div>
+        <div class="lesson-actions">
+          <button id="previousLesson" type="button" class="ed-btn">Previous Lesson</button>
+          <button id="markComplete" type="button" class="ed-btn ed-btn-primary complete-btn">Mark as Completed</button>
+          <button id="nextLesson" type="button" class="ed-btn">Next Lesson</button>
+        </div>
+        <div class="lesson-tabs" role="tablist" aria-label="Lesson details">
+          <button id="tabOverview" class="lesson-tab" type="button" role="tab" aria-controls="panelOverview" aria-selected="true" tabindex="0">Overview</button>
+          <button id="tabResources" class="lesson-tab" type="button" role="tab" aria-controls="panelResources" aria-selected="false" tabindex="-1">Resources</button>
+          <button id="tabNotes" class="lesson-tab" type="button" role="tab" aria-controls="panelNotes" aria-selected="false" tabindex="-1">Notes</button>
+        </div>
+        <section class="ed-surface tab-panel" id="panelOverview" role="tabpanel" aria-labelledby="tabOverview">
+          <h3 class="tab-title">About this lesson</h3>
+          <p class="tab-description" id="overviewText">Learn how C# stores information using variables and data types. Follow along as Ahmed declares values, names variables clearly and explains when to use int, string, double and bool.</p>
+          <h4 class="tab-subheading">What to practice</h4>
+          <p class="tab-description" id="practiceText">Declare three variables for a learner profile. Try changing their values, then print a short introduction to the console.</p>
+          <div class="instructor-byline"><span class="instructor-avatar">AM</span><div><strong>Ahmed Mohamed</strong><small>C# &amp; .NET Instructor | Web Developer</small></div></div>
+        </section>
+        <section class="ed-surface tab-panel" id="panelResources" role="tabpanel" aria-labelledby="tabResources" hidden>
+          <h3 class="tab-title">Lesson Resources</h3>
+          <p class="tab-description">Example materials for the current lesson. Downloads require a connected course-content service.</p>
+          <ul class="resources-list"><li><span><i class="fa-regular fa-file-code me-2 text-ed-muted" aria-hidden="true"></i>Code examples</span><button type="button" data-resource="Code examples">View</button></li><li><span><i class="fa-regular fa-file-lines me-2 text-ed-muted" aria-hidden="true"></i>Practice worksheet</span><button type="button" data-resource="Practice worksheet">View</button></li></ul>
+                  <a href="eduhub-course-learning-resources.html" class="ed-btn mt-3 w-100" aria-label="Open the complete Lesson Resources screen">Open Full Resources View</a>
+</section>
+        <section class="ed-surface tab-panel" id="panelNotes" role="tabpanel" aria-labelledby="tabNotes" hidden>
+          <h3 class="tab-title">My Notes</h3>
+          <a href="eduhub-course-learning-notes.html" class="ed-btn mt-1 mb-3 w-100">Open Full Notes Editor</a>
+          <p class="tab-description">Draft private notes for this lesson in this browser session. Notes are not synced to your account.</p>
+          <label for="lessonNotes" class="fw-semibold d-block mb-2">Notes for <span id="notesLessonName">Variables and Data Types</span></label>
+          <textarea id="lessonNotes" class="notes-input" maxlength="2000" placeholder="Write what you want to remember..."></textarea>
+          <div class="d-flex justify-content-between align-items-center mt-3 gap-3"><span id="notesCounter" class="text-ed-muted small">0 / 2000</span><button id="saveNotes" class="ed-btn ed-btn-primary" type="button">Save Notes</button></div>
+        </section>
+      </section>
+
+      <!-- ======== Course progress and curriculum ======== -->
+      <aside class="curriculum-rail" aria-label="Course progress and curriculum">
+        <section class="ed-surface progress-card">
+          <h2 class="rail-title">Your learning journey</h2>
+          <div class="progress-label" id="progressLabel">Course Progress: 35%</div>
+          <div class="progress-bar-bg" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-label="Course progress" id="courseProgressBar"><div class="progress-bar-current" id="courseProgressFill"></div></div>
+          <p class="progress-help" id="progressNote">Watch-time-based progress · saved viewing across lessons</p>
+          <p class="progress-explainer" id="progressDescription">Resume at your own pace. Earlier lessons are complete; the current lesson is in progress.</p>
+        </section>
+        <div class="rail-heading"><h2 class="rail-title mb-0">Course Content</h2></div>
+        <p class="rail-subtitle">3 sections · 9 lessons · 2h 12m 50s</p>
+        <div id="curriculumList" class="curriculum-list"></div>
+        <section class="ed-surface quiz-card">
+          <h3><i class="fa-solid fa-lock" aria-hidden="true" id="quizIcon"></i>Final Quiz</h3>
+          <p>10 questions · 70% to pass. Complete all lessons before taking the final quiz.</p>
+          <button id="finalQuiz" type="button" class="ed-btn" disabled>Take Final Quiz</button>
+          <a id="viewCompletedState" href="eduhub-course-learning-all-lessons-complete.html" class="ed-btn mt-2 text-center" hidden>View All Lessons Complete State</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  <!-- ======== Small-screen menu and notifications ======== -->
+  <dialog id="mobileMenu" class="mobile-menu" aria-label="Navigation menu">
+    <div class="d-flex align-items-center justify-content-between mb-4"><strong>EduHub Menu</strong><button id="closeMobileMenu" class="icon-control" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <nav aria-label="Mobile menu links"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html">My Learning</a><a href="eduhub-student-profile.html">My Profile</a></nav>
+  </dialog>
+  <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+  <script>
+    'use strict';
+    /* ==========================================================
+       Local-only demonstration — no video stream, API, purchase,
+       remote progress tracking, or lesson-download service.
+       ========================================================== */
+    const LESSONS = [{"name": "Welcome to the Course", "duration": "04:20", "section": "Introduction to C#", "sectionIndex": 0}, {"name": "What is C#?", "duration": "08:00", "section": "Introduction to C#", "sectionIndex": 0}, {"name": "Setting Up the Environment", "duration": "12:00", "section": "Introduction to C#", "sectionIndex": 0}, {"name": "Variables and Data Types", "duration": "18:30", "section": "C# Fundamentals", "sectionIndex": 1}, {"name": "Operators", "duration": "14:00", "section": "C# Fundamentals", "sectionIndex": 1}, {"name": "Conditional Statements", "duration": "20:00", "section": "C# Fundamentals", "sectionIndex": 1}, {"name": "Classes and Objects", "duration": "22:00", "section": "Object-Oriented Programming", "sectionIndex": 2}, {"name": "Inheritance", "duration": "16:00", "section": "Object-Oriented Programming", "sectionIndex": 2}, {"name": "Polymorphism", "duration": "18:00", "section": "Object-Oriented Programming", "sectionIndex": 2}];
+    const sections = [{"name": "Introduction to C#", "meta": "3 lessons · 24m 20s", "lessons": [["Welcome to the Course", "04:20"], ["What is C#?", "08:00"], ["Setting Up the Environment", "12:00"]]}, {"name": "C# Fundamentals", "meta": "3 lessons · 52m 30s", "lessons": [["Variables and Data Types", "18:30"], ["Operators", "14:00"], ["Conditional Statements", "20:00"]]}, {"name": "Object-Oriented Programming", "meta": "3 lessons · 56m 00s", "lessons": [["Classes and Objects", "22:00"], ["Inheritance", "16:00"], ["Polymorphism", "18:00"]]}];
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => [...document.querySelectorAll(selector)];
+    const state = {
+      activeLesson: 3,
+      completed: new Set([0, 1, 2]),
+      openSections: new Set([0, 1, 2]),
+      tab: 'Overview',
+      notes: {},
+      timeline: 555,
+      playing: false,
+      interval: null,
+      speed: 1,
+      muted: false
+    };
+    const currentLesson = () => LESSONS[state.activeLesson];
+    const seconds = (text) => { const [m,s] = text.split(':').map(Number); return m*60+s; };
+    const fmt = (n) => `${String(Math.floor(n/60)).padStart(2,'0')}:${String(Math.round(n%60)).padStart(2,'0')}`;
+    const escapeText = (str) => String(str).replace(/[&<>"']/g, ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    function announce(message) {
+      const el=$('#feedback'); el.textContent=message; el.hidden=false;
+    }
+    function dismissNotice() {$('#feedback').hidden=true;}
+    function buildCurriculum() {
+      const el=$('#curriculumList');
+      el.innerHTML=sections.map((section,i)=>{
+        const start=i*3;
+        const rows=section.lessons.map((_,j)=>{
+          const idx=start+j, lesson=LESSONS[idx];
+          const completed=state.completed.has(idx),active=idx===state.activeLesson;
+          const icon=completed?'fa-circle-check':active?'fa-circle-play':'fa-play';
+          const iconClass=completed||active?'':' is-pending';
+          return `<button type="button" data-lesson="${idx}" class="lesson-item" aria-current="${active?'true':'false'}" aria-label="Open lesson: ${escapeText(lesson.name)}"><i aria-hidden="true" class="fa-${completed||active?'regular':'solid'} ${icon} lesson-state-icon${iconClass}"></i><span class="lesson-item-name">${escapeText(lesson.name)}</span><span class="lesson-duration">${lesson.duration}</span></button>`;
+        }).join('');
+        return `<details class="curriculum-section" data-section="${i}" ${state.openSections.has(i)?'open':''}><summary><span><span class="section-label">${escapeText(section.name)}</span><span class="section-meta">${escapeText(section.meta)}</span></span><i class="fa-solid fa-chevron-down section-chevron" aria-hidden="true"></i></summary><div>${rows}</div></details>`;
+      }).join('');
+      $$('details[data-section]').forEach(details=>details.addEventListener('toggle',()=>{
+        const i=Number(details.dataset.section);
+        if(details.open)state.openSections.add(i);else state.openSections.delete(i);
+      }));
+      $$('[data-lesson]').forEach(btn=>btn.addEventListener('click',()=>openLesson(Number(btn.dataset.lesson))));
+    }
+    function updateProgress() {
+      const changed=state.completed.size!==3 || ![0,1,2].every(i=>state.completed.has(i));
+      const pct=changed?Math.round(state.completed.size/LESSONS.length*100):35;
+      $('#progressLabel').textContent=`Course Progress: ${pct}%`;
+      $('#courseProgressFill').style.width=`${pct}%`;
+      $('#courseProgressBar').setAttribute('aria-valuenow',pct);
+      $('#progressNote').textContent=changed?'Demo completion progress · changes are local to this page':'Watch-time-based progress · saved viewing across lessons';
+      $('#progressDescription').textContent=changed?'This is a frontend demonstration. Real watch time and completion require a connected learning service.':'Resume at your own pace. Earlier lessons are complete; the current lesson is in progress.';
+      const done=state.completed.size===LESSONS.length;
+      $('#finalQuiz').disabled=!done;
+      $('#viewCompletedState').hidden=!done;
+      $('#quizIcon').className=done?'fa-solid fa-unlock':'fa-solid fa-lock';
+    }
+    function updateTimeline() {
+      const lesson=currentLesson();
+      const duration=seconds(lesson.duration);
+      $('#videoSeek').max=String(duration);
+      state.timeline=Math.min(duration,Math.max(0,state.timeline));
+      $('#videoSeek').value=state.timeline;
+      $('#videoSeek').style.background=`linear-gradient(90deg, var(--ed-primary) ${100*state.timeline/duration}%, #334155 ${100*state.timeline/duration}%)`;
+      $('#timeLabel').textContent=`${fmt(state.timeline)} / ${lesson.duration}`;
+    }
+    function stopPreview() { state.playing=false;clearInterval(state.interval);state.interval=null;updatePlayIcons(); }
+    function updatePlayIcons() {
+      const icon=state.playing?'fa-pause':'fa-play';
+      $('#slidePlay').innerHTML=`<i class="fa-solid ${icon}" aria-hidden="true"></i>`;
+      $('#toolbarPlay').innerHTML=`<i class="fa-solid ${icon}" aria-hidden="true"></i>`;
+      $('#slidePlay').setAttribute('aria-label',state.playing?'Pause illustrative timeline':'Play illustrative timeline');
+      $('#toolbarPlay').setAttribute('aria-label',state.playing?'Pause illustrative timeline':'Play illustrative timeline');
+    }
+    function startPreview() {
+      state.playing=true;updatePlayIcons();$('#previewNotice').hidden=false;
+      announce('This is an illustrative timeline, not a real video playback.');
+      if(state.interval)clearInterval(state.interval);
+      state.interval=setInterval(()=>{
+        state.timeline+=state.speed;
+        if(state.timeline>=seconds(currentLesson().duration)){state.timeline=seconds(currentLesson().duration);stopPreview();}
+        updateTimeline();
+      },1000);
+    }
+    function togglePreview(){if(state.playing)stopPreview();else startPreview();}
+    function openLesson(index) {
+      if(index<0||index>=LESSONS.length)return;
+      stopPreview();state.activeLesson=index;state.timeline=index===3?555:0;
+      state.openSections.add(LESSONS[index].sectionIndex);
+      const lesson=currentLesson();
+      $('#sectionEyebrow').textContent=`SECTION ${lesson.sectionIndex+1} · ${lesson.section.toUpperCase()}`;
+      $('#slideEyebrow').textContent=lesson.section.toUpperCase();
+      $('#slideTitle').textContent=lesson.name==='Variables and Data Types'?'Variables & Data Types':lesson.name;
+      $('#slideCode').textContent=index===3?'int age = 25;\nstring name = "Warda";\nbool isLearning = true;':`// ${lesson.name}\n// Illustrative lesson slide\n// No video media connected`;
+      $('#lessonHeading').textContent=lesson.name;
+      const specific=index===3;
+      $('#lessonDescription').textContent=specific?'Declare values with confidence and choose the right type for your data.':`Explore ${lesson.name.toLowerCase()} with guided C# examples.`;
+      $('#overviewText').textContent=specific?'Learn how C# stores information using variables and data types. Follow along as Ahmed declares values, names variables clearly and explains when to use int, string, double and bool.':`This is a placeholder overview for ${lesson.name}. Real lesson text and video will load from the course-content API.`;
+      $('#practiceText').textContent=specific?'Declare three variables for a learner profile. Try changing their values, then print a short introduction to the console.':`Use the exercise resources supplied by your instructor for ${lesson.name}.`;
+      $('#notesLessonName').textContent=lesson.name;
+      $('#lessonNotes').value=state.notes[index]||'';
+      updateNotesCounter();
+      $('#previousLesson').disabled=index===0;
+      $('#nextLesson').disabled=index===LESSONS.length-1;
+      $('#markComplete').textContent=state.completed.has(index)?'Mark as Incomplete':'Mark as Completed';
+      updateTimeline();buildCurriculum();updateProgress();
+    }
+    function setTab(name) {
+      if(!['Overview','Resources','Notes'].includes(name))return;
+      state.tab=name;
+      for(const k of ['Overview','Resources','Notes']){
+        const selected=k===name;
+        $('#tab'+k).setAttribute('aria-selected',selected?'true':'false');
+        $('#tab'+k).tabIndex=selected?0:-1;
+        $('#panel'+k).hidden=!selected;
+      }
+    }
+    function updateNotesCounter() {$('#notesCounter').textContent=`${$('#lessonNotes').value.length} / 2000`;}
+    $('#previousLesson').addEventListener('click',()=>openLesson(state.activeLesson-1));
+    $('#nextLesson').addEventListener('click',()=>openLesson(state.activeLesson+1));
+    $('#markComplete').addEventListener('click',()=>{
+      const idx=state.activeLesson;
+      if(state.completed.has(idx)){state.completed.delete(idx);announce('Lesson marked incomplete in this local demo.');}
+      else {state.completed.add(idx);announce('Lesson marked completed in this local demo; no account progress was saved.');}
+      openLesson(idx);
+    });
+    for(const name of ['Overview','Resources','Notes']){$('#tab'+name).addEventListener('click',()=>setTab(name));}
+    $('.lesson-tabs').addEventListener('keydown',(ev)=>{
+      if(!['ArrowLeft','ArrowRight','Home','End'].includes(ev.key))return;
+      const tabs=['Overview','Resources','Notes'];let i=tabs.indexOf(state.tab);
+      i=ev.key==='Home'?0:ev.key==='End'?2:(i+(ev.key==='ArrowRight'?1:-1)+3)%3;
+      setTab(tabs[i]);$('#tab'+tabs[i]).focus();ev.preventDefault();
+    });
+    $('#lessonNotes').addEventListener('input',updateNotesCounter);
+    $('#saveNotes').addEventListener('click',()=>{
+      state.notes[state.activeLesson]=$('#lessonNotes').value;
+      announce('Notes saved in this page session only. They are not stored on your device or account.');
+    });
+    $$('[data-resource]').forEach(btn=>btn.addEventListener('click',()=>announce(`${btn.dataset.resource} is not available until course resources are connected.`)));
+    $('#slidePlay').addEventListener('click',togglePreview);
+    $('#toolbarPlay').addEventListener('click',togglePreview);
+    $('#videoSeek').addEventListener('input',()=>{state.timeline=Number($('#videoSeek').value);updateTimeline();$('#previewNotice').hidden=false;});
+    $('#speedButton').addEventListener('click',()=>{state.speed=state.speed===1?1.5:state.speed===1.5?2:1;$('#speedButton').textContent=`${state.speed}×`;});
+    $('#volumeButton').addEventListener('click',()=>{state.muted=!state.muted;$('#volumeButton i').className='fa-solid '+(state.muted?'fa-volume-xmark':'fa-volume-high');announce('Audio control is illustrative. No audio is connected.');});
+    $('#fullscreenButton').addEventListener('click',()=>{
+      const el=$('.demo-player');
+      if(document.fullscreenElement){document.exitFullscreen?.().catch(()=>{});return;}
+      if(el.requestFullscreen){el.requestFullscreen().catch(()=>announce('Fullscreen is unavailable in this browser.'));}
+      else announce('Fullscreen is unavailable in this browser.');
+    });
+    $('#finalQuiz').addEventListener('click',()=>announce('The Final Quiz page is not connected yet. This is a demo unlock state, not an assessment result.'));
+    $('#notificationsButton').addEventListener('click',()=>announce('Notifications can be connected to the EduHub Notifications screen.'));
+    $('#accountButton').addEventListener('click',()=>announce('Use the WM avatar to open your Student Profile.'));
+    $('#openMobileMenu').addEventListener('click',()=>$('#mobileMenu').showModal());
+    $('#closeMobileMenu').addEventListener('click',()=>$('#mobileMenu').close());
+    $('#mobileMenu').addEventListener('click',(ev)=>{if(ev.target===$('#mobileMenu'))$('#mobileMenu').close();});
+    $('#feedback').addEventListener('click',dismissNotice);
+    window.addEventListener('pagehide',stopPreview);
+    // First paint: exact Figma state — lesson 4, 3 completed, 35% progress.
+    // A local lesson query parameter allows links from the existing enrolled-course page.
+    const requestedLesson = new URLSearchParams(window.location.search).get('lesson');
+    const resolvedLesson = requestedLesson !== null && /^(?:[0-8])$/.test(requestedLesson) ? Number(requestedLesson) : 3;
+    openLesson(resolvedLesson);setTab('Overview');
+  </script>
+</body>
+</html>

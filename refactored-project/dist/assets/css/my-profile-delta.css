@@ -1,0 +1,19 @@
+/* ZIP #6 My Profile — additive page-specific CSS only */
+.edu-profile__shell{max-width:82rem;margin-inline:auto}
+.edu-profile__panel,.edu-profile__preview{border:1px solid var(--edu-border);border-radius:var(--edu-radius-lg);box-shadow:var(--edu-shadow-sm);background:var(--edu-surface)}
+.edu-profile__avatar{width:4.5rem;height:4.5rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--edu-primary-soft);color:var(--edu-primary);font-weight:700;font-size:1.4rem;overflow:hidden;flex-shrink:0}
+.edu-profile__avatar--preview{width:5.5rem;height:5.5rem;font-size:1.65rem}
+.edu-profile__avatar img{width:100%;height:100%;object-fit:cover}
+.edu-profile__skill{display:inline-flex;align-items:center;border-radius:100px;background:var(--edu-primary-soft);color:var(--edu-primary);font-size:.78rem;font-weight:600;padding:.35rem .75rem}
+.edu-profile__biography{color:var(--edu-text-strong);line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}
+.edu-profile__preview a{color:var(--edu-primary);text-underline-offset:3px}
+.edu-profile :is(button,a,input,textarea,.edu-profile__panel,.edu-profile__preview){transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.edu-profile :is(button,a):hover{filter:brightness(.96)}
+.edu-profile :is(.edu-profile__panel,.edu-profile__preview):hover{box-shadow:var(--edu-shadow-md)}
+.edu-profile :is(button,a,input,textarea):focus-visible{outline:3px solid var(--edu-primary);outline-offset:2px}
+.edu-profile :is(button,a):active{transform:translateY(1px)}
+.edu-profile :is(input,textarea):hover{border-color:var(--edu-primary)}
+.edu-profile :is(input,textarea):disabled{cursor:not-allowed;opacity:.6}
+.edu-profile__preview a:hover{text-decoration-thickness:2px}
+@media(max-width:575.98px){.edu-profile__shell{padding-bottom:1rem}.edu-profile__avatar{width:4rem;height:4rem}.edu-profile__avatar--preview{width:5rem;height:5rem}}
+@media(prefers-reduced-motion:reduce){.edu-profile :is(button,a,input,textarea,.edu-profile__panel,.edu-profile__preview){transition:none}}

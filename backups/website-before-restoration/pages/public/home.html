@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn practical skills in programming, web development, and databases with EduHub.">
+  <title>EduHub | Learn Today. Build Tomorrow.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" onerror="this.onerror=null;this.removeAttribute('integrity');this.href='../../assets/vendor/bootstrap/bootstrap.min.css'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="this.onerror=null;this.removeAttribute('integrity');this.href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"">
+  <link rel="stylesheet" href="../../assets/css/homepage.css">
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 bg-white p-2 z-3" href="#main-content">Skip to content</a>
+
+  <!-- Public navigation -->
+  <header class="container-fluid bg-white border-bottom line-border public-nav py-3">
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <a class="nav-brand fw-bold text-nowrap d-flex align-items-center gap-2" href="#top">
+        <i class="fa-solid fa-graduation-cap text-brand" aria-hidden="true"></i>
+        <span>Edu<span class="text-brand">Hub</span></span>
+      </a>
+      <nav class="desktop-nav d-none d-xl-flex align-items-center" aria-label="Main navigation">
+        <a class="text-brand fw-semibold" href="#top" aria-current="page">Home</a>
+        <a class="text-muted" href="#courses">Explore Courses</a>
+      </nav>
+      <div class="d-flex align-items-center gap-2 gap-md-3">
+        <a class="d-none d-md-inline text-brand fw-semibold action-label" href="../auth/sign-in.html">Log In</a>
+        <a class="nav-signup action d-inline-flex align-items-center justify-content-center bg-brand text-white rounded-3 fw-semibold" href="../auth/create-account.html">Sign Up</a>
+        <button class="btn border-0 p-2 d-md-none text-ink" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-navigation" aria-controls="mobile-navigation" aria-expanded="true" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <nav class="responsive-nav d-md-flex d-xl-none collapse show mt-3" id="mobile-navigation" aria-label="Main navigation">
+      <div class="d-flex justify-content-between w-100 fw-medium text-brand">
+        <a href="#top" aria-current="page">Home</a>
+        <a href="#courses">Explore Courses</a>
+        <a href="../auth/sign-in.html">Log In</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Learning promise -->
+    <section class="bg-wash d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 container-fluid learning-promise" id="hero" aria-label="Learning promise">
+      <div class="d-flex overflow-hidden position-relative flex-shrink-0 w-100 flex-column flex-xl-row align-items-start align-items-xl-center hero-composition">
+        <div class="d-flex flex-column gap-4 align-items-start overflow-hidden position-relative hero-copy">
+          <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+            <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+              YOUR NEXT CHAPTER STARTS HERE
+            </p>
+          </div>
+          <h1 class="fw-bold position-relative flex-shrink-0 text-ink hero-title hero-heading">
+            <span class="line-height-1-12">Learn today.</span>
+            <span class="text-brand line-height-1-12"> Build your tomorrow.</span>
+          </h1>
+          <p class="position-relative flex-shrink-0 text-muted hero-description">
+            Turn curiosity into practical skills. Discover clear, instructor-led courses in programming, web development and databases—at your own pace.
+          </p>
+          <div class="d-flex flex-wrap align-items-start overflow-hidden position-relative flex-shrink-0 w-100 hero-actions">
+            <a class="bg-brand border border-brand d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 action explore-courses" href="#courses">
+              <span class="fw-semibold position-relative flex-shrink-0 text-white text-nowrap action-label">
+                Explore Courses
+              </span>
+            </a>
+            <a class="bg-white border line-border d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 action join-eduhub" href="../auth/create-account.html">
+              <span class="fw-semibold position-relative flex-shrink-0 text-ink text-nowrap action-label">
+                Join EduHub
+              </span>
+            </a>
+          </div>
+          <div class="d-flex align-items-start overflow-hidden position-relative flex-shrink-0 w-100 hero-actions">
+            <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot check-circle">
+              <i class="fa-regular fa-circle-check fa-fw" aria-hidden="true"></i>
+            </div>
+            <p class="position-relative text-muted reassurance-copy">
+              Practical lessons · Flexible learning · Certificates of completion
+            </p>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-3 align-items-start overflow-hidden position-relative flex-shrink-0 learning-visual">
+          <div class="position-relative flex-shrink-0 w-100 overflow-hidden learning-workspace">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="../../assets/images/placeholders/560x360.svg" width="560" height="360">
+              <source media="(min-width: 768px)" srcset="../../assets/images/placeholders/770x360.svg" width="770" height="360">
+              <img class="d-block w-100 h-100 object-fit-cover position-absolute top-0 start-0" src="../../assets/images/placeholders/350x240.svg" data-placeholder-source="https://placehold.co/350x240/dbeafe/334155" width="350" height="240" alt="">
+            </picture>
+          </div>
+          <div class="bg-white d-flex gap-3 align-items-center overflow-hidden position-relative flex-shrink-0 w-100 learning-invitation">
+            <div class="bg-tint d-flex align-items-center justify-content-center overflow-hidden position-relative flex-shrink-0 education-motif">
+              <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot graduation-cap">
+                <i class="fa-solid fa-graduation-cap fa-fw" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="d-flex flex-column gap-1 align-items-start overflow-hidden position-relative invitation-copy">
+              <p class="fw-bold position-relative flex-shrink-0 text-ink w-100 feature-label">
+                Small steps. Lasting skills.
+              </p>
+              <p class="position-relative flex-shrink-0 text-muted w-100 small-copy">
+                Start with a subject that inspires you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 container-fluid course-discovery">
+      <!-- Search courses -->
+      <section class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 course-search" id="course-search" aria-label="Search courses">
+        <h2 class="fw-bold position-relative flex-shrink-0 text-ink w-100 search-heading">
+          What would you like to learn?
+        </h2>
+        <form class="search-courses d-flex flex-column flex-md-row align-items-stretch align-items-md-center w-100" role="search" id="search-form">
+          <div class="d-flex align-items-center overflow-hidden position-relative course-title-input">
+            <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot check-circle">
+              <i class="fa-solid fa-magnifying-glass fa-fw" aria-hidden="true"></i>
+            </div>
+            <label class="visually-hidden" for="course-query">Search by course title or subject</label>
+            <input class="form-control p-0 border-0 bg-transparent shadow-none search-input" id="course-query" name="q" type="search" placeholder="Search by course title or subject">
+          </div>
+          <button class="bg-brand border border-brand d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 flex-shrink-0 action search-courses-2 search-submit" type="submit">
+            <span class="fw-semibold position-relative flex-shrink-0 text-white text-nowrap action-label">
+              Search Courses
+            </span>
+          </button>
+        </form>
+      </section>
+      <!-- Browse categories -->
+      <section class="d-flex flex-column gap-4 align-items-start overflow-hidden position-relative flex-shrink-0 w-100" id="categories" aria-label="Browse categories">
+        <div class="d-flex flex-column gap-2 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+          <h2 class="fw-bold position-relative flex-shrink-0 text-ink w-100 category-heading">
+            Find your starting point
+          </h2>
+          <p class="position-relative flex-shrink-0 text-muted w-100 body-copy">
+            Explore subjects that connect your interests to practical skills.
+          </p>
+        </div>
+        <div class="position-relative flex-shrink-0 row align-self-stretch row-cols-1 row-cols-xl-3 tile-grid tile-grid-compact">
+          <div class="col">
+            <button class="bg-white border line-border d-flex gap-3 align-items-center overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 text-start category-button subject-category" type="button" data-category="Programming" aria-pressed="false">
+              <span class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot code-2">
+                <i class="fa-solid fa-code fa-fw" aria-hidden="true"></i>
+              </span>
+              <span class="d-flex flex-column gap-1 align-items-start overflow-hidden position-relative invitation-copy">
+                <span class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+                  Programming
+                </span>
+                <span class="position-relative flex-shrink-0 text-muted w-100 small-copy">
+                  Build your coding foundations
+                </span>
+              </span>
+              <span class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot arrow-right">
+                <i class="fa-solid fa-arrow-right fa-fw" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="col">
+            <button class="bg-white border line-border d-flex gap-3 align-items-center overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 text-start category-button subject-category" type="button" data-category="Web Development" aria-pressed="false">
+              <span class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot code-2">
+                <i class="fa-solid fa-desktop fa-fw" aria-hidden="true"></i>
+              </span>
+              <span class="d-flex flex-column gap-1 align-items-start overflow-hidden position-relative invitation-copy">
+                <span class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+                  Web Development
+                </span>
+                <span class="position-relative flex-shrink-0 text-muted w-100 small-copy">
+                  Bring your ideas to the web
+                </span>
+              </span>
+              <span class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot arrow-right">
+                <i class="fa-solid fa-arrow-right fa-fw" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="col">
+            <button class="bg-white border line-border d-flex gap-3 align-items-center overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 text-start category-button subject-category" type="button" data-category="Databases" aria-pressed="false">
+              <span class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot code-2">
+                <i class="fa-solid fa-database fa-fw" aria-hidden="true"></i>
+              </span>
+              <span class="d-flex flex-column gap-1 align-items-start overflow-hidden position-relative invitation-copy">
+                <span class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+                  Databases
+                </span>
+                <span class="position-relative flex-shrink-0 text-muted w-100 small-copy">
+                  Make sense of your data
+                </span>
+              </span>
+              <span class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot arrow-right">
+                <i class="fa-solid fa-arrow-right fa-fw" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Featured courses -->
+      <section class="d-flex flex-column gap-4 align-items-start position-relative flex-shrink-0 w-100" id="courses" aria-label="Featured courses" tabindex="-1">
+        <span id="featured-courses"></span>
+      <p id="course-results" class="visually-hidden" role="status"></p>
+      <p id="course-empty" class="text-muted d-none">No featured courses match your search. Try another title or subject.</p>
+        <div class="d-flex flex-column gap-2 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+          <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+            <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+              CURATED STARTING POINTS
+            </p>
+          </div>
+          <h2 class="fw-bold position-relative flex-shrink-0 text-ink section-heading">
+            Your next skill starts here
+          </h2>
+          <p class="position-relative flex-shrink-0 text-muted body-copy">
+            From your first line of code to a well-designed database. Find a course that fits your next step.
+          </p>
+          <a class="fw-semibold position-relative flex-shrink-0 text-brand course-meta" href="explore-courses.html">
+            Explore all courses →
+          </a>
+        </div>
+        <div class="position-relative flex-shrink-0 row align-self-stretch row-cols-1 row-cols-md-2 row-cols-xl-4 tile-grid" data-course-grid>
+          <div class="col" data-course-tile>
+            <article class="bg-white border line-border d-flex flex-column align-items-start overflow-hidden position-relative align-self-stretch course-shadow flex-shrink-0 w-100 h-100 subject-category">
+              <div class="position-relative flex-shrink-0 w-100 overflow-hidden course-thumbnail">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="../../assets/images/placeholders/306x184.svg" width="306" height="184">
+                  <source media="(min-width: 768px)" srcset="../../assets/images/placeholders/373x184.svg" width="373" height="184">
+                  <img class="d-block w-100 h-100 object-fit-cover position-absolute top-0 start-0" src="../../assets/images/placeholders/350x184.svg" data-placeholder-source="https://placehold.co/350x184/dbeafe/334155" width="350" height="184" alt="" loading="lazy">
+                </picture>
+              </div>
+              <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 course-information">
+                <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+                  <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+                    Programming
+                  </p>
+                </div>
+                <h3 class="fw-bold position-relative flex-shrink-0 text-ink course-title">
+                  Complete C# Programming
+                </h3>
+                <p class="position-relative flex-shrink-0 text-muted body-copy">
+                  Ahmed Mohamed
+                </p>
+                <p class="position-relative flex-shrink-0 text-muted caption-copy">
+                  Beginner to Intermediate
+                </p>
+                <div class="d-flex align-items-start justify-content-between overflow-hidden py-1 position-relative flex-shrink-0 w-100 text-nowrap course-price">
+                  <p class="fw-bold position-relative flex-shrink-0 text-ink font-size-22px">
+                    $49.00
+                  </p>
+                  <p class="position-relative flex-shrink-0 text-muted font-size-11px">
+                    One-time payment
+                  </p>
+                </div>
+                <a class="bg-white border line-border d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 flex-shrink-0 w-100 action view-course" href="course-details.html" aria-label="View Complete C# Programming">
+                  <span class="fw-semibold position-relative flex-shrink-0 text-ink text-nowrap action-label">
+                    View Course
+                  </span>
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="col" data-course-tile>
+            <article class="bg-white border line-border d-flex flex-column align-items-start overflow-hidden position-relative align-self-stretch course-shadow flex-shrink-0 w-100 h-100 subject-category">
+              <div class="position-relative flex-shrink-0 w-100 overflow-hidden course-thumbnail">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="../../assets/images/placeholders/306x184.svg" width="306" height="184">
+                  <source media="(min-width: 768px)" srcset="../../assets/images/placeholders/373x184.svg" width="373" height="184">
+                  <img class="d-block w-100 h-100 object-fit-cover position-absolute top-0 start-0" src="../../assets/images/placeholders/350x184.svg" data-placeholder-source="https://placehold.co/350x184/dbeafe/334155" width="350" height="184" alt="" loading="lazy">
+                </picture>
+              </div>
+              <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 course-information">
+                <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+                  <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+                    Web Development
+                  </p>
+                </div>
+                <h3 class="fw-bold position-relative flex-shrink-0 text-ink course-title">HTML &amp; CSS Fundamentals</h3>
+                <p class="position-relative flex-shrink-0 text-muted body-copy">
+                  Sara Ali
+                </p>
+                <p class="position-relative flex-shrink-0 text-muted caption-copy">
+                  Beginner
+                </p>
+                <div class="d-flex align-items-start justify-content-between overflow-hidden py-1 position-relative flex-shrink-0 w-100 text-nowrap course-price">
+                  <p class="fw-bold position-relative flex-shrink-0 text-ink font-size-22px">
+                    $29.00
+                  </p>
+                  <p class="position-relative flex-shrink-0 text-muted font-size-11px">
+                    One-time payment
+                  </p>
+                </div>
+                <a class="bg-white border line-border d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 flex-shrink-0 w-100 action view-course" href="course-details.html?course=html-css-fundamentals" aria-label="View HTML and CSS Fundamentals">
+                  <span class="fw-semibold position-relative flex-shrink-0 text-ink text-nowrap action-label">
+                    View Course
+                  </span>
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="col" data-course-tile>
+            <article class="bg-white border line-border d-flex flex-column align-items-start overflow-hidden position-relative align-self-stretch course-shadow flex-shrink-0 w-100 h-100 subject-category">
+              <div class="position-relative flex-shrink-0 w-100 overflow-hidden course-thumbnail">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="../../assets/images/placeholders/306x184.svg" width="306" height="184">
+                  <source media="(min-width: 768px)" srcset="../../assets/images/placeholders/373x184.svg" width="373" height="184">
+                  <img class="d-block w-100 h-100 object-fit-cover position-absolute top-0 start-0" src="../../assets/images/placeholders/350x184.svg" data-placeholder-source="https://placehold.co/350x184/dbeafe/334155" width="350" height="184" alt="" loading="lazy">
+                </picture>
+              </div>
+              <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 course-information">
+                <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+                  <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+                    Databases
+                  </p>
+                </div>
+                <h3 class="fw-bold position-relative flex-shrink-0 text-ink course-title">
+                  SQL Server Essentials
+                </h3>
+                <p class="position-relative flex-shrink-0 text-muted body-copy">
+                  Mohamed Hassan
+                </p>
+                <p class="position-relative flex-shrink-0 text-muted caption-copy">
+                  Intermediate
+                </p>
+                <div class="d-flex align-items-start justify-content-between overflow-hidden py-1 position-relative flex-shrink-0 w-100 text-nowrap course-price">
+                  <p class="fw-bold position-relative flex-shrink-0 text-ink font-size-22px">
+                    $39.00
+                  </p>
+                  <p class="position-relative flex-shrink-0 text-muted font-size-11px">
+                    One-time payment
+                  </p>
+                </div>
+                <a class="bg-white border line-border d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 flex-shrink-0 w-100 action view-course" href="course-details.html?course=sql-server-essentials" aria-label="View SQL Server Essentials">
+                  <span class="fw-semibold position-relative flex-shrink-0 text-ink text-nowrap action-label">
+                    View Course
+                  </span>
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="col" data-course-tile>
+            <article class="bg-white border line-border d-flex flex-column align-items-start overflow-hidden position-relative align-self-stretch course-shadow flex-shrink-0 w-100 h-100 subject-category">
+              <div class="position-relative flex-shrink-0 w-100 overflow-hidden course-thumbnail">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="../../assets/images/placeholders/306x184.svg" width="306" height="184">
+                  <source media="(min-width: 768px)" srcset="../../assets/images/placeholders/373x184.svg" width="373" height="184">
+                  <img class="d-block w-100 h-100 object-fit-cover position-absolute top-0 start-0" src="../../assets/images/placeholders/350x184.svg" data-placeholder-source="https://placehold.co/350x184/dbeafe/334155" width="350" height="184" alt="" loading="lazy">
+                </picture>
+              </div>
+              <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 course-information">
+                <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+                  <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+                    Databases
+                  </p>
+                </div>
+                <h3 class="fw-bold position-relative flex-shrink-0 text-ink course-title">
+                  Database Design Fundamentals
+                </h3>
+                <p class="position-relative flex-shrink-0 text-muted body-copy">
+                  Dina Mostafa
+                </p>
+                <p class="position-relative flex-shrink-0 text-muted caption-copy">
+                  Beginner
+                </p>
+                <div class="d-flex align-items-start justify-content-between overflow-hidden py-1 position-relative flex-shrink-0 w-100 text-nowrap course-price">
+                  <p class="fw-bold position-relative flex-shrink-0 text-ink font-size-22px">
+                    Free
+                  </p>
+                  <p class="position-relative flex-shrink-0 text-muted font-size-11px">
+                    No payment needed
+                  </p>
+                </div>
+                <a class="bg-white border line-border d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 flex-shrink-0 w-100 action view-course" href="../states/course-details-free.html" aria-label="View Database Design Fundamentals">
+                  <span class="fw-semibold position-relative flex-shrink-0 text-ink text-nowrap action-label">
+                    View Course
+                  </span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+      <!-- Learning benefits -->
+      <section class="bg-white d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 container-fluid why-eduhub" id="benefits" aria-label="Learning benefits">
+        <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 hero-actions">
+          <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+            <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+              DESIGNED AROUND YOUR LEARNING
+            </p>
+          </div>
+          <h2 class="fw-bold position-relative flex-shrink-0 text-ink section-heading">
+            A clearer path from knowing to doing
+          </h2>
+          <p class="position-relative flex-shrink-0 text-muted intro-copy">
+            Learn one concept at a time, put it into practice, and keep your next step in sight.
+          </p>
+        </div>
+        <div class="position-relative flex-shrink-0 row align-self-stretch row-cols-1 row-cols-md-3 tile-grid">
+          <div class="col">
+            <div class="bg-canvas d-flex flex-column gap-3 align-items-start overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 subject-category">
+              <div class="bg-wash d-flex align-items-center justify-content-center overflow-hidden position-relative flex-shrink-0 education-motif">
+                <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot graduation-cap">
+                  <i class="fa-solid fa-book-open fa-fw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="fw-bold position-relative flex-shrink-0 text-ink benefit-heading">
+                Practical, focused lessons
+              </h3>
+              <p class="position-relative flex-shrink-0 text-muted body-copy">
+                Follow structured course content and build understanding with guided examples.
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-canvas d-flex flex-column gap-3 align-items-start overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 subject-category">
+              <div class="bg-wash d-flex align-items-center justify-content-center overflow-hidden position-relative flex-shrink-0 education-motif">
+                <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot graduation-cap">
+                  <i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="fw-bold position-relative flex-shrink-0 text-ink benefit-heading">
+                Learn at your own pace
+              </h3>
+              <p class="position-relative flex-shrink-0 text-muted body-copy">
+                Make room for learning in your day. Return to your enrolled courses when you are ready.
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-canvas d-flex flex-column gap-3 align-items-start overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 subject-category">
+              <div class="bg-wash d-flex align-items-center justify-content-center overflow-hidden position-relative flex-shrink-0 education-motif">
+                <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot graduation-cap">
+                  <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="fw-bold position-relative flex-shrink-0 text-ink benefit-heading">
+                Progress you can see
+              </h3>
+              <p class="position-relative flex-shrink-0 text-muted body-copy">
+                Track completed lessons and celebrate finishing a course with a certificate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Learning journey -->
+      <section class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 container-fluid why-eduhub" id="journey" aria-label="Learning journey">
+        <div class="d-flex flex-column gap-2 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+          <h2 class="fw-bold position-relative flex-shrink-0 text-ink w-100 section-heading">
+            A simple way to move forward
+          </h2>
+          <p class="position-relative flex-shrink-0 text-muted w-100 body-copy">
+            Choose a direction. Take the first step. Keep learning.
+          </p>
+        </div>
+        <div class="position-relative flex-shrink-0 row align-self-stretch row-cols-1 row-cols-md-3 tile-grid">
+          <div class="col">
+            <article class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 h-100 hero-actions">
+              <p class="fw-bold position-relative flex-shrink-0 text-brand text-nowrap step-number">
+                01
+              </p>
+              <h3 class="fw-bold position-relative flex-shrink-0 text-ink step-heading">
+                Discover your course
+              </h3>
+              <p class="position-relative flex-shrink-0 text-muted body-copy">
+                Explore subjects, read the curriculum and meet your instructor before you choose.
+              </p>
+            </article>
+          </div>
+          <div class="col">
+            <article class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 h-100 hero-actions">
+              <p class="fw-bold position-relative flex-shrink-0 text-brand text-nowrap step-number">
+                02
+              </p>
+              <h3 class="fw-bold position-relative flex-shrink-0 text-ink step-heading">
+                Enroll with confidence
+              </h3>
+              <p class="position-relative flex-shrink-0 text-muted body-copy">
+                Choose a free course or review the course price before continuing to checkout.
+              </p>
+            </article>
+          </div>
+          <div class="col">
+            <article class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 h-100 hero-actions">
+              <p class="fw-bold position-relative flex-shrink-0 text-brand text-nowrap step-number">
+                03
+              </p>
+              <h3 class="fw-bold position-relative flex-shrink-0 text-ink step-heading">
+                Learn and build
+              </h3>
+              <p class="position-relative flex-shrink-0 text-muted body-copy">
+                Work through lessons, practice new ideas and follow your progress in My Learning.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="bg-white d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 container-fluid course-discovery">
+      <!-- About EduHub -->
+      <section class="d-flex gap-5 overflow-hidden position-relative flex-shrink-0 w-100 flex-column flex-xl-row align-items-start align-items-xl-center platform-introduction" id="about" aria-label="About EduHub">
+        <div class="position-relative flex-shrink-0 overflow-hidden practical-learning-environment">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="../../assets/images/placeholders/560x340.svg" width="560" height="340">
+            <source media="(min-width: 768px)" srcset="../../assets/images/placeholders/770x340.svg" width="770" height="340">
+            <img class="d-block w-100 h-100 object-fit-cover position-absolute top-0 start-0" src="../../assets/images/placeholders/350x240.svg" data-placeholder-source="https://placehold.co/350x240/dbeafe/334155" width="350" height="240" alt="" loading="lazy">
+          </picture>
+        </div>
+        <div class="d-flex flex-column align-items-start overflow-hidden position-relative platform-story">
+          <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+            <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+              MEET EDUHUB
+            </p>
+          </div>
+          <h2 class="fw-bold position-relative flex-shrink-0 text-ink section-heading">
+            A place to grow your understanding
+          </h2>
+          <p class="position-relative flex-shrink-0 text-muted intro-copy">
+            EduHub brings courses, learning progress and certificates into one focused place. Find a subject you care about and develop the foundations to keep going.
+          </p>
+          <p class="position-relative flex-shrink-0 text-muted body-copy">
+            Preview course details, follow a structured curriculum and come back to your learning without losing your place.
+          </p>
+          <a class="bg-brand border border-brand d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 flex-shrink-0 action find-your-course" href="#course-search">
+            <span class="fw-semibold position-relative flex-shrink-0 text-white text-nowrap action-label">
+              Find Your Course
+            </span>
+          </a>
+        </div>
+      </section>
+      <div class="d-flex flex-column gap-4 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+        <div class="d-flex flex-column gap-2 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+          <h2 class="fw-bold position-relative flex-shrink-0 text-ink w-100 subsection-heading">
+            Learn with a clear guide
+          </h2>
+          <p class="position-relative flex-shrink-0 text-muted w-100 body-copy">
+            Meet some of the instructors behind your next course.
+          </p>
+        </div>
+        <div class="position-relative flex-shrink-0 row align-self-stretch row-cols-1 row-cols-md-3 tile-grid">
+          <div class="col">
+            <div class="border line-border d-flex flex-column gap-3 align-items-start overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 subject-category">
+              <div class="bg-tint d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-pill flex-shrink-0 initials-avatar">
+                <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap text-link">
+                  AM
+                </p>
+              </div>
+              <div class="d-flex flex-column gap-1 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+                <p class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+                  Ahmed Mohamed
+                </p>
+                <p class="position-relative flex-shrink-0 text-muted w-100 small-copy">C# &amp; .NET</p>
+              </div>
+              <p class="position-relative flex-shrink-0 text-brand small-copy">
+                Complete C# Programming
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="border line-border d-flex flex-column gap-3 align-items-start overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 subject-category">
+              <div class="bg-tint d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-pill flex-shrink-0 initials-avatar">
+                <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap text-link">
+                  SA
+                </p>
+              </div>
+              <div class="d-flex flex-column gap-1 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+                <p class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+                  Sara Ali
+                </p>
+                <p class="position-relative flex-shrink-0 text-muted w-100 small-copy">
+                  Web Development
+                </p>
+              </div>
+              <p class="position-relative flex-shrink-0 text-brand small-copy">HTML &amp; CSS Fundamentals</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="border line-border d-flex flex-column gap-3 align-items-start overflow-hidden p-4 position-relative flex-shrink-0 w-100 h-100 subject-category">
+              <div class="bg-tint d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-pill flex-shrink-0 initials-avatar">
+                <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap text-link">
+                  MH
+                </p>
+              </div>
+              <div class="d-flex flex-column gap-1 align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+                <p class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+                  Mohamed Hassan
+                </p>
+                <p class="position-relative flex-shrink-0 text-muted w-100 small-copy">
+                  Databases
+                </p>
+              </div>
+              <p class="position-relative flex-shrink-0 text-brand small-copy">
+                SQL Server Essentials
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Progress and certification -->
+      <section class="bg-wash d-flex position-relative flex-shrink-0 w-100 flex-column flex-xl-row align-items-start align-items-xl-center progress-and-certification" id="progress-preview" aria-label="Progress and certification">
+        <div class="d-flex flex-column align-items-start overflow-hidden position-relative platform-story">
+          <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot award">
+            <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i>
+          </div>
+          <h2 class="fw-bold position-relative flex-shrink-0 text-ink subsection-heading">
+            See how far you’ve come
+          </h2>
+          <p class="position-relative flex-shrink-0 text-muted intro-copy">
+            Every lesson is a step forward. Keep track of your courses in My Learning and earn a certificate when you meet the course completion requirements.
+          </p>
+          <p class="position-relative flex-shrink-0 text-muted small-copy">
+            Certificates celebrate course completion, not professional accreditation.
+          </p>
+        </div>
+        <div class="bg-white d-flex flex-column align-items-start overflow-hidden p-4 position-relative flex-shrink-0 learning-progress-example">
+          <div class="bg-wash d-flex align-items-start overflow-hidden position-relative rounded-pill flex-shrink-0 status-badge">
+            <p class="fw-semibold position-relative flex-shrink-0 text-brand text-nowrap eyebrow-text">
+              A LOOK INSIDE MY LEARNING
+            </p>
+          </div>
+          <h3 class="fw-bold position-relative flex-shrink-0 text-ink step-heading">
+            Complete C# Programming
+          </h3>
+          <p class="position-relative flex-shrink-0 text-muted small-copy">
+            Ahmed Mohamed
+          </p>
+          <div class="d-flex align-items-start justify-content-between overflow-hidden position-relative flex-shrink-0 w-100 text-nowrap course-price">
+            <p class="position-relative flex-shrink-0 text-muted font-size-13px">
+              Course progress
+            </p>
+            <p class="fw-semibold position-relative flex-shrink-0 text-brand font-size-14px">
+              65%
+            </p>
+          </div>
+          <div class="bg-line d-flex align-items-start overflow-hidden position-relative rounded-3 flex-shrink-0 w-100 progress-track" role="progressbar" aria-label="Course progress" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+            <div class="position-absolute bg-brand start-0 rounded-3 top-0 progress-completed"></div>
+          </div>
+          <div class="bg-canvas d-flex align-items-start overflow-hidden p-3 position-relative rounded-3 flex-shrink-0 w-100 hero-actions">
+            <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot check-circle">
+              <i class="fa-regular fa-circle-play fa-fw" aria-hidden="true"></i>
+            </div>
+            <p class="position-relative text-muted reassurance-copy">
+              Next up: Classes and Objects
+            </p>
+          </div>
+          <p class="position-relative flex-shrink-0 text-muted text-center caption-copy">
+            Illustrative learning preview
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100">
+      <!-- Frequently asked questions -->
+      <section class="d-flex flex-column gap-4 align-items-start overflow-hidden position-relative flex-shrink-0 w-100 container-fluid before-you-begin" id="faq" aria-label="Frequently asked questions">
+        <h2 class="fw-bold position-relative flex-shrink-0 text-ink w-100 subsection-heading">
+          A few things to know
+        </h2>
+        <div class="line-border border-bottom d-flex flex-column gap-2 align-items-start overflow-hidden position-relative flex-shrink-0 w-100 learning-question">
+          <h3 class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+            Can I start with a free course?
+          </h3>
+          <p class="position-relative flex-shrink-0 text-muted w-100 body-copy">
+            Yes. Look for courses marked Free, including Database Design Fundamentals. Review the course details, then sign up to enroll.
+          </p>
+        </div>
+        <div class="line-border border-bottom d-flex flex-column gap-2 align-items-start overflow-hidden position-relative flex-shrink-0 w-100 learning-question">
+          <h3 class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+            Can I learn on my own schedule?
+          </h3>
+          <p class="position-relative flex-shrink-0 text-muted w-100 body-copy">
+            Yes. Your enrolled courses live in My Learning, where you can return to lessons and follow your progress.
+          </p>
+        </div>
+        <div class="line-border border-bottom d-flex flex-column gap-2 align-items-start overflow-hidden position-relative flex-shrink-0 w-100 learning-question">
+          <h3 class="fw-bold position-relative flex-shrink-0 text-ink w-100 item-heading">
+            How do certificates work?
+          </h3>
+          <p class="position-relative flex-shrink-0 text-muted w-100 body-copy">
+            Complete the lessons and any required assessment for your course. Your available certificates appear in My Certificates.
+          </p>
+        </div>
+      </section>
+      <!-- Get started -->
+      <section class="bg-brand d-flex flex-column gap-4 align-items-center overflow-hidden position-relative flex-shrink-0 w-100 container-fluid before-you-begin" id="get-started" aria-label="Get started">
+        <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot text-white award">
+          <i class="fa-solid fa-graduation-cap fa-fw" aria-hidden="true"></i>
+        </div>
+        <h2 class="fw-bold position-relative flex-shrink-0 text-center text-white cta-heading">
+          Make today your first step.
+        </h2>
+        <p class="position-relative flex-shrink-0 text-center text-white intro-copy">
+          Choose a course, make time for yourself, and build something new.
+        </p>
+        <a class="bg-white border line-border d-flex align-items-center justify-content-center overflow-hidden position-relative rounded-3 flex-shrink-0 action sign-up-for-eduhub" href="../auth/create-account.html">
+          <span class="fw-semibold position-relative flex-shrink-0 text-ink text-nowrap action-label">
+            Sign Up for EduHub
+          </span>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 w-100 container-fluid public-footer">
+    <div class="d-flex align-items-start overflow-hidden position-relative flex-shrink-0 w-100 flex-column flex-md-row footer-navigation">
+      <div class="d-flex flex-column gap-3 align-items-start overflow-hidden position-relative brand-promise">
+        <div class="d-flex gap-2 align-items-center overflow-hidden position-relative flex-shrink-0">
+          <div class="position-relative flex-shrink-0 d-inline-flex align-items-center justify-content-center icon-slot award">
+            <i class="fa-solid fa-graduation-cap fa-fw" aria-hidden="true"></i>
+          </div>
+          <p class="fw-bold position-relative flex-shrink-0 text-ink text-nowrap brand-wordmark">
+            <span class="course-price">Edu</span>
+            <span class="text-brand course-price">Hub</span>
+          </p>
+        </div>
+        <p class="position-relative flex-shrink-0 text-muted small-copy">
+          Learn Today. Build Tomorrow.
+        </p>
+      </div>
+      <nav class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 discover-links" aria-label="Discover">
+        <p class="fw-semibold position-relative flex-shrink-0 text-ink w-100 font-size-14px">
+          Discover
+        </p>
+        <a class="position-relative flex-shrink-0 text-muted w-100 font-size-13px" href="#top">
+          Homepage
+        </a>
+        <a class="position-relative flex-shrink-0 text-muted w-100 font-size-13px" href="#courses">
+          Explore Courses
+        </a>
+        <a class="position-relative flex-shrink-0 text-muted w-100 font-size-13px" href="#categories">
+          Browse Categories
+        </a>
+      </nav>
+      <nav class="d-flex flex-column align-items-start overflow-hidden position-relative flex-shrink-0 discover-links" aria-label="Your account">
+        <p class="fw-semibold position-relative flex-shrink-0 text-ink w-100 font-size-14px">
+          Your account
+        </p>
+        <a class="position-relative flex-shrink-0 text-muted w-100 font-size-13px" href="../auth/sign-in.html">
+          Log In
+        </a>
+        <a class="position-relative flex-shrink-0 text-muted w-100 font-size-13px" href="../auth/create-account.html">
+          Sign Up
+        </a>
+        <a class="position-relative flex-shrink-0 text-muted w-100 font-size-13px" href="../auth/forgot-password.html">
+          Forgot Password?
+        </a>
+      </nav>
+    </div>
+    <div class="line-border border-top d-flex flex-wrap gap-4 align-items-start overflow-hidden pt-4 position-relative flex-shrink-0 text-muted w-100 text-nowrap eyebrow-text">
+      <p class="position-relative flex-shrink-0">
+        © 2026 EduHub
+      </p>
+      <span class="position-relative flex-shrink-0">
+        Privacy Policy
+      </span>
+      <span class="position-relative flex-shrink-0">
+        Terms of Service
+      </span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>if (!window.bootstrap) document.write('<script src="../../assets/vendor/bootstrap/bootstrap.bundle.min.js"><\/script>');</script>
+  <script src="../../assets/js/homepage.js"></script>
+
+<script src="../../assets/js/route-data.js"></script>
+</body>
+</html>

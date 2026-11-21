@@ -1,0 +1,2 @@
+# Source fidelity
+Merged `edu-hub-settings-desktop.html`, `edu-hub-settings-tablet.html`, and `edu-hub-settings-mobile.html` from `/mnt/data/#6.zip`. Original account name `Ahmed Mohamed`, example email `ahmed.mohamed@eduhub.example`, two enabled email notifications, optional platform notification off, and destructive-action descriptions are preserved. Password, logout and deletion dialogs are functional UI enhancements, not standalone screens in the source. No backend persistence is claimed.

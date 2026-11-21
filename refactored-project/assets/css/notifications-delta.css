@@ -1,0 +1,28 @@
+/* ZIP #13 — Notifications: additive screen-scoped classes only */
+.edu-notifications__panel{background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 2px 12px rgba(15,23,42,.02);overflow:hidden}
+.edu-notifications__controls{border-bottom:1px solid #e2e8f0}
+.edu-notifications__item{padding:1.35rem 1.5rem;border-bottom:1px solid #e2e8f0;transition:background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.edu-notifications__item:last-child{border-bottom:0}
+.edu-notifications__item:hover,.edu-notifications__item:focus-within{background:#eff6ff;box-shadow:inset 3px 0 0 #2563eb}
+.edu-notifications__item:active{background:#dbeafe}
+.edu-notifications__item.is-unread{background:#f8fafc}
+.edu-notifications__item.is-unread:hover,.edu-notifications__item.is-unread:focus-within{background:#eff6ff}
+.edu-notifications__symbol{width:48px;height:48px;border-radius:12px;background:#eff6ff;display:grid;place-items:center}
+.edu-notifications__symbol img{object-fit:contain;max-width:40px;max-height:40px}
+.edu-notifications__meta{font-size:.8rem;color:#64748b}
+.edu-notifications__dot{width:8px;height:8px;border-radius:50%;background:#2563eb;display:inline-block}
+.edu-notifications__item.is-read .edu-notifications__dot{background:#cbd5e1}
+.edu-notifications__title{color:#0f172a}
+.edu-notifications__description{color:#64748b;line-height:1.65}
+.edu-notifications__destination{color:#2563eb;text-decoration:none;font-weight:600;transition:color .2s ease,text-decoration-color .2s ease}
+.edu-notifications__destination:hover{color:#1d4ed8;text-decoration:underline}
+.edu-notifications__destination:active{color:#1e40af}
+.edu-notifications__destination:focus-visible,.edu-notifications__mark:focus-visible,.edu-notifications__mark-all:focus-visible,.edu-notifications__tabs .btn:focus-visible{outline:3px solid #2563eb;outline-offset:3px;box-shadow:none}
+.edu-notifications__mark,.edu-notifications__mark-all,.edu-notifications__tabs .btn{transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
+.edu-notifications__mark:hover,.edu-notifications__tabs .btn:hover{transform:translateY(-1px)}
+.edu-notifications__mark:active,.edu-notifications__tabs .btn:active{transform:translateY(1px)}
+.edu-notifications__mark-all:hover{text-decoration:underline}
+.edu-notifications__mark-all:active{opacity:.75}
+.edu-notifications__item[hidden],.edu-notifications__empty[hidden],.edu-notifications__mark[hidden]{display:none!important}
+@media(max-width:575.98px){.edu-notifications__item{padding:1rem}.edu-notifications__symbol{width:40px;height:40px}.edu-notifications__symbol img{max-width:34px;max-height:34px}}
+@media(prefers-reduced-motion:reduce){.edu-notifications__item,.edu-notifications__destination,.edu-notifications__mark,.edu-notifications__mark-all,.edu-notifications__tabs .btn{transition:none!important}}

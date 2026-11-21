@@ -1,0 +1,2 @@
+/* ZIP #10 Admin Dashboard: backend-neutral logout request. */
+(()=>{const button=document.getElementById('eduAdminLogoutConfirm');if(!button)return;button.addEventListener('click',()=>{const status=document.getElementById('eduAdminStatus');if(status)status.textContent='Logout requested. Connect your authentication service to complete sign-out.';document.dispatchEvent(new CustomEvent('eduhub:admin-logout-requested',{bubbles:true}));});})();

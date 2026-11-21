@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="EduHub — Workspace">
+  <title>EduHub — Workspace Layout Reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link href="{{BASE}}assets/css/main.css" rel="stylesheet">
+</head>
+<!-- Change data-eduhub-role to student for the student workspace shell. -->
+<body data-eduhub-layout="workspace" data-eduhub-role="instructor">
+  <div class="edu-workspace d-lg-flex">
+    <!-- INCLUDE: partials/sidebar.html -->
+    <div class="edu-workspace__main d-flex flex-column">
+      <!-- INCLUDE: partials/workspace-topbar.html -->
+      <main id="main-content" class="container-fluid px-3 px-md-4 py-4 flex-grow-1">
+        <!-- SCREEN CONTENT: Replace only this section when a screen is approved. -->
+        <h1 class="h3">EduHub workspace layout reference</h1>
+        <p class="text-muted">Shared components are ready. Screen content is not converted yet.</p>
+      </main>
+      <!-- INCLUDE: partials/footer.html -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{BASE}}assets/js/main.js"></script>
+</body>
+</html>

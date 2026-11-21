@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub interactive curriculum expanded and collapsed states, showing nine lessons of Complete C# Programming.">
+  <title>Curriculum Expanded and Collapsed States | EduHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <style>
+
+  /* 01 — Shared EduHub theme and responsive student navigation */
+
+/* 01: Core theme and Bootstrap-compatible tokens */
+:root{--ed-primary:#2563eb;--ed-primary-hover:#1d4ed8;--ed-text:#0f172a;--ed-muted:#64748b;--ed-border:#e2e8f0;--ed-surface:#f8fafc;--ed-blue-soft:#eff6ff;--ed-avatar:#dbeafe;--ed-success:#15803d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:0;background:var(--ed-surface);color:var(--ed-text);font:400 14px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--ed-primary);text-decoration:none}a:hover{color:var(--ed-primary-hover)}
+button,input{font:inherit}
+:is(a,button,input):focus-visible{outline:3px solid #2563eb80;outline-offset:3px}
+[hidden]{display:none!important}
+/* 02: Shared student header — identical to previous quiz-result screen */
+
+    .site-header {background:#fff;border-bottom:1px solid var(--ed-border)}
+    .header-inner {max-width:1440px;margin:auto;padding:15.5px 48px}
+    .header-top {display:flex;align-items:center;justify-content:space-between;min-height:44px;gap:12px}
+    .header-brand-group {display:flex;align-items:center;gap:32px;min-width:0}
+    .brand {display:inline-flex;gap:8px;align-items:center;white-space:nowrap;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;color:var(--ed-text)}
+    .brand:hover {color:var(--ed-text)}
+    .brand .brand-svg {width:32px;height:32px}
+    .brand .brand-blue {color:var(--ed-primary)}
+    .desktop-nav {display:flex;gap:24px;align-items:center;white-space:nowrap}
+    .desktop-nav a,.responsive-nav a {font-size:14px;color:var(--ed-muted)}
+    .desktop-nav a:hover,.responsive-nav a:hover {color:var(--ed-primary)}
+    .desktop-nav a[aria-current=page],.responsive-nav a[aria-current=page] {color:var(--ed-primary);font-weight:600}
+    .header-controls {display:flex;gap:16px;align-items:center;flex:none}
+    .search-form {position:relative;width:230px}
+    .search-form i {position:absolute;top:15px;left:12px;color:var(--ed-muted);font-size:16px;pointer-events:none}
+    .search-form input {width:100%;height:44px;background:var(--ed-surface);border:1px solid var(--ed-border);border-radius:8px;padding:0 12px 0 38px;color:var(--ed-text);font-size:13px;outline:0}
+    .search-form input:focus {border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb25}
+    .icon-button {position:relative;width:40px;height:44px;border:0;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--ed-muted);font-size:18px;flex:none}
+    .icon-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .notification-dot {position:absolute;top:7px;right:8px;width:6px;height:6px;background:var(--ed-primary);border-radius:50%}
+    .avatar {display:inline-flex;justify-content:center;align-items:center;width:40px;height:40px;border-radius:50%;flex:none;background:var(--ed-avatar);color:var(--ed-primary);font-weight:600;font-size:13px}
+    .student-label {line-height:1.35;white-space:nowrap}
+    .student-label strong {font-size:13px;font-weight:600;display:block}
+    .student-label small {font-size:11px;color:var(--ed-muted);display:block}
+    .account-button {border:0;border-radius:8px;background:transparent;color:var(--ed-muted);padding:8px;line-height:1}
+    .account-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .responsive-header {display:none}
+    .responsive-header .search-form {width:100%}
+    .responsive-nav {display:flex;justify-content:space-between;align-items:center;height:44px;gap:8px}
+    .responsive-nav a {font-size:13px;height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+    .responsive-nav a[aria-current=page] {border-bottom:2px solid var(--ed-primary)}
+    #menuToggle {display:none}
+    .account-area {position:relative}
+    .account-popover {z-index:10;position:absolute;top:100%;right:0;min-width:190px;background:white;border:1px solid var(--ed-border);border-radius:10px;box-shadow:0 12px 30px #0f172a1c;padding:6px}
+    .account-popover a {display:block;padding:8px 12px;border-radius:7px;color:var(--ed-text);font-size:13px}
+    .account-popover a:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    
+.icon-svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.brand-svg{display:block;width:32px;height:32px;fill:var(--ed-primary);flex:none}
+.search-icon{position:absolute;top:12px;left:12px;color:var(--ed-muted)}
+
+  /* Accessible skip link works even if Bootstrap CDN is unavailable. */
+  .visually-hidden-focusable:not(:focus){position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .visually-hidden-focusable:focus{position:fixed;top:8px;left:8px;z-index:1000;padding:8px 14px;background:white;border-radius:8px}
+  .responsive-header .search-form{margin-top:16px}
+  
+
+  /* 03 — Curriculum states: 1000 × 1695 Figma board (22:40931) */
+  .page-main{max-width:1440px;min-height:1436px;padding:32px;margin:0 auto}
+  .page-title{margin:0 0 32px;font-size:32px;line-height:42px;font-weight:700;letter-spacing:-.45px}
+  .summary-text,.state-explanation{margin:0 0 32px;font-size:14px;line-height:22px;color:var(--ed-muted)}
+  .section-heading{font-size:24px;line-height:31px;font-weight:700;letter-spacing:-.25px;margin:0 0 32px}
+  .state-block + .state-block{margin-top:32px}
+  .course-curriculum{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  .curriculum-section{background:white;border:1px solid var(--ed-border);border-radius:8px;overflow:hidden;min-width:0}
+  .section-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;min-height:75px;padding:15px 16px;color:var(--ed-text);user-select:none;list-style:none;transition:background-color .15s,border-color .15s}
+  .section-toggle::-webkit-details-marker{display:none}
+  .section-toggle::marker{content:""}
+  .section-toggle:hover{background:var(--ed-blue-soft)}
+  .section-toggle:active{background:#dbeafe}
+  .section-toggle:focus-visible{outline:3px solid #2563eb80;outline-offset:-3px;border-radius:6px}
+  .section-identity{display:flex;flex-direction:column;gap:4px;min-width:0;align-items:flex-start}
+  .section-title{font-size:14px;line-height:22px;font-weight:600;overflow-wrap:anywhere}
+  .section-meta{color:var(--ed-muted);font-size:12px;line-height:19px}
+  .chevron{color:var(--ed-muted);flex-shrink:0;transition:transform .18s}
+  .curriculum-section[open] .chevron{transform:rotate(180deg)}
+  .lesson-row{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 16px;border-top:1px solid var(--ed-border);color:var(--ed-text);text-decoration:none;transition:background .15s,color .15s}
+  .lesson-row:hover{background:var(--ed-blue-soft);color:var(--ed-primary)}
+  .lesson-row:active{background:#dbeafe}
+  .lesson-row:focus-visible{outline:3px solid #2563eb80;outline-offset:-3px;position:relative;z-index:1}
+  .lesson-play{color:var(--ed-muted);flex:none}
+  .lesson-row:hover .lesson-play{color:var(--ed-primary)}
+  .lesson-name{font-size:13px;line-height:20px;min-width:0;flex:1;overflow-wrap:anywhere}
+  .lesson-time{margin-left:auto;flex:none;white-space:nowrap;color:var(--ed-muted);font-size:12px;line-height:15px;font-variant-numeric:tabular-nums}
+  .page-footer{min-height:63px;border-top:1px solid var(--ed-border);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ed-muted);font-size:12px;line-height:15px}
+  /* 04 — Shared navigation enhancements, keyboard and focus handling */
+  .ed-dialog{border:1px solid var(--ed-border);border-radius:14px;width:min(480px,calc(100% - 24px));max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);background:#fff;padding:24px;color:var(--ed-text);box-shadow:0 22px 70px #0f172a40;overflow:auto}
+  .ed-dialog::backdrop{background:#0f172a95}
+  .ed-dialog h2{font-size:23px;font-weight:700;margin:0}
+  .dialog-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+  .dialog-close{border:0;border-radius:8px;min-height:36px;min-width:36px;color:var(--ed-muted);background:transparent}
+  .dialog-close:hover{background:var(--ed-blue-soft);color:var(--ed-primary)}
+  .visually-hidden-focusable:not(:focus){position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .visually-hidden-focusable:focus{position:fixed;top:8px;left:8px;z-index:1000;padding:8px 14px;background:white;border-radius:8px}
+  /* Figma original board uses the tablet-style header at 1000px. */
+  @media(max-width:1199.98px){
+    .header-inner{padding:16px 24px 15px}
+    #menuToggle{display:inline-flex;width:20px;height:34px;padding:0;flex:none}
+    .desktop-nav,.desktop-search{display:none}
+    .responsive-header{display:block;margin-top:16px}
+    .responsive-header .search-form{width:100%;margin-top:16px}
+    .header-controls{gap:16px}
+    .account-button{padding:0;width:14px;height:44px}
+    .page-main{min-height:1436px;padding:32px}
+  }
+  @media(min-width:1200px){
+    .page-main{min-height:calc(100vh - 139px);padding:48px 64px}
+  }
+  @media(max-width:575.98px){
+    .header-inner{padding:16px 16px 15px}
+    .header-brand-group{gap:8px}
+    .header-controls{gap:8px}
+    .student-label{display:none}
+    .page-main{min-height:0;padding:24px 16px 36px}
+    .page-title{font-size:30px;line-height:39px;margin-bottom:24px}
+    .summary-text,.state-explanation{margin-bottom:24px}
+    .section-heading{font-size:23px;line-height:31px;margin-bottom:20px}
+    .state-block+.state-block{margin-top:32px}
+    .section-toggle{padding:13px 14px;min-height:75px}
+    .lesson-row{padding:9px 12px;gap:10px;min-height:52px}
+    .lesson-time{font-size:11px}
+    .page-footer{padding:16px}
+  }
+  @media(max-width:359.98px){
+    .brand{font-size:23px}.brand .brand-svg{width:28px;height:28px}
+    .avatar{width:36px;height:36px}.account-button{padding:0}
+    .section-title{font-size:13px}
+    .lesson-name{font-size:12px}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+  </style>
+</head>
+<body>
+  <a class="visually-hidden-focusable" href="#mainContent">Skip to curriculum states</a>
+  <!-- INCLUDE: partials/student-navbar.html -->
+  <!-- Standalone fallback for direct opening; replace with shared partial when integrating. -->
+  <header class="site-header">
+<div class="header-inner">
+<div class="header-top">
+<div class="header-brand-group">
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="icon-button" id="menuToggle" type="button"><svg aria-hidden="true" class="icon-svg" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+<a aria-label="EduHub home" class="brand" href="eduhub-homepage.html"><svg aria-hidden="true" class="brand-svg" viewBox="0 0 32 32"><path d="M16 2 0.8 10.4 16 18.8l15.2-8.4L16 2Z"></path><path d="M7 17.6v7.2c4.7 4.8 13.4 4.8 18 0v-7.2L16 22.8 7 17.6Z"></path><path d="M29.5 12.5v11.8" stroke="#2563eb" stroke-linecap="round" stroke-width="2"></path></svg><span>Edu<span class="brand-blue">Hub</span></span></a>
+<nav aria-label="Main navigation" class="desktop-nav"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a aria-current="page" href="eduhub-student-dashboard.html">My Learning</a></nav>
+</div>
+<div class="header-controls">
+<form class="search-form desktop-search" id="desktopSearch" role="search"><svg aria-hidden="true" class="icon-svg search-icon" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input aria-label="Search courses" name="search" placeholder="Search courses..." type="search"/></form>
+<button aria-label="View notifications" class="icon-button" id="notificationButton" type="button"><svg aria-hidden="true" class="icon-svg" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9Z"></path><path d="M10 21h4"></path></svg><span class="notification-dot"></span></button>
+<span aria-label="Student initials WM" class="avatar">WM</span>
+<span class="student-label"><strong>Warda Mahmoud</strong><small>Student</small></span>
+<div class="account-area">
+<button aria-controls="accountMenu" aria-expanded="false" aria-haspopup="true" aria-label="Account menu" class="account-button" id="accountToggle" type="button"><svg aria-hidden="true" class="icon-svg" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+<nav aria-label="Account options" class="account-popover" hidden="" id="accountMenu"><a href="eduhub-student-dashboard.html">Dashboard</a><a href="eduhub-student-profile.html">My Profile</a><a href="eduhub-explore-courses.html">Explore Courses</a></nav>
+</div>
+</div>
+</div>
+<div class="responsive-header">
+<nav aria-label="Compact navigation" class="responsive-nav"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a aria-current="page" href="eduhub-student-dashboard.html">My Learning</a></nav>
+<form class="search-form w-100 mt-3" id="mobileSearch" role="search"><svg aria-hidden="true" class="icon-svg search-icon" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input aria-label="Search for courses" name="search" placeholder="Search for courses..." type="search"/></form>
+</div>
+</div>
+</header>
+  <main class="page-main" id="mainContent">
+    <h1 class="page-title">Curriculum states</h1>
+    <p class="summary-text">Complete C# Programming · 3 sections · 9 lessons · 2h 12m 50s</p>
+    <section class="state-block" aria-labelledby="collapsedTitle">
+      <h2 class="section-heading" id="collapsedTitle">Collapsed curriculum</h2>
+      <p class="state-explanation">Section summaries remain visible when lesson lists are closed.</p>
+      <div class="course-curriculum" id="collapsedCurriculum" aria-label="Collapsed curriculum example">
+<details class="curriculum-section" id="collapsed-section-1">
+      <summary class="section-toggle" aria-label="Introduction to C#: 3 lessons, 24m 20s; toggle lesson list">
+        <span class="section-identity">
+          <span class="section-title">Introduction to C#</span>
+          <span class="section-meta">3 lessons · 24m 20s</span>
+        </span>
+        <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="lesson-list" role="list" aria-label="Lessons in Introduction to C#">
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=welcome" aria-label="Open Welcome to the Course lesson, duration 04:20">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Welcome to the Course</span>
+          <span class="lesson-time">04:20</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=what-is-csharp" aria-label="Open What is C#? lesson, duration 08:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">What is C#?</span>
+          <span class="lesson-time">08:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=setup" aria-label="Open Setting Up the Environment lesson, duration 12:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Setting Up the Environment</span>
+          <span class="lesson-time">12:00</span>
+        </a>
+      </div>
+    </details>
+<details class="curriculum-section" id="collapsed-section-2">
+      <summary class="section-toggle" aria-label="C# Fundamentals: 3 lessons, 52m 30s; toggle lesson list">
+        <span class="section-identity">
+          <span class="section-title">C# Fundamentals</span>
+          <span class="section-meta">3 lessons · 52m 30s</span>
+        </span>
+        <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="lesson-list" role="list" aria-label="Lessons in C# Fundamentals">
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=variables" aria-label="Open Variables and Data Types lesson, duration 18:30">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Variables and Data Types</span>
+          <span class="lesson-time">18:30</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=operators" aria-label="Open Operators lesson, duration 14:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Operators</span>
+          <span class="lesson-time">14:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=conditionals" aria-label="Open Conditional Statements lesson, duration 20:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Conditional Statements</span>
+          <span class="lesson-time">20:00</span>
+        </a>
+      </div>
+    </details>
+<details class="curriculum-section" id="collapsed-section-3">
+      <summary class="section-toggle" aria-label="Object-Oriented Programming: 3 lessons, 56m 00s; toggle lesson list">
+        <span class="section-identity">
+          <span class="section-title">Object-Oriented Programming</span>
+          <span class="section-meta">3 lessons · 56m 00s</span>
+        </span>
+        <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="lesson-list" role="list" aria-label="Lessons in Object-Oriented Programming">
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=classes" aria-label="Open Classes and Objects lesson, duration 22:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Classes and Objects</span>
+          <span class="lesson-time">22:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=inheritance" aria-label="Open Inheritance lesson, duration 16:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Inheritance</span>
+          <span class="lesson-time">16:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=polymorphism" aria-label="Open Polymorphism lesson, duration 18:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Polymorphism</span>
+          <span class="lesson-time">18:00</span>
+        </a>
+      </div>
+    </details>
+</div>
+    </section>
+    <section class="state-block" aria-labelledby="expandedTitle">
+      <h2 class="section-heading" id="expandedTitle">Expanded curriculum</h2>
+      <p class="state-explanation">All three sections show the same nine lessons and durations used in the learning player.</p>
+      <div class="course-curriculum" id="expandedCurriculum" aria-label="Expanded curriculum example">
+<details class="curriculum-section" id="expanded-section-1" open>
+      <summary class="section-toggle" aria-label="Introduction to C#: 3 lessons, 24m 20s; toggle lesson list">
+        <span class="section-identity">
+          <span class="section-title">Introduction to C#</span>
+          <span class="section-meta">3 lessons · 24m 20s</span>
+        </span>
+        <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="lesson-list" role="list" aria-label="Lessons in Introduction to C#">
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=welcome" aria-label="Open Welcome to the Course lesson, duration 04:20">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Welcome to the Course</span>
+          <span class="lesson-time">04:20</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=what-is-csharp" aria-label="Open What is C#? lesson, duration 08:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">What is C#?</span>
+          <span class="lesson-time">08:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=setup" aria-label="Open Setting Up the Environment lesson, duration 12:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Setting Up the Environment</span>
+          <span class="lesson-time">12:00</span>
+        </a>
+      </div>
+    </details>
+<details class="curriculum-section" id="expanded-section-2" open>
+      <summary class="section-toggle" aria-label="C# Fundamentals: 3 lessons, 52m 30s; toggle lesson list">
+        <span class="section-identity">
+          <span class="section-title">C# Fundamentals</span>
+          <span class="section-meta">3 lessons · 52m 30s</span>
+        </span>
+        <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="lesson-list" role="list" aria-label="Lessons in C# Fundamentals">
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=variables" aria-label="Open Variables and Data Types lesson, duration 18:30">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Variables and Data Types</span>
+          <span class="lesson-time">18:30</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=operators" aria-label="Open Operators lesson, duration 14:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Operators</span>
+          <span class="lesson-time">14:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=conditionals" aria-label="Open Conditional Statements lesson, duration 20:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Conditional Statements</span>
+          <span class="lesson-time">20:00</span>
+        </a>
+      </div>
+    </details>
+<details class="curriculum-section" id="expanded-section-3" open>
+      <summary class="section-toggle" aria-label="Object-Oriented Programming: 3 lessons, 56m 00s; toggle lesson list">
+        <span class="section-identity">
+          <span class="section-title">Object-Oriented Programming</span>
+          <span class="section-meta">3 lessons · 56m 00s</span>
+        </span>
+        <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="lesson-list" role="list" aria-label="Lessons in Object-Oriented Programming">
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=classes" aria-label="Open Classes and Objects lesson, duration 22:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Classes and Objects</span>
+          <span class="lesson-time">22:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=inheritance" aria-label="Open Inheritance lesson, duration 16:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Inheritance</span>
+          <span class="lesson-time">16:00</span>
+        </a>
+        <a class="lesson-row" role="listitem" href="eduhub-course-learning.html?lesson=polymorphism" aria-label="Open Polymorphism lesson, duration 18:00">
+          <svg class="lesson-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5 19 12 6 19.5V4.5Z"/></svg>
+          <span class="lesson-name">Polymorphism</span>
+          <span class="lesson-time">18:00</span>
+        </a>
+      </div>
+    </details>
+</div>
+    </section>
+  </main>
+  <!-- INCLUDE: partials/student-footer.html -->
+  <footer class="page-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  <dialog aria-labelledby="navMenuTitle" class="ed-dialog" id="mobileMenu"><div class="dialog-header"><h2 id="navMenuTitle">EduHub</h2><button aria-label="Close menu" class="dialog-close" data-close-dialog="" type="button"><i class="fa-solid fa-xmark"></i></button></div><nav aria-label="Mobile navigation links" class="d-grid gap-3"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html">My Learning</a><a href="eduhub-student-profile.html">My Profile</a></nav></dialog>
+  <div class="visually-hidden" aria-live="polite" role="status" id="announcement"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  (() => {
+    'use strict';
+    const byId = id => document.getElementById(id);
+    const announce = message => {byId('announcement').textContent = message;};
+    // Independent native details elements provide click, Space, Enter and keyboard focus semantics.
+    document.querySelectorAll('.curriculum-section').forEach(section => {
+      section.addEventListener('toggle', () => {
+        const title = section.querySelector('.section-title')?.textContent;
+        announce(`${title} ${section.open ? 'expanded' : 'collapsed'}.`);
+      });
+    });
+    // Shared student navigation interactions
+    byId('menuToggle').addEventListener('click', () => {
+      if (typeof byId('mobileMenu').showModal === 'function') byId('mobileMenu').showModal();
+      else byId('mobileMenu').setAttribute('open','');
+      byId('menuToggle').setAttribute('aria-expanded','true');
+    });
+    byId('mobileMenu').addEventListener('close', () => byId('menuToggle').setAttribute('aria-expanded','false'));
+    byId('mobileMenu').querySelectorAll('[data-close-dialog]').forEach(button=>button.addEventListener('click',()=>byId('mobileMenu').close()));
+    byId('mobileMenu').addEventListener('click',event=>{if(event.target===byId('mobileMenu'))byId('mobileMenu').close();});
+    const hideAccount = () => {byId('accountMenu').hidden=true;byId('accountToggle').setAttribute('aria-expanded','false');};
+    byId('accountToggle').addEventListener('click', () => {
+      const menu=byId('accountMenu');menu.hidden=!menu.hidden;
+      byId('accountToggle').setAttribute('aria-expanded',String(!menu.hidden));
+    });
+    document.addEventListener('click',event=>{if(!event.target.closest('.account-area'))hideAccount();});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'){hideAccount();if(byId('mobileMenu').open)byId('mobileMenu').close();}});
+    ['desktopSearch','mobileSearch'].forEach(id=>byId(id).addEventListener('submit',event=>{
+      event.preventDefault();const query=String(new FormData(event.currentTarget).get('search')||'').trim();
+      if(query)location.href='eduhub-explore-courses.html?search='+encodeURIComponent(query);
+      else announce('Enter a course name to search.');
+    }));
+    byId('notificationButton').addEventListener('click',()=>{location.href='eduhub-notifications.html';});
+  })();
+</script>
+</body>
+</html>

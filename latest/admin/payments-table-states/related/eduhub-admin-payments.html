@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8fafc"><title>Payments — EduHub Admin</title>
+<meta name="description" content="Admin payment records with search, payment date and status filters, refund confirmation, responsive record cards and safe local-only actions.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/vendor-offline.css"><link rel="stylesheet" href="assets/css/admin-shell.css"><link rel="stylesheet" href="assets/css/admin-payments.css">
+</head>
+<body>
+<a href="#mainContent" class="skip-link">Skip to payments</a>
+<div class="admin-layout" id="adminLayout">
+  <!-- INCLUDE: partials/admin-sidebar.html -->
+  <aside class="admin-sidebar" id="adminSidebar" aria-label="Admin navigation">
+    <a class="brand" href="eduhub-admin-dashboard.html" aria-label="EduHub Admin Dashboard"><i class="fa-solid fa-graduation-cap brand-icon" aria-hidden="true"></i><span class="brand-word">Edu<span>Hub</span></span></a>
+    <div class="workspace-label">ADMIN WORKSPACE</div>
+    <nav class="side-nav" aria-label="Admin workspace">
+      <a class="side-link" href="eduhub-admin-dashboard.html" title="Dashboard"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Dashboard</span></a>
+      <a class="side-link" href="eduhub-admin-course-approvals.html" title="Course Approvals"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i><span>Course Approvals</span></a>
+      <a class="side-link" href="eduhub-admin-user-management.html" title="User Management"><i class="fa-solid fa-users" aria-hidden="true"></i><span>User Management</span></a>
+      <a class="side-link selected" aria-current="page" href="eduhub-admin-payments.html" title="Payments"><i class="fa-regular fa-credit-card" aria-hidden="true"></i><span>Payments</span></a>
+      <a class="side-link" href="eduhub-sign-in.html" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Logout</span></a>
+    </nav>
+    <div class="sidebar-identity"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><strong>A better learning experience.</strong><p>Thoughtful course reviews and everyday platform care.</p></div>
+  </aside>
+  <div class="admin-main">
+    <!-- INCLUDE: partials/admin-topbar.html -->
+    <header class="admin-topbar">
+      <div class="topbar-left"><button class="header-icon mobile-toggle" id="openMobileNav" type="button" aria-controls="adminSidebar" aria-expanded="false" aria-label="Open admin menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><a class="brand mobile-brand" href="eduhub-admin-dashboard.html" aria-label="EduHub"><i class="fa-solid fa-graduation-cap brand-icon" aria-hidden="true"></i><span class="brand-word">Edu<span>Hub</span></span></a><div class="location"><strong>Payments</strong><small>Admin / Payments</small></div></div>
+      <div class="topbar-actions">
+        <div class="search-control" id="searchContainer"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="workspaceSearch" type="search" aria-label="Search sample payment records from workspace header" placeholder="Search EduHub..." autocomplete="off"></div>
+        <button class="header-icon mobile-search" id="openMobileSearch" type="button" aria-label="Open workspace search" aria-expanded="false"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+        <div class="menu-wrapper"><button class="header-icon notification-toggle" id="notificationToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="notificationMenu" aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="unread-dot"></span></button><div class="header-menu notification-menu" id="notificationMenu" hidden><div class="popup-heading"><strong>Notifications</strong><button type="button" class="small-icon" data-close-menu aria-label="Close notifications"><i class="fa-solid fa-xmark"></i></button></div><p class="popup-notice"><i class="fa-solid fa-circle-info"></i><span><strong id="notificationPendingCount">1</strong> refund request requires review in the sample.</span></p><button type="button" class="menu-action menu-action-button" id="showRefundNotifications">Show eligible refund <i class="fa-solid fa-arrow-right"></i></button></div></div>
+        <div class="account-wrap menu-wrapper"><button class="account-trigger" id="accountToggle" aria-haspopup="true" aria-expanded="false" aria-controls="accountMenu" type="button"><span class="avatar avatar-admin">NH</span><span class="account-label"><strong>Nour Hassan</strong><small>Admin</small></span><i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i></button><div class="header-menu account-menu" id="accountMenu" hidden><div class="account-popup-meta"><span class="avatar avatar-admin">NH</span><span><strong>Nour Hassan</strong><small>Admin account</small></span></div><a class="menu-action" href="eduhub-admin-dashboard.html"><i class="fa-solid fa-table-cells-large"></i> Dashboard</a><a class="menu-action" href="eduhub-admin-payments.html"><i class="fa-regular fa-credit-card"></i> Payments</a><a class="menu-action" href="eduhub-sign-in.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div></div>
+      </div>
+      <p class="topbar-crumb">Admin / Payments</p>
+    </header>
+    <main class="payments-body" id="mainContent">
+  <section class="page-intro" aria-labelledby="pageHeading"><h1 id="pageHeading">Payments</h1><p>Review payment records and eligible student refund requests.</p></section>
+  <section class="payment-metrics" aria-label="Payment status totals">
+    <article class="payment-metric"><span class="payment-badge badge-completed">Completed</span><strong id="totalCompleted">982</strong><p>payment records</p></article>
+    <article class="payment-metric"><span class="payment-badge badge-pending">Pending</span><strong id="totalPending">24</strong><p>payment records</p></article>
+    <article class="payment-metric"><span class="payment-badge badge-failed">Failed</span><strong id="totalFailed">30</strong><p>payment records</p></article>
+    <article class="payment-metric"><span class="payment-badge badge-refunded">Refunded</span><strong id="totalRefunded">12</strong><p>payment records</p></article>
+  </section>
+  <aside class="demo-note" aria-label="Demo data information"><i class="fa-regular fa-circle-info" aria-hidden="true"></i><div><strong>Sample data · visual demonstration</strong><p>1,048 original payment records across all statuses · USD. Refunds update a record; they are not new payments. No real financial actions are performed.</p></div></aside>
+  <section class="payments-panel" aria-labelledby="recordsHeading">
+    <div class="panel-heading"><h2 id="recordsHeading">Payment records</h2><p>All time through Oct 30, 2026 · Latest payment first</p></div>
+    <form class="payment-filters" id="paymentFilterForm" autocomplete="off" role="search">
+      <div class="filter-block filter-search"><label for="paymentSearch">Search payments</label><div class="field-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="paymentSearch" type="search" placeholder="Payment ID, student or course" aria-label="Payment ID, student or course" autocomplete="off"></div></div>
+      <div class="filter-block filter-date"><label for="dateFilter">Payment date</label><select id="dateFilter" class="form-select"><option value="all">All dates</option><option value="2026-10-29">Oct 29, 2026</option><option value="2026-10-28">Oct 28, 2026</option><option value="2026-10-27">Oct 27, 2026</option><option value="2026-10-26">Oct 26, 2026</option><option value="2026-10-25">Oct 25, 2026</option><option value="custom">Custom range…</option></select></div>
+      <div class="filter-block filter-status"><label for="statusFilter">Payment status</label><select id="statusFilter" class="form-select"><option value="all">All statuses</option><option value="pending">Pending</option><option value="completed">Completed</option><option value="failed">Failed</option><option value="refunded">Refunded</option></select></div>
+    </form>
+    <p class="filter-context" id="filterContext" aria-live="polite" hidden>All payment records · Latest first</p>
+    <div class="payments-table" aria-label="Six sample payment records">
+      <div class="payment-table-header" aria-hidden="true"><span>Payment ID</span><span>Student name</span><span>Course title</span><span>Payment date</span><span>Amount</span><span>Method</span><span>Status</span><span>Actions</span></div>
+      <div class="payments-list" id="paymentsList"><article class="payment-item" data-id="PAY-2026-1048" data-student="Warda Mahmoud" data-course="Complete C# Programming" data-date="Oct 29, 2026" data-iso="2026-10-29" data-amount="$49.00" data-method="Credit Card" data-status="Completed" data-eligible="True" aria-label="PAY-2026-1048 Completed">
+<div class="cell-id"><strong>PAY-2026-1048</strong></div>
+<div class="cell-student"><span class="mobile-field-label">Student name: </span>Warda Mahmoud</div>
+<div class="cell-course"><span class="mobile-field-label">Course title: </span>Complete C# Programming</div>
+<div class="cell-date"><span class="mobile-field-label">Payment date: </span>Oct 29, 2026</div>
+<div class="cell-amount"><span class="mobile-field-label">Amount: </span>$49.00</div>
+<div class="cell-method"><span class="mobile-field-label">Method: </span>Credit Card</div>
+<div class="cell-status"><span class="mobile-status-label">Status</span><span class="payment-badge badge-completed">Completed</span></div>
+<div class="cell-actions"><button type="button" class="payment-link" data-view="PAY-2026-1048">View Details</button><button type="button" class="payment-link refund-action" data-refund="PAY-2026-1048">Refund</button></div>
+</article>
+<article class="payment-item" data-id="PAY-2026-1047" data-student="Sarah Ali" data-course="HTML &amp; CSS Fundamentals" data-date="Oct 28, 2026" data-iso="2026-10-28" data-amount="$29.00" data-method="Debit Card" data-status="Pending" aria-label="PAY-2026-1047 Pending">
+<div class="cell-id"><strong>PAY-2026-1047</strong></div>
+<div class="cell-student"><span class="mobile-field-label">Student name: </span>Sarah Ali</div>
+<div class="cell-course"><span class="mobile-field-label">Course title: </span>HTML & CSS Fundamentals</div>
+<div class="cell-date"><span class="mobile-field-label">Payment date: </span>Oct 28, 2026</div>
+<div class="cell-amount"><span class="mobile-field-label">Amount: </span>$29.00</div>
+<div class="cell-method"><span class="mobile-field-label">Method: </span>Debit Card</div>
+<div class="cell-status"><span class="mobile-status-label">Status</span><span class="payment-badge badge-pending">Pending</span></div>
+<div class="cell-actions"><button type="button" class="payment-link" data-view="PAY-2026-1047">View Details</button><span class="eligibility-note">Not completed</span></div>
+</article>
+<article class="payment-item" data-id="PAY-2026-1046" data-student="Omar Hassan" data-course="Git &amp; GitHub Essentials" data-date="Oct 28, 2026" data-iso="2026-10-28" data-amount="$19.00" data-method="Credit Card" data-status="Failed" aria-label="PAY-2026-1046 Failed">
+<div class="cell-id"><strong>PAY-2026-1046</strong></div>
+<div class="cell-student"><span class="mobile-field-label">Student name: </span>Omar Hassan</div>
+<div class="cell-course"><span class="mobile-field-label">Course title: </span>Git & GitHub Essentials</div>
+<div class="cell-date"><span class="mobile-field-label">Payment date: </span>Oct 28, 2026</div>
+<div class="cell-amount"><span class="mobile-field-label">Amount: </span>$19.00</div>
+<div class="cell-method"><span class="mobile-field-label">Method: </span>Credit Card</div>
+<div class="cell-status"><span class="mobile-status-label">Status</span><span class="payment-badge badge-failed">Failed</span></div>
+<div class="cell-actions"><button type="button" class="payment-link" data-view="PAY-2026-1046">View Details</button><span class="eligibility-note">No charge to refund</span></div>
+</article>
+<article class="payment-item" data-id="PAY-2026-1045" data-student="Mariam Ahmed" data-course="ASP.NET Core Web Development" data-date="Oct 27, 2026" data-iso="2026-10-27" data-amount="$59.00" data-method="Debit Card" data-status="Completed" aria-label="PAY-2026-1045 Completed">
+<div class="cell-id"><strong>PAY-2026-1045</strong></div>
+<div class="cell-student"><span class="mobile-field-label">Student name: </span>Mariam Ahmed</div>
+<div class="cell-course"><span class="mobile-field-label">Course title: </span>ASP.NET Core Web Development</div>
+<div class="cell-date"><span class="mobile-field-label">Payment date: </span>Oct 27, 2026</div>
+<div class="cell-amount"><span class="mobile-field-label">Amount: </span>$59.00</div>
+<div class="cell-method"><span class="mobile-field-label">Method: </span>Debit Card</div>
+<div class="cell-status"><span class="mobile-status-label">Status</span><span class="payment-badge badge-completed">Completed</span></div>
+<div class="cell-actions"><button type="button" class="payment-link" data-view="PAY-2026-1045">View Details</button><span class="eligibility-note">No refund request</span></div>
+</article>
+<article class="payment-item" data-id="PAY-2026-1044" data-student="Youssef Mohamed" data-course="Complete C# Programming" data-date="Oct 26, 2026" data-iso="2026-10-26" data-amount="$49.00" data-method="Credit Card" data-status="Refunded" aria-label="PAY-2026-1044 Refunded">
+<div class="cell-id"><strong>PAY-2026-1044</strong></div>
+<div class="cell-student"><span class="mobile-field-label">Student name: </span>Youssef Mohamed</div>
+<div class="cell-course"><span class="mobile-field-label">Course title: </span>Complete C# Programming</div>
+<div class="cell-date"><span class="mobile-field-label">Payment date: </span>Oct 26, 2026</div>
+<div class="cell-amount"><span class="mobile-field-label">Amount: </span>$49.00</div>
+<div class="cell-method"><span class="mobile-field-label">Method: </span>Credit Card</div>
+<div class="cell-status"><span class="mobile-status-label">Status</span><span class="payment-badge badge-refunded">Refunded</span></div>
+<div class="cell-actions"><button type="button" class="payment-link" data-view="PAY-2026-1044">View Details</button><span class="eligibility-note">Already refunded</span></div>
+</article>
+<article class="payment-item" data-id="PAY-2026-1043" data-student="Nour Adel" data-course="HTML &amp; CSS Fundamentals" data-date="Oct 25, 2026" data-iso="2026-10-25" data-amount="$29.00" data-method="Debit Card" data-status="Completed" aria-label="PAY-2026-1043 Completed">
+<div class="cell-id"><strong>PAY-2026-1043</strong></div>
+<div class="cell-student"><span class="mobile-field-label">Student name: </span>Nour Adel</div>
+<div class="cell-course"><span class="mobile-field-label">Course title: </span>HTML & CSS Fundamentals</div>
+<div class="cell-date"><span class="mobile-field-label">Payment date: </span>Oct 25, 2026</div>
+<div class="cell-amount"><span class="mobile-field-label">Amount: </span>$29.00</div>
+<div class="cell-method"><span class="mobile-field-label">Method: </span>Debit Card</div>
+<div class="cell-status"><span class="mobile-status-label">Status</span><span class="payment-badge badge-completed">Completed</span></div>
+<div class="cell-actions"><button type="button" class="payment-link" data-view="PAY-2026-1043">View Details</button><span class="eligibility-note">No refund request</span></div>
+</article></div>
+      <div class="empty-results" id="noResults" hidden><i class="fa-regular fa-credit-card" aria-hidden="true"></i><strong>No payments found</strong><p>No sample records match these search and filter values.</p><button class="ed-button ed-outline" id="resetFilters" type="button">Clear filters</button></div>
+      <div class="unavailable-page" id="unavailablePage" hidden><i class="fa-regular fa-file-lines" aria-hidden="true"></i><strong>Additional payment records are not included in this preview</strong><p>Figma supplies six representative records. Pages beyond the sample require a backend connection.</p><button class="ed-button ed-outline" id="returnFirstPage" type="button">Return to page 1</button></div>
+    </div>
+    <div class="pagination-row"><p id="resultSummary" aria-live="polite">Showing 1–6 of 1,048 payment records</p><nav class="pagination-nav" aria-label="Payment pagination"><button class="pagination-arrow" id="prevPage" type="button" aria-label="Previous page" disabled><i class="fa-solid fa-chevron-left"></i></button><span class="page-indicator" id="pageIndicator" aria-current="page">1</span><button class="pagination-arrow" id="nextPage" type="button" aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></button></nav></div>
+  </section>
+  <p class="refund-footnote">Refund is available for the eligible completed Warda Mahmoud payment. Pending, failed and already refunded records cannot be refunded.</p>
+  <!-- INCLUDE: partials/admin-footer.html -->
+  <footer class="admin-footer"><span>EduHub · Learn Today. Build Tomorrow.</span><span>Admin workspace · Sample data · visual demonstration</span></footer>
+</main>
+  </div>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+<div class="dialog-backdrop" id="paymentBackdrop" hidden>
+ <section class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" aria-describedby="dialogMessage" tabindex="-1">
+  <div class="dialog-top"><span class="dialog-icon" id="dialogIcon"><i class="fa-solid fa-receipt" aria-hidden="true"></i></span><button class="dialog-close" id="closePaymentDialog" type="button" aria-label="Close dialog"><i class="fa-solid fa-xmark"></i></button></div>
+  <h2 id="dialogTitle">Payment Details</h2>
+  <p id="dialogMessage"></p>
+  <dl class="payment-dialog-facts" id="paymentFacts"></dl>
+  <div class="refund-extra" id="refundExtra" hidden><strong>Student refund request</strong><p>Warda Mahmoud · warda.mahmoud@example.com</p><dl><dt>Requested on</dt><dd>Oct 30, 2026 · 09:10 AM UTC</dd><dt>Reason supplied by student</dt><dd>I enrolled in the wrong course and would like a refund.</dd><dt>Related enrollment</dt><dd id="enrollmentOutcome">Active → Canceled</dd></dl><p class="refund-warning">The related enrollment will be canceled automatically. This is a simulated refund; no money will move.</p></div>
+  <p class="dialog-error" id="dialogError" role="alert" hidden></p>
+  <div class="dialog-actions"><button class="ed-button ed-outline" id="cancelPaymentDialog" type="button">Close</button><button class="ed-button ed-primary" id="confirmRefund" type="button" hidden>Confirm Refund</button></div>
+ </section>
+</div>
+<div class="dialog-backdrop" id="dateBackdrop" hidden><section class="date-dialog" role="dialog" aria-modal="true" aria-labelledby="dateDialogTitle" tabindex="-1"><div class="dialog-top"><span class="dialog-icon"><i class="fa-regular fa-calendar" aria-hidden="true"></i></span><button class="dialog-close" id="closeDateDialog" type="button" aria-label="Close date filter"><i class="fa-solid fa-xmark"></i></button></div><h2 id="dateDialogTitle">Custom date range</h2><p>Dates include the full selected day, in UTC.</p><div class="date-fields"><label>From<input id="dateFrom" type="date" value="2026-10-01" min="2026-01-01" max="2026-10-30"></label><label>To<input id="dateTo" type="date" value="2026-10-30" min="2026-01-01" max="2026-10-30"></label></div><p class="dialog-error" id="dateError" hidden role="alert"></p><div class="dialog-actions"><button id="resetDateDialog" type="button" class="ed-button ed-outline">Reset</button><button id="applyDateDialog" type="button" class="ed-button ed-primary">Apply Filters</button></div></section></div>
+<div class="toast-message" id="feedbackToast" role="status" aria-live="polite" hidden></div>
+<script src="assets/js/admin-payments.js" defer></script>
+<script src="assets/js/fontawesome-svg-icons.js" defer></script>
+</body></html>

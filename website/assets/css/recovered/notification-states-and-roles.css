@@ -1,0 +1,90 @@
+
+    /* 01 | Design tokens extracted from EduHub Figma */
+    :root { --eh-primary:#2563eb;--eh-primary-hover:#1d4ed8;--eh-ink:#0f172a;--eh-text:#334155;--eh-muted:#64748b;--eh-border:#e2e8f0;--eh-canvas:#f8fafc;--eh-soft-blue:#eff6ff;--eh-icon-bg:#dbeafe;--eh-white:#fff;--eh-r:12px; }
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;min-width:280px;background:var(--eh-canvas);color:var(--eh-ink);font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+    button{font:inherit;cursor:pointer} button:disabled{cursor:not-allowed} [hidden]{display:none!important}
+    button:focus-visible,a:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
+    /* 02 | 1120px Figma board: left 40px; preview cards 960px */
+    .states-board{max-width:1120px;width:100%;padding:40px;margin:0 auto}
+    .board-title{margin:0;font-size:28px;font-weight:700;line-height:35px;letter-spacing:-.65px}
+    .board-description{margin:8px 0 0;font-size:14px;line-height:22px;color:var(--eh-muted)}
+    .states-list{margin-top:32px}.state-section{max-width:960px;width:100%;scroll-margin-top:20px}
+    .state-section+.state-section{margin-top:32px}.state-label{margin:0 0 12px;color:var(--eh-muted);font-size:13px;font-weight:600;line-height:16px}
+    .state-section:target .state-label{color:var(--eh-primary)}
+    .board-note{margin:32px 0 0;font-size:12px;line-height:19px;color:var(--eh-muted)}
+    /* 03 | Notification panel and tabs */
+    .notification-panel{background:var(--eh-white);border:1px solid var(--eh-border);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(15,23,42,.015)}
+    .panel-controls{height:111px;padding:23px 23px 0;border-bottom:1px solid var(--eh-border)}
+    .notification-tabs{display:flex;align-items:stretch;gap:24px;height:33px}
+    .notification-tab{height:33px;border:0;border-bottom:2px solid transparent;padding:0 0 5px;background:transparent;font-size:14px;font-weight:600;line-height:22px;color:var(--eh-muted)}
+    .notification-tab:hover:not(:disabled){color:var(--eh-primary)}
+    .notification-tab.active{color:var(--eh-primary);border-color:var(--eh-primary)}
+    .notification-tab:disabled{opacity:1}
+    .panel-management{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:15px;margin-top:16px}
+    .panel-summary{color:var(--eh-muted);font-size:12px;line-height:15px}
+    .text-action{padding:0;border:0;background:none;color:var(--eh-primary);font-size:13px;line-height:24px;font-weight:600;text-align:left;text-decoration:none}
+    .text-action:hover{color:var(--eh-primary-hover);text-decoration:underline}.text-action:active{color:#1e40af}
+    .panel-management .text-action{font-size:12px;line-height:15px;white-space:nowrap}
+    .panel-management .text-action[hidden]{display:none}
+    /* 04 | Shared notice rows: 156px per Figma desktop row */
+    .notice-row{display:flex;gap:16px;align-items:flex-start;padding:23px;min-height:156px;border-bottom:1px solid var(--eh-border)}
+    .notice-row:last-child{border-bottom:0}.notice-row.is-unread{background:var(--eh-soft-blue)}.notice-row.is-read{background:#fff}
+    .notice-symbol{width:40px;height:40px;flex:0 0 40px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--eh-primary);background:var(--eh-icon-bg)}
+    .is-read .notice-symbol{background:#f8fafc}
+    .notice-body{min-width:0;flex:1}.notice-meta{display:flex;gap:8px;align-items:center;min-height:18px;font-size:12px;line-height:18px;color:var(--eh-muted)}
+    .is-unread .notice-meta{color:var(--eh-primary)}
+    .unread-dot{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--eh-primary)}
+    .notice-title{margin:8px 0 0;font-weight:600;font-size:15px;line-height:21px}.notice-row.is-read .notice-title{font-weight:500}
+    .notice-text{margin:8px 0 0;color:var(--eh-muted);font-size:13px;line-height:21px}
+    .notice-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;column-gap:24px;min-height:24px;margin-top:8px}
+    .notice-actions .dest-action{min-width:240px}.notice-actions .mark-one{font-weight:500;font-size:12px}
+    /* 05 | Role-specific information banners */
+    .role-banner{display:flex;align-items:flex-start;gap:12px;padding:16px;margin-bottom:12px;min-height:79px;border-radius:8px;background:var(--eh-soft-blue)}
+    .role-banner>.eh-icon{color:var(--eh-primary);flex-shrink:0}
+    .role-banner-title{margin:0;font-size:14px;line-height:22px;font-weight:600}
+    .role-banner-detail{margin:4px 0 0;font-size:13px;line-height:21px;color:var(--eh-text)}
+    /* 06 | Empty, loading and retriable error */
+    .outcome-state{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+    .empty-state{min-height:419px;padding:88px 24px 24px}
+    .error-state{min-height:399px;padding:80px 24px 24px}
+    .big-outcome{width:80px;height:80px;border-radius:50%;background:var(--eh-soft-blue);display:flex;align-items:center;justify-content:center;color:var(--eh-primary)}
+    .outcome-state h3{margin:20px 0 0;font-size:26px;line-height:33px;font-weight:700;letter-spacing:-.5px}
+    .error-state h3{font-size:24px;line-height:30px}
+    .outcome-state p{margin:20px 0 0;font-size:14px;line-height:22px;color:var(--eh-muted)}
+    .eh-button{display:inline-flex;align-items:center;justify-content:center;width:240px;max-width:100%;height:48px;margin-top:20px;padding:10px 18px;background:var(--eh-primary);border:1px solid var(--eh-primary);border-radius:8px;color:#fff;font-size:14px;line-height:20px;font-weight:600;transition:background-color .16s,box-shadow .16s,transform .12s}
+    .error-state .eh-button{width:200px}.eh-button:hover{background:var(--eh-primary-hover);box-shadow:0 3px 10px rgba(37,99,235,.16)}.eh-button:active{transform:translateY(1px)}
+    .loading-state{min-height:429px;padding:24px 23px 23px}
+    .loading-label{display:flex;align-items:center;gap:12px;font-size:14px;line-height:22px;color:var(--eh-muted);margin-bottom:24px}
+    .loading-label .eh-icon{color:var(--eh-primary)}
+    .skeleton-notice{min-height:96px;display:flex;gap:16px;padding:19px;margin-bottom:24px;border:1px solid var(--eh-border);border-radius:8px}
+    .skeleton-notice:last-child{margin-bottom:0}.skeleton-copy{display:flex;flex-direction:column;gap:12px}
+    .skeleton{display:block;border-radius:5px;background:#e2e8f0}.skeleton-icon{width:40px;height:40px;flex:0 0 40px}.skeleton-title{height:12px;width:100%}.skeleton-line{height:10px;width:100%;background:#f1f5f9}.skeleton-time{height:10px;width:140px;max-width:45%;background:#f8fafc}
+    .loading-animate .skeleton{animation:shimmer 1.4s ease-in-out infinite alternate}@keyframes shimmer{to{opacity:.45}}
+    /* 07 | Font Awesome mapping + standalone vector fallbacks */
+    .eh-icon{display:inline-flex;justify-content:center;align-items:center;flex:0 0 auto;width:var(--icon-size,20px);height:var(--icon-size,20px);font-size:var(--icon-size,20px)}
+    .eh-icon i{display:none}.eh-icon svg{display:block;width:100%;height:100%}
+    .fa-ready .eh-icon i{display:inline}.fa-ready .eh-icon svg{display:none}
+    .spinner-fallback{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    /* 08 | App feedback and accessible interactions */
+    .toast-box{position:fixed;z-index:1000;bottom:22px;right:22px;width:min(400px,calc(100% - 44px));padding:15px 18px;border:1px solid var(--eh-border);border-left:4px solid var(--eh-primary);border-radius:10px;background:#fff;color:var(--eh-text);font-size:13px;line-height:20px;box-shadow:0 12px 28px rgba(15,23,42,.13)}
+    .toast-close{float:right;margin-left:8px;border:0;background:transparent;font-size:18px;color:var(--eh-muted)}
+    .panel-empty-inline{min-height:150px;display:grid;place-items:center;padding:30px;color:var(--eh-muted);font-size:14px;text-align:center}
+    .status-live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* 09 | Fluid tablet/mobile — responsive elements and readability */
+    @media(max-width:767.98px){
+      .states-board{padding:24px 20px}.board-title{font-size:26px;line-height:34px}.states-list{margin-top:28px}.state-section+.state-section{margin-top:30px}
+      .notice-row{min-height:0;padding:20px 16px;gap:12px}.notice-body{min-width:0}.notice-title{font-size:14px}.notice-text{line-height:20px}
+      .notice-actions{gap:10px 18px}.notice-actions .dest-action{min-width:0}
+      .panel-controls{padding:20px 16px 0;height:106px}.panel-management{gap:8px}.notification-tab{font-size:13px}.notification-tabs{gap:20px}
+      .role-banner{min-height:0}.role-banner-detail{line-height:20px}.outcome-state h3{font-size:22px;line-height:29px}.error-state h3{font-size:21px;line-height:28px}
+      .outcome-state p{margin-top:14px}.empty-state,.error-state{padding-top:50px;min-height:320px}.loading-state{padding:20px 16px;min-height:0}.skeleton-notice{gap:12px;padding:14px;margin-bottom:16px}
+    }
+    @media(max-width:360px){.states-board{padding:22px 14px}.panel-management .text-action{font-size:11px}.notice-actions{gap:7px 12px}.notification-tabs{gap:16px}.role-banner{padding:14px}.toast-box{right:14px;bottom:14px;width:calc(100% - 28px)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+    .retry-results{background:white}.retry-banner{padding:14px 24px;background:#f0fdf4;color:#166534;font-size:13px;line-height:22px;border-bottom:1px solid var(--eh-border)}
+
+/* Moved from static HTML style attributes during restoration. */
+.edu-restored-inline-1 { --icon-size:20px; }
+.edu-restored-inline-2 { --icon-size:36px; }

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create your EduHub account to discover courses and learn at your own pace.">
+  <title>Create Your Account | EduHub</title>
+
+  <!-- 01. Vendor styles: Bootstrap 5, Font Awesome 6 Free, Inter -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 02. Shared EduHub design tokens, matched to Figma */
+    :root {
+      --brand: #2563eb;
+      --brand-hover: #1d4ed8;
+      --ink: #0f172a;
+      --body-copy: #334155;
+      --muted: #64748b;
+      --placeholder: #94a3b8;
+      --border: #e2e8f0;
+      --surface: #ffffff;
+      --blue-soft: #eff6ff;
+      --focus-ring: #93c5fd;
+      --card-radius: 16px;
+      --field-radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { min-width: 320px; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      color: var(--ink);
+      font: 400 14px/1.5 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: linear-gradient(110deg, #dbeafe 0%, #f1f7ff 55%, #f9fbff 100%);
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { color: var(--brand-hover); text-decoration: underline; }
+    button, input { font: inherit; }
+    :where(a, button, input):focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+
+    /* 03. Header and EduHub brand */
+    .desktop-topbar { height: 80px; }
+    .desktop-topbar-inner { width: calc(100% - 144px); max-width: 1296px; margin-inline: auto; height: 100%; }
+    .account-prompt { color: var(--muted); white-space: nowrap; }
+    .account-prompt a { font-weight: 600; margin-left: 6px; }
+    .auth-container { width: calc(100% - 192px); max-width: 1248px; margin-inline: auto; }
+    .brand-mark {
+      display: inline-flex; align-items: center; flex: 0 0 auto;
+      gap: 12px; white-space: nowrap; font-size: 48px;
+      line-height: 58px; letter-spacing: -1.2px; font-weight: 700;
+      color: var(--ink);
+    }
+    .brand-mark:hover { color: var(--ink); text-decoration: none; }
+    .brand-mark .brand-icon { display: inline-flex; width: 56px; height: 56px; align-items: center; justify-content: center; color: var(--brand); font-size: 48px; }
+    .brand-mark .brand-accent { color: var(--brand); }
+    .brand-tagline { margin: 16px 0 0; font-size: 26px; line-height: 31px; font-weight: 500; }
+    .brand-description { max-width: 440px; margin: 16px 0 0; color: var(--body-copy); font-size: 16px; line-height: 1.7; }
+    .desktop-intro > .brand-mark, .desktop-intro > .brand-tagline, .desktop-intro > .brand-description { margin-left: 8px; }
+    .intro-image { width: 100%; aspect-ratio: 632/390; object-fit: cover; border-radius: 16px; display: block; margin-top: 32px; }
+
+    /* 04. Desktop two-column registration composition */
+    .auth-main { padding: 24px 0 64px; }
+    .auth-row { display: flex; align-items: center; justify-content: space-between; gap: 96px; }
+    .learning-intro { flex: 0 1 632px; min-width: 0; }
+    .registration-panel { flex: 0 0 520px; width: 520px; }
+    .registration-card { background: var(--surface); border-radius: var(--card-radius); padding: 32px; }
+    .registration-title { margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -.6px; }
+    .registration-subtitle { margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
+
+    /* 05. Form inputs: native fields with Font Awesome visual icons */
+    .account-form { margin-top: 24px; }
+    .field-stack { display: grid; gap: 16px; }
+    .field-label { display: block; margin: 0 0 8px; color: var(--body-copy); font-size: 13px; font-weight: 500; line-height: 16px; }
+    .field-wrap { position: relative; }
+    .field-icon { position: absolute; top: 50%; left: 16px; transform: translateY(-50%); pointer-events: none; color: var(--muted); font-size: 16px; width: 16px; text-align: center; }
+    .auth-input { display: block; width: 100%; height: 48px; border: 1px solid var(--border); border-radius: var(--field-radius); background: #fff; color: var(--ink); padding: 0 44px 0 41px; font-size: 13px; transition: border-color .16s, box-shadow .16s; }
+    .auth-input::placeholder { color: var(--placeholder); opacity: 1; }
+    .auth-input:hover { border-color: #cbd5e1; }
+    .auth-input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(37,99,235,.14); }
+    .password-toggle { position: absolute; top: 50%; right: 11px; transform: translateY(-50%); height: 36px; width: 36px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); display: flex; align-items: center; justify-content: center; transition: color .16s, background-color .16s; }
+    .password-toggle:hover { background: var(--blue-soft); color: var(--brand); }
+    .password-toggle:active { background: #dbeafe; }
+    .field-error { display: none; margin-top: 6px; color: #b91c1c; font-size: 11px; line-height: 1.45; }
+    .auth-input.is-invalid { border-color: #dc2626; }
+    .auth-input.is-invalid + .field-error { display: block; }
+    .field-wrap:has(.auth-input.is-invalid) + .field-error { display: block; }
+
+    /* 06. Accessible role selector (real radio inputs, not visual-only cards) */
+    .role-section { margin-top: 24px; }
+    .role-label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 500; line-height: 16px; color: var(--body-copy); }
+    .role-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .role-option { min-width: 0; position: relative; }
+    .role-option .btn-check { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .role-tile {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; height: 88px; width: 100%; padding: 8px 3px;
+      border: 1px solid var(--border); border-radius: 10px;
+      color: var(--body-copy); background: #fff; text-align: center;
+      cursor: pointer; transition: border-color .15s, background-color .15s, color .15s, box-shadow .15s;
+    }
+    .role-tile .role-icon { height: 24px; font-size: 19px; color: var(--muted); }
+    .role-tile .role-name { font-size: 12px; line-height: 16px; font-weight: 400; }
+    .role-dot { width: 12px; height: 12px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 100%; background: #fff; }
+    .role-dot::after { content: ''; width: 5px; height: 5px; border-radius: 50%; background: transparent; }
+    .role-option:hover .role-tile { border-color: #93c5fd; background: #f8fbff; }
+    .role-option .btn-check:focus-visible + .role-tile { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+    .role-option .btn-check:checked + .role-tile { border: 2px solid var(--brand); background: var(--blue-soft); color: var(--brand); padding: 7px 2px; }
+    .role-option .btn-check:checked + .role-tile .role-icon { color: var(--brand); }
+    .role-option .btn-check:checked + .role-tile .role-name { font-weight: 600; }
+    .role-option .btn-check:checked + .role-tile .role-dot { border-color: var(--brand); background: var(--brand); }
+    .role-option .btn-check:checked + .role-tile .role-dot::after { background: #fff; }
+    .role-option .btn-check:active + .role-tile { transform: translateY(1px); }
+
+    /* 07. Registration actions, Google option and consent */
+    .registration-actions { margin-top: 24px; }
+    .auth-button { width: 100%; min-height: 48px; border-radius: 8px; border: 1px solid transparent; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 14px; font-size: 14px; font-weight: 700; transition: background-color .16s, border-color .16s, box-shadow .16s, transform .12s; }
+    .auth-button:active { transform: translateY(1px); }
+    .auth-button-primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .auth-button-primary:hover { background: var(--brand-hover); border-color: var(--brand-hover); box-shadow: 0 4px 14px rgba(37,99,235,.16); }
+    .auth-button-primary:disabled { opacity: .65; cursor: progress; }
+    .auth-button-google { border-color: var(--border); background: #fff; color: var(--body-copy); font-size: 13px; font-weight: 500; }
+    .auth-button-google:hover { background: #f8fafc; border-color: #cbd5e1; }
+    .auth-button-google .fa-google { font-size: 18px; color: #4285f4; }
+    .action-divider { display: flex; align-items: center; gap: 16px; height: 15px; margin: 16px 0; color: var(--placeholder); font-size: 12px; }
+    .action-divider::before, .action-divider::after { content: ''; height: 1px; flex: 1; background: var(--border); }
+    .terms-copy { color: var(--muted); font-size: 11px; line-height: 1.65; text-align: center; margin: 24px 0 0; }
+    .feedback-message { display: none; margin-top: 12px; padding: 10px 12px; border-radius: 8px; font-size: 12px; line-height: 1.5; border: 1px solid #bfdbfe; color: #1e40af; background: #eff6ff; }
+    .feedback-message.is-visible { display: block; }
+    .feedback-message.is-error { background: #fef2f2; color: #991b1b; border-color: #fecaca; }
+    .feedback-message.is-success { background: #ecfdf5; color: #065f46; border-color: #a7f3d0; }
+
+    /* 08. Tablet: keep the mobile-style introduction; card centered */
+    .mobile-intro { display: none; }
+    @media (max-width: 1279.98px) {
+      .desktop-topbar, .desktop-intro { display: none !important; }
+      .auth-container { width: calc(100% - 48px); max-width: 620px; }
+      .mobile-intro { display: block; margin-bottom: 20px; }
+      .auth-main { padding: 24px 0 40px; }
+      .auth-row { display: block; }
+      .registration-panel { width: min(100%, 520px); margin: 0 auto; }
+      .mobile-brand-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .mobile-intro .brand-mark { gap: 8px; font-size: 27px; line-height: 33px; letter-spacing: -.4px; }
+      .mobile-intro .brand-icon { width: 30px; height: 30px; font-size: 28px; }
+      .mobile-intro .account-prompt { font-size: 11px; }
+      .mobile-intro .brand-tagline { margin-top: 8px; font-size: 12px; line-height: 15px; }
+      .mobile-intro .brand-description { max-width: none; margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 15px; }
+    }
+
+    /* 09. Mobile: precise 390px Figma rhythm, fluid down to 320px */
+    @media (max-width: 575.98px) {
+      body { background: linear-gradient(110deg, #dbeafe 0%, #f4f8ff 50%, #f8fbff 100%); }
+      .auth-container { width: calc(100% - 32px); max-width: 358px; }
+      .auth-main { padding: 16px 0 23px; }
+      .mobile-intro { margin-bottom: 12px; }
+      .mobile-intro .account-prompt { font-size: 11px; letter-spacing: -.15px; }
+      .mobile-intro .account-prompt a { margin-left: 3px; }
+      .registration-card { padding: 20px; }
+      .registration-title { font-size: 23px; letter-spacing: -.4px; }
+      .registration-subtitle { font-size: 11px; }
+      .account-form { margin-top: 12px; }
+      .field-stack { gap: 12px; }
+      .field-label { font-size: 12px; line-height: 15px; margin-bottom: 7px; }
+      .auth-input { height: 44px; font-size: 12px; padding-left: 36px; padding-right: 40px; }
+      .field-icon { left: 12px; font-size: 15px; }
+      .password-toggle { right: 5px; }
+      .role-section { margin-top: 12px; }
+      .role-label { font-size: 12px; line-height: 15px; margin-bottom: 8px; }
+      .role-tile { height: 76px; gap: 3px; }
+      .role-tile .role-icon { height: 22px; font-size: 18px; }
+      .role-tile .role-name { font-size: 11px; line-height: 14px; }
+      .registration-actions { margin-top: 12px; }
+      .auth-button { min-height: 44px; font-size: 13px; }
+      .auth-button-google { font-size: 12px; }
+      .action-divider { margin: 12px 0; }
+      .terms-copy { font-size: 10px; line-height: 1.65; margin-top: 12px; }
+    }
+    @media (max-width: 360px) {
+      .mobile-intro .account-prompt { font-size: 9px; }
+      .mobile-intro .brand-mark { font-size: 24px; }
+      .role-options { gap: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 10. Existing-account navigation: desktop positioning per Figma -->
+  <header class="desktop-topbar d-none d-xl-block" aria-label="Account navigation">
+    <div class="desktop-topbar-inner d-flex align-items-center justify-content-end">
+      <span class="account-prompt">Already have an account? <a href="eduhub-sign-in.html">Log In</a></span>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-container">
+      <!-- 11. Compact branding: mobile/tablet only -->
+      <header class="mobile-intro" aria-label="EduHub introduction">
+        <div class="mobile-brand-row">
+          <a class="brand-mark" href="eduhub-homepage.html" aria-label="EduHub homepage">
+            <span class="brand-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span>Edu<span class="brand-accent">Hub</span></span>
+          </a>
+          <span class="account-prompt">Already have an account? <a href="eduhub-sign-in.html">Log In</a></span>
+        </div>
+        <p class="brand-tagline">Learn Today. Build Tomorrow.</p>
+        <p class="brand-description">Access high-quality courses, learn at your own pace, and achieve your goals with EduHub.</p>
+      </header>
+
+      <div class="auth-row">
+        <!-- 12. Desktop introduction with Figma-proportioned placeholder image -->
+        <section class="learning-intro desktop-intro" aria-labelledby="learning-tagline">
+          <a class="brand-mark" href="eduhub-homepage.html" aria-label="EduHub homepage">
+            <span class="brand-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span>Edu<span class="brand-accent">Hub</span></span>
+          </a>
+          <h2 class="brand-tagline" id="learning-tagline">Learn Today. Build Tomorrow.</h2>
+          <p class="brand-description">Access high-quality courses, learn at your own pace, and achieve your goals with EduHub.</p>
+          <img
+            class="intro-image"
+            src="https://placehold.co/632x390/e2e8f0/64748b?text=Learning+Workspace"
+            width="632" height="390"
+            alt="Placeholder for a laptop, books, and a calm learning workspace"
+            loading="eager" decoding="async">
+        </section>
+
+        <!-- 13. Create Account form -->
+        <section class="registration-panel" aria-labelledby="registration-title">
+          <div class="registration-card">
+            <div class="registration-heading">
+              <h1 class="registration-title" id="registration-title">Create Your Account</h1>
+              <p class="registration-subtitle">Join EduHub and start your learning journey.</p>
+            </div>
+
+            <!-- No endpoint is configured by default. See the script's integration notes. -->
+            <form id="registerForm" class="account-form" novalidate>
+              <div class="field-stack">
+                <div class="field-group">
+                  <label class="field-label" for="fullName">Full Name</label>
+                  <div class="field-wrap">
+                    <i class="fa-regular fa-user field-icon" aria-hidden="true"></i>
+                    <input class="auth-input" id="fullName" name="fullName" type="text"
+                      placeholder="Your full name" autocomplete="name" minlength="2" maxlength="120" required
+                      aria-describedby="fullNameError">
+                  </div>
+                  <div class="field-error" id="fullNameError" aria-live="polite">Please enter your full name (at least 2 characters).</div>
+                </div>
+
+                <div class="field-group">
+                  <label class="field-label" for="email">Email Address</label>
+                  <div class="field-wrap">
+                    <i class="fa-regular fa-envelope field-icon" aria-hidden="true"></i>
+                    <input class="auth-input" id="email" name="email" type="email"
+                      placeholder="you@example.com" autocomplete="email" maxlength="254" required
+                      aria-describedby="emailError">
+                  </div>
+                  <div class="field-error" id="emailError" aria-live="polite">Enter a valid email address.</div>
+                </div>
+
+                <div class="field-group">
+                  <label class="field-label" for="password">Password</label>
+                  <div class="field-wrap">
+                    <i class="fa-solid fa-lock field-icon" aria-hidden="true"></i>
+                    <input class="auth-input" id="password" name="password" type="password"
+                      placeholder="Create a password" autocomplete="new-password" minlength="8" required
+                      aria-describedby="passwordError">
+                    <button class="password-toggle" type="button" data-toggle-password="password"
+                      aria-label="Show password" aria-controls="password" aria-pressed="false">
+                      <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="field-error" id="passwordError" aria-live="polite">Use at least 8 characters for your password.</div>
+                </div>
+
+                <div class="field-group">
+                  <label class="field-label" for="confirmPassword">Confirm Password</label>
+                  <div class="field-wrap">
+                    <i class="fa-solid fa-lock field-icon" aria-hidden="true"></i>
+                    <input class="auth-input" id="confirmPassword" name="confirmPassword" type="password"
+                      placeholder="Confirm your password" autocomplete="new-password" required
+                      aria-describedby="confirmPasswordError">
+                    <button class="password-toggle" type="button" data-toggle-password="confirmPassword"
+                      aria-label="Show confirmed password" aria-controls="confirmPassword" aria-pressed="false">
+                      <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="field-error" id="confirmPasswordError" aria-live="polite">Passwords must match.</div>
+                </div>
+              </div>
+
+              <!-- 14. Role selection -->
+              <fieldset class="role-section border-0 p-0">
+                <legend class="role-label float-none w-auto">I am a</legend>
+                <div class="role-options" role="radiogroup" aria-label="Account role">
+                  <div class="role-option">
+                    <input type="radio" class="btn-check" name="role" id="roleStudent" value="student" checked required>
+                    <label class="role-tile" for="roleStudent">
+                      <i class="role-icon fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                      <span class="role-name">Student</span>
+                      <span class="role-dot" aria-hidden="true"></span>
+                    </label>
+                  </div>
+                  <div class="role-option">
+                    <input type="radio" class="btn-check" name="role" id="roleInstructor" value="instructor">
+                    <label class="role-tile" for="roleInstructor">
+                      <i class="role-icon fa-solid fa-user-pen" aria-hidden="true"></i>
+                      <span class="role-name">Instructor</span>
+                      <span class="role-dot" aria-hidden="true"></span>
+                    </label>
+                  </div>
+                  <div class="role-option">
+                    <input type="radio" class="btn-check" name="role" id="roleAdmin" value="admin">
+                    <label class="role-tile" for="roleAdmin">
+                      <i class="role-icon fa-solid fa-shield-halved" aria-hidden="true"></i>
+                      <span class="role-name">Admin</span>
+                      <span class="role-dot" aria-hidden="true"></span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- 15. Submit, alternate provider and links -->
+              <div class="registration-actions">
+                <button id="registerButton" class="auth-button auth-button-primary" type="submit">
+                  <span>Create Account</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+                <div class="action-divider" aria-hidden="true"><span>or</span></div>
+                <button id="googleButton" class="auth-button auth-button-google" type="button">
+                  <i class="fa-brands fa-google" aria-hidden="true"></i>
+                  <span>Continue with Google</span>
+                </button>
+              </div>
+              <p class="terms-copy">By creating an account, you agree to our
+                <a href="terms-of-service.html">Terms of Service</a> and
+                <a href="privacy-policy.html">Privacy Policy</a>.
+              </p>
+              <div id="formFeedback" class="feedback-message" role="status" aria-live="polite" aria-atomic="true"></div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- 16. Bootstrap and page behavior -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    'use strict';
+
+    /* Integration points: replace these only after the API and OAuth flow exist.
+     * NEVER trust a role sent by the browser. Admin permissions MUST be authorized
+     * server-side; public registration must not grant admin privileges automatically.
+     * Do not persist passwords to localStorage, URLs, logs, or client-side analytics.
+     */
+    const REGISTER_ENDPOINT = '';
+    const GOOGLE_OAUTH_URL = '';
+
+    const form = document.getElementById('registerForm');
+    const feedback = document.getElementById('formFeedback');
+    const submitButton = document.getElementById('registerButton');
+    const fields = ['fullName', 'email', 'password', 'confirmPassword'].map(id => document.getElementById(id));
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+
+    function showFeedback(message, kind = 'info') {
+      feedback.textContent = message;
+      feedback.className = 'feedback-message is-visible' + (kind === 'error' ? ' is-error' : kind === 'success' ? ' is-success' : '');
+    }
+
+    function validateField(field, displayError) {
+      const value = field.value.trim();
+      let error = '';
+      if (field.id === 'fullName' && value.length < 2) error = 'Please enter your full name (at least 2 characters).';
+      else if (field.id === 'email' && !field.validity.valid) error = 'Enter a valid email address.';
+      else if (field.id === 'password' && field.value.length < 8) error = 'Use at least 8 characters for your password.';
+      else if (field.id === 'confirmPassword' && field.value !== passwordInput.value) error = 'Passwords must match.';
+      else if (field.id === 'confirmPassword' && !field.value) error = 'Confirm your password.';
+
+      const errorLabel = document.getElementById(field.id + 'Error');
+      if (errorLabel) errorLabel.textContent = error;
+      field.classList.toggle('is-invalid', displayError && !!error);
+      field.setAttribute('aria-invalid', displayError && !!error ? 'true' : 'false');
+      return !error;
+    }
+
+    for (const field of fields) {
+      field.addEventListener('blur', () => validateField(field, true));
+      field.addEventListener('input', () => {
+        if (field.classList.contains('is-invalid')) validateField(field, true);
+        if (field === passwordInput && confirmPasswordInput.value) validateField(confirmPasswordInput, true);
+        feedback.classList.remove('is-visible');
+      });
+    }
+
+    document.querySelectorAll('[data-toggle-password]').forEach(button => {
+      button.addEventListener('click', () => {
+        const input = document.getElementById(button.dataset.togglePassword);
+        const revealing = input.type === 'password';
+        input.type = revealing ? 'text' : 'password';
+        button.setAttribute('aria-pressed', String(revealing));
+        button.setAttribute('aria-label', (revealing ? 'Hide' : 'Show') + (input === confirmPasswordInput ? ' confirmed password' : ' password'));
+        button.querySelector('i').className = revealing ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+        input.focus({ preventScroll: true });
+      });
+    });
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      let valid = true;
+      fields.forEach(field => { if (!validateField(field, true)) valid = false; });
+      if (!valid) {
+        showFeedback('Please correct the highlighted fields before continuing.', 'error');
+        fields.find(field => field.classList.contains('is-invalid'))?.focus();
+        return;
+      }
+
+      const payload = {
+        fullName: document.getElementById('fullName').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        password: passwordInput.value,
+        role: form.elements.role.value
+      };
+
+      if (!REGISTER_ENDPOINT) {
+        showFeedback('Form validated. Account creation will be available once the EduHub registration API is connected.');
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      try {
+        const response = await fetch(REGISTER_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(typeof data.message === 'string' ? data.message : 'Registration could not be completed.');
+        showFeedback('Your account was created successfully. You may now log in.', 'success');
+        passwordInput.value = '';
+        confirmPasswordInput.value = '';
+      } catch (error) {
+        showFeedback(error instanceof Error ? error.message : 'A network error occurred. Please try again.', 'error');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+      }
+    });
+
+    document.getElementById('googleButton').addEventListener('click', () => {
+      if (GOOGLE_OAUTH_URL) {
+        window.location.assign(GOOGLE_OAUTH_URL);
+      } else {
+        showFeedback('Google sign-in is not connected yet. Configure the Google OAuth authorization URL to enable this option.');
+      }
+    });
+  </script>
+</body>
+</html>

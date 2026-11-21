@@ -1,0 +1,174 @@
+
+    /* =============================================================
+       1. Design tokens | EduHub Explore Courses (Figma 22:38044)
+       ============================================================= */
+    :root { --ed-primary:#2563eb; --ed-primary-dark:#1d4ed8; --ed-dark:#0f172a; --ed-muted:#64748b; --ed-border:#e2e8f0; --ed-bg:#f8fafc; --ed-soft:#eff6ff; --ed-green:#16a34a; --ed-white:#fff; --ed-card-radius:12px; }
+    *,*::before,*::after { box-sizing:border-box; }
+    body { background:var(--ed-bg); color:var(--ed-dark); font:14px/1.5 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif; margin:0; }
+    html { scroll-behavior:smooth; }
+    a { color:var(--ed-primary); text-decoration:none; }
+    a:hover { color:var(--ed-primary-dark); }
+    button,input,select { font:inherit; }
+    button,select { cursor:pointer; }
+    :focus-visible { outline:3px solid #2563eb70!important; outline-offset:2px; }
+    .text-ed-muted { color:var(--ed-muted)!important; }
+    .btn-ed-primary { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--ed-primary); border-radius:8px; background:var(--ed-primary); color:#fff; font-size:14px; font-weight:600; min-height:44px; padding:9px 17px; transition:background .15s ease, box-shadow .15s ease, transform .15s ease; }
+    .btn-ed-primary:hover,.btn-ed-primary:focus-visible { background:var(--ed-primary-dark); border-color:var(--ed-primary-dark); color:#fff; box-shadow:0 5px 15px #2563eb20; }
+    .btn-ed-primary:active { transform:translateY(1px); }
+    .btn-ed-outline { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--ed-border); border-radius:8px; background:#fff; color:var(--ed-dark); font-size:14px; font-weight:600; min-height:44px; padding:9px 17px; transition:background .15s ease,border-color .15s ease,transform .15s ease; }
+    .btn-ed-outline:hover,.btn-ed-outline:focus-visible { color:var(--ed-primary); background:var(--ed-soft); border-color:#bfdbfe; }
+    .btn-ed-outline:active { transform:translateY(1px); }
+    [hidden] { display:none!important; }
+    /* =============================================================
+       2. Responsive student navbar (reuse across public/student pages)
+       ============================================================= */
+    .student-header { background:#fff; border-bottom:1px solid var(--ed-border); }
+    .header-inner { max-width:1440px; height:76px; padding:0 48px; margin:auto; }
+    .brand { color:var(--ed-dark); font-weight:700; font-size:28px; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; letter-spacing:-1px; }
+    .brand:hover { color:var(--ed-dark); }
+    .brand i { font-size:28px; color:var(--ed-primary); width:32px; text-align:center; }
+    .brand span span { color:var(--ed-primary); }
+    .desktop-nav { margin-left:32px; gap:24px; }
+    .nav-link-ed { font-size:14px; color:var(--ed-muted); white-space:nowrap; }
+    .nav-link-ed:hover { color:var(--ed-primary); }
+    .nav-link-ed.active { color:var(--ed-primary); font-weight:600; }
+    .top-search { position:relative; width:230px; min-width:0; }
+    .top-search .fa-magnifying-glass { position:absolute; left:12px; top:14px; color:var(--ed-muted); }
+    .top-search input { background:var(--ed-bg); width:100%; height:44px; border:1px solid var(--ed-border); border-radius:8px; padding:0 12px 0 38px; font-size:13px; outline:0; }
+    .top-search input:focus { border-color:var(--ed-primary); box-shadow:0 0 0 3px #2563eb17; }
+    .icon-control { border:0; background:transparent; color:var(--ed-muted); width:40px; height:44px; border-radius:8px; position:relative; display:inline-flex; align-items:center; justify-content:center; font-size:18px; }
+    .icon-control:hover { color:var(--ed-primary); background:var(--ed-soft); }
+    .notification-dot { position:absolute; top:7px; right:8px; width:6px; height:6px; border-radius:50%; background:var(--ed-primary); }
+    .avatar { background:#dbeafe; color:var(--ed-primary); width:40px; height:40px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:13px; flex:none; }
+    .account-toggle { padding:0; border:0; color:var(--ed-dark); background:transparent; text-align:left; }
+    .account-toggle:hover { color:var(--ed-primary); }
+    .account-name { font-size:13px; font-weight:600; }
+    .account-role { font-size:11px; color:var(--ed-muted); }
+    .mobile-shell { display:none; }
+    .mobile-nav { height:44px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .mobile-nav a { padding:12px 0; font-size:13px; color:var(--ed-muted); }
+    .mobile-nav a.active { border-bottom:2px solid var(--ed-primary); color:var(--ed-primary); font-weight:600; }
+    .mobile-global-search { margin-top:16px; }
+    /* =============================================================
+       3. Catalog intro and filters
+       ============================================================= */
+    .page-content { max-width:1440px; padding:64px; margin:0 auto; }
+    .eyebrow { background:var(--ed-soft); color:var(--ed-primary); border-radius:99px; font-size:12px; font-weight:600; padding:5px 10px; width:max-content; max-width:100%; }
+    .page-heading { font-size:36px; font-weight:700; line-height:1.3; margin:12px 0; letter-spacing:-.6px; }
+    .page-intro { color:var(--ed-muted); font-size:16px; line-height:1.6; margin:0; }
+    .filter-panel { background:#fff; border:1px solid var(--ed-border); border-radius:12px; padding:24px; margin-top:32px; }
+    .catalog-search { display:block; position:relative; }
+    .catalog-search i { position:absolute; left:16px; top:17px; font-size:19px; color:var(--ed-primary); pointer-events:none; }
+    .catalog-search input { display:block; width:100%; height:52px; border:2px solid var(--ed-primary); border-radius:8px; padding:0 18px 0 48px; outline:0; font-size:14px; color:var(--ed-dark); }
+    .catalog-search input:focus { box-shadow:0 0 0 3px #2563eb1b; }
+    .catalog-search input::placeholder { color:var(--ed-muted); }
+    .filters-row { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:16px; margin-top:16px; }
+    .filter-label { display:block; font-size:12px; font-weight:600; margin-bottom:8px; }
+    .filter-select { width:100%; height:48px; border:1px solid var(--ed-border); border-radius:8px; background:#fff; color:var(--ed-dark); padding:0 10px; font-size:13px; }
+    .filter-select:hover,.filter-select:focus { border-color:var(--ed-primary); }
+    .filter-select:focus { box-shadow:0 0 0 3px #2563eb17; outline:0; }
+    .mobile-filter-actions { display:none; }
+    .catalog-summary { margin:32px 0; }
+    .catalog-count { font-size:14px; font-weight:600; }
+    .catalog-note { font-size:12px; color:var(--ed-muted); }
+    /* =============================================================
+       4. Course cards / empty states / footer
+       ============================================================= */
+    .catalog-grid { --bs-gutter-x:24px; --bs-gutter-y:24px; }
+    .course-card { border:1px solid var(--ed-border); border-radius:12px; overflow:hidden; background:#fff; min-width:0; transition:box-shadow .15s ease, transform .15s ease, border-color .15s ease; }
+    .course-card:hover { box-shadow:0 12px 22px #0f172a10; border-color:#cbd5e1; transform:translateY(-1px); }
+    .course-photo { display:block; height:184px; object-fit:cover; background:#172554; }
+    .course-card-body { padding:20px!important; min-height:281px; }
+    .pill-status { border-radius:99px; font-size:12px; font-weight:600; padding:5px 10px; line-height:15px; }
+    .badge-paid { background:var(--ed-soft); color:var(--ed-primary); }
+    .badge-free { background:#f0fdf4; color:#15803d; }
+    .course-category { color:var(--ed-muted); font-size:12px; text-align:right; }
+    .course-name { font-size:18px; line-height:1.3; min-height:47px; overflow-wrap:anywhere; }
+    .course-teacher { font-size:14px; color:var(--ed-muted); line-height:20px; }
+    .course-stars { font-size:13px; color:var(--ed-dark); }
+    .course-stars i { color:#c2410c; }
+    .course-level { font-size:12px; color:var(--ed-muted); }
+    .course-price { font-size:21px; min-width:fit-content; white-space:nowrap; }
+    .course-purchase .btn { min-height:44px; padding-inline:8px; }
+    .catalog-pagination { display:flex; flex-direction:column; align-items:center; gap:12px; padding-top:32px; }
+    .pagination-trigger { min-width:240px; }
+    .pagination-caption { color:var(--ed-muted); font-size:12px; text-align:center; }
+    .no-results { border:1px dashed var(--ed-border); background:#fff; border-radius:12px; padding:56px 24px; text-align:center; }
+    .no-results i { color:var(--ed-primary); font-size:34px; }
+    .no-results h2 { font-size:23px; margin:16px 0 8px; }
+    .no-results p { color:var(--ed-muted); }
+    .ending-banner { border-radius:12px; background:var(--ed-soft); padding:24px; margin-top:32px; display:flex; align-items:center; gap:16px; }
+    .ending-banner i { color:var(--ed-primary); font-size:27px; }
+    .ending-banner h2 { font-size:20px; line-height:26px; font-weight:700; margin:0 0 4px; }
+    .ending-banner p { color:var(--ed-muted); margin:0; font-size:14px; }
+    .footer { border-top:1px solid var(--ed-border); text-align:center; padding:24px 16px; color:var(--ed-muted); font-size:12px; }
+    /* =============================================================
+       5. Accessible native dialogs / mobile Filters & Sort panel
+       ============================================================= */
+    dialog { border:1px solid var(--ed-border); border-radius:14px; box-shadow:0 22px 70px #0f172a35; color:var(--ed-dark); }
+    dialog::backdrop { background:#0f172a88; }
+    .course-dialog { width:min(520px,calc(100% - 32px)); padding:0; }
+    .dialog-interior { padding:24px; }
+    .dialog-image { display:block; width:100%; height:160px; object-fit:cover; border-radius:8px; background:#1e293b; }
+    .dialog-heading { font-size:23px; font-weight:700; margin:14px 0 8px; }
+    .dialog-note { font-size:13px; color:var(--ed-muted); }
+    .dialog-close { color:var(--ed-muted); border:0; background:transparent; border-radius:8px; width:40px; height:40px; }
+    .dialog-close:hover { color:var(--ed-primary); background:var(--ed-soft); }
+    .mobile-filter-dialog { width:min(450px,100%); max-height:100dvh; height:100dvh; padding:0; margin:0 0 0 auto; border:0; border-radius:0; }
+    .mobile-filter-content { padding:16px; }
+    .mobile-filter-dialog h2 { font-size:26px; margin:0; font-weight:700; }
+    .mobile-filter-dialog p.filter-subtitle { color:var(--ed-muted); font-size:14px; margin:30px 0; }
+    .mobile-filter-group { background:#fff; border:1px solid var(--ed-border); border-radius:12px; padding:16px; margin:0 0 24px; }
+    .mobile-filter-group legend { font-size:18px; font-weight:700; float:none; margin-bottom:16px; }
+    .mobile-filter-choice { min-height:44px; display:flex; align-items:center; gap:12px; font-size:14px; }
+    .mobile-filter-choice input { appearance:none; -webkit-appearance:none; width:18px; height:18px; flex:0 0 18px; border:1px solid #94a3b8; border-radius:50%; position:relative; }
+    .mobile-filter-choice input:checked { border:5px solid var(--ed-primary); }
+    .mobile-filter-choice input:focus-visible { outline:3px solid #2563eb55; outline-offset:2px; }
+    .mobile-filter-choice:has(input:checked) { color:var(--ed-primary); font-weight:600; }
+    .mobile-filter-cta { margin:0 0 16px; width:100%; }
+    .mobile-menu-dialog { width:min(330px,85vw); height:100dvh; max-height:100dvh; margin:0 auto 0 0; border:0; border-radius:0; padding:24px; }
+    .mobile-menu-dialog a { display:block; color:var(--ed-dark); border-radius:8px; padding:12px; font-weight:600; }
+    .mobile-menu-dialog a:hover { background:var(--ed-soft); color:var(--ed-primary); }
+    .live-toast { position:fixed; bottom:20px; right:20px; z-index:2000; background:#fff; color:var(--ed-dark); border:1px solid var(--ed-border); border-left:4px solid var(--ed-primary); border-radius:8px; padding:13px 17px; box-shadow:0 12px 28px #0f172a22; max-width:min(410px,calc(100vw - 40px)); font-size:13px; }
+    /* =============================================================
+       6. Tablet and mobile breakpoints
+       ============================================================= */
+    @media (max-width:991.98px) {
+      .header-inner { display:none!important; }
+      .mobile-shell { display:block; padding:16px 32px; }
+      .page-content { padding:32px; }
+      .mobile-global-search { display:block; }
+      .desktop-nav { display:none; }
+      .student-header { min-height:196px; }
+      .mobile-shell .brand { font-size:28px; }
+      .page-heading { font-size:36px; }
+      .course-card-body { padding:20px!important; }
+    }
+    @media (max-width:767.98px) {
+      .mobile-shell { padding:16px; }
+      .page-content { padding:16px; }
+      .page-heading { font-size:30px; }
+      .filter-panel { margin-top:32px; }
+      .filters-row { display:none; }
+      .mobile-filter-actions { display:flex; gap:12px; margin-top:16px; }
+      .mobile-filter-actions button { width:50%; min-width:0; font-size:13px; min-height:48px; padding-inline:6px; white-space:nowrap; }
+      .catalog-summary { margin:32px 0; }
+      .course-card-body { min-height:281px; }
+      .course-name { font-size:18px; min-height:47px; }
+      .catalog-pagination { padding-top:32px; }
+      .catalog-note { font-size:11px; }
+      .ending-banner { padding:20px; gap:12px; }
+      .ending-banner h2 { font-size:17px; }
+      .ending-banner p { font-size:12px; }
+      .course-card .course-photo { height:184px; }
+    }
+    @media (max-width:360px) {
+      .mobile-shell .brand { font-size:23px; }
+      .mobile-shell .brand i { font-size:22px; width:25px; }
+      .mobile-shell .icon-control { width:30px; }
+      .mobile-shell .avatar { width:35px; height:35px; }
+      .course-price { font-size:18px; }
+      .course-purchase .btn { font-size:12px; }
+      .catalog-note { max-width:125px; text-align:right; }
+    }
+  

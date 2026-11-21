@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub first-time student dashboard: find courses and start your learning journey.">
+  <title>New Student Dashboard | EduHub</title>
+  <!-- Bootstrap 5, Font Awesome 6 Free, and the Inter design font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/recovered/new-student-dashboard.css" data-eduhub-restored="page-css">
+</head>
+<body>
+  <!-- =============================================================
+       Desktop and tablet sidebar (232px / icon-only 80px)
+       ============================================================= -->
+  <aside class="app-sidebar" aria-label="Student workspace navigation" id="sidebar">
+    <a class="brand side-brand" href="../public/home.html" aria-label="EduHub homepage"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+    <p class="workspace-label">STUDENT WORKSPACE</p>
+    <nav class="side-nav" aria-label="Dashboard navigation">
+      <a href="new-student-dashboard.html" class="side-entry active" aria-current="page" title="Dashboard"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span class="side-label">Dashboard</span></a>
+      <a href="../public/explore-courses.html" class="side-entry" title="Explore Courses"><i class="fa-regular fa-compass" aria-hidden="true"></i><span class="side-label">Explore Courses</span></a>
+      <a href="#my-learning" class="side-entry" title="My Learning"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span class="side-label">My Learning</span></a>
+      <a href="#" class="side-entry upcoming" data-route="Certificates" title="My Certificates"><i class="fa-solid fa-award" aria-hidden="true"></i><span class="side-label">My Certificates</span></a>
+      <a href="student-profile.html" class="side-entry" title="My Profile"><i class="fa-regular fa-user" aria-hidden="true"></i><span class="side-label">My Profile</span></a>
+      <a href="#" class="side-entry upcoming" data-route="Settings" title="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i><span class="side-label">Settings</span></a>
+      <a href="#" class="side-entry upcoming" data-route="Log Out" title="Log Out"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span class="side-label">Log Out</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="sidebar-reminder"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><strong>A little every day.</strong><p>Big goals start with small steps. Make time to learn today.</p></div>
+      <button class="sidebar-collapse" id="collapseSidebar" type="button" aria-label="Collapse sidebar" aria-pressed="false" title="Toggle sidebar"><i class="fa-solid fa-table-columns" aria-hidden="true"></i><span class="side-label">Collapse sidebar</span></button>
+    </div>
+  </aside>
+
+  <!-- Mobile drawer / overlay -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Mobile student navigation" aria-hidden="true">
+    <div class="d-flex align-items-center justify-content-between mb-4"><a class="brand" href="../public/home.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a><button type="button" class="icon-btn" id="closeMenu" aria-label="Close navigation menu"><i class="fa-solid fa-xmark"></i></button></div>
+    <nav class="side-nav" aria-label="Mobile menu items">
+      <a class="side-entry active" href="new-student-dashboard.html"><i class="fa-solid fa-table-cells-large"></i>Dashboard</a>
+      <a class="side-entry" href="../public/explore-courses.html"><i class="fa-regular fa-compass"></i>Explore Courses</a>
+      <a class="side-entry" href="#my-learning"><i class="fa-solid fa-book-open"></i>My Learning</a>
+      <a class="side-entry upcoming" data-route="Certificates" href="#"><i class="fa-solid fa-award"></i>My Certificates</a>
+      <a class="side-entry" href="student-profile.html"><i class="fa-regular fa-user"></i>My Profile</a>
+      <a class="side-entry upcoming" data-route="Settings" href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+      <a class="side-entry upcoming" data-route="Log Out" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log Out</a>
+    </nav>
+  </aside>
+
+  <div class="app-shell">
+    <!-- ============================================================
+         Desktop and tablet top bar
+         ============================================================ -->
+    <header class="app-topbar">
+      <form class="search-box" role="search" id="desktopSearchForm" autocomplete="off"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" id="desktopSearch" placeholder="Search for courses..." aria-label="Search recommended courses"><button class="clear-search" type="button" aria-label="Clear search"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></form>
+      <div class="d-flex align-items-center gap-3 flex-shrink-0">
+        <button type="button" class="icon-btn upcoming" data-route="Notifications" aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button>
+        <span class="header-divider" aria-hidden="true"></span>
+        <div class="position-relative">
+          <button type="button" id="accountToggle" class="account-button" aria-expanded="false" aria-controls="accountDropdown"><span class="student-avatar">WM</span><span><span class="account-name d-block">Warda Mahmoud</span><span class="account-role d-block">Student</span></span><i class="fa-solid fa-chevron-down ms-2 text-ed-muted" aria-hidden="true"></i></button>
+          <div class="account-dropdown" id="accountDropdown" hidden><a href="student-profile.html"><i class="fa-regular fa-user me-2"></i>My Profile</a><a href="#my-learning"><i class="fa-solid fa-book-open me-2"></i>My Learning</a><button class="upcoming" type="button" data-route="Log Out"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Log Out</button></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile header -->
+    <header class="mobile-topbar">
+      <div class="d-flex align-items-center justify-content-between gap-2"><div class="d-flex align-items-center gap-2"><button type="button" class="icon-btn flex-shrink-0" id="openMenu" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><a class="brand" href="../public/home.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a></div><div class="d-flex align-items-center gap-1"><button type="button" class="icon-btn upcoming" data-route="Notifications" aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button><a class="student-avatar" href="student-profile.html" aria-label="My Profile">WM</a></div></div>
+      <form class="search-box" role="search" id="mobileSearchForm" autocomplete="off"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" id="mobileSearch" placeholder="Search for courses..." aria-label="Search recommended courses"><button class="clear-search" type="button" aria-label="Clear search"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></form>
+    </header>
+
+    <main class="dashboard-content" id="main-content">
+      <!-- Welcome -->
+      <section aria-labelledby="welcomeTitle">
+        <div class="d-flex align-items-center justify-content-between gap-3"><div><h1 class="welcome-title" id="welcomeTitle">Welcome back, Warda! 👋</h1><p class="welcome-desc">Continue your learning journey and achieve your goals.</p></div><span class="welcome-tag"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Your future starts here</span></div>
+      </section>
+      <!-- Zero-state learning statistics -->
+      <section class="metric-grid" aria-label="Your learning statistics">
+        <div class="row g-3">
+          <div class="col-12 col-lg-3"><div class="metric ed-card"><span class="metric-symbol"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span><div><p class="metric-value">0</p><p class="metric-label">Enrolled Courses</p></div></div></div>
+          <div class="col-12 col-lg-3"><div class="metric ed-card"><span class="metric-symbol"><i class="fa-regular fa-clock" aria-hidden="true"></i></span><div><p class="metric-value">0</p><p class="metric-label">In Progress</p></div></div></div>
+          <div class="col-12 col-lg-3"><div class="metric ed-card"><span class="metric-symbol"><i class="fa-regular fa-circle-check" aria-hidden="true"></i></span><div><p class="metric-value">0</p><p class="metric-label">Completed Courses</p></div></div></div>
+          <div class="col-12 col-lg-3"><div class="metric ed-card"><span class="metric-symbol"><i class="fa-solid fa-award" aria-hidden="true"></i></span><div><p class="metric-value">0</p><p class="metric-label">Certificates Earned</p></div></div></div>
+        </div>
+      </section>
+      <!-- The 190px starting journey hero -->
+      <section class="journey-banner" aria-labelledby="journeyTitle"><img src="https://placehold.co/400x284/e4f3fc/2563eb/png?text=Your+Journey" width="200" height="142" alt="Illustration placeholder for an open book and graduation cap"><div class="position-relative edu-restored-inline-1"><h2 id="journeyTitle">Your learning journey starts here!</h2><p>Explore our courses and find the perfect one for your goals.</p><a class="btn btn-ed d-inline-flex align-items-center justify-content-center" href="../public/explore-courses.html">Explore Courses</a></div><i class="fa-solid fa-graduation-cap hero-watermark" aria-hidden="true"></i></section>
+      <div class="lower-grid">
+        <!-- Explore Courses -->
+        <section id="explore-courses" aria-labelledby="exploreHeading"><h2 class="section-title" id="exploreHeading">Explore Courses</h2><p class="section-desc">Discover new skills and expand your knowledge.</p><div class="discovery-list" id="discoveryList">
+          <article class="discovery-card ed-card" data-search="javascript for beginners omar khaled" data-course="js"><img src="https://placehold.co/180x192/172633/ffffff/png?text=JavaScript" alt="JavaScript for Beginners placeholder" width="90" height="96" loading="lazy"><div class="course-content"><h3 class="course-title">JavaScript for Beginners</h3><p class="course-author">Omar Khaled</p><p class="course-rating"><i class="fa-regular fa-star" aria-hidden="true"></i> 4.8 (1.2k)</p><div class="course-action-row"><span class="course-price">$24.99</span><button type="button" class="btn btn-ed open-course" data-course="js">View Course</button></div></div></article>
+          <article class="discovery-card ed-card" data-search="asp.net core web development ahmed mohamed" data-course="asp"><img src="https://placehold.co/180x192/17234b/ffffff/png?text=ASP.NET" alt="ASP.NET Core Web Development placeholder" width="90" height="96" loading="lazy"><div class="course-content"><h3 class="course-title">ASP.NET Core Web Development</h3><p class="course-author">Ahmed Mohamed</p><p class="course-rating"><i class="fa-regular fa-star" aria-hidden="true"></i> 4.9 (856)</p><div class="course-action-row"><span class="course-price">$39.99</span><button type="button" class="btn btn-ed open-course" data-course="asp">View Course</button></div></div></article>
+          <article class="discovery-card ed-card" data-search="database design fundamentals dina mostafa" data-course="database"><img src="https://placehold.co/180x192/1c333c/ffffff/png?text=Database" alt="Database Design Fundamentals placeholder" width="90" height="96" loading="lazy"><div class="course-content"><h3 class="course-title">Database Design Fundamentals</h3><p class="course-author">Dina Mostafa</p><p class="course-rating"><i class="fa-regular fa-star" aria-hidden="true"></i> 4.7 (642)</p><div class="course-action-row"><span class="course-price">$29.99</span><button type="button" class="btn btn-ed open-course" data-course="database">View Course</button></div></div></article>
+        </div><p class="search-empty mt-3" id="searchEmpty" hidden>No matching recommended courses. Try another search term.</p></section>
+        <!-- Empty My Learning panel -->
+        <section id="my-learning" aria-labelledby="learningHeading"><div class="learning-head d-flex justify-content-between align-items-center gap-3"><h2 class="section-title" id="learningHeading">My Learning</h2><a class="learning-link" href="#my-learning" id="viewAllCourses">View all <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a></div><div class="ed-card overflow-hidden"><div class="learning-tabs" role="tablist" aria-label="Your learning categories"><button class="learning-tab" type="button" role="tab" data-tab="all" aria-selected="true" id="tab-all" aria-controls="learningPanel">All Courses</button><button class="learning-tab" type="button" role="tab" data-tab="in-progress" aria-selected="false" id="tab-progress" aria-controls="learningPanel">In Progress</button><button class="learning-tab" type="button" role="tab" data-tab="completed" aria-selected="false" id="tab-completed" aria-controls="learningPanel">Completed</button></div><div class="learning-empty" id="learningPanel" role="tabpanel" aria-labelledby="tab-all"><span class="learning-empty-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span><h3 id="emptyTitle">No courses yet</h3><p id="emptyDescription">Your enrolled courses will appear here. Find something you love and start learning.</p><a href="../public/explore-courses.html">Browse courses <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></section>
+      </div>
+    </main>
+    <footer class="workspace-footer"><span>Learn Today. Build Tomorrow.</span><a class="text-ed-muted help-link upcoming" href="#" data-route="Help Center">Need help? Visit the Help Center <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></footer>
+  </div>
+  <!-- Mobile fixed navigation -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile primary navigation"><a class="active" href="new-student-dashboard.html" aria-current="page"><i class="fa-solid fa-table-cells-large"></i><span>Home</span></a><a href="../public/explore-courses.html"><i class="fa-regular fa-compass"></i><span>Explore</span></a><a href="#my-learning"><i class="fa-solid fa-book-open"></i><span>Learning</span></a><a href="student-profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a></nav>
+  <!-- Accessible, native preview dialog: no imaginary enrollment -->
+  <dialog class="course-dialog" id="courseDialog" aria-labelledby="dialogTitle"><div class="course-dialog-content"><div class="d-flex align-items-start justify-content-between gap-2 mb-3"><h2 id="dialogTitle" class="mb-0">Course details</h2><button class="icon-btn" id="closeDialog" type="button" aria-label="Close course preview"><i class="fa-solid fa-xmark"></i></button></div><p class="mb-1" id="dialogInstructor"></p><p class="mb-3" id="dialogCost"></p><p class="mb-3">Course preview only. The dedicated Course Details page is not implemented yet; you can browse available courses on the Homepage.</p><a href="../public/explore-courses.html" class="btn btn-ed w-100 d-inline-flex align-items-center justify-content-center">Browse Courses</a></div></dialog>
+  <div class="site-toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="../../assets/js/recovered/new-student-dashboard.js" data-eduhub-restored="page-js"></script>
+</body>
+</html>

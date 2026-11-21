@@ -1,0 +1,3 @@
+# My Profile assets (ZIP #5 desktop/tablet + ZIP #6 mobile)
+
+The screen exports reference `Graduation-cap.svg`, `mail.svg`, `Icon.svg`, `Icon1.svg`, `Icon2.svg`, `Icon8.svg`, `menu.svg`, and a tablet sidebar raster `Instructor-sidebar3@2x.png`. These are shared navigation/form glyphs or a viewport-specific sidebar screenshot, not unique content assets. They are replaced by Font Awesome 6 Free and the shared sidebar partial. No new files are required in `assets/images/` for this screen. The profile photo is a runtime user-selected JPG/PNG and is previewed via a local object URL; it is not shipped as a static image.

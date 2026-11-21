@@ -1,0 +1,14 @@
+{
+  "replaced": {
+    "student/my-learning.html \u2192 student/dashboard.html#my-learning": 13,
+    "student/my-certificates.html \u2192 student/certificate.html": 3,
+    "student/explore-courses.html \u2192 public/explore-courses.html": 3,
+    "student/course-details.html \u2192 public/explore-courses.html": 4,
+    "student/payment-details.html \u2192 admin/payment-details.html": 1,
+    "student/settings.html \u2192 student/student-profile.html": 3,
+    "public/help-center.html \u2192 public/home.html": 1
+  },
+  "unresolved": {
+    "courses/complete-csharp-programming.html": 1
+  }
+}

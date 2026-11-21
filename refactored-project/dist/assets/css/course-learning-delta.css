@@ -1,0 +1,30 @@
+/* ZIP #7 + ZIP #8 Course Learning — additive screen-only CSS */
+.edu-learning-shell{max-width:1480px;margin-inline:auto;color:var(--edu-text,#0f172a)}
+.edu-learning-card{background:#fff;border:1px solid var(--edu-border,#e2e8f0);border-radius:14px;box-shadow:0 2px 8px rgba(15,23,42,.025)}
+.edu-learning-player{position:relative;min-height:clamp(240px,36vw,475px);display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;border-radius:14px 14px 0 0;color:#fff;background:linear-gradient(140deg,#0b1427,#101d36 55%,#182b48)}
+.edu-learning-player__code{display:grid;gap:.75rem;max-width:80%;text-align:left;font-size:clamp(1rem,2.3vw,1.7rem)}
+.edu-learning-player__eyebrow{font-size:.75rem;letter-spacing:.15em;color:#a8c9ef;font-weight:700}
+.edu-learning-player__code code{color:#a4e6d0;font-size:clamp(.85rem,1.6vw,1.2rem);line-height:1.8}
+.edu-learning-play{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:68px;height:68px;border-radius:50%;border:2px solid #ffffffb0;background:#2563ebdb;color:#fff;box-shadow:0 5px 25px #0005}
+.edu-learning-play:hover{background:#1d4ed8;transform:translate(-50%,-50%) scale(1.06)}
+.edu-learning-play:active{transform:translate(-50%,-50%) scale(.97)}
+.edu-learning-player__controls{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;gap:.65rem;background:#0b1427e8;padding:.6rem .85rem;font-size:.8rem}
+.edu-learning-player__controls .form-range{flex:1;min-width:0;accent-color:#60a5fa}
+.edu-learning-player-disclaimer{padding:.65rem 1rem;color:#64748b;font-size:.75rem}
+.edu-learning-avatar{display:grid;place-items:center;width:48px;height:48px;flex-shrink:0;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-weight:700}
+.edu-learning-sidebar{position:sticky;top:90px}
+.edu-learning-accordion .accordion-button{font-size:.9rem;box-shadow:none!important}
+.edu-learning-accordion .accordion-button small{font-size:.75rem;font-weight:400;margin-top:.25rem}
+.edu-learning-lesson{display:flex;align-items:center;text-align:left;gap:.65rem;width:100%;border:0;border-radius:8px;background:transparent;padding:.75rem .55rem;color:#334155;font-size:.85rem}
+.edu-learning-lesson span{flex:1}.edu-learning-lesson small{display:block;color:#64748b;margin-top:.2rem}.edu-learning-lesson-check{display:none;color:#16a34a}.edu-learning-lesson.is-complete .edu-learning-lesson-check{display:block}
+.edu-learning-lesson.is-current{background:#eff6ff;color:#1d4ed8;font-weight:700}
+.edu-learning-lesson:hover{background:#e0edff}.edu-learning-lesson:active{transform:scale(.99)}
+.edu-learning-progress{height:9px}.edu-learning-tabs .nav-link{color:#475569;font-weight:600}.edu-learning-tabs .nav-link.active{color:#2563eb}
+.edu-learning-resources li{display:flex;align-items:center;gap:1rem;border-bottom:1px solid #e2e8f0;padding:.85rem 0}.edu-learning-resources li>span{flex:1;min-width:0}.edu-learning-resources small{display:block;color:#64748b;margin-top:.25rem}.edu-learning-resources li:last-child{border-bottom:0}
+.edu-learning-shell :is(button,a,input,textarea){transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.edu-learning-shell :is(button,a,input,textarea):focus-visible,.edu-learning-offcanvas :is(button,a):focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+.edu-learning-shell :is(.btn,.nav-link):hover{filter:brightness(.96)}.edu-learning-shell :is(.btn,.nav-link):active{transform:translateY(1px)}
+.edu-learning-shell :is(button,a):disabled{opacity:.5;cursor:not-allowed}.edu-learning-offcanvas{max-width:min(100vw,420px)}
+@media(max-width:1199.98px){.edu-learning-sidebar{position:static}.edu-learning-shell aside{display:none}}
+@media(max-width:575.98px){.edu-learning-player{min-height:290px}.edu-learning-player__code{max-width:90%}.edu-learning-play{width:52px;height:52px}.edu-learning-resources li{flex-wrap:wrap}.edu-learning-resources li .btn{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){.edu-learning-shell :is(button,a,input,textarea){transition:none}}

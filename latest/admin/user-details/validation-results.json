@@ -1,0 +1,329 @@
+{
+  "responsive": [
+    {
+      "width": 1440,
+      "pageHeight": 1125,
+      "overflow": false,
+      "javascriptErrors": 0
+    },
+    {
+      "width": 834,
+      "pageHeight": 1509,
+      "overflow": false,
+      "javascriptErrors": 0
+    },
+    {
+      "width": 390,
+      "pageHeight": 1546,
+      "overflow": false,
+      "javascriptErrors": 0
+    },
+    {
+      "width": 320,
+      "pageHeight": 1546,
+      "overflow": false,
+      "javascriptErrors": 0
+    }
+  ],
+  "interactions": [
+    {
+      "name": "initial active status",
+      "pass": true
+    },
+    {
+      "name": "deactivate modal details",
+      "pass": true
+    },
+    {
+      "name": "escape cancels without state change",
+      "pass": true
+    },
+    {
+      "name": "cancel preserves status",
+      "pass": true
+    },
+    {
+      "name": "confirm deactivation",
+      "pass": true
+    },
+    {
+      "name": "activate modal details",
+      "pass": true
+    },
+    {
+      "name": "confirm reactivation",
+      "pass": true
+    },
+    {
+      "name": "notification dropdown opens",
+      "pass": true
+    },
+    {
+      "name": "account dropdown closes notification",
+      "pass": true
+    },
+    {
+      "name": "outside click closes menus",
+      "pass": true
+    },
+    {
+      "name": "search this sample profile",
+      "pass": true
+    },
+    {
+      "name": "back destination bundled",
+      "pass": true
+    },
+    {
+      "name": "mobile drawer opens",
+      "pass": true
+    },
+    {
+      "name": "mobile drawer escape",
+      "pass": true
+    },
+    {
+      "name": "mobile search expands",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "geometry": {
+    "1440": {
+      "pageHeight": 1125,
+      "docWidth": 1440,
+      "viewport": 1440,
+      "topbar": {
+        "x": 232,
+        "y": 0,
+        "w": 1208,
+        "h": 76
+      },
+      "workspace": {
+        "x": 264,
+        "y": 239,
+        "w": 1144,
+        "h": 674
+      },
+      "identity": {
+        "x": 264,
+        "y": 239,
+        "w": 340,
+        "h": 340
+      },
+      "info": {
+        "x": 628,
+        "y": 239,
+        "w": 780,
+        "h": 427
+      },
+      "access": {
+        "x": 628,
+        "y": 690,
+        "w": 780,
+        "h": 223
+      },
+      "notice": {
+        "x": 264,
+        "y": 937,
+        "w": 1144,
+        "h": 76
+      },
+      "footer": {
+        "x": 264,
+        "y": 1037,
+        "w": 1144,
+        "h": 56
+      },
+      "brand": {
+        "x": 20,
+        "y": 24,
+        "w": 140,
+        "h": 34
+      },
+      "menu": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    "834": {
+      "pageHeight": 1509,
+      "docWidth": 834,
+      "viewport": 834,
+      "topbar": {
+        "x": 76,
+        "y": 0,
+        "w": 758,
+        "h": 76
+      },
+      "workspace": {
+        "x": 108,
+        "y": 239,
+        "w": 694,
+        "h": 1038
+      },
+      "identity": {
+        "x": 108,
+        "y": 239,
+        "w": 694,
+        "h": 340
+      },
+      "info": {
+        "x": 108,
+        "y": 603,
+        "w": 694,
+        "h": 427
+      },
+      "access": {
+        "x": 108,
+        "y": 1054,
+        "w": 694,
+        "h": 223
+      },
+      "notice": {
+        "x": 108,
+        "y": 1301,
+        "w": 694,
+        "h": 96
+      },
+      "footer": {
+        "x": 108,
+        "y": 1421,
+        "w": 694,
+        "h": 56
+      },
+      "brand": {
+        "x": 24,
+        "y": 18,
+        "w": 27,
+        "h": 34
+      },
+      "menu": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    "390": {
+      "pageHeight": 1546,
+      "docWidth": 390,
+      "viewport": 390,
+      "topbar": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 105
+      },
+      "workspace": {
+        "x": 16,
+        "y": 273,
+        "w": 358,
+        "h": 1037
+      },
+      "identity": {
+        "x": 16,
+        "y": 273,
+        "w": 358,
+        "h": 316
+      },
+      "info": {
+        "x": 16,
+        "y": 613,
+        "w": 358,
+        "h": 419
+      },
+      "access": {
+        "x": 16,
+        "y": 1056,
+        "w": 358,
+        "h": 254
+      },
+      "notice": {
+        "x": 16,
+        "y": 1334,
+        "w": 358,
+        "h": 116
+      },
+      "footer": {
+        "x": 16,
+        "y": 1474,
+        "w": 358,
+        "h": 56
+      },
+      "brand": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "menu": {
+        "x": 16,
+        "y": 21,
+        "w": 30,
+        "h": 38
+      }
+    },
+    "320": {
+      "pageHeight": 1546,
+      "docWidth": 320,
+      "viewport": 320,
+      "topbar": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 105
+      },
+      "workspace": {
+        "x": 12,
+        "y": 273,
+        "w": 296,
+        "h": 1037
+      },
+      "identity": {
+        "x": 12,
+        "y": 273,
+        "w": 296,
+        "h": 316
+      },
+      "info": {
+        "x": 12,
+        "y": 613,
+        "w": 296,
+        "h": 419
+      },
+      "access": {
+        "x": 12,
+        "y": 1056,
+        "w": 296,
+        "h": 254
+      },
+      "notice": {
+        "x": 12,
+        "y": 1334,
+        "w": 296,
+        "h": 116
+      },
+      "footer": {
+        "x": 12,
+        "y": 1474,
+        "w": 296,
+        "h": 56
+      },
+      "brand": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "menu": {
+        "x": 16,
+        "y": 21,
+        "w": 30,
+        "h": 38
+      }
+    }
+  }
+}

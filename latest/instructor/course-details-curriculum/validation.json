@@ -1,0 +1,278 @@
+[
+  {
+    "width": 1440,
+    "geometry": {
+      "docWidth": 1440,
+      "docHeight": 1770,
+      "main": [
+        232,
+        72,
+        1208,
+        1698
+      ],
+      "topbar": [
+        232,
+        0,
+        1208,
+        72
+      ],
+      "hero": [
+        264,
+        215,
+        1144,
+        308
+      ],
+      "tabs": [
+        264,
+        547,
+        1144,
+        48
+      ],
+      "summary": [
+        264,
+        619,
+        1144,
+        17
+      ],
+      "section1": [
+        264,
+        656,
+        1144,
+        335
+      ],
+      "section2": [
+        264,
+        1011,
+        1144,
+        335
+      ],
+      "section3": [
+        264,
+        1366,
+        1144,
+        335
+      ],
+      "footer": [
+        264,
+        1725,
+        1144,
+        13
+      ],
+      "bottomNav": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "errors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-curriculum-1440-preview.png"
+  },
+  {
+    "width": 834,
+    "geometry": {
+      "docWidth": 834,
+      "docHeight": 2028,
+      "main": [
+        80,
+        72,
+        754,
+        1956
+      ],
+      "topbar": [
+        80,
+        0,
+        754,
+        72
+      ],
+      "hero": [
+        104,
+        207,
+        706,
+        582
+      ],
+      "tabs": [
+        104,
+        813,
+        706,
+        48
+      ],
+      "summary": [
+        104,
+        885,
+        706,
+        17
+      ],
+      "section1": [
+        104,
+        922,
+        706,
+        335
+      ],
+      "section2": [
+        104,
+        1277,
+        706,
+        335
+      ],
+      "section3": [
+        104,
+        1632,
+        706,
+        335
+      ],
+      "footer": [
+        104,
+        1991,
+        706,
+        13
+      ],
+      "bottomNav": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "errors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-curriculum-834-preview.png"
+  },
+  {
+    "width": 390,
+    "geometry": {
+      "docWidth": 390,
+      "docHeight": 2214,
+      "main": [
+        0,
+        149,
+        390,
+        2065
+      ],
+      "topbar": [
+        0,
+        0,
+        390,
+        149
+      ],
+      "hero": [
+        16,
+        272,
+        358,
+        658
+      ],
+      "tabs": [
+        16,
+        954,
+        358,
+        48
+      ],
+      "summary": [
+        16,
+        1026,
+        358,
+        20
+      ],
+      "section1": [
+        16,
+        1066,
+        358,
+        329
+      ],
+      "section2": [
+        16,
+        1411,
+        358,
+        329
+      ],
+      "section3": [
+        16,
+        1756,
+        358,
+        329
+      ],
+      "footer": [
+        16,
+        2109,
+        358,
+        13
+      ],
+      "bottomNav": [
+        0,
+        2053,
+        390,
+        47
+      ]
+    },
+    "errors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-curriculum-390-preview.png"
+  },
+  {
+    "width": 320,
+    "geometry": {
+      "docWidth": 320,
+      "docHeight": 2257,
+      "main": [
+        0,
+        149,
+        320,
+        2108
+      ],
+      "topbar": [
+        0,
+        0,
+        320,
+        149
+      ],
+      "hero": [
+        16,
+        272,
+        288,
+        679
+      ],
+      "tabs": [
+        16,
+        975,
+        288,
+        48
+      ],
+      "summary": [
+        16,
+        1047,
+        288,
+        20
+      ],
+      "section1": [
+        16,
+        1087,
+        288,
+        329
+      ],
+      "section2": [
+        16,
+        1432,
+        288,
+        329
+      ],
+      "section3": [
+        16,
+        1777,
+        288,
+        351
+      ],
+      "footer": [
+        16,
+        2152,
+        288,
+        13
+      ],
+      "bottomNav": [
+        0,
+        2053,
+        320,
+        47
+      ]
+    },
+    "errors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-curriculum-320-preview.png"
+  }
+]

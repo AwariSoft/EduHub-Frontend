@@ -1,0 +1,96 @@
+[
+  {
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": [],
+    "geometry": {
+      "scrollWidth": 1440,
+      "viewportWidth": 1440,
+      "heading": 104,
+      "details": 219,
+      "media": 855,
+      "curriculum": 1206,
+      "detailsHeight": 612,
+      "mediaHeight": 327,
+      "curriculumHeight": 636,
+      "sections": 3,
+      "lessons": 6
+    }
+  },
+  {
+    "width": 834,
+    "horizontalOverflow": false,
+    "errors": [],
+    "geometry": {
+      "scrollWidth": 834,
+      "viewportWidth": 834,
+      "heading": 97,
+      "details": 275,
+      "media": 887,
+      "curriculum": 1238,
+      "detailsHeight": 588,
+      "mediaHeight": 327,
+      "curriculumHeight": 636,
+      "sections": 3,
+      "lessons": 6
+    }
+  },
+  {
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": [],
+    "geometry": {
+      "scrollWidth": 390,
+      "viewportWidth": 390,
+      "heading": 84,
+      "details": 266,
+      "media": 1056,
+      "curriculum": 1591,
+      "detailsHeight": 774,
+      "mediaHeight": 519,
+      "curriculumHeight": 674,
+      "sections": 3,
+      "lessons": 6
+    }
+  },
+  {
+    "width": 320,
+    "horizontalOverflow": false,
+    "errors": [],
+    "geometry": {
+      "scrollWidth": 320,
+      "viewportWidth": 320,
+      "heading": 84,
+      "details": 266,
+      "media": 1112,
+      "curriculum": 1680,
+      "detailsHeight": 830,
+      "mediaHeight": 552,
+      "curriculumHeight": 692,
+      "sections": 3,
+      "lessons": 6
+    }
+  },
+  {
+    "interactionTests": {
+      "initial_sections_and_lessons": true,
+      "prefilled_course": true,
+      "checklist_initial": true,
+      "collapse_section": true,
+      "expand_section": true,
+      "edit_section_preserves_lessons": true,
+      "lesson_menu_open": true,
+      "edit_lesson_preserves_video": true,
+      "add_section": true,
+      "incomplete_section_prevents_submit": true,
+      "new_lesson": true,
+      "save_changes": true,
+      "saved_sections": true,
+      "account_dropdown": true,
+      "notification_dropdown": true,
+      "sidebar_collapse": true,
+      "no_errors": true
+    },
+    "errors": []
+  }
+]

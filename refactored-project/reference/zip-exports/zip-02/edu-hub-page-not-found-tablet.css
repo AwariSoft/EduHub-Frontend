@@ -1,0 +1,313 @@
+.eduhub-page-not-found-tabl {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  min-height: var(--min-h-1024);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+}
+.account-header,
+.route-content,
+.route-workspace {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.route-workspace {
+  height: 1024px;
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--gap-0);
+  min-height: var(--min-h-1024);
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.account-header,
+.route-content {
+  align-self: stretch;
+}
+.route-content {
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.account-header {
+  background-color: var(--color-white);
+  border-bottom: var(--border-1);
+  box-sizing: border-box;
+  padding: var(--padding-16) var(--padding-32);
+}
+.eduhub-brand5,
+.main-navigation2 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.main-navigation2 {
+  align-self: stretch;
+  justify-content: center;
+  gap: var(--gap-0);
+  row-gap: var(--gap-20);
+}
+.eduhub-brand5 {
+  flex: 1;
+  gap: var(--gap-8);
+}
+.graduation-cap-icon7 {
+  height: var(--height-32);
+  width: var(--width-32);
+  position: relative;
+}
+.wordmark4 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: var(--ls--1);
+  font-weight: 700;
+  font-family: inherit;
+}
+.hub5 {
+  color: var(--color-royalblue);
+}
+.missing-chapter-motif,
+.page-not-found {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-not-found {
+  flex-direction: column;
+  padding: 181.5px var(--padding-32);
+  box-sizing: border-box;
+  gap: var(--gap-24);
+  max-width: 100%;
+  text-align: center;
+  font-size: 160px;
+  color: var(--color-royalblue);
+}
+.missing-chapter-motif {
+  text-align: left;
+}
+.error-number {
+  position: relative;
+  letter-spacing: -8px;
+  line-height: 100%;
+}
+.missing-page-explanation {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-16);
+  max-width: 560px;
+  font-size: 36px;
+  color: var(--color-gray);
+}
+.heading27 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.description53 {
+  width: 100%;
+  position: relative;
+  font-size: var(--fs-16);
+  line-height: 160%;
+  color: var(--color-slategray);
+  display: inline-block;
+  max-width: 560px;
+}
+.public-return-actions {
+  width: 280px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  font-size: var(--fs-13);
+}
+.go-to-homepage {
+  cursor: pointer;
+  border: var(--border-2);
+  padding: var(--padding-01);
+  background-color: var(--color-royalblue);
+  align-self: stretch;
+  height: var(--height-48);
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label21,
+.related-action2 {
+  position: relative;
+  font-weight: 600;
+}
+.label21 {
+  font-size: var(--fs-14);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.related-action2 {
+  align-self: stretch;
+  line-height: 150%;
+  display: inline-block;
+  min-height: var(--min-h-24);
+}
+.page-footer {
+  align-self: stretch;
+  border-top: var(--border-1);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-24);
+}
+.brand-promise3 {
+  position: relative;
+}
+@media screen and (max-width: 1050px) {
+  .page-not-found {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    box-sizing: border-box;
+  }
+  .error-number {
+    font-size: 64px;
+    line-height: 96px;
+  }
+  .heading27 {
+    font-size: 29px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 804px) {
+  .page-not-found {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    box-sizing: border-box;
+  }
+  .error-number {
+    font-size: 64px;
+    line-height: 96px;
+  }
+  .heading27 {
+    font-size: 29px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .page-not-found {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    box-sizing: border-box;
+  }
+  .error-number {
+    font-size: 64px;
+    line-height: 96px;
+  }
+  .heading27 {
+    font-size: 29px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .page-not-found {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    box-sizing: border-box;
+  }
+  .description53,
+  .missing-page-explanation {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .page-not-found {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    box-sizing: border-box;
+  }
+  .error-number {
+    font-size: 64px;
+    line-height: 96px;
+  }
+  .heading27 {
+    font-size: 29px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .page-not-found {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    box-sizing: border-box;
+  }
+  .description53,
+  .missing-page-explanation {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .eduhub-brand5 {
+    flex-wrap: wrap;
+  }
+  .wordmark4 {
+    font-size: var(--fs-22);
+  }
+  .page-not-found {
+    padding-top: 77px;
+    padding-bottom: 77px;
+    box-sizing: border-box;
+  }
+  .error-number {
+    font-size: var(--fs-40);
+    line-height: 64px;
+  }
+  .heading27 {
+    font-size: var(--fs-22);
+    line-height: 27px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .eduhub-brand5 {
+    flex-wrap: wrap;
+  }
+  .wordmark4 {
+    font-size: var(--fs-22);
+  }
+  .page-not-found {
+    padding-top: 77px;
+    padding-bottom: 77px;
+    box-sizing: border-box;
+  }
+  .error-number {
+    font-size: var(--fs-40);
+    line-height: 64px;
+  }
+  .heading27 {
+    font-size: var(--fs-22);
+    line-height: 27px;
+  }
+}

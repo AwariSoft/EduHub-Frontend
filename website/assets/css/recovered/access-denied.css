@@ -1,0 +1,117 @@
+
+    /* ===== 1. Design tokens / Figma styles ===== */
+    :root {
+      --eduhub-blue: #2563eb;
+      --eduhub-blue-hover: #1d4ed8;
+      --eduhub-ink: #0f172a;
+      --eduhub-muted: #64748b;
+      --eduhub-border: #e2e8f0;
+      --eduhub-page: #f8fafc;
+      --eduhub-blue-soft: #eff6ff;
+      --eduhub-avatar: #dbeafe;
+      --bs-body-bg: var(--eduhub-page);
+      --bs-body-color: var(--eduhub-ink);
+      --bs-body-font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --bs-primary: #2563eb;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { min-width: 0; min-height: 100vh; min-height: 100dvh; margin: 0; background: var(--eduhub-page); color: var(--eduhub-ink); font-family: var(--bs-body-font-family); -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; }
+    a { text-decoration: none; color: var(--eduhub-blue); }
+    a:hover { color: var(--eduhub-blue-hover); }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid #93c5fd !important; outline-offset: 3px; }
+
+    /* ===== 2. Shared student top navigation ===== */
+    .site-header { flex: 0 0 auto; height: 72px; border-bottom: 1px solid var(--eduhub-border); background: #fff; }
+    .header-main { position: relative; height: 72px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--eduhub-ink); white-space: nowrap; }
+    .brand:hover { color: var(--eduhub-ink); }
+    .brand-icon { display: inline-grid; place-items: center; height: 34px; width: 32px; font-size: 30px; line-height: 1; color: var(--eduhub-blue); }
+    .brand-name { font-size: 28px; font-weight: 700; letter-spacing: -1.15px; line-height: 34px; }
+    .brand-name span { color: var(--eduhub-blue); }
+    .desktop-nav { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 28px; }
+    .desktop-nav a { color: var(--eduhub-muted); font-size: 14px; line-height: 17px; white-space: nowrap; transition: color .16s; }
+    .desktop-nav a:first-child { font-weight: 600; }
+    .desktop-nav a:hover { color: var(--eduhub-blue); }
+    .account-controls { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+    .icon-button { border: 0; background: transparent; color: var(--eduhub-muted); height: 40px; width: 20px; display: grid; place-items: center; padding: 0; cursor: pointer; font-size: 19px; transition: color .16s, transform .16s; }
+    .icon-button:hover { color: var(--eduhub-blue); }
+    .icon-button:active { transform: scale(.94); }
+    .avatar { display: grid; place-items: center; border-radius: 50%; background: var(--eduhub-avatar); color: var(--eduhub-blue); width: 40px; height: 40px; flex: 0 0 40px; font-size: 13px; font-weight: 600; }
+    .avatar:hover { color: var(--eduhub-blue-hover); background: #c7ddff; }
+    .account-name { font-size: 13px; font-weight: 600; line-height: 16px; margin: 0; white-space: nowrap; }
+    .account-role { color: var(--eduhub-muted); font-size: 11px; line-height: 13px; margin: 2px 0 0; }
+    .mobile-menu-button, .tablet-nav { display: none; }
+
+    /* SVG fallbacks appear only when the Font Awesome CDN cannot render. */
+    .fallback-icon { display: none; width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .fa-fallback .fallback-icon { display: block; }
+    .fa-fallback .icon-with-fallback > i { display: none; }
+    .fallback-icon.cap { fill: currentColor; stroke: none; }
+
+    /* ===== 3. Permission card / vertical alignment ===== */
+    .access-main { flex: 0 0 auto; }
+    .access-stage { height: 800px; display: flex; align-items: center; justify-content: center; padding: 0 20px; }
+    .access-card { width: 100%; max-width: 640px; min-height: 467px; padding: 47px; background: #fff; border: 1px solid var(--eduhub-border); border-radius: 12px; }
+    .access-explanation { text-align: center; }
+    .lock-circle { margin: 0 auto 20px; display: grid; place-items: center; height: 80px; width: 80px; border-radius: 50%; background: var(--eduhub-blue-soft); color: var(--eduhub-muted); }
+    .lock-circle i { font-size: 36px; line-height: 1; }
+    .access-title { margin: 0 0 20px; font-size: 32px; line-height: 40px; letter-spacing: -.65px; font-weight: 700; color: var(--eduhub-ink); }
+    .access-description { font-size: 15px; line-height: 24px; color: var(--eduhub-muted); margin: 0; }
+    .return-actions { display: grid; gap: 12px; margin-top: 24px; }
+    .edu-btn { width: 100%; height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; font-size: 14px; line-height: 20px; font-weight: 600; border: 1px solid transparent; border-radius: 8px; text-align: center; cursor: pointer; transition: background-color .16s, border-color .16s, color .16s, box-shadow .16s, transform .16s; }
+    .edu-btn:active { transform: translateY(1px); }
+    .edu-btn-primary { background: var(--eduhub-blue); color: #fff; border-color: var(--eduhub-blue); }
+    .edu-btn-primary:hover, .edu-btn-primary:focus-visible { background: var(--eduhub-blue-hover); border-color: var(--eduhub-blue-hover); color: #fff; }
+    .edu-btn-outline { background: #fff; color: var(--eduhub-ink); border-color: var(--eduhub-border); }
+    .edu-btn-outline:hover, .edu-btn-outline:focus-visible { background: var(--eduhub-page); color: var(--eduhub-blue); border-color: #93c5fd; }
+    .return-note { margin: 0; text-align: center; color: var(--eduhub-muted); font-size: 12px; line-height: 19px; }
+
+    /* ===== 4. Footer / ancillary dialogs ===== */
+    .site-footer { margin-top: auto; flex: 0 0 63px; height: 63px; border-top: 1px solid var(--eduhub-border); display: flex; justify-content: center; align-items: center; text-align: center; color: var(--eduhub-muted); font-size: 12px; line-height: 15px; }
+    .site-footer p { margin: 0; }
+    .dialog-window { position: fixed; inset: 0; margin: auto; border: 1px solid var(--eduhub-border); border-radius: 14px; padding: 24px; width: min(420px, calc(100vw - 40px)); max-height: calc(100dvh - 40px); overflow-y: auto; background: #fff; box-shadow: 0 16px 40px rgba(15, 23, 42, .16); }
+    .dialog-window::backdrop { background: rgba(15, 23, 42, .40); }
+    .dialog-window h2 { margin: 0; font-size: 20px; font-weight: 700; }
+    .dialog-window p { margin: 12px 0 20px; font-size: 14px; color: var(--eduhub-muted); line-height: 1.6; }
+    .dialog-close { border: 0; background: transparent; color: var(--eduhub-muted); cursor: pointer; padding: 0 4px; font-size: 20px; }
+    .menu-dialog { inset: 0 0 0 auto; margin: 0 0 0 auto; width: min(320px, 90vw); height: 100dvh; max-height: 100dvh; padding: 24px; border-radius: 12px 0 0 12px; }
+    .menu-dialog nav a { display: block; padding: 12px 8px; border-radius: 8px; color: var(--eduhub-ink); font-size: 14px; }
+    .menu-dialog nav a:hover { background: var(--eduhub-page); color: var(--eduhub-blue); }
+    .menu-dialog nav a:active { background: var(--eduhub-blue-soft); }
+
+    /* ===== 5. Figma Tablet 834px and Mobile 390px ===== */
+    @media (max-width: 1199.98px) {
+      .site-header { height: 103px; }
+      .desktop-nav { display: none; }
+      .tablet-nav { display: flex; height: 31px; padding: 0 32px 16px; align-items: flex-start; justify-content: space-between; }
+      .tablet-nav a { font-size: 12px; line-height: 15px; font-weight: 500; }
+    }
+    @media (max-width: 575.98px) {
+      .header-main { padding: 0 20px; }
+      .tablet-nav { padding: 0 20px 16px; }
+      .account-name-and-role { display: none; }
+      .account-controls { gap: 12px; }
+      .mobile-menu-button { display: grid; }
+      .access-stage { height: 670px; }
+      .access-card { max-width: 350px; min-height: 438px; padding: 23px; }
+      .access-title { font-size: 28px; line-height: 35px; letter-spacing: -.45px; }
+    }
+    @media (max-width: 359.98px) {
+      .header-main { padding: 0 12px; }
+      .tablet-nav { padding-left: 12px; padding-right: 12px; }
+      .access-stage { padding: 0 12px; }
+      .access-card { padding: 19px; min-height: 0; }
+      .brand-icon { width: 27px; font-size: 26px; }
+      .brand-name { font-size: 24px; letter-spacing: -.75px; }
+      .account-controls { gap: 9px; }
+      .access-title { font-size: 26px; }
+      .tablet-nav a { font-size: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  
+/* Moved from static HTML style attributes during restoration. */
+.edu-restored-inline-1 { width:36px;height:36px;display:inline-grid;place-items:center; }
+.edu-restored-inline-2 { display:flex;align-items:center;justify-content:space-between;margin-bottom:16px; }
+.edu-restored-inline-3 { display:flex;align-items:center;justify-content:space-between;gap:12px; }

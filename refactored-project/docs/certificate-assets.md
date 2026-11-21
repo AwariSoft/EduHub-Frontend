@@ -1,0 +1,1 @@
+Source: ZIP #8 certificate desktop/tablet/mobile. Retained: public/Achievement-seal@2x.png -> assets/images/certificates/achievement-seal.png. Replaced with Font Awesome 6 Free: Graduation-cap.svg, search.svg, Notifications.svg, chevron-down.svg, menu.svg, circle-check.svg.

@@ -1,0 +1,681 @@
+{
+  "source_archives": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "original_html_exports": 138,
+  "recovered_completed_pages": [
+    "pages/public/home.html",
+    "pages/instructor/add-lesson.html",
+    "pages/instructor/course-curriculum.html",
+    "pages/instructor/course-details.html",
+    "pages/instructor/course-analytics.html"
+  ],
+  "new_primary_screens": [
+    {
+      "path": "pages/auth/sign-in.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-sign-in-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 2,
+          "filename": "edu-hub-sign-in-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/auth/create-account.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-create-account-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 2,
+          "filename": "edu-hub-create-account-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/auth/forgot-password.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-forgot-password-desktop.html",
+          "viewport": "D"
+        }
+      ]
+    },
+    {
+      "path": "pages/auth/reset-password.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-reset-password-desktop.html",
+          "viewport": "D"
+        }
+      ]
+    },
+    {
+      "path": "pages/system/page-not-found.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-page-not-found-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 2,
+          "filename": "edu-hub-page-not-found-tablet.html",
+          "viewport": "T"
+        },
+        {
+          "zip": 2,
+          "filename": "edu-hub-page-not-found-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/system/access-denied.html",
+      "sources": [
+        {
+          "zip": 2,
+          "filename": "edu-hub-access-denied-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 2,
+          "filename": "edu-hub-access-denied-tablet.html",
+          "viewport": "T"
+        },
+        {
+          "zip": 2,
+          "filename": "edu-hub-access-denied-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/student/dashboard.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-student-dashboard-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 3,
+          "filename": "edu-hub-student-dashboard-tablet.html",
+          "viewport": "T"
+        },
+        {
+          "zip": 3,
+          "filename": "edu-hub-student-dashboard-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/student/new-student-dashboard.html",
+      "sources": [
+        {
+          "zip": 3,
+          "filename": "edu-hub-new-student-dashboard-desktop.html",
+          "viewport": "D"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/dashboard.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-instructor-dashboard-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 3,
+          "filename": "edu-hub-instructor-dashboard-tablet.html",
+          "viewport": "T"
+        },
+        {
+          "zip": 3,
+          "filename": "edu-hub-instructor-dashboard-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/new-instructor-dashboard.html",
+      "sources": [
+        {
+          "zip": 3,
+          "filename": "edu-hub-instructor-dashboard-new-instructor.html",
+          "viewport": "D"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/my-courses.html",
+      "sources": [
+        {
+          "zip": 3,
+          "filename": "edu-hub-my-courses-tablet.html",
+          "viewport": "T"
+        },
+        {
+          "zip": 3,
+          "filename": "edu-hub-my-courses-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/create-course.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-instructor-workspace-create-course.html",
+          "viewport": "C"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/edit-course.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-instructor-workspace-edit-course.html",
+          "viewport": "C"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/edit-lesson.html",
+      "sources": [
+        {
+          "zip": 4,
+          "filename": "edu-hub-edit-lesson-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/public/explore-courses.html",
+      "sources": [
+        {
+          "zip": 9,
+          "filename": "edu-hub-explore-courses-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 9,
+          "filename": "edu-hub-explore-courses-tablet.html",
+          "viewport": "T"
+        },
+        {
+          "zip": 9,
+          "filename": "edu-hub-explore-courses-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/course-details-curriculum.html",
+      "sources": [
+        {
+          "zip": 6,
+          "filename": "edu-hub-course-details-curriculum-desktop.html",
+          "viewport": "D"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/course-details-students.html",
+      "sources": [
+        {
+          "zip": 6,
+          "filename": "edu-hub-course-details-students-desktop.html",
+          "viewport": "D"
+        }
+      ]
+    },
+    {
+      "path": "pages/instructor/course-details-analytics.html",
+      "sources": [
+        {
+          "zip": 6,
+          "filename": "edu-hub-course-details-analytics-desktop.html",
+          "viewport": "D"
+        }
+      ]
+    },
+    {
+      "path": "pages/admin/payment-details.html",
+      "sources": [
+        {
+          "zip": 11,
+          "filename": "edu-hub-admin-payment-details-desktop.html",
+          "viewport": "D"
+        },
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-payment-details-tablet.html",
+          "viewport": "T"
+        },
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-payment-details-mobile.html",
+          "viewport": "M"
+        }
+      ]
+    }
+  ],
+  "supporting_state_galleries": [
+    {
+      "path": "pages/states/password-recovery-states.html",
+      "sources": [
+        {
+          "zip": 2,
+          "filename": "edu-hub-password-recovery-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "auth/forgot-password"
+    },
+    {
+      "path": "pages/states/password-reset-states.html",
+      "sources": [
+        {
+          "zip": 2,
+          "filename": "edu-hub-password-reset-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "auth/reset-password"
+    },
+    {
+      "path": "pages/states/payment-processing.html",
+      "sources": [
+        {
+          "zip": 4,
+          "filename": "edu-hub-payment-processing.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/checkout"
+    },
+    {
+      "path": "pages/states/payment-successful-early.html",
+      "sources": [
+        {
+          "zip": 4,
+          "filename": "edu-hub-payment-successful.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/payment-success"
+    },
+    {
+      "path": "pages/states/empty-workspace-states.html",
+      "sources": [
+        {
+          "zip": 6,
+          "filename": "edu-hub-empty-workspace-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "instructor/dashboard"
+    },
+    {
+      "path": "pages/states/menus-uploads-form-states.html",
+      "sources": [
+        {
+          "zip": 6,
+          "filename": "edu-hub-menus-uploads-and-form-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "instructor/create-course"
+    },
+    {
+      "path": "pages/states/course-approval-states.html",
+      "sources": [
+        {
+          "zip": 6,
+          "filename": "edu-hub-course-approval-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "instructor/course-details"
+    },
+    {
+      "path": "pages/states/course-learning-all-lessons-complete.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-course-learning-all-lessons-complete.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/course-learning"
+    },
+    {
+      "path": "pages/states/course-learning-no-final-quiz-policy.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-course-learning-no-final-quiz-policy.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/course-learning"
+    },
+    {
+      "path": "pages/states/course-learning-notes.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-course-learning-notes.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/course-learning"
+    },
+    {
+      "path": "pages/states/course-learning-resources.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-course-learning-resources.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/course-learning"
+    },
+    {
+      "path": "pages/states/dialogs-curriculum-states.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-dialogs-and-curriculum-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/course-learning"
+    },
+    {
+      "path": "pages/states/explore-courses-mobile-filters-open.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-explore-courses-mobile-filters-open.html",
+          "viewport": "M"
+        }
+      ],
+      "parent": "public/explore-courses"
+    },
+    {
+      "path": "pages/states/quiz-result-fail.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-quiz-result-fail.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/final-quiz"
+    },
+    {
+      "path": "pages/states/quiz-result-pass.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-quiz-result-pass.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/final-quiz"
+    },
+    {
+      "path": "pages/states/share-quiz-confirmation-dialogs.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-share-and-quiz-confirmation-dialogs.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/final-quiz"
+    },
+    {
+      "path": "pages/states/certificate-not-yet-available.html",
+      "sources": [
+        {
+          "zip": 7,
+          "filename": "edu-hub-certificate-not-yet-available.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/certificate"
+    },
+    {
+      "path": "pages/states/course-details-already-enrolled.html",
+      "sources": [
+        {
+          "zip": 8,
+          "filename": "edu-hub-course-details-already-enrolled.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "public/explore-courses"
+    },
+    {
+      "path": "pages/states/course-details-free.html",
+      "sources": [
+        {
+          "zip": 8,
+          "filename": "edu-hub-course-details-free.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "public/explore-courses"
+    },
+    {
+      "path": "pages/states/curriculum-expanded-collapsed.html",
+      "sources": [
+        {
+          "zip": 8,
+          "filename": "edu-hub-curriculum-expanded-and-collapsed-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "instructor/course-curriculum"
+    },
+    {
+      "path": "pages/states/free-course-learning-database.html",
+      "sources": [
+        {
+          "zip": 9,
+          "filename": "edu-hub-free-course-learning-database-design-fundamentals.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/course-learning"
+    },
+    {
+      "path": "pages/states/admin-account-access-confirmations.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-account-access-confirmations-and-results.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "admin/user-details"
+    },
+    {
+      "path": "pages/states/admin-course-approvals-table-states.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-course-approvals-table-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "admin/course-approvals"
+    },
+    {
+      "path": "pages/states/admin-course-review-decisions.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-course-review-decisions-and-results.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "admin/course-review-details"
+    },
+    {
+      "path": "pages/states/admin-filters-profile-notifications.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-filters-profile-and-notifications.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "admin/admin-dashboard"
+    },
+    {
+      "path": "pages/states/admin-mobile-menus-filters-dialogs.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-mobile-menus-filters-and-dialogs.html",
+          "viewport": "M"
+        }
+      ],
+      "parent": "admin/admin-dashboard"
+    },
+    {
+      "path": "pages/states/admin-payments-refund-outcomes.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-payments-refund-and-payment-outcomes.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "admin/payments"
+    },
+    {
+      "path": "pages/states/admin-payments-table-states.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-payments-table-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "admin/payments"
+    },
+    {
+      "path": "pages/states/admin-user-management-table-states.html",
+      "sources": [
+        {
+          "zip": 12,
+          "filename": "edu-hub-admin-user-management-table-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "admin/user-management"
+    },
+    {
+      "path": "pages/states/notification-states-roles.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-notification-states-and-roles.html",
+          "viewport": "C"
+        },
+        {
+          "zip": 14,
+          "filename": "edu-hub-notification-states-and-roles.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/notifications"
+    },
+    {
+      "path": "pages/states/payment-status-role-safe-access.html",
+      "sources": [
+        {
+          "zip": 1,
+          "filename": "edu-hub-payment-status-and-role-safe-access.html",
+          "viewport": "C"
+        },
+        {
+          "zip": 14,
+          "filename": "edu-hub-payment-status-and-role-safe-access.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/payment-success"
+    },
+    {
+      "path": "pages/states/profile-saving-states.html",
+      "sources": [
+        {
+          "zip": 14,
+          "filename": "edu-hub-profile-saving-states.html",
+          "viewport": "C"
+        }
+      ],
+      "parent": "student/edit-student-profile"
+    }
+  ],
+  "parent_pages_with_integrated_states": [
+    "auth/forgot-password",
+    "auth/reset-password",
+    "student/checkout",
+    "student/payment-success",
+    "instructor/dashboard",
+    "instructor/create-course",
+    "instructor/course-details",
+    "student/course-learning",
+    "public/explore-courses",
+    "student/final-quiz",
+    "student/certificate",
+    "instructor/course-curriculum",
+    "admin/user-details",
+    "admin/course-approvals",
+    "admin/course-review-details",
+    "admin/admin-dashboard",
+    "admin/payments",
+    "admin/user-management",
+    "student/notifications",
+    "student/edit-student-profile"
+  ],
+  "restored_legacy_images": 46,
+  "all_pages": 74
+}

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub instructor dialogs and curriculum states: destructive confirmations, section editing, password controls and unsaved changes.">
+  <title>Dialogs and Curriculum States — EduHub Instructor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+<a href="#mainContent" class="skip-link">Skip to instructor dialogs</a>
+<!-- COMPONENT REFERENCE: integrate individual panels into existing instructor pages.
+     Shared layout hooks (provided by host application; intentionally not duplicated):
+     INCLUDE: partials/instructor-sidebar.html
+     INCLUDE: partials/instructor-topbar.html
+     INCLUDE: partials/footer.html -->
+<main class="ed-stateboard" id="mainContent">
+  <a class="ed-logo" href="eduhub-instructor-dashboard.html" aria-label="EduHub instructor dashboard"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span>Hub</span></span></a>
+  <header class="board-intro"><h1>Dialogs and curriculum states</h1><p>Full-sized confirmation and editing states · Safe cancel actions · No prototype interactions.</p></header>
+
+  <!-- 01 · Destructive confirmations (Figma 18:61920) -->
+  <section class="ed-two-col ed-section" aria-label="Destructive confirmation dialogs">
+    <article class="ed-card delete-course-card" id="deleteCourseCard" aria-labelledby="deleteCourseTitle">
+      <h2 id="deleteCourseTitle">Delete Course?</h2>
+      <i class="fa-regular fa-trash-can ed-danger-icon" aria-hidden="true"></i>
+      <h3>JavaScript for Beginners</h3>
+      <p class="ed-copy">This permanently deletes your draft course, including its 3 sections, 6 lessons, uploaded videos and resources. This course has no enrolled students.</p>
+      <div class="ed-guidance ed-guidance--error" role="note"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i><span>This action cannot be undone. Your other courses will not be affected.</span></div>
+      <div class="ed-actions"><button type="button" class="ed-btn" id="cancelDeleteCourse">Cancel</button><button type="button" class="ed-btn ed-btn--danger" id="confirmDeleteCourse">Delete Course</button></div>
+      <p id="deleteCourseMessage" class="ed-inline-message" role="status" hidden></p>
+    </article>
+
+    <article class="ed-card delete-account-card" aria-labelledby="deleteAccountTitle">
+      <h2 id="deleteAccountTitle">Permanently delete your account?</h2>
+      <i class="fa-solid fa-triangle-exclamation ed-danger-icon" aria-hidden="true"></i>
+      <p class="ed-copy account-description">Your instructor profile, 8 courses, uploaded videos and resources, and teaching analytics will be permanently removed. Students will lose access to your course content. You will be signed out.</p>
+      <div class="ed-guidance ed-guidance--error" role="note"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i><span>This is irreversible. You cannot recover your account or teaching content after deletion.</span></div>
+      <div class="ed-field account-field"><label for="deleteConfirm">Type DELETE to confirm</label><input class="ed-input" type="text" id="deleteConfirm" placeholder="Type DELETE" autocomplete="off" aria-describedby="deleteConfirmHint" spellcheck="false"><small class="ed-helper" id="deleteConfirmHint">Confirmation is case-sensitive.</small></div>
+      <div class="ed-actions"><button type="button" class="ed-btn" id="keepAccount">Keep My Account</button><button type="button" class="ed-btn ed-btn--danger" id="confirmDeleteAccount" disabled>Delete Account</button></div>
+    </article>
+  </section>
+
+  <!-- 02 · Section editing dialogs (Figma 18:61957) -->
+  <section class="ed-two-col ed-section" aria-label="Section editing dialogs">
+    <article class="ed-card add-section-card" id="addSectionCard" aria-labelledby="addSectionTitle">
+      <h2 id="addSectionTitle">Add New Section</h2>
+      <p class="ed-copy card-lead">Complete C# Programming · Organize the next part of your course.</p>
+      <form id="addSectionForm" novalidate>
+        <div class="ed-field ed-field--helper"><label for="newSectionTitle">Section Title <span aria-hidden="true">*</span></label><input class="ed-input" id="newSectionTitle" name="title" value="Working with Collections" minlength="3" maxlength="120" required aria-describedby="newSectionTitleHelp"><small class="ed-helper" id="newSectionTitleHelp">Choose a title that describes the skills taught in this section.</small></div>
+        <div class="ed-field ed-field--helper"><label for="newSectionOrder">Section Order <span aria-hidden="true">*</span></label><input class="ed-input" id="newSectionOrder" name="order" type="number" min="1" max="999" step="1" value="4" required aria-describedby="newSectionOrderHelp"><small class="ed-helper" id="newSectionOrderHelp">New sections are added after your existing 3 sections.</small></div>
+        <div class="ed-actions"><button type="button" class="ed-btn" id="cancelAddSection">Cancel</button><button type="submit" class="ed-btn ed-btn--primary">Add Section</button></div>
+        <p class="ed-inline-message" id="addSectionMessage" role="status" hidden></p>
+      </form>
+    </article>
+    <article class="ed-card edit-section-card" id="editSectionCard" aria-labelledby="editSectionTitle">
+      <h2 id="editSectionTitle">Edit Section</h2>
+      <p class="ed-copy card-lead">Updating a section title will not remove its lessons.</p>
+      <form id="editSectionForm" novalidate>
+        <div class="ed-field"><label for="editSectionName">Section Title <span aria-hidden="true">*</span></label><input class="ed-input" id="editSectionName" name="title" required minlength="3" maxlength="120" value="C# Fundamentals"></div>
+        <div class="ed-field"><label for="editSectionOrder">Section Order <span aria-hidden="true">*</span></label><input class="ed-input" id="editSectionOrder" name="order" required type="number" min="1" max="999" step="1" value="2"></div>
+        <p class="ed-description edit-preserved" id="lessonsPreserved">3 lessons are preserved: Variables and Data Types, Operators, Conditional Statements.</p>
+        <div class="ed-actions"><button type="button" class="ed-btn" id="cancelEditSection">Cancel</button><button type="submit" class="ed-btn ed-btn--primary">Save Changes</button></div>
+        <p id="editSectionMessage" class="ed-inline-message" role="status" hidden></p>
+      </form>
+    </article>
+  </section>
+
+  <!-- 03 · Password change and curriculum/cancel states (Figma 18:62011) -->
+  <section class="ed-two-col ed-section final-section" aria-label="Password and curriculum states">
+    <article class="ed-card password-card" id="passwordCard" aria-labelledby="passwordTitle">
+      <h2 id="passwordTitle">Change Password</h2>
+      <p class="ed-copy card-lead">Protect your account with a unique password you do not use elsewhere.</p>
+      <form id="passwordForm" novalidate>
+        <div class="ed-field"><label for="currentPassword">Current Password <span aria-hidden="true">*</span></label><div class="ed-password-control"><i class="fa-solid fa-lock" aria-hidden="true"></i><input id="currentPassword" type="password" autocomplete="current-password" placeholder="Enter your current password" required><button class="ed-eye" type="button" data-target="currentPassword" aria-label="Show current password" aria-pressed="false"><i class="fa-regular fa-eye" aria-hidden="true"></i></button></div></div>
+        <div class="ed-field ed-field--helper"><label for="newPassword">New Password <span aria-hidden="true">*</span></label><div class="ed-password-control"><i class="fa-solid fa-lock" aria-hidden="true"></i><input id="newPassword" type="password" autocomplete="new-password" minlength="12" placeholder="Create a new password" aria-describedby="passwordRequirements" required><button class="ed-eye" type="button" data-target="newPassword" aria-label="Show new password" aria-pressed="false"><i class="fa-regular fa-eye" aria-hidden="true"></i></button></div><small class="ed-helper" id="passwordRequirements">At least 12 characters, including upper/lowercase, a number and a symbol.</small></div>
+        <div class="ed-field"><label for="confirmPassword">Confirm New Password <span aria-hidden="true">*</span></label><div class="ed-password-control"><i class="fa-solid fa-lock" aria-hidden="true"></i><input id="confirmPassword" type="password" autocomplete="new-password" placeholder="Re-enter your new password" required><button class="ed-eye" type="button" data-target="confirmPassword" aria-label="Show confirmed password" aria-pressed="false"><i class="fa-regular fa-eye" aria-hidden="true"></i></button></div></div>
+        <div class="ed-actions"><button type="button" class="ed-btn" id="cancelPassword">Cancel</button><button type="submit" class="ed-btn ed-btn--primary">Update Password</button></div>
+        <p id="passwordMessage" class="ed-inline-message" aria-live="polite" hidden></p>
+      </form>
+    </article>
+
+    <div class="ed-stack">
+      <article class="ed-card curriculum-card" id="curriculumCard" aria-labelledby="curriculumTitle">
+        <h2 id="curriculumTitle">Curriculum section · Collapsed</h2>
+        <div id="sectionList" aria-live="polite">
+          <div class="ed-curriculum-item" id="curriculumItem2" data-section-id="2">
+            <button class="ed-section-trigger" id="curriculumToggle" type="button" aria-expanded="false" aria-controls="curriculumLessons"><i class="fa-solid fa-grip-vertical ed-grip" aria-hidden="true"></i><span class="ed-section-identity"><strong id="curriculumSectionName">C# Fundamentals</strong><small>3 lessons · 52m 30s</small></span><i class="fa-solid fa-chevron-down ed-chevron" aria-hidden="true"></i></button>
+            <div id="curriculumLessons" class="ed-lessons" hidden><ol><li>Variables and Data Types</li><li>Operators</li><li>Conditional Statements</li></ol></div>
+          </div>
+        </div>
+        <div class="ed-actions curriculum-actions"><button type="button" class="ed-btn" id="editFromCurriculum">Edit Section</button><button type="button" class="ed-btn" id="deleteSection">Delete Section</button></div>
+      </article>
+      <article class="ed-card discard-card" id="discardCard" aria-labelledby="cancelConfirmTitle">
+        <h2 id="cancelConfirmTitle">Cancel confirmation</h2>
+        <h3>Discard unsaved changes?</h3>
+        <p class="ed-copy">Your unsaved changes will be lost. Previously saved course information and curriculum will stay unchanged.</p>
+        <div class="ed-actions"><button type="button" class="ed-btn" id="keepEditing">Keep Editing</button><button type="button" class="ed-btn ed-btn--danger" id="discardChanges">Discard Changes</button></div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<div class="ed-toast" id="edToast" role="status" aria-live="polite" hidden><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span id="toastText"></span><button type="button" class="ed-toast-close" id="closeToast" aria-label="Dismiss message"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+<!-- Bootstrap dialog for explicit confirmation of curriculum section removal. Only local demo data is changed. -->
+<div class="modal fade" id="sectionDeleteModal" tabindex="-1" aria-labelledby="sectionDeleteTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content ed-modal-content"><div class="modal-header border-0"><h2 class="modal-title fs-5" id="sectionDeleteTitle">Delete Section?</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body pt-0"><p>Delete <strong id="modalSectionName">C# Fundamentals</strong> and its associated lessons from this local preview?</p><div class="ed-guidance ed-guidance--error"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i><span>Production deletion must be confirmed through the backend. This demonstration does not alter stored courses.</span></div></div><div class="modal-footer border-0"><button class="ed-btn" data-bs-dismiss="modal" type="button">Keep Section</button><button class="ed-btn ed-btn--danger" id="confirmDeleteSection" type="button">Delete in Preview</button></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* ZIP #10 Course Review Details — additive styles only */
+.edu-review__panel{background:var(--edu-surface,#fff);border:1px solid var(--edu-border,#e2e8f0);border-radius:var(--edu-radius-xl,1rem);box-shadow:var(--edu-shadow-sm,0 2px 8px rgba(15,23,42,.02));transition:box-shadow .2s ease,border-color .2s ease}
+.edu-review__panel:hover{box-shadow:0 8px 24px rgba(15,23,42,.055)}
+.edu-review__notice{background:#fffbeb;border:1px solid #fde68a;border-radius:.75rem;color:#92400e}
+.edu-review__thumbnail{aspect-ratio:16/9;object-fit:cover;border-radius:.75rem;transition:transform .2s ease}
+.edu-review__thumbnail:hover{transform:scale(1.012)}
+.edu-review__back{color:var(--edu-primary,#2563eb);text-decoration:none;font-weight:600;transition:color .2s ease,transform .2s ease}
+.edu-review__back:hover{color:#1d4ed8;text-decoration:underline}
+.edu-review__back:active{transform:translateY(1px)}
+.edu-review__back:focus-visible,.edu-review__lesson-action:focus-visible,.edu-review__decision:focus-visible,.edu-review__accordion .accordion-button:focus-visible{outline:3px solid #93c5fd;outline-offset:3px;box-shadow:none}
+.edu-review__avatar{display:inline-grid;place-items:center;width:3rem;height:3rem;flex-shrink:0;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-weight:700}
+.edu-review__facts dt,.edu-review__facts dd{font-size:.875rem;padding-bottom:.75rem;overflow-wrap:anywhere}
+.edu-review__facts dt{color:var(--edu-muted,#64748b);font-weight:500}
+.edu-review__accordion-item{border-color:var(--edu-border,#e2e8f0)}
+.edu-review__accordion .accordion-button{transition:background-color .2s ease,color .2s ease,box-shadow .2s ease}
+.edu-review__accordion .accordion-button:hover{background:#eff6ff}
+.edu-review__accordion .accordion-button:active{background:#dbeafe}
+.edu-review__lesson{border-bottom:1px solid var(--edu-border,#e2e8f0);transition:background-color .2s ease}
+.edu-review__lesson:last-child{border-bottom:0}
+.edu-review__lesson:hover{background:#f8fafc}
+.edu-review__lesson-action,.edu-review__decision{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease}
+.edu-review__lesson-action:hover,.edu-review__decision:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(15,23,42,.09)}
+.edu-review__lesson-action:active,.edu-review__decision:active{transform:translateY(1px)}
+.edu-review__preview{background:#0b1427;color:#fff;border-radius:.75rem}
+.edu-review__objectives li{line-height:1.6}
+@media(max-width:575.98px){.edu-review__lesson{align-items:flex-start!important}.edu-review__lesson-action{width:100%}.edu-review__facts dt,.edu-review__facts dd{font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){.edu-review__panel,.edu-review__thumbnail,.edu-review__back,.edu-review__accordion .accordion-button,.edu-review__lesson,.edu-review__lesson-action,.edu-review__decision{transition:none!important;transform:none!important}}

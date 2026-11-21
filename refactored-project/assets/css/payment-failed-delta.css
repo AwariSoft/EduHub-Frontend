@@ -1,0 +1,25 @@
+/* ZIP #14 / Payment Failed — additive, screen-scoped rules only */
+.edu-payment-failed{background:#f8fafc;color:#0f172a;min-height:100vh;font-family:Inter,Arial,sans-serif}
+.edu-payment-failed__main{max-width:1060px}
+.edu-payment-failed__panel{max-width:680px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:clamp(20px,5vw,48px);box-shadow:0 2px 12px rgba(15,23,42,.02)}
+.edu-payment-failed__motif{display:block;margin-inline:auto;width:clamp(88px,18vw,120px);height:auto;object-fit:contain}
+.edu-payment-failed__subtitle{color:#64748b;font-size:1rem}
+.edu-payment-failed__details{padding:22px;border:1px solid #e2e8f0;border-radius:14px}
+.edu-payment-failed__thumbnail{width:96px;height:72px;object-fit:cover;border-radius:10px;flex-shrink:0}
+.edu-payment-failed__fact{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid #e2e8f0}
+.edu-payment-failed__fact dt{font-weight:500;color:#64748b}
+.edu-payment-failed__fact dd{margin:0;text-align:right;font-weight:600}
+.edu-payment-failed__status{display:inline-flex;align-items:center;border-radius:999px;padding:5px 11px;background:#fef2f2;color:#b91c1c;font-size:.875rem}
+.edu-payment-failed__notice{display:flex;gap:12px;padding:16px 18px;border:1px solid #fde68a;background:#fffbeb;border-radius:12px;color:#92400e}
+.edu-payment-failed__notice>i{flex-shrink:0}
+.edu-payment-failed__notice p{font-size:.9rem;line-height:1.6}
+.edu-payment-failed__action{min-height:46px;display:inline-flex;align-items:center;justify-content:center}
+.edu-payment-failed__disclaimer{font-size:.8rem;color:#64748b}
+.edu-payment-failed .btn,.edu-payment-failed a,.edu-payment-failed button,.edu-payment-failed__details,.edu-payment-failed__panel{transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.edu-payment-failed .btn:hover,.edu-payment-failed .btn:active{transform:translateY(-1px);box-shadow:0 5px 14px rgba(15,23,42,.12)}
+.edu-payment-failed a:not(.btn):hover{color:#1d4ed8;text-decoration:underline}
+.edu-payment-failed .btn:focus-visible,.edu-payment-failed a:focus-visible,.edu-payment-failed button:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+.edu-payment-failed .btn:active{transform:translateY(1px)}
+.edu-payment-failed__text-link{padding:10px;border-radius:8px;text-decoration:none;font-weight:600}
+@media(max-width:575.98px){.edu-payment-failed__panel{padding:20px 16px;border-radius:14px}.edu-payment-failed__details{padding:16px}.edu-payment-failed__thumbnail{width:72px;height:64px}.edu-payment-failed__fact{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){.edu-payment-failed .btn,.edu-payment-failed a,.edu-payment-failed button,.edu-payment-failed__details,.edu-payment-failed__panel{transition:none!important}}

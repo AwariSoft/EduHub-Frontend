@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EduHub makes learning practical skills in programming, web development and databases simple and flexible.">
+  <title>EduHub | Learn Today. Build Tomorrow.</title>
+
+  <!-- Bootstrap 5, Font Awesome 6 and the Inter typeface -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/recovered/homepage.css" data-eduhub-restored="page-css">
+</head>
+<body>
+  <!-- 01 — PUBLIC HEADER -->
+  <header class="site-header">
+    <div class="header-shell">
+      <nav class="main-nav d-flex align-items-center justify-content-between" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="EduHub Homepage"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+        <div class="primary-links d-flex align-items-center">
+          <a class="nav-link-ed active" href="#top" aria-current="page">Home</a>
+          <a class="nav-link-ed" href="#courses">Explore Courses</a>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a class="nav-link-ed account-link desktop-login" href="../auth/sign-in.html">Log In</a>
+          <a class="ed-btn ed-btn-primary nav-signup" href="../auth/create-account.html">Sign Up</a>
+          <button class="mobile-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+        </div>
+      </nav>
+      <nav class="mobile-nav-row" aria-label="Quick navigation">
+        <a class="nav-link-ed active" href="#top" aria-current="page">Home</a>
+        <a class="nav-link-ed" href="#courses">Explore Courses</a>
+        <a class="nav-link-ed" href="../auth/sign-in.html">Log In</a>
+      </nav>
+    </div>
+    <div class="collapse mobile-drawer" id="mobileMenu">
+      <a href="#top"><i class="fa-solid fa-house me-2 text-brand"></i>Homepage</a>
+      <a href="#categories"><i class="fa-solid fa-layer-group me-2 text-brand"></i>Browse Categories</a>
+      <a href="#courses"><i class="fa-solid fa-book-open me-2 text-brand"></i>Explore Courses</a>
+      <a href="../auth/sign-in.html"><i class="fa-solid fa-right-to-bracket me-2 text-brand"></i>Log In</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 02 — HERO SECTION -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="content-shell">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+            <h1 class="hero-title" id="hero-heading">Learn today. <span class="text-brand">Build your tomorrow.</span></h1>
+            <p class="hero-description">Turn curiosity into practical skills. Discover clear, instructor-led courses in programming, web development and databases—at your own pace.</p>
+            <div class="hero-actions d-flex align-items-center">
+              <a href="#courses" class="ed-btn ed-btn-primary">Explore Courses</a>
+              <a href="../auth/create-account.html" class="ed-btn ed-btn-outline">Join EduHub</a>
+            </div>
+            <p class="hero-reassurance d-flex align-items-center gap-3 mb-0"><i class="fa-regular fa-circle-check" aria-hidden="true"></i><span>Practical lessons · Flexible learning · Certificates of completion</span></p>
+          </div>
+          <div class="hero-visual">
+            <picture>
+              <source media="(max-width: 575px)" srcset="https://placehold.co/350x240/e2e8f0/64748b?text=Learning+Workspace">
+              <source media="(max-width: 1199px)" srcset="https://placehold.co/770x360/e2e8f0/64748b?text=Learning+Workspace">
+              <img class="hero-photo" src="https://placehold.co/560x360/e2e8f0/64748b?text=Learning+Workspace" alt="A bright workspace with a laptop, books and learning materials" width="560" height="360" fetchpriority="high">
+            </picture>
+            <div class="hero-aside">
+              <span class="icon-tile" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+              <div><strong>Small steps. Lasting skills.</strong><p>Start with a subject that inspires you.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — SEARCH, CATEGORIES & FEATURED COURSES -->
+    <section class="discovery-section" aria-labelledby="search-heading">
+      <div class="content-shell">
+        <div id="search">
+          <h2 id="search-heading" class="section-title heading-md">What would you like to learn?</h2>
+          <form id="courseSearchForm" class="course-search" role="search">
+            <label class="search-control" for="courseSearchInput"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="courseSearchInput" type="search" name="q" placeholder="Search by course title or subject" aria-label="Search courses" autocomplete="off"></label>
+            <button class="ed-btn ed-btn-primary" type="submit">Search Courses</button>
+          </form>
+        </div>
+
+        <div class="category-section" id="categories">
+          <h2 class="category-title">Find your starting point</h2>
+          <p class="text-muted-custom mb-0">Explore subjects that connect your interests to practical skills.</p>
+          <div class="row g-3 category-grid">
+            <div class="col-xl-4"><button class="ed-card category-card" type="button" data-filter="Programming" aria-pressed="false"><i class="fa-solid fa-code category-icon" aria-hidden="true"></i><span class="flex-grow-1"><span class="category-label d-block">Programming</span><span class="category-caption d-block">Build your coding foundations</span></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+            <div class="col-xl-4"><button class="ed-card category-card" type="button" data-filter="Web Development" aria-pressed="false"><i class="fa-solid fa-desktop category-icon" aria-hidden="true"></i><span class="flex-grow-1"><span class="category-label d-block">Web Development</span><span class="category-caption d-block">Bring your ideas to the web</span></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+            <div class="col-xl-4"><button class="ed-card category-card" type="button" data-filter="Databases" aria-pressed="false"><i class="fa-solid fa-database category-icon" aria-hidden="true"></i><span class="flex-grow-1"><span class="category-label d-block">Databases</span><span class="category-caption d-block">Make sense of your data</span></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+          </div>
+        </div>
+
+        <div class="featured-section" id="courses">
+          <span class="eyebrow">CURATED STARTING POINTS</span>
+          <h2 class="section-title heading-lg" id="featuredHeading">Your next skill starts here</h2>
+          <p class="section-subtitle">From your first line of code to a well-designed database. Find a course that fits your next step.</p>
+          <a href="#courses" class="browse-all" id="showAllCourses">Explore all courses <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="row g-4 course-grid" id="courseGrid" aria-live="polite">
+            <div class="col-12 col-md-6 col-xl-3 course-item" data-category="Programming" data-keywords="complete c# programming ahmed mohamed beginner intermediate code dotnet .net">
+              <article class="ed-card course-card h-100">
+                <img src="https://placehold.co/306x184/1e293b/ffffff?text=C%23+Programming" width="306" height="184" alt="Programming course thumbnail" loading="lazy">
+                <div class="course-card-body">
+                  <span class="course-category">Programming</span><h3 class="course-card-title">Complete C# Programming</h3>
+                  <p class="course-teacher">Ahmed Mohamed</p><p class="course-level">Beginner to Intermediate</p>
+                  <div class="course-price-row d-flex justify-content-between align-items-center gap-2"><strong class="course-price">$49.00</strong><span class="payment-note">One-time payment</span></div>
+                  <button class="ed-btn ed-btn-outline course-action" type="button" data-bs-toggle="modal" data-bs-target="#coursePreviewModal" data-course="csharp">View Course</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 course-item" data-category="Web Development" data-keywords="html css fundamentals sara ali beginner front end design website web development">
+              <article class="ed-card course-card h-100">
+                <img src="https://placehold.co/306x184/cbd5e1/334155?text=HTML+%26+CSS" width="306" height="184" alt="Web development course thumbnail" loading="lazy">
+                <div class="course-card-body">
+                  <span class="course-category">Web Development</span><h3 class="course-card-title">HTML &amp; CSS Fundamentals</h3>
+                  <p class="course-teacher">Sara Ali</p><p class="course-level">Beginner</p>
+                  <div class="course-price-row d-flex justify-content-between align-items-center gap-2"><strong class="course-price">$29.00</strong><span class="payment-note">One-time payment</span></div>
+                  <button class="ed-btn ed-btn-outline course-action" type="button" data-bs-toggle="modal" data-bs-target="#coursePreviewModal" data-course="htmlcss">View Course</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 course-item" data-category="Databases" data-keywords="sql server essentials mohamed hassan databases intermediate query data">
+              <article class="ed-card course-card h-100">
+                <img src="https://placehold.co/306x184/0f172a/93c5fd?text=SQL+Server" width="306" height="184" alt="SQL server course thumbnail" loading="lazy">
+                <div class="course-card-body">
+                  <span class="course-category">Databases</span><h3 class="course-card-title">SQL Server Essentials</h3>
+                  <p class="course-teacher">Mohamed Hassan</p><p class="course-level">Intermediate</p>
+                  <div class="course-price-row d-flex justify-content-between align-items-center gap-2"><strong class="course-price">$39.00</strong><span class="payment-note">One-time payment</span></div>
+                  <button class="ed-btn ed-btn-outline course-action" type="button" data-bs-toggle="modal" data-bs-target="#coursePreviewModal" data-course="sql">View Course</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 course-item" data-category="Databases" data-keywords="database design fundamentals dina mostafa beginner free databases data relational model">
+              <article class="ed-card course-card h-100">
+                <img src="https://placehold.co/306x184/334155/e2e8f0?text=Database+Design" width="306" height="184" alt="Database design course thumbnail" loading="lazy">
+                <div class="course-card-body">
+                  <span class="course-category">Databases</span><h3 class="course-card-title">Database Design Fundamentals</h3>
+                  <p class="course-teacher">Dina Mostafa</p><p class="course-level">Beginner</p>
+                  <div class="course-price-row d-flex justify-content-between align-items-center gap-2"><strong class="course-price">Free</strong><span class="payment-note">No payment needed</span></div>
+                  <button class="ed-btn ed-btn-outline course-action" type="button" data-bs-toggle="modal" data-bs-target="#coursePreviewModal" data-course="dbdesign">View Course</button>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="ed-card search-empty d-none" id="noCourses" role="status"><i class="fa-solid fa-magnifying-glass mb-3" aria-hidden="true"></i><h3 class="fs-5 fw-bold">No matching courses</h3><p class="text-muted-custom mb-3">Try another keyword or explore all available courses.</p><button class="ed-btn ed-btn-primary" id="resetSearch" type="button">Show All Courses</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — BENEFITS -->
+    <section class="benefits-section" aria-labelledby="benefits-heading">
+      <div class="content-shell">
+        <span class="eyebrow">DESIGNED AROUND YOUR LEARNING</span>
+        <h2 class="section-title heading-lg mt-2" id="benefits-heading">A clearer path from knowing to doing</h2>
+        <p class="section-subtitle edu-restored-inline-1">Learn one concept at a time, put it into practice, and keep your next step in sight.</p>
+        <div class="row g-4 benefit-grid">
+          <div class="col-12 col-md-4"><article class="benefit-card h-100"><span class="icon-tile" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span><h3>Practical, focused lessons</h3><p>Follow structured course content and build understanding with guided examples.</p></article></div>
+          <div class="col-12 col-md-4"><article class="benefit-card h-100"><span class="icon-tile" aria-hidden="true"><i class="fa-regular fa-clock"></i></span><h3>Learn at your own pace</h3><p>Make room for learning in your day. Return to your enrolled courses when you are ready.</p></article></div>
+          <div class="col-12 col-md-4"><article class="benefit-card h-100"><span class="icon-tile" aria-hidden="true"><i class="fa-solid fa-award"></i></span><h3>Progress you can see</h3><p>Track completed lessons and celebrate finishing a course with a certificate.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — LEARNING JOURNEY -->
+    <section class="journey-section" aria-labelledby="journey-heading">
+      <div class="content-shell">
+        <h2 class="section-title heading-lg" id="journey-heading">A simple way to move forward</h2>
+        <p class="section-subtitle">Choose a direction. Take the first step. Keep learning.</p>
+        <div class="row g-4 journey-grid">
+          <div class="col-12 col-md-4"><div class="journey-step"><div class="journey-number">01</div><h3>Discover your course</h3><p>Explore subjects, read the curriculum and meet your instructor before you choose.</p></div></div>
+          <div class="col-12 col-md-4"><div class="journey-step"><div class="journey-number">02</div><h3>Enroll with confidence</h3><p>Choose a free course or review the course price before continuing to checkout.</p></div></div>
+          <div class="col-12 col-md-4"><div class="journey-step"><div class="journey-number">03</div><h3>Learn and build</h3><p>Work through lessons, practice new ideas and follow your progress in My Learning.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — PLATFORM, INSTRUCTORS, LEARNING PROGRESS -->
+    <section class="platform-section" aria-labelledby="platform-heading">
+      <div class="content-shell">
+        <div class="platform-story">
+          <picture>
+            <source media="(max-width: 575px)" srcset="https://placehold.co/350x240/cbd5e1/475569?text=Practical+Learning">
+            <source media="(max-width: 1199px)" srcset="https://placehold.co/770x340/cbd5e1/475569?text=Practical+Learning">
+            <img src="https://placehold.co/560x340/cbd5e1/475569?text=Practical+Learning" alt="A laptop and supplies in a practical learning environment" width="560" height="340" loading="lazy">
+          </picture>
+          <div class="platform-copy">
+            <span class="eyebrow">MEET EDUHUB</span>
+            <h2 class="section-title heading-lg" id="platform-heading">A place to grow your understanding</h2>
+            <p class="lead-desc">EduHub brings courses, learning progress and certificates into one focused place. Find a subject you care about and develop the foundations to keep going.</p>
+            <p class="support-desc">Preview course details, follow a structured curriculum and come back to your learning without losing your place.</p>
+            <a href="#courses" class="ed-btn ed-btn-primary">Find Your Course</a>
+          </div>
+        </div>
+
+        <section class="instructors-section" aria-labelledby="instructors-heading">
+          <h2 class="section-title heading-md" id="instructors-heading">Learn with a clear guide</h2>
+          <p class="section-subtitle">Meet some of the instructors behind your next course.</p>
+          <div class="row g-4 instructor-grid">
+            <div class="col-12 col-md-4"><article class="ed-card instructor-card"><div class="avatar-initials">AM</div><h3>Ahmed Mohamed</h3><p>C# &amp; .NET</p><a href="#courses" class="instructor-course-link" data-course-filter="csharp">Complete C# Programming</a></article></div>
+            <div class="col-12 col-md-4"><article class="ed-card instructor-card"><div class="avatar-initials">SA</div><h3>Sara Ali</h3><p>Web Development</p><a href="#courses" class="instructor-course-link" data-course-filter="htmlcss">HTML &amp; CSS Fundamentals</a></article></div>
+            <div class="col-12 col-md-4"><article class="ed-card instructor-card"><div class="avatar-initials">MH</div><h3>Mohamed Hassan</h3><p>Databases</p><a href="#courses" class="instructor-course-link" data-course-filter="sql">SQL Server Essentials</a></article></div>
+          </div>
+        </section>
+
+        <aside class="progress-feature" aria-label="A preview of learning progress">
+          <div>
+            <i class="fa-solid fa-award progress-feature-icon" aria-hidden="true"></i>
+            <h2 class="section-title heading-md mt-3">See how far you’ve come</h2>
+            <p class="progress-description">Every lesson is a step forward. Keep track of your courses in My Learning and earn a certificate when you meet the course completion requirements.</p>
+            <p class="progress-disclaimer">Certificates celebrate course completion, not professional accreditation.</p>
+          </div>
+          <div class="progress-demo">
+            <span class="eyebrow">A LOOK INSIDE MY LEARNING</span>
+            <h3>Complete C# Programming</h3>
+            <p class="small-label mb-4">Ahmed Mohamed</p>
+            <div class="d-flex justify-content-between align-items-center mb-3"><span class="small-label">Course progress</span><strong class="text-brand">65%</strong></div>
+            <div class="progress" role="progressbar" aria-label="Illustrative course progress" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar edu-restored-inline-2"></div></div>
+            <div class="next-lesson d-flex gap-3 align-items-center"><i class="fa-regular fa-circle-play" aria-hidden="true"></i><span>Next up: Classes and Objects</span></div>
+            <p class="text-center small-label mt-3 mb-0 edu-restored-inline-3">Illustrative learning preview</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 07 — FREQUENTLY ASKED QUESTIONS -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="content-shell">
+        <h2 class="section-title heading-md" id="faq-heading">A few things to know</h2>
+        <div class="faq-list">
+          <div class="faq-item"><h3>Can I start with a free course?</h3><p>Yes. Look for courses marked Free, including Database Design Fundamentals. Review the course details, then sign up to enroll.</p></div>
+          <div class="faq-item"><h3>Can I learn on my own schedule?</h3><p>Yes. Your enrolled courses live in My Learning, where you can return to lessons and follow your progress.</p></div>
+          <div class="faq-item"><h3>How do certificates work?</h3><p>Complete the lessons and any required assessment for your course. Your available certificates appear in My Certificates.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 — FINAL CALL TO ACTION -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="content-shell">
+        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+        <h2 id="cta-heading">Make today your first step.</h2>
+        <p>Choose a course, make time for yourself, and build something new.</p>
+        <a class="ed-btn ed-btn-white" href="../auth/create-account.html">Sign Up for EduHub</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 09 — PUBLIC FOOTER -->
+  <footer class="site-footer">
+    <div class="content-shell">
+      <div class="row g-4">
+        <div class="col-12 col-md-7 col-xl-8">
+          <a class="brand" href="#top"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+          <p class="footer-tagline">Learn Today. Build Tomorrow.</p>
+        </div>
+        <div class="col-6 col-md-3 col-xl-2">
+          <h3 class="footer-heading">Discover</h3>
+          <nav class="footer-links" aria-label="Discover"><a href="#top">Homepage</a><a href="#courses">Explore Courses</a><a href="#categories">Browse Categories</a></nav>
+        </div>
+        <div class="col-6 col-md-2 col-xl-2">
+          <h3 class="footer-heading">Your account</h3>
+          <nav class="footer-links" aria-label="Account"><a href="../auth/sign-in.html">Log In</a><a href="../auth/create-account.html">Sign Up</a><a href="../auth/forgot-password.html">Forgot Password?</a></nav>
+        </div>
+      </div>
+      <div class="footer-legal"><span>© 2026 EduHub</span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <!-- 10 — INTERACTIVE COURSE PREVIEW (Homepage-only functional demo) -->
+  <div class="modal fade" id="coursePreviewModal" tabindex="-1" aria-labelledby="coursePreviewTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content border-0 shadow rounded-4">
+      <div class="modal-header border-bottom-0 px-4 pt-4 pb-2"><span class="eyebrow" id="coursePreviewCategory">Course preview</span><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body px-4 pb-4"><h2 id="coursePreviewTitle" class="h4 fw-bold">Course title</h2><p class="text-muted-custom" id="coursePreviewInstructor"></p><div class="d-flex justify-content-between align-items-center py-3 border-top border-bottom"><span id="coursePreviewLevel" class="text-muted-custom"></span><strong id="coursePreviewPrice" class="fs-4"></strong></div><p class="text-muted-custom mt-3 mb-4">Explore the course curriculum, meet your instructor and choose how to get started.</p><div class="d-flex gap-2"><button type="button" class="ed-btn ed-btn-outline flex-fill" data-bs-dismiss="modal">Keep Browsing</button><a href="../auth/create-account.html" class="ed-btn ed-btn-primary flex-fill" id="coursePreviewAction">Get Started</a></div></div>
+    </div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../../assets/js/recovered/homepage.js" data-eduhub-restored="page-js"></script>
+</body>
+</html>

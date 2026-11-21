@@ -1,0 +1,57 @@
+from playwright.sync_api import sync_playwright
+from pathlib import Path
+import json
+root=Path('/mnt/data/eduhub_admin_payment_details');source=(root/'eduhub-admin-payment-details-standalone.html').read_text()
+results={'viewports':[],'geometry':{},'interactions':[],'errors':[]}
+with sync_playwright() as pw:
+ browser=pw.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox','--disable-dev-shm-usage','--disable-web-security'])
+ for width in (1440,834,390,320):
+  page=browser.new_page(viewport={'width':width,'height':900},device_scale_factor=1)
+  errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
+  page.set_content(source,wait_until='load',timeout=40000);page.wait_for_timeout(120)
+  g=page.evaluate('''() => {const q=s=>{let e=document.querySelector(s);if(!e)return null;let r=e.getBoundingClientRect();return {x:Math.round(r.x),y:Math.round(r.y),w:Math.round(r.width),h:Math.round(r.height)}};return {docWidth:document.documentElement.scrollWidth,pageHeight:document.documentElement.scrollHeight,topbar:q('.admin-topbar'),back:q('.back-link'),intro:q('.details-intro'),note:q('.details-note'),workspace:q('.payment-detail-workspace'),original:q('.original-payment'),student:q('.student-info'),course:q('.course-info'),refund:q('.refund-request'),footer:q('.admin-footer')}}''')
+  results['geometry'][str(width)]=g
+  if g['docWidth']>width: results['errors'].append(f'overflow width {width}: {g["docWidth"]}')
+  if errors:results['errors'].append(f'JS width {width}: {errors}')
+  page.screenshot(path=str(root/f'previews/{width}px.png'),full_page=True,animations='disabled')
+  results['viewports'].append({'width':width,'height':g['pageHeight'],'noHorizontalOverflow':g['docWidth']<=width,'javascriptErrors':errors})
+  page.close()
+ page=browser.new_page(viewport={'width':1440,'height':900},device_scale_factor=1);errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
+ page.set_content(source,wait_until='load',timeout=40000)
+ def check(name,f):
+  try:f();results['interactions'].append({'name':name,'pass':True})
+  except Exception as exc:results['interactions'].append({'name':name,'pass':False,'error':str(exc)[:300]})
+ def eq(a,b):assert a==b,f'{a!r} != {b!r}'
+ check('original transaction retained',lambda:(eq(page.locator('.primary-payment-field strong').inner_text(),'PAY-2026-1048'),eq(page.locator('.original-payment .record-facts').locator('dd').count(),5)))
+ check('student identity matches Figma',lambda:(eq(page.locator('.student-info .student-identity strong').inner_text(),'Warda Mahmoud'),eq(page.locator('.student-info .student-facts dd').inner_text(),'USR-1204')))
+ check('related enrollment initially Active',lambda:eq(page.locator('#enrollmentBadge').inner_text(),'Active'))
+ check('refund amount and request',lambda:(eq(page.locator('#pendingRefundState').is_visible(),True),eq(page.locator('.refund-request .refund-facts strong').first.inner_text(),'I enrolled in the wrong course and would like a refund.')))
+ check('links route to prior pages',lambda:(eq(page.locator('#backToPayments').get_attribute('href'),'eduhub-admin-payments.html'),eq(page.locator('.student-info .inline-link').get_attribute('href'),'eduhub-admin-user-details.html')))
+ def open_refund():page.locator('#refundPayment').click();eq(page.locator('#refundBackdrop').is_visible(),True);eq(page.locator('#refundDialogTitle').inner_text(),'Refund this payment?');eq(page.locator('.confirmation-facts dd').first.inner_text(),'PAY-2026-1048')
+ check('refund opens exact transaction dialog',open_refund)
+ page.screenshot(path=str(root/'previews/refund-confirmation.png'),full_page=False,animations='disabled')
+ check('cancel refund closes dialog',lambda:(page.locator('#cancelRefund').click(),eq(page.locator('#refundBackdrop').is_visible(),False),eq(page.locator('#paymentStatusText').inner_text(),'Completed')))
+ check('Escape closes confirmation',lambda:(page.locator('#refundPayment').click(),page.keyboard.press('Escape'),eq(page.locator('#refundBackdrop').is_visible(),False)))
+ check('backdrop click closes confirmation',lambda:(page.locator('#refundPayment').click(),page.locator('#refundBackdrop').click(position={'x':2,'y':2}),eq(page.locator('#refundBackdrop').is_visible(),False)))
+ check('notification dropdown works',lambda:(page.locator('#notificationToggle').click(),eq(page.locator('#notificationMenu').is_visible(),True)))
+ check('account menu closes notification',lambda:(page.locator('#accountToggle').click(),eq(page.locator('#notificationMenu').is_visible(),False),eq(page.locator('#accountMenu').is_visible(),True)))
+ check('notification refund link scrolls to request',lambda:(page.locator('#notificationToggle').click(),page.locator('#showRefundNotifications').click(),eq(page.locator('#notificationMenu').is_visible(),False)))
+ check('sample header search shows fallback message',lambda:(page.locator('#workspaceSearch').fill('unknown'),page.locator('#workspaceSearch').press('Enter'),eq(page.locator('#feedbackToast').is_visible(),True)))
+ def commit():page.locator('#refundPayment').click();page.locator('#confirmRefund').click();eq(page.locator('#paymentStatusText').inner_text(),'Refunded');eq(page.locator('#enrollmentBadge').inner_text(),'Canceled');eq(page.locator('#pendingRefundState').is_visible(),False);eq(page.locator('#refundedState').is_visible(),True);eq(page.locator('#refundPayment').is_visible(),False)
+ check('confirm refund updates existing record and cancels enrollment',commit)
+ page.screenshot(path=str(root/'previews/refunded-result.png'),full_page=True,animations='disabled')
+ check('refund reference stored in local state',lambda:eq(page.locator('.refunded-facts').inner_text().count('RF-2026-0013'),1))
+ check('no second refund action',lambda:eq(page.locator('#refundPayment').is_visible(),False))
+ check('payment ID not changed',lambda:eq(page.locator('.primary-payment-field strong').inner_text(),'PAY-2026-1048'))
+ results['errors'] += errors
+ page.close()
+ m=browser.new_page(viewport={'width':390,'height':844},device_scale_factor=1);m.set_content(source)
+ check('mobile menu opens',lambda:(m.locator('#openMobileNav').click(),eq(m.locator('#adminSidebar').evaluate("e=>e.classList.contains('is-open')"),True)))
+ check('Escape closes mobile drawer',lambda:(m.keyboard.press('Escape'),eq(m.locator('#sidebarBackdrop').is_visible(),False)))
+ check('mobile search toggles',lambda:(m.locator('#openMobileSearch').click(),eq(m.locator('#searchContainer').evaluate("e=>e.classList.contains('is-open')"),True)))
+ check('mobile refund dialog opens',lambda:(m.locator('#refundPayment').click(),eq(m.locator('#refundBackdrop').is_visible(),True)))
+ check('mobile refund dialog confirmation',lambda:(m.locator('#confirmRefund').click(),eq(m.locator('#paymentStatusText').inner_text(),'Refunded')))
+ m.close()
+ browser.close()
+(root/'validation-results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+print(json.dumps(results,indent=2,ensure_ascii=False))

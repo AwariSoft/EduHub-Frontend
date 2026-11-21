@@ -1,0 +1,387 @@
+[
+  {
+    "kind": "viewport",
+    "width": 1120,
+    "pass": true,
+    "details": {
+      "scroll": 1120,
+      "client": 1120,
+      "fullHeight": 2088,
+      "brand": {
+        "x": 40,
+        "y": 40,
+        "w": 1040,
+        "h": 34
+      },
+      "intro": {
+        "x": 40,
+        "y": 106,
+        "w": 1040,
+        "h": 90
+      },
+      "approval": {
+        "x": 40,
+        "y": 228,
+        "w": 1040,
+        "h": 688
+      },
+      "approvalDialog": {
+        "x": 40,
+        "y": 267,
+        "w": 508,
+        "h": 363
+      },
+      "approvalSuccess": {
+        "x": 572,
+        "y": 267,
+        "w": 508,
+        "h": 649
+      },
+      "rejection": {
+        "x": 40,
+        "y": 948,
+        "w": 1040,
+        "h": 657
+      },
+      "rejectDialog": {
+        "x": 40,
+        "y": 987,
+        "w": 508,
+        "h": 581
+      },
+      "validation": {
+        "x": 572,
+        "y": 987,
+        "w": 508,
+        "h": 618
+      },
+      "saved": {
+        "x": 40,
+        "y": 1637,
+        "w": 1040,
+        "h": 411
+      },
+      "courseImg": 320
+    },
+    "errors": []
+  },
+  {
+    "kind": "viewport",
+    "width": 1440,
+    "pass": true,
+    "details": {
+      "scroll": 1440,
+      "client": 1440,
+      "fullHeight": 2088,
+      "brand": {
+        "x": 200,
+        "y": 40,
+        "w": 1040,
+        "h": 34
+      },
+      "intro": {
+        "x": 200,
+        "y": 106,
+        "w": 1040,
+        "h": 90
+      },
+      "approval": {
+        "x": 200,
+        "y": 228,
+        "w": 1040,
+        "h": 688
+      },
+      "approvalDialog": {
+        "x": 200,
+        "y": 267,
+        "w": 508,
+        "h": 363
+      },
+      "approvalSuccess": {
+        "x": 732,
+        "y": 267,
+        "w": 508,
+        "h": 649
+      },
+      "rejection": {
+        "x": 200,
+        "y": 948,
+        "w": 1040,
+        "h": 657
+      },
+      "rejectDialog": {
+        "x": 200,
+        "y": 987,
+        "w": 508,
+        "h": 581
+      },
+      "validation": {
+        "x": 732,
+        "y": 987,
+        "w": 508,
+        "h": 618
+      },
+      "saved": {
+        "x": 200,
+        "y": 1637,
+        "w": 1040,
+        "h": 411
+      },
+      "courseImg": 320
+    },
+    "errors": []
+  },
+  {
+    "kind": "viewport",
+    "width": 834,
+    "pass": true,
+    "details": {
+      "scroll": 834,
+      "client": 834,
+      "fullHeight": 2077,
+      "brand": {
+        "x": 32,
+        "y": 32,
+        "w": 770,
+        "h": 34
+      },
+      "intro": {
+        "x": 32,
+        "y": 94,
+        "w": 770,
+        "h": 111
+      },
+      "approval": {
+        "x": 32,
+        "y": 233,
+        "w": 770,
+        "h": 688
+      },
+      "approvalDialog": {
+        "x": 32,
+        "y": 272,
+        "w": 373,
+        "h": 405
+      },
+      "approvalSuccess": {
+        "x": 429,
+        "y": 272,
+        "w": 373,
+        "h": 649
+      },
+      "rejection": {
+        "x": 32,
+        "y": 949,
+        "w": 770,
+        "h": 657
+      },
+      "rejectDialog": {
+        "x": 32,
+        "y": 988,
+        "w": 373,
+        "h": 594
+      },
+      "validation": {
+        "x": 429,
+        "y": 988,
+        "w": 373,
+        "h": 618
+      },
+      "saved": {
+        "x": 32,
+        "y": 1634,
+        "w": 770,
+        "h": 411
+      },
+      "courseImg": 320
+    },
+    "errors": []
+  },
+  {
+    "kind": "viewport",
+    "width": 390,
+    "pass": true,
+    "details": {
+      "scroll": 390,
+      "client": 390,
+      "fullHeight": 3174,
+      "brand": {
+        "x": 14,
+        "y": 20,
+        "w": 362,
+        "h": 34
+      },
+      "intro": {
+        "x": 14,
+        "y": 76,
+        "w": 362,
+        "h": 148
+      },
+      "approval": {
+        "x": 14,
+        "y": 246,
+        "w": 362,
+        "h": 1024
+      },
+      "approvalDialog": {
+        "x": 14,
+        "y": 281,
+        "w": 362,
+        "h": 353
+      },
+      "approvalSuccess": {
+        "x": 14,
+        "y": 697,
+        "w": 362,
+        "h": 573
+      },
+      "rejection": {
+        "x": 14,
+        "y": 1292,
+        "w": 362,
+        "h": 1284
+      },
+      "rejectDialog": {
+        "x": 14,
+        "y": 1327,
+        "w": 362,
+        "h": 568
+      },
+      "validation": {
+        "x": 14,
+        "y": 1958,
+        "w": 362,
+        "h": 618
+      },
+      "saved": {
+        "x": 14,
+        "y": 2598,
+        "w": 362,
+        "h": 556
+      },
+      "courseImg": 320
+    },
+    "errors": []
+  },
+  {
+    "kind": "viewport",
+    "width": 320,
+    "pass": true,
+    "details": {
+      "scroll": 320,
+      "client": 320,
+      "fullHeight": 3250,
+      "brand": {
+        "x": 10,
+        "y": 16,
+        "w": 300,
+        "h": 34
+      },
+      "intro": {
+        "x": 10,
+        "y": 72,
+        "w": 300,
+        "h": 148
+      },
+      "approval": {
+        "x": 10,
+        "y": 242,
+        "w": 300,
+        "h": 1036
+      },
+      "approvalDialog": {
+        "x": 10,
+        "y": 277,
+        "w": 300,
+        "h": 368
+      },
+      "approvalSuccess": {
+        "x": 10,
+        "y": 708,
+        "w": 300,
+        "h": 570
+      },
+      "rejection": {
+        "x": 10,
+        "y": 1300,
+        "w": 300,
+        "h": 1299
+      },
+      "rejectDialog": {
+        "x": 10,
+        "y": 1335,
+        "w": 300,
+        "h": 583
+      },
+      "validation": {
+        "x": 10,
+        "y": 1981,
+        "w": 300,
+        "h": 618
+      },
+      "saved": {
+        "x": 10,
+        "y": 2621,
+        "w": 300,
+        "h": 613
+      },
+      "courseImg": 320
+    },
+    "errors": []
+  },
+  {
+    "kind": "interaction",
+    "test": "Empty rejection reason blocks decision",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Whitespace-only reason remains invalid",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Entering reason enables rejection",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Reject from validation panel updates saved result",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Reset demo restores Figma sample",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Rejection with populated reason updates saved result",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Approve shows listing eligibility without publishing",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Cancel is safe and Escape dismisses feedback",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Reject cancel resets entered values",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Back-to-Course-Approvals links resolve in bundle",
+    "pass": true
+  },
+  {
+    "kind": "interaction",
+    "test": "Cancel preserves already saved local reason",
+    "pass": true
+  }
+]

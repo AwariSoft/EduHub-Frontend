@@ -1,0 +1,43 @@
+{
+  "passed": 9,
+  "failed": 0,
+  "browserErrors": [],
+  "cases": [
+    {
+      "test": "Cancel deletion preserves course",
+      "result": "passed"
+    },
+    {
+      "test": "Course delete remains preview only",
+      "result": "passed"
+    },
+    {
+      "test": "Account deletion requires exact case-sensitive DELETE",
+      "result": "passed"
+    },
+    {
+      "test": "Add section validation and local curriculum update",
+      "result": "passed"
+    },
+    {
+      "test": "Edit section prevents duplicate order and preserves lessons",
+      "result": "passed"
+    },
+    {
+      "test": "Curriculum expand/collapse accessibility and lesson preservation",
+      "result": "passed"
+    },
+    {
+      "test": "Password strength, match, reveal and no backend submission",
+      "result": "passed"
+    },
+    {
+      "test": "Keep editing and discard unsaved edits",
+      "result": "passed"
+    },
+    {
+      "test": "Delete section modal safe cancel and preview-only deletion",
+      "result": "passed"
+    }
+  ]
+}

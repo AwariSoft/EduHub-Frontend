@@ -1,0 +1,450 @@
+{
+  "summary": {
+    "passed": 58,
+    "total": 58,
+    "failures": []
+  },
+  "checks": [
+    {
+      "name": "1120px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1120,
+        "bodyWidth": 1120,
+        "viewportWidth": 1120,
+        "height": 1881,
+        "panels": [
+          {
+            "y": 228,
+            "height": 605,
+            "width": 1040
+          },
+          {
+            "y": 865,
+            "height": 453,
+            "width": 1040
+          },
+          {
+            "y": 1350,
+            "height": 491,
+            "width": 1040
+          }
+        ],
+        "pageHeading": {
+          "y": 106,
+          "height": 90,
+          "width": 1040
+        }
+      }
+    },
+    {
+      "name": "1120px no JS exceptions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1120px all three states visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px six header cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px loading filters disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px empty dataset and no-results distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1120px initial example not found",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Figma sheet width 1120",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Figma sheet page height 1881",
+      "passed": true,
+      "detail": 1881
+    },
+    {
+      "name": "Figma panel geometry exact",
+      "passed": true,
+      "detail": [
+        {
+          "y": 228,
+          "height": 605,
+          "width": 1040
+        },
+        {
+          "y": 865,
+          "height": 453,
+          "width": 1040
+        },
+        {
+          "y": 1350,
+          "height": 491,
+          "width": 1040
+        }
+      ]
+    },
+    {
+      "name": "Clear Search empties query",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Clear Search preserves Student+Active filters",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Clear Search reveals two matching student accounts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset Filters clears search and selectors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset Filters restores six original user samples",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset Filters includes self-admin sample",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Instructor role filter yields two users",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Instructors/Inactive shows no results",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Switch status recovers two Active instructors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Search matches case-insensitively but preserves role filter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Email search matches Warda",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Empty dataset cannot be populated via search",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reset empty dataset search returns explanatory note",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Every generated SVG icon has geometry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Accessible status labels present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "viewportWidth": 1440,
+        "height": 1881,
+        "panels": [
+          {
+            "y": 228,
+            "height": 605,
+            "width": 1040
+          },
+          {
+            "y": 865,
+            "height": 453,
+            "width": 1040
+          },
+          {
+            "y": 1350,
+            "height": 491,
+            "width": 1040
+          }
+        ],
+        "pageHeading": {
+          "y": 106,
+          "height": 90,
+          "width": 1040
+        }
+      }
+    },
+    {
+      "name": "1440px no JS exceptions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1440px all three states visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px six header cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px loading filters disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px empty dataset and no-results distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1440px initial example not found",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 834,
+        "bodyWidth": 834,
+        "viewportWidth": 834,
+        "height": 1824,
+        "panels": [
+          {
+            "y": 225,
+            "height": 595,
+            "width": 778
+          },
+          {
+            "y": 846,
+            "height": 443,
+            "width": 778
+          },
+          {
+            "y": 1315,
+            "height": 481,
+            "width": 778
+          }
+        ],
+        "pageHeading": {
+          "y": 88,
+          "height": 111,
+          "width": 778
+        }
+      }
+    },
+    {
+      "name": "834px no JS exceptions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "834px all three states visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px six header cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px loading filters disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px empty dataset and no-results distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "834px initial example not found",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "viewportWidth": 390,
+        "height": 1862,
+        "panels": [
+          {
+            "y": 219,
+            "height": 605,
+            "width": 362
+          },
+          {
+            "y": 844,
+            "height": 470,
+            "width": 362
+          },
+          {
+            "y": 1334,
+            "height": 508,
+            "width": 362
+          }
+        ],
+        "pageHeading": {
+          "y": 74,
+          "height": 125,
+          "width": 362
+        }
+      }
+    },
+    {
+      "name": "390px no JS exceptions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px all three states visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px six header cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px loading filters disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px empty dataset and no-results distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px initial example not found",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px no horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 320,
+        "bodyWidth": 320,
+        "viewportWidth": 320,
+        "height": 1953,
+        "panels": [
+          {
+            "y": 244,
+            "height": 599,
+            "width": 300
+          },
+          {
+            "y": 863,
+            "height": 508,
+            "width": 300
+          },
+          {
+            "y": 1391,
+            "height": 547,
+            "width": 300
+          }
+        ],
+        "pageHeading": {
+          "y": 69,
+          "height": 155,
+          "width": 300
+        }
+      }
+    },
+    {
+      "name": "320px no JS exceptions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px all three states visible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px four skeleton rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px six header cells",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px loading filters disabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px empty dataset and no-results distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px initial example not found",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

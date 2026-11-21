@@ -1,0 +1,217 @@
+
+    /* ===============================================================
+       1. EduHub theme tokens – Figma New Student Dashboard (9:7624)
+       =============================================================== */
+    :root {
+      --ed-primary: #2563eb;
+      --ed-primary-hover: #1d4ed8;
+      --ed-ink: #0f172a;
+      --ed-body: #334155;
+      --ed-muted: #64748b;
+      --ed-border: #e2e8f0;
+      --ed-bg: #f8fafc;
+      --ed-surface: #ffffff;
+      --ed-soft: #eff6ff;
+      --ed-avatar: #dbeafe;
+      --ed-radius: 12px;
+      --sidebar-size: 232px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; color: var(--ed-ink); background: var(--ed-bg); font: 14px/1.5 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: var(--ed-primary); text-decoration: none; }
+    a:hover { color: var(--ed-primary-hover); }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid #2563eb80 !important; outline-offset: 2px; }
+    .min-w-0 { min-width: 0 !important; }
+    .text-ed-muted { color: var(--ed-muted); }
+    .ed-card { background: #fff; border: 1px solid var(--ed-border); border-radius: var(--ed-radius); box-shadow: 0 2px 8px #0f172a08; }
+    .btn-ed { min-height: 40px; background: var(--ed-primary); color: #fff; border: 1px solid var(--ed-primary); border-radius: 8px; font-weight: 600; font-size: 13px; transition: background .15s ease,box-shadow .15s ease,transform .15s ease; }
+    .btn-ed:hover, .btn-ed:focus-visible { background: var(--ed-primary-hover); color: white; border-color: var(--ed-primary-hover); box-shadow: 0 3px 12px #2563eb25; }
+    .btn-ed:active { transform: translateY(1px); }
+    .brand { color: var(--ed-ink); display: inline-flex; align-items: center; gap: 8px; font-size: 28px; font-weight: 700; line-height: 34px; letter-spacing: -1px; white-space: nowrap; }
+    .brand i { display: inline-flex; align-items: center; justify-content: center; color: var(--ed-primary); width: 32px; font-size: 29px; }
+    .brand-blue { color: var(--ed-primary); }
+    .brand:hover { color: var(--ed-ink); }
+    /* ===============================================================
+       2. Shared sidebar / shell
+       =============================================================== */
+    .app-sidebar { position: fixed; z-index: 1000; inset: 0 auto 0 0; width: var(--sidebar-size); padding: 24px 20px; background: white; border-right: 1px solid var(--ed-border); display: flex; flex-direction: column; overflow-y: auto; }
+    .side-brand { margin-bottom: 32px; }
+    .workspace-label { color: var(--ed-muted); font-size: 10px; font-weight: 600; margin: 0 0 7px; }
+    .side-nav { display: flex; flex-direction: column; gap: 8px; }
+    .side-entry { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 8px; white-space: nowrap; font-size: 13px; color: var(--ed-muted); transition: background .15s,color .15s; }
+    .side-entry > i { width: 20px; flex: 0 0 20px; text-align: center; font-size: 18px; }
+    .side-entry:hover { background: #f1f5f9; color: var(--ed-primary); }
+    .side-entry.active { color: var(--ed-primary); background: var(--ed-soft); font-weight: 600; }
+    .sidebar-foot { margin-top: auto; padding-top: 24px; }
+    .sidebar-reminder { background: var(--ed-soft); border-radius: 12px; padding: 16px; }
+    .sidebar-reminder i { color: var(--ed-primary); font-size: 20px; }
+    .sidebar-reminder strong { display: block; font-size: 13px; margin-top: 5px; }
+    .sidebar-reminder p { margin: 7px 0 0; font-size: 12px; line-height: 19px; color: var(--ed-muted); }
+    .sidebar-collapse { min-height: 40px; background: transparent; border: 0; padding: 8px 0 0; color: var(--ed-muted); font-size: 12px; display: flex; align-items: center; gap: 12px; }
+    .sidebar-collapse i { width: 18px; flex: 0 0 18px; }
+    .sidebar-collapse:hover { color: var(--ed-primary); }
+    .app-shell { min-height: 100vh; display: flex; flex-direction: column; min-width: 0; margin-left: var(--sidebar-size); transition: margin-left .18s ease; }
+    body.is-collapsed { --sidebar-size: 80px; }
+    body.is-collapsed .app-sidebar { padding-inline: 16px; }
+    body.is-collapsed .side-brand .brand span, body.is-collapsed .workspace-label, body.is-collapsed .side-label, body.is-collapsed .sidebar-reminder { display: none; }
+    body.is-collapsed .side-entry { padding-inline: 12px; }
+    body.is-collapsed .sidebar-collapse { justify-content: center; }
+    /* ===============================================================
+       3. Topbar / account / mobile navigation
+       =============================================================== */
+    .app-topbar { flex: 0 0 72px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: #fff; border-bottom: 1px solid var(--ed-border); padding: 16px 32px; }
+    .search-box { width: 340px; max-width: 100%; position: relative; }
+    .search-box i { position: absolute; top: 50%; left: 13px; transform: translateY(-50%); color: var(--ed-muted); pointer-events: none; }
+    .search-box input { width: 100%; height: 40px; padding: 0 38px 0 39px; background: var(--ed-bg); border: 1px solid var(--ed-border); border-radius: 8px; font-size: 13px; color: var(--ed-ink); }
+    .search-box input::placeholder { color: var(--ed-muted); }
+    .search-box input:focus { border-color: var(--ed-primary); outline: 0; box-shadow: 0 0 0 3px #2563eb1e; }
+    .clear-search { position: absolute; right: 8px; top: 8px; border: 0; background: transparent; width: 24px; height: 24px; color: var(--ed-muted); display: none; border-radius: 5px; }
+    .clear-search:hover { background: var(--ed-soft); color: var(--ed-primary); }
+    .icon-btn { position: relative; background: transparent; color: var(--ed-muted); border: 0; border-radius: 8px; width: 36px; height: 40px; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; }
+    .icon-btn:hover { background: var(--ed-soft); color: var(--ed-primary); }
+    .notification-dot { position: absolute; width: 6px; height: 6px; border-radius: 50%; top: 8px; right: 6px; background: var(--ed-primary); }
+    .header-divider { height: 28px; border-left: 1px solid var(--ed-border); }
+    .student-avatar { width: 36px; height: 36px; border-radius: 50%; flex: 0 0 36px; display: flex; align-items: center; justify-content: center; background: var(--ed-avatar); color: var(--ed-primary); font-size: 12px; font-weight: 600; }
+    .account-button { background: none; border: 0; border-radius: 8px; padding: 2px 0 2px 4px; color: var(--ed-ink); display: flex; align-items: center; gap: 10px; text-align: left; }
+    .account-button:hover { background: var(--ed-soft); }
+    .account-name { font-size: 13px; line-height: 18px; font-weight: 600; }
+    .account-role { color: var(--ed-muted); font-size: 11px; line-height: 15px; }
+    .account-dropdown { position: absolute; top: calc(100% + 8px); right: 0; z-index: 1090; width: 204px; padding: 6px; background: #fff; border: 1px solid var(--ed-border); box-shadow: 0 12px 28px #0f172a20; border-radius: 10px; }
+    .account-dropdown[hidden] { display: none; }
+    .account-dropdown a, .account-dropdown button { width: 100%; text-align: left; display: block; padding: 9px 12px; color: var(--ed-body); border: none; border-radius: 6px; background: none; font-size: 13px; }
+    .account-dropdown a:hover, .account-dropdown button:hover { background: var(--ed-soft); color: var(--ed-primary); }
+    .mobile-topbar, .mobile-bottom-nav { display: none; }
+    /* ===============================================================
+       4. Main content / metrics / first-time hero
+       =============================================================== */
+    .dashboard-content { flex: 1; padding: 24px 32px 0; min-width: 0; }
+    .welcome-title { font-size: 28px; font-weight: 700; letter-spacing: -.65px; line-height: 35px; margin: 0 0 4px; }
+    .welcome-desc { margin: 0; font-size: 14px; line-height: 22px; color: var(--ed-muted); }
+    .welcome-tag { display: inline-flex; align-items: center; gap: 10px; color: var(--ed-primary); background: var(--ed-soft); padding: 12px; border-radius: 8px; white-space: nowrap; font-size: 12px; }
+    .metric-grid { margin-top: 24px; }
+    .metric { height: 80px; padding: 16px; display: flex; align-items: center; gap: 12px; }
+    .metric-symbol { background: var(--ed-soft); color: var(--ed-primary); flex: 0 0 40px; height: 40px; width: 40px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; }
+    .metric-value { margin: 0; font-size: 26px; line-height: 29px; font-weight: 700; }
+    .metric-label { margin: 4px 0 0; font-size: 12px; line-height: 15px; color: var(--ed-muted); }
+    .journey-banner { margin-top: 24px; border: 1px solid #dbeafe; background: #eff6ff; border-radius: 16px; min-height: 190px; padding: 24px; display: flex; align-items: center; gap: 24px; position: relative; overflow: hidden; }
+    .journey-banner img { width: 200px; height: 142px; flex: 0 0 200px; object-fit: cover; border-radius: 12px; }
+    .journey-banner h2 { font-size: 24px; line-height: 29px; font-weight: 700; letter-spacing: -.45px; margin: 0 0 8px; }
+    .journey-banner p { margin: 0 0 12px; font-size: 14px; color: var(--ed-muted); line-height: 21px; }
+    .journey-banner .btn-ed { height: 44px; min-height: 44px; min-width: 176px; }
+    .hero-watermark { position: absolute; right: 24px; top: 60px; font-size: 68px; color: #c8defe; pointer-events: none; opacity: .55; }
+    /* ===============================================================
+       5. Discovery cards and My Learning empty states
+       =============================================================== */
+    .lower-grid { display: grid; grid-template-columns: minmax(0,428fr) minmax(0,692fr); align-items: start; gap: 24px; margin-top: 24px; }
+    .section-title { font-size: 19px; font-weight: 700; line-height: 23px; letter-spacing: -.3px; margin: 0; }
+    .section-desc { font-size: 13px; color: var(--ed-muted); margin: 4px 0 12px; line-height: 18px; }
+    .discovery-list { display: flex; flex-direction: column; gap: 12px; }
+    .discovery-card { padding: 12px; display: flex; gap: 12px; min-height: 120px; }
+    .discovery-card img { width: 90px; height: 96px; border-radius: 8px; flex: 0 0 90px; object-fit: cover; }
+    .course-content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .course-title { font-size: 14px; line-height: 18px; font-weight: 600; margin: 0; overflow-wrap: anywhere; }
+    .course-author { font-size: 12px; line-height: 17px; color: var(--ed-muted); margin: 4px 0 0; }
+    .course-rating { font-size: 11px; color: var(--ed-muted); margin: 4px 0 0; }
+    .course-rating i { color: #c2410c; }
+    .course-action-row { margin-top: auto; display: flex; align-items: center; gap: 12px; }
+    .course-price { font-size: 15px; line-height: 20px; font-weight: 700; white-space: nowrap; }
+    .course-action-row .btn-ed { min-height: 32px; height: 32px; flex: 1; padding: 4px 8px; }
+    .learning-head { margin-bottom: 12px; }
+    .learning-link { color: var(--ed-primary); font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .learning-link:hover { text-decoration: underline; }
+    .learning-tabs { height: 48px; display: flex; align-items: stretch; gap: 24px; padding: 0 16px; border-bottom: 1px solid var(--ed-border); }
+    .learning-tab { flex: 0 0 auto; color: var(--ed-muted); border: none; border-bottom: 2px solid transparent; background: transparent; font-size: 12px; padding: 0; }
+    .learning-tab:hover { color: var(--ed-primary); }
+    .learning-tab[aria-selected="true"] { color: var(--ed-primary); border-color: var(--ed-primary); font-weight: 600; }
+    .learning-empty { min-height: 328px; padding: 34px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .learning-empty-icon { height: 64px; width: 64px; border-radius: 50%; background: var(--ed-soft); color: var(--ed-primary); display: flex; align-items: center; justify-content: center; font-size: 27px; }
+    .learning-empty h3 { font-size: 18px; line-height: 22px; font-weight: 600; margin: 16px 0 12px; }
+    .learning-empty p { max-width: 320px; font-size: 13px; line-height: 21px; color: var(--ed-muted); margin: 0 auto 16px; }
+    .learning-empty a { font-size: 13px; font-weight: 600; }
+    .search-empty[hidden], .discovery-card[hidden] { display: none !important; }
+    .search-empty { background: white; border: 1px dashed var(--ed-border); padding: 24px; color: var(--ed-muted); border-radius: 12px; font-size: 13px; text-align: center; }
+    .workspace-footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px 32px 30px; color: var(--ed-muted); font-size: 11px; }
+    /* ===============================================================
+       6. Toast, course dialog, and mobile menu (interactive)
+       =============================================================== */
+    .site-toast { position: fixed; z-index: 1300; right: 20px; bottom: 20px; max-width: min(400px,calc(100vw - 40px)); padding: 13px 17px; color: var(--ed-ink); background: #fff; border: 1px solid var(--ed-border); border-left: 4px solid var(--ed-primary); border-radius: 8px; box-shadow: 0 10px 24px #0f172a24; font-size: 13px; }
+    .site-toast[hidden] { display: none; }
+    .course-dialog { max-width: min(440px,calc(100vw - 32px)); border: 1px solid var(--ed-border); border-radius: 14px; padding: 0; box-shadow: 0 22px 65px #0f172a35; color: var(--ed-ink); }
+    .course-dialog::backdrop { background: #0f172a99; }
+    .course-dialog-content { padding: 24px; }
+    .course-dialog h2 { font-size: 22px; font-weight: 700; }
+    .course-dialog p { color: var(--ed-muted); font-size: 14px; }
+    .menu-overlay { display: none; }
+    .mobile-menu { display: none; }
+    /* ===============================================================
+       7. Tablet / mobile layouts – inferred from existing Student Dashboard
+       =============================================================== */
+    @media (min-width:768px) and (max-width:1199.98px) {
+      body { --sidebar-size:80px; }
+      .app-sidebar { padding: 24px 16px; }
+      .side-brand .brand span, .workspace-label, .side-label, .sidebar-reminder { display: none; }
+      .side-entry { padding-inline: 12px; }
+      .sidebar-collapse { justify-content: center; }
+      .dashboard-content { padding-inline: 24px; }
+      .app-topbar { padding-inline: 24px; }
+      .metric-grid .col-12 { flex: 0 0 50%; width: 50%; max-width: 50%; }
+      .lower-grid { display: grid; grid-template-columns: minmax(0,1fr); }
+      .discovery-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .discovery-card { flex-direction: column; }
+      .discovery-card img { width: 100%; height: 140px; flex-basis: auto; }
+      .course-action-row { margin-top: 12px; }
+      .journey-banner h2 { font-size: 21px; }
+      .journey-banner img { width: 175px; flex-basis: 175px; height: 135px; }
+      .workspace-footer { padding-inline: 24px; }
+    }
+    @media (max-width:767.98px) {
+      .app-sidebar,.app-topbar { display: none; }
+      .app-shell { margin-left: 0 !important; min-height: 100vh; padding-bottom: 64px; }
+      .mobile-topbar { display: block; position: sticky; top: 0; z-index: 950; background: white; border-bottom: 1px solid var(--ed-border); padding: 12px 16px; }
+      .mobile-topbar .brand { font-size: 24px; }
+      .mobile-topbar .brand i { font-size: 25px; }
+      .mobile-topbar .search-box { width: 100%; margin-top: 12px; }
+      .mobile-topbar .search-box input { height: 40px; }
+      .mobile-bottom-nav { display: flex; position: fixed; z-index: 1010; inset: auto 0 0; height: 64px; align-items: stretch; background: white; border-top: 1px solid var(--ed-border); }
+      .mobile-bottom-nav a { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--ed-muted); font-size: 10px; }
+      .mobile-bottom-nav a i { font-size: 17px; }
+      .mobile-bottom-nav a.active { color: var(--ed-primary); }
+      .mobile-menu { position: fixed; z-index: 1220; left: 0; top: 0; bottom: 0; width: min(290px,85vw); display: flex; flex-direction: column; padding: 24px 18px; background: white; box-shadow: 9px 0 40px #0f172a25; transform: translateX(-110%); transition: transform .18s ease; visibility: hidden; }
+      .menu-overlay { display: block; position: fixed; inset: 0; z-index: 1210; background: #0f172a70; opacity: 0; pointer-events: none; transition: opacity .18s ease; }
+      body.menu-open .mobile-menu { transform: none; visibility: visible; }
+      body.menu-open .menu-overlay { opacity: 1; pointer-events: auto; }
+      .dashboard-content { padding: 20px 16px 0; }
+      .welcome-title { font-size: 25px; line-height: 32px; }
+      .welcome-desc { font-size: 13px; }
+      .welcome-tag { display: none; }
+      .metric-grid { margin-top: 20px; }
+      .metric-grid .col-12 { flex: 0 0 50%; width: 50%; max-width: 50%; }
+      .metric { height: 98px; padding: 12px; justify-content: space-between; align-items: flex-start; flex-direction: row-reverse; }
+      .metric-symbol { background: transparent; width: 26px; height: 26px; flex: 0 0 26px; font-size: 17px; }
+      .metric-value { font-size: 26px; }
+      .metric-label { margin-top: 8px; font-size: 11px; }
+      .journey-banner { margin-top: 24px; flex-direction: column; text-align: center; padding: 20px; gap: 12px; }
+      .journey-banner img { width: min(100%,200px); height: 130px; flex: 0 0 auto; }
+      .journey-banner h2 { font-size: 21px; line-height: 27px; }
+      .journey-banner p { font-size: 13px; }
+      .journey-banner .btn-ed { min-width: 190px; }
+      .hero-watermark { display: none; }
+      .lower-grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 24px; }
+      .discovery-list { display: flex; }
+      .discovery-card { display: flex; flex-direction: column; min-height: 0; }
+      .discovery-card img { width: 100%; height: auto; aspect-ratio: 2.45/1; flex-basis: auto; }
+      .course-action-row { margin-top: 10px; }
+      .learning-empty { min-height: 270px; }
+      .learning-tabs { gap: 19px; }
+      .workspace-footer { justify-content: center; text-align: center; padding: 22px 16px; }
+      .workspace-footer .help-link { display: none; }
+      .site-toast { bottom: 76px; }
+    }
+    @media (max-width:360px) { .mobile-topbar .brand { font-size: 21px; } .mobile-topbar .brand i { width: 28px; } .metric-label { font-size: 10px; } .learning-tabs { gap: 14px; padding-inline: 12px; } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  
+/* Moved from static HTML style attributes during restoration. */
+.edu-restored-inline-1 { z-index:1; }

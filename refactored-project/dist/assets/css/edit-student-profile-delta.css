@@ -1,0 +1,25 @@
+/* ZIP #13 — Edit Student Profile: additive screen-specific styles only */
+:root{--edu-student-shadow:0 2px 12px rgba(15,23,42,.02)}
+.edu-student{background:#f8fafc;color:#0f172a;font-family:Inter,Arial,sans-serif}
+.edu-student__shell{min-height:100vh}
+.edu-student__sidebar{width:260px;flex:0 0 260px;min-height:100vh;background:#fff;border-right:1px solid #e2e8f0}
+.edu-student__brand{font-size:1.1rem;font-weight:800;color:#0f172a}
+.edu-student__workspace{display:block;font-size:.65rem;font-weight:600;letter-spacing:.08em;color:#64748b}
+.edu-student__sidebar .nav-link,.edu-student .offcanvas .nav-link{color:#475569;border-radius:10px;padding:.7rem .85rem;transition:background-color .18s ease,color .18s ease,transform .18s ease}
+.edu-student__sidebar .nav-link:hover,.edu-student .offcanvas .nav-link:hover{background:#eff6ff;color:#2563eb;transform:translateX(2px)}
+.edu-student__sidebar .nav-link.active,.edu-student .offcanvas .nav-link.active{background:#dbeafe;color:#1d4ed8;font-weight:700}
+.edu-student__content{min-width:0}
+.edu-student__avatar{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-weight:700}
+.edu-edit-profile__panel{background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:var(--edu-student-shadow);max-width:1140px}
+.edu-edit-profile__avatar{width:128px;height:128px;display:grid;place-items:center;border-radius:50%;background:#dbeafe;color:#2563eb;font-size:2.2rem;font-weight:700;overflow:hidden;border:3px solid #fff;box-shadow:0 0 0 1px #dbeafe}
+.edu-edit-profile__avatar img{width:100%;height:100%;object-fit:cover}
+.edu-edit-profile__actions{border-top:1px solid #e2e8f0}
+.edu-edit-profile .btn,.edu-edit-profile .form-control,.edu-student .btn,.edu-student a{transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease}
+.edu-edit-profile .btn:hover,.edu-student__topbar .btn:hover{transform:translateY(-1px)}
+.edu-edit-profile .btn:active,.edu-student__topbar .btn:active{transform:translateY(0) scale(.99)}
+.edu-edit-profile .form-control:hover{border-color:#94a3b8}
+.edu-edit-profile .form-control:focus{border-color:#2563eb;box-shadow:0 0 0 .2rem rgba(37,99,235,.14)}
+.edu-edit-profile :is(a,button,input,textarea):focus-visible,.edu-student :is(a,button):focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+.edu-edit-profile__panel:hover{box-shadow:0 5px 22px rgba(15,23,42,.06)}
+@media(max-width:575.98px){.edu-edit-profile__actions .btn{width:100%}.edu-edit-profile__avatar{width:112px;height:112px}}
+@media(prefers-reduced-motion:reduce){.edu-edit-profile *, .edu-student__sidebar .nav-link,.edu-student .offcanvas .nav-link{transition:none!important;transform:none!important}}

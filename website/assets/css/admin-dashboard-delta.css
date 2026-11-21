@@ -1,0 +1,22 @@
+/* ZIP #10 — Admin Dashboard delta (append only) */
+.edu-admin{background:var(--edu-bg);color:var(--edu-text)}
+.edu-admin__shell{min-height:100vh}
+.edu-admin__sidebar{width:252px;flex:0 0 252px;position:sticky;top:0;height:100vh;background:#fff;border-right:1px solid var(--edu-border);padding:1.5rem 1rem}
+.edu-admin__brand{font-size:1.45rem;font-weight:800;text-decoration:none;color:var(--edu-text);padding:.5rem}.edu-admin__brand span{color:var(--edu-primary)}.edu-admin__brand small{display:block;font-size:.65rem;letter-spacing:.16em;color:var(--edu-muted);margin-top:.25rem}
+.edu-admin__sidebar .nav-link,.edu-admin__drawer .nav-link{color:var(--edu-text-strong);border-radius:.7rem;padding:.8rem .85rem;display:flex;align-items:center;gap:.8rem;transition:background .2s,color .2s,transform .2s}
+.edu-admin__sidebar .nav-link:hover,.edu-admin__drawer .nav-link:hover{background:var(--edu-primary-soft);color:var(--edu-primary);transform:translateX(2px)}
+.edu-admin__sidebar .nav-link.active,.edu-admin__drawer .nav-link.active{background:var(--edu-primary-soft);color:var(--edu-primary);font-weight:700}
+.edu-admin__sidebar .nav-link:focus-visible,.edu-admin__drawer .nav-link:focus-visible,.edu-admin__footer-link:focus-visible,.edu-admin__list-row:focus-visible,.edu-admin__account:focus-visible{outline:3px solid var(--edu-primary);outline-offset:3px}
+.edu-admin__sidebar .nav-link:active,.edu-admin__drawer .nav-link:active{transform:scale(.98)}
+.edu-admin__topbar{min-height:76px;background:#fff;border-bottom:1px solid var(--edu-border)}
+.edu-admin__account{border:1px solid transparent;border-radius:.8rem}.edu-admin__account:hover,.edu-admin__icon-button:hover{background:var(--edu-primary-soft);border-color:var(--edu-primary-tint)}
+.edu-admin__avatar{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;border-radius:50%;background:var(--edu-primary-soft);color:var(--edu-primary);font-weight:800;font-size:.8rem}
+.edu-admin__content{min-width:0}.edu-admin__main{max-width:1550px}.edu-admin__date{font-size:.72rem;letter-spacing:.12em;font-weight:700;color:var(--edu-muted)}
+.edu-admin__metric,.edu-admin__panel{background:#fff;border:1px solid var(--edu-border);border-radius:1rem;box-shadow:var(--edu-shadow-sm);transition:box-shadow .2s,transform .2s,border-color .2s}
+.edu-admin__metric:hover,.edu-admin__panel:hover{box-shadow:var(--edu-shadow-md);border-color:var(--edu-primary-tint)}.edu-admin__metric:hover{transform:translateY(-2px)}
+.edu-admin__metric-number{font-size:clamp(1.65rem,3vw,2.15rem);line-height:1.1}.edu-admin__metric-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:.75rem;background:var(--edu-primary-soft);color:var(--edu-primary)}
+.edu-admin__list-row{padding:.95rem .25rem;border-bottom:1px solid var(--edu-border);color:inherit;text-decoration:none;border-radius:.5rem;transition:background .2s,transform .2s}.edu-admin__list-row:last-child{border-bottom:0}.edu-admin__list-row:hover{background:var(--edu-primary-soft);color:var(--edu-text);transform:translateX(2px)}.edu-admin__list-row:active{transform:scale(.995)}
+.edu-admin__thumb{width:72px;height:54px;object-fit:cover;border-radius:.55rem;background:var(--edu-surface-subtle);flex-shrink:0}.edu-admin__truncate{overflow-wrap:anywhere}.edu-admin__review,.edu-admin__footer-link{color:var(--edu-primary);font-weight:650}.edu-admin__footer-link{text-decoration:none;transition:gap .2s,color .2s}.edu-admin__footer-link:hover{color:#1d4ed8;gap:.8rem!important}.edu-admin__footer-link:active{transform:scale(.98)}
+.edu-admin__cta,.edu-admin__main .btn{transition:transform .2s,box-shadow .2s,background .2s}.edu-admin__cta:hover,.edu-admin__main .btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,.14)}.edu-admin__main .btn:active{transform:scale(.98)}.edu-admin__main .btn:focus-visible,.edu-admin__topbar button:focus-visible{outline:3px solid var(--edu-primary);outline-offset:3px}
+@media(max-width:575.98px){.edu-admin__topbar{min-height:64px}.edu-admin__thumb{width:58px;height:48px}.edu-admin__list-row{gap:.5rem!important}.edu-admin__list-row .badge{font-size:.65rem}}
+@media(prefers-reduced-motion:reduce){.edu-admin__metric,.edu-admin__panel,.edu-admin__list-row,.edu-admin__sidebar .nav-link,.edu-admin__drawer .nav-link,.edu-admin__footer-link,.edu-admin__main .btn{transition:none!important;transform:none!important}}

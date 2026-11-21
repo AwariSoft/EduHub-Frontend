@@ -1,0 +1,330 @@
+[
+  {
+    "width": 1440,
+    "height": 1300,
+    "geometry": {
+      "scrollWidth": 1440,
+      "scrollHeight": 1300,
+      "body": [
+        0,
+        0,
+        1440,
+        1300
+      ],
+      "main": [
+        232,
+        72,
+        1208,
+        1228
+      ],
+      "topbar": [
+        232,
+        0,
+        1208,
+        72
+      ],
+      "heading": [
+        264,
+        104,
+        1144,
+        87
+      ],
+      "hero": [
+        264,
+        215,
+        1144,
+        308
+      ],
+      "tabs": [
+        264,
+        547,
+        1144,
+        48
+      ],
+      "stats": [
+        264,
+        619,
+        1144,
+        100
+      ],
+      "directory": [
+        264,
+        743,
+        1144,
+        488
+      ],
+      "records": [
+        289,
+        903,
+        1094,
+        271
+      ],
+      "row": [
+        289,
+        940,
+        1094,
+        78
+      ],
+      "footer": [
+        264,
+        1255,
+        1144,
+        18
+      ],
+      "bottomNav": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "jsErrors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-students-1440-preview.png"
+  },
+  {
+    "width": 834,
+    "height": 1700,
+    "geometry": {
+      "scrollWidth": 834,
+      "scrollHeight": 1700,
+      "body": [
+        0,
+        0,
+        834,
+        1700
+      ],
+      "main": [
+        80,
+        72,
+        754,
+        1608
+      ],
+      "topbar": [
+        80,
+        0,
+        754,
+        72
+      ],
+      "heading": [
+        104,
+        96,
+        706,
+        87
+      ],
+      "hero": [
+        104,
+        207,
+        706,
+        582
+      ],
+      "tabs": [
+        104,
+        813,
+        706,
+        48
+      ],
+      "stats": [
+        104,
+        885,
+        706,
+        212
+      ],
+      "directory": [
+        104,
+        1121,
+        706,
+        490
+      ],
+      "records": [
+        129,
+        1281,
+        656,
+        271
+      ],
+      "row": [
+        129,
+        1318,
+        656,
+        78
+      ],
+      "footer": [
+        104,
+        1635,
+        706,
+        18
+      ],
+      "bottomNav": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "jsErrors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-students-834-preview.png"
+  },
+  {
+    "width": 390,
+    "height": 1950,
+    "geometry": {
+      "scrollWidth": 390,
+      "scrollHeight": 2087,
+      "body": [
+        0,
+        0,
+        390,
+        2087
+      ],
+      "main": [
+        0,
+        149,
+        390,
+        1938
+      ],
+      "topbar": [
+        0,
+        0,
+        390,
+        149
+      ],
+      "heading": [
+        16,
+        165,
+        358,
+        83
+      ],
+      "hero": [
+        16,
+        272,
+        358,
+        658
+      ],
+      "tabs": [
+        16,
+        954,
+        358,
+        48
+      ],
+      "stats": [
+        16,
+        1026,
+        358,
+        212
+      ],
+      "directory": [
+        16,
+        1262,
+        358,
+        691
+      ],
+      "records": [
+        33,
+        1470,
+        324,
+        432
+      ],
+      "row": [
+        33,
+        1470,
+        324,
+        144
+      ],
+      "footer": [
+        16,
+        1977,
+        358,
+        18
+      ],
+      "bottomNav": [
+        0,
+        1903,
+        390,
+        47
+      ]
+    },
+    "jsErrors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-students-390-preview.png"
+  },
+  {
+    "width": 320,
+    "height": 1950,
+    "geometry": {
+      "scrollWidth": 320,
+      "scrollHeight": 2108,
+      "body": [
+        0,
+        0,
+        320,
+        2108
+      ],
+      "main": [
+        0,
+        149,
+        320,
+        1959
+      ],
+      "topbar": [
+        0,
+        0,
+        320,
+        149
+      ],
+      "heading": [
+        16,
+        165,
+        288,
+        83
+      ],
+      "hero": [
+        16,
+        272,
+        288,
+        679
+      ],
+      "tabs": [
+        16,
+        975,
+        288,
+        48
+      ],
+      "stats": [
+        16,
+        1047,
+        288,
+        212
+      ],
+      "directory": [
+        16,
+        1283,
+        288,
+        691
+      ],
+      "records": [
+        33,
+        1491,
+        254,
+        432
+      ],
+      "row": [
+        33,
+        1491,
+        254,
+        144
+      ],
+      "footer": [
+        16,
+        1998,
+        288,
+        18
+      ],
+      "bottomNav": [
+        0,
+        1903,
+        320,
+        47
+      ]
+    },
+    "jsErrors": [],
+    "screenshot": "/mnt/data/eduhub-instructor-course-details-students-320-preview.png"
+  }
+]

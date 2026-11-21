@@ -1,0 +1,586 @@
+.eduhub-dialogs-and-curriculu {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-40);
+  box-sizing: border-box;
+  gap: var(--gap-32);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray-200);
+  font-family: var(--font-inter);
+}
+.eduhub-brand {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+.graduation-cap-icon {
+  height: var(--height-32);
+  width: var(--width-32);
+  position: relative;
+}
+.wordmark {
+  position: relative;
+}
+.hub {
+  color: var(--color-royalblue);
+}
+.page-heading,
+.page-introduction {
+  overflow: hidden;
+  display: flex;
+  max-width: 100%;
+}
+.page-heading {
+  align-self: stretch;
+  align-items: center;
+}
+.page-introduction {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-6);
+}
+.description,
+.heading {
+  align-self: stretch;
+  position: relative;
+  line-height: 130%;
+}
+.description {
+  font-size: var(--fs-14);
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.destructive-confirmations {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-10) var(--gap-24);
+  max-width: 100%;
+  font-size: var(--fs-18);
+}
+.delete-course,
+.delete-course-confirmation-dia {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.delete-course-confirmation-dia {
+  flex: 1;
+  min-width: var(--min-w-434);
+}
+.delete-course {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  padding: var(--padding-24);
+  gap: var(--gap-16);
+}
+.heading2 {
+  align-self: stretch;
+  position: relative;
+  line-height: 130%;
+}
+.description2,
+.description3 {
+  position: relative;
+  line-height: 150%;
+}
+.description2 {
+  align-self: stretch;
+  font-weight: 600;
+}
+.description3 {
+  width: 100%;
+  font-size: var(--fs-14);
+  color: var(--color-slategray);
+  display: inline-block;
+  max-width: 618px;
+}
+.guidance {
+  align-self: stretch;
+  border-radius: var(--br-8);
+  background-color: var(--color-lavenderblush);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-16);
+  box-sizing: border-box;
+  gap: var(--gap-12);
+  max-width: 100%;
+  font-size: var(--fs-13);
+  color: var(--color-firebrick);
+}
+.circle-alert-icon {
+  height: var(--height-20);
+  width: var(--width-20);
+  position: relative;
+}
+.description4 {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  max-width: calc(100% - 32px);
+}
+.confirmation-actions {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+}
+.action {
+  height: var(--height-44);
+  width: 108px;
+  border-radius: var(--br-8);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label {
+  position: relative;
+  font-weight: 600;
+}
+.action2 {
+  height: var(--height-44);
+  width: 124.3px;
+  border-radius: var(--br-8);
+  background-color: var(--color-firebrick);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+.delete-account-confirmation-di,
+.permanently-delete-your-accoun {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.delete-account-confirmation-di {
+  flex: 1;
+  min-width: var(--min-w-434);
+  font-size: var(--fs-13);
+}
+.permanently-delete-your-accoun {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  padding: var(--padding-24);
+  gap: var(--gap-16);
+}
+.heading3 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-18);
+  line-height: 130%;
+}
+.form-field,
+.form-input,
+.guidance2 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.guidance2 {
+  border-radius: var(--br-8);
+  background-color: var(--color-lavenderblush);
+  padding: var(--padding-16);
+  box-sizing: border-box;
+  gap: var(--gap-12);
+  max-width: 100%;
+  color: var(--color-firebrick);
+}
+.form-field,
+.form-input {
+  flex-direction: column;
+}
+.form-field {
+  gap: var(--gap-6);
+  color: var(--color-darkslategray-100);
+}
+.form-input {
+  height: var(--height-72);
+  flex-shrink: 0;
+  gap: var(--gap-8);
+}
+.label3 {
+  position: relative;
+  line-height: 120%;
+  font-weight: 500;
+}
+.input {
+  width: var(--width-620);
+  max-width: var(--max-w-620);
+  height: var(--height-48);
+  border-radius: var(--br-8);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--padding-16);
+  gap: var(--gap-8);
+  color: var(--color-gray-200);
+}
+.user-round-icon {
+  height: var(--height-18);
+  width: var(--width-18);
+  position: relative;
+  display: none;
+}
+.placeholder {
+  flex: 1;
+  position: relative;
+}
+.description7 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-12);
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.action3,
+.action4 {
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.action3 {
+  width: 138.5px;
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+}
+.action4 {
+  width: 131.4px;
+  background-color: var(--color-aliceblue-200);
+  color: var(--color-slategray);
+}
+.add-new-section,
+.section-editing-dialogs {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.section-editing-dialogs {
+  gap: var(--gap-24);
+  max-width: 100%;
+  font-size: var(--fs-13);
+}
+.add-new-section {
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  flex-direction: column;
+  padding: var(--padding-24);
+  gap: var(--gap-16);
+}
+.label6 {
+  position: relative;
+  line-height: 120%;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.dialog-actions {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-12);
+}
+.action6,
+.dialog-actions,
+.form-field4 {
+  overflow: hidden;
+  display: flex;
+}
+.action6 {
+  height: var(--height-44);
+  width: 110.1px;
+  border-radius: var(--br-8);
+  background-color: var(--color-royalblue);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+.form-field4 {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-darkslategray-100);
+}
+.description12 {
+  align-self: stretch;
+  position: relative;
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.action8 {
+  height: var(--height-44);
+  width: 117.2px;
+  border-radius: var(--br-8);
+  background-color: var(--color-royalblue);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+.password-and-collapsed-states {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-10) var(--gap-24);
+  max-width: 100%;
+  font-size: var(--fs-13);
+  color: var(--color-darkslategray-100);
+}
+.heading6 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-18);
+  line-height: 130%;
+  color: var(--color-gray-200);
+}
+.form-field6 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lock-keyhole-icon {
+  height: var(--height-18);
+  width: var(--width-18);
+  position: relative;
+}
+.eye-icon {
+  height: var(--height-17);
+  width: 17px;
+  position: relative;
+}
+.form-field7,
+.password-actions {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.form-field7 {
+  flex-direction: column;
+  gap: var(--gap-6);
+}
+.password-actions {
+  gap: var(--gap-12);
+  color: var(--color-gray-200);
+}
+.action10 {
+  height: var(--height-44);
+  width: 138.5px;
+  border-radius: var(--br-8);
+  background-color: var(--color-royalblue);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+.curriculum-and-feedback-variat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-24);
+  min-width: var(--min-w-434);
+  max-width: 100%;
+  font-size: var(--fs-18);
+  color: var(--color-gray-200);
+}
+.collapsed-section,
+.section-identity {
+  overflow: hidden;
+  display: flex;
+  max-width: 100%;
+}
+.collapsed-section {
+  align-self: stretch;
+  align-items: center;
+  gap: var(--gap-12);
+  font-size: var(--fs-16);
+}
+.section-identity {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+  min-width: 361px;
+}
+.description16 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-13);
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.action11,
+.section-controls {
+  height: var(--height-44);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.section-controls {
+  width: 260.6px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+}
+.action11 {
+  width: 117.2px;
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.action11,
+.action12,
+.cancel-confirmation {
+  background-color: var(--color-white);
+  border: var(--border-1);
+  display: flex;
+}
+.action12 {
+  height: var(--height-44);
+  width: 131.4px;
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.cancel-confirmation {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-24) var(--padding-20) var(--padding-24)
+    var(--padding-24);
+  gap: var(--gap-16);
+}
+.action14,
+.cancel-actions {
+  height: var(--height-44);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+}
+.cancel-actions {
+  width: 267.7px;
+  align-items: flex-start;
+  gap: var(--gap-12);
+  font-size: var(--fs-13);
+}
+.action14 {
+  width: 138.5px;
+  border-radius: var(--br-8);
+  background-color: var(--color-firebrick);
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+@media screen and (max-width: 1200px) {
+  .section-editing-dialogs {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 750px) {
+  .eduhub-dialogs-and-curriculu {
+    gap: var(--gap-16);
+  }
+  .delete-course-confirmation-dia {
+    min-width: 100%;
+  }
+  .description3 {
+    max-width: 100%;
+  }
+  .curriculum-and-feedback-variat,
+  .delete-account-confirmation-di {
+    min-width: 100%;
+  }
+  .collapsed-section {
+    flex-wrap: wrap;
+  }
+  .section-identity {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .eduhub-brand {
+    flex-wrap: wrap;
+  }
+  .heading,
+  .wordmark {
+    font-size: var(--fs-22);
+  }
+  .heading {
+    line-height: 29px;
+  }
+  .confirmation-actions {
+    flex-wrap: wrap;
+  }
+  .add-new-section,
+  .permanently-delete-your-accoun {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .cancel-actions,
+  .dialog-actions,
+  .password-actions,
+  .section-controls {
+    flex-wrap: wrap;
+  }
+}

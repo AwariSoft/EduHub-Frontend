@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="Explore Database Design Fundamentals, a free beginner-friendly course at EduHub.">
+  <title>Database Design Fundamentals — Free Course | EduHub</title>
+  <!-- Bootstrap 5, Font Awesome 6 Free, and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/recovered/course-details-free.css" data-eduhub-restored="page-css">
+</head>
+<body>
+  <!-- ==============================================================
+       HEADER: Desktop and responsive student navigation
+       ============================================================= -->
+  <header class="site-header">
+    <div class="site-header-inner d-flex align-items-center justify-content-between gap-3">
+      <div class="d-flex flex-shrink-0 align-items-center">
+        <a href="../public/home.html" class="brand" aria-label="EduHub home"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="blue">Hub</span></span></a>
+        <nav class="header-nav d-flex align-items-center" aria-label="Primary navigation">
+          <a href="../public/home.html">Home</a>
+          <a class="active" href="../public/explore-courses.html" aria-current="page">Explore Courses</a>
+          <a href="../student/dashboard.html#my-learning">My Learning</a>
+        </nav>
+      </div>
+      <div class="d-flex align-items-center gap-3 flex-shrink-0">
+        <form class="site-search" action="../public/explore-courses.html" method="get" role="search" aria-label="Search courses"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input name="q" aria-label="Search courses" type="search" placeholder="Search courses..." autocomplete="off"></form>
+        <button class="icon-button" type="button" aria-label="Notifications" data-notice="Notifications is not implemented as a standalone page yet."><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button>
+        <span class="student-avatar" aria-hidden="true">WM</span>
+        <a href="../student/student-profile.html" class="d-flex align-items-center gap-3" aria-label="Open Warda Mahmoud's profile"><span><span class="student-name d-block">Warda Mahmoud</span><span class="student-role d-block">Student</span></span><i class="fa-solid fa-chevron-down text-muted-ed" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="mobile-top">
+      <div class="d-flex justify-content-between align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2"><button id="menuOpen" class="icon-button p-0" type="button" aria-label="Open navigation menu" aria-haspopup="dialog"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><a class="brand" href="../public/home.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="blue">Hub</span></span></a></div>
+        <div class="d-flex align-items-center gap-1"><button type="button" class="icon-button" data-notice="Notifications page will be connected later." aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button><a class="student-avatar" href="../student/student-profile.html" aria-label="Student profile">WM</a><a href="../student/student-profile.html" class="icon-button" aria-label="Account settings"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a></div>
+      </div>
+      <nav class="mobile-nav" aria-label="Mobile primary navigation">
+        <a href="../public/home.html">Home</a><a class="active" href="../public/explore-courses.html" aria-current="page">Explore Courses</a><a href="../student/dashboard.html#my-learning">My Learning</a>
+      </nav>
+      <form class="site-search mobile-search" action="../public/explore-courses.html" method="get" role="search" aria-label="Search courses"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input name="q" aria-label="Search courses" type="search" placeholder="Search for courses..." autocomplete="off"></form>
+    </div>
+  </header>
+
+  <!-- ==============================================================
+       MAIN: Course introduction + content + free enrollment card
+       ============================================================= -->
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../public/explore-courses.html">Explore Courses</a> <span aria-hidden="true">/</span> <span>Databases</span> <span aria-hidden="true">/</span> <span aria-current="page">Database Design Fundamentals</span></nav>
+    <div class="main-layout">
+      <div class="course-story">
+        <!-- Introduction -->
+        <section class="course-intro" aria-labelledby="courseTitle">
+          <div class="intro-badges"><span class="badge-ed">Free course</span><span class="badge-ed">Beginner friendly</span></div>
+          <h1 id="courseTitle">Database Design Fundamentals</h1>
+          <p class="course-subtitle">Design databases that make sense. Learn to turn real-world requirements into clear, reliable relational models.</p>
+          <div class="course-social"><span class="rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.7 (642 reviews)</span><span class="learners">864 students enrolled</span></div>
+          <div class="d-flex align-items-center gap-3"><span class="person-avatar" aria-hidden="true">DM</span><span><span class="person-name d-block">Dina Mostafa</span><span class="person-caption d-block">Your course instructor</span></span></div>
+          <p class="course-meta">Beginner&nbsp; · &nbsp;English&nbsp; · &nbsp;Updated Oct 29, 2026</p>
+        </section>
+        <!-- Full-width video preview placeholder -->
+        <div class="hero-preview"><img src="https://placehold.co/912x420/12383d/e2e8f0?text=Database+Design+Course+Preview" width="912" height="420" alt="Placeholder for Database Design Fundamentals course video preview" fetchpriority="high"><button class="play-control" type="button" data-open-preview aria-label="Preview Database Design Fundamentals"><i class="fa-solid fa-play" aria-hidden="true"></i></button></div>
+        <div class="course-contents">
+          <!-- What You'll Learn -->
+          <section class="info-card surface" aria-labelledby="learnHeading"><h2 class="section-title" id="learnHeading">What You'll Learn</h2><ul class="outcomes">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Translate requirements into entities and relationships.</span></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Choose keys and avoid duplicated data.</span></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Normalize tables for maintainable databases.</span></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Sketch an entity relationship diagram.</span></li>
+          </ul></section>
+          <!-- Course Description -->
+          <section class="info-card surface description-card" aria-labelledby="descriptionHeading"><h2 class="section-title" id="descriptionHeading">Course Description</h2>
+            <p class="content-text">A good database starts with good questions. This practical introduction walks you through gathering requirements, identifying entities and choosing the relationships that keep your information consistent.</p>
+            <p class="content-text">You will design a small library database, turn an initial sketch into a normalized schema, and review common modeling mistakes. Short exercises help you practice each concept before moving on.</p>
+            <h3 class="minor-heading">Who is this course for?</h3><p class="content-text">Students, aspiring analysts and developers who want a solid starting point in relational database design. No previous database experience is required.</p>
+            <h3 class="minor-heading">Before you begin</h3><p class="content-text">Bring a notebook or diagramming tool and a real-world problem you would like to model.</p>
+          </section>
+          <!-- Curriculum: open by default to match Figma; click headers to collapse -->
+          <section id="curriculum" aria-labelledby="curriculumHeading"><h2 class="section-title curriculum-heading" id="curriculumHeading">Curriculum</h2><p class="curriculum-summary">2 sections · 6 lessons · 1h 30m</p>
+            <div class="curriculum-list">
+              <details class="curriculum-section" open><summary>Relational Foundations · 3 lessons · 40m</summary><ul class="curriculum-lessons"><li>Understanding Relational Databases · 12:00</li><li>Entities and Attributes · 14:00</li><li>Keys and Relationships · 14:00</li></ul></details>
+              <details class="curriculum-section" open><summary>From Requirements to Schema · 3 lessons · 50m</summary><ul class="curriculum-lessons"><li>Gathering Requirements · 15:00</li><li>Normalization in Practice · 18:00</li><li>Designing a Library Database · 17:00</li></ul></details>
+            </div>
+          </section>
+          <!-- Instructor information -->
+          <section class="info-card surface" aria-labelledby="instructorHeading"><h2 class="section-title" id="instructorHeading">Meet your instructor</h2><div class="d-flex align-items-center gap-3"><span class="person-avatar lg" aria-hidden="true">DM</span><div><h3 class="mb-1 fw-bold edu-restored-inline-1">Dina Mostafa</h3><p class="instructor-credentials mb-0">Database Designer | SQL Instructor</p><p class="instructor-credentials mb-0">4 courses · 864 students</p></div></div><p class="content-text mt-3 mb-0">I help students simplify complex data problems through clear models and practical examples. My courses focus on building reliable foundations that carry into real projects.</p></section>
+          <!-- Students reviews -->
+          <section class="info-card surface" aria-labelledby="reviewsHeading"><h2 class="section-title" id="reviewsHeading">Student Reviews</h2>
+            <div class="ratings-overview"><div><div class="rating-value">4.7</div><div class="stars">★★★★★</div><div class="text-muted-ed edu-restored-inline-2">642 reviews</div></div>
+              <div class="rating-distribution" aria-label="Rating distribution: 5 stars 78 percent, 4 stars 17 percent, 3 stars 4 percent, 2 stars 1 percent, 1 star 0 percent">
+                <div class="rating-row"><span class="rating-label">5 ★</span><div class="rating-progress"><span class="edu-restored-inline-3"></span></div><span class="rating-percent">78%</span></div>
+                <div class="rating-row"><span class="rating-label">4 ★</span><div class="rating-progress"><span class="edu-restored-inline-4"></span></div><span class="rating-percent">17%</span></div>
+                <div class="rating-row"><span class="rating-label">3 ★</span><div class="rating-progress"><span class="edu-restored-inline-5"></span></div><span class="rating-percent">4%</span></div>
+                <div class="rating-row"><span class="rating-label">2 ★</span><div class="rating-progress"><span class="edu-restored-inline-6"></span></div><span class="rating-percent">1%</span></div>
+                <div class="rating-row"><span class="rating-label">1 ★</span><div class="rating-progress"><span class="edu-restored-inline-7"></span></div><span class="rating-percent">0%</span></div>
+              </div>
+            </div>
+            <article class="review"><div class="reviewer">Mariam Adel</div><div class="review-date"><span class="stars">★★★★★</span> · Oct 2026</div><p>Clear explanations and exercises that made the concepts click. I finally feel confident building something on my own.</p></article>
+            <article class="review"><div class="reviewer">Youssef Hassan</div><div class="review-date"><span class="stars">★★★★★</span> · Oct 2026</div><p>Well structured and easy to follow. The practical examples helped me connect each lesson to real projects.</p></article>
+          </section>
+        </div>
+      </div>
+      <!-- ENROLLMENT RAIL: no payment required for this course -->
+      <aside class="enrollment-rail" aria-label="Course enrollment">
+        <div class="surface enrollment-card">
+          <div class="rail-thumb"><img src="https://placehold.co/312x240/12383d/e2e8f0?text=Database+Design+Preview" width="312" height="240" alt="Database Design Fundamentals sample video thumbnail" loading="lazy"><button class="play-control play-control-small" type="button" data-open-preview aria-label="Preview this course"><i class="fa-solid fa-play" aria-hidden="true"></i></button></div>
+          <p class="rail-thumb-label">Preview this course</p>
+          <h2 class="enrollment-price">Free</h2>
+          <p class="enrollment-description">Build a new skill. No payment needed.</p>
+          <button id="enrollFreeButton" class="ed-button w-100" type="button">Enroll for Free</button>
+          <p class="enroll-note">Enrollment takes you straight to learning.</p>
+          <h3 class="includes-heading">This course includes</h3>
+          <ul class="includes-list">
+            <li><i class="fa-regular fa-circle-play" aria-hidden="true"></i><span>6 video lessons</span></li>
+            <li><i class="fa-regular fa-clock" aria-hidden="true"></i><span>1h 30m of guided learning</span></li>
+            <li><i class="fa-solid fa-download" aria-hidden="true"></i><span>Downloadable practice resources</span></li>
+            <li><i class="fa-solid fa-desktop" aria-hidden="true"></i><span>Learn on desktop, tablet or mobile</span></li>
+            <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>Certificate upon completion</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="page-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+
+  <!-- Accessible preview dialog: no media/video file is provided by Figma. -->
+  <dialog id="previewDialog" class="site-modal" aria-labelledby="previewHeading">
+    <div class="d-flex align-items-start justify-content-between gap-2 mb-3"><h2 class="dialog-heading mb-0" id="previewHeading">Course Preview</h2><button type="button" class="modal-x" data-close="previewDialog" aria-label="Close preview"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <img class="dialog-preview" src="https://placehold.co/912x420/12383d/e2e8f0?text=Database+Design+Course+Preview" alt="Course preview placeholder" width="912" height="420">
+    <p class="dialog-body mt-3 mb-3">Database Design Fundamentals — by Dina Mostafa. This is a frontend preview placeholder. A real course preview requires a video source.</p>
+    <button class="ed-button w-100" type="button" data-close="previewDialog">Close Preview</button>
+  </dialog>
+
+  <!-- Free-enrollment integration-ready modal: NEVER fake a successful enrollment -->
+  <dialog id="enrollmentDialog" class="site-modal" aria-labelledby="enrollmentHeading">
+    <div class="d-flex justify-content-between align-items-start gap-2 mb-3"><h2 class="dialog-heading mb-0" id="enrollmentHeading">Enroll for Free</h2><button type="button" class="modal-x" data-close="enrollmentDialog" aria-label="Close enrollment dialog"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <div class="d-flex align-items-center gap-2 mb-3"><span class="badge-ed">Free course</span><span class="text-muted-ed small">No payment needed</span></div>
+    <p class="fw-semibold mb-2">Database Design Fundamentals</p>
+    <p class="dialog-body">This page is a frontend demo. To enroll a student and unlock lessons, connect this button to the EduHub enrollment API. No registration has been submitted and no payment is involved.</p>
+    <div class="d-flex flex-wrap gap-2 mt-4"><button type="button" class="ed-button-outline ed-button flex-fill" data-close="enrollmentDialog">Close</button><a href="free-course-learning-database.html" class="ed-button flex-fill" aria-label="Preview Free Course Learning frontend without enrolling">Preview Learning UI</a></div><p class="dialog-body mt-2 mb-0 edu-restored-inline-2">Preview only — this does not enroll you or unlock live lessons.</p>
+  </dialog>
+  <!-- Mobile navigation drawer -->
+  <dialog id="menuDialog" class="mobile-menu-dialog" aria-label="Student navigation menu">
+    <div class="d-flex justify-content-between align-items-center mb-3"><span class="fw-bold edu-restored-inline-8">Edu<span class="edu-restored-inline-9">Hub</span></span><button class="modal-x" type="button" data-close="menuDialog" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <nav aria-label="Mobile menu links"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="../student/dashboard.html">Dashboard</a><a href="../student/dashboard.html#my-learning">My Learning</a><a href="../student/student-profile.html">My Profile</a><a href="../auth/sign-in.html">Sign In</a></nav>
+  </dialog>
+  <div id="toast" class="live-toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="../../assets/js/recovered/course-details-free.js" data-eduhub-restored="page-js"></script>
+</body>
+</html>

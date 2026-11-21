@@ -1,0 +1,253 @@
+
+    /* 01 — Figma design tokens and layout foundations */
+    :root {
+      --brand: #2563eb;
+      --brand-dark: #1d4ed8;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --surface: #ffffff;
+      --surface-alt: #f8fafc;
+      --surface-blue: #eff6ff;
+      --surface-blue-strong: #dbeafe;
+      --radius-card: 12px;
+      --radius-image: 16px;
+      --page-max: 1440px;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--surface); font-size: 14px; -webkit-font-smoothing: antialiased; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { color: var(--brand-dark); }
+    button, input { font: inherit; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #93c5fd !important; outline-offset: 3px; }
+    .content-shell { width: 100%; max-width: var(--page-max); padding-inline: 72px; margin-inline: auto; }
+    .header-shell { width: 100%; max-width: var(--page-max); padding-inline: 32px; margin-inline: auto; }
+    .text-muted-custom { color: var(--muted) !important; }
+    .text-brand { color: var(--brand) !important; }
+    .bg-soft { background: var(--surface-alt); }
+    .bg-blue-soft { background: var(--surface-blue); }
+    .section-title { font-weight: 700; line-height: 1.2; letter-spacing: -.7px; margin: 0; }
+    .heading-lg { font-size: 36px; }
+    .heading-md { font-size: 32px; }
+    .section-subtitle { color: var(--muted); line-height: 1.65; margin: 12px 0 0; }
+    .eyebrow { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 10px; border-radius: 999px; background: var(--surface-blue); color: var(--brand); font-size: 12px; font-weight: 600; line-height: 1.15; }
+    .ed-btn { min-height: 48px; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background-color .18s, box-shadow .18s, transform .18s, border-color .18s; }
+    .ed-btn:active { transform: translateY(1px); }
+    .ed-btn-primary { background: var(--brand); color: #fff; border: 1px solid var(--brand); }
+    .ed-btn-primary:hover { background: var(--brand-dark); color: #fff; border-color: var(--brand-dark); box-shadow: 0 4px 14px #2563eb2b; }
+    .ed-btn-outline { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+    .ed-btn-outline:hover { background: var(--surface-blue); color: var(--brand); border-color: #bfdbfe; }
+    .ed-btn-white { background: #fff; color: var(--ink); border: 1px solid #fff; }
+    .ed-btn-white:hover { background: var(--surface-blue); color: var(--brand-dark); border-color: var(--surface-blue); }
+    .ed-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-card); }
+    .icon-tile { width: 48px; height: 48px; flex: 0 0 48px; display: inline-flex; align-items: center; justify-content: center; color: var(--brand); background: var(--surface-blue); border-radius: 10px; font-size: 22px; }
+
+    /* 02 — Public navigation */
+    .site-header { background: #fff; border-bottom: 1px solid var(--line); position: relative; z-index: 20; }
+    .main-nav { min-height: 80px; position: relative; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; color: var(--ink); font-size: 28px; font-weight: 700; letter-spacing: -.8px; line-height: 1; }
+    .brand:hover { color: var(--ink); }
+    .brand i { color: var(--brand); font-size: 30px; }
+    .brand .brand-blue { color: var(--brand); }
+    .primary-links { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); gap: 28px; }
+    .nav-link-ed { font-size: 14px; color: var(--muted); transition: color .15s; font-weight: 400; }
+    .nav-link-ed.active, .nav-link-ed:hover { color: var(--brand); }
+    .account-link { font-weight: 600; }
+    .nav-signup { width: 112px; }
+    .mobile-nav-row { min-height: 31px; display: none; align-items: flex-start; justify-content: space-between; padding-top: 0; }
+    .mobile-nav-row .nav-link-ed { font-size: 12px; }
+    .mobile-nav-toggle { background: none; border: 0; height: 44px; width: 32px; padding: 0; color: var(--ink); display: none; }
+    .mobile-drawer { position: absolute; right: 20px; top: 69px; width: min(280px, calc(100% - 40px)); padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 14px 32px #0f172a1f; }
+    .mobile-drawer a { display: block; color: var(--ink); padding: 12px; border-radius: 8px; font-weight: 600; }
+    .mobile-drawer a:hover { background: var(--surface-blue); color: var(--brand); }
+
+    /* 03 — Hero: learning promise */
+    .hero-section { background: var(--surface-blue); padding: 72px 0 56px; }
+    .hero-layout { display: grid; grid-template-columns: minmax(0, 672px) minmax(0, 560px); align-items: center; gap: 64px; }
+    .hero-title { font-size: 56px; line-height: 1.12; letter-spacing: -1.8px; font-weight: 700; margin: 24px 0 22px; }
+    .hero-description { font-size: 18px; line-height: 1.6; color: var(--muted); margin: 0; }
+    .hero-actions { margin-top: 24px; gap: 12px; }
+    .hero-actions .ed-btn:first-child { min-width: 200px; }
+    .hero-actions .ed-btn:nth-child(2) { min-width: 164px; }
+    .hero-reassurance { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 24px; }
+    .hero-reassurance i { color: var(--brand); font-size: 20px; }
+    .hero-photo { display: block; width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-image); }
+    .hero-aside { background: #fff; border-radius: 12px; min-height: 88px; margin-top: 16px; padding: 20px; display: flex; align-items: center; gap: 16px; }
+    .hero-aside strong { font-size: 17px; font-weight: 700; }
+    .hero-aside p { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+
+    /* 04 — Search, categories, featured courses */
+    .discovery-section { padding: 64px 0; background: var(--surface-alt); }
+    .course-search { margin-top: 20px; border-radius: 12px; border: 1px solid var(--line); background: #fff; padding: 8px; display: flex; align-items: center; gap: 12px; min-height: 64px; }
+    .search-control { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; padding: 0 12px; }
+    .search-control i { font-size: 18px; color: var(--muted); }
+    .search-control input { display: block; width: 100%; height: 42px; outline: none; border: 0; background: transparent; font-size: 14px; color: var(--ink); }
+    .search-control input:focus-visible { outline: 0 !important; }
+    .search-control:focus-within { box-shadow: inset 0 -2px 0 #93c5fd; }
+    .search-control input::placeholder { color: #94a3b8; }
+    .course-search .ed-btn { min-width: 176px; }
+    .category-section { margin-top: 64px; }
+    .category-title { font-weight: 700; font-size: 26px; letter-spacing: -.4px; margin-bottom: 8px; }
+    .category-grid { margin-top: 24px; }
+    .category-card { width: 100%; text-align: left; color: var(--ink); padding: 24px; height: 96px; display: flex; align-items: center; gap: 16px; transition: border-color .18s, transform .18s, box-shadow .18s; }
+    .category-card:hover, .category-card.is-selected { border-color: #93c5fd; box-shadow: 0 4px 12px #2563eb0c; }
+    .category-card:active { transform: translateY(1px); }
+    .category-card .category-icon { color: var(--brand); font-size: 24px; min-width: 28px; }
+    .category-card .category-label { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .category-card .category-caption { color: var(--muted); font-size: 13px; }
+    .category-card .fa-arrow-right { color: var(--brand); font-size: 16px; }
+    .featured-section { margin-top: 64px; }
+    .featured-section .section-title { margin-top: 8px; }
+    .browse-all { display: inline-block; font-size: 13px; font-weight: 600; margin-top: 8px; }
+    .course-grid { margin-top: 24px; }
+    .course-card { overflow: hidden; min-height: 485px; display: flex; flex-direction: column; transition: border-color .18s, box-shadow .18s, transform .18s; }
+    .course-card:hover { border-color: #bfdbfe; box-shadow: 0 6px 20px #0f172a0d; transform: translateY(-2px); }
+    .course-card img { width: 100%; height: 184px; object-fit: cover; }
+    .course-card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; min-height: 300px; }
+    .course-category { align-self: start; background: var(--surface-blue); color: var(--brand); border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 600; line-height: 1.2; }
+    .course-card-title { font-size: 18px; font-weight: 700; line-height: 1.45; min-height: 52px; margin: 12px 0 12px; }
+    .course-teacher { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+    .course-level { color: var(--muted); font-size: 12px; margin-bottom: auto; }
+    .course-price-row { min-height: 35px; margin-top: 12px; }
+    .course-price { font-size: 22px; font-weight: 700; white-space: nowrap; }
+    .payment-note { color: var(--muted); font-size: 11px; text-align: right; }
+    .course-card .course-action { width: 100%; margin-top: 12px; }
+    .search-empty { padding: 32px; margin-top: 24px; text-align: center; }
+    .search-empty i { font-size: 26px; color: var(--brand); }
+
+    /* 05 — Benefits and three-step learning journey */
+    .benefits-section { background: #fff; padding: 64px 0; }
+    .benefit-grid { margin-top: 32px; }
+    .benefit-card { background: var(--surface-alt); border-radius: 12px; padding: 24px; min-height: 196px; }
+    .benefit-card h3 { font-size: 19px; font-weight: 700; line-height: 1.35; margin: 16px 0 12px; }
+    .benefit-card p { font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0; }
+    .journey-section { padding: 64px 0; background: var(--surface-alt); }
+    .journey-grid { margin-top: 32px; }
+    .journey-number { color: var(--brand); font-weight: 700; font-size: 40px; letter-spacing: -1px; line-height: 1.2; }
+    .journey-step h3 { font-size: 20px; font-weight: 700; margin: 12px 0; }
+    .journey-step p { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0; }
+
+    /* 06 — Platform, instructor cards and course progress */
+    .platform-section { background: #fff; padding: 64px 0; }
+    .platform-story { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 688px); gap: 48px; align-items: center; }
+    .platform-story img { width: 100%; height: 340px; object-fit: cover; border-radius: 16px; }
+    .platform-copy .section-title { margin: 20px 0; }
+    .platform-copy .lead-desc { color: var(--muted); font-size: 16px; line-height: 1.65; }
+    .platform-copy .support-desc { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 20px 0; }
+    .instructors-section { margin-top: 64px; }
+    .instructor-grid { margin-top: 24px; }
+    .instructor-card { padding: 24px; height: 205px; }
+    .avatar-initials { width: 56px; height: 56px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background: var(--surface-blue-strong); color: var(--brand); font-weight: 600; font-size: 13px; }
+    .instructor-card h3 { font-size: 18px; font-weight: 700; margin: 16px 0 2px; }
+    .instructor-card p { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+    .instructor-card a { font-size: 13px; }
+    .progress-feature { margin-top: 64px; border-radius: 16px; background: var(--surface-blue); padding: 40px; display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 40px; align-items: center; }
+    .progress-feature-icon { color: var(--brand); font-size: 30px; }
+    .progress-description { font-size: 16px; color: var(--muted); line-height: 1.65; margin: 20px 0; }
+    .progress-disclaimer { font-size: 13px; color: var(--muted); margin: 0; }
+    .progress-demo { background: #fff; border-radius: 12px; padding: 24px; }
+    .progress-demo h3 { font-weight: 700; font-size: 20px; margin: 20px 0 16px; }
+    .progress-demo .small-label { font-size: 13px; color: var(--muted); }
+    .progress-demo .progress { height: 8px; background: #e2e8f0; border-radius: 999px; }
+    .progress-demo .progress-bar { background: var(--brand); border-radius: 999px; }
+    .next-lesson { background: var(--surface-alt); padding: 16px; border-radius: 8px; color: var(--muted); font-size: 13px; margin-top: 20px; }
+    .next-lesson i { color: var(--brand); font-size: 17px; }
+
+    /* 07 — FAQ, call to action, footer */
+    .faq-section { background: var(--surface-alt); padding: 64px 0; }
+    .faq-list { margin-top: 24px; }
+    .faq-item { padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .faq-item h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+    .faq-item p { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0; }
+    .cta-section { background: var(--brand); padding: 64px 0; color: white; text-align: center; }
+    .cta-section i { font-size: 28px; margin-bottom: 24px; }
+    .cta-section h2 { font-weight: 700; font-size: 40px; line-height: 1.2; letter-spacing: -.8px; }
+    .cta-section p { font-size: 16px; margin: 24px 0; }
+    .cta-section .ed-btn { min-width: 240px; }
+    .site-footer { background: white; padding: 40px 0; }
+    .footer-tagline { color: var(--muted); font-size: 13px; margin: 16px 0 0; }
+    .footer-heading { font-weight: 700; font-size: 14px; margin: 0 0 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { color: var(--muted); font-size: 13px; width: fit-content; }
+    .footer-links a:hover { color: var(--brand); }
+    .footer-legal { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 32px; display: flex; gap: 24px; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
+    .footer-legal a { color: var(--muted); }
+    .footer-legal a:hover { color: var(--brand); }
+
+    /* 08 — Responsive rules, matched to Figma's 834px and 390px compositions */
+    @media (max-width: 1199.98px) {
+      .content-shell { padding-inline: 32px; }
+      .primary-links { display: none !important; }
+      .mobile-nav-row { display: flex; }
+      .hero-layout { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo { height: 360px; }
+      .category-grid > div { width: 100%; }
+      .platform-story { grid-template-columns: 1fr; gap: 48px; }
+      .platform-story img { height: 340px; }
+      .progress-feature { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 576px) and (max-width: 1199.98px) {
+      .hero-title { max-width: 700px; }
+      .course-card-title { min-height: 52px; }
+      .benefit-card { min-height: 220px; }
+      .progress-feature { gap: 36px; }
+      .instructor-card { min-height: 205px; }
+    }
+    @media (max-width: 575.98px) {
+      .content-shell, .header-shell { padding-inline: 20px; }
+      .main-nav { min-height: 80px; }
+      .brand { font-size: 26px; }
+      .brand i { font-size: 29px; }
+      .nav-signup { width: 90px; padding-inline: 8px; }
+      .desktop-login { display: none; }
+      .mobile-nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .hero-section { padding: 48px 0 56px; }
+      .hero-title { font-size: 36px; line-height: 1.25; letter-spacing: -1.1px; margin: 24px 0; }
+      .hero-description { font-size: 16px; line-height: 1.625; }
+      .hero-actions { flex-wrap: nowrap; }
+      .hero-actions .ed-btn { flex: 1; min-width: 0 !important; padding-inline: 6px; }
+      .hero-reassurance { align-items: flex-start !important; line-height: 1.65; }
+      .hero-reassurance i { margin-top: 1px; }
+      .hero-photo { height: 240px; }
+      .hero-aside strong { font-size: 16px; }
+      .hero-layout { gap: 40px; }
+      .discovery-section { padding: 64px 0; }
+      .heading-lg { font-size: 28px; }
+      .heading-md { font-size: 28px; }
+      .course-search { display: block; background: transparent; border: none; padding: 0; margin-top: 20px; }
+      .search-control { height: 62px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding-inline: 20px; }
+      .course-search .ed-btn { width: 100%; margin-top: 20px; }
+      .category-grid { margin-top: 24px; }
+      .category-title { font-size: 26px; }
+      .featured-section { margin-top: 64px; }
+      .featured-section .section-title { font-size: 28px; }
+      .course-grid { margin-top: 24px; }
+      .course-card { min-height: 485px; }
+      .benefits-section, .journey-section, .platform-section, .faq-section { padding: 64px 0; }
+      .benefit-card { min-height: 0; }
+      .journey-grid { row-gap: 36px; }
+      .platform-story img { height: 240px; }
+      .platform-copy .ed-btn { width: 100%; }
+      .instructor-grid { row-gap: 20px; }
+      .instructor-card { height: auto; min-height: 205px; }
+      .progress-feature { padding: 24px; gap: 36px; }
+      .progress-feature .section-title { font-size: 28px; }
+      .progress-demo { padding: 24px; }
+      .faq-item { padding: 20px 0; }
+      .cta-section { padding: 64px 0; }
+      .cta-section h2 { font-size: 32px; }
+      .cta-section .ed-btn { width: 100%; }
+      .site-footer { padding: 40px 0 32px; }
+      .footer-legal { gap: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  
+/* Moved from static HTML style attributes during restoration. */
+.edu-restored-inline-1 { font-size:16px; }
+.edu-restored-inline-2 { width:65%; }
+.edu-restored-inline-3 { font-size:12px; }
+
+/* Restoration QA: original mobile layout had 3px of horizontal scroll. */
+@media(max-width:575.98px){html,body{overflow-x:clip}}

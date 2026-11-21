@@ -1,0 +1,306 @@
+.eduhub-sign-in-mobile {
+  width: 100%;
+  position: relative;
+  background: var(--gradient-1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-16) var(--padding-16) 138px;
+  box-sizing: border-box;
+  gap: var(--gap-32);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+}
+.page-navigation2 {
+  align-self: stretch;
+  height: var(--height-32);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: left;
+  font-size: var(--fs-11);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.new-account-navigation-container {
+  position: relative;
+  line-height: 150%;
+  flex-shrink: 0;
+}
+.dont-have-an {
+  line-height: 150%;
+  white-space: pre-wrap;
+}
+.sign-up {
+  font-weight: 600;
+  color: var(--color-royalblue);
+  line-height: 150%;
+}
+.brand-introduction2,
+.eduhub-brand2 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.brand-introduction2 {
+  flex-direction: column;
+  gap: var(--gap-16);
+  text-align: left;
+  font-size: 27px;
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.eduhub-brand2 {
+  justify-content: center;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-5);
+  gap: var(--gap-8);
+}
+.graduation-cap-icon2 {
+  height: var(--height-30);
+  width: var(--width-30);
+  position: relative;
+}
+.wordmark {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.hub2 {
+  color: var(--color-royalblue);
+}
+.brand-promise {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-8);
+  text-align: center;
+  font-size: var(--fs-12);
+}
+.platform-description2,
+.tagline {
+  align-self: stretch;
+  position: relative;
+}
+.tagline {
+  font-weight: 500;
+}
+.platform-description2 {
+  font-size: var(--fs-11);
+  line-height: 140%;
+  color: var(--color-slategray);
+  padding-left: var(--padding-20);
+  padding-right: var(--padding-20);
+}
+.form-heading2,
+.sign-in-card {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sign-in-card {
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-16);
+  background-color: var(--color-white);
+  padding: var(--padding-20);
+  gap: var(--gap-24);
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-darkslategray);
+  font-family: var(--font-inter);
+}
+.form-heading2 {
+  gap: var(--gap-8);
+  font-size: 23px;
+  color: var(--color-gray);
+}
+.subtitle2,
+.title2 {
+  align-self: stretch;
+  position: relative;
+}
+.title2 {
+  margin: 0;
+  font-size: inherit;
+  line-height: 120%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.subtitle2 {
+  font-size: var(--fs-11);
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.account-details2,
+.email-address-input2 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+}
+.email-address-input2 {
+  height: 66px;
+  flex-shrink: 0;
+  gap: var(--gap-8);
+}
+.label7 {
+  position: relative;
+  line-height: 120%;
+  font-weight: 500;
+}
+.input5 {
+  align-self: stretch;
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--padding-12);
+  gap: var(--gap-8);
+}
+.mail-icon2 {
+  height: var(--height-17);
+  width: var(--width-17);
+  position: relative;
+}
+.placeholder5,
+.placeholder6 {
+  width: calc(100% - 41px);
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--fs-12);
+  background-color: transparent;
+  flex: 1;
+  position: relative;
+  color: var(--color-lightslategray);
+  text-align: left;
+  display: inline-block;
+}
+.placeholder6 {
+  width: calc(100% - 58px);
+}
+.remember-me-unchecked,
+.sign-in-preferences {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.sign-in-preferences {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: var(--gap-0);
+  row-gap: var(--gap-20);
+  font-size: var(--fs-11);
+}
+.remember-me-unchecked {
+  gap: var(--gap-8);
+}
+.checkbox-unchecked {
+  margin: 0;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  border-radius: 4px;
+  border: var(--border-1);
+  box-sizing: border-box;
+}
+.checkbox-label {
+  position: relative;
+}
+.password-recovery {
+  position: relative;
+  font-weight: 500;
+  color: var(--color-royalblue);
+}
+.log-in-button,
+.sign-in-actions {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+}
+.sign-in-actions {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  color: var(--color-lightslategray);
+}
+.log-in-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-01);
+  background-color: var(--color-royalblue);
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.label9 {
+  position: relative;
+  font-size: var(--fs-13);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.alternative-divider2 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: var(--gap-10) var(--gap-16);
+}
+.divider3 {
+  height: var(--height-1);
+  flex: 1;
+  position: relative;
+  background-color: var(--color-aliceblue-200);
+  min-width: 89px;
+}
+.continue-with-google-button2 {
+  cursor: pointer;
+  border: var(--border-1);
+  padding: var(--padding-01);
+  background-color: var(--color-white);
+  align-self: stretch;
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8);
+}
+.google-logo-icon2 {
+  height: var(--height-18);
+  width: var(--width-18);
+  position: relative;
+}
+.label10 {
+  position: relative;
+  font-size: var(--fs-12);
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-darkslategray);
+  text-align: left;
+}

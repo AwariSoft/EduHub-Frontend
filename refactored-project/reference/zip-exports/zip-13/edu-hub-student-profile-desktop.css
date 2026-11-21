@@ -1,0 +1,667 @@
+.eduhub-student-profile-des,
+.student-sidebar {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.eduhub-student-profile-des {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  min-height: var(--min-h-1024);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+}
+.student-sidebar {
+  height: 1140px;
+  background-color: var(--color-white);
+  border-right: var(--border-1);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: var(--padding-24) var(--padding-20);
+  gap: var(--gap-32);
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.eduhub-brand {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+.graduation-cap-icon {
+  height: var(--height-32);
+  width: var(--width-32);
+  position: relative;
+}
+.wordmark {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: var(--ls--1);
+  font-weight: 700;
+  font-family: inherit;
+}
+.hub {
+  color: var(--color-royalblue);
+}
+.workspace-navigation {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+  font-size: var(--fs-13);
+  color: var(--color-slategray);
+}
+.workspace-label {
+  position: relative;
+  font-size: var(--fs-10);
+  letter-spacing: 1.1px;
+  font-weight: 600;
+}
+.navigation-item {
+  align-self: stretch;
+  border-radius: var(--br-8);
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-12);
+  gap: var(--gap-12);
+}
+.layout-dashboard-icon {
+  height: var(--height-20);
+  width: var(--width-20);
+  position: relative;
+}
+.label {
+  position: relative;
+}
+.learning-reminder,
+.navigation-item5 {
+  align-self: stretch;
+  background-color: var(--color-aliceblue-100);
+  overflow: hidden;
+  display: flex;
+}
+.navigation-item5 {
+  border-radius: var(--br-8);
+  align-items: center;
+  padding: var(--padding-12);
+  gap: var(--gap-12);
+  color: var(--color-royalblue);
+}
+.learning-reminder {
+  border-radius: var(--br-12);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-16);
+  gap: var(--gap-8);
+  font-size: var(--fs-14);
+}
+.description,
+.description2 {
+  position: relative;
+  line-height: 160%;
+}
+.description {
+  align-self: stretch;
+  font-weight: 600;
+}
+.description2 {
+  width: 100%;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  display: inline-block;
+  max-width: 159px;
+}
+.account-header,
+.route-content,
+.route-workspace {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.route-workspace {
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--gap-0);
+  min-height: 1140px;
+  max-width: calc(100% - 232px);
+}
+.account-header,
+.route-content {
+  align-self: stretch;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.account-header {
+  background-color: var(--color-white);
+  border-bottom: var(--border-1);
+  box-sizing: border-box;
+  padding: var(--padding-16) var(--padding-32);
+  font-size: var(--fs-13);
+  color: var(--color-royalblue);
+}
+.course-search,
+.main-navigation {
+  height: var(--height-40);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.main-navigation {
+  align-self: stretch;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: var(--gap-10) 605px;
+}
+.course-search {
+  flex: 1;
+  border-radius: var(--br-8);
+  background-color: var(--color-whitesmoke);
+  border: var(--border-1);
+  box-sizing: border-box;
+  padding: var(--padding-0) var(--padding-12);
+  gap: var(--gap-10);
+  min-width: 181px;
+}
+.search-placeholder {
+  width: calc(100% - 44px);
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--fs-13);
+  background-color: transparent;
+  height: var(--height-16);
+  position: relative;
+  color: var(--color-slategray);
+  text-align: left;
+  display: inline-block;
+  min-width: 77px;
+  padding: var(--padding-01);
+}
+.account-controls,
+.initials-avatar {
+  height: var(--height-40);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.account-controls {
+  gap: var(--gap-16);
+}
+.initials-avatar {
+  width: var(--width-40);
+  border-radius: var(--br-100);
+  background-color: var(--color-lavender);
+  flex-shrink: 0;
+  justify-content: center;
+}
+.initials {
+  position: relative;
+  font-weight: 600;
+}
+.account-identity {
+  height: var(--height-31);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  color: var(--color-gray);
+}
+.role {
+  position: relative;
+  font-size: var(--fs-11);
+  color: var(--color-slategray);
+}
+.page-introduction,
+.profile-content {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.profile-content {
+  padding: var(--padding-40) var(--padding-72);
+  box-sizing: border-box;
+  gap: var(--gap-32);
+  max-width: 100%;
+}
+.page-introduction {
+  gap: var(--gap-8);
+}
+.description3 {
+  line-height: 160%;
+}
+.description3,
+.description4,
+.heading {
+  align-self: stretch;
+  position: relative;
+}
+.heading {
+  margin: 0;
+  font-size: var(--fs-28);
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.description4 {
+  font-size: var(--fs-14);
+  line-height: 160%;
+}
+.content-card {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-32);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-30);
+  color: var(--color-royalblue);
+  font-family: var(--font-inter);
+}
+.initials-avatar2,
+.profile-identity {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.profile-identity {
+  align-self: stretch;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: var(--gap-10) var(--gap-24);
+  max-width: 100%;
+}
+.initials-avatar2 {
+  height: 96px;
+  width: 96px;
+  border-radius: var(--br-100);
+  background-color: var(--color-lavender);
+  flex-shrink: 0;
+  justify-content: center;
+}
+.initials2 {
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  min-width: var(--min-w-59);
+}
+.status-badge,
+.student-identity {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.student-identity {
+  height: 101px;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-8);
+  min-width: 461px;
+  max-width: 100%;
+  font-size: var(--fs-12);
+}
+.status-badge {
+  height: var(--height-25);
+  border-radius: var(--br-100);
+  background-color: var(--color-aliceblue-100);
+  flex-shrink: 0;
+  padding: var(--padding-5) var(--padding-10);
+  box-sizing: border-box;
+}
+.description5,
+.heading2 {
+  align-self: stretch;
+  position: relative;
+}
+.heading2 {
+  margin: 0;
+  font-size: var(--fs-30);
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.description5 {
+  font-size: var(--fs-14);
+  line-height: 160%;
+  color: var(--color-slategray);
+}
+.edit-profile {
+  cursor: pointer;
+  border: var(--border-2);
+  padding: var(--padding-01);
+  background-color: var(--color-royalblue);
+  height: var(--height-48);
+  width: 144px;
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label9,
+.learning-summary {
+  text-align: left;
+  font-family: var(--font-inter);
+}
+.label9 {
+  position: relative;
+  font-size: var(--fs-14);
+  font-weight: 600;
+  color: var(--color-white);
+}
+.learning-summary {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-20);
+  font-size: var(--fs-22);
+  color: var(--color-gray);
+}
+.heading3 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.learning-metrics,
+.learning-statistic {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.learning-metrics {
+  align-self: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-16);
+  font-size: var(--fs-30);
+}
+.learning-statistic {
+  flex: 1;
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: var(--padding-20);
+  gap: var(--gap-12);
+  min-width: 102px;
+}
+.value {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.description6 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-13);
+  line-height: 160%;
+  color: var(--color-slategray);
+}
+.profile-information {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-10) var(--gap-24);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-22);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.about-and-interests,
+.content-card2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about-and-interests {
+  flex: 1;
+  min-width: 507px;
+  max-width: 100%;
+}
+.content-card2 {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  overflow: hidden;
+  padding: var(--padding-24);
+  gap: var(--gap-24);
+}
+.description11 {
+  width: 100%;
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: 160%;
+  color: var(--color-darkslategray);
+  display: inline-block;
+  max-width: 730px;
+}
+.heading5 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+}
+.learning-interests,
+.status-badge2 {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.learning-interests {
+  align-self: stretch;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-8);
+  font-size: var(--fs-12);
+  color: var(--color-royalblue);
+}
+.status-badge2 {
+  border-radius: var(--br-100);
+  background-color: var(--color-aliceblue-100);
+  padding: var(--padding-5) var(--padding-10);
+}
+.content-card3,
+.learning-destinations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.learning-destinations {
+  width: 260px;
+  font-size: var(--fs-13);
+  color: var(--color-royalblue);
+}
+.content-card3 {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  overflow: hidden;
+  padding: var(--padding-24) var(--padding-20) var(--padding-24)
+    var(--padding-24);
+  gap: var(--gap-24);
+}
+.graduation-cap-icon2 {
+  width: var(--width-28);
+  height: var(--height-28);
+  position: relative;
+}
+.heading6 {
+  margin: 0;
+  width: 100%;
+  font-size: var(--fs-20);
+  letter-spacing: var(--ls--0_6);
+  line-height: 125%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+  max-width: 210px;
+}
+.description12,
+.heading6,
+.related-action {
+  position: relative;
+  display: inline-block;
+}
+.description12 {
+  width: 100%;
+  line-height: 160%;
+  color: var(--color-slategray);
+  max-width: 210px;
+}
+.related-action {
+  align-self: stretch;
+  line-height: 150%;
+  font-weight: 600;
+  min-height: var(--min-h-24);
+}
+.page-footer {
+  align-self: stretch;
+  border-top: var(--border-1);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-24);
+  text-align: left;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1200px) {
+  .main-navigation {
+    gap: 302px;
+  }
+  .profile-content {
+    padding-left: var(--padding-36);
+    padding-right: var(--padding-36);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .eduhub-student-profile-des {
+    padding-left: var(--padding-20);
+    padding-right: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .student-sidebar {
+    display: none;
+  }
+  .route-workspace {
+    max-width: 100%;
+  }
+  .profile-content {
+    padding-top: var(--padding-26);
+    padding-bottom: var(--padding-26);
+    box-sizing: border-box;
+  }
+  .initials2 {
+    font-size: var(--fs-24);
+  }
+  .heading2 {
+    line-height: var(--lh-30);
+  }
+  .heading2,
+  .value {
+    font-size: var(--fs-24);
+  }
+}
+@media screen and (max-width: 750px) {
+  .student-sidebar {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .main-navigation {
+    gap: 151px;
+  }
+  .profile-content {
+    gap: var(--gap-16);
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .about-and-interests,
+  .student-identity {
+    min-width: 100%;
+  }
+  .description11 {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .wordmark {
+    font-size: var(--fs-22);
+  }
+  .main-navigation {
+    gap: 76px;
+  }
+  .heading {
+    font-size: var(--fs-22);
+    line-height: var(--lh-28);
+  }
+  .initials2 {
+    font-size: var(--fs-18);
+  }
+  .heading2,
+  .heading3 {
+    line-height: var(--lh-22);
+  }
+  .heading2,
+  .heading3,
+  .value {
+    font-size: var(--fs-18);
+  }
+  .heading6 {
+    font-size: var(--fs-16);
+    line-height: var(--lh-20);
+  }
+}

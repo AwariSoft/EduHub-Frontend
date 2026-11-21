@@ -1,0 +1,3 @@
+# Source reconciliation
+
+Desktop: `edu-hub-edit-student-profile-desktop.html` + `.css`; tablet: `edu-hub-edit-student-profile-tablet.html` + `.css`; mobile: `edu-hub-edit-student-profile-mobile.html` + `.css` from ZIP #13. Desktop's course-search input is part of the topbar reference and is omitted from the new shared student topbar to avoid a nonfunctional search. All profile fields, helper text, actions, biography, and learning interests are retained. The profile editor is a full page, not an overlay. The new student workspace partials are intentionally separate from existing admin and instructor partials.

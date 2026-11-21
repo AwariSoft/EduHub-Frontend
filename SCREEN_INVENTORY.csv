@@ -1,0 +1,122 @@
+﻿version,workspace,screen,html_path,mapped_figma_frames,figma_reference
+student-update,Student / Learning,Certificate,latest/student/eduhub-certificate/eduhub-certificate.html,,
+student-update,Student / Learning,Certificate Not Yet Available,latest/student/eduhub-certificate-not-yet-available/eduhub-certificate-not-yet-available.html,,
+student-update,Student / Learning,Curriculum Expanded Collapsed States,latest/student/eduhub-curriculum-expanded-collapsed-states/eduhub-curriculum-expanded-collapsed-states.html,,
+student-update,Student / Learning,Quiz Result Fail,latest/student/eduhub-quiz-result-fail/eduhub-quiz-result-fail.html,,
+student-update,Student / Learning,Quiz Result Pass,latest/student/eduhub-quiz-result-pass/eduhub-quiz-result-pass.html,,
+student-update,Student / Learning,Share And Quiz Confirmation Dialogs,latest/student/eduhub-share-and-quiz-confirmation-dialogs/eduhub-share-and-quiz-confirmation-dialogs.html,,
+updated,Instructor Workspace,Add Lesson,latest/instructor/add-lesson/eduhub-instructor-add-lesson.html,,
+updated,Instructor Workspace,Course Analytics,latest/instructor/course-analytics/eduhub-instructor-course-analytics.html,,
+updated,Instructor Workspace,Course Approval States,latest/instructor/course-approval-states/eduhub-instructor-course-approval-states.html,,
+updated,Instructor Workspace,Course Curriculum,latest/instructor/course-curriculum/eduhub-instructor-course-curriculum.html,,
+updated,Instructor Workspace,Course Details Analytics,latest/instructor/course-details-analytics/eduhub-instructor-course-details-analytics.html,,
+updated,Instructor Workspace,Course Details Curriculum,latest/instructor/course-details-curriculum/eduhub-instructor-course-details-curriculum.html,,
+updated,Instructor Workspace,Course Details Overview,latest/instructor/course-details-overview/eduhub-instructor-course-details-overview.html,,
+updated,Instructor Workspace,Course Details Students,latest/instructor/course-details-students/standalone/eduhub-instructor-course-details-students.html,,
+updated,Instructor Workspace,Create Course,latest/instructor/create-course/eduhub-instructor-create-course.html,,
+updated,Instructor Workspace,Dashboard,latest/instructor/dashboard/eduhub-instructor-dashboard.html,,
+updated,Instructor Workspace,Dashboard New Instructor,latest/instructor/dashboard-new-instructor/eduhub-instructor-dashboard-new-instructor-standalone.html,,
+updated,Instructor Workspace,Dashboard Original Design,latest/instructor/dashboard-original-design/eduhub-instructor-dashboard-original-design-standalone.html,,
+updated,Instructor Workspace,Dialogs Curriculum States,latest/instructor/dialogs-curriculum-states/eduhub-instructor-dialogs-curriculum-states-standalone.html,,
+updated,Instructor Workspace,Edit Course,latest/instructor/edit-course/eduhub-instructor-edit-course.html,,
+updated,Instructor Workspace,Edit Lesson,latest/instructor/edit-lesson/eduhub-instructor-edit-lesson.html,,
+updated,Instructor Workspace,Empty Workspace States,latest/instructor/empty-workspace-states/eduhub-instructor-empty-workspace-states.html,,
+updated,Instructor Workspace,Menus Uploads Form States,latest/instructor/menus-uploads-form-states/eduhub-instructor-menus-uploads-form-states-standalone.html,,
+updated,Instructor Workspace,My Courses,latest/instructor/my-courses/eduhub-instructor-my-courses.html,,
+updated,Instructor Workspace,My Profile,latest/instructor/my-profile/eduhub-instructor-my-profile.html,,
+updated,Instructor Workspace,My Students,latest/instructor/my-students/eduhub-instructor-my-students.html,,
+updated,Instructor Workspace,Original Create Course,latest/instructor/original-create-course/eduhub-instructor-original-create-course-standalone.html,,
+updated,Instructor Workspace,Original Edit Course,latest/instructor/original-edit-course/eduhub-instructor-original-edit-course-standalone.html,,
+updated,Instructor Workspace,Settings,latest/instructor/settings/eduhub-instructor-settings.html,,
+updated,Admin Workspace,Account Access Confirmations Results,latest/admin/account-access-confirmations-results/eduhub-admin-account-access-confirmations-results-standalone.html,,
+updated,Admin Workspace,Course Approvals,latest/admin/course-approvals/eduhub-admin-course-approvals-standalone.html,,
+updated,Admin Workspace,Course Approvals Table States,latest/admin/course-approvals-table-states/eduhub-admin-course-approvals-table-states-standalone.html,,
+updated,Admin Workspace,Course Review Decisions Results,latest/admin/course-review-decisions-results/eduhub-admin-course-review-decisions-results-standalone.html,,
+updated,Admin Workspace,Course Review Details,latest/admin/course-review-details/eduhub-admin-course-review-details-standalone.html,,
+updated,Admin Workspace,Dashboard,latest/admin/dashboard/eduhub-admin-dashboard-standalone.html,,
+updated,Admin Workspace,Filters Profile Notifications,latest/admin/filters-profile-notifications/eduhub-admin-filters-profile-notifications-standalone.html,,
+updated,Admin Workspace,Mobile Menus Filters Dialogs,latest/admin/mobile-menus-filters-dialogs/eduhub-admin-mobile-menus-filters-dialogs-standalone.html,,
+updated,Admin Workspace,Payment Details,latest/admin/payment-details/eduhub-admin-payment-details-standalone.html,,
+updated,Admin Workspace,Payments,latest/admin/payments/eduhub-admin-payments-standalone.html,,
+updated,Admin Workspace,Payments Refund And Payment Outcomes,latest/admin/payments-refund-and-payment-outcomes/eduhub-admin-payments-refund-and-payment-outcomes-standalone.html,,
+updated,Admin Workspace,Payments Table States,latest/admin/payments-table-states/eduhub-admin-payments-table-states-standalone.html,,
+updated,Admin Workspace,User Details,latest/admin/user-details/eduhub-admin-user-details-standalone.html,,
+updated,Admin Workspace,User Management,latest/admin/user-management/eduhub-admin-user-management-standalone.html,,
+updated,Admin Workspace,User Management Table States,latest/admin/user-management-table-states/eduhub-admin-user-management-table-states-standalone.html,,
+base,Admin Workspace,Admin Dashboard,website/pages/admin/admin-dashboard.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-84716
+base,Admin Workspace,Course Approvals,website/pages/admin/course-approvals.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85286
+base,Admin Workspace,Course Review Details,website/pages/admin/course-review-details.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-85908
+base,Admin Workspace,Payment Details,website/pages/admin/payment-details.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87649
+base,Admin Workspace,Payments,website/pages/admin/payments.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87268
+base,Admin Workspace,User Details,website/pages/admin/user-details.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86823
+base,Admin Workspace,User Management,website/pages/admin/user-management.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-86477
+base,Public / Authentication,Create Account,website/pages/auth/create-account.html,2,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=4-590
+base,Public / Authentication,Forgot Password,website/pages/auth/forgot-password.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42334
+base,Public / Authentication,Reset Password,website/pages/auth/reset-password.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42448
+base,Public / Authentication,Sign In,website/pages/auth/sign-in.html,2,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=7-619
+base,Instructor Workspace,Add Lesson,website/pages/instructor/add-lesson.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58673
+base,Instructor Workspace,Course Analytics,website/pages/instructor/course-analytics.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60266
+base,Instructor Workspace,Course Curriculum,website/pages/instructor/course-curriculum.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-58269
+base,Instructor Workspace,Course Details Analytics,website/pages/instructor/course-details-analytics.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61397
+base,Instructor Workspace,Course Details Curriculum,website/pages/instructor/course-details-curriculum.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61119
+base,Instructor Workspace,Course Details Students,website/pages/instructor/course-details-students.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61263
+base,Instructor Workspace,Course Details,website/pages/instructor/course-details.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59350
+base,Instructor Workspace,Create Course,website/pages/instructor/create-course.html,4,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57234
+base,Instructor Workspace,Dashboard,website/pages/instructor/dashboard.html,6,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56357
+base,Instructor Workspace,Edit Course,website/pages/instructor/edit-course.html,4,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-57689
+base,Instructor Workspace,Edit Lesson,website/pages/instructor/edit-lesson.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59012
+base,Instructor Workspace,My Courses,website/pages/instructor/my-courses.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-56818
+base,Instructor Workspace,My Profile,website/pages/instructor/my-profile.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-60697
+base,Instructor Workspace,My Students,website/pages/instructor/my-students.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-59785
+base,Instructor Workspace,New Instructor Dashboard,website/pages/instructor/new-instructor-dashboard.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=16-16936
+base,Instructor Workspace,Settings,website/pages/instructor/settings.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61026
+base,Public / Authentication,Course Details,website/pages/public/course-details.html,0,
+base,Public / Authentication,Explore Courses,website/pages/public/explore-courses.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-38019
+base,Public / Authentication,Home,website/pages/public/home.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42003
+base,Supporting States,Admin Account Access Confirmations,website/pages/states/admin-account-access-confirmations.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88399
+base,Supporting States,Admin Course Approvals Table States,website/pages/states/admin-course-approvals-table-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87742
+base,Supporting States,Admin Course Review Decisions,website/pages/states/admin-course-review-decisions.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88267
+base,Supporting States,Admin Filters Profile Notifications,website/pages/states/admin-filters-profile-notifications.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88791
+base,Supporting States,Admin Mobile Menus Filters Dialogs,website/pages/states/admin-mobile-menus-filters-dialogs.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88972
+base,Supporting States,Admin Payments Refund Outcomes,website/pages/states/admin-payments-refund-outcomes.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88522
+base,Supporting States,Admin Payments Table States,website/pages/states/admin-payments-table-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-88081
+base,Supporting States,Admin User Management Table States,website/pages/states/admin-user-management-table-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=26-87917
+base,Supporting States,Certificate Not Yet Available,website/pages/states/certificate-not-yet-available.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41941
+base,Supporting States,Course Approval States,website/pages/states/course-approval-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61572
+base,Supporting States,Course Details Already Enrolled,website/pages/states/course-details-already-enrolled.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40710
+base,Supporting States,Course Details Free,website/pages/states/course-details-free.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40543
+base,Supporting States,Course Learning All Lessons Complete,website/pages/states/course-learning-all-lessons-complete.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41187
+base,Supporting States,Course Learning No Final Quiz Policy,website/pages/states/course-learning-no-final-quiz-policy.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41347
+base,Supporting States,Course Learning Notes,website/pages/states/course-learning-notes.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41670
+base,Supporting States,Course Learning Resources,website/pages/states/course-learning-resources.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41506
+base,Supporting States,Curriculum Expanded Collapsed,website/pages/states/curriculum-expanded-collapsed.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40931
+base,Supporting States,Dialogs Curriculum States,website/pages/states/dialogs-curriculum-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61912
+base,Supporting States,Empty Workspace States,website/pages/states/empty-workspace-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61646
+base,Supporting States,Explore Courses Mobile Filters Open,website/pages/states/explore-courses-mobile-filters-open.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-42070
+base,Supporting States,Free Course Learning Database,website/pages/states/free-course-learning-database.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-42174
+base,Supporting States,Menus Uploads Form States,website/pages/states/menus-uploads-form-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=18-61713
+base,Supporting States,Notification States Roles,website/pages/states/notification-states-roles.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44292
+base,Supporting States,Password Recovery States,website/pages/states/password-recovery-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43850
+base,Supporting States,Password Reset States,website/pages/states/password-reset-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43943
+base,Supporting States,Payment Processing,website/pages/states/payment-processing.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41044
+base,Supporting States,Payment Status Role Safe Access,website/pages/states/payment-status-role-safe-access.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44515
+base,Supporting States,Payment Successful Early,website/pages/states/payment-successful-early.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41091
+base,Supporting States,Profile Saving States,website/pages/states/profile-saving-states.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-44146
+base,Supporting States,Quiz Result Fail,website/pages/states/quiz-result-fail.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41885
+base,Supporting States,Quiz Result Pass,website/pages/states/quiz-result-pass.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41829
+base,Supporting States,Share Quiz Confirmation Dialogs,website/pages/states/share-quiz-confirmation-dialogs.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-41995
+base,Student / Learning,Certificate,website/pages/student/certificate.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40308
+base,Student / Learning,Checkout,website/pages/student/checkout.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39207
+base,Student / Learning,Course Learning,website/pages/student/course-learning.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-39539
+base,Student / Learning,Dashboard,website/pages/student/dashboard.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-8074
+base,Student / Learning,Edit Student Profile,website/pages/student/edit-student-profile.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42919
+base,Student / Learning,Final Quiz,website/pages/student/final-quiz.html,4,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=22-40003
+base,Student / Learning,New Student Dashboard,website/pages/student/new-student-dashboard.html,1,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=9-7624
+base,Student / Learning,Notifications,website/pages/student/notifications.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43237
+base,Student / Learning,Payment Failed,website/pages/student/payment-failed.html,4,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43620
+base,Student / Learning,Payment Success,website/pages/student/payment-success.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43449
+base,Student / Learning,Student Profile,website/pages/student/student-profile.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-42676
+base,System Pages,Access Denied,website/pages/system/access-denied.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43815
+base,System Pages,Page Not Found,website/pages/system/page-not-found.html,3,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub?node-id=70-43719
+
+Restored,Supporting States,Payment Failed Additional State,website/pages/states/payment-failed-additional-state.html,,https://www.figma.com/design/CTtIqTcIqCn11h7d4XDOGC/EduHub

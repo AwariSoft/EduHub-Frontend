@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EduHub sample payment failure screen with safe recovery options." />
+  <title>Payment Failed | EduHub</title>
+
+  <!-- EduHub frontend stack: Bootstrap 5, Font Awesome 6 and Inter. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    /* ===== 1. Design tokens from EduHub Figma ===== */
+    :root {
+      --eh-primary: #2563eb;
+      --eh-primary-hover: #1d4ed8;
+      --eh-ink: #0f172a;
+      --eh-body-text: #334155;
+      --eh-muted: #64748b;
+      --eh-border: #e2e8f0;
+      --eh-page: #f8fafc;
+      --eh-blue-soft: #eff6ff;
+      --eh-avatar: #dbeafe;
+      --eh-warning: #92400e;
+      --eh-warning-soft: #fffbeb;
+      --eh-danger: #dc2626;
+      --eh-danger-soft: #fef2f2;
+      --eh-radius: 12px;
+      --eh-button-radius: 8px;
+      --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      --bs-body-color: var(--eh-ink);
+      --bs-body-bg: var(--eh-page);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { min-width: 0; margin: 0; color: var(--eh-ink); background: var(--eh-page); font-family: var(--bs-body-font-family); -webkit-font-smoothing: antialiased; }
+    a { color: var(--eh-primary); text-decoration: none; }
+    a:hover { color: var(--eh-primary-hover); }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid #93c5fd !important; outline-offset: 3px; }
+    [hidden] { display: none !important; }
+
+    /* ===== 2. Shared student header and navigation ===== */
+    .site-header { height: 72px; background: #fff; border-bottom: 1px solid var(--eh-border); }
+    .header-top { position: relative; height: 72px; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--eh-ink); white-space: nowrap; }
+    .brand:hover { color: var(--eh-ink); }
+    .brand-icon { display: inline-grid; place-items: center; width: 32px; height: 34px; font-size: 30px; color: var(--eh-primary); }
+    .brand-name { font-size: 28px; font-weight: 700; letter-spacing: -1.15px; line-height: 34px; }
+    .brand-name span { color: var(--eh-primary); }
+    .primary-nav { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 28px; }
+    .primary-nav a { font-size: 14px; line-height: 17px; color: var(--eh-muted); white-space: nowrap; }
+    .primary-nav a.is-current { font-weight: 600; }
+    .primary-nav a:hover { color: var(--eh-primary); }
+    .account-controls { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+    .icon-button { width: 20px; height: 40px; padding: 0; display: grid; place-items: center; background: transparent; border: 0; cursor: pointer; color: var(--eh-muted); font-size: 19px; }
+    .icon-button:hover { color: var(--eh-primary); }
+    .avatar-small { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; color: var(--eh-primary); background: var(--eh-avatar); border-radius: 50%; font-weight: 600; font-size: 13px; }
+    .account-name { font-size: 13px; line-height: 16px; margin: 0; font-weight: 600; white-space: nowrap; }
+    .account-role { font-size: 11px; line-height: 13px; margin: 2px 0 0; color: var(--eh-muted); }
+    .secondary-nav { display: none; }
+    .secondary-nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .secondary-nav a { font-size: 12px; font-weight: 500; line-height: 15px; }
+    .mobile-menu-trigger { display: none; }
+
+    /* ===== 3. Payment failure content ===== */
+    .payment-main { padding: 40px 72px; }
+    .payment-breadcrumb { margin: 0 0 32px; color: var(--eh-muted); font-size: 12px; line-height: 19px; }
+    .payment-breadcrumb a { color: inherit; }
+    .payment-breadcrumb a:hover { color: var(--eh-primary); }
+    .payment-card { width: 100%; max-width: 680px; margin: 0 auto; padding: 39px; background: #fff; border: 1px solid var(--eh-border); border-radius: var(--eh-radius); }
+    .failure-intro { text-align: center; }
+    .warning-circle { width: 80px; height: 80px; display: grid; place-items: center; margin: 0 auto 16px; background: var(--eh-warning-soft); color: var(--eh-warning); border-radius: 50%; }
+    .warning-circle i { font-size: 36px; line-height: 1; }
+    .failure-intro h1 { margin: 0 0 16px; color: var(--eh-ink); font-size: 32px; font-weight: 700; line-height: 40px; letter-spacing: -.8px; }
+    .failure-intro p { margin: 0; color: var(--eh-body-text); font-size: 16px; line-height: 26px; }
+
+    /* Course summary; thumbnail hidden on mobile as specified in Figma. */
+    .course-strip { display: flex; align-items: center; gap: 16px; width: 100%; height: 104px; padding: 16px; margin-top: 24px; border-radius: var(--eh-radius); background: var(--eh-page); }
+    .course-thumb { flex: 0 0 96px; width: 96px; height: 72px; display: block; object-fit: cover; border-radius: 8px; }
+    .course-copy { min-width: 0; }
+    .course-copy h2 { margin: 0 0 4px; color: var(--eh-ink); font-size: 14px; font-weight: 600; line-height: 22px; }
+    .course-copy p { margin: 0; color: var(--eh-muted); font-size: 13px; line-height: 21px; }
+
+    /* Attempt details and red failed-status pill. */
+    .attempt-summary { margin-top: 24px; }
+    .student-detail { display: grid; gap: 4px; align-content: start; min-height: 45px; }
+    .student-detail .label { color: var(--eh-muted); font-size: 12px; line-height: 19px; }
+    .student-detail .value { color: var(--eh-ink); font-size: 14px; line-height: 22px; font-weight: 400; }
+    .amount-detail { margin-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 27px; }
+    .amount-detail span { color: var(--eh-muted); font-size: 14px; line-height: 17px; }
+    .amount-detail strong { color: var(--eh-ink); font-size: 22px; font-weight: 700; line-height: 27px; }
+    .failed-pill { display: inline-flex; min-height: 25px; align-items: center; margin-top: 16px; padding: 4px 10px; color: var(--eh-danger); background: var(--eh-danger-soft); border-radius: 999px; font-size: 12px; line-height: 17px; font-weight: 600; }
+
+    /* Blue informational callout: this is guidance, not an enrollment notice. */
+    .feedback-box { display: flex; align-items: flex-start; gap: 12px; min-height: 100px; margin-top: 24px; padding: 16px; background: var(--eh-blue-soft); border-radius: 8px; }
+    .feedback-icon { width: 20px; height: 20px; flex: 0 0 20px; display: grid; place-items: center; color: var(--eh-primary); font-size: 20px; }
+    .feedback-content { min-width: 0; }
+    .feedback-content h2 { margin: 0 0 4px; font-size: 14px; font-weight: 600; line-height: 22px; }
+    .feedback-content p { margin: 0; font-size: 13px; line-height: 21px; color: var(--eh-body-text); }
+
+    /* Recovery actions: use real links only for existing implemented routes. */
+    .payment-actions { display: grid; gap: 12px; margin-top: 24px; }
+    .btn-edu { width: 100%; min-height: 48px; padding: 10px 16px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: var(--eh-button-radius); font-size: 14px; line-height: 20px; font-weight: 600; cursor: pointer; transition: background-color .18s, border-color .18s, transform .18s, box-shadow .18s; }
+    .btn-edu:active { transform: translateY(1px); }
+    .btn-edu-primary { background: var(--eh-primary); border-color: var(--eh-primary); color: #fff; }
+    .btn-edu-primary:hover, .btn-edu-primary:focus { background: var(--eh-primary-hover); border-color: var(--eh-primary-hover); color: #fff; }
+    .btn-edu-outline { background: #fff; border-color: var(--eh-border); color: var(--eh-ink); }
+    .btn-edu-outline:hover, .btn-edu-outline:focus { background: var(--eh-page); border-color: #93c5fd; color: var(--eh-primary); }
+    .learning-link { min-height: 24px; display: flex; align-items: center; justify-content: center; color: var(--eh-primary); font-size: 13px; font-weight: 600; line-height: 24px; }
+    .learning-link:hover { color: var(--eh-primary-hover); text-decoration: underline; }
+    .sample-note { margin: 24px 0 0; color: var(--eh-muted); font-size: 11px; line-height: 18px; text-align: center; }
+    .site-footer { height: 63px; display: flex; align-items: center; justify-content: center; color: var(--eh-muted); border-top: 1px solid var(--eh-border); font-size: 12px; line-height: 15px; }
+    .site-footer p { margin: 0; }
+
+    /* ===== 4. Small dialogs and offcanvas nav ===== */
+    .overlay-backdrop { position: fixed; inset: 0; z-index: 1030; background: rgba(15,23,42,.46); }
+    .menu-panel { position: fixed; z-index: 1031; right: 0; top: 0; width: min(320px, 90vw); height: 100dvh; overflow-y: auto; padding: 24px; background: #fff; box-shadow: -10px 0 30px rgba(15,23,42,.13); }
+    .menu-panel h2 { font-size: 18px; font-weight: 700; }
+    .menu-panel a { display: flex; align-items: center; gap: 12px; padding: 12px 8px; color: var(--eh-ink); border-radius: 8px; font-size: 14px; }
+    .menu-panel a:hover { color: var(--eh-primary); background: var(--eh-page); }
+    .notice-dialog { position: fixed; z-index: 1040; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 420px; width: calc(100vw - 40px); padding: 24px; background: #fff; box-shadow: 0 12px 32px rgba(15,23,42,.17); border-radius: 14px; }
+    .notice-dialog h2 { margin: 0; font-size: 20px; font-weight: 700; }
+    .notice-dialog p { margin: 12px 0 20px; color: var(--eh-muted); font-size: 14px; line-height: 1.6; }
+    .dialog-close { border: 0; background: transparent; color: var(--eh-muted); font-size: 21px; cursor: pointer; }
+
+    /* ===== 5. Responsive: 1440 / 834 / 390 Figma target widths ===== */
+    @media (max-width: 1199.98px) {
+      .site-header { height: 103px; }
+      .primary-nav { display: none; }
+      .secondary-nav { height: 31px; padding: 0 32px 16px; display: flex; align-items: flex-start; }
+      .payment-main { padding: 40px 32px; }
+    }
+    @media (max-width: 575.98px) {
+      .header-top { padding: 0 20px; }
+      .secondary-nav { padding: 0 20px 16px; }
+      .account-identity { display: none; }
+      .account-controls { gap: 12px; }
+      .mobile-menu-trigger { display: grid; }
+      .payment-main { padding: 40px 20px; }
+      .payment-card { padding: 23px; }
+      .failure-intro h1 { font-size: 28px; line-height: 35px; letter-spacing: -.55px; }
+      .course-strip { height: 79px; }
+      .course-thumb { display: none; }
+      .feedback-box { min-height: 121px; }
+    }
+    @media (max-width: 359.98px) {
+      .header-top, .secondary-nav { padding-left: 12px; padding-right: 12px; }
+      .payment-main { padding-left: 12px; padding-right: 12px; }
+      .payment-card { padding: 19px; }
+      .brand-icon { width: 25px; font-size: 25px; }
+      .brand-name { font-size: 23px; }
+      .account-controls { gap: 9px; }
+      .secondary-nav a { font-size: 11px; }
+      .failure-intro h1 { font-size: 25px; }
+      .feedback-box { min-height: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <!-- ===== Student navigation ===== -->
+  <header class="site-header">
+    <div class="header-top d-flex align-items-center justify-content-between position-relative">
+      <a href="eduhub-homepage.html" class="brand" aria-label="EduHub homepage">
+        <i class="fa-solid fa-graduation-cap brand-icon" aria-hidden="true"></i>
+        <span class="brand-name">Edu<span>Hub</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a class="is-current" href="eduhub-homepage.html">Home</a>
+        <a href="#" data-unbuilt="Explore Courses">Explore Courses</a>
+        <a href="#" data-unbuilt="My Learning">My Learning</a>
+      </nav>
+      <div class="account-controls ms-auto">
+        <button type="button" class="icon-button" aria-label="Notifications" data-unbuilt="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i></button>
+        <a class="avatar-small" href="eduhub-student-profile.html" aria-label="View Warda Mahmoud's profile">WM</a>
+        <div class="account-identity">
+          <p class="account-name">Warda Mahmoud</p>
+          <p class="account-role">Student</p>
+        </div>
+        <button type="button" id="mobileMenuButton" class="icon-button mobile-menu-trigger" aria-label="Open student menu" aria-expanded="false" aria-controls="mobileMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <nav class="secondary-nav" aria-label="Student navigation">
+      <div class="secondary-nav-inner d-flex justify-content-between w-100">
+        <a href="#" data-unbuilt="Dashboard">Dashboard</a>
+        <a href="#" data-unbuilt="My Learning">My Learning</a>
+        <a href="eduhub-student-profile.html">My Profile</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Payment failure screen ===== -->
+  <main class="payment-main container-fluid">
+    <div class="row gx-0">
+      <div class="col-12">
+        <nav class="payment-breadcrumb" aria-label="Breadcrumb">
+          <a href="#" data-unbuilt="Explore Courses">Explore Courses</a>
+          <span aria-hidden="true"> / </span>
+          <a href="#" data-unbuilt="Complete C# Programming">Complete C# Programming</a>
+          <span aria-hidden="true"> / </span>
+          <span aria-current="page">Payment</span>
+        </nav>
+
+        <article class="payment-card" aria-labelledby="paymentFailedTitle">
+          <!-- Outcome heading -->
+          <section class="failure-intro" aria-label="Payment result">
+            <span class="warning-circle" aria-hidden="true"><i class="fa-solid fa-circle-exclamation"></i></span>
+            <h1 id="paymentFailedTitle">Payment Failed</h1>
+            <p>Your payment could not be completed.</p>
+          </section>
+
+          <!-- Attempted course. Image intentionally hidden in mobile Figma design. -->
+          <section class="course-strip" aria-label="Course in attempted purchase">
+            <img class="course-thumb" src="https://placehold.co/96x72/1e293b/e2e8f0?text=C%23" alt="Placeholder thumbnail for Complete C# Programming" width="96" height="72" />
+            <div class="course-copy">
+              <h2>Complete C# Programming</h2>
+              <p>Ahmed Mohamed</p>
+            </div>
+          </section>
+
+          <!-- Static example; never shown as a verified financial transaction. -->
+          <section class="attempt-summary" aria-label="Sample unsuccessful payment details">
+            <div class="student-detail">
+              <span class="label">Student</span>
+              <span class="value">Warda Mahmoud</span>
+            </div>
+            <div class="amount-detail">
+              <span>Course amount</span>
+              <strong>$49.00</strong>
+            </div>
+            <span class="failed-pill">Payment status · Failed</span>
+          </section>
+
+          <aside class="feedback-box" aria-label="What happens next">
+            <span class="feedback-icon" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span>
+            <div class="feedback-content">
+              <h2>You can try again</h2>
+              <p>This failed payment did not complete an enrollment. Review the course details or try again when you’re ready.</p>
+            </div>
+          </aside>
+
+          <!-- Retry opens the completed, test-only Checkout page; unfinished routes explain themselves. -->
+          <div class="payment-actions">
+            <a href="eduhub-checkout.html" class="btn btn-edu btn-edu-primary">Try Again</a>
+            <button type="button" class="btn btn-edu btn-edu-outline" data-unbuilt="Course Details">Return to Course Details</button>
+            <a class="learning-link" href="eduhub-student-dashboard.html#my-learning">Go to My Learning</a>
+          </div>
+          <p class="sample-note">Sample payment state · Static demonstration only</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer"><p>EduHub · Learn Today. Build Tomorrow.</p></footer>
+
+  <!-- ===== Accessible mobile menu ===== -->
+  <div id="menuBackdrop" class="overlay-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" role="dialog" aria-modal="true" aria-label="Student menu" tabindex="-1" hidden>
+    <div class="d-flex align-items-center justify-content-between mb-3" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <h2>Student menu</h2>
+      <button type="button" class="dialog-close" id="closeMenuButton" aria-label="Close student menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <a href="eduhub-homepage.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+    <a href="eduhub-explore-courses.html"><i class="fa-regular fa-compass" aria-hidden="true"></i> Explore Courses</a>
+    <a href="eduhub-student-dashboard.html#my-learning"><i class="fa-solid fa-book-open" aria-hidden="true"></i> My Learning</a>
+    <a href="eduhub-student-profile.html"><i class="fa-regular fa-user" aria-hidden="true"></i> My Profile</a>
+    <a href="#" data-unbuilt="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i> Notifications</a>
+    <a href="eduhub-sign-in.html"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Log Out (demo)</a>
+  </aside>
+
+  <!-- ===== Notice for pages/payment APIs not yet implemented ===== -->
+  <div id="noticeBackdrop" class="overlay-backdrop" hidden></div>
+  <section id="routeNotice" class="notice-dialog" role="alertdialog" aria-modal="true" aria-labelledby="routeNoticeTitle" aria-describedby="routeNoticeBody" tabindex="-1" hidden>
+    <div class="d-flex justify-content-between align-items-start gap-3" style="display:flex;justify-content:space-between;align-items:start;gap:12px">
+      <h2 id="routeNoticeTitle">Screen not available yet</h2>
+      <button id="closeNoticeButton" type="button" class="dialog-close" aria-label="Close notice"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <p id="routeNoticeBody">This part of the EduHub project has not been implemented yet.</p>
+    <button id="noticeOkButton" class="btn btn-edu btn-edu-primary" type="button" style="max-width:110px">OK</button>
+  </section>
+
+  <script>
+    'use strict';
+    // Static design implementation. No payment is processed, retried or verified.
+    (() => {
+      const $ = (id) => document.getElementById(id);
+      const menu = $('mobileMenu');
+      const menuBackdrop = $('menuBackdrop');
+      const menuButton = $('mobileMenuButton');
+      const notice = $('routeNotice');
+      const noticeBackdrop = $('noticeBackdrop');
+      let restoreFocusTo = null;
+
+      function setMenu(open, focusOnClose = true) {
+        menu.hidden = !open;
+        menuBackdrop.hidden = !open;
+        menuButton.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+        if (open) menu.focus();
+        else if (focusOnClose) menuButton.focus();
+      }
+      function closeNotice() {
+        notice.hidden = true;
+        noticeBackdrop.hidden = true;
+        document.body.style.overflow = '';
+        if (restoreFocusTo && restoreFocusTo.isConnected) restoreFocusTo.focus();
+        restoreFocusTo = null;
+      }
+      function showNotice(feature) {
+        if (!menu.hidden) setMenu(false, false);
+        restoreFocusTo = document.activeElement;
+        $('routeNoticeTitle').textContent = feature === 'Retry checkout' ? 'Checkout integration required' : `${feature} — coming soon`;
+        $('routeNoticeBody').textContent = feature === 'Retry checkout'
+          ? 'The Checkout screen and payment service have not been connected yet. No new payment attempt was started or charged.'
+          : `The ${feature} screen has not been implemented in this EduHub frontend yet. This payment outcome is sample data only.`;
+        notice.hidden = false;
+        noticeBackdrop.hidden = false;
+        document.body.style.overflow = 'hidden';
+        notice.focus();
+      }
+
+      menuButton.addEventListener('click', () => setMenu(menu.hidden));
+      $('closeMenuButton').addEventListener('click', () => setMenu(false));
+      menuBackdrop.addEventListener('click', () => setMenu(false));
+      document.querySelectorAll('[data-unbuilt]').forEach((target) => {
+        target.addEventListener('click', (event) => {
+          event.preventDefault();
+          showNotice(target.dataset.unbuilt || 'Requested');
+        });
+      });
+      $('closeNoticeButton').addEventListener('click', closeNotice);
+      $('noticeOkButton').addEventListener('click', closeNotice);
+      noticeBackdrop.addEventListener('click', closeNotice);
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          if (!notice.hidden) closeNotice();
+          else if (!menu.hidden) setMenu(false);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

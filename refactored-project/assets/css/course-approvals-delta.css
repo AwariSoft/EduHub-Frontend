@@ -1,0 +1,19 @@
+
+/* Course Approvals — additive screen-specific rules */
+.edu-approvals__panel,.edu-approvals__stat,.edu-approvals__card{background:var(--edu-surface,#fff);border:1px solid var(--edu-border,#e2e8f0);border-radius:var(--edu-radius-lg,.75rem)}
+.edu-approvals__panel,.edu-approvals__stat{box-shadow:var(--edu-shadow-sm,0 2px 8px rgba(15,23,42,.02))}
+.edu-approvals__thumb{width:60px;height:52px;object-fit:cover;border-radius:.5rem;flex-shrink:0}
+.edu-approvals__table{min-width:930px}
+.edu-approvals__table th{font-size:.8rem;color:var(--edu-muted,#64748b);font-weight:600;white-space:nowrap}
+.edu-approvals__table tbody tr,.edu-approvals__card,.edu-approvals__action,.edu-approvals__control,.edu-approvals__reset{transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease,color .18s ease}
+.edu-approvals__table tbody tr:hover,.edu-approvals__card:hover{background:#eff6ff}
+.edu-approvals__card:hover{border-color:#93c5fd;box-shadow:0 6px 18px rgba(15,23,42,.07);transform:translateY(-1px)}
+.edu-approvals__table tbody tr:active,.edu-approvals__card:active{background:#dbeafe}
+.edu-approvals__action{display:inline-flex;gap:.4rem;align-items:center;color:var(--edu-primary,#2563eb);font-weight:600;text-decoration:none;border-radius:.35rem;padding:.3rem .45rem}
+.edu-approvals__action:hover{color:#1d4ed8;background:#dbeafe;transform:translateX(2px)}
+.edu-approvals__action:active,.edu-approvals__reset:active{transform:scale(.97)}
+.edu-approvals__action:focus-visible,.edu-approvals__control:focus-visible,.edu-approvals__reset:focus-visible,.edu-approvals .page-link:focus-visible{outline:3px solid #93c5fd;outline-offset:2px;box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+.edu-approvals__control:hover{border-color:#93c5fd}
+.edu-approvals__notice{background:#fffbeb;border:1px solid #fde68a;border-radius:.75rem;color:#92400e}
+@media(max-width:575.98px){.edu-approvals__thumb{width:52px;height:48px}.edu-approvals__stat{padding:.7rem!important}.edu-approvals__stat strong{font-size:1.5rem!important}}
+@media(prefers-reduced-motion:reduce){.edu-approvals__table tbody tr,.edu-approvals__card,.edu-approvals__action,.edu-approvals__control,.edu-approvals__reset{transition:none!important;transform:none!important}}

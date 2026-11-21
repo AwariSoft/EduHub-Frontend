@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The EduHub page you requested could not be found. Return to the homepage or browse courses.">
+  <meta name="robots" content="noindex, follow">
+  <title>404 — Page Not Found | EduHub</title>
+
+  <!-- External libraries: Bootstrap 5, Font Awesome 6, and the Inter typeface. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* ========== 01. EduHub Figma design tokens ========== */
+    :root {
+      --eh-primary: #2563eb;
+      --eh-primary-hover: #1d4ed8;
+      --eh-ink: #0f172a;
+      --eh-muted: #64748b;
+      --eh-border: #e2e8f0;
+      --eh-page: #f8fafc;
+      --eh-white: #ffffff;
+      --bs-font-sans-serif: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --bs-body-font-family: var(--bs-font-sans-serif);
+      --bs-body-color: var(--eh-ink);
+      --bs-body-bg: var(--eh-page);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 0; }
+    body { display: flex; flex-direction: column; min-height: 100svh; min-width: 0; margin: 0; background-color: var(--eh-page); color: var(--eh-ink); font-family: var(--bs-font-sans-serif); -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; }
+    a:focus-visible { outline: 3px solid #93c5fd; outline-offset: 4px; }
+
+    /* ========== 02. Shared public header and brand ========== */
+    .site-header { height: 66px; flex: 0 0 66px; background: var(--eh-white); border-bottom: 1px solid var(--eh-border); }
+    .header-inner { display: flex; align-items: center; height: 100%; padding-inline: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; color: var(--eh-ink); }
+    .brand:hover { color: var(--eh-ink); }
+    .brand-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 34px; color: var(--eh-primary); font-size: 30px; }
+    .brand-wordmark { color: var(--eh-ink); font-size: 28px; font-weight: 700; line-height: 34px; letter-spacing: -1.1px; white-space: nowrap; }
+    .brand-wordmark span { color: var(--eh-primary); }
+
+    /* ========== 03. Page Not Found composition ========== */
+    .not-found-main { flex: 1 0 auto; width: 100%; }
+    .not-found-body { padding: 181.5px 20px 0; text-align: center; }
+    .error-code { margin: 0; color: var(--eh-primary); font-size: 160px; line-height: 160px; font-weight: 700; letter-spacing: -5px; }
+    .error-symbol { display: flex; align-items: center; justify-content: center; height: 32px; margin-top: 24px; color: var(--eh-primary); font-size: 30px; }
+    .error-heading { margin: 16px 0 0; font-size: 36px; line-height: 45px; font-weight: 700; letter-spacing: -.8px; }
+    .error-description { max-width: 560px; margin: 16px auto 0; color: var(--eh-muted); font-size: 16px; font-weight: 400; line-height: 26px; }
+    .return-actions { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 24px; }
+    .return-button { display: inline-flex; align-items: center; justify-content: center; width: 280px; max-width: 100%; min-height: 48px; padding: 10px 18px; border: 1px solid var(--eh-primary); border-radius: 8px; background-color: var(--eh-primary); color: white; font-size: 14px; font-weight: 600; line-height: 20px; transition: background-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+    .return-button:hover { background-color: var(--eh-primary-hover); border-color: var(--eh-primary-hover); color: white; box-shadow: 0 4px 12px rgba(37, 99, 235, .18); }
+    .return-button:active { transform: translateY(1px); }
+    .explore-link { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 24px; color: var(--eh-primary); font-size: 13px; font-weight: 600; line-height: 24px; }
+    .explore-link:hover { color: var(--eh-primary-hover); text-decoration: underline; text-underline-offset: 3px; }
+    .explore-link:active { transform: translateY(1px); }
+
+    /* ========== 04. Shared public footer ========== */
+    .site-footer { display: flex; flex: 0 0 63px; min-height: 63px; align-items: center; justify-content: center; padding: 12px 20px; border-top: 1px solid var(--eh-border); color: var(--eh-muted); background: var(--eh-page); font-size: 12px; line-height: 15px; text-align: center; }
+
+    /* ========== 05. Responsive adjustments ========== */
+    @media (max-width: 575.98px) {
+      .header-inner { padding-inline: 20px; }
+      .not-found-body { padding: 124px 20px 0; }
+      .error-code { font-size: 112px; line-height: 112px; letter-spacing: -4px; }
+      .error-heading { font-size: 30px; line-height: 38px; letter-spacing: -.5px; }
+      .error-description { max-width: 350px; }
+      .return-button { width: 100%; }
+      .return-actions { width: 100%; max-width: 350px; margin-inline: auto; }
+    }
+    @media (max-width: 350px) {
+      .not-found-body { padding-top: 92px; }
+      .error-code { font-size: 96px; line-height: 102px; }
+      .error-heading { font-size: 27px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" aria-label="EduHub site header">
+    <div class="header-inner d-flex align-items-center">
+      <a class="brand" href="./eduhub-homepage.html" aria-label="EduHub — Home">
+        <span class="brand-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="brand-wordmark">Edu<span>Hub</span></span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== ERROR CONTENT ========== -->
+  <main id="main-content" class="not-found-main container-fluid px-0" aria-labelledby="error-heading">
+    <div class="not-found-body">
+      <p class="error-code" aria-label="Error 404">404</p>
+      <div class="error-symbol" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
+      <h1 id="error-heading" class="error-heading">Page Not Found</h1>
+      <p class="error-description">The page you requested doesn’t exist or may have moved. Let’s get you back to learning.</p>
+      <nav class="return-actions" aria-label="Recovery options">
+        <a class="return-button" href="./eduhub-homepage.html">Go to Homepage</a>
+        <a class="explore-link" href="./eduhub-homepage.html#courses">Explore Courses <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+</body>
+</html>

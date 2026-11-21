@@ -1,0 +1,92 @@
+/* ==========================================================
+  EduHub Instructor / My Profile (Figma Desktop / Tablet / Mobile)
+  Shares existing Bootstrap 5, Font Awesome 6, header and instructor shell
+  ========================================================== */
+.mp-page{background:#f8fafc;color:#0f172a;padding:32px;min-height:1250px;box-sizing:border-box}
+.mp-page *{box-sizing:border-box}
+.mp-heading{height:63px;margin-bottom:24px}
+.mp-heading h1{font-weight:700;font-size:28px;line-height:36px;letter-spacing:-.4px;margin:0 0 6px}
+.mp-heading p{font-size:14px;line-height:21px;color:#64748b;margin:0}
+.mp-layout{display:grid;grid-template-columns:minmax(0,780fr) minmax(0,340fr);gap:24px;align-items:start}
+.mp-edit-column{display:flex;flex-direction:column;min-width:0;gap:24px;margin:0}
+.mp-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 2px 4px rgba(15,23,42,.02);padding:24px;min-width:0}
+.mp-card h2{font-size:18px;line-height:23px;font-weight:700;letter-spacing:-.15px;margin:0}
+.mp-personal{height:599px;display:flex;flex-direction:column;gap:16px}
+.mp-picture-row{display:flex;align-items:center;gap:16px;height:80px;min-height:80px}
+.mp-avatar{border-radius:50%;display:flex;align-items:center;justify-content:center;background:#dbeafe;color:#2563eb;font-weight:600;letter-spacing:0;flex:none;overflow:hidden}
+.mp-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.mp-avatar-form,.mp-preview-avatar{height:80px;width:80px;font-size:24px}
+.mp-picture-controls{min-width:0;align-self:center;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.mp-picture-controls p{color:#64748b;font-size:12px;line-height:18px;margin:0}
+.mp-btn{height:44px;min-height:44px;border-radius:8px;border:1px solid #e2e8f0;font-size:13px;line-height:20px;font-weight:600;padding:0 16px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;transition:background .17s,border-color .17s,transform .1s;cursor:pointer}
+.mp-btn:focus-visible,.mp-input:focus-visible,.mp-preview-links button:focus-visible{outline:2px solid #2563eb;outline-offset:2px}
+.mp-btn:active{transform:scale(.985)}
+.mp-btn-outline{color:#0f172a;background:#fff}.mp-btn-outline:hover{background:#f8fafc;border-color:#bfdbfe}
+.mp-btn-primary{color:#fff;background:#2563eb;border-color:#2563eb}.mp-btn-primary:hover{background:#1d4ed8;border-color:#1d4ed8}
+.mp-name-email{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;height:72px}
+.mp-field{min-width:0;display:flex;flex-direction:column;gap:8px}
+.mp-field label{font-size:13px;line-height:16px;font-weight:500;color:#334155;margin:0}
+.mp-field .mp-input{width:100%;height:48px;min-height:48px;border:1px solid #dbe3ef;border-radius:8px;background:#fff;color:#0f172a;font-size:13px;line-height:20px;font-weight:400;padding:0 16px;box-shadow:none;outline:none}
+.mp-field .mp-input:hover{border-color:#bac9d9}
+.mp-field .mp-input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.mp-field .mp-input[aria-invalid="true"]{border-color:#dc2626}
+.mp-field .mp-input::placeholder{color:#64748b}
+.mp-error:empty{display:none}.mp-error{color:#b91c1c;font-size:11px;line-height:16px}
+.mp-email-wrap{position:relative}.mp-email-wrap i{position:absolute;left:16px;top:15px;color:#64748b;font-size:16px;pointer-events:none}.mp-email-wrap input{padding-left:40px!important}
+.mp-professional{height:72px}.mp-biography{height:128px}.mp-field .mp-textarea{height:100px;min-height:100px;padding:12px!important;resize:vertical;line-height:20px}
+.mp-expertise{height:96px;gap:6px}.mp-expertise label{margin-bottom:2px}.mp-helper{font-size:12px;line-height:18px;color:#64748b;margin:0}
+.mp-social{height:371px;display:flex;flex-direction:column;gap:16px}
+.mp-social-description{color:#64748b;font-size:14px;line-height:20px;margin:0}
+.mp-social>.mp-field{height:72px;min-height:72px}
+.mp-actions{display:flex;gap:12px;align-items:center;height:44px}
+.mp-actions .mp-btn-primary{min-width:117px}.mp-actions .mp-btn-outline{min-width:108px}
+.mp-preview{height:573px;display:flex;flex-direction:column;gap:0}
+.mp-preview-summary{font-size:14px;line-height:20px;color:#64748b;margin:16px 0}
+.mp-preview-avatar{margin:0 0 16px}
+.mp-preview h3{font-size:24px;line-height:33px;font-weight:700;margin:0 0 16px}
+.mp-preview-title{color:#64748b;font-size:14px;line-height:21px;margin:0 0 16px}
+.mp-preview-bio{font-size:13px;line-height:20px;color:#0f172a;margin:0 0 16px;overflow-wrap:anywhere}
+.mp-tags{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;min-height:62px;margin:0 0 16px}
+.mp-tags span{font-size:12px;line-height:15px;padding:6px 10px;background:#eff6ff;color:#2563eb;border-radius:8px;display:inline-block;max-width:100%;overflow-wrap:anywhere}
+.mp-published{color:#64748b;font-size:13px;line-height:20px;margin:0 0 16px}
+.mp-preview-links{font-size:12px;line-height:18px;color:#2563eb}
+.mp-preview-links button{border:0;background:none;padding:0;color:#2563eb;font-size:12px;line-height:18px}.mp-preview-links button:hover{text-decoration:underline}
+.mp-footer{margin-top:24px;display:flex;align-items:center;gap:14px;color:#64748b;font-size:11px;line-height:13px;height:13px}
+.mp-footer a{color:#64748b;text-decoration:none}.mp-footer a:hover{color:#2563eb;text-decoration:underline}
+.mp-toast{position:fixed;right:24px;bottom:24px;background:#0f172a;color:#fff;padding:12px 16px;border-radius:10px;max-width:390px;box-shadow:0 10px 24px #0002;font-size:13px;z-index:1100}
+.mp-toast[hidden],.mp-modal-backdrop[hidden]{display:none!important}
+.mp-modal-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:1200;display:grid;place-items:center;padding:16px}
+.mp-modal{background:#fff;border-radius:14px;width:min(100%,430px);padding:24px;box-shadow:0 20px 60px #0003}
+.mp-modal h2{font-size:20px;margin:0 0 12px}.mp-modal p{color:#64748b;font-size:14px;margin:0 0 20px}.mp-modal-actions{display:flex;justify-content:flex-end;gap:12px}
+@media(min-width:601px) and (max-width:1199.98px){
+.mp-page{padding:24px;min-height:1736px}
+.mp-layout{display:flex;flex-direction:column;gap:24px}
+.mp-edit-column{width:100%;gap:24px}
+.mp-personal{height:599px}.mp-social{height:371px}
+.mp-preview{height:478px;width:100%}
+.mp-tags{min-height:27px;margin-bottom:16px}.mp-preview-avatar{margin-bottom:16px}
+.mp-preview-bio{max-width:100%;margin-bottom:16px}
+}
+@media(max-width:600px){
+.mp-page{padding:16px;min-height:2042px}
+.mp-heading{height:80px;margin-bottom:24px}
+.mp-heading h1{font-size:23px;line-height:32px;margin-bottom:6px}
+.mp-heading p{font-size:13px;line-height:21px;max-width:315px}
+.mp-layout{display:flex;flex-direction:column;gap:24px}
+.mp-edit-column{width:100%;gap:24px}
+.mp-personal{height:757px;gap:16px}
+.mp-picture-row{height:88px;min-height:88px;align-items:center}
+.mp-picture-controls{gap:8px}
+.mp-picture-controls p{font-size:11px;line-height:18px}
+.mp-name-email{height:160px;display:flex;flex-direction:column;gap:16px}
+.mp-professional{height:72px}.mp-biography{height:172px}.mp-field .mp-textarea{height:144px;min-height:144px}
+.mp-expertise{height:114px}.mp-expertise .mp-helper{font-size:11px;line-height:18px}
+.mp-social{height:391px}.mp-social-description{min-height:40px;font-size:13px;line-height:20px}
+.mp-actions{display:flex;flex-direction:column;height:96px;gap:8px}.mp-actions .mp-btn{width:100%;height:44px;min-height:44px}
+.mp-preview{height:553px;width:100%}.mp-preview-summary{font-size:13px}.mp-preview h3{font-size:20px;line-height:33px}.mp-preview-title{font-size:12px;line-height:21px}
+.mp-preview-bio{font-size:12px;line-height:20px;margin-bottom:16px}.mp-tags{margin-bottom:16px}
+.mp-published{font-size:12px}.mp-preview-links,.mp-preview-links button{font-size:11px}
+.mp-footer{font-size:11px;line-height:13px;height:13px;margin-top:24px}.mp-footer-middle,.mp-footer-help{display:none}
+.mp-toast{left:16px;right:16px;bottom:66px}
+}
+@media(max-width:360px){.mp-page{min-height:0;padding-bottom:70px}.mp-personal{height:auto;min-height:757px}.mp-social{height:auto;min-height:391px}.mp-preview{height:auto;min-height:553px}.mp-card{padding:20px}.mp-picture-row{gap:12px}.mp-avatar-form{width:72px;height:72px}.mp-btn{padding:0 12px}}

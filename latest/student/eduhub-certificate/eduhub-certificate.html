@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="Responsive EduHub Certificate of Completion sample, modeled on the Desktop, Tablet, and Mobile Figma frames.">
+ <meta name="theme-color" content="#f8fafc"><title>Certificate of Completion | EduHub</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+ <style>
+/* 01: Core theme and Bootstrap-compatible tokens */
+:root{--ed-primary:#2563eb;--ed-primary-hover:#1d4ed8;--ed-text:#0f172a;--ed-muted:#64748b;--ed-border:#e2e8f0;--ed-surface:#f8fafc;--ed-blue-soft:#eff6ff;--ed-avatar:#dbeafe;--ed-success:#15803d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:0;background:var(--ed-surface);color:var(--ed-text);font:400 14px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--ed-primary);text-decoration:none}a:hover{color:var(--ed-primary-hover)}
+button,input{font:inherit}
+:is(a,button,input):focus-visible{outline:3px solid #2563eb80;outline-offset:3px}
+[hidden]{display:none!important}
+/* 02: Shared student header — identical to previous quiz-result screen */
+
+    .site-header {background:#fff;border-bottom:1px solid var(--ed-border)}
+    .header-inner {max-width:1440px;margin:auto;padding:15.5px 48px}
+    .header-top {display:flex;align-items:center;justify-content:space-between;min-height:44px;gap:12px}
+    .header-brand-group {display:flex;align-items:center;gap:32px;min-width:0}
+    .brand {display:inline-flex;gap:8px;align-items:center;white-space:nowrap;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;color:var(--ed-text)}
+    .brand:hover {color:var(--ed-text)}
+    .brand .brand-svg {width:32px;height:32px}
+    .brand .brand-blue {color:var(--ed-primary)}
+    .desktop-nav {display:flex;gap:24px;align-items:center;white-space:nowrap}
+    .desktop-nav a,.responsive-nav a {font-size:14px;color:var(--ed-muted)}
+    .desktop-nav a:hover,.responsive-nav a:hover {color:var(--ed-primary)}
+    .desktop-nav a[aria-current=page],.responsive-nav a[aria-current=page] {color:var(--ed-primary);font-weight:600}
+    .header-controls {display:flex;gap:16px;align-items:center;flex:none}
+    .search-form {position:relative;width:230px}
+    .search-form i {position:absolute;top:15px;left:12px;color:var(--ed-muted);font-size:16px;pointer-events:none}
+    .search-form input {width:100%;height:44px;background:var(--ed-surface);border:1px solid var(--ed-border);border-radius:8px;padding:0 12px 0 38px;color:var(--ed-text);font-size:13px;outline:0}
+    .search-form input:focus {border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb25}
+    .icon-button {position:relative;width:40px;height:44px;border:0;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--ed-muted);font-size:18px;flex:none}
+    .icon-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .notification-dot {position:absolute;top:7px;right:8px;width:6px;height:6px;background:var(--ed-primary);border-radius:50%}
+    .avatar {display:inline-flex;justify-content:center;align-items:center;width:40px;height:40px;border-radius:50%;flex:none;background:var(--ed-avatar);color:var(--ed-primary);font-weight:600;font-size:13px}
+    .student-label {line-height:1.35;white-space:nowrap}
+    .student-label strong {font-size:13px;font-weight:600;display:block}
+    .student-label small {font-size:11px;color:var(--ed-muted);display:block}
+    .account-button {border:0;border-radius:8px;background:transparent;color:var(--ed-muted);padding:8px;line-height:1}
+    .account-button:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    .responsive-header {display:none}
+    .responsive-header .search-form {width:100%}
+    .responsive-nav {display:flex;justify-content:space-between;align-items:center;height:44px;gap:8px}
+    .responsive-nav a {font-size:13px;height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+    .responsive-nav a[aria-current=page] {border-bottom:2px solid var(--ed-primary)}
+    #menuToggle {display:none}
+    .account-area {position:relative}
+    .account-popover {z-index:10;position:absolute;top:100%;right:0;min-width:190px;background:white;border:1px solid var(--ed-border);border-radius:10px;box-shadow:0 12px 30px #0f172a1c;padding:6px}
+    .account-popover a {display:block;padding:8px 12px;border-radius:7px;color:var(--ed-text);font-size:13px}
+    .account-popover a:hover {background:var(--ed-blue-soft);color:var(--ed-primary)}
+    
+.icon-svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.brand-svg{display:block;width:32px;height:32px;fill:var(--ed-primary);flex:none}
+.search-icon{position:absolute;top:12px;left:12px;color:var(--ed-muted)}
+/* 03: Certificate page — source: Figma frames 22:40308/40384/40464 */
+.page-main{max-width:1440px;margin:auto;padding:64px;min-height:1412px}
+.breadcrumb-path{margin:0 0 32px;color:var(--ed-muted);font-size:13px;line-height:21px}
+.breadcrumb-path a{color:var(--ed-muted)}.breadcrumb-path a:hover{color:var(--ed-primary)}
+.celebration{min-height:114px;margin-bottom:32px}
+.milestone{display:inline-flex;align-items:center;min-height:25px;padding:5px 10px;border-radius:99px;background:#f0fdf4;color:#15803d;font-weight:600;font-size:12px;line-height:15px}
+.celebration h1{font-size:36px;font-weight:700;line-height:47px;letter-spacing:-.5px;margin:8px 0}
+.celebration p{font-size:16px;line-height:26px;color:var(--ed-muted);margin:0}
+.certificate-stage{min-width:0;background:var(--ed-blue-soft);border-radius:12px;padding:24px;height:853px}
+.certificate-preview{width:100%;height:805px;border:3px solid #2563eb;background:#fff;position:relative;overflow:hidden;color:var(--ed-text)}
+.cert-border{position:absolute;inset:17px;border:1px solid #bfdbfe;overflow:hidden;text-align:center}
+.cert-border::before,.cert-border::after{position:absolute;z-index:1;pointer-events:none;content:"";width:0;height:0}
+.cert-border::before{top:0;left:0;border-top:24px solid #dbeafe;border-right:24px solid transparent}
+.cert-border::after{bottom:0;right:0;border-bottom:44px solid #dbeafe;border-left:44px solid transparent}
+.cert-brand{position:absolute;top:48px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:8px;font-size:28px;font-weight:700;letter-spacing:-1px;line-height:34px;white-space:nowrap}
+.cert-brand .brand-blue{color:var(--ed-primary)}
+.cert-brand svg{height:32px;width:32px;flex:none}
+.cert-overline{position:absolute;top:110px;left:15px;right:15px;color:var(--ed-primary);font-size:11px;font-weight:700;line-height:13px}
+.cert-title{position:absolute;top:151px;left:20px;right:20px;margin:0;font-size:44px;line-height:55px;font-weight:700;letter-spacing:-.5px}
+.cert-presented{position:absolute;top:234px;left:12px;right:12px;color:var(--ed-muted);font-size:14px;line-height:22px;margin:0}
+.cert-recipient{position:absolute;top:284px;left:15px;right:15px;margin:0;font-size:54px;line-height:65px;font-weight:700;letter-spacing:-1px;color:var(--ed-primary)}
+.recipient-rule{position:absolute;top:377px;width:min(360px,calc(100% - 64px));height:1px;background:#dbeafe;left:50%;transform:translateX(-50%)}
+.cert-completion{position:absolute;top:406px;left:16px;right:16px;margin:0;color:var(--ed-muted);font-size:14px;line-height:22px}
+.cert-course{position:absolute;top:456px;left:15px;right:15px;margin:0;font-size:28px;line-height:39px;font-weight:700;letter-spacing:-.4px}
+.cert-seal{position:absolute;top:523px;left:50%;transform:translateX(-50%);width:64px;height:64px;border-radius:50%;border:1px solid var(--ed-primary);color:var(--ed-primary);display:grid;place-items:center}
+.cert-seal svg{width:36px;height:36px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cert-endorsements{position:absolute;top:615px;left:48px;right:48px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.endorsement{font-size:16px;line-height:19px;font-weight:500;min-width:0}
+.endorsement .line{height:1px;background:#e2e8f0;margin-top:8px}
+.endorsement .caption{display:block;color:var(--ed-muted);font-size:12px;font-weight:400;line-height:19px;margin-top:8px}
+.cert-id{position:absolute;top:698px;left:8px;right:8px;font-size:12px;line-height:19px;color:var(--ed-muted);margin:0}
+/* 04: Page actions and achievement panel */
+.view-full.ed-button{display:none}
+.certificate-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.ed-button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border:1px solid var(--ed-border);background:#fff;border-radius:8px;color:var(--ed-text);font-size:14px;font-weight:600;line-height:20px;text-align:center;transition:background-color .18s,border-color .18s,transform .1s,box-shadow .15s}
+.ed-button:hover{border-color:#bfdbfe;background:var(--ed-blue-soft);color:var(--ed-primary)}
+.ed-button:active{transform:translateY(1px)}
+.ed-button-primary{background:var(--ed-primary);color:#fff;border-color:var(--ed-primary)}
+.ed-button-primary:hover{background:var(--ed-primary-hover);color:#fff;border-color:var(--ed-primary-hover)}
+.achievement-panel{height:120px;margin-top:32px;border:1px solid var(--ed-border);border-radius:12px;min-height:120px;background:#fff;padding:24px;display:flex;gap:16px;align-items:flex-start}
+.achievement-check{flex:none;margin-top:0;color:var(--ed-success);width:24px;height:24px}
+.achievement-content{min-width:0}.achievement-content h2{font-size:18px;line-height:23px;font-weight:700;margin:0 0 4px}
+.achievement-content p{font-size:14px;line-height:22px;color:var(--ed-muted);margin:0 0 4px}
+.achievement-content small{display:block;color:var(--ed-muted);font-size:12px;line-height:19px}
+.page-footer{min-height:63px;border-top:1px solid var(--ed-border);display:flex;align-items:center;justify-content:center;color:var(--ed-muted);font-size:12px;line-height:15px}
+/* 05: Dialogs: mobile menu, full certificate, and sharing */
+.ed-dialog{border:1px solid var(--ed-border);border-radius:14px;width:min(500px,calc(100% - 24px));max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);background:#fff;padding:24px;color:var(--ed-text);box-shadow:0 22px 70px #0f172a40;overflow:auto}
+.ed-dialog::backdrop{background:#0f172a95}
+.ed-dialog h2{font-size:23px;font-weight:700;margin:0}
+.dialog-close{border:0;background:transparent;color:#475569;border-radius:8px;min-height:36px;min-width:36px}
+.dialog-close:hover{color:#2563eb;background:var(--ed-blue-soft)}
+.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+#fullCertificateDialog{width:min(1140px,calc(100% - 24px))}
+.full-certificate-scroll{overflow:auto;max-width:100%}
+.full-certificate-scroll .certificate-preview{min-width:1000px;width:1000px;height:805px}
+.full-certificate-scroll .cert-border{inset:17px}
+.share-note{color:var(--ed-muted);font-size:13px}
+.toast-status{margin-top:12px;min-height:20px;font-size:13px;color:#15803d}
+/* 06: Tablet, mobile and small-phone adjustments */
+@media(max-width:1199.98px){
+ .header-inner{padding:16px 24px 15px}#menuToggle{display:inline-flex}
+ .desktop-nav,.desktop-search{display:none}.responsive-header{display:block;margin-top:16px}.header-controls{gap:16px}
+ .page-main{padding:32px;min-height:0}
+}
+@media(max-width:575.98px){
+ .header-inner{padding:16px 16px 15px}.header-brand-group{gap:8px}.header-controls{gap:8px}.student-label{display:none}
+ .page-main{padding:16px;min-height:0}
+ .celebration{min-height:169px;margin-bottom:32px}
+ .celebration h1{font-size:30px;line-height:38px;letter-spacing:-.35px;max-width:358px}
+ .celebration p{line-height:26px}
+ .certificate-stage{height:840px;padding:0;background:transparent;border-radius:0}
+ .certificate-preview{height:776px}
+ .cert-border{inset:9px}
+ .cert-brand{top:20px;font-size:28px}
+ .cert-overline{top:78px;font-size:10px}
+ .cert-title{top:115px;left:14px;right:14px;font-size:28px;line-height:36px;letter-spacing:-.6px}
+ .cert-presented{top:211px;left:8px;right:8px;font-size:12px;line-height:22px}
+ .cert-recipient{top:257px;left:4px;right:4px;font-size:32px;line-height:43px;letter-spacing:-.6px}
+ .recipient-rule{top:324px;width:min(200px,calc(100% - 60px))}
+ .cert-completion{top:349px;left:16px;right:16px;font-size:12px;line-height:22px}
+ .cert-course{top:417px;left:4px;right:4px;font-size:20px;line-height:31px;letter-spacing:-.3px}
+ .cert-seal{top:472px}
+ .cert-endorsements{top:560px;left:20px;right:20px;display:grid;grid-template-columns:1fr;gap:20px}
+ .endorsement{font-size:14px;line-height:19px}.endorsement .line{margin-top:8px}.endorsement .caption{margin-top:8px}
+ .cert-id{top:714px;font-size:9px;line-height:18px}
+ .cert-border::after{border-bottom-width:36px;border-left-width:36px}
+ .view-full.ed-button{display:flex;width:100%;margin-top:16px}
+ .certificate-actions{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:32px}
+ .achievement-panel{height:183px;min-height:0;gap:16px;margin-top:32px;padding:24px}
+ .achievement-content p{font-size:13px;line-height:22px}
+ .achievement-content small{font-size:12px;line-height:19px}
+ /* Wide certificate in full-view dialog always keeps the original horizontal positions. */
+ .full-certificate-scroll .cert-brand{top:48px}
+ .full-certificate-scroll .cert-overline{top:110px;font-size:11px}
+ .full-certificate-scroll .cert-title{top:151px;font-size:44px;line-height:55px}
+ .full-certificate-scroll .cert-presented{top:234px;font-size:14px}
+ .full-certificate-scroll .cert-recipient{top:284px;font-size:54px;line-height:65px}
+ .full-certificate-scroll .recipient-rule{top:377px;width:360px}
+ .full-certificate-scroll .cert-completion{top:406px;font-size:14px;line-height:22px}
+ .full-certificate-scroll .cert-course{top:456px;font-size:28px;line-height:39px}
+ .full-certificate-scroll .cert-seal{top:523px}
+ .full-certificate-scroll .cert-endorsements{top:615px;left:48px;right:48px;grid-template-columns:1fr 1fr;gap:80px}
+ .full-certificate-scroll .cert-id{top:698px;font-size:12px}
+}
+@media(max-width:359.98px){.brand{font-size:23px}.brand .brand-svg{width:28px;height:28px}.avatar{width:36px;height:36px}.account-button{padding:5px}.cert-recipient{font-size:27px}.cert-course{font-size:18px}.celebration h1{font-size:27px}.milestone{font-size:11px}.achievement-panel{height:auto;min-height:183px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+@media print{
+ @page{size:A4 landscape;margin:0}
+ body{background:#fff!important}.site-header,.breadcrumb-path,.celebration,.certificate-actions,.achievement-panel,.page-footer,.view-full,.ed-dialog{display:none!important}
+ .page-main{padding:0!important;max-width:none;min-height:0!important}
+ .certificate-stage{width:100%;height:100vh;padding:4mm;border-radius:0}
+ .certificate-preview{height:calc(100vh - 8mm);width:100%;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<a class="visually-hidden-focusable" href="#mainContent">Skip to certificate</a>
+<!-- INCLUDE: partials/student-navbar.html -->
+  <!-- Standalone fallback: shared student header (replace this block with the partial in a templated build). -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="header-brand-group">
+          <button class="icon-button" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <a href="eduhub-homepage.html" class="brand" aria-label="EduHub home"><svg class="brand-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 0.8 10.4 16 18.8l15.2-8.4L16 2Z"/><path d="M7 17.6v7.2c4.7 4.8 13.4 4.8 18 0v-7.2L16 22.8 7 17.6Z"/><path d="M29.5 12.5v11.8" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/></svg><span>Edu<span class="brand-blue">Hub</span></span></a>
+          <nav class="desktop-nav" aria-label="Main navigation"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html" aria-current="page">My Learning</a></nav>
+        </div>
+        <div class="header-controls">
+          <form class="search-form desktop-search" id="desktopSearch" role="search"><svg class="icon-svg search-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input name="search" type="search" placeholder="Search courses..." aria-label="Search courses"></form>
+          <button type="button" class="icon-button" id="notificationButton" aria-label="View notifications"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9Z"/><path d="M10 21h4"/></svg><span class="notification-dot"></span></button>
+          <span class="avatar" aria-label="Student initials WM">WM</span>
+          <span class="student-label"><strong>Warda Mahmoud</strong><small>Student</small></span>
+          <div class="account-area">
+            <button type="button" class="account-button" id="accountToggle" aria-label="Account menu" aria-haspopup="true" aria-expanded="false" aria-controls="accountMenu"><svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24" style="width:14px;height:14px"><path d="m6 9 6 6 6-6"/></svg></button>
+            <nav class="account-popover" id="accountMenu" aria-label="Account options" hidden><a href="eduhub-student-dashboard.html">Dashboard</a><a href="eduhub-student-profile.html">My Profile</a><a href="eduhub-explore-courses.html">Explore Courses</a></nav>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-header">
+        <nav class="responsive-nav" aria-label="Compact navigation"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html" aria-current="page">My Learning</a></nav>
+        <form class="search-form w-100 mt-3" id="mobileSearch" role="search"><svg class="icon-svg search-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input name="search" type="search" placeholder="Search for courses..." aria-label="Search for courses"></form>
+      </div>
+    </div>
+  </header>
+  
+<main id="mainContent" class="page-main">
+ <nav class="breadcrumb-path" aria-label="Breadcrumb"><a href="eduhub-student-dashboard.html">My Learning</a> / <a href="eduhub-course-learning-all-lessons-complete.html">Complete C# Programming</a> / <span aria-current="page">Certificate</span></nav>
+ <section class="celebration" aria-labelledby="pageTitle">
+  <span class="milestone">A MILESTONE TO BE PROUD OF</span>
+  <h1 id="pageTitle">Congratulations, Warda! 🎉</h1>
+  <p>You have successfully completed Complete C# Programming.</p>
+ </section>
+ <!-- 03 — Certificate source: Figma Desktop 22:40308, Tablet 22:40384, Mobile 22:40464 -->
+ <section class="certificate-stage" aria-label="Example certificate preview">
+  <article class="certificate-preview" id="eduCertificate" aria-label="Sample certificate of completion">
+ <div class="cert-border">
+  <div class="cert-brand" aria-label="EduHub"><svg class="brand-svg" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 0.8 10.4 16 18.8l15.2-8.4L16 2Z"/><path d="M7 17.6v7.2c4.7 4.8 13.4 4.8 18 0v-7.2L16 22.8 7 17.6Z"/><path d="M29.5 12.5v11.8" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/></svg><span>Edu<span class="brand-blue">Hub</span></span></div>
+  <div class="cert-overline">LEARN TODAY. BUILD TOMORROW.</div>
+  <h2 class="cert-title">Certificate of Completion</h2>
+  <p class="cert-presented">This certificate is proudly presented to</p>
+  <p class="cert-recipient">Warda Mahmoud</p>
+  <span class="recipient-rule" aria-hidden="true"></span>
+  <p class="cert-completion">For successfully completing all course lessons and passing the final assessment.</p>
+  <h3 class="cert-course">Complete C# Programming</h3>
+  <div class="cert-seal" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 36 36"><circle cx="18" cy="13.5" r="7"/><path d="M13.5 19.5 11.5 32l6.5-4.5 6.5 4.5-2-12.5"/></svg></div>
+  <div class="cert-endorsements">
+   <div class="endorsement"><div><em>Ahmed Mohamed</em></div><div class="line" aria-hidden="true"></div><span class="caption">Instructor signature</span></div>
+   <div class="endorsement"><div>Oct 30, 2026</div><div class="line" aria-hidden="true"></div><span class="caption">Completion date</span></div>
+  </div>
+  <p class="cert-id">Sample Certificate ID: EDU-CSP-2026-01024</p>
+ </div>
+</article>
+  <button type="button" class="ed-button view-full" id="viewFullCertificate">View Full Certificate</button>
+ </section>
+ <div class="certificate-actions" role="group" aria-label="Certificate actions">
+  <button type="button" class="ed-button ed-button-primary" id="downloadCertificate">Download Certificate PDF</button>
+  <button type="button" class="ed-button" id="shareCertificate">Share Certificate</button>
+  <a class="ed-button" href="eduhub-student-dashboard.html">Back to My Learning</a>
+ </div>
+ <section class="achievement-panel" aria-labelledby="achievementHeading">
+  <svg class="achievement-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.7 2.7L16 9.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="achievement-content"><h2 id="achievementHeading">Your hard work, recognized.</h2>
+   <p>All 9 lessons completed · Final assessment passed with 80% · Issued Oct 30, 2026</p>
+   <small>Keep a copy for your portfolio and celebrate your progress.</small>
+  </div>
+ </section>
+</main>
+<!-- INCLUDE: partials/footer.html -->
+<footer class="page-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+<!-- INCLUDE: partials/student-header.js -->
+<dialog class="ed-dialog" id="mobileMenu" aria-labelledby="navMenuTitle"><div class="dialog-header"><h2 id="navMenuTitle">EduHub</h2><button class="dialog-close" type="button" data-close-dialog aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div><nav class="d-grid gap-3" aria-label="Mobile navigation links"><a href="eduhub-homepage.html">Home</a><a href="eduhub-explore-courses.html">Explore Courses</a><a href="eduhub-student-dashboard.html">My Learning</a><a href="eduhub-student-profile.html">My Profile</a></nav></dialog>
+<dialog class="ed-dialog" id="shareDialog" aria-labelledby="shareTitle"><div class="dialog-header"><h2 id="shareTitle">Share Certificate</h2><button class="dialog-close" data-close-dialog type="button" aria-label="Close share dialog"><i class="fa-solid fa-xmark"></i></button></div>
+ <p class="share-note">Celebrate completing Complete C# Programming. This is a sample certificate; public verification requires backend integration.</p>
+ <label for="shareLink" class="form-label">Certificate page link</label>
+ <div class="input-group mb-2"><input type="text" class="form-control" id="shareLink" readonly aria-label="Certificate page URL"><button class="btn btn-outline-primary" type="button" id="copyShareLink"><i class="fa-regular fa-copy me-1" aria-hidden="true"></i> Copy</button></div>
+ <p class="share-note" id="urlNote">A public shareable URL is only available when this page is hosted.</p>
+ <div class="d-flex gap-2 flex-wrap"><button type="button" class="ed-button" id="nativeShare"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i>Share using device</button><button type="button" class="ed-button" id="linkedinShare"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</button></div>
+ <div class="toast-status" id="shareStatus" role="status" aria-live="polite"></div>
+</dialog>
+<dialog class="ed-dialog" id="fullCertificateDialog" aria-labelledby="fullTitle"><div class="dialog-header"><h2 id="fullTitle">Full Certificate</h2><button class="dialog-close" type="button" data-close-dialog aria-label="Close full certificate"><i class="fa-solid fa-xmark"></i></button></div><p class="share-note">Scroll horizontally to view the full landscape certificate.</p><div class="full-certificate-scroll" id="fullCertificateContent"></div></dialog>
+<div class="visually-hidden" role="status" aria-live="polite" id="announcement"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+'use strict';
+(()=>{
+ const $ = id => document.getElementById(id);
+ const announce = msg => { $('announcement').textContent = msg; };
+ const open = dialog => { dialog.showModal(); };
+ const close = dialog => { if(dialog.open) dialog.close(); };
+ // Shared responsive navigation and student account interactions.
+ $('menuToggle').addEventListener('click',()=>{open($('mobileMenu'));$('menuToggle').setAttribute('aria-expanded','true');});
+ $('mobileMenu').addEventListener('close',()=>$('menuToggle').setAttribute('aria-expanded','false'));
+ document.querySelectorAll('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>close(b.closest('dialog'))));
+ document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)close(d);}));
+ $('accountToggle').addEventListener('click',()=>{let m=$('accountMenu');m.hidden=!m.hidden;$('accountToggle').setAttribute('aria-expanded',String(!m.hidden));});
+ document.addEventListener('click',e=>{if(!e.target.closest('.account-area')){$('accountMenu').hidden=true;$('accountToggle').setAttribute('aria-expanded','false');}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('accountMenu').hidden=true;$('accountToggle').setAttribute('aria-expanded','false');}});
+ ['desktopSearch','mobileSearch'].forEach(id=>$(id).addEventListener('submit',e=>{e.preventDefault();const q=String(new FormData(e.currentTarget).get('search')||'').trim();if(q)location.href='eduhub-explore-courses.html?search='+encodeURIComponent(q);else announce('Enter a course name to search.');}));
+ $('notificationButton').addEventListener('click',()=>{location.href='eduhub-notification-states-and-roles.html';});
+ // Show landscape certificate, preserving the full desktop treatment.
+ $('viewFullCertificate').addEventListener('click',()=>{const wrap=$('fullCertificateContent');wrap.replaceChildren();const clone=$('eduCertificate').cloneNode(true);clone.removeAttribute('id');clone.setAttribute('aria-label','Full-sized certificate preview');wrap.appendChild(clone);open($('fullCertificateDialog'));});
+ // Sharing uses the currently hosted URL; no fictional verification link.
+ const hosted=['http:','https:'].includes(location.protocol);
+ $('shareLink').value=hosted?location.href:'';
+ $('copyShareLink').disabled=!hosted;
+ $('linkedinShare').disabled=!hosted;
+ $('shareCertificate').addEventListener('click',()=>{$('shareStatus').textContent='';open($('shareDialog'));});
+ function shareStatus(s){$('shareStatus').textContent=s;announce(s);}
+ $('copyShareLink').addEventListener('click',async()=>{if(!hosted)return shareStatus('Host the certificate page first to obtain a public URL.');try{await navigator.clipboard.writeText(location.href);shareStatus('Page link copied.');}catch{$('shareLink').select();try{document.execCommand('copy');shareStatus('Page link copied.');}catch{shareStatus('Copy the displayed link manually.');}}});
+ $('nativeShare').addEventListener('click',async()=>{if(!navigator.share)return shareStatus('Device sharing is unavailable in this browser.');try{const data={title:'EduHub — Certificate of Completion',text:'I completed Complete C# Programming on EduHub!'};if(hosted)data.url=location.href;await navigator.share(data);shareStatus('Sharing completed.');}catch(e){if(e.name!=='AbortError')shareStatus('Unable to share on this device.');}});
+ $('linkedinShare').addEventListener('click',()=>{if(!hosted)return shareStatus('Host the certificate first to share its link.');window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(location.href),'_blank','noopener,noreferrer');});
+ // Download a real, self-contained, vector PDF (client-side; no backend or PDF CDN).
+ function pdfText(s){return '('+s.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)')+')';}
+ function downloadPDF(){
+  const content=[];
+  const C=(r,g,b)=>`${r} ${g} ${b} rg`;
+  const S=(r,g,b)=>`${r} ${g} ${b} RG`;
+  const line=(x1,y1,x2,y2)=>content.push(`${x1} ${y1} m ${x2} ${y2} l S`);
+  const rect=(x,y,w,h)=>content.push(`${x} ${y} ${w} ${h} re S`);
+  const txt=(t,size,x,y,bold=false,color=[.059,.09,.165])=>{content.push(C(...color));content.push(`BT /F${bold?2:1} ${size} Tf 1 0 0 1 ${x} ${y} Tm ${pdfText(t)} Tj ET`);};
+  // Landscape A4: 842 x 595 pts. Coordinates are measured from page bottom.
+  content.push('1 w',S(.145,.388,.922));rect(24,24,794,547);content.push('.45 w',S(.75,.85,1));rect(34,34,774,527);
+  txt('EduHub',30,368,505,true,[.145,.388,.922]);txt('LEARN TODAY. BUILD TOMORROW.',10,338,478,true,[.145,.388,.922]);
+  txt('Certificate of Completion',39,166,417,true);
+  txt('This certificate is proudly presented to',15,275,373,false,[.392,.455,.545]);
+  txt('Warda Mahmoud',49,220,309,true,[.145,.388,.922]);
+  content.push(S(.80,.88,.98));line(270,286,572,286);
+  txt('For successfully completing all course lessons and passing the final assessment.',13,179,258,false,[.392,.455,.545]);
+  txt('Complete C# Programming',27,254,205,true);
+  txt('Ahmed Mohamed',15,171,117,false);txt('Oct 30, 2026',15,571,117,false);
+  content.push(S(.8,.85,.92),'.5 w');line(100,105,355,105);line(490,105,745,105);
+  txt('Instructor signature',11,180,87,false,[.392,.455,.545]);txt('Completion date',11,585,87,false,[.392,.455,.545]);
+  txt('Sample Certificate ID: EDU-CSP-2026-01024',10,304,53,false,[.392,.455,.545]);
+  const stream=content.join('\n')+'\n';
+  const objects=[
+    '<< /Type /Catalog /Pages 2 0 R >>',
+    '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
+    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>',
+    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
+    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>',
+    `<< /Length ${stream.length} >>
+stream
+${stream}endstream`,
+  ];
+  let output='%PDF-1.4\n';const offsets=[0];
+  objects.forEach((v,i)=>{offsets.push(output.length);output+=`${i+1} 0 obj
+${v}
+endobj
+`;});
+  const xref=output.length;output+=`xref
+0 ${objects.length+1}
+0000000000 65535 f 
+`;
+  for(let i=1;i<offsets.length;i++)output+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';
+  output+=`trailer
+<< /Size ${objects.length+1} /Root 1 0 R >>
+startxref
+${xref}
+%%EOF`;
+  const a=document.createElement('a');const url=URL.createObjectURL(new Blob([output],{type:'application/pdf'}));a.href=url;a.download='EduHub-Certificate-Warda-Mahmoud.pdf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);announce('Sample certificate PDF generated.');
+ }
+ $('downloadCertificate').addEventListener('click',downloadPDF);
+})();
+</script>
+</body></html>

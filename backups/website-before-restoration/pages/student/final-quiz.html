@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub Final Quiz frontend demonstration for Complete C# Programming: ten questions, navigation, answer review, and local scoring.">
+  <title>Final Quiz — Complete C# Programming | EduHub</title>
+  <!-- Bootstrap 5, Font Awesome 6 Free, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" onerror="this.onerror=null;this.removeAttribute('integrity');this.href='../../assets/vendor/bootstrap/bootstrap.min.css'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" onerror="this.onerror=null;this.removeAttribute('integrity');this.href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"">
+  <link rel="stylesheet" href="../../assets/css/final-quiz.css">
+</head>
+<body>
+  <!-- 01. Shared site header -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="d-flex align-items-center justify-content-between gap-2 header-top">
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="icon-button menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-controls="mobileMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+          <a class="brand" href="../public/home.html" aria-label="EduHub homepage"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+          <nav class="desktop-links" aria-label="Main navigation">
+            <a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="dashboard.html" aria-current="page">My Learning</a>
+          </nav>
+        </div>
+        <div class="user-controls">
+          <form class="search-box desktop-search" id="desktopSearch" role="search" aria-label="Search courses"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input name="q" type="search" aria-label="Search courses" placeholder="Search courses..."></form>
+          <button type="button" class="icon-button" id="notificationButton" aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="alert-pip"></span></button>
+          <span class="student-avatar" aria-label="Student initials WM">WM</span>
+          <span class="student-details"><strong>Warda Mahmoud</strong><small class="d-block">Student</small></span>
+          <div class="dropdown">
+            <button type="button" class="account-chevron" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Student account menu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm"><li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li><li><a class="dropdown-item" href="student-profile.html">My Profile</a></li><li><a class="dropdown-item" href="../public/explore-courses.html">Explore Courses</a></li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="tablet-rows mt-3">
+        <nav class="responsive-links" aria-label="Mobile navigation"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="dashboard.html" aria-current="page">My Learning</a></nav>
+        <form class="search-box w-100 mt-3" id="mobileSearch" role="search" aria-label="Mobile course search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" name="q" aria-label="Search for courses" placeholder="Search for courses..."></form>
+      </div>
+    </div>
+  </header>
+  <!-- 02. Quiz title, breadcrumb and guidance -->
+  <main class="main-shell">
+    <p class="breadcrumb-path"><a href="dashboard.html">My Learning</a> / <a href="../states/course-learning-all-lessons-complete.html">Complete C# Programming</a> / Final Quiz</p>
+    <section class="quiz-intro" aria-label="Quiz introduction"><h1>Final Quiz</h1><p>Complete C# Programming</p></section>
+    <div class="guidance" role="note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><p>10 questions · Passing score: 70% · Choose one answer per question. You can review answers before submitting.</p></div>
+    <div class="quiz-grid">
+      <!-- 03. Interactive single-choice question -->
+      <section class="ed-card question-card" aria-labelledby="questionHeading">
+        <div class="question-top"><span class="question-counter" id="questionCounter">Question 1 of 10</span><span class="question-type">Single choice</span></div>
+        <h2 class="question-heading" id="questionHeading">What is the correct keyword used to define a class in C#?</h2>
+        <p class="question-instruction">Select one answer.</p>
+        <fieldset class="border-0 p-0 m-0 option-list" id="answerOptions" aria-labelledby="questionHeading">
+          <!-- Initial state matches Figma exactly; JavaScript renders subsequent questions. -->
+          <label class="answer-option"><input type="radio" name="answer" value="0"><span class="answer-text">function</span></label>
+          <label class="answer-option selected"><input type="radio" name="answer" value="1" checked><span class="answer-text">class</span><span class="selected-caption">Selected</span></label>
+          <label class="answer-option"><input type="radio" name="answer" value="2"><span class="answer-text">object</span></label>
+          <label class="answer-option"><input type="radio" name="answer" value="3"><span class="answer-text">method</span></label>
+        </fieldset>
+        <p class="selection-help" id="selectionHelp">Your selection is recorded for review. Results appear after submission.</p>
+        <div class="question-actions"><button type="button" class="ed-btn" id="previousQuestion" disabled>Previous Question</button><button type="button" class="ed-btn ed-btn-primary" id="nextQuestion">Next Question</button></div>
+      </section>
+      <!-- 04. Question number grid and assessment submission -->
+      <aside class="ed-card navigator" aria-labelledby="navigatorHeading">
+        <h2 id="navigatorHeading">Question navigator</h2>
+        <div class="nav-dots" id="questionNumbers" aria-label="Jump to a question"><button class="nav-dot current" type="button" aria-current="step">1</button></div>
+        <p class="nav-summary" id="answerCount">1 answered · 9 unanswered</p>
+        <ul class="legend" aria-label="Question legend"><li><span class="legend-icon legend-current"></span>Current question</li><li><span class="legend-icon legend-answered"></span>Answered</li><li><span class="legend-icon legend-unanswered"></span>Unanswered</li></ul>
+        <p class="nav-description" id="navDescription">Question 1 is current and answered. Review your selections before submitting.</p>
+        <button type="button" class="ed-btn submit-btn" id="submitQuiz">Submit Quiz</button>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  <!-- 05. Confirmation dialog and local, non-authoritative results -->
+  <dialog id="submitDialog" class="quiz-dialog" aria-labelledby="submitTitle" aria-describedby="submitDescription">
+    <div class="d-flex align-items-center justify-content-between gap-3 mb-3"><i class="fa-solid fa-clipboard-check fs-3 text-primary" aria-hidden="true"></i><button type="button" class="icon-button" id="closeSubmitDialog" aria-label="Close confirmation"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <h2 id="submitTitle">Submit your quiz?</h2>
+    <p id="submitDescription">Review your answers before submitting.</p>
+    <p class="small mb-3" id="unansweredNotice"></p>
+    <div class="dialog-actions"><button class="ed-btn" id="returnToQuestions" type="button">Review Answers</button><button class="ed-btn ed-btn-primary" id="confirmSubmit" type="button">Submit Quiz</button></div>
+  </dialog>
+  <dialog id="resultsDialog" class="quiz-dialog" aria-labelledby="resultsHeading">
+    <div class="d-flex align-items-center justify-content-between gap-3 mb-2"><i class="fa-solid fa-chart-simple fs-3 text-primary" aria-hidden="true"></i><button type="button" class="icon-button" id="closeResultsDialog" aria-label="Close quiz results"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <h2 id="resultsHeading">Demo quiz result</h2>
+    <div class="result-score" id="resultPercent">0%</div>
+    <div class="quiz-result-banner" id="resultStatus"></div>
+    <p id="resultDetails"></p>
+    <p class="small">This is frontend-only sample scoring. No score, course completion, or certificate is recorded to your EduHub account.</p>
+    <a href="../states/quiz-result-pass.html" id="openPassingPreview" class="ed-btn ed-btn-primary mb-3" hidden>View Sample Pass Screen (80% Figma Example)</a>
+    <div class="dialog-actions"><button type="button" class="ed-btn" id="reviewResult">Review Answers</button><button type="button" class="ed-btn ed-btn-primary" id="retryQuiz">Retry Demo</button></div>
+  </dialog>
+  <dialog id="mobileMenu" class="quiz-dialog" aria-label="Navigation menu"><div class="d-flex justify-content-between align-items-center mb-3"><h2 class="m-0">EduHub</h2><button class="icon-button" id="closeMobileMenu" aria-label="Close menu" type="button"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div><nav class="d-grid gap-3"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="dashboard.html">My Learning</a><a href="student-profile.html">My Profile</a></nav></dialog>
+  <div id="announcer" class="sr-status" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>if (!window.bootstrap) document.write('<script src="../../assets/vendor/bootstrap/bootstrap.bundle.min.js"><\/script>');</script>
+  <script src="../../assets/js/final-quiz.js"></script>
+
+<script src="../../assets/js/route-data.js"></script>
+</body>
+</html>

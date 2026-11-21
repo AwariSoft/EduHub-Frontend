@@ -1,0 +1,3 @@
+# User Details — ZIP #11 asset audit
+
+The three exports use a text-initial avatar (`WM`) and generic admin navigation SVGs. No new screen-specific raster image is required. Existing `partials/admin-sidebar.html`, `partials/admin-topbar.html`, `partials/admin-mobile-nav.html` and Font Awesome 6 Free cover navigation icons. ZIP reference assets include `public/Admin-sidebar@2x.png`, `public/Admin-sidebar1@2x.png`, `public/Admin-sidebar2@2x.png`, `public/Admin-access.svg`, `public/users.svg`, `public/info.svg`, `public/chevron-down.svg`, `public/Notifications.svg`, `public/Open-menu.svg`, `public/Graduation-cap.svg`, `public/log-out.svg`. These are shared UI references, not new assets to copy.

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./edu-hub-menus-uploads-and-form-states.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="eduhub-menus-uploads-and-fo">
+      <header class="eduhub-brand10">
+        <img
+          class="graduation-cap-icon10"
+          alt=""
+          src="./public/Graduation-cap.svg"
+        />
+
+        <h1 class="wordmark9">
+          <span>Edu</span>
+          <span class="hub9">Hub</span>
+        </h1>
+      </header>
+      <div class="page-heading10">
+        <div class="page-introduction10">
+          <h2 class="heading35">Menus, uploads and form states</h2>
+          <div class="description152">
+            Static open menus and control states · All menus retain
+            instructor-only scope.
+          </div>
+        </div>
+      </div>
+      <section class="account-and-course-menus">
+        <section class="profile-dropdown-open">
+          <h3 class="heading36">Profile dropdown · Open</h3>
+          <div class="account-trigger">
+            <div class="avatar13">
+              <div class="selected-option">AM</div>
+            </div>
+            <div class="description153">Ahmed Mohamed</div>
+            <img
+              class="check-icon"
+              loading="lazy"
+              alt=""
+              src="./public/chevron-up.svg"
+            />
+          </div>
+          <div class="description154">
+            ahmed.mohamed@eduhub.example · Instructor
+          </div>
+          <div class="account-menu">
+            <div class="description155">Account menu</div>
+            <textarea
+              class="open-dropdown"
+              placeholder="My Profile"
+              rows="{7}"
+              cols="{31}"
+            >
+            </textarea>
+          </div>
+        </section>
+        <section class="course-action-menu-open">
+          <h3 class="heading37">Course action menu · Open</h3>
+          <div class="description156">
+            JavaScript for Beginners · Draft ready for review
+          </div>
+          <div class="course-actions">
+            <div class="description155">Course actions</div>
+            <div class="open-dropdown2">
+              <button class="menu-option">
+                <div class="option-label">View Course</div>
+              </button>
+              <button class="menu-option">
+                <div class="option-label">Edit Course</div>
+              </button>
+              <button class="menu-option">
+                <div class="option-label">Manage Curriculum</div>
+              </button>
+              <button class="menu-option">
+                <div class="option-label">Submit for Review</div>
+              </button>
+              <button class="menu-option">
+                <div class="option-label">Delete Course</div>
+              </button>
+            </div>
+          </div>
+          <div class="description158">
+            Submit for Review is available only when required information,
+            thumbnail and lessons are complete. View Course opens the private
+            instructor detail page, not a public draft.
+          </div>
+        </section>
+      </section>
+      <section class="submission-and-notification-st">
+        <div class="status-dependent-submission">
+          <h3 class="heading38">Status-dependent submission</h3>
+          <div class="status-badge11">
+            <div class="status11">● Pending Approval</div>
+          </div>
+          <button class="action39">
+            <div class="label55">Submit for Review</div>
+          </button>
+          <div class="description159">
+            Already under review. A submitted course cannot be submitted again.
+          </div>
+          <div class="status-badge12">
+            <div class="status12">● Published</div>
+          </div>
+          <button class="action40">
+            <div class="label55">Submit Revision for Review</div>
+          </button>
+          <div class="description160">
+            No unpublished changes. Edit the course first; revisions require
+            admin review. There is no direct Publish control.
+          </div>
+        </div>
+        <div class="notifications-popover-open">
+          <h3 class="heading36">Notifications popover · Open</h3>
+          <div class="popover-heading">
+            <div class="description161">Notifications</div>
+            <img class="x-icon" alt="" src="./public/x.svg" />
+          </div>
+          <img class="circle-x-icon" alt="" src="./public/circle-x.svg" />
+
+          <h3 class="description162">You’re all caught up</h3>
+          <div class="description154">
+            No new notifications. Enrollment activity and course review
+            decisions will appear here.
+          </div>
+          <div class="description164">
+            0 unread · Notification preferences in Settings
+          </div>
+        </div>
+      </section>
+      <section class="filter-dropdowns-open">
+        <h3 class="heading37">Filter dropdowns · Open</h3>
+        <section class="filter-options">
+          <div class="course-status">
+            <div class="description155">Course status</div>
+            <div class="open-dropdown3">
+              <div class="menu-option6">
+                <div class="option-label6">All statuses</div>
+                <img class="check-icon" alt="" src="./public/check.svg" />
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Draft</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Pending Approval</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Published</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Rejected</div>
+              </div>
+            </div>
+          </div>
+          <div class="course-status">
+            <div class="description155">Category</div>
+            <div class="open-dropdown3">
+              <div class="menu-option6">
+                <div class="option-label6">All categories</div>
+                <img
+                  class="check-icon"
+                  loading="lazy"
+                  alt=""
+                  src="./public/check.svg"
+                />
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Programming</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Web Development</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Database</div>
+              </div>
+            </div>
+          </div>
+          <div class="course-status">
+            <div class="description155">Period</div>
+            <div class="open-dropdown3">
+              <div class="menu-option7">
+                <div class="option-label6">Last 7 Days</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Last 30 Days</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Last 3 Months</div>
+              </div>
+              <div class="menu-option6">
+                <div class="option-label6">All Time</div>
+                <img class="check-icon" alt="" src="./public/check.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="course-status">
+            <div class="description155">Enrollment date</div>
+            <div class="open-dropdown3">
+              <div class="menu-option6">
+                <div class="option-label6">All dates</div>
+                <img
+                  class="check-icon"
+                  loading="lazy"
+                  alt=""
+                  src="./public/check.svg"
+                />
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Last 7 Days</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Last 30 Days</div>
+              </div>
+              <div class="menu-option7">
+                <div class="option-label6">Custom range...</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="description164">
+          Dashboard period options: Last 7 Days / Last 30 Days / Last 3 Months.
+          Analytics additionally offers All Time.
+        </div>
+      </section>
+      <section class="upload-states">
+        <div class="video-upload-in-progress">
+          <h3 class="heading36">Video upload · In progress</h3>
+          <div class="description156">variables-data-types.mp4</div>
+          <div class="description154">Uploading · 94.7 MB of 148 MB · 64%</div>
+          <div class="learning-progress4">
+            <div class="percentage4">64%</div>
+            <img
+              class="progress-track-icon4"
+              loading="lazy"
+              alt=""
+              src="./public/Progress-track2@2x.png"
+            />
+          </div>
+          <div class="guidance4">
+            <img class="x-icon" alt="" src="./public/info.svg" />
+
+            <div class="description172">
+              Keep this page open until the upload finishes. Preview is
+              unavailable during upload.
+            </div>
+          </div>
+          <button class="action41">
+            <div class="label57">Cancel Upload</div>
+          </button>
+        </div>
+        <div class="video-upload-error">
+          <h3 class="heading37">Video upload · Error</h3>
+          <div class="status-badge13">
+            <div class="status13">● Upload failed</div>
+          </div>
+          <div class="description156">lesson-recording.mov · 628 MB</div>
+          <div class="guidance5">
+            <img class="x-icon" alt="" src="./public/circle-alert.svg" />
+
+            <div class="description174">
+              This file exceeds the 500 MB limit. Compress the video or choose a
+              smaller file, then try again.
+            </div>
+          </div>
+          <div class="form-actions9">
+            <button class="action42">
+              <div class="label58">Choose Another Video</div>
+            </button>
+            <button class="action43">
+              <div class="label57">Remove File</div>
+            </button>
+          </div>
+          <div class="description164">MP4, MOV or WebM · Max 500 MB</div>
+        </div>
+      </section>
+      <main class="thumbnail-and-pricing-states">
+        <section class="thumbnail-preview-and-replac">
+          <h3 class="heading37">Thumbnail · Preview and replace</h3>
+          <img
+            class="uploaded-thumbnail-preview"
+            loading="lazy"
+            alt=""
+            src="./public/Uploaded-thumbnail-preview@2x.png"
+          />
+
+          <div class="description159">
+            javascript-beginners.jpg · 684 KB · 1280 × 720
+          </div>
+          <div class="form-actions9">
+            <button class="action44">
+              <div class="label58">Upload Image</div>
+            </button>
+            <button class="action45">
+              <div class="label57">Remove Image</div>
+            </button>
+          </div>
+          <div class="drag-over-dropzone">
+            <img class="x-icon" alt="" src="./public/upload.svg" />
+
+            <div class="description172">
+              Drop your image to replace the thumbnail
+            </div>
+          </div>
+        </section>
+        <section class="form-variations">
+          <div class="pricing-free-selected">
+            <h3 class="heading36">Pricing · Free selected</h3>
+            <div class="pricing-options">
+              <div class="selected-option">◉ Free</div>
+              <div class="paid-option">○ Paid</div>
+            </div>
+            <div class="description178">
+              Students can enroll at no cost after admin approval. Course Price
+              and currency fields are hidden for a free course.
+            </div>
+          </div>
+          <div class="form-validation-representati">
+            <h3 class="heading37">Form validation · Representative error</h3>
+            <div class="form-field14">
+              <div class="form-input14">
+                <div class="label62">Course Title *</div>
+                <div class="input14">
+                  <img
+                    class="user-round-icon10"
+                    alt=""
+                    src="./public/Icon8.svg"
+                  />
+
+                  <input class="placeholder14" placeholder="C#" type="text" />
+                </div>
+              </div>
+              <div class="description179">
+                Use at least 5 characters so students understand your course
+                topic.
+              </div>
+            </div>
+            <div class="description164">
+              Other fields retain their values. Focus the first field that needs
+              attention.
+            </div>
+          </div>
+        </section>
+      </main>
+      <section class="upload-states">
+        <div class="video-upload-in-progress">
+          <h3 class="heading36">Saved confirmation</h3>
+          <div class="guidance6">
+            <input class="circle-check" type="radio" />
+
+            <div class="description172">
+              Your changes have been saved. Existing curriculum and lesson
+              resources are preserved.
+            </div>
+          </div>
+          <div class="description154">
+            Published-course changes are saved as a revision and still require
+            review.
+          </div>
+        </div>
+        <div class="video-upload-error">
+          <h3 class="heading37">Lesson helper and validation</h3>
+          <div class="form-field14">
+            <div class="form-input14">
+              <div class="label63">Duration (mm:ss) *</div>
+              <div class="input15">
+                <img
+                  class="user-round-icon10"
+                  alt=""
+                  src="./public/Icon8.svg"
+                />
+
+                <div class="option-label6">00:00</div>
+              </div>
+            </div>
+            <div class="description179">
+              Upload a video and confirm a duration greater than 00:00 before
+              saving.
+            </div>
+          </div>
+          <div class="description164">
+            Lesson Title, Section, Order and a valid video are required.
+            Resource attachments are optional.
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

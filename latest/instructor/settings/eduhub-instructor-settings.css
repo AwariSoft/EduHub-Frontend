@@ -1,0 +1,91 @@
+/* =============================================
+   EduHub / Instructor Settings / all viewports
+   Matched against Figma 18:60826 / 60928 / 61026
+   ============================================= */
+.st-page{background:#f8fafc;padding:32px;color:#0f172a;box-sizing:border-box;min-height:1305px}
+.st-page *{box-sizing:border-box}
+.st-heading{height:63px;margin-bottom:24px}
+.st-heading h1{font-size:28px;line-height:36px;margin:0 0 6px;font-weight:700;letter-spacing:-.35px}
+.st-heading p{font-size:14px;line-height:21px;color:#64748b;margin:0}
+.st-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 2px 4px rgba(15,23,42,.02);padding:24px;min-width:0}
+.st-card h2{font-size:18px;line-height:23px;font-weight:700;margin:0}
+.st-card-intro{color:#64748b;font-size:14px;line-height:20px;margin:0}
+.st-account{height:256px;margin-bottom:24px;display:flex;flex-direction:column;gap:16px}
+.st-identity-fields{height:72px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.st-field{display:flex;flex-direction:column;gap:8px;position:relative;min-width:0;height:72px}
+.st-field label{font-size:13px;line-height:16px;font-weight:500;color:#0f172a;white-space:nowrap}
+.st-field .st-input{height:48px;min-height:48px;width:100%;border:1px solid #e2e8f0;color:#0f172a;background:#fff;border-radius:8px;padding:0 16px;font-size:13px;line-height:20px;box-shadow:none;outline:0}
+.st-input-icon{height:48px;position:relative;width:100%}
+.st-input-icon>i{position:absolute;left:16px;top:16px;color:#64748b;font-size:16px;pointer-events:none}
+.st-input-icon .st-input{padding-left:42px}
+.st-input:focus-visible{outline:2px solid #93c5fd;outline-offset:1px}
+.st-input[aria-invalid=true]{border-color:#dc2626}
+.st-error{position:absolute;color:#dc2626;font-size:10px;left:2px;top:74px;z-index:5;line-height:12px}
+.st-password-row{height:45px;min-height:45px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+.st-password-copy{min-width:0;display:flex;flex-direction:column;gap:4px}
+.st-password-copy strong,.st-notification-copy strong{font-size:14px;line-height:21px;font-weight:600}
+.st-password-copy p,.st-notification-copy p{font-size:14px;line-height:20px;color:#64748b;margin:0}
+.st-btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;height:44px;min-height:44px;border-radius:8px;border:1px solid #e2e8f0;font-size:13px;font-weight:600;line-height:20px;padding:0 16px;background:#fff;color:#0f172a;cursor:pointer;white-space:nowrap;transition:background .15s ease,border-color .15s ease,transform .12s ease;appearance:none}
+.st-btn:focus-visible,.st-switch:focus-visible,.st-platform-label input:focus-visible,.st-dialog-close:focus-visible{outline:2px solid #2563eb;outline-offset:3px}
+.st-btn:active{transform:translateY(1px)}.st-btn-outline:hover{background:#f1f5f9;border-color:#cbd5e1}
+.st-btn-primary{color:#fff;background:#2563eb;border-color:#2563eb}.st-btn-primary:hover{background:#1d4ed8;border-color:#1d4ed8}
+.st-btn-danger{background:#b91c1c;color:#fff;border-color:#b91c1c}.st-btn-danger:hover{background:#991b1b;border-color:#991b1b}
+.st-btn:disabled{opacity:.55;cursor:not-allowed}
+.st-notifications{height:387px;margin-bottom:24px;display:flex;flex-direction:column;gap:16px}
+.st-notification-item{height:69px;min-height:69px;border-bottom:1px solid #e2e8f0;display:flex;gap:16px;align-items:center;padding:12px 0}
+.st-notification-copy{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.st-switch{width:40px;min-width:40px;height:41px;border:0;background:transparent;display:flex;align-items:center;flex-direction:column;gap:4px;padding:0;cursor:pointer}
+.st-switch-track{width:40px;height:24px;border-radius:999px;background:#cbd5e1;position:relative;display:block;transition:background .15s}
+.st-switch-dot{position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;left:3px;box-shadow:0 1px 2px #0002;transition:left .15s}
+.st-switch[aria-checked=true] .st-switch-track{background:#2563eb}.st-switch[aria-checked=true] .st-switch-dot{left:19px}
+.st-switch-value{font-size:11px;line-height:13px;color:#64748b}.st-switch[aria-checked=true] .st-switch-value{color:#2563eb}
+.st-platform-label{height:24px;min-height:24px;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;line-height:20px;color:#0f172a;margin:0}
+.st-platform-label input{width:16px;height:16px;margin:0;accent-color:#2563eb;cursor:pointer}
+.st-platform-description{color:#64748b;font-size:14px;line-height:20px;margin:0}
+.st-essential{color:#64748b;font-size:12px;line-height:18px;margin:0}
+.st-form-actions{display:flex;align-items:center;gap:12px;height:44px;margin-bottom:24px}.st-form-actions .st-btn:first-child{width:117px}.st-form-actions .st-btn:nth-child(2){width:108px}
+.st-account-actions{height:167px;margin-bottom:24px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.st-account-actions .st-btn{min-width:108px}
+.st-danger{height:167px;border-color:#fecaca;margin-bottom:24px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.st-danger h2{color:#b91c1c}.st-danger .st-btn{width:160px}
+.st-footer{height:13px;line-height:13px;font-size:11px;color:#64748b;display:flex;align-items:center;gap:16px}
+.st-footer a{text-decoration:none;color:#64748b}.st-footer a:hover{color:#2563eb;text-decoration:underline}
+.st-toast[hidden],.st-modal-overlay[hidden]{display:none!important}
+.st-toast{z-index:1300;position:fixed;bottom:24px;right:24px;max-width:min(440px,calc(100vw - 32px));background:#0f172a;color:#fff;border-radius:10px;padding:12px 18px;box-shadow:0 12px 36px #0003;font-size:13px;line-height:20px}
+.st-modal-overlay{z-index:1250;position:fixed;inset:0;background:rgba(15,23,42,.5);padding:16px;display:grid;place-items:center}
+.st-dialog{background:#fff;border-radius:14px;width:min(100%,480px);padding:24px;max-height:calc(100vh - 48px);overflow:auto;box-shadow:0 24px 60px #0003}
+.st-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.st-dialog-head h2{margin:0;font-size:20px;font-weight:700}.st-dialog-close{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;border-radius:8px;color:#64748b}
+.st-dialog-close:hover{background:#f1f5f9;color:#0f172a}
+.st-dialog>p{font-size:14px;color:#64748b;line-height:21px;margin:0 0 18px}
+.st-dialog-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:12px;margin-top:18px}
+.st-dialog .st-field{height:auto;margin-bottom:14px}.st-dialog .st-field .st-input{height:44px;min-height:44px}
+.st-dialog .st-note{background:#eff6ff;color:#1d4ed8;border-radius:8px;padding:10px 12px;font-size:12px;line-height:18px}
+.st-dialog .st-red-note{background:#fef2f2;color:#b91c1c}.st-dialog .st-mini-error{font-size:12px;color:#b91c1c;min-height:18px}
+@media(min-width:601px) and (max-width:1199.98px){
+ .st-page{padding:24px;min-height:1310px}
+ .st-account{height:256px}.st-notifications{height:387px}
+ .st-danger{height:188px}.st-danger .st-card-intro{max-width:100%}
+}
+@media(max-width:600px){
+ .st-page{padding:16px;min-height:1630px}
+ .st-heading{height:80px;margin-bottom:24px}.st-heading h1{font-size:23px;line-height:32px;letter-spacing:-.25px;margin-bottom:6px}
+ .st-heading p{font-size:13px;line-height:21px;max-width:340px}
+ .st-account{height:424px;margin-bottom:24px;gap:16px}
+ .st-card h2{font-size:18px;line-height:23px}.st-card-intro{font-size:13px;line-height:20px}
+ .st-identity-fields{height:160px;display:flex;flex-direction:column;gap:16px}
+ .st-password-row{height:125px;min-height:125px;flex-direction:column;align-items:stretch;gap:16px;justify-content:flex-start}
+ .st-password-copy{min-height:65px}
+ .st-password-row .st-btn{width:100%;min-height:44px}
+ .st-notifications{height:465px;margin-bottom:24px}
+ .st-notification-item{height:89px;min-height:89px}
+ .st-notification-copy p{font-size:13px;line-height:20px}
+ .st-platform-description{font-size:13px;line-height:20px}
+ .st-essential{font-size:12px;line-height:18px}
+ .st-form-actions{height:96px;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+ .st-form-actions .st-btn:first-child,.st-form-actions .st-btn:nth-child(2){height:44px;min-height:44px;width:100%}
+ .st-account-actions{height:167px;margin-bottom:24px}
+ .st-danger{height:209px;margin-bottom:24px;gap:16px}.st-danger .st-card-intro{font-size:13px;line-height:21px}.st-danger .st-btn{width:100%}
+ .st-footer{height:13px}.st-footer-more{display:none}
+ .st-toast{left:16px;right:16px;bottom:66px}
+}
+@media(max-width:360px){.st-page{min-height:0;padding-bottom:64px}.st-card{padding:20px}.st-account,.st-notifications,.st-account-actions,.st-danger{height:auto;min-height:0}.st-account{min-height:424px}.st-notifications{min-height:465px}.st-danger{min-height:209px}.st-form-actions{height:auto}.st-password-row{height:auto;min-height:125px}}

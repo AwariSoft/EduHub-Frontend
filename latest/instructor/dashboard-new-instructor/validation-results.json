@@ -1,0 +1,271 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1024,
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "scrollHeight": 1024,
+        "stats": [
+          "0",
+          "0",
+          "0",
+          "$0"
+        ],
+        "invite": true,
+        "links": [
+          "eduhub-instructor-create-course.html",
+          "eduhub-instructor-create-course.html"
+        ],
+        "bounds": {
+          ".newcomer-welcome": {
+            "x": 264,
+            "y": 96,
+            "w": 1144,
+            "h": 64
+          },
+          ".newcomer-stats": {
+            "x": 264,
+            "y": 184,
+            "w": 1144,
+            "h": 80
+          },
+          ".newcomer-courses": {
+            "x": 264,
+            "y": 288,
+            "w": 1144,
+            "h": 335
+          },
+          ".newcomer-getting-started": {
+            "x": 264,
+            "y": 647,
+            "w": 1144,
+            "h": 178
+          },
+          ".newcomer-activity-grid": {
+            "x": 264,
+            "y": 849,
+            "w": 1144,
+            "h": 90
+          },
+          ".newcomer-footer": {
+            "x": 264,
+            "y": 963,
+            "w": 1144,
+            "h": 13
+          }
+        }
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 834,
+      "height": 1100,
+      "details": {
+        "viewport": 834,
+        "scrollWidth": 834,
+        "scrollHeight": 1172,
+        "stats": [
+          "0",
+          "0",
+          "0",
+          "$0"
+        ],
+        "invite": true,
+        "links": [
+          "eduhub-instructor-create-course.html",
+          "eduhub-instructor-create-course.html"
+        ],
+        "bounds": {
+          ".newcomer-welcome": {
+            "x": 104,
+            "y": 96,
+            "w": 706,
+            "h": 119
+          },
+          ".newcomer-stats": {
+            "x": 104,
+            "y": 239,
+            "w": 706,
+            "h": 172
+          },
+          ".newcomer-courses": {
+            "x": 104,
+            "y": 435,
+            "w": 706,
+            "h": 294
+          },
+          ".newcomer-getting-started": {
+            "x": 104,
+            "y": 753,
+            "w": 706,
+            "h": 209
+          },
+          ".newcomer-activity-grid": {
+            "x": 104,
+            "y": 986,
+            "w": 706,
+            "h": 125
+          },
+          ".newcomer-footer": {
+            "x": 104,
+            "y": 1135,
+            "w": 706,
+            "h": 13
+          }
+        }
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "scrollHeight": 2087,
+        "stats": [
+          "0",
+          "0",
+          "0",
+          "$0"
+        ],
+        "invite": true,
+        "links": [
+          "eduhub-instructor-create-course.html",
+          "eduhub-instructor-create-course.html"
+        ],
+        "bounds": {
+          ".newcomer-welcome": {
+            "x": 16,
+            "y": 191,
+            "w": 358,
+            "h": 116
+          },
+          ".newcomer-stats": {
+            "x": 16,
+            "y": 331,
+            "w": 358,
+            "h": 228
+          },
+          ".newcomer-courses": {
+            "x": 16,
+            "y": 583,
+            "w": 358,
+            "h": 576
+          },
+          ".newcomer-getting-started": {
+            "x": 16,
+            "y": 1183,
+            "w": 358,
+            "h": 447
+          },
+          ".newcomer-activity-grid": {
+            "x": 16,
+            "y": 1654,
+            "w": 358,
+            "h": 294
+          },
+          ".newcomer-footer": {
+            "x": 16,
+            "y": 1968,
+            "w": 358,
+            "h": 34
+          }
+        }
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 320,
+      "height": 790,
+      "details": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "scrollHeight": 2165,
+        "stats": [
+          "0",
+          "0",
+          "0",
+          "$0"
+        ],
+        "invite": true,
+        "links": [
+          "eduhub-instructor-create-course.html",
+          "eduhub-instructor-create-course.html"
+        ],
+        "bounds": {
+          ".newcomer-welcome": {
+            "x": 16,
+            "y": 191,
+            "w": 288,
+            "h": 166
+          },
+          ".newcomer-stats": {
+            "x": 16,
+            "y": 381,
+            "w": 288,
+            "h": 228
+          },
+          ".newcomer-courses": {
+            "x": 16,
+            "y": 633,
+            "w": 288,
+            "h": 580
+          },
+          ".newcomer-getting-started": {
+            "x": 16,
+            "y": 1237,
+            "w": 288,
+            "h": 471
+          },
+          ".newcomer-activity-grid": {
+            "x": 16,
+            "y": 1732,
+            "w": 288,
+            "h": 294
+          },
+          ".newcomer-footer": {
+            "x": 16,
+            "y": 2046,
+            "w": 288,
+            "h": 34
+          }
+        }
+      },
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "interactions": [
+    {
+      "name": "account dropdown Escape",
+      "passed": true
+    },
+    {
+      "name": "zero-notification popover",
+      "passed": true
+    },
+    {
+      "name": "course search honest empty state",
+      "passed": true
+    },
+    {
+      "name": "sidebar collapse/expand",
+      "passed": true
+    },
+    {
+      "name": "both CTA routes",
+      "passed": true
+    },
+    {
+      "name": "mobile navigation drawer and Escape",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="EduHub Quiz Result — Pass. An accessible, responsive sample success result for Complete C# Programming.">
+  <title>Quiz Result — Pass | EduHub</title>
+  <!-- Bootstrap 5, Font Awesome 6 Free, Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/recovered/quiz-result-pass.css" data-eduhub-restored="page-css">
+</head>
+<body>
+  <!-- 01: Shared student header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="header-brand-group">
+          <button class="icon-button" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+          <a href="../public/home.html" class="brand" aria-label="EduHub home"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+          <nav class="desktop-nav" aria-label="Main navigation"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="../student/dashboard.html" aria-current="page">My Learning</a></nav>
+        </div>
+        <div class="header-controls">
+          <form class="search-form desktop-search" id="desktopSearch" role="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input name="search" type="search" placeholder="Search courses..." aria-label="Search courses"></form>
+          <button type="button" class="icon-button" id="notificationButton" aria-label="View notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot"></span></button>
+          <span class="avatar" aria-label="Student initials WM">WM</span>
+          <span class="student-label"><strong>Warda Mahmoud</strong><small>Student</small></span>
+          <div class="account-area">
+            <button type="button" class="account-button" id="accountToggle" aria-label="Account menu" aria-haspopup="true" aria-expanded="false" aria-controls="accountMenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+            <nav class="account-popover" id="accountMenu" aria-label="Account options" hidden><a href="../student/dashboard.html">Dashboard</a><a href="../student/student-profile.html">My Profile</a><a href="../public/explore-courses.html">Explore Courses</a></nav>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-header">
+        <nav class="responsive-nav" aria-label="Compact navigation"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="../student/dashboard.html" aria-current="page">My Learning</a></nav>
+        <form class="search-form w-100 mt-3" id="mobileSearch" role="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input name="search" type="search" placeholder="Search for courses..." aria-label="Search for courses"></form>
+      </div>
+    </div>
+  </header>
+  <!-- 02: Result title and breadcrumb -->
+  <main class="page-main">
+    <p class="breadcrumb-path"><a href="../student/dashboard.html">My Learning</a> / <a href="course-learning-all-lessons-complete.html">Complete C# Programming</a> / <a href="../student/final-quiz.html">Final Quiz</a></p>
+    <section class="page-intro" aria-label="Quiz outcome introduction"><h1>Your quiz results</h1><p>Complete C# Programming</p></section>
+    <!-- 03: Static success scenario as authored in Figma, not a real assessment record -->
+    <section class="result-region" aria-label="Sample passing quiz result">
+      <article class="result-card" aria-labelledby="resultHeadline" aria-describedby="resultMessage">
+        <div class="award-emblem" aria-hidden="true"><i class="fa-solid fa-award"></i></div>
+        <span class="pass-badge">PASS</span>
+        <div class="result-score" aria-label="Sample score 80 percent">80%</div>
+        <h2 class="result-headline" id="resultHeadline">Congratulations! You passed the final quiz.</h2>
+        <div class="metric-grid" aria-label="Example quiz score breakdown">
+          <div class="metric"><strong>8</strong><span>Correct</span></div>
+          <div class="metric"><strong>2</strong><span>Incorrect</span></div>
+          <div class="metric"><strong>70%</strong><span>Passing score</span></div>
+        </div>
+        <p class="result-message" id="resultMessage">All course lessons are complete and your final assessment is passed. Your certificate is ready.</p>
+        <button type="button" class="ed-button ed-button-primary" id="viewCertificate">View Certificate</button>
+        <a class="ed-button" id="backToLearning" href="course-learning-all-lessons-complete.html">Back to Course Learning</a>
+      </article>
+      <p class="demo-disclaimer" role="note">Frontend sample only — no result, course completion or certificate has been verified or issued.</p>
+    </section>
+  </main>
+  <footer class="page-footer">EduHub · Learn Today. Build Tomorrow.</footer>
+  <!-- 04: Certificate action always reports the unconnected backend requirement -->
+  <dialog class="ed-dialog" id="certificateDialog" aria-labelledby="certificateTitle" aria-describedby="certificateDescription">
+    <div class="d-flex align-items-center justify-content-between gap-2 mb-3"><i class="fa-solid fa-award fs-3 edu-restored-inline-1" aria-hidden="true"></i><button type="button" class="icon-button" id="closeCertificateDialog" aria-label="Close certificate notice"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+    <h2 id="certificateTitle">Certificate preview unavailable</h2>
+    <p id="certificateDescription">This result is a Figma example showing an 80% passing score. No assessment has been verified, and a certificate cannot be generated until EduHub's backend confirms course completion and the final quiz result.</p>
+    <button type="button" class="ed-button ed-button-primary" id="dismissCertificateDialog">Got it</button>
+  </dialog>
+  <!-- 05: Responsive navigation overlay -->
+  <dialog class="ed-dialog" id="mobileMenu" aria-label="Navigation menu"><div class="d-flex align-items-center justify-content-between gap-3 mb-3"><h2 class="mb-0">EduHub</h2><button type="button" class="icon-button" id="closeMobileMenu" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div><nav class="d-grid gap-3" aria-label="Mobile navigation links"><a href="../public/home.html">Home</a><a href="../public/explore-courses.html">Explore Courses</a><a href="../student/dashboard.html">My Learning</a><a href="../student/student-profile.html">My Profile</a></nav></dialog>
+  <div class="sr-announcement" role="status" aria-live="polite" id="announcement"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/recovered/quiz-result-pass.js" data-eduhub-restored="page-js"></script>
+</body>
+</html>

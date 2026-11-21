@@ -1,0 +1,23 @@
+/* ZIP #13 Desktop + ZIP #14 Tablet/Mobile — Payment Success only */
+.edu-payment-success{--edu-payment-success-green:#15803d;--edu-payment-success-green-bg:#f0fdf4;background:#f8fafc;color:#0f172a}
+.edu-payment-success__main{min-height:calc(100vh - 180px)}
+.edu-payment-success__panel{max-width:690px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:clamp(1.25rem,4vw,2.5rem);box-shadow:0 2px 12px rgba(15,23,42,.02)}
+.edu-payment-success__motif{width:clamp(88px,17vw,120px);height:auto;object-fit:contain}
+.edu-payment-success__subtitle{color:#64748b;max-width:480px;margin-inline:auto;line-height:1.65}
+.edu-payment-success__details{border:1px solid #e2e8f0;border-radius:12px;padding:clamp(1rem,3vw,1.5rem)}
+.edu-payment-success__thumbnail{width:96px;height:72px;object-fit:cover;border-radius:10px;flex-shrink:0}
+.edu-payment-success__facts{display:grid;gap:0}
+.edu-payment-success__fact{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.75rem 0;border-top:1px solid #e2e8f0}
+.edu-payment-success__fact dt{font-weight:500;color:#64748b}
+.edu-payment-success__fact dd{margin:0;text-align:right;font-weight:600;overflow-wrap:anywhere}
+.edu-payment-success__status{display:inline-flex;align-items:center;border-radius:999px;background:var(--edu-payment-success-green-bg);color:var(--edu-payment-success-green);padding:.3rem .75rem;font-size:.875rem;font-weight:700}
+.edu-payment-success__action{border-radius:9px;padding:.8rem 1rem;font-weight:650;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease}
+.edu-payment-success__action:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(15,23,42,.12)}
+.edu-payment-success__action:active{transform:translateY(0);box-shadow:none}
+.edu-payment-success :is(a,button,input,select,textarea):focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+.edu-payment-success .breadcrumb a{color:#2563eb;text-decoration:none;transition:color .18s ease,text-decoration-color .18s ease}
+.edu-payment-success .breadcrumb a:hover{color:#1d4ed8;text-decoration:underline}
+.edu-payment-success .breadcrumb a:active{color:#1e40af}
+.edu-payment-success__disclaimer{font-size:.8rem;color:#64748b}
+@media(max-width:575.98px){.edu-payment-success__panel{border-radius:14px}.edu-payment-success__fact{align-items:flex-start}.edu-payment-success__thumbnail{width:76px;height:65px}.edu-payment-success__main{padding-inline:12px}}
+@media(prefers-reduced-motion:reduce){.edu-payment-success__action,.edu-payment-success .breadcrumb a{transition:none}.edu-payment-success__action:hover{transform:none}}

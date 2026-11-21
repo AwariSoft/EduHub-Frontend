@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8fafc"><title>Notification States and Roles | EduHub</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" referrerpolicy="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    /* 01 | Design tokens extracted from EduHub Figma */
+    :root { --eh-primary:#2563eb;--eh-primary-hover:#1d4ed8;--eh-ink:#0f172a;--eh-text:#334155;--eh-muted:#64748b;--eh-border:#e2e8f0;--eh-canvas:#f8fafc;--eh-soft-blue:#eff6ff;--eh-icon-bg:#dbeafe;--eh-white:#fff;--eh-r:12px; }
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;min-width:280px;background:var(--eh-canvas);color:var(--eh-ink);font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+    button{font:inherit;cursor:pointer} button:disabled{cursor:not-allowed} [hidden]{display:none!important}
+    button:focus-visible,a:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
+    /* 02 | 1120px Figma board: left 40px; preview cards 960px */
+    .states-board{max-width:1120px;width:100%;padding:40px;margin:0 auto}
+    .board-title{margin:0;font-size:28px;font-weight:700;line-height:35px;letter-spacing:-.65px}
+    .board-description{margin:8px 0 0;font-size:14px;line-height:22px;color:var(--eh-muted)}
+    .states-list{margin-top:32px}.state-section{max-width:960px;width:100%;scroll-margin-top:20px}
+    .state-section+.state-section{margin-top:32px}.state-label{margin:0 0 12px;color:var(--eh-muted);font-size:13px;font-weight:600;line-height:16px}
+    .state-section:target .state-label{color:var(--eh-primary)}
+    .board-note{margin:32px 0 0;font-size:12px;line-height:19px;color:var(--eh-muted)}
+    /* 03 | Notification panel and tabs */
+    .notification-panel{background:var(--eh-white);border:1px solid var(--eh-border);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(15,23,42,.015)}
+    .panel-controls{height:111px;padding:23px 23px 0;border-bottom:1px solid var(--eh-border)}
+    .notification-tabs{display:flex;align-items:stretch;gap:24px;height:33px}
+    .notification-tab{height:33px;border:0;border-bottom:2px solid transparent;padding:0 0 5px;background:transparent;font-size:14px;font-weight:600;line-height:22px;color:var(--eh-muted)}
+    .notification-tab:hover:not(:disabled){color:var(--eh-primary)}
+    .notification-tab.active{color:var(--eh-primary);border-color:var(--eh-primary)}
+    .notification-tab:disabled{opacity:1}
+    .panel-management{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:15px;margin-top:16px}
+    .panel-summary{color:var(--eh-muted);font-size:12px;line-height:15px}
+    .text-action{padding:0;border:0;background:none;color:var(--eh-primary);font-size:13px;line-height:24px;font-weight:600;text-align:left;text-decoration:none}
+    .text-action:hover{color:var(--eh-primary-hover);text-decoration:underline}.text-action:active{color:#1e40af}
+    .panel-management .text-action{font-size:12px;line-height:15px;white-space:nowrap}
+    .panel-management .text-action[hidden]{display:none}
+    /* 04 | Shared notice rows: 156px per Figma desktop row */
+    .notice-row{display:flex;gap:16px;align-items:flex-start;padding:23px;min-height:156px;border-bottom:1px solid var(--eh-border)}
+    .notice-row:last-child{border-bottom:0}.notice-row.is-unread{background:var(--eh-soft-blue)}.notice-row.is-read{background:#fff}
+    .notice-symbol{width:40px;height:40px;flex:0 0 40px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--eh-primary);background:var(--eh-icon-bg)}
+    .is-read .notice-symbol{background:#f8fafc}
+    .notice-body{min-width:0;flex:1}.notice-meta{display:flex;gap:8px;align-items:center;min-height:18px;font-size:12px;line-height:18px;color:var(--eh-muted)}
+    .is-unread .notice-meta{color:var(--eh-primary)}
+    .unread-dot{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--eh-primary)}
+    .notice-title{margin:8px 0 0;font-weight:600;font-size:15px;line-height:21px}.notice-row.is-read .notice-title{font-weight:500}
+    .notice-text{margin:8px 0 0;color:var(--eh-muted);font-size:13px;line-height:21px}
+    .notice-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;column-gap:24px;min-height:24px;margin-top:8px}
+    .notice-actions .dest-action{min-width:240px}.notice-actions .mark-one{font-weight:500;font-size:12px}
+    /* 05 | Role-specific information banners */
+    .role-banner{display:flex;align-items:flex-start;gap:12px;padding:16px;margin-bottom:12px;min-height:79px;border-radius:8px;background:var(--eh-soft-blue)}
+    .role-banner>.eh-icon{color:var(--eh-primary);flex-shrink:0}
+    .role-banner-title{margin:0;font-size:14px;line-height:22px;font-weight:600}
+    .role-banner-detail{margin:4px 0 0;font-size:13px;line-height:21px;color:var(--eh-text)}
+    /* 06 | Empty, loading and retriable error */
+    .outcome-state{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+    .empty-state{min-height:419px;padding:88px 24px 24px}
+    .error-state{min-height:399px;padding:80px 24px 24px}
+    .big-outcome{width:80px;height:80px;border-radius:50%;background:var(--eh-soft-blue);display:flex;align-items:center;justify-content:center;color:var(--eh-primary)}
+    .outcome-state h3{margin:20px 0 0;font-size:26px;line-height:33px;font-weight:700;letter-spacing:-.5px}
+    .error-state h3{font-size:24px;line-height:30px}
+    .outcome-state p{margin:20px 0 0;font-size:14px;line-height:22px;color:var(--eh-muted)}
+    .eh-button{display:inline-flex;align-items:center;justify-content:center;width:240px;max-width:100%;height:48px;margin-top:20px;padding:10px 18px;background:var(--eh-primary);border:1px solid var(--eh-primary);border-radius:8px;color:#fff;font-size:14px;line-height:20px;font-weight:600;transition:background-color .16s,box-shadow .16s,transform .12s}
+    .error-state .eh-button{width:200px}.eh-button:hover{background:var(--eh-primary-hover);box-shadow:0 3px 10px rgba(37,99,235,.16)}.eh-button:active{transform:translateY(1px)}
+    .loading-state{min-height:429px;padding:24px 23px 23px}
+    .loading-label{display:flex;align-items:center;gap:12px;font-size:14px;line-height:22px;color:var(--eh-muted);margin-bottom:24px}
+    .loading-label .eh-icon{color:var(--eh-primary)}
+    .skeleton-notice{min-height:96px;display:flex;gap:16px;padding:19px;margin-bottom:24px;border:1px solid var(--eh-border);border-radius:8px}
+    .skeleton-notice:last-child{margin-bottom:0}.skeleton-copy{display:flex;flex-direction:column;gap:12px}
+    .skeleton{display:block;border-radius:5px;background:#e2e8f0}.skeleton-icon{width:40px;height:40px;flex:0 0 40px}.skeleton-title{height:12px;width:100%}.skeleton-line{height:10px;width:100%;background:#f1f5f9}.skeleton-time{height:10px;width:140px;max-width:45%;background:#f8fafc}
+    .loading-animate .skeleton{animation:shimmer 1.4s ease-in-out infinite alternate}@keyframes shimmer{to{opacity:.45}}
+    /* 07 | Font Awesome mapping + standalone vector fallbacks */
+    .eh-icon{display:inline-flex;justify-content:center;align-items:center;flex:0 0 auto;width:var(--icon-size,20px);height:var(--icon-size,20px);font-size:var(--icon-size,20px)}
+    .eh-icon i{display:none}.eh-icon svg{display:block;width:100%;height:100%}
+    .fa-ready .eh-icon i{display:inline}.fa-ready .eh-icon svg{display:none}
+    .spinner-fallback{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    /* 08 | App feedback and accessible interactions */
+    .toast-box{position:fixed;z-index:1000;bottom:22px;right:22px;width:min(400px,calc(100% - 44px));padding:15px 18px;border:1px solid var(--eh-border);border-left:4px solid var(--eh-primary);border-radius:10px;background:#fff;color:var(--eh-text);font-size:13px;line-height:20px;box-shadow:0 12px 28px rgba(15,23,42,.13)}
+    .toast-close{float:right;margin-left:8px;border:0;background:transparent;font-size:18px;color:var(--eh-muted)}
+    .panel-empty-inline{min-height:150px;display:grid;place-items:center;padding:30px;color:var(--eh-muted);font-size:14px;text-align:center}
+    .status-live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* 09 | Fluid tablet/mobile — responsive elements and readability */
+    @media(max-width:767.98px){
+      .states-board{padding:24px 20px}.board-title{font-size:26px;line-height:34px}.states-list{margin-top:28px}.state-section+.state-section{margin-top:30px}
+      .notice-row{min-height:0;padding:20px 16px;gap:12px}.notice-body{min-width:0}.notice-title{font-size:14px}.notice-text{line-height:20px}
+      .notice-actions{gap:10px 18px}.notice-actions .dest-action{min-width:0}
+      .panel-controls{padding:20px 16px 0;height:106px}.panel-management{gap:8px}.notification-tab{font-size:13px}.notification-tabs{gap:20px}
+      .role-banner{min-height:0}.role-banner-detail{line-height:20px}.outcome-state h3{font-size:22px;line-height:29px}.error-state h3{font-size:21px;line-height:28px}
+      .outcome-state p{margin-top:14px}.empty-state,.error-state{padding-top:50px;min-height:320px}.loading-state{padding:20px 16px;min-height:0}.skeleton-notice{gap:12px;padding:14px;margin-bottom:16px}
+    }
+    @media(max-width:360px){.states-board{padding:22px 14px}.panel-management .text-action{font-size:11px}.notice-actions{gap:7px 12px}.notification-tabs{gap:16px}.role-banner{padding:14px}.toast-box{right:14px;bottom:14px;width:calc(100% - 28px)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+    .retry-results{background:white}.retry-banner{padding:14px 24px;background:#f0fdf4;color:#166534;font-size:13px;line-height:22px;border-bottom:1px solid var(--eh-border)}
+</style></head>
+<body><main class="states-board" aria-labelledby="page-title"><header><h1 class="board-title" id="page-title">Notification states and roles</h1><p class="board-description">The baseline All list contains 6 items, including 3 unread. Each role has its own scoped notifications and related destinations.</p></header>
+<div class="states-list"><section class="state-section" id="student-unread" aria-labelledby="student-unread-title"><h2 class="state-label" id="student-unread-title">Student · Unread notifications · 3 unread, matching All</h2>
+<div class="notification-panel" data-panel="student" data-dataset="student" data-default-filter="unread">
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab" data-filter="all" role="tab" aria-selected="false" >All <span class="count-all">(6)</span></button>
+     <button type="button" class="notification-tab active" data-filter="unread" role="tab" aria-selected="true" >Unread <span class="count-unread">(3)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">3 unread notifications</span><button type="button" class="text-action mark-all">Mark all as read</button></div>
+ </div>
+<div class="notices-list" role="list"><article class="notice-row is-unread" data-note-id="s1">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-book-open"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.2C9 4.5 5.8 4.3 2 5.2v13.4c4.2-.9 7.5-.6 10 1.3m0-13.7c3-1.7 6.2-1.9 10-1v13.4c-4.2-.9-7.5-.6-10 1.3m0-13.7V20"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Nov 1, 2026 · 9:30 AM</span></div>
+      <h3 class="notice-title">New practice resources available</h3>
+      <p class="notice-text">Complete C# Programming has updated practice files for Classes and Objects.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="course">View Course Details <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="s1">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="s2">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-regular fa-clipboard"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 31, 2026 · 3:15 PM</span></div>
+      <h3 class="notice-title">Your assessment is ready</h3>
+      <p class="notice-text">SQL Server Essentials: review the final quiz requirements in My Learning.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="learning">Go to My Learning <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="s2">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="s3">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-award"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="m9 12-1 9 4-2 4 2-1-9"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 30, 2026 · 11:00 AM</span></div>
+      <h3 class="notice-title">Your certificate is available</h3>
+      <p class="notice-text">Your Python Programming Basics certificate is ready to view. Well done on completing your course.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="certificate">View My Certificate <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="s3">Mark as read</button></div>
+    </div>
+  </article></div></div></section>
+<section class="state-section" id="student-empty" aria-labelledby="student-empty-title"><h2 class="state-label" id="student-empty-title">Student · Empty notifications</h2>
+<div class="notification-panel" data-panel="empty" >
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" disabled>All <span class="count-all">(0)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" disabled>Unread <span class="count-unread">(0)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">No notifications</span></div>
+ </div>
+<div class="outcome-state empty-state"><div class="big-outcome"><span class="eh-icon" aria-hidden="true" style="--icon-size:36px"><i class="fa-regular fa-bell-slash"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4a6 6 0 0 1 10 5v4l2 3H6l1-2M9 20h6M3 3l18 18"/></svg></span></div><h3>You’re all caught up</h3><p>You have no notifications right now. Course updates and learning milestones will appear here.</p><button type="button" class="eh-button dest-action" data-dest="dashboard">Return to Dashboard</button></div></div></section>
+<section class="state-section" id="student-loading" aria-labelledby="student-loading-title"><h2 class="state-label" id="student-loading-title">Student · Loading notifications</h2>
+<div class="notification-panel" data-panel="loading" >
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" disabled>All <span class="count-all">(6)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" disabled>Unread <span class="count-unread">(3)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span></div>
+ </div>
+<div class="loading-state" aria-busy="true"><div class="loading-label"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-spinner fa-spin"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-8-8"/></svg></span><span>Loading your notifications…</span></div><div class="skeleton-notice"><span class="skeleton skeleton-icon"></span><div class="flex-grow-1 skeleton-copy"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-time"></span></div></div><div class="skeleton-notice"><span class="skeleton skeleton-icon"></span><div class="flex-grow-1 skeleton-copy"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-time"></span></div></div><div class="skeleton-notice"><span class="skeleton skeleton-icon"></span><div class="flex-grow-1 skeleton-copy"><span class="skeleton skeleton-title"></span><span class="skeleton skeleton-line"></span><span class="skeleton skeleton-time"></span></div></div></div></div></section>
+<section class="state-section" id="student-error" aria-labelledby="student-error-title"><h2 class="state-label" id="student-error-title">Student · Retriable loading error</h2>
+<div class="notification-panel" data-panel="error" >
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" disabled>All <span class="count-all">(6)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" disabled>Unread <span class="count-unread">(3)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span></div>
+ </div>
+<div class="outcome-state error-state"><div class="big-outcome"><span class="eh-icon" aria-hidden="true" style="--icon-size:36px"><i class="fa-solid fa-cloud-slash"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a6 6 0 0 1 10 4 5 5 0 0 1 1 9H6a5 5 0 0 1-1-10M3 3l18 18"/></svg></span></div><h3>We couldn’t load your notifications</h3><p>Please try again. Your notifications haven’t been changed.</p><button type="button" class="eh-button retry-btn">Try Again</button></div></div></section>
+<section class="state-section" id="instructor" aria-labelledby="instructor-title"><h2 class="state-label" id="instructor-title">Ahmed Mohamed · Instructor notifications · Alternate role sample</h2>
+<div class="role-banner"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-circle-info"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.4h.01"/></svg></span><div class="flex-grow-1"><p class="role-banner-title">Instructor workspace</p><p class="role-banner-detail">Related actions open the instructor’s own course review status or course students. This is a separate sample from the student list.</p></div></div>
+<div class="notification-panel" data-panel="instructor" data-dataset="instructor" data-default-filter="all">
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" >All <span class="count-all">(3)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" >Unread <span class="count-unread">(2)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span><button type="button" class="text-action mark-all">Mark all as read</button></div>
+ </div>
+<div class="notices-list"><article class="notice-row is-unread" data-note-id="i1">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-regular fa-circle-check"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Nov 1, 2026 · 9:00 AM</span></div>
+      <h3 class="notice-title">Your course was approved</h3>
+      <p class="notice-text">Complete C# Programming · Review the approval status in your course workspace.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="review">View Course Review Status <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="i1">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="i2">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-regular fa-clipboard"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 31, 2026 · 2:30 PM</span></div>
+      <h3 class="notice-title">Your course needs changes</h3>
+      <p class="notice-text">ASP.NET Core Web Development was not approved. Review the feedback before resubmitting.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="review">View Course Review Status <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="i2">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-read" data-note-id="i3">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-user-plus"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.3"/><path d="M3.5 20v-2.5C3.5 14 6 13 10 13s6.5 1 6.5 4.5V20M19 10v6m-3-3h6"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span>Read · Oct 30, 2026 · 10:00 AM</span></div>
+      <h3 class="notice-title">A new student enrolled</h3>
+      <p class="notice-text">Complete C# Programming has a new enrollment. View your course’s student list.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="students">View Course Students <span aria-hidden="true">→</span></button></div>
+    </div>
+  </article></div></div></section>
+<section class="state-section" id="admin" aria-labelledby="admin-title"><h2 class="state-label" id="admin-title">Nour Hassan · Admin notifications · Alternate role sample</h2>
+<div class="role-banner"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-circle-info"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.4h.01"/></svg></span><div class="flex-grow-1"><p class="role-banner-title">Admin workspace</p><p class="role-banner-detail">Related actions lead to course review or the relevant payment record. Admin notices are never shown in the student list.</p></div></div>
+<div class="notification-panel" data-panel="admin" data-dataset="admin" data-default-filter="all">
+<div class="panel-controls">
+   <div class="notification-tabs" role="tablist" aria-label="Filter notifications">
+     <button type="button" class="notification-tab active" data-filter="all" role="tab" aria-selected="true" >All <span class="count-all">(2)</span></button>
+     <button type="button" class="notification-tab" data-filter="unread" role="tab" aria-selected="false" >Unread <span class="count-unread">(2)</span></button>
+   </div>
+   <div class="panel-management"><span class="panel-summary" aria-live="polite">Most recent first</span><button type="button" class="text-action mark-all">Mark all as read</button></div>
+ </div>
+<div class="notices-list"><article class="notice-row is-unread" data-note-id="a1">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-book-open-reader"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.2C9 4.5 5.8 4.3 2 5.2v13.4c4.2-.9 7.5-.6 10 1.3m0-13.7c3-1.7 6.2-1.9 10-1v13.4c-4.2-.9-7.5-.6-10 1.3m0-13.7V20m4-10 2 2 4-4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Nov 1, 2026 · 9:10 AM</span></div>
+      <h3 class="notice-title">A course was submitted for review</h3>
+      <p class="notice-text">SQL Server Essentials by Mohamed Hassan is awaiting a course review.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="review">Review Course <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="a1">Mark as read</button></div>
+    </div>
+  </article><article class="notice-row is-unread" data-note-id="a2">
+    <div class="notice-symbol"><span class="eh-icon" aria-hidden="true" style="--icon-size:20px"><i class="fa-solid fa-receipt"></i><svg class="icon-fallback" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span></div>
+    <div class="notice-body">
+      <div class="notice-meta"><span class="unread-dot" aria-hidden="true"></span><span>Unread · Oct 31, 2026 · 4:00 PM</span></div>
+      <h3 class="notice-title">A refund request needs review</h3>
+      <p class="notice-text">A request for HTML &amp; CSS Fundamentals is available in its payment record.</p>
+      <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="payment-record">View Payment Record <span aria-hidden="true">→</span></button><button type="button" class="text-action mark-one" data-note-id="a2">Mark as read</button></div>
+    </div>
+  </article></div></div></section></div><footer class="board-note">Static UI states · Sample data · No backend actions are performed</footer></main>
+<div class="toast-box" id="feedback-toast" hidden role="status" aria-live="polite"><button class="toast-close" type="button" id="feedback-close" aria-label="Dismiss notification">×</button><span id="feedback-message"></span></div>
+<div id="status-live" class="status-live" role="status" aria-live="polite"></div>
+<script>
+  (() => {
+    'use strict';
+    const seed = {"student": [{"id": "s1", "icon": "book", "time": "Nov 1, 2026 · 9:30 AM", "title": "New practice resources available", "body": "Complete C# Programming has updated practice files for Classes and Objects.", "action": "View Course Details", "dest": "course", "unread": true}, {"id": "s2", "icon": "clipboard", "time": "Oct 31, 2026 · 3:15 PM", "title": "Your assessment is ready", "body": "SQL Server Essentials: review the final quiz requirements in My Learning.", "action": "Go to My Learning", "dest": "learning", "unread": true}, {"id": "s3", "icon": "award", "time": "Oct 30, 2026 · 11:00 AM", "title": "Your certificate is available", "body": "Your Python Programming Basics certificate is ready to view. Well done on completing your course.", "action": "View My Certificate", "dest": "certificate", "unread": true}, {"id": "s4", "icon": "receipt", "time": "Oct 29, 2026 · 10:05 AM", "title": "Payment completed", "body": "Complete C# Programming · $49.00. Your sample payment record is available.", "action": "View Payment Details", "dest": "payment", "unread": false}, {"id": "s5", "icon": "book", "time": "Oct 29, 2026 · 10:05 AM", "title": "You’re enrolled in Complete C# Programming", "body": "Your course with Ahmed Mohamed is now in My Learning.", "action": "Go to My Learning", "dest": "learning", "unread": false}, {"id": "s6", "icon": "book", "time": "Oct 28, 2026 · 2:20 PM", "title": "Course content updated", "body": "HTML & CSS Fundamentals: the responsive layout lesson has been updated.", "action": "View Course Details", "dest": "course", "unread": false}], "instructor": [{"id": "i1", "icon": "check", "time": "Nov 1, 2026 · 9:00 AM", "title": "Your course was approved", "body": "Complete C# Programming · Review the approval status in your course workspace.", "action": "View Course Review Status", "dest": "review", "unread": true}, {"id": "i2", "icon": "clipboard", "time": "Oct 31, 2026 · 2:30 PM", "title": "Your course needs changes", "body": "ASP.NET Core Web Development was not approved. Review the feedback before resubmitting.", "action": "View Course Review Status", "dest": "review", "unread": true}, {"id": "i3", "icon": "user", "time": "Oct 30, 2026 · 10:00 AM", "title": "A new student enrolled", "body": "Complete C# Programming has a new enrollment. View your course’s student list.", "action": "View Course Students", "dest": "students", "unread": false}], "admin": [{"id": "a1", "icon": "book-check", "time": "Nov 1, 2026 · 9:10 AM", "title": "A course was submitted for review", "body": "SQL Server Essentials by Mohamed Hassan is awaiting a course review.", "action": "Review Course", "dest": "review", "unread": true}, {"id": "a2", "icon": "receipt", "time": "Oct 31, 2026 · 4:00 PM", "title": "A refund request needs review", "body": "A request for HTML & CSS Fundamentals is available in its payment record.", "action": "View Payment Record", "dest": "payment-record", "unread": true}]};
+    const state = new Map();
+    for (const key of ['student','instructor','admin']) state.set(key, { items: seed[key].map(x=>({...x})), filter:key === 'student'?'unread':'all' });
+    const $=(selector,root=document)=>root.querySelector(selector);
+    const $$=(selector,root=document)=>Array.from(root.querySelectorAll(selector));
+    const entities={
+      course:'Course Details',learning:'My Learning',certificate:'My Certificates',payment:'Payment Details',
+      review:'Course Review Status',students:'Course Students', 'payment-record':'Payment Record',dashboard:'Student Dashboard'
+    };
+    const glyphs = {"book": ["fa-solid fa-book-open", "<path d=\"M12 6.2C9 4.5 5.8 4.3 2 5.2v13.4c4.2-.9 7.5-.6 10 1.3m0-13.7c3-1.7 6.2-1.9 10-1v13.4c-4.2-.9-7.5-.6-10 1.3m0-13.7V20\"/>"], "clipboard": ["fa-regular fa-clipboard", "<rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"2\"/><rect x=\"9\" y=\"2\" width=\"6\" height=\"4\" rx=\"1\"/><path d=\"m9 13 2 2 4-4\"/>"], "award": ["fa-solid fa-award", "<circle cx=\"12\" cy=\"8\" r=\"5\"/><path d=\"m9 12-1 9 4-2 4 2-1-9\"/>"], "receipt": ["fa-solid fa-receipt", "<path d=\"M5 3h14v18l-3-2-4 2-4-2-3 2z\"/><path d=\"M8 8h8M8 12h8M8 16h4\"/>"], "check": ["fa-regular fa-circle-check", "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m8 12 3 3 5-6\"/>"], "user": ["fa-solid fa-user-plus", "<circle cx=\"10\" cy=\"8\" r=\"3.3\"/><path d=\"M3.5 20v-2.5C3.5 14 6 13 10 13s6.5 1 6.5 4.5V20M19 10v6m-3-3h6\"/>"], "book-check": ["fa-solid fa-book-open-reader", "<path d=\"M12 6.2C9 4.5 5.8 4.3 2 5.2v13.4c4.2-.9 7.5-.6 10 1.3m0-13.7c3-1.7 6.2-1.9 10-1v13.4c-4.2-.9-7.5-.6-10 1.3m0-13.7V20m4-10 2 2 4-4\"/>"], "bell-off": ["fa-regular fa-bell-slash", "<path d=\"M8 4a6 6 0 0 1 10 5v4l2 3H6l1-2M9 20h6M3 3l18 18\"/>"], "cloud-off": ["fa-solid fa-cloud-slash", "<path d=\"M8 7a6 6 0 0 1 10 4 5 5 0 0 1 1 9H6a5 5 0 0 1-1-10M3 3l18 18\"/>"], "info": ["fa-solid fa-circle-info", "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v5M12 7.4h.01\"/>"], "spinner": ["fa-solid fa-spinner fa-spin", "<path d=\"M20 12a8 8 0 1 1-8-8\"/>"]};
+    const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const svgIcon=(name,size=20)=>{ const [klass,path]=glyphs[name]||glyphs.book; return `<span class="eh-icon" aria-hidden="true" style="--icon-size:${size}px"><i class="${klass}"></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${path}</svg></span>`; };
+    function toast(message) {
+      const el=$('#feedback-toast'); $('#feedback-message').textContent=message; el.hidden=false;
+      $('#feedback-close').focus({preventScroll:true});
+    }
+    $('#feedback-close').addEventListener('click',()=>{ $('#feedback-toast').hidden=true; });
+    function rowHtml(item){
+      return `<article class="notice-row ${item.unread?'is-unread':'is-read'}" data-note-id="${esc(item.id)}">
+        <div class="notice-symbol">${svgIcon(item.icon)}</div><div class="notice-body">
+          <div class="notice-meta">${item.unread?'<span class="unread-dot" aria-hidden="true"></span>':''}<span>${item.unread?'Unread':'Read'} · ${esc(item.time)}</span></div>
+          <h3 class="notice-title">${esc(item.title)}</h3><p class="notice-text">${esc(item.body)}</p>
+          <div class="notice-actions"><button type="button" class="text-action dest-action" data-dest="${esc(item.dest)}">${esc(item.action)} <span aria-hidden="true">→</span></button>
+          ${item.unread?`<button type="button" class="text-action mark-one" data-note-id="${esc(item.id)}">Mark as read</button>`:''}</div></div></article>`;
+    }
+    function updatePanel(key){
+      const panel=$(`[data-panel="${key}"]`);if(!panel||!state.has(key))return;
+      const data=state.get(key);const count=data.items.filter(x=>x.unread).length;
+      $('.count-all',panel).textContent=`(${data.items.length})`;
+      $('.count-unread',panel).textContent=`(${count})`;
+      $$('.notification-tab',panel).forEach(tab=>{const active=tab.dataset.filter===data.filter;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));});
+      const summary=$('.panel-summary',panel);
+      summary.textContent=key==='student' ? `${count} unread notification${count===1?'':'s'}`:'Most recent first';
+      const all=$('.mark-all',panel);if(all)all.hidden=count===0;
+      const display=data.filter==='unread'?data.items.filter(x=>x.unread):data.items;
+      $('.notices-list',panel).innerHTML=display.length?display.map(rowHtml).join(''):'<div class="panel-empty-inline">No unread notifications to show.</div>';
+      $('#status-live').textContent=`${key} notifications updated: ${count} unread`;
+    }
+    document.addEventListener('click',event=>{
+      const button=event.target.closest('button');if(!button)return;
+      const panel=button.closest('.notification-panel');
+      if(button.matches('.dest-action')){
+        const label=entities[button.dataset.dest]||'this page';
+        toast(`${label} is not connected in this states demo. No navigation or account changes were made.`);return;
+      }
+      if(button.matches('.notification-tab')&&panel&&state.has(panel.dataset.panel)){
+        const role=panel.dataset.panel;state.get(role).filter=button.dataset.filter;updatePanel(role);return;
+      }
+      if(button.matches('.mark-one')&&panel&&state.has(panel.dataset.panel)){
+        const role=panel.dataset.panel,note=state.get(role).items.find(x=>x.id===button.dataset.noteId);
+        if(note)note.unread=false;updatePanel(role);return;
+      }
+      if(button.matches('.mark-all')&&panel&&state.has(panel.dataset.panel)){
+        const role=panel.dataset.panel;state.get(role).items.forEach(x=>x.unread=false);updatePanel(role);return;
+      }
+      if(button.matches('.retry-btn')&&panel){
+        const contents=$('.error-state',panel);contents.innerHTML=`<div class="big-outcome">${svgIcon('spinner',36)}</div><h3>Loading your notifications…</h3><p>Demonstrating a retry with sample data. No server request is sent.</p>`;
+        panel.setAttribute('aria-busy','true');
+        setTimeout(()=>{
+          panel.removeAttribute('aria-busy');
+          const body=$('.error-state',panel);if(!body)return;
+          body.className='retry-results';
+          body.innerHTML=`<div class="retry-banner">Sample notifications restored · This is a local demonstration.</div>${seed.student.filter(x=>x.unread).map(rowHtml).join('')}`;
+          toast('The retry demonstration loaded sample notifications only; no network request was made.');
+        },650);
+      }
+    });
+    // No network, backend calls, localStorage or sessionStorage: state resets on reload.
+    // Render all 6 grounded student notifications only when the All tab is selected.
+    const updateIconMode = () => {
+      const loaded = document.fonts && Array.from(document.fonts).some(face => /Font Awesome 6 Free/i.test(face.family) && face.status === 'loaded');
+      document.documentElement.classList.toggle('fa-ready', !!loaded);
+    };
+    updateIconMode();
+    window.addEventListener('load', updateIconMode, { once:true });
+    document.fonts?.ready?.then(updateIconMode);
+  })();
+</script>
+</body></html>

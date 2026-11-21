@@ -1,0 +1,80 @@
+/* EduHub — Payments — Figma desktop 26:86895, tablet 26:87100, mobile 26:87268 */
+/* 01 / Route and real-data boundary */
+[hidden]{display:none!important}
+.payments-body{padding:32px;display:flex;flex-direction:column;gap:24px;min-width:0}
+.payments-body :where(h1,h2,h3,p){margin:0}
+.page-intro{height:65px;display:flex;flex-direction:column;gap:8px}.page-intro h1{font-size:28px;line-height:1.3;font-weight:700;letter-spacing:-.5px}.page-intro p{font-size:14px;color:var(--ed-muted);line-height:1.5}
+.payment-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;min-height:123px}
+.payment-metric{min-width:0;background:#fff;border:1px solid var(--ed-border);border-radius:12px;padding:16px;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;gap:8px}
+.payment-metric>strong{font-size:26px;font-weight:700;line-height:1.1;letter-spacing:-.3px}.payment-metric>p{color:var(--ed-muted);font-size:11px;line-height:1.5}
+.payment-badge{display:inline-block;max-width:100%;font-size:12px;line-height:1.35;font-weight:500;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.badge-completed{background:#f0fdf4;color:#15803d}.badge-pending{background:#fffbeb;color:#92400e}.badge-failed{background:#fef2f2;color:#b91c1c}.badge-refunded{background:#eff6ff;color:#2563eb}
+.demo-note{display:flex;align-items:flex-start;gap:12px;padding:16px;border-radius:8px;background:var(--ed-soft);color:#2563eb;min-height:76px;font-size:13px;line-height:1.5}.demo-note>i{font-size:18px;margin-top:2px}.demo-note strong{font-weight:600}.demo-note p{margin-top:4px}
+/* 02 / List filtering and desktop table */
+.payments-panel{border:1px solid var(--ed-border);border-radius:12px;background:#fff;padding:24px;min-height:843px;box-shadow:0 2px 8px #0f172a05;min-width:0;display:flex;flex-direction:column;gap:16px}
+.panel-heading{display:flex;flex-direction:column;gap:8px}.panel-heading h2{font-size:18px;line-height:1.3;font-weight:700}.panel-heading p{font-size:12px;line-height:1.5;color:var(--ed-muted)}
+.payment-filters{margin-top:8px;display:grid;grid-template-columns:minmax(0,1fr) 180px 180px;column-gap:16px;align-items:end}
+.filter-block{display:flex;flex-direction:column;gap:8px;min-width:0}.filter-block label{font-size:12px;font-weight:500;line-height:1.5}.field-search{height:44px;display:flex;align-items:center;gap:8px;background:var(--ed-bg);border:1px solid var(--ed-border);padding:0 12px;border-radius:8px;color:var(--ed-muted)}
+.field-search:focus-within{border-color:var(--ed-blue);box-shadow:0 0 0 3px #2563eb18}.field-search>i{font-size:14px;flex:none}.field-search input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:var(--ed-ink);font-size:13px}.field-search input::placeholder{color:var(--ed-muted)}
+.payment-filters select{height:44px;border:1px solid var(--ed-border);border-radius:8px;font-size:13px;color:var(--ed-ink);padding-right:30px;background-color:white}.payment-filters select:focus{border-color:var(--ed-blue);box-shadow:0 0 0 3px #2563eb1a}.payments-body :where(button,select,input):focus-visible,.payment-dialog :where(button,input):focus-visible,.date-dialog :where(button,input):focus-visible{outline:2px solid var(--ed-blue);outline-offset:3px}
+.filter-context{font-size:12px;color:var(--ed-muted)}
+.payment-table-header,.payment-item{display:grid;grid-template-columns:minmax(0,12%) minmax(0,12%) minmax(0,28.5%) minmax(0,10%) minmax(0,7%) minmax(0,8%) minmax(0,9%) minmax(0,13.5%);align-items:center;min-width:0}
+.payment-table-header{background:var(--ed-bg);min-height:41px;padding:0 12px;color:var(--ed-muted);font-size:11px;font-weight:500;line-height:1.5}.payment-table-header span{min-width:0}
+.payment-item{min-height:88px;padding:12px;border-bottom:1px solid var(--ed-border);font-size:13px;line-height:1.5}.payment-item:nth-child(3),.payment-item:nth-child(4),.payment-item:nth-child(6){min-height:92px}.payment-item>:where(div){min-width:0}
+.cell-id strong,.cell-amount{font-size:12px;font-weight:600}.cell-student,.cell-course{font-size:13px}.cell-date,.cell-method{font-size:12px;color:var(--ed-muted)}
+.cell-status{display:flex;align-items:center}.cell-actions{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.payment-link{background:transparent;border:0;text-align:left;padding:1px 0;color:var(--ed-blue);font-size:12px;font-weight:500;border-radius:3px;line-height:1.45}.payment-link:hover{text-decoration:underline;color:var(--ed-blue-dark)}.payment-link:active{transform:translateY(1px)}.eligibility-note{font-size:11px;color:var(--ed-muted);line-height:1.45;max-width:130px}
+.mobile-field-label,.mobile-status-label{display:none}
+/* 03 / Pagination, footnote and no data */
+.pagination-row{min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:auto}.pagination-row p{font-size:12px;color:var(--ed-muted)}.pagination-nav{display:flex;align-items:center;gap:12px}.pagination-arrow{width:32px;height:32px;display:grid;place-items:center;border:0;border-radius:8px;color:var(--ed-muted);background:transparent}.pagination-arrow:hover:not(:disabled){background:var(--ed-soft);color:var(--ed-blue)}.pagination-arrow:active:not(:disabled){transform:translateY(1px)}.pagination-arrow:disabled{opacity:.45}.page-indicator{display:grid;place-items:center;min-height:36px;width:36px;border-radius:8px;background:var(--ed-soft);color:var(--ed-blue);font-size:13px;font-weight:600}
+.empty-results,.unavailable-page{display:flex;min-height:340px;align-items:center;justify-content:center;gap:12px;flex-direction:column;padding:20px;text-align:center}.empty-results>i,.unavailable-page>i{font-size:30px;color:var(--ed-blue)}.empty-results strong,.unavailable-page strong{font-size:17px}.empty-results p,.unavailable-page p{font-size:13px;color:var(--ed-muted);max-width:410px}.refund-footnote{font-size:12px;color:var(--ed-muted);line-height:1.5}.admin-footer{display:flex;flex-direction:column;gap:5px;justify-content:flex-start;min-height:56px;color:var(--ed-muted);font-size:11px;line-height:1.5}
+/* 04 / Accessible demo details, refund and date-range dialogs */
+.dialog-backdrop{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:18px;background:#0f172a87;overflow:auto}.payment-dialog,.date-dialog{background:white;border:1px solid var(--ed-border);border-radius:14px;width:min(508px,100%);max-height:calc(100vh - 36px);overflow-y:auto;padding:28px;box-shadow:0 26px 70px #0f172a36}.date-dialog{width:min(480px,100%)}
+.dialog-top{display:flex;align-items:start;justify-content:space-between;gap:12px}.dialog-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--ed-soft);color:var(--ed-blue);font-size:22px}.dialog-icon.refund-icon{background:#fffbeb;color:#92400e}.dialog-close{display:grid;place-items:center;width:32px;height:32px;border:0;background:transparent;color:var(--ed-muted);border-radius:7px}.dialog-close:hover{background:var(--ed-soft);color:var(--ed-blue)}
+.payment-dialog h2,.date-dialog h2{font-size:23px;font-weight:700;line-height:1.3;margin:20px 0 12px}.payment-dialog>p,.date-dialog>p{font-size:13px;color:var(--ed-muted);line-height:1.6;margin:0 0 16px}
+.payment-dialog-facts{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px 14px;background:var(--ed-bg);border:1px solid var(--ed-border);border-radius:9px;padding:16px;font-size:13px;line-height:1.5;margin:0}.payment-dialog-facts dt,.refund-extra dt{color:var(--ed-muted)}.payment-dialog-facts dd,.refund-extra dd{font-weight:600;overflow-wrap:anywhere;margin:0}
+.refund-extra{border:1px solid var(--ed-border);border-radius:9px;margin-top:16px;padding:16px}.refund-extra>strong{font-size:14px}.refund-extra>p{font-size:12px;color:var(--ed-muted);line-height:1.6;margin:6px 0 12px}.refund-extra>dl{display:grid;grid-template-columns:110px 1fr;gap:8px 10px;font-size:12px}.refund-extra .refund-warning{background:#fffbeb;padding:12px;color:#92400e;border-radius:8px;margin:16px 0 0}
+.dialog-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:12px;margin-top:20px}.dialog-actions>.ed-button{min-width:110px}.dialog-error{color:#b91c1c!important;font-size:12px!important;margin-top:10px!important}
+.date-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.date-fields label{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600}.date-fields input{border:1px solid var(--ed-border);background:white;border-radius:8px;padding:10px 12px;min-width:0;height:44px;font-size:13px}
+/* 05 / Tablet: 76px icon rail, 2 columns of payment record cards */
+@media(max-width:1199.98px){
+ .payments-body{padding:32px;gap:24px}.payment-metrics{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.payment-metric{padding:16px}
+ .demo-note{min-height:96px}.payments-panel{min-height:1248px}.payment-filters{grid-template-columns:minmax(0,1fr) 128px 128px;gap:12px}
+ .payment-table-header{display:none}.payments-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}.payment-item,.payment-item:nth-child(3),.payment-item:nth-child(4),.payment-item:nth-child(6){display:flex;align-items:stretch;flex-direction:column;gap:10px;min-height:309px;padding:16px;border:1px solid var(--ed-border);border-radius:9px}.payment-item:nth-child(1),.payment-item:nth-child(2){min-height:336px}
+ .payment-item .cell-id{margin-bottom:5px}.payment-item :is(.cell-id strong,.cell-student,.cell-course,.cell-date,.cell-amount,.cell-method){font-size:12px;line-height:1.5;font-weight:400;color:var(--ed-ink)}.payment-item .cell-id strong{font-weight:600}
+ .mobile-field-label{display:inline}.cell-status{justify-content:space-between;margin-top:4px}.mobile-status-label{display:inline;color:var(--ed-muted);font-size:12px}.cell-actions{gap:15px;margin-top:auto;min-height:70px;justify-content:space-between}.cell-actions .eligibility-note{max-width:none;display:block}
+ .pagination-row{margin-top:auto}
+}
+/* 06 / Phone: Figma 390px compact header and 6 stacked 326px record cards */
+@media(max-width:640px){
+ .payments-body{padding:16px;gap:24px}.page-intro{min-height:86px;height:86px}.page-intro h1{font-size:25px;line-height:1.3}.page-intro p{font-size:13px;line-height:1.5}
+ .payment-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-height:258px}.payment-metric{min-height:123px;padding:16px;gap:8px}.payment-metric strong{font-size:25px}.payment-metric p{font-size:11px}
+ .demo-note{min-height:136px;padding:16px;font-size:12px}.demo-note>i{font-size:17px}
+ .payments-panel{padding:16px;min-height:2271px;gap:16px}.panel-heading h2{font-size:18px}.panel-heading p{font-size:11px}
+ .payment-filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:8px}.filter-search{grid-column:1/-1}.filter-block label{font-size:12px}.field-search,.payment-filters select{height:44px;font-size:12px}.field-search input{font-size:12px}.filter-context{font-size:11px}
+ .payments-list{display:flex;flex-direction:column;gap:0}.payment-item,.payment-item:nth-child(3),.payment-item:nth-child(4),.payment-item:nth-child(6){height:317px;min-height:317px;padding:16px 0;gap:10px;border:0;border-bottom:1px solid var(--ed-border);border-radius:0}.payment-item:first-child{height:344px;min-height:344px}.payment-item:nth-child(2){height:317px;min-height:317px}.payment-item .cell-id{margin-bottom:5px}.cell-id strong{font-size:12px}.cell-actions{min-height:76px;gap:17px}.cell-status{margin-top:4px}.eligibility-note{font-size:11px}
+ .pagination-row{min-height:59px;align-items:center}.pagination-row p{max-width:190px;font-size:11px}.pagination-nav{gap:10px}.page-indicator{width:32px;height:34px;min-height:34px}
+ .refund-footnote{font-size:11px;line-height:1.5;min-height:42px}.admin-footer{font-size:10px;min-height:56px}.payment-dialog,.date-dialog{padding:22px}.payment-dialog-facts{grid-template-columns:112px minmax(0,1fr)}.refund-extra>dl{grid-template-columns:90px minmax(0,1fr)}
+}
+@media(max-width:350px){.payments-body{padding:12px}.payment-metrics{gap:8px}.payment-metric{padding:12px}.payment-dialog-facts{grid-template-columns:100px minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+/* Offline SVG icons use their Font Awesome equivalent em box, not intrinsic SVG page width */
+.ed-fa-icon{display:inline-block;width:1em;height:1em;vertical-align:-.125em;fill:currentColor;flex:none;max-width:none}
+.side-link .ed-fa-icon{width:20px;height:20px}.brand .brand-icon{width:1em;height:1em}.sidebar-identity>.ed-fa-icon{height:22px;width:22px}.demo-note>.ed-fa-icon{width:18px;height:18px;margin-top:2px}.header-icon>.ed-fa-icon{width:1em;height:1em}.field-search>.ed-fa-icon{width:14px;height:14px}.dialog-icon>.ed-fa-icon{width:22px;height:22px}.pagination-arrow>.ed-fa-icon{width:12px;height:12px}
+.topbar-crumb{display:none}
+@media(min-width:641px){.admin-topbar{height:76px;min-height:76px}}
+@media(max-width:640px){.admin-topbar{height:105px;min-height:105px;flex-wrap:wrap;align-content:center;row-gap:8px;padding:16px;justify-content:space-between}.topbar-crumb{display:block;width:100%;flex-basis:100%;margin:0;color:var(--ed-muted);font-size:11px;line-height:17px}.account-trigger>.ed-fa-icon{display:none}}
+/* Exact Figma text stacks and 65px filter blocks; override earlier shared panel margins */
+.payments-panel .panel-heading h2{margin-bottom:0}
+.payment-filters .filter-block{gap:6px}
+.payment-filters .filter-block label{height:15px;line-height:15px}
+@media(max-width:640px){.mobile-brand .brand-word{font-size:23px}.mobile-brand .brand-icon{font-size:22px}}
+/* Final Figma-measured heights and column rhythm */
+@media(min-width:1200px){.payments-panel{padding-bottom:22px}}
+@media(min-width:641px) and (max-width:1199.98px){
+ .payments-list{row-gap:16px}
+ .payments-list .payment-item{gap:9px}
+ .payments-list .payment-item:not(:nth-child(-n+2)){height:309px;min-height:309px}
+ .payments-panel{padding-bottom:21px}
+}
+@media(max-width:640px){.refund-footnote{min-height:46px}}
+@media(max-width:640px){.refund-footnote{margin-bottom:4px!important}}

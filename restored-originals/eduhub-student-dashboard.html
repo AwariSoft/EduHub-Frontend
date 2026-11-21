@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#f8fafc">
+ <meta name="description" content="EduHub Student Dashboard: course progress, learning, and discovery.">
+ <title>Student Dashboard | EduHub</title>
+ <!-- Typography & third-party UI dependencies -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+ <style>
+ /* 1. EduHub design tokens (verified from desktop / tablet / mobile Figma frames) */
+ :root{--ed-primary:#2563eb;--ed-primary-hover:#1d4ed8;--ed-ink:#0f172a;--ed-body:#334155;--ed-muted:#64748b;--ed-border:#e2e8f0;--ed-surface:#fff;--ed-bg:#f8fafc;--ed-soft:#eff6ff;--ed-avatar:#dbeafe;--ed-success:#15803d;--sidebar-width:232px}
+ *,*::before,*::after{box-sizing:border-box}
+ html{scroll-behavior:smooth;scroll-padding-top:90px}
+ body{margin:0;font:14px/1.5 'Inter',system-ui,sans-serif;color:var(--ed-ink);background:var(--ed-bg);-webkit-font-smoothing:antialiased}
+ a{color:var(--ed-primary);text-decoration:none} a:hover{color:var(--ed-primary-hover)}
+ button,input{font:inherit} button{cursor:pointer} :focus-visible{outline:3px solid rgba(37,99,235,.5)!important;outline-offset:2px}
+ .min-w-0{min-width:0}.ed-muted{color:var(--ed-muted)}.ed-card{background:#fff;border:1px solid var(--ed-border);border-radius:12px;box-shadow:0 3px 7px rgba(15,23,42,.018)}
+ .ed-button-primary{background:var(--ed-primary);border:1px solid var(--ed-primary);color:#fff;font-size:13px;line-height:20px;font-weight:600;border-radius:8px;min-height:40px;transition:background .15s,box-shadow .15s,transform .15s}
+ .ed-button-primary:hover,.ed-button-primary:focus-visible{background:var(--ed-primary-hover);border-color:var(--ed-primary-hover);color:#fff;box-shadow:0 4px 12px #2563eb22}
+ .ed-button-primary:active{transform:translateY(1px)}.ed-button-primary:disabled{opacity:.6;cursor:not-allowed}
+ .brand{display:inline-flex;align-items:center;gap:8px;color:var(--ed-ink);font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;white-space:nowrap}
+ .brand:hover{color:var(--ed-ink)}.brand i{color:var(--ed-primary);font-size:28px;width:32px}.brand-blue{color:var(--ed-primary)}
+ /* 2. Desktop/tablet sidebar, exact Figma widths: 232px and 80px */
+ .app-sidebar{width:232px;position:fixed;z-index:1020;inset:0 auto 0 0;display:flex;flex-direction:column;padding:24px 20px;background:white;border-right:1px solid var(--ed-border);overflow-y:auto;scrollbar-width:thin}
+ .side-logo{margin-bottom:30px}.sidebar-workspace{font-size:10px;line-height:16px;font-weight:600;color:var(--ed-muted);margin-bottom:7px}
+ .side-nav{display:flex;flex-direction:column;gap:8px}.side-entry{height:44px;display:flex;align-items:center;gap:12px;color:var(--ed-muted);padding:0 12px;border-radius:8px;font-size:13px;white-space:nowrap;transition:background .15s,color .15s}
+ .side-entry i{width:20px;flex:0 0 20px;text-align:center;font-size:18px}.side-entry:hover{background:#f1f5f9;color:var(--ed-primary)}.side-entry.active{background:var(--ed-soft);color:var(--ed-primary);font-weight:600}
+ .sidebar-foot{margin-top:auto;padding-top:24px}.side-reminder{padding:16px;border-radius:12px;background:var(--ed-soft)}.side-reminder i{font-size:19px;color:var(--ed-primary)}.side-reminder strong{font-size:13px}.side-reminder p{font-size:12px;line-height:19px;color:var(--ed-muted);margin:8px 0 0}
+ .sidebar-collapse{padding:18px 0 0;color:var(--ed-muted);background:none;border:0;font-size:12px;display:flex;align-items:center;gap:12px}.sidebar-collapse:hover{color:var(--ed-primary)}
+ .workspace{margin-left:232px;min-height:100vh;display:flex;flex-direction:column;min-width:0;transition:margin-left .15s}
+ body.sidebar-collapsed{--sidebar-width:80px} body.sidebar-collapsed .app-sidebar{width:80px;padding-inline:16px} body.sidebar-collapsed .workspace{margin-left:80px} body.sidebar-collapsed .side-logo .brand span,body.sidebar-collapsed .sidebar-workspace,body.sidebar-collapsed .side-label,body.sidebar-collapsed .side-reminder{display:none} body.sidebar-collapsed .side-logo{margin-bottom:32px} body.sidebar-collapsed .side-entry{padding:0 12px}
+ /* 3. Topbar/search/account */
+ .app-header{height:72px;flex:0 0 72px;padding:16px 32px;background:#fff;border-bottom:1px solid var(--ed-border);display:flex;align-items:center;justify-content:space-between;gap:16px}
+ .search-box{width:340px;position:relative;max-width:100%;flex-shrink:1}.search-box i{position:absolute;top:50%;left:14px;transform:translateY(-50%);font-size:16px;color:var(--ed-muted);pointer-events:none}.search-box input{width:100%;height:40px;background:var(--ed-bg);border:1px solid var(--ed-border);border-radius:8px;padding:0 12px 0 40px;font-size:13px;color:var(--ed-ink)}.search-box input::placeholder{color:var(--ed-muted)}.search-box input:focus{outline:0;border-color:var(--ed-primary);box-shadow:0 0 0 3px #2563eb20}
+ .icon-button{position:relative;width:36px;height:40px;border:0;border-radius:8px;background:none;color:var(--ed-muted);display:inline-flex;align-items:center;justify-content:center;font-size:18px}.icon-button:hover{background:var(--ed-soft);color:var(--ed-primary)}.unread-pip{position:absolute;right:6px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--ed-primary)}
+ .avatar{flex:0 0 36px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--ed-avatar);color:var(--ed-primary);font-weight:600;font-size:12px}.account-title{font-size:13px;font-weight:600;line-height:16px}.account-subtitle{color:var(--ed-muted);font-size:11px;line-height:16px}
+ .account-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:1060;min-width:196px;padding:6px;border:1px solid var(--ed-border);border-radius:10px;background:#fff;box-shadow:0 10px 25px #0f172a1c}.account-menu[hidden]{display:none!important}.account-menu a{display:block;padding:9px 12px;border-radius:6px;color:var(--ed-body);font-size:13px}.account-menu a:hover{background:var(--ed-soft);color:var(--ed-primary)}
+ .mobile-header,.mobile-bottom-nav{display:none}
+ /* 4. Main content and heading */
+ .dashboard-main{width:100%;padding:24px 32px 0;flex:1;min-width:0}.welcome-head{display:flex;align-items:center;justify-content:space-between;gap:14px}.welcome-title{font-size:28px;line-height:35px;letter-spacing:-.7px;font-weight:700;margin:0 0 4px}.welcome-description{font-size:14px;line-height:22px;color:var(--ed-muted);margin:0}
+ .welcome-badge{display:flex;align-items:center;gap:10px;color:var(--ed-primary);background:var(--ed-soft);border-radius:8px;padding:13px 12px;font-size:12px}.welcome-badge i{font-size:20px}
+ .mobile-breadcrumb{display:none}
+ .metric-grid{margin-top:24px}.metric-card{min-height:80px;padding:14px 16px;display:flex;align-items:center;gap:12px}.metric-icon{height:40px;width:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:var(--ed-soft);color:var(--ed-primary);font-size:18px;flex:0 0 40px}.metric-value{font-size:26px;font-weight:700;line-height:29px;margin:0}.metric-label{font-size:12px;line-height:16px;margin:4px 0 0;color:var(--ed-muted)}
+ .dashboard-section{margin-top:24px}.section-heading{font-size:19px;line-height:24px;font-weight:700;letter-spacing:-.3px;margin:0}.section-description{color:var(--ed-muted);font-size:13px;line-height:21px;margin:2px 0 12px}.section-link{font-size:12px;font-weight:600;white-space:nowrap}.section-link:hover{text-decoration:underline}
+ /* 5. Continue Learning */
+ .course-progress-card{padding:12px;min-height:158px}.course-title{font-size:14px;line-height:19px;font-weight:600;letter-spacing:-.1px;overflow-wrap:anywhere}.course-instructor{font-size:12px;line-height:17px;color:var(--ed-muted)}.continue-thumb{width:80px;height:84px;object-fit:cover;border-radius:8px;flex-shrink:0}.course-progress-body{min-width:0;min-height:84px;display:flex;flex-direction:column;justify-content:space-between}
+ .small-progress-label{font-size:11px;line-height:18px;color:var(--ed-muted)}.small-progress-label strong{font-size:12px;color:var(--ed-primary);font-weight:600}
+ .ed-progress{height:4px;background:#e2e8f0;border-radius:99px;overflow:hidden}.ed-progress .progress-bar{background:var(--ed-primary);border-radius:99px}.ed-progress .progress-bar.bg-success{background:var(--ed-success)!important}.ed-progress .progress-bar.bg-secondary-subtle{background:#e2e8f0!important}
+ .course-progress-card .ed-button-primary{height:32px;min-height:32px;padding:4px 8px}
+ .tablet-motivation,.tablet-explore-cta{display:none;background:var(--ed-soft);border-radius:12px;padding:24px}.tablet-motivation i,.tablet-explore-cta i{font-size:24px;color:var(--ed-primary)}.tablet-motivation h3,.tablet-explore-cta h3{font-size:17px;font-weight:700;line-height:24px;margin:12px 0}.tablet-motivation h3{color:var(--ed-primary)}.tablet-motivation p,.tablet-explore-cta p{font-size:13px;color:var(--ed-muted);margin:0;line-height:21px}
+ /* 6. Explore Courses & My Learning (desktop split 428:692) */
+ .lower-grid{display:grid;grid-template-columns:minmax(0,428fr) minmax(0,692fr);gap:24px;align-items:start;margin-top:24px}.explore-grid{row-gap:12px}
+ .explore-course-card{padding:12px;min-height:120px}.explore-thumb{height:96px;width:90px;min-width:90px;object-fit:cover;border-radius:8px}.explore-course-info{min-height:96px}.course-rating{font-size:11px;color:var(--ed-muted)}.course-rating i{color:#c2410c}.course-price{font-size:15px;line-height:20px;white-space:nowrap}.explore-bottom .ed-button-primary{height:32px;min-height:32px;padding:4px 10px}
+ .learning-shell{overflow:hidden}.learning-tabs{display:flex;align-items:center;gap:24px;padding:0 16px;border-bottom:1px solid var(--ed-border);min-height:48px;overflow-x:auto}.learning-tab{align-self:stretch;display:flex;align-items:center;white-space:nowrap;border:0;border-bottom:2px solid transparent;color:var(--ed-muted);background:none;font-size:12px;padding:0;font-weight:400}.learning-tab:hover{color:var(--ed-primary)}.learning-tab.active{border-bottom-color:var(--ed-primary);color:var(--ed-primary);font-weight:600}
+ .learning-head{height:32px;display:grid;grid-template-columns:minmax(0,1fr) 86px 94px 20px;gap:12px;align-items:center;background:var(--ed-bg);padding:0 16px;font-size:10px;color:var(--ed-muted)}.learning-head span:nth-child(2){text-align:left}
+ .learning-row{display:grid;grid-template-columns:minmax(0,1fr) 86px 94px 20px;gap:12px;align-items:center;padding:8px 16px;min-height:56px;border-top:1px solid var(--ed-border);background:#fff}
+ .learning-head + .learning-row{border-top:0}.learning-row:hover{background:#f8fafc}.learning-course{display:flex;align-items:center;gap:12px;min-width:0}.learning-thumb{width:48px;height:36px;object-fit:cover;border-radius:7px;flex-shrink:0}.learning-title{font-size:12px;font-weight:600;line-height:16px;overflow-wrap:anywhere}.learning-instructor{color:var(--ed-muted);font-size:11px;line-height:15px}.learning-progress{font-size:11px;color:var(--ed-muted);line-height:16px}.learning-progress .ed-progress{margin-top:4px}.status-pill{background:var(--ed-soft);border-radius:100px;padding:4px 8px;font-size:11px;color:var(--ed-primary);line-height:14px;white-space:nowrap;display:inline-block}.status-completed{background:#f0fdf4;color:#15803d}.status-started{background:#f8fafc;color:var(--ed-muted)}
+ .learning-arrow{color:var(--ed-muted);background:transparent;border:0;padding:0;font-size:14px}.learning-arrow:hover{color:var(--ed-primary)}.learning-course .learning-arrow{display:none}.learning-empty{display:none;padding:28px;text-align:center;font-size:13px;color:var(--ed-muted)}
+ /* 7. App footer */
+ .app-footer{padding:18px 32px 22px;color:var(--ed-muted);font-size:11px;display:flex;align-items:center;justify-content:space-between;gap:12px}.app-footer a{color:var(--ed-muted)}.app-footer a:hover{color:var(--ed-primary)}
+ /* 8. Mobile drawer, toast and modal */
+ .drawer-mask{position:fixed;inset:0;background:#0f172a70;z-index:1050}.mobile-drawer{position:fixed;z-index:1051;top:0;bottom:0;left:0;width:min(310px,88vw);background:white;box-shadow:12px 0 35px #0f172a2e;padding:20px;overflow:auto}.mobile-drawer[hidden],.drawer-mask[hidden]{display:none!important}.mobile-drawer .side-entry{font-size:13px}
+ .ed-toast{position:fixed;z-index:1080;right:16px;bottom:92px;width:min(360px,calc(100vw - 32px));padding:12px 16px;border:1px solid var(--ed-border);border-left:4px solid var(--ed-primary);border-radius:10px;background:white;box-shadow:0 12px 30px #0f172a22;color:var(--ed-body);font-size:13px}.ed-toast[hidden]{display:none!important}
+ .modal-overlay{position:fixed;inset:0;background:#0f172aa6;z-index:1070;display:flex;align-items:center;justify-content:center;padding:16px}.modal-overlay[hidden]{display:none!important}.course-modal{background:white;width:min(460px,100%);border-radius:14px;border:1px solid var(--ed-border);padding:24px;box-shadow:0 25px 60px #0f172a35}.course-modal h2{font-size:23px;font-weight:700}.modal-caption{font-size:13px;color:var(--ed-muted)}
+ /* 9. Tablet Figma: 834px, icon rail, 2-column section cards, stacked learning table */
+ @media(min-width:768px) and (max-width:1199.98px){
+  .app-sidebar{width:80px;padding:24px 16px}.app-sidebar .brand span,.sidebar-workspace,.side-label,.side-reminder{display:none}.side-logo{margin-bottom:32px}.side-entry{padding:0 12px}.workspace{margin-left:80px}.dashboard-main{padding:24px 24px 0}
+  .welcome-title{font-size:25px;line-height:32px}.welcome-description{font-size:13px}.welcome-badge{display:none}.metric-grid{margin-top:24px}.metric-card{min-height:72px}.course-progress-card{min-height:141px;padding:12px}.continue-thumb{width:72px;height:76px}
+  .tablet-motivation,.tablet-explore-cta{display:flex;flex-direction:column;justify-content:center;min-height:141px}.tablet-motivation{min-height:141px}
+  .lower-grid{display:flex;flex-direction:column;gap:24px}.explore-column,.learning-column{width:100%}.explore-thumb{height:auto;min-width:0;width:100%;aspect-ratio:2.3/1;object-fit:cover}.explore-course-card{min-height:0;display:flex!important;flex-direction:column!important}.explore-course-info{padding-top:8px;min-height:104px}.explore-bottom .ed-button-primary{height:40px;min-height:40px}
+  .tablet-explore-cta{min-height:100%;padding:24px}.tablet-explore-cta h3{font-size:20px}.tablet-explore-cta .ed-button-primary{height:40px;min-height:40px}
+  .learning-row{min-height:51px}.app-footer{padding:20px 24px}
+ }
+ /* 10. Mobile Figma: 390px, full-width cards, bottom navigation */
+ @media(max-width:767.98px){
+  html{scroll-padding-top:145px}.app-sidebar{display:none}.workspace{margin-left:0}.app-header{display:none}.mobile-header{display:block;position:relative;z-index:1010;height:120px;background:white;border-bottom:1px solid var(--ed-border);padding:16px}.mobile-header-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.mobile-header .brand{font-size:28px}.mobile-header .brand i{width:32px}.mobile-header .icon-button{width:30px;height:36px}.mobile-header .search-box{margin-top:12px;width:100%}
+  .dashboard-main{padding:18px 16px 0}.mobile-breadcrumb{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--ed-muted);font-size:12px;min-height:22px;margin-bottom:20px}.mobile-breadcrumb strong{color:var(--ed-primary);font-weight:600}
+  .welcome-title{font-size:25px;line-height:31px;letter-spacing:-.6px;margin-bottom:4px}.welcome-description{font-size:13px;line-height:20px}.welcome-badge{display:none}.metric-grid{margin-top:28px}.metric-card{min-height:100px;padding:14px;display:flex;flex-direction:column-reverse;align-items:stretch;justify-content:center;gap:2px;position:relative}.metric-icon{width:20px;height:20px;position:absolute;right:14px;top:31px;background:none;font-size:17px}.metric-value{font-size:27px;line-height:32px}.metric-label{font-size:12px;line-height:16px;margin-top:4px}
+  .dashboard-section{margin-top:26px}.section-heading{font-size:19px}.section-link{display:none}.course-progress-card{min-height:157px;padding:11px}.continue-thumb{width:98px;height:78px}.course-progress-body{min-height:78px}.course-progress-card .ed-button-primary{min-height:42px;height:42px;margin-top:13px!important;font-size:14px}
+  .lower-grid{display:flex;flex-direction:column;gap:24px;margin-top:26px}.explore-column,.learning-column{width:100%}.explore-course-card{padding:11px;display:flex!important;flex-direction:column!important}.explore-thumb{height:auto;min-width:0;width:100%;aspect-ratio:2.5/1;object-fit:cover}.explore-course-info{min-height:100px;padding-top:9px}.course-rating{margin-top:5px!important}.explore-bottom .ed-button-primary{height:42px;min-height:42px;font-size:14px}.course-price{font-size:15px}
+  .learning-shell{border-radius:12px}.learning-tabs{gap:20px;padding:0 14px;min-height:45px}.learning-tab{font-size:12px}.learning-head{display:none}
+  .learning-row{display:grid;grid-template-columns:1fr auto;grid-template-areas:'info info' 'progress status';gap:12px 10px;min-height:106px;padding:14px;border-top:1px solid var(--ed-border)}.learning-course{grid-area:info}.learning-thumb{width:52px;height:46px}.learning-title{font-size:13px;line-height:18px}.learning-instructor{font-size:11px}.learning-progress{grid-area:progress;display:flex;flex-direction:row-reverse;align-items:center;gap:12px;min-width:0}.learning-progress .ed-progress{margin:0;flex-grow:1;height:4px}.learning-status{grid-area:status}.learning-course .learning-arrow{display:block;margin-left:auto}.desktop-arrow{display:none}
+  .app-footer{display:flex;justify-content:center;padding:20px 12px 84px;text-align:center;font-size:12px}.app-footer .help-link{display:none}
+  .mobile-bottom-nav{height:68px;display:flex;align-items:center;justify-content-around;position:fixed;z-index:1030;inset:auto 0 0;background:#fff;border-top:1px solid var(--ed-border);padding:7px 4px max(7px,env(safe-area-inset-bottom))}.bottom-nav-link{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:62px;color:var(--ed-muted);font-size:10px}.bottom-nav-link i{font-size:18px}.bottom-nav-link.active{color:var(--ed-primary)}.bottom-nav-link:hover{color:var(--ed-primary)}
+ }
+ @media(max-width:359.98px){.brand{font-size:24px!important}.brand i{font-size:24px!important;width:26px!important}.metric-card{padding:12px}.metric-label{font-size:11px}.mobile-header{padding-inline:12px}.dashboard-main{padding-inline:12px}.learning-tabs{gap:14px}.learning-tab{font-size:11px}.explore-bottom{flex-wrap:wrap}.explore-bottom .ed-button-primary{min-width:155px}}
+ @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+ </style>
+</head>
+<body>
+<!-- =================== Desktop & Tablet Sidebar =================== -->
+<aside class="app-sidebar" aria-label="Student workspace">
+ <a href="eduhub-homepage.html" class="brand side-logo" aria-label="EduHub Homepage"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a>
+ <span class="sidebar-workspace">STUDENT WORKSPACE</span>
+ <nav class="side-nav" aria-label="Student navigation"><a class="side-entry active" href="eduhub-student-dashboard.html"  aria-current=page title="Dashboard"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span class="side-label">Dashboard</span></a>
+<a class="side-entry " href="eduhub-explore-courses.html"   title="Explore Courses"><i class="fa-regular fa-compass" aria-hidden="true"></i><span class="side-label">Explore Courses</span></a>
+<a class="side-entry " href="#my-learning"   title="My Learning"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span class="side-label">My Learning</span></a>
+<a class="side-entry " href="#my-learning" data-pending="My Certificates"  title="My Certificates"><i class="fa-solid fa-award" aria-hidden="true"></i><span class="side-label">My Certificates</span></a>
+<a class="side-entry " href="eduhub-student-profile.html"   title="My Profile"><i class="fa-regular fa-user" aria-hidden="true"></i><span class="side-label">My Profile</span></a>
+<a class="side-entry " href="#" data-pending="Settings"  title="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i><span class="side-label">Settings</span></a>
+<a class="side-entry " href="#" data-pending="Log Out"  title="Log Out"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span class="side-label">Log Out</span></a></nav>
+ <div class="sidebar-foot">
+  <div class="side-reminder"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><div class="mt-2"><strong>A little every day.</strong><p>Big goals start with small steps. Make time to learn today.</p></div></div>
+  <button type="button" class="sidebar-collapse" id="sidebarToggle" aria-label="Collapse sidebar" aria-expanded="true"><i class="fa-solid fa-table-columns" aria-hidden="true"></i><span class="side-label">Collapse sidebar</span></button>
+ </div>
+</aside>
+<div class="workspace">
+ <!-- =================== Header =================== -->
+ <header class="app-header">
+  <label class="search-box"><span class="visually-hidden">Search for courses</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" class="course-search" placeholder="Search for courses..." autocomplete="off"></label>
+  <div class="d-flex align-items-center gap-3 ms-auto">
+    <a class="icon-button" href="eduhub-notification-states-and-roles.html" aria-label="Notifications (sample states)"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="unread-pip"></span></a><span class="vr my-1"></span>
+    <div class="position-relative"><button id="accountButton" class="d-flex align-items-center gap-2 p-0 border-0 bg-transparent text-start" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="accountMenu"><span class="avatar">WM</span><span class="d-none d-sm-block"><span class="account-title d-block">Warda Mahmoud</span><span class="account-subtitle d-block">Student</span></span><i class="fa-solid fa-chevron-down ms-2 ed-muted" aria-hidden="true"></i></button>
+      <nav class="account-menu" id="accountMenu" aria-label="Account options" hidden><a href="eduhub-student-profile.html">My Profile</a><a href="eduhub-edit-student-profile.html">Edit Profile</a><a href="eduhub-sign-in.html">Log In (Demo)</a></nav>
+    </div>
+  </div>
+ </header>
+ <!-- =================== Mobile Header =================== -->
+ <header class="mobile-header">
+   <div class="mobile-header-top"><div class="d-flex align-items-center gap-2 min-w-0"><button class="icon-button p-0" id="menuOpen" type="button" aria-label="Open menu" aria-controls="studentDrawer" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><a href="eduhub-homepage.html" class="brand" aria-label="EduHub Homepage"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Edu<span class="brand-blue">Hub</span></span></a></div><div class="d-flex align-items-center gap-2"><a href="eduhub-notification-states-and-roles.html" class="icon-button" aria-label="Notifications (sample states)"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="unread-pip"></span></a><a href="eduhub-student-profile.html" class="avatar" aria-label="Student profile">WM</a><button class="icon-button" type="button" aria-label="Account menu" id="mobileAccountToggle" aria-controls="mobileAccountMenu" aria-expanded="false"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></div></div>
+   <label class="search-box d-block"><span class="visually-hidden">Search for courses</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" class="course-search" placeholder="Search for courses..." autocomplete="off"></label>
+   <nav class="account-menu" id="mobileAccountMenu" aria-label="Mobile account options" hidden><a href="eduhub-student-profile.html">My Profile</a><a href="eduhub-edit-student-profile.html">Edit Profile</a><a href="eduhub-sign-in.html">Log In (Demo)</a></nav>
+ </header>
+ <!-- =================== Main Student Dashboard =================== -->
+ <main class="dashboard-main" id="main-content">
+  <div class="mobile-breadcrumb"><strong>Dashboard</strong><span>Warda Mahmoud · Student</span></div>
+  <div class="welcome-head"><div><h1 class="welcome-title">Welcome back, Warda! 👋</h1><p class="welcome-description">Continue your learning journey and achieve your goals.</p></div><div class="welcome-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Your future starts here</span></div></div>
+  <!-- Learning statistics -->
+  <section class="metric-grid" aria-label="Learning statistics"><div class="row g-3">
+   <div class="col-6 col-xl-3"><div class="ed-card metric-card"><div class="metric-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></div><div><p class="metric-value">6</p><p class="metric-label">Enrolled Courses</p></div></div></div>
+   <div class="col-6 col-xl-3"><div class="ed-card metric-card"><div class="metric-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></div><div><p class="metric-value">3</p><p class="metric-label">In Progress</p></div></div></div>
+   <div class="col-6 col-xl-3"><div class="ed-card metric-card"><div class="metric-icon"><i class="fa-regular fa-circle-check" aria-hidden="true"></i></div><div><p class="metric-value">2</p><p class="metric-label">Completed Courses</p></div></div></div>
+   <div class="col-6 col-xl-3"><div class="ed-card metric-card"><div class="metric-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div><div><p class="metric-value">2</p><p class="metric-label">Certificates Earned</p></div></div></div>
+  </div></section>
+  <!-- Continue Learning -->
+  <section class="dashboard-section" id="continue-learning" aria-labelledby="continue-heading"><div class="d-flex justify-content-between align-items-center mb-2"><h2 class="section-heading" id="continue-heading">Continue Learning</h2><a href="#my-learning" class="section-link">View my learning <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a></div>
+   <div class="row g-3" id="continueCards">
+<div class="col-12 col-md-6 col-xl-4 course-search-item" data-search="complete c# programming ahmed mohamed">
+ <article class="course-progress-card ed-card h-100 d-flex flex-column">
+  <div class="d-flex gap-3 align-items-start flex-grow-1">
+    <img class="continue-thumb" src="https://placehold.co/192x192/1E293B/FFFFFF/png?text=C%23" width="84" height="84" alt="Placeholder thumbnail for Complete C# Programming" loading="lazy">
+    <div class="course-progress-body flex-grow-1 min-w-0">
+      <h3 class="course-title mb-0">Complete C# Programming</h3>
+      <p class="course-instructor mb-1">Ahmed Mohamed</p>
+      <div class="d-flex justify-content-between align-items-center small-progress-label"><span>Your progress</span><strong>65%</strong></div>
+      <div class="progress ed-progress" role="progressbar" aria-label="Complete C# Programming progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65"><div class="progress-bar" style="width:65%"></div></div>
+    </div>
+  </div>
+  <button class="btn ed-button-primary w-100 mt-3 course-open" type="button" data-course="csharp" data-action="continue">Continue Learning</button>
+ </article>
+</div>
+
+<div class="col-12 col-md-6 col-xl-4 course-search-item" data-search="html &amp; css fundamentals sara ali">
+ <article class="course-progress-card ed-card h-100 d-flex flex-column">
+  <div class="d-flex gap-3 align-items-start flex-grow-1">
+    <img class="continue-thumb" src="https://placehold.co/192x192/DCE8EE/FFFFFF/png?text=HTML" width="84" height="84" alt="Placeholder thumbnail for HTML &amp; CSS Fundamentals" loading="lazy">
+    <div class="course-progress-body flex-grow-1 min-w-0">
+      <h3 class="course-title mb-0">HTML &amp; CSS Fundamentals</h3>
+      <p class="course-instructor mb-1">Sara Ali</p>
+      <div class="d-flex justify-content-between align-items-center small-progress-label"><span>Your progress</span><strong>40%</strong></div>
+      <div class="progress ed-progress" role="progressbar" aria-label="HTML &amp; CSS Fundamentals progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><div class="progress-bar" style="width:40%"></div></div>
+    </div>
+  </div>
+  <button class="btn ed-button-primary w-100 mt-3 course-open" type="button" data-course="html" data-action="continue">Continue Learning</button>
+ </article>
+</div>
+
+<div class="col-12 col-md-6 col-xl-4 course-search-item" data-search="sql server essentials mohamed hassan">
+ <article class="course-progress-card ed-card h-100 d-flex flex-column">
+  <div class="d-flex gap-3 align-items-start flex-grow-1">
+    <img class="continue-thumb" src="https://placehold.co/192x192/073B5B/FFFFFF/png?text=SQL" width="84" height="84" alt="Placeholder thumbnail for SQL Server Essentials" loading="lazy">
+    <div class="course-progress-body flex-grow-1 min-w-0">
+      <h3 class="course-title mb-0">SQL Server Essentials</h3>
+      <p class="course-instructor mb-1">Mohamed Hassan</p>
+      <div class="d-flex justify-content-between align-items-center small-progress-label"><span>Your progress</span><strong>80%</strong></div>
+      <div class="progress ed-progress" role="progressbar" aria-label="SQL Server Essentials progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><div class="progress-bar" style="width:80%"></div></div>
+    </div>
+  </div>
+  <button class="btn ed-button-primary w-100 mt-3 course-open" type="button" data-course="sql" data-action="continue">Continue Learning</button>
+ </article>
+</div>
+    <div class="col-md-6 d-none d-md-block d-xl-none"><div class="tablet-motivation h-100"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><h3>Every lesson is a step forward.</h3><p>Pick up right where you left off.</p></div></div>
+   </div>
+  </section>
+  <div class="lower-grid">
+   <!-- Explore Courses -->
+   <section class="explore-column" id="explore-courses" aria-labelledby="explore-heading"><h2 class="section-heading" id="explore-heading">Explore Courses</h2><p class="section-description">Discover new skills and expand your knowledge.</p>
+    <div class="row g-3 explore-grid" id="exploreCards">
+<div class="col-12 col-md-6 col-xl-12 course-search-item" data-search="javascript for beginners omar khaled">
+ <article class="explore-course-card ed-card h-100 d-flex flex-column flex-xl-row gap-2">
+   <img class="explore-thumb" src="https://placehold.co/640x256/172633/FFFFFF/png?text=JS" alt="Placeholder image for JavaScript for Beginners" width="640" height="256" loading="lazy">
+   <div class="explore-course-info flex-grow-1 d-flex flex-column min-w-0">
+     <h3 class="course-title mb-0">JavaScript for Beginners</h3>
+     <p class="course-instructor mb-1">Omar Khaled</p>
+     <p class="course-rating mb-0"><i class="fa-regular fa-star" aria-hidden="true"></i> <span>4.8 (1.2k)</span></p>
+     <div class="explore-bottom d-flex gap-2 align-items-center mt-auto"><strong class="course-price">$24.99</strong><button type="button" class="btn ed-button-primary flex-grow-1 course-open" data-course="js" data-action="view">View Course</button></div>
+   </div>
+ </article>
+</div>
+
+<div class="col-12 col-md-6 col-xl-12 course-search-item" data-search="asp.net core web development ahmed mohamed">
+ <article class="explore-course-card ed-card h-100 d-flex flex-column flex-xl-row gap-2">
+   <img class="explore-thumb" src="https://placehold.co/640x256/17234B/FFFFFF/png?text=ASP.NET" alt="Placeholder image for ASP.NET Core Web Development" width="640" height="256" loading="lazy">
+   <div class="explore-course-info flex-grow-1 d-flex flex-column min-w-0">
+     <h3 class="course-title mb-0">ASP.NET Core Web Development</h3>
+     <p class="course-instructor mb-1">Ahmed Mohamed</p>
+     <p class="course-rating mb-0"><i class="fa-regular fa-star" aria-hidden="true"></i> <span>4.9 (856)</span></p>
+     <div class="explore-bottom d-flex gap-2 align-items-center mt-auto"><strong class="course-price">$39.99</strong><button type="button" class="btn ed-button-primary flex-grow-1 course-open" data-course="asp" data-action="view">View Course</button></div>
+   </div>
+ </article>
+</div>
+
+<div class="col-12 col-md-6 col-xl-12 course-search-item" data-search="database design fundamentals dina mostafa">
+ <article class="explore-course-card ed-card h-100 d-flex flex-column flex-xl-row gap-2">
+   <img class="explore-thumb" src="https://placehold.co/640x256/1C333C/FFFFFF/png?text=DATA" alt="Placeholder image for Database Design Fundamentals" width="640" height="256" loading="lazy">
+   <div class="explore-course-info flex-grow-1 d-flex flex-column min-w-0">
+     <h3 class="course-title mb-0">Database Design Fundamentals</h3>
+     <p class="course-instructor mb-1">Dina Mostafa</p>
+     <p class="course-rating mb-0"><i class="fa-regular fa-star" aria-hidden="true"></i> <span>4.7 (642)</span></p>
+     <div class="explore-bottom d-flex gap-2 align-items-center mt-auto"><strong class="course-price">$29.99</strong><button type="button" class="btn ed-button-primary flex-grow-1 course-open" data-course="database" data-action="view">View Course</button></div>
+   </div>
+ </article>
+</div>
+     <div class="col-md-6 d-none d-md-block d-xl-none"><div class="tablet-explore-cta h-100"><i class="fa-regular fa-compass" aria-hidden="true"></i><h3>Find your next big idea.</h3><p class="mb-3">Explore practical courses taught by experts, at your own pace.</p><a class="btn ed-button-primary w-100 mt-auto d-inline-flex align-items-center justify-content-center" href="eduhub-explore-courses.html">Explore Courses</a></div></div>
+    </div>
+   </section>
+   <!-- My Learning -->
+   <section class="learning-column" id="my-learning" aria-labelledby="learning-heading"><div class="d-flex justify-content-between align-items-center mb-2"><h2 class="section-heading" id="learning-heading">My Learning</h2><a href="#my-learning" class="section-link" id="viewAllLearning">View all <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a></div>
+    <div class="learning-shell ed-card"><div class="learning-tabs" role="tablist" aria-label="Filter courses"><button class="learning-tab active" type="button" role="tab" aria-selected="true" data-tab="all">All Courses (6)</button><button class="learning-tab" type="button" role="tab" aria-selected="false" data-tab="in-progress">In Progress</button><button class="learning-tab" type="button" role="tab" aria-selected="false" data-tab="completed">Completed</button></div>
+     <div class="learning-head" aria-hidden="true"><span>COURSE</span><span>PROGRESS</span><span>STATUS</span><span></span></div><div id="learningList">
+<div class="learning-row course-search-item" data-filter-status="in-progress" data-search="complete c# programming ahmed mohamed">
+ <div class="learning-course">
+    <img class="learning-thumb" src="https://placehold.co/128x128/1E293B/FFFFFF/png?text=C%23" alt="" width="48" height="48" loading="lazy">
+    <div class="min-w-0"><h3 class="learning-title mb-1">Complete C# Programming</h3><p class="learning-instructor mb-0">Ahmed Mohamed</p></div>
+    <button class="learning-arrow course-open" type="button" aria-label="Open Complete C# Programming" data-course="csharp" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+ </div>
+ <div class="learning-progress"><span>65%</span><div class="progress ed-progress" role="progressbar" aria-label="Complete C# Programming progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65"><div class="progress-bar " style="width:65%"></div></div></div>
+ <div class="learning-status"><span class="status-pill ">In progress</span></div>
+ <button class="learning-arrow desktop-arrow course-open" type="button" aria-label="Open Complete C# Programming" data-course="csharp" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+</div>
+
+<div class="learning-row course-search-item" data-filter-status="in-progress" data-search="html &amp; css fundamentals sara ali">
+ <div class="learning-course">
+    <img class="learning-thumb" src="https://placehold.co/128x128/DCE8EE/FFFFFF/png?text=HTML" alt="" width="48" height="48" loading="lazy">
+    <div class="min-w-0"><h3 class="learning-title mb-1">HTML &amp; CSS Fundamentals</h3><p class="learning-instructor mb-0">Sara Ali</p></div>
+    <button class="learning-arrow course-open" type="button" aria-label="Open HTML &amp; CSS Fundamentals" data-course="html" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+ </div>
+ <div class="learning-progress"><span>40%</span><div class="progress ed-progress" role="progressbar" aria-label="HTML &amp; CSS Fundamentals progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><div class="progress-bar " style="width:40%"></div></div></div>
+ <div class="learning-status"><span class="status-pill ">In progress</span></div>
+ <button class="learning-arrow desktop-arrow course-open" type="button" aria-label="Open HTML &amp; CSS Fundamentals" data-course="html" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+</div>
+
+<div class="learning-row course-search-item" data-filter-status="in-progress" data-search="sql server essentials mohamed hassan">
+ <div class="learning-course">
+    <img class="learning-thumb" src="https://placehold.co/128x128/073B5B/FFFFFF/png?text=SQL" alt="" width="48" height="48" loading="lazy">
+    <div class="min-w-0"><h3 class="learning-title mb-1">SQL Server Essentials</h3><p class="learning-instructor mb-0">Mohamed Hassan</p></div>
+    <button class="learning-arrow course-open" type="button" aria-label="Open SQL Server Essentials" data-course="sql" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+ </div>
+ <div class="learning-progress"><span>80%</span><div class="progress ed-progress" role="progressbar" aria-label="SQL Server Essentials progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><div class="progress-bar " style="width:80%"></div></div></div>
+ <div class="learning-status"><span class="status-pill ">In progress</span></div>
+ <button class="learning-arrow desktop-arrow course-open" type="button" aria-label="Open SQL Server Essentials" data-course="sql" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+</div>
+
+<div class="learning-row course-search-item" data-filter-status="completed" data-search="python programming basics omar khaled">
+ <div class="learning-course">
+    <img class="learning-thumb" src="https://placehold.co/128x128/BDC9C0/FFFFFF/png?text=PY" alt="" width="48" height="48" loading="lazy">
+    <div class="min-w-0"><h3 class="learning-title mb-1">Python Programming Basics</h3><p class="learning-instructor mb-0">Omar Khaled</p></div>
+    <button class="learning-arrow course-open" type="button" aria-label="Open Python Programming Basics" data-course="python" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+ </div>
+ <div class="learning-progress"><span>100%</span><div class="progress ed-progress" role="progressbar" aria-label="Python Programming Basics progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="progress-bar bg-success" style="width:100%"></div></div></div>
+ <div class="learning-status"><span class="status-pill status-completed">Completed</span></div>
+ <button class="learning-arrow desktop-arrow course-open" type="button" aria-label="Open Python Programming Basics" data-course="python" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+</div>
+
+<div class="learning-row course-search-item" data-filter-status="completed" data-search="git &amp; github essentials nour ahmed">
+ <div class="learning-course">
+    <img class="learning-thumb" src="https://placehold.co/128x128/273139/FFFFFF/png?text=GIT" alt="" width="48" height="48" loading="lazy">
+    <div class="min-w-0"><h3 class="learning-title mb-1">Git &amp; GitHub Essentials</h3><p class="learning-instructor mb-0">Nour Ahmed</p></div>
+    <button class="learning-arrow course-open" type="button" aria-label="Open Git &amp; GitHub Essentials" data-course="git" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+ </div>
+ <div class="learning-progress"><span>100%</span><div class="progress ed-progress" role="progressbar" aria-label="Git &amp; GitHub Essentials progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="progress-bar bg-success" style="width:100%"></div></div></div>
+ <div class="learning-status"><span class="status-pill status-completed">Completed</span></div>
+ <button class="learning-arrow desktop-arrow course-open" type="button" aria-label="Open Git &amp; GitHub Essentials" data-course="git" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+</div>
+
+<div class="learning-row course-search-item" data-filter-status="not-started" data-search="ui design essentials mariam adel">
+ <div class="learning-course">
+    <img class="learning-thumb" src="https://placehold.co/128x128/D5D6E6/FFFFFF/png?text=UI" alt="" width="48" height="48" loading="lazy">
+    <div class="min-w-0"><h3 class="learning-title mb-1">UI Design Essentials</h3><p class="learning-instructor mb-0">Mariam Adel</p></div>
+    <button class="learning-arrow course-open" type="button" aria-label="Open UI Design Essentials" data-course="ui" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+ </div>
+ <div class="learning-progress"><span>0%</span><div class="progress ed-progress" role="progressbar" aria-label="UI Design Essentials progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar bg-secondary-subtle" style="width:0%"></div></div></div>
+ <div class="learning-status"><span class="status-pill status-started">Not started</span></div>
+ <button class="learning-arrow desktop-arrow course-open" type="button" aria-label="Open UI Design Essentials" data-course="ui" data-action="continue"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+</div></div><p id="learningEmpty" class="learning-empty">No courses match your search or filter.</p>
+    </div>
+   </section>
+  </div>
+ </main>
+ <!-- =================== Footer =================== -->
+ <footer class="app-footer"><span>Learn Today. Build Tomorrow.</span><a href="#" class="help-link" data-pending="Help Center">Need help? Visit the Help Center ↗</a></footer>
+</div>
+<!-- =================== Mobile bottom tabs =================== -->
+<nav class="mobile-bottom-nav" aria-label="Mobile quick navigation"><a href="#main-content" class="bottom-nav-link active" aria-current="page"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Home</span></a><a href="eduhub-explore-courses.html" class="bottom-nav-link"><i class="fa-regular fa-compass" aria-hidden="true"></i><span>Explore</span></a><a href="#my-learning" class="bottom-nav-link"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Learning</span></a><a href="eduhub-student-profile.html" class="bottom-nav-link"><i class="fa-regular fa-user" aria-hidden="true"></i><span>Profile</span></a></nav>
+<!-- =================== Accessible Mobile Drawer =================== -->
+<div class="drawer-mask" id="drawerMask" hidden></div><aside class="mobile-drawer" id="studentDrawer" aria-label="Mobile student navigation" aria-modal="true" role="dialog" hidden><div class="d-flex justify-content-between align-items-center mb-4"><strong class="fs-5">Student workspace</strong><button type="button" class="btn btn-sm btn-light" id="drawerClose" aria-label="Close navigation"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div><nav class="side-nav"><a class="side-entry active" href="eduhub-student-dashboard.html"  aria-current=page title="Dashboard"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span class="side-label">Dashboard</span></a>
+<a class="side-entry " href="eduhub-explore-courses.html"   title="Explore Courses"><i class="fa-regular fa-compass" aria-hidden="true"></i><span class="side-label">Explore Courses</span></a>
+<a class="side-entry " href="#my-learning"   title="My Learning"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span class="side-label">My Learning</span></a>
+<a class="side-entry " href="#my-learning" data-pending="My Certificates"  title="My Certificates"><i class="fa-solid fa-award" aria-hidden="true"></i><span class="side-label">My Certificates</span></a>
+<a class="side-entry " href="eduhub-student-profile.html"   title="My Profile"><i class="fa-regular fa-user" aria-hidden="true"></i><span class="side-label">My Profile</span></a>
+<a class="side-entry " href="#" data-pending="Settings"  title="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i><span class="side-label">Settings</span></a>
+<a class="side-entry " href="#" data-pending="Log Out"  title="Log Out"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span class="side-label">Log Out</span></a></nav></aside>
+<!-- =================== Course details modal (frontend demo only) =================== -->
+<div id="courseOverlay" class="modal-overlay" hidden><section class="course-modal" role="dialog" aria-modal="true" aria-labelledby="courseModalTitle" tabindex="-1"><div class="d-flex align-items-center justify-content-between mb-3"><span class="badge rounded-pill text-bg-light">EduHub · Course preview</span><button id="courseModalClose" type="button" class="btn btn-sm btn-light" aria-label="Close course preview"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div><h2 id="courseModalTitle"></h2><p class="modal-caption" id="courseModalByline"></p><div id="courseModalDetail" class="small mb-4"></div><p class="small ed-muted mb-3">This is a frontend preview. Course details and lesson-player routes will be connected when those screens are implemented.</p><a href="#my-learning" id="modalLearningLink" class="btn ed-button-primary w-100 d-inline-flex justify-content-center align-items-center">Back to My Learning</a></section></div>
+<!-- =================== Accessible status message =================== -->
+<div class="ed-toast" id="statusToast" role="status" aria-live="polite" hidden></div>
+<script>
+(()=>{'use strict';
+ const courses=[{"name": "Complete C# Programming", "instructor": "Ahmed Mohamed", "percent": 65, "color": "1E293B", "image": "C%23", "id": "csharp"}, {"name": "HTML & CSS Fundamentals", "instructor": "Sara Ali", "percent": 40, "color": "DCE8EE", "image": "HTML", "id": "html"}, {"name": "SQL Server Essentials", "instructor": "Mohamed Hassan", "percent": 80, "color": "073B5B", "image": "SQL", "id": "sql"}, {"name": "Python Programming Basics", "instructor": "Omar Khaled", "percent": 100, "color": "BDC9C0", "image": "PY", "id": "python"}, {"name": "Git & GitHub Essentials", "instructor": "Nour Ahmed", "percent": 100, "color": "273139", "image": "GIT", "id": "git"}, {"name": "UI Design Essentials", "instructor": "Mariam Adel", "percent": 0, "color": "D5D6E6", "image": "UI", "id": "ui"}, {"name": "JavaScript for Beginners", "instructor": "Omar Khaled", "rating": "4.8 (1.2k)", "price": "$24.99", "color": "172633", "image": "JS", "id": "js"}, {"name": "ASP.NET Core Web Development", "instructor": "Ahmed Mohamed", "rating": "4.9 (856)", "price": "$39.99", "color": "17234B", "image": "ASP.NET", "id": "asp"}, {"name": "Database Design Fundamentals", "instructor": "Dina Mostafa", "rating": "4.7 (642)", "price": "$29.99", "color": "1C333C", "image": "DATA", "id": "database"}];
+ const root=document.documentElement;
+ const toast=document.getElementById('statusToast');let toastTimeout=null;
+ function notice(message){toast.textContent=message;toast.hidden=false;clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.hidden=true,4500)}
+ function q(selector,ctx=document){return ctx.querySelector(selector)}function qa(selector,ctx=document){return [...ctx.querySelectorAll(selector)]}
+ // Shared search across the three dashboard regions. Preserve one input across viewport changes.
+ let searchValue='';let activeTab='all';
+ const searchInputs=qa('.course-search');
+ function filterAll(){const term=searchValue.trim().toLowerCase();qa('#continueCards .course-search-item,#exploreCards .course-search-item').forEach(card=>card.hidden=!card.dataset.search.includes(term));let visible=0;qa('#learningList .learning-row').forEach(row=>{const tabMatch=activeTab==='all'||row.dataset.filterStatus===activeTab;const searchMatch=row.dataset.search.includes(term);row.hidden=!(tabMatch&&searchMatch);if(!row.hidden)visible++});q('#learningEmpty').style.display=visible?'none':'block';}
+ searchInputs.forEach(input=>input.addEventListener('input',()=>{searchValue=input.value;searchInputs.forEach(other=>{if(other!==input)other.value=searchValue});filterAll()}));
+ function setTab(tab){activeTab=tab;qa('.learning-tab').forEach(button=>{const selected=button.dataset.tab===tab;button.classList.toggle('active',selected);button.setAttribute('aria-selected',String(selected))});filterAll()}
+ qa('.learning-tab').forEach(button=>button.addEventListener('click',()=>setTab(button.dataset.tab)));
+ q('#viewAllLearning').addEventListener('click',()=>setTab('all'));
+ const sidebarToggle=q('#sidebarToggle');sidebarToggle.addEventListener('click',()=>{if(matchMedia('(min-width: 1200px)').matches){const collapsed=document.body.classList.toggle('sidebar-collapsed');sidebarToggle.setAttribute('aria-expanded',String(!collapsed));sidebarToggle.querySelector('.side-label').textContent=collapsed?'Expand sidebar':'Collapse sidebar'}else notice('The tablet sidebar is already compact. Use the navigation icons to move between sections.')});
+ // Native, accessible dropdowns; no Bootstrap JavaScript dependency needed.
+ function toggleMenu(button,menu){const open=menu.hidden;menu.hidden=!open;button.setAttribute('aria-expanded',String(open))}
+ q('#accountButton').addEventListener('click',()=>toggleMenu(q('#accountButton'),q('#accountMenu')));
+ q('#mobileAccountToggle').addEventListener('click',()=>toggleMenu(q('#mobileAccountToggle'),q('#mobileAccountMenu')));
+ function closeMenus(){['accountMenu','mobileAccountMenu'].forEach(id=>q('#'+id).hidden=true);['accountButton','mobileAccountToggle'].forEach(id=>q('#'+id).setAttribute('aria-expanded','false'))}
+ document.addEventListener('click',event=>{if(!event.target.closest('#accountButton,#accountMenu,#mobileAccountToggle,#mobileAccountMenu'))closeMenus()});
+ // Mobile navigation supports Escape, clicking the scrim, and keyboard focus return.
+ const openButton=q('#menuOpen'),drawer=q('#studentDrawer'),mask=q('#drawerMask'),closeButton=q('#drawerClose');
+ function setDrawer(open){drawer.hidden=!open;mask.hidden=!open;openButton.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':'';if(open)closeButton.focus();else openButton.focus()}
+ openButton.addEventListener('click',()=>setDrawer(true));closeButton.addEventListener('click',()=>setDrawer(false));mask.addEventListener('click',()=>setDrawer(false));qa('a',drawer).forEach(a=>a.addEventListener('click',()=>{if(!a.hasAttribute('data-pending'))setDrawer(false)}));
+ // Related course detail modal: no fictitious backend calls.
+ let courseReturnFocus=null;const overlay=q('#courseOverlay'),courseDialog=q('.course-modal',overlay);
+ function showCourse(id,action,trigger){const d=courses.find(x=>x.id===id);if(!d)return;courseReturnFocus=trigger;q('#courseModalTitle').textContent=d.name;q('#courseModalByline').textContent='Instructor: '+d.instructor;const detail=q('#courseModalDetail');detail.textContent=d.percent===undefined ? 'Course price: '+d.price+' · Rating: '+d.rating : 'Current course progress: '+d.percent+'%';q('#modalLearningLink').textContent=d.id==='csharp'?'View Course Details':(d.percent===undefined?'Explore more courses':'Back to My Learning');q('#modalLearningLink').href=d.id==='csharp'?'eduhub-course-details-already-enrolled.html':(d.percent===undefined?'eduhub-homepage.html#courses':'#my-learning');overlay.hidden=false;document.body.style.overflow='hidden';courseDialog.focus()}
+ function hideCourse(){overlay.hidden=true;document.body.style.overflow='';if(courseReturnFocus)courseReturnFocus.focus()}
+ // Keep mobile bottom navigation's active tab synchronized with in-page anchors.
+ qa('.mobile-bottom-nav .bottom-nav-link').forEach(link=>link.addEventListener('click',()=>{qa('.mobile-bottom-nav .bottom-nav-link').forEach(other=>{other.classList.remove('active');other.removeAttribute('aria-current')});link.classList.add('active');link.setAttribute('aria-current','page')}));
+ qa('.course-open').forEach(button=>button.addEventListener('click',()=>showCourse(button.dataset.course,button.dataset.action,button)));
+ q('#courseModalClose').addEventListener('click',hideCourse);overlay.addEventListener('click',event=>{if(event.target===overlay)hideCourse()});q('#modalLearningLink').addEventListener('click',hideCourse);
+ // Unfinished destinations communicate clearly rather than failing silently.
+ document.addEventListener('click',event=>{const link=event.target.closest('[data-pending]');if(!link)return;event.preventDefault();notice(link.dataset.pending+' screen is not implemented yet. This dashboard is a frontend prototype.');if(!drawer.hidden)setDrawer(false)});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!overlay.hidden)hideCourse();else if(!drawer.hidden)setDrawer(false);else closeMenus()} if(event.key==='Tab'&&!overlay.hidden){const buttons=qa('button,a[href]',overlay);const first=buttons[0],last=buttons[buttons.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}}});
+ filterAll();
+})();
+</script>
+</body>
+</html>

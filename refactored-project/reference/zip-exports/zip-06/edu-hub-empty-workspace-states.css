@@ -1,0 +1,406 @@
+.eduhub-brand9,
+.eduhub-empty-workspace-state {
+  overflow: hidden;
+  display: flex;
+  text-align: left;
+  font-size: var(--fs-28);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.eduhub-empty-workspace-state {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-40);
+  box-sizing: border-box;
+  gap: var(--gap-32);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+}
+.eduhub-brand9 {
+  align-self: stretch;
+  align-items: center;
+  gap: var(--gap-8);
+}
+.graduation-cap-icon9 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0);
+  background-color: transparent;
+  height: var(--height-32);
+  width: var(--width-32);
+  position: relative;
+}
+.wordmark8 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.hub8 {
+  color: var(--color-royalblue);
+}
+.page-heading9,
+.page-introduction9 {
+  overflow: hidden;
+  display: flex;
+  max-width: 100%;
+}
+.page-heading9 {
+  align-self: stretch;
+  align-items: center;
+}
+.page-introduction9 {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-6);
+}
+.description137,
+.heading30 {
+  align-self: stretch;
+  position: relative;
+}
+.heading30 {
+  margin: 0;
+  font-size: inherit;
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.description137 {
+  font-size: var(--fs-14);
+  line-height: 150%;
+  color: var(--color-slategray);
+}
+.empty-library-states {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-10) var(--gap-24);
+  max-width: 100%;
+}
+.my-courses-no-courses,
+.no-courses-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.no-courses-state {
+  flex: 1;
+  min-width: var(--min-w-434);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-18);
+  color: var(--color-slategray);
+  font-family: var(--font-inter);
+}
+.my-courses-no-courses {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  padding: var(--padding-24);
+  gap: var(--gap-16);
+}
+.description138,
+.heading31 {
+  align-self: stretch;
+  position: relative;
+}
+.heading31 {
+  margin: 0;
+  font-size: inherit;
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.description138 {
+  font-size: var(--fs-13);
+  line-height: 150%;
+}
+.educational-illustration-icon {
+  align-self: stretch;
+  height: 120px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.description139,
+.description140 {
+  align-self: stretch;
+  position: relative;
+  line-height: 150%;
+}
+.description139 {
+  margin: 0;
+  font-size: var(--fs-22);
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-gray);
+}
+.description140 {
+  font-size: var(--fs-14);
+}
+.action35 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0);
+  background-color: var(--color-royalblue);
+  width: 202.4px;
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label48 {
+  position: relative;
+  font-size: var(--fs-13);
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.description141 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-12);
+  line-height: 150%;
+}
+.action36 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0);
+  background-color: var(--color-royalblue);
+  width: var(--width-159_8);
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.no-analytics-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: var(--min-w-434);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-18);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+.heading33 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  line-height: 130%;
+  font-weight: 700;
+  font-family: inherit;
+}
+.empty-metric,
+.zero-totals {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.zero-totals {
+  align-self: stretch;
+  gap: var(--gap-24);
+  font-size: var(--fs-24);
+}
+.empty-metric {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-4);
+  min-width: 142px;
+}
+.value9 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.label50 {
+  position: relative;
+  font-size: var(--fs-12);
+  color: var(--color-slategray);
+}
+.value11 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 41px;
+}
+.description146,
+.description147 {
+  position: relative;
+  line-height: 150%;
+}
+.description146 {
+  margin: 0;
+  align-self: stretch;
+  font-size: var(--fs-22);
+  font-weight: 600;
+  font-family: inherit;
+}
+.description147 {
+  width: 100%;
+  font-size: var(--fs-14);
+  color: var(--color-slategray);
+  display: inline-block;
+  max-width: var(--max-w-618);
+}
+.action37 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0);
+  background-color: var(--color-royalblue);
+  width: var(--width-152_7);
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notifications-no-notificatio {
+  align-self: stretch;
+  box-shadow: var(--shadow-drop);
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: var(--border-1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 23px 17px 23px 23px;
+  gap: var(--gap-16);
+}
+.educational-illustration-icon4 {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  max-width: 620px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.description150 {
+  width: 100%;
+  height: 42px;
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: 150%;
+  display: inline-block;
+  max-width: 626px;
+}
+.action38 {
+  cursor: pointer;
+  border: var(--border-1);
+  padding: var(--padding-0);
+  background-color: var(--color-white);
+  width: var(--width-152_7);
+  height: var(--height-44);
+  border-radius: var(--br-8);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label54 {
+  position: relative;
+  font-size: var(--fs-13);
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: left;
+}
+@media screen and (max-width: 725px) {
+  .eduhub-empty-workspace-state {
+    gap: var(--gap-16);
+  }
+}
+@media screen and (max-width: 675px) {
+  .eduhub-empty-workspace-state {
+    gap: var(--gap-16);
+  }
+}
+@media screen and (max-width: 650px) {
+  .no-analytics-state,
+  .no-courses-state {
+    min-width: 100%;
+  }
+  .zero-totals {
+    flex-wrap: wrap;
+  }
+  .description147,
+  .description150,
+  .educational-illustration-icon4 {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 625px) {
+  .no-analytics-state,
+  .no-courses-state {
+    min-width: 100%;
+  }
+  .zero-totals {
+    flex-wrap: wrap;
+  }
+  .description147,
+  .description150,
+  .educational-illustration-icon4 {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .heading30 {
+    font-size: var(--fs-22);
+    line-height: var(--lh-29);
+  }
+  .my-courses-no-courses {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .description139 {
+    font-size: var(--fs-18);
+    line-height: var(--lh-26);
+  }
+  .value11,
+  .value9 {
+    font-size: var(--fs-19);
+  }
+  .description146 {
+    font-size: var(--fs-18);
+    line-height: var(--lh-26);
+  }
+  .notifications-no-notificatio {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+}
